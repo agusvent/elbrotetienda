@@ -1,0 +1,10 @@
+<IfModule authz_core_module>
+    Require all denied
+</IfModule>
+<IfModule !authz_core_module>
+    Deny from all
+</IfModule>
+RewriteEngine On
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ https://elbroteorganico.com/new/$1 [R,L]
+RewriteRule ^(.*)$ http://192.168.1.159/ebo/$1 [R,L]

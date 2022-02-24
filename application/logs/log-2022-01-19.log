@@ -1,0 +1,1464 @@
+INFO - 2022-01-19 00:10:09 --> Config Class Initialized
+INFO - 2022-01-19 00:10:09 --> Hooks Class Initialized
+DEBUG - 2022-01-19 00:10:09 --> UTF-8 Support Enabled
+INFO - 2022-01-19 00:10:09 --> Utf8 Class Initialized
+INFO - 2022-01-19 00:10:09 --> URI Class Initialized
+DEBUG - 2022-01-19 00:10:09 --> No URI present. Default controller set.
+INFO - 2022-01-19 00:10:09 --> Router Class Initialized
+INFO - 2022-01-19 00:10:09 --> Output Class Initialized
+INFO - 2022-01-19 00:10:09 --> Security Class Initialized
+DEBUG - 2022-01-19 00:10:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 00:10:09 --> Input Class Initialized
+INFO - 2022-01-19 00:10:09 --> Language Class Initialized
+INFO - 2022-01-19 00:10:09 --> Loader Class Initialized
+INFO - 2022-01-19 00:10:09 --> Helper loaded: url_helper
+INFO - 2022-01-19 00:10:09 --> Helper loaded: util_helper
+INFO - 2022-01-19 00:10:09 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 00:10:09 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 00:10:09 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 00:10:09 --> Controller Class Initialized
+INFO - 2022-01-19 00:10:09 --> Model "Pocket" initialized
+INFO - 2022-01-19 00:10:09 --> Model "Office" initialized
+INFO - 2022-01-19 00:10:09 --> Model "Extra" initialized
+INFO - 2022-01-19 00:10:09 --> Model "Parameter" initialized
+INFO - 2022-01-19 00:10:09 --> Model "Barrio" initialized
+INFO - 2022-01-19 00:10:09 --> Model "DiasEntregaPedidos" initialized
+INFO - 2022-01-19 00:10:09 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2022-01-19 00:10:09 --> Final output sent to browser
+DEBUG - 2022-01-19 00:10:09 --> Total execution time: 0.0337
+INFO - 2022-01-19 00:10:10 --> Config Class Initialized
+INFO - 2022-01-19 00:10:10 --> Hooks Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> UTF-8 Support Enabled
+INFO - 2022-01-19 00:10:10 --> Utf8 Class Initialized
+INFO - 2022-01-19 00:10:10 --> URI Class Initialized
+INFO - 2022-01-19 00:10:10 --> Router Class Initialized
+INFO - 2022-01-19 00:10:10 --> Output Class Initialized
+INFO - 2022-01-19 00:10:10 --> Security Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 00:10:10 --> Input Class Initialized
+INFO - 2022-01-19 00:10:10 --> Language Class Initialized
+INFO - 2022-01-19 00:10:10 --> Loader Class Initialized
+INFO - 2022-01-19 00:10:10 --> Helper loaded: url_helper
+INFO - 2022-01-19 00:10:10 --> Helper loaded: util_helper
+INFO - 2022-01-19 00:10:10 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 00:10:10 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 00:10:10 --> Controller Class Initialized
+INFO - 2022-01-19 00:10:10 --> Model "Parameter" initialized
+INFO - 2022-01-19 00:10:10 --> Final output sent to browser
+DEBUG - 2022-01-19 00:10:10 --> Total execution time: 0.0119
+INFO - 2022-01-19 00:10:10 --> Config Class Initialized
+INFO - 2022-01-19 00:10:10 --> Hooks Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> UTF-8 Support Enabled
+INFO - 2022-01-19 00:10:10 --> Utf8 Class Initialized
+INFO - 2022-01-19 00:10:10 --> URI Class Initialized
+INFO - 2022-01-19 00:10:10 --> Router Class Initialized
+INFO - 2022-01-19 00:10:10 --> Output Class Initialized
+INFO - 2022-01-19 00:10:10 --> Security Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 00:10:10 --> Input Class Initialized
+INFO - 2022-01-19 00:10:10 --> Language Class Initialized
+INFO - 2022-01-19 00:10:10 --> Loader Class Initialized
+INFO - 2022-01-19 00:10:10 --> Helper loaded: url_helper
+INFO - 2022-01-19 00:10:10 --> Helper loaded: util_helper
+INFO - 2022-01-19 00:10:10 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 00:10:10 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 00:10:10 --> Controller Class Initialized
+INFO - 2022-01-19 00:10:10 --> Model "Extra" initialized
+INFO - 2022-01-19 00:10:10 --> Final output sent to browser
+DEBUG - 2022-01-19 00:10:10 --> Total execution time: 0.0100
+INFO - 2022-01-19 00:10:10 --> Config Class Initialized
+INFO - 2022-01-19 00:10:10 --> Hooks Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> UTF-8 Support Enabled
+INFO - 2022-01-19 00:10:10 --> Utf8 Class Initialized
+INFO - 2022-01-19 00:10:10 --> URI Class Initialized
+INFO - 2022-01-19 00:10:10 --> Router Class Initialized
+INFO - 2022-01-19 00:10:10 --> Output Class Initialized
+INFO - 2022-01-19 00:10:10 --> Security Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 00:10:10 --> Input Class Initialized
+INFO - 2022-01-19 00:10:10 --> Language Class Initialized
+INFO - 2022-01-19 00:10:10 --> Loader Class Initialized
+INFO - 2022-01-19 00:10:10 --> Helper loaded: url_helper
+INFO - 2022-01-19 00:10:10 --> Helper loaded: util_helper
+INFO - 2022-01-19 00:10:10 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 00:10:10 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 00:10:10 --> Controller Class Initialized
+INFO - 2022-01-19 00:10:10 --> Model "Parameter" initialized
+INFO - 2022-01-19 00:10:10 --> Final output sent to browser
+DEBUG - 2022-01-19 00:10:10 --> Total execution time: 0.0087
+INFO - 2022-01-19 00:10:10 --> Config Class Initialized
+INFO - 2022-01-19 00:10:10 --> Hooks Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> UTF-8 Support Enabled
+INFO - 2022-01-19 00:10:10 --> Utf8 Class Initialized
+INFO - 2022-01-19 00:10:10 --> URI Class Initialized
+INFO - 2022-01-19 00:10:10 --> Router Class Initialized
+INFO - 2022-01-19 00:10:10 --> Output Class Initialized
+INFO - 2022-01-19 00:10:10 --> Security Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 00:10:10 --> Input Class Initialized
+INFO - 2022-01-19 00:10:10 --> Language Class Initialized
+INFO - 2022-01-19 00:10:10 --> Loader Class Initialized
+INFO - 2022-01-19 00:10:10 --> Helper loaded: url_helper
+INFO - 2022-01-19 00:10:10 --> Helper loaded: util_helper
+INFO - 2022-01-19 00:10:10 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 00:10:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 00:10:10 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 00:10:10 --> Controller Class Initialized
+INFO - 2022-01-19 00:10:10 --> Model "Parameter" initialized
+INFO - 2022-01-19 00:10:10 --> Final output sent to browser
+DEBUG - 2022-01-19 00:10:10 --> Total execution time: 0.0092
+INFO - 2022-01-19 04:11:39 --> Config Class Initialized
+INFO - 2022-01-19 04:11:39 --> Hooks Class Initialized
+DEBUG - 2022-01-19 04:11:39 --> UTF-8 Support Enabled
+INFO - 2022-01-19 04:11:39 --> Utf8 Class Initialized
+INFO - 2022-01-19 04:11:39 --> URI Class Initialized
+DEBUG - 2022-01-19 04:11:39 --> No URI present. Default controller set.
+INFO - 2022-01-19 04:11:39 --> Router Class Initialized
+INFO - 2022-01-19 04:11:39 --> Output Class Initialized
+INFO - 2022-01-19 04:11:39 --> Security Class Initialized
+DEBUG - 2022-01-19 04:11:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 04:11:39 --> Input Class Initialized
+INFO - 2022-01-19 04:11:39 --> Language Class Initialized
+INFO - 2022-01-19 04:11:39 --> Loader Class Initialized
+INFO - 2022-01-19 04:11:39 --> Helper loaded: url_helper
+INFO - 2022-01-19 04:11:39 --> Helper loaded: util_helper
+INFO - 2022-01-19 04:11:39 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 04:11:39 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 04:11:39 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 04:11:39 --> Controller Class Initialized
+INFO - 2022-01-19 04:11:39 --> Model "Pocket" initialized
+INFO - 2022-01-19 04:11:39 --> Model "Office" initialized
+INFO - 2022-01-19 04:11:39 --> Model "Extra" initialized
+INFO - 2022-01-19 04:11:39 --> Model "Parameter" initialized
+INFO - 2022-01-19 04:11:39 --> Model "Barrio" initialized
+INFO - 2022-01-19 04:11:39 --> Model "DiasEntregaPedidos" initialized
+INFO - 2022-01-19 04:11:39 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2022-01-19 04:11:39 --> Final output sent to browser
+DEBUG - 2022-01-19 04:11:39 --> Total execution time: 0.0345
+INFO - 2022-01-19 04:11:40 --> Config Class Initialized
+INFO - 2022-01-19 04:11:40 --> Hooks Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> UTF-8 Support Enabled
+INFO - 2022-01-19 04:11:40 --> Utf8 Class Initialized
+INFO - 2022-01-19 04:11:40 --> URI Class Initialized
+INFO - 2022-01-19 04:11:40 --> Router Class Initialized
+INFO - 2022-01-19 04:11:40 --> Output Class Initialized
+INFO - 2022-01-19 04:11:40 --> Security Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 04:11:40 --> Input Class Initialized
+INFO - 2022-01-19 04:11:40 --> Language Class Initialized
+INFO - 2022-01-19 04:11:40 --> Loader Class Initialized
+INFO - 2022-01-19 04:11:40 --> Helper loaded: url_helper
+INFO - 2022-01-19 04:11:40 --> Helper loaded: util_helper
+INFO - 2022-01-19 04:11:40 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 04:11:40 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 04:11:40 --> Controller Class Initialized
+INFO - 2022-01-19 04:11:40 --> Model "Parameter" initialized
+INFO - 2022-01-19 04:11:40 --> Final output sent to browser
+DEBUG - 2022-01-19 04:11:40 --> Total execution time: 0.0118
+INFO - 2022-01-19 04:11:40 --> Config Class Initialized
+INFO - 2022-01-19 04:11:40 --> Hooks Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> UTF-8 Support Enabled
+INFO - 2022-01-19 04:11:40 --> Utf8 Class Initialized
+INFO - 2022-01-19 04:11:40 --> URI Class Initialized
+INFO - 2022-01-19 04:11:40 --> Router Class Initialized
+INFO - 2022-01-19 04:11:40 --> Output Class Initialized
+INFO - 2022-01-19 04:11:40 --> Security Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 04:11:40 --> Input Class Initialized
+INFO - 2022-01-19 04:11:40 --> Language Class Initialized
+INFO - 2022-01-19 04:11:40 --> Loader Class Initialized
+INFO - 2022-01-19 04:11:40 --> Helper loaded: url_helper
+INFO - 2022-01-19 04:11:40 --> Helper loaded: util_helper
+INFO - 2022-01-19 04:11:40 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 04:11:40 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 04:11:40 --> Controller Class Initialized
+INFO - 2022-01-19 04:11:40 --> Model "Extra" initialized
+INFO - 2022-01-19 04:11:40 --> Final output sent to browser
+DEBUG - 2022-01-19 04:11:40 --> Total execution time: 0.0117
+INFO - 2022-01-19 04:11:40 --> Config Class Initialized
+INFO - 2022-01-19 04:11:40 --> Hooks Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> UTF-8 Support Enabled
+INFO - 2022-01-19 04:11:40 --> Utf8 Class Initialized
+INFO - 2022-01-19 04:11:40 --> URI Class Initialized
+INFO - 2022-01-19 04:11:40 --> Router Class Initialized
+INFO - 2022-01-19 04:11:40 --> Output Class Initialized
+INFO - 2022-01-19 04:11:40 --> Security Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 04:11:40 --> Input Class Initialized
+INFO - 2022-01-19 04:11:40 --> Language Class Initialized
+INFO - 2022-01-19 04:11:40 --> Loader Class Initialized
+INFO - 2022-01-19 04:11:40 --> Helper loaded: url_helper
+INFO - 2022-01-19 04:11:40 --> Helper loaded: util_helper
+INFO - 2022-01-19 04:11:40 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 04:11:40 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 04:11:40 --> Controller Class Initialized
+INFO - 2022-01-19 04:11:40 --> Model "Parameter" initialized
+INFO - 2022-01-19 04:11:40 --> Final output sent to browser
+DEBUG - 2022-01-19 04:11:40 --> Total execution time: 0.0098
+INFO - 2022-01-19 04:11:40 --> Config Class Initialized
+INFO - 2022-01-19 04:11:40 --> Hooks Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> UTF-8 Support Enabled
+INFO - 2022-01-19 04:11:40 --> Utf8 Class Initialized
+INFO - 2022-01-19 04:11:40 --> URI Class Initialized
+INFO - 2022-01-19 04:11:40 --> Router Class Initialized
+INFO - 2022-01-19 04:11:40 --> Output Class Initialized
+INFO - 2022-01-19 04:11:40 --> Security Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 04:11:40 --> Input Class Initialized
+INFO - 2022-01-19 04:11:40 --> Language Class Initialized
+INFO - 2022-01-19 04:11:40 --> Loader Class Initialized
+INFO - 2022-01-19 04:11:40 --> Helper loaded: url_helper
+INFO - 2022-01-19 04:11:40 --> Helper loaded: util_helper
+INFO - 2022-01-19 04:11:40 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 04:11:40 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 04:11:40 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 04:11:40 --> Controller Class Initialized
+INFO - 2022-01-19 04:11:40 --> Model "Parameter" initialized
+INFO - 2022-01-19 04:11:40 --> Final output sent to browser
+DEBUG - 2022-01-19 04:11:40 --> Total execution time: 0.0103
+INFO - 2022-01-19 12:44:37 --> Config Class Initialized
+INFO - 2022-01-19 12:44:37 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:44:37 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:44:37 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:44:37 --> URI Class Initialized
+DEBUG - 2022-01-19 12:44:37 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:44:37 --> Router Class Initialized
+INFO - 2022-01-19 12:44:37 --> Output Class Initialized
+INFO - 2022-01-19 12:44:37 --> Security Class Initialized
+DEBUG - 2022-01-19 12:44:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:44:37 --> Input Class Initialized
+INFO - 2022-01-19 12:44:37 --> Language Class Initialized
+INFO - 2022-01-19 12:44:37 --> Loader Class Initialized
+INFO - 2022-01-19 12:44:37 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:44:37 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:44:37 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:44:37 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:44:37 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:44:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:44:37 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:44:37 --> Controller Class Initialized
+INFO - 2022-01-19 12:44:37 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:44:37 --> Model "Office" initialized
+INFO - 2022-01-19 12:44:37 --> Model "Extra" initialized
+INFO - 2022-01-19 12:44:37 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:44:37 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:44:37 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:44:37 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:44:37 --> Unable to connect to the database
+ERROR - 2022-01-19 12:44:37 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:44:37 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:44:55 --> Config Class Initialized
+INFO - 2022-01-19 12:44:55 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:44:55 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:44:55 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:44:55 --> URI Class Initialized
+DEBUG - 2022-01-19 12:44:55 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:44:55 --> Router Class Initialized
+INFO - 2022-01-19 12:44:55 --> Output Class Initialized
+INFO - 2022-01-19 12:44:55 --> Security Class Initialized
+DEBUG - 2022-01-19 12:44:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:44:55 --> Input Class Initialized
+INFO - 2022-01-19 12:44:55 --> Language Class Initialized
+INFO - 2022-01-19 12:44:55 --> Loader Class Initialized
+INFO - 2022-01-19 12:44:55 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:44:55 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:44:55 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:44:55 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:44:55 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:44:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:44:55 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:44:55 --> Controller Class Initialized
+INFO - 2022-01-19 12:44:55 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:44:55 --> Model "Office" initialized
+INFO - 2022-01-19 12:44:55 --> Model "Extra" initialized
+INFO - 2022-01-19 12:44:55 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:44:55 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:44:55 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:44:55 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:44:55 --> Unable to connect to the database
+ERROR - 2022-01-19 12:44:55 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:44:55 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:45:36 --> Config Class Initialized
+INFO - 2022-01-19 12:45:36 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:45:36 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:45:36 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:45:36 --> URI Class Initialized
+DEBUG - 2022-01-19 12:45:36 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:45:36 --> Router Class Initialized
+INFO - 2022-01-19 12:45:36 --> Output Class Initialized
+INFO - 2022-01-19 12:45:36 --> Security Class Initialized
+DEBUG - 2022-01-19 12:45:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:45:36 --> Input Class Initialized
+INFO - 2022-01-19 12:45:36 --> Language Class Initialized
+INFO - 2022-01-19 12:45:36 --> Loader Class Initialized
+INFO - 2022-01-19 12:45:36 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:45:36 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:45:36 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:45:36 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:36 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:45:36 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:45:36 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:45:36 --> Controller Class Initialized
+INFO - 2022-01-19 12:45:36 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:45:36 --> Model "Office" initialized
+INFO - 2022-01-19 12:45:36 --> Model "Extra" initialized
+INFO - 2022-01-19 12:45:36 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:45:36 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:45:36 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:45:36 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:36 --> Unable to connect to the database
+ERROR - 2022-01-19 12:45:36 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:45:36 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:45:37 --> Config Class Initialized
+INFO - 2022-01-19 12:45:37 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:45:37 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:45:37 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:45:37 --> URI Class Initialized
+DEBUG - 2022-01-19 12:45:37 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:45:37 --> Router Class Initialized
+INFO - 2022-01-19 12:45:37 --> Output Class Initialized
+INFO - 2022-01-19 12:45:37 --> Security Class Initialized
+DEBUG - 2022-01-19 12:45:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:45:37 --> Input Class Initialized
+INFO - 2022-01-19 12:45:37 --> Language Class Initialized
+INFO - 2022-01-19 12:45:37 --> Loader Class Initialized
+INFO - 2022-01-19 12:45:37 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:45:37 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:45:37 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:45:37 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:37 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:45:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:45:37 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:45:37 --> Controller Class Initialized
+INFO - 2022-01-19 12:45:37 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:45:37 --> Model "Office" initialized
+INFO - 2022-01-19 12:45:37 --> Model "Extra" initialized
+INFO - 2022-01-19 12:45:37 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:45:37 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:45:37 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:45:37 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:37 --> Unable to connect to the database
+ERROR - 2022-01-19 12:45:37 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:45:37 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:45:38 --> Config Class Initialized
+INFO - 2022-01-19 12:45:38 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:45:38 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:45:38 --> URI Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:45:38 --> Router Class Initialized
+INFO - 2022-01-19 12:45:38 --> Output Class Initialized
+INFO - 2022-01-19 12:45:38 --> Security Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:45:38 --> Input Class Initialized
+INFO - 2022-01-19 12:45:38 --> Language Class Initialized
+INFO - 2022-01-19 12:45:38 --> Loader Class Initialized
+INFO - 2022-01-19 12:45:38 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:45:38 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:45:38 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:45:38 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:38 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:45:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:45:38 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:45:38 --> Controller Class Initialized
+INFO - 2022-01-19 12:45:38 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Office" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Extra" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:45:38 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:45:38 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:38 --> Unable to connect to the database
+ERROR - 2022-01-19 12:45:38 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:45:38 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:45:38 --> Config Class Initialized
+INFO - 2022-01-19 12:45:38 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:45:38 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:45:38 --> URI Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:45:38 --> Router Class Initialized
+INFO - 2022-01-19 12:45:38 --> Output Class Initialized
+INFO - 2022-01-19 12:45:38 --> Security Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:45:38 --> Input Class Initialized
+INFO - 2022-01-19 12:45:38 --> Language Class Initialized
+INFO - 2022-01-19 12:45:38 --> Loader Class Initialized
+INFO - 2022-01-19 12:45:38 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:45:38 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:45:38 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:45:38 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:38 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:45:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:45:38 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:45:38 --> Controller Class Initialized
+INFO - 2022-01-19 12:45:38 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Office" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Extra" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:45:38 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:45:38 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:38 --> Unable to connect to the database
+ERROR - 2022-01-19 12:45:38 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:45:38 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:45:38 --> Config Class Initialized
+INFO - 2022-01-19 12:45:38 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:45:38 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:45:38 --> URI Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:45:38 --> Router Class Initialized
+INFO - 2022-01-19 12:45:38 --> Output Class Initialized
+INFO - 2022-01-19 12:45:38 --> Security Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:45:38 --> Input Class Initialized
+INFO - 2022-01-19 12:45:38 --> Language Class Initialized
+INFO - 2022-01-19 12:45:38 --> Loader Class Initialized
+INFO - 2022-01-19 12:45:38 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:45:38 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:45:38 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:45:38 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:38 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:45:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:45:38 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:45:38 --> Controller Class Initialized
+INFO - 2022-01-19 12:45:38 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Office" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Extra" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:45:38 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:45:38 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:38 --> Unable to connect to the database
+ERROR - 2022-01-19 12:45:38 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:45:38 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:45:38 --> Config Class Initialized
+INFO - 2022-01-19 12:45:38 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:45:38 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:45:38 --> URI Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:45:38 --> Router Class Initialized
+INFO - 2022-01-19 12:45:38 --> Output Class Initialized
+INFO - 2022-01-19 12:45:38 --> Security Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:45:38 --> Input Class Initialized
+INFO - 2022-01-19 12:45:38 --> Language Class Initialized
+INFO - 2022-01-19 12:45:38 --> Loader Class Initialized
+INFO - 2022-01-19 12:45:38 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:45:38 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:45:38 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:45:38 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:38 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:45:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:45:38 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:45:38 --> Controller Class Initialized
+INFO - 2022-01-19 12:45:38 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Office" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Extra" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:45:38 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:45:38 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:45:38 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:38 --> Unable to connect to the database
+ERROR - 2022-01-19 12:45:38 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:45:38 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:45:38 --> Config Class Initialized
+INFO - 2022-01-19 12:45:38 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:45:38 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:45:38 --> URI Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:45:38 --> Router Class Initialized
+INFO - 2022-01-19 12:45:38 --> Output Class Initialized
+INFO - 2022-01-19 12:45:38 --> Security Class Initialized
+DEBUG - 2022-01-19 12:45:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:45:38 --> Input Class Initialized
+INFO - 2022-01-19 12:45:38 --> Language Class Initialized
+INFO - 2022-01-19 12:45:38 --> Loader Class Initialized
+INFO - 2022-01-19 12:45:38 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:45:38 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:45:38 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:45:38 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:38 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:45:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:45:38 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:45:38 --> Controller Class Initialized
+INFO - 2022-01-19 12:45:39 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:45:39 --> Model "Office" initialized
+INFO - 2022-01-19 12:45:39 --> Model "Extra" initialized
+INFO - 2022-01-19 12:45:39 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:45:39 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:45:39 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:45:39 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:39 --> Unable to connect to the database
+ERROR - 2022-01-19 12:45:39 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:45:39 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:45:39 --> Config Class Initialized
+INFO - 2022-01-19 12:45:39 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:45:39 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:45:39 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:45:39 --> URI Class Initialized
+DEBUG - 2022-01-19 12:45:39 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:45:39 --> Router Class Initialized
+INFO - 2022-01-19 12:45:39 --> Output Class Initialized
+INFO - 2022-01-19 12:45:39 --> Security Class Initialized
+DEBUG - 2022-01-19 12:45:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:45:39 --> Input Class Initialized
+INFO - 2022-01-19 12:45:39 --> Language Class Initialized
+INFO - 2022-01-19 12:45:39 --> Loader Class Initialized
+INFO - 2022-01-19 12:45:39 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:45:39 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:45:39 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:45:39 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:39 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:45:39 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:45:39 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:45:39 --> Controller Class Initialized
+INFO - 2022-01-19 12:45:39 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:45:39 --> Model "Office" initialized
+INFO - 2022-01-19 12:45:39 --> Model "Extra" initialized
+INFO - 2022-01-19 12:45:39 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:45:39 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:45:39 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:45:39 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:39 --> Unable to connect to the database
+ERROR - 2022-01-19 12:45:39 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:45:39 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:45:56 --> Config Class Initialized
+INFO - 2022-01-19 12:45:56 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:45:56 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:45:56 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:45:56 --> URI Class Initialized
+DEBUG - 2022-01-19 12:45:56 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:45:56 --> Router Class Initialized
+INFO - 2022-01-19 12:45:56 --> Output Class Initialized
+INFO - 2022-01-19 12:45:56 --> Security Class Initialized
+DEBUG - 2022-01-19 12:45:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:45:56 --> Input Class Initialized
+INFO - 2022-01-19 12:45:56 --> Language Class Initialized
+INFO - 2022-01-19 12:45:56 --> Loader Class Initialized
+INFO - 2022-01-19 12:45:56 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:45:56 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:45:56 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:45:56 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:56 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:45:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:45:56 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:45:56 --> Controller Class Initialized
+INFO - 2022-01-19 12:45:56 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:45:56 --> Model "Office" initialized
+INFO - 2022-01-19 12:45:56 --> Model "Extra" initialized
+INFO - 2022-01-19 12:45:56 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:45:56 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:45:56 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:45:56 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:45:56 --> Unable to connect to the database
+ERROR - 2022-01-19 12:45:56 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:45:56 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:46:01 --> Config Class Initialized
+INFO - 2022-01-19 12:46:01 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:46:01 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:46:01 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:46:01 --> URI Class Initialized
+DEBUG - 2022-01-19 12:46:01 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:46:01 --> Router Class Initialized
+INFO - 2022-01-19 12:46:01 --> Output Class Initialized
+INFO - 2022-01-19 12:46:01 --> Security Class Initialized
+DEBUG - 2022-01-19 12:46:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:46:01 --> Input Class Initialized
+INFO - 2022-01-19 12:46:01 --> Language Class Initialized
+INFO - 2022-01-19 12:46:01 --> Loader Class Initialized
+INFO - 2022-01-19 12:46:01 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:46:01 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:46:01 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:46:01 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:46:01 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:46:01 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:46:01 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:46:01 --> Controller Class Initialized
+INFO - 2022-01-19 12:46:01 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:46:01 --> Model "Office" initialized
+INFO - 2022-01-19 12:46:01 --> Model "Extra" initialized
+INFO - 2022-01-19 12:46:01 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:46:01 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:46:01 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:46:01 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:46:01 --> Unable to connect to the database
+ERROR - 2022-01-19 12:46:01 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:46:01 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:46:04 --> Config Class Initialized
+INFO - 2022-01-19 12:46:04 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:46:04 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:46:04 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:46:04 --> URI Class Initialized
+DEBUG - 2022-01-19 12:46:04 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:46:04 --> Router Class Initialized
+INFO - 2022-01-19 12:46:04 --> Output Class Initialized
+INFO - 2022-01-19 12:46:04 --> Security Class Initialized
+DEBUG - 2022-01-19 12:46:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:46:04 --> Input Class Initialized
+INFO - 2022-01-19 12:46:04 --> Language Class Initialized
+INFO - 2022-01-19 12:46:04 --> Loader Class Initialized
+INFO - 2022-01-19 12:46:04 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:46:04 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:46:04 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:46:04 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:46:04 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:46:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:46:04 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:46:04 --> Controller Class Initialized
+INFO - 2022-01-19 12:46:04 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:46:04 --> Model "Office" initialized
+INFO - 2022-01-19 12:46:04 --> Model "Extra" initialized
+INFO - 2022-01-19 12:46:04 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:46:04 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:46:04 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:46:04 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:46:04 --> Unable to connect to the database
+ERROR - 2022-01-19 12:46:04 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:46:04 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 12:47:14 --> Config Class Initialized
+INFO - 2022-01-19 12:47:14 --> Hooks Class Initialized
+DEBUG - 2022-01-19 12:47:14 --> UTF-8 Support Enabled
+INFO - 2022-01-19 12:47:14 --> Utf8 Class Initialized
+INFO - 2022-01-19 12:47:14 --> URI Class Initialized
+DEBUG - 2022-01-19 12:47:14 --> No URI present. Default controller set.
+INFO - 2022-01-19 12:47:14 --> Router Class Initialized
+INFO - 2022-01-19 12:47:14 --> Output Class Initialized
+INFO - 2022-01-19 12:47:14 --> Security Class Initialized
+DEBUG - 2022-01-19 12:47:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 12:47:14 --> Input Class Initialized
+INFO - 2022-01-19 12:47:14 --> Language Class Initialized
+INFO - 2022-01-19 12:47:14 --> Loader Class Initialized
+INFO - 2022-01-19 12:47:14 --> Helper loaded: url_helper
+INFO - 2022-01-19 12:47:14 --> Helper loaded: util_helper
+INFO - 2022-01-19 12:47:14 --> Database Driver Class Initialized
+ERROR - 2022-01-19 12:47:14 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:47:14 --> Unable to connect to the database
+DEBUG - 2022-01-19 12:47:14 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 12:47:14 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 12:47:14 --> Controller Class Initialized
+INFO - 2022-01-19 12:47:14 --> Model "Pocket" initialized
+INFO - 2022-01-19 12:47:14 --> Model "Office" initialized
+INFO - 2022-01-19 12:47:14 --> Model "Extra" initialized
+INFO - 2022-01-19 12:47:14 --> Model "Parameter" initialized
+INFO - 2022-01-19 12:47:14 --> Model "Barrio" initialized
+INFO - 2022-01-19 12:47:14 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 12:47:14 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 12:47:14 --> Unable to connect to the database
+ERROR - 2022-01-19 12:47:14 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 12:47:14 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:44:46 --> Config Class Initialized
+INFO - 2022-01-19 22:44:46 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:44:46 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:44:46 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:44:46 --> URI Class Initialized
+DEBUG - 2022-01-19 22:44:46 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:44:46 --> Router Class Initialized
+INFO - 2022-01-19 22:44:46 --> Output Class Initialized
+INFO - 2022-01-19 22:44:46 --> Security Class Initialized
+DEBUG - 2022-01-19 22:44:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:44:46 --> Input Class Initialized
+INFO - 2022-01-19 22:44:46 --> Language Class Initialized
+INFO - 2022-01-19 22:44:46 --> Loader Class Initialized
+INFO - 2022-01-19 22:44:46 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:44:46 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:44:46 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:44:46 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:44:46 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:44:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:44:46 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:44:46 --> Controller Class Initialized
+INFO - 2022-01-19 22:44:46 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:44:46 --> Model "Office" initialized
+INFO - 2022-01-19 22:44:46 --> Model "Extra" initialized
+INFO - 2022-01-19 22:44:46 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:44:46 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:44:46 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:44:46 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:44:46 --> Unable to connect to the database
+ERROR - 2022-01-19 22:44:46 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:44:46 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:47:36 --> Config Class Initialized
+INFO - 2022-01-19 22:47:36 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:47:36 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:47:36 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:47:36 --> URI Class Initialized
+DEBUG - 2022-01-19 22:47:36 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:47:36 --> Router Class Initialized
+INFO - 2022-01-19 22:47:36 --> Output Class Initialized
+INFO - 2022-01-19 22:47:36 --> Security Class Initialized
+DEBUG - 2022-01-19 22:47:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:47:36 --> Input Class Initialized
+INFO - 2022-01-19 22:47:36 --> Language Class Initialized
+INFO - 2022-01-19 22:47:36 --> Loader Class Initialized
+INFO - 2022-01-19 22:47:36 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:47:36 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:47:36 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:47:36 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:47:36 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:47:36 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:47:36 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:47:36 --> Controller Class Initialized
+INFO - 2022-01-19 22:47:36 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:47:36 --> Model "Office" initialized
+INFO - 2022-01-19 22:47:36 --> Model "Extra" initialized
+INFO - 2022-01-19 22:47:36 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:47:36 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:47:36 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:47:36 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:47:36 --> Unable to connect to the database
+ERROR - 2022-01-19 22:47:36 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:47:36 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:47:58 --> Config Class Initialized
+INFO - 2022-01-19 22:47:58 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:47:58 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:47:58 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:47:58 --> URI Class Initialized
+DEBUG - 2022-01-19 22:47:58 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:47:58 --> Router Class Initialized
+INFO - 2022-01-19 22:47:58 --> Output Class Initialized
+INFO - 2022-01-19 22:47:58 --> Security Class Initialized
+DEBUG - 2022-01-19 22:47:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:47:58 --> Input Class Initialized
+INFO - 2022-01-19 22:47:58 --> Language Class Initialized
+INFO - 2022-01-19 22:47:58 --> Loader Class Initialized
+INFO - 2022-01-19 22:47:58 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:47:58 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:47:58 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:47:58 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:47:58 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:47:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:47:58 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:47:58 --> Controller Class Initialized
+INFO - 2022-01-19 22:47:58 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:47:58 --> Model "Office" initialized
+INFO - 2022-01-19 22:47:58 --> Model "Extra" initialized
+INFO - 2022-01-19 22:47:58 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:47:58 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:47:58 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:47:58 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:47:58 --> Unable to connect to the database
+ERROR - 2022-01-19 22:47:58 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:47:58 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:48:45 --> Config Class Initialized
+INFO - 2022-01-19 22:48:45 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:48:45 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:48:45 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:48:45 --> URI Class Initialized
+DEBUG - 2022-01-19 22:48:45 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:48:45 --> Router Class Initialized
+INFO - 2022-01-19 22:48:45 --> Output Class Initialized
+INFO - 2022-01-19 22:48:45 --> Security Class Initialized
+DEBUG - 2022-01-19 22:48:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:48:45 --> Input Class Initialized
+INFO - 2022-01-19 22:48:45 --> Language Class Initialized
+INFO - 2022-01-19 22:48:45 --> Loader Class Initialized
+INFO - 2022-01-19 22:48:45 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:48:45 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:48:46 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:48:46 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:48:46 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:48:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:48:46 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:48:46 --> Controller Class Initialized
+INFO - 2022-01-19 22:48:46 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:48:46 --> Model "Office" initialized
+INFO - 2022-01-19 22:48:46 --> Model "Extra" initialized
+INFO - 2022-01-19 22:48:46 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:48:46 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:48:46 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:48:46 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:48:46 --> Unable to connect to the database
+ERROR - 2022-01-19 22:48:46 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:48:46 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:48:57 --> Config Class Initialized
+INFO - 2022-01-19 22:48:57 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:48:57 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:48:57 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:48:57 --> URI Class Initialized
+DEBUG - 2022-01-19 22:48:57 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:48:57 --> Router Class Initialized
+INFO - 2022-01-19 22:48:57 --> Output Class Initialized
+INFO - 2022-01-19 22:48:57 --> Security Class Initialized
+DEBUG - 2022-01-19 22:48:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:48:57 --> Input Class Initialized
+INFO - 2022-01-19 22:48:57 --> Language Class Initialized
+INFO - 2022-01-19 22:48:57 --> Loader Class Initialized
+INFO - 2022-01-19 22:48:57 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:48:57 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:48:57 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:48:57 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:48:57 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:48:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:48:57 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:48:57 --> Controller Class Initialized
+INFO - 2022-01-19 22:48:57 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:48:57 --> Model "Office" initialized
+INFO - 2022-01-19 22:48:57 --> Model "Extra" initialized
+INFO - 2022-01-19 22:48:57 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:48:57 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:48:57 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:48:57 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:48:57 --> Unable to connect to the database
+ERROR - 2022-01-19 22:48:57 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:48:57 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:49:10 --> Config Class Initialized
+INFO - 2022-01-19 22:49:10 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:49:10 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:49:10 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:49:10 --> URI Class Initialized
+DEBUG - 2022-01-19 22:49:10 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:49:10 --> Router Class Initialized
+INFO - 2022-01-19 22:49:10 --> Output Class Initialized
+INFO - 2022-01-19 22:49:10 --> Security Class Initialized
+DEBUG - 2022-01-19 22:49:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:49:10 --> Input Class Initialized
+INFO - 2022-01-19 22:49:10 --> Language Class Initialized
+INFO - 2022-01-19 22:49:10 --> Loader Class Initialized
+INFO - 2022-01-19 22:49:10 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:49:10 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:49:10 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:49:10 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:49:10 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:49:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:49:10 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:49:10 --> Controller Class Initialized
+INFO - 2022-01-19 22:49:10 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:49:10 --> Model "Office" initialized
+INFO - 2022-01-19 22:49:10 --> Model "Extra" initialized
+INFO - 2022-01-19 22:49:10 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:49:10 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:49:10 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:49:10 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:49:10 --> Unable to connect to the database
+ERROR - 2022-01-19 22:49:10 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:49:10 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:51:16 --> Config Class Initialized
+INFO - 2022-01-19 22:51:16 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:51:16 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:51:16 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:51:16 --> URI Class Initialized
+DEBUG - 2022-01-19 22:51:16 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:51:16 --> Router Class Initialized
+INFO - 2022-01-19 22:51:16 --> Output Class Initialized
+INFO - 2022-01-19 22:51:16 --> Security Class Initialized
+DEBUG - 2022-01-19 22:51:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:51:16 --> Input Class Initialized
+INFO - 2022-01-19 22:51:16 --> Language Class Initialized
+INFO - 2022-01-19 22:51:16 --> Loader Class Initialized
+INFO - 2022-01-19 22:51:16 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:51:16 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:51:16 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:51:16 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:51:16 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:51:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:51:16 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:51:16 --> Controller Class Initialized
+INFO - 2022-01-19 22:51:16 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:51:16 --> Model "Office" initialized
+INFO - 2022-01-19 22:51:16 --> Model "Extra" initialized
+INFO - 2022-01-19 22:51:16 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:51:16 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:51:16 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:51:16 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:51:16 --> Unable to connect to the database
+ERROR - 2022-01-19 22:51:16 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:51:16 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:51:20 --> Config Class Initialized
+INFO - 2022-01-19 22:51:20 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:51:20 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:51:20 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:51:20 --> URI Class Initialized
+DEBUG - 2022-01-19 22:51:20 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:51:20 --> Router Class Initialized
+INFO - 2022-01-19 22:51:20 --> Output Class Initialized
+INFO - 2022-01-19 22:51:20 --> Security Class Initialized
+DEBUG - 2022-01-19 22:51:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:51:20 --> Input Class Initialized
+INFO - 2022-01-19 22:51:20 --> Language Class Initialized
+INFO - 2022-01-19 22:51:20 --> Loader Class Initialized
+INFO - 2022-01-19 22:51:20 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:51:20 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:51:20 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:51:20 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:51:20 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:51:20 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:51:20 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:51:20 --> Controller Class Initialized
+INFO - 2022-01-19 22:51:20 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:51:20 --> Model "Office" initialized
+INFO - 2022-01-19 22:51:20 --> Model "Extra" initialized
+INFO - 2022-01-19 22:51:20 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:51:20 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:51:20 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:51:20 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:51:20 --> Unable to connect to the database
+ERROR - 2022-01-19 22:51:20 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:51:20 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:51:33 --> Config Class Initialized
+INFO - 2022-01-19 22:51:33 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:51:33 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:51:33 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:51:33 --> URI Class Initialized
+DEBUG - 2022-01-19 22:51:33 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:51:33 --> Router Class Initialized
+INFO - 2022-01-19 22:51:33 --> Output Class Initialized
+INFO - 2022-01-19 22:51:33 --> Security Class Initialized
+DEBUG - 2022-01-19 22:51:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:51:33 --> Input Class Initialized
+INFO - 2022-01-19 22:51:33 --> Language Class Initialized
+INFO - 2022-01-19 22:51:33 --> Loader Class Initialized
+INFO - 2022-01-19 22:51:33 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:51:33 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:51:33 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:51:33 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:51:33 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:51:33 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:51:33 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:51:33 --> Controller Class Initialized
+INFO - 2022-01-19 22:51:33 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:51:33 --> Model "Office" initialized
+INFO - 2022-01-19 22:51:33 --> Model "Extra" initialized
+INFO - 2022-01-19 22:51:33 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:51:33 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:51:33 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:51:33 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:51:33 --> Unable to connect to the database
+ERROR - 2022-01-19 22:51:33 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:51:33 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:51:39 --> Config Class Initialized
+INFO - 2022-01-19 22:51:39 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:51:39 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:51:39 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:51:39 --> URI Class Initialized
+DEBUG - 2022-01-19 22:51:39 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:51:39 --> Router Class Initialized
+INFO - 2022-01-19 22:51:39 --> Output Class Initialized
+INFO - 2022-01-19 22:51:39 --> Security Class Initialized
+DEBUG - 2022-01-19 22:51:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:51:39 --> Input Class Initialized
+INFO - 2022-01-19 22:51:39 --> Language Class Initialized
+INFO - 2022-01-19 22:51:39 --> Loader Class Initialized
+INFO - 2022-01-19 22:51:39 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:51:39 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:51:39 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:51:39 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:51:39 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:51:39 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:51:39 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:51:39 --> Controller Class Initialized
+INFO - 2022-01-19 22:51:39 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:51:39 --> Model "Office" initialized
+INFO - 2022-01-19 22:51:39 --> Model "Extra" initialized
+INFO - 2022-01-19 22:51:39 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:51:39 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:51:39 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:51:39 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:51:39 --> Unable to connect to the database
+ERROR - 2022-01-19 22:51:39 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:51:39 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:51:47 --> Config Class Initialized
+INFO - 2022-01-19 22:51:47 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:51:47 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:51:47 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:51:47 --> URI Class Initialized
+DEBUG - 2022-01-19 22:51:47 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:51:47 --> Router Class Initialized
+INFO - 2022-01-19 22:51:47 --> Output Class Initialized
+INFO - 2022-01-19 22:51:47 --> Security Class Initialized
+DEBUG - 2022-01-19 22:51:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:51:47 --> Input Class Initialized
+INFO - 2022-01-19 22:51:47 --> Language Class Initialized
+ERROR - 2022-01-19 22:51:47 --> Severity: error --> Exception: syntax error, unexpected ';', expecting ']' /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 850
+INFO - 2022-01-19 22:51:56 --> Config Class Initialized
+INFO - 2022-01-19 22:51:56 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:51:56 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:51:56 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:51:56 --> URI Class Initialized
+DEBUG - 2022-01-19 22:51:56 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:51:56 --> Router Class Initialized
+INFO - 2022-01-19 22:51:56 --> Output Class Initialized
+INFO - 2022-01-19 22:51:56 --> Security Class Initialized
+DEBUG - 2022-01-19 22:51:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:51:56 --> Input Class Initialized
+INFO - 2022-01-19 22:51:56 --> Language Class Initialized
+ERROR - 2022-01-19 22:51:56 --> Severity: error --> Exception: syntax error, unexpected ''bolsones'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 849
+INFO - 2022-01-19 22:52:00 --> Config Class Initialized
+INFO - 2022-01-19 22:52:00 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:52:00 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:52:00 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:52:00 --> URI Class Initialized
+DEBUG - 2022-01-19 22:52:00 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:52:00 --> Router Class Initialized
+INFO - 2022-01-19 22:52:00 --> Output Class Initialized
+INFO - 2022-01-19 22:52:00 --> Security Class Initialized
+DEBUG - 2022-01-19 22:52:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:52:00 --> Input Class Initialized
+INFO - 2022-01-19 22:52:00 --> Language Class Initialized
+INFO - 2022-01-19 22:52:00 --> Loader Class Initialized
+INFO - 2022-01-19 22:52:00 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:52:00 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:52:00 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:52:00 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:00 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:52:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:52:00 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:52:00 --> Controller Class Initialized
+INFO - 2022-01-19 22:52:00 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:52:00 --> Model "Office" initialized
+INFO - 2022-01-19 22:52:00 --> Model "Extra" initialized
+INFO - 2022-01-19 22:52:00 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:52:00 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:52:00 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:52:00 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:00 --> Unable to connect to the database
+ERROR - 2022-01-19 22:52:00 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:52:00 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:52:06 --> Config Class Initialized
+INFO - 2022-01-19 22:52:06 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:52:06 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:52:06 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:52:06 --> URI Class Initialized
+DEBUG - 2022-01-19 22:52:06 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:52:06 --> Router Class Initialized
+INFO - 2022-01-19 22:52:06 --> Output Class Initialized
+INFO - 2022-01-19 22:52:06 --> Security Class Initialized
+DEBUG - 2022-01-19 22:52:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:52:06 --> Input Class Initialized
+INFO - 2022-01-19 22:52:06 --> Language Class Initialized
+INFO - 2022-01-19 22:52:06 --> Loader Class Initialized
+INFO - 2022-01-19 22:52:06 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:52:06 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:52:06 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:52:06 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:06 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:52:06 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:52:06 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:52:06 --> Controller Class Initialized
+INFO - 2022-01-19 22:52:06 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:52:06 --> Model "Office" initialized
+INFO - 2022-01-19 22:52:06 --> Model "Extra" initialized
+INFO - 2022-01-19 22:52:06 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:52:06 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:52:06 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:52:06 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:06 --> Unable to connect to the database
+ERROR - 2022-01-19 22:52:06 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:52:06 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:52:13 --> Config Class Initialized
+INFO - 2022-01-19 22:52:13 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:52:13 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:52:13 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:52:13 --> URI Class Initialized
+DEBUG - 2022-01-19 22:52:13 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:52:13 --> Router Class Initialized
+INFO - 2022-01-19 22:52:13 --> Output Class Initialized
+INFO - 2022-01-19 22:52:13 --> Security Class Initialized
+DEBUG - 2022-01-19 22:52:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:52:13 --> Input Class Initialized
+INFO - 2022-01-19 22:52:13 --> Language Class Initialized
+INFO - 2022-01-19 22:52:13 --> Loader Class Initialized
+INFO - 2022-01-19 22:52:13 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:52:13 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:52:13 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:52:13 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:13 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:52:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:52:13 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:52:13 --> Controller Class Initialized
+INFO - 2022-01-19 22:52:13 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:52:13 --> Model "Office" initialized
+INFO - 2022-01-19 22:52:13 --> Model "Extra" initialized
+INFO - 2022-01-19 22:52:13 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:52:13 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:52:13 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:52:13 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:13 --> Unable to connect to the database
+ERROR - 2022-01-19 22:52:13 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:52:13 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:52:17 --> Config Class Initialized
+INFO - 2022-01-19 22:52:17 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:52:17 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:52:17 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:52:17 --> URI Class Initialized
+DEBUG - 2022-01-19 22:52:17 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:52:17 --> Router Class Initialized
+INFO - 2022-01-19 22:52:17 --> Output Class Initialized
+INFO - 2022-01-19 22:52:17 --> Security Class Initialized
+DEBUG - 2022-01-19 22:52:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:52:17 --> Input Class Initialized
+INFO - 2022-01-19 22:52:17 --> Language Class Initialized
+INFO - 2022-01-19 22:52:17 --> Loader Class Initialized
+INFO - 2022-01-19 22:52:17 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:52:17 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:52:17 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:52:17 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:17 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:52:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:52:17 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:52:17 --> Controller Class Initialized
+INFO - 2022-01-19 22:52:17 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:52:17 --> Model "Office" initialized
+INFO - 2022-01-19 22:52:17 --> Model "Extra" initialized
+INFO - 2022-01-19 22:52:17 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:52:17 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:52:17 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:52:17 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:17 --> Unable to connect to the database
+ERROR - 2022-01-19 22:52:17 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:52:17 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:52:51 --> Config Class Initialized
+INFO - 2022-01-19 22:52:51 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:52:51 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:52:51 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:52:51 --> URI Class Initialized
+DEBUG - 2022-01-19 22:52:51 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:52:51 --> Router Class Initialized
+INFO - 2022-01-19 22:52:51 --> Output Class Initialized
+INFO - 2022-01-19 22:52:51 --> Security Class Initialized
+DEBUG - 2022-01-19 22:52:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:52:51 --> Input Class Initialized
+INFO - 2022-01-19 22:52:51 --> Language Class Initialized
+INFO - 2022-01-19 22:52:51 --> Loader Class Initialized
+INFO - 2022-01-19 22:52:51 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:52:51 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:52:51 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:52:51 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:51 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:52:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:52:51 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:52:51 --> Controller Class Initialized
+INFO - 2022-01-19 22:52:51 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:52:51 --> Model "Office" initialized
+INFO - 2022-01-19 22:52:51 --> Model "Extra" initialized
+INFO - 2022-01-19 22:52:51 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:52:51 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:52:51 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:52:51 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:52:51 --> Unable to connect to the database
+ERROR - 2022-01-19 22:52:51 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:52:51 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:53:02 --> Config Class Initialized
+INFO - 2022-01-19 22:53:02 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:53:02 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:53:02 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:53:02 --> URI Class Initialized
+DEBUG - 2022-01-19 22:53:02 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:53:02 --> Router Class Initialized
+INFO - 2022-01-19 22:53:02 --> Output Class Initialized
+INFO - 2022-01-19 22:53:02 --> Security Class Initialized
+DEBUG - 2022-01-19 22:53:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:53:02 --> Input Class Initialized
+INFO - 2022-01-19 22:53:02 --> Language Class Initialized
+INFO - 2022-01-19 22:53:02 --> Loader Class Initialized
+INFO - 2022-01-19 22:53:02 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:53:02 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:53:02 --> Database Driver Class Initialized
+ERROR - 2022-01-19 22:53:02 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:53:02 --> Unable to connect to the database
+DEBUG - 2022-01-19 22:53:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:53:02 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:53:02 --> Controller Class Initialized
+INFO - 2022-01-19 22:53:02 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:53:02 --> Model "Office" initialized
+INFO - 2022-01-19 22:53:02 --> Model "Extra" initialized
+INFO - 2022-01-19 22:53:02 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:53:02 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:53:02 --> Model "DiasEntregaPedidos" initialized
+ERROR - 2022-01-19 22:53:02 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/database/drivers/mysqli/mysqli_driver.php 203
+ERROR - 2022-01-19 22:53:02 --> Unable to connect to the database
+ERROR - 2022-01-19 22:53:02 --> Query error: Access denied for user 'ebtienda_ebt'@'localhost' (using password: YES) - Invalid query: SELECT `id`, `name`, `price`, `delivery_price`, `cant`
+FROM `pockets`
+WHERE `active` = 1
+ERROR - 2022-01-19 22:53:02 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/XAMPP/xamppfiles/htdocs/ebo/application/models/Pocket.php 16
+INFO - 2022-01-19 22:53:31 --> Config Class Initialized
+INFO - 2022-01-19 22:53:31 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:53:31 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:53:31 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:53:31 --> URI Class Initialized
+DEBUG - 2022-01-19 22:53:31 --> No URI present. Default controller set.
+INFO - 2022-01-19 22:53:31 --> Router Class Initialized
+INFO - 2022-01-19 22:53:31 --> Output Class Initialized
+INFO - 2022-01-19 22:53:31 --> Security Class Initialized
+DEBUG - 2022-01-19 22:53:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:53:31 --> Input Class Initialized
+INFO - 2022-01-19 22:53:31 --> Language Class Initialized
+INFO - 2022-01-19 22:53:31 --> Loader Class Initialized
+INFO - 2022-01-19 22:53:31 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:53:31 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:53:31 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 22:53:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:53:31 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:53:31 --> Controller Class Initialized
+INFO - 2022-01-19 22:53:31 --> Model "Pocket" initialized
+INFO - 2022-01-19 22:53:31 --> Model "Office" initialized
+INFO - 2022-01-19 22:53:31 --> Model "Extra" initialized
+INFO - 2022-01-19 22:53:31 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:53:31 --> Model "Barrio" initialized
+INFO - 2022-01-19 22:53:31 --> Model "DiasEntregaPedidos" initialized
+INFO - 2022-01-19 22:53:31 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2022-01-19 22:53:31 --> Final output sent to browser
+DEBUG - 2022-01-19 22:53:31 --> Total execution time: 0.0317
+INFO - 2022-01-19 22:54:17 --> Config Class Initialized
+INFO - 2022-01-19 22:54:17 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:54:17 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:54:17 --> URI Class Initialized
+INFO - 2022-01-19 22:54:17 --> Router Class Initialized
+INFO - 2022-01-19 22:54:17 --> Output Class Initialized
+INFO - 2022-01-19 22:54:17 --> Security Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:54:17 --> Input Class Initialized
+INFO - 2022-01-19 22:54:17 --> Language Class Initialized
+INFO - 2022-01-19 22:54:17 --> Loader Class Initialized
+INFO - 2022-01-19 22:54:17 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:54:17 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:54:17 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:54:17 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:54:17 --> Controller Class Initialized
+INFO - 2022-01-19 22:54:17 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:54:17 --> Final output sent to browser
+DEBUG - 2022-01-19 22:54:17 --> Total execution time: 0.0131
+INFO - 2022-01-19 22:54:17 --> Config Class Initialized
+INFO - 2022-01-19 22:54:17 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:54:17 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:54:17 --> URI Class Initialized
+INFO - 2022-01-19 22:54:17 --> Router Class Initialized
+INFO - 2022-01-19 22:54:17 --> Output Class Initialized
+INFO - 2022-01-19 22:54:17 --> Security Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:54:17 --> Input Class Initialized
+INFO - 2022-01-19 22:54:17 --> Language Class Initialized
+INFO - 2022-01-19 22:54:17 --> Loader Class Initialized
+INFO - 2022-01-19 22:54:17 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:54:17 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:54:17 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:54:17 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:54:17 --> Controller Class Initialized
+INFO - 2022-01-19 22:54:17 --> Model "Extra" initialized
+INFO - 2022-01-19 22:54:17 --> Final output sent to browser
+DEBUG - 2022-01-19 22:54:17 --> Total execution time: 0.0106
+INFO - 2022-01-19 22:54:17 --> Config Class Initialized
+INFO - 2022-01-19 22:54:17 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:54:17 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:54:17 --> URI Class Initialized
+INFO - 2022-01-19 22:54:17 --> Router Class Initialized
+INFO - 2022-01-19 22:54:17 --> Output Class Initialized
+INFO - 2022-01-19 22:54:17 --> Security Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:54:17 --> Input Class Initialized
+INFO - 2022-01-19 22:54:17 --> Language Class Initialized
+INFO - 2022-01-19 22:54:17 --> Loader Class Initialized
+INFO - 2022-01-19 22:54:17 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:54:17 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:54:17 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:54:17 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:54:17 --> Controller Class Initialized
+INFO - 2022-01-19 22:54:17 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:54:17 --> Final output sent to browser
+DEBUG - 2022-01-19 22:54:17 --> Total execution time: 0.0096
+INFO - 2022-01-19 22:54:17 --> Config Class Initialized
+INFO - 2022-01-19 22:54:17 --> Hooks Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> UTF-8 Support Enabled
+INFO - 2022-01-19 22:54:17 --> Utf8 Class Initialized
+INFO - 2022-01-19 22:54:17 --> URI Class Initialized
+INFO - 2022-01-19 22:54:17 --> Router Class Initialized
+INFO - 2022-01-19 22:54:17 --> Output Class Initialized
+INFO - 2022-01-19 22:54:17 --> Security Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 22:54:17 --> Input Class Initialized
+INFO - 2022-01-19 22:54:17 --> Language Class Initialized
+INFO - 2022-01-19 22:54:17 --> Loader Class Initialized
+INFO - 2022-01-19 22:54:17 --> Helper loaded: url_helper
+INFO - 2022-01-19 22:54:17 --> Helper loaded: util_helper
+INFO - 2022-01-19 22:54:17 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 22:54:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 22:54:17 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 22:54:17 --> Controller Class Initialized
+INFO - 2022-01-19 22:54:17 --> Model "Parameter" initialized
+INFO - 2022-01-19 22:54:17 --> Final output sent to browser
+DEBUG - 2022-01-19 22:54:17 --> Total execution time: 0.0089
+INFO - 2022-01-19 23:02:02 --> Config Class Initialized
+INFO - 2022-01-19 23:02:02 --> Hooks Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> UTF-8 Support Enabled
+INFO - 2022-01-19 23:02:02 --> Utf8 Class Initialized
+INFO - 2022-01-19 23:02:02 --> URI Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> No URI present. Default controller set.
+INFO - 2022-01-19 23:02:02 --> Router Class Initialized
+INFO - 2022-01-19 23:02:02 --> Output Class Initialized
+INFO - 2022-01-19 23:02:02 --> Security Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 23:02:02 --> Input Class Initialized
+INFO - 2022-01-19 23:02:02 --> Language Class Initialized
+INFO - 2022-01-19 23:02:02 --> Loader Class Initialized
+INFO - 2022-01-19 23:02:02 --> Helper loaded: url_helper
+INFO - 2022-01-19 23:02:02 --> Helper loaded: util_helper
+INFO - 2022-01-19 23:02:02 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 23:02:02 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 23:02:02 --> Controller Class Initialized
+INFO - 2022-01-19 23:02:02 --> Model "Pocket" initialized
+INFO - 2022-01-19 23:02:02 --> Model "Office" initialized
+INFO - 2022-01-19 23:02:02 --> Model "Extra" initialized
+INFO - 2022-01-19 23:02:02 --> Model "Parameter" initialized
+INFO - 2022-01-19 23:02:02 --> Model "Barrio" initialized
+INFO - 2022-01-19 23:02:02 --> Model "DiasEntregaPedidos" initialized
+INFO - 2022-01-19 23:02:02 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2022-01-19 23:02:02 --> Final output sent to browser
+DEBUG - 2022-01-19 23:02:02 --> Total execution time: 0.0386
+INFO - 2022-01-19 23:02:02 --> Config Class Initialized
+INFO - 2022-01-19 23:02:02 --> Hooks Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> UTF-8 Support Enabled
+INFO - 2022-01-19 23:02:02 --> Utf8 Class Initialized
+INFO - 2022-01-19 23:02:02 --> URI Class Initialized
+INFO - 2022-01-19 23:02:02 --> Router Class Initialized
+INFO - 2022-01-19 23:02:02 --> Output Class Initialized
+INFO - 2022-01-19 23:02:02 --> Security Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 23:02:02 --> Input Class Initialized
+INFO - 2022-01-19 23:02:02 --> Language Class Initialized
+INFO - 2022-01-19 23:02:02 --> Loader Class Initialized
+INFO - 2022-01-19 23:02:02 --> Helper loaded: url_helper
+INFO - 2022-01-19 23:02:02 --> Helper loaded: util_helper
+INFO - 2022-01-19 23:02:02 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 23:02:02 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 23:02:02 --> Controller Class Initialized
+INFO - 2022-01-19 23:02:02 --> Model "Parameter" initialized
+INFO - 2022-01-19 23:02:02 --> Final output sent to browser
+DEBUG - 2022-01-19 23:02:02 --> Total execution time: 0.0130
+INFO - 2022-01-19 23:02:02 --> Config Class Initialized
+INFO - 2022-01-19 23:02:02 --> Hooks Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> UTF-8 Support Enabled
+INFO - 2022-01-19 23:02:02 --> Utf8 Class Initialized
+INFO - 2022-01-19 23:02:02 --> URI Class Initialized
+INFO - 2022-01-19 23:02:02 --> Router Class Initialized
+INFO - 2022-01-19 23:02:02 --> Output Class Initialized
+INFO - 2022-01-19 23:02:02 --> Security Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 23:02:02 --> Input Class Initialized
+INFO - 2022-01-19 23:02:02 --> Language Class Initialized
+INFO - 2022-01-19 23:02:02 --> Loader Class Initialized
+INFO - 2022-01-19 23:02:02 --> Helper loaded: url_helper
+INFO - 2022-01-19 23:02:02 --> Helper loaded: util_helper
+INFO - 2022-01-19 23:02:02 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 23:02:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 23:02:02 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 23:02:02 --> Controller Class Initialized
+INFO - 2022-01-19 23:02:02 --> Model "Extra" initialized
+INFO - 2022-01-19 23:02:03 --> Final output sent to browser
+DEBUG - 2022-01-19 23:02:03 --> Total execution time: 0.0092
+INFO - 2022-01-19 23:02:03 --> Config Class Initialized
+INFO - 2022-01-19 23:02:03 --> Hooks Class Initialized
+DEBUG - 2022-01-19 23:02:03 --> UTF-8 Support Enabled
+INFO - 2022-01-19 23:02:03 --> Utf8 Class Initialized
+INFO - 2022-01-19 23:02:03 --> URI Class Initialized
+INFO - 2022-01-19 23:02:03 --> Router Class Initialized
+INFO - 2022-01-19 23:02:03 --> Output Class Initialized
+INFO - 2022-01-19 23:02:03 --> Security Class Initialized
+DEBUG - 2022-01-19 23:02:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 23:02:03 --> Input Class Initialized
+INFO - 2022-01-19 23:02:03 --> Language Class Initialized
+INFO - 2022-01-19 23:02:03 --> Loader Class Initialized
+INFO - 2022-01-19 23:02:03 --> Helper loaded: url_helper
+INFO - 2022-01-19 23:02:03 --> Helper loaded: util_helper
+INFO - 2022-01-19 23:02:03 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 23:02:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 23:02:03 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 23:02:03 --> Controller Class Initialized
+INFO - 2022-01-19 23:02:03 --> Model "Parameter" initialized
+INFO - 2022-01-19 23:02:03 --> Final output sent to browser
+DEBUG - 2022-01-19 23:02:03 --> Total execution time: 0.0093
+INFO - 2022-01-19 23:02:03 --> Config Class Initialized
+INFO - 2022-01-19 23:02:03 --> Hooks Class Initialized
+DEBUG - 2022-01-19 23:02:03 --> UTF-8 Support Enabled
+INFO - 2022-01-19 23:02:03 --> Utf8 Class Initialized
+INFO - 2022-01-19 23:02:03 --> URI Class Initialized
+INFO - 2022-01-19 23:02:03 --> Router Class Initialized
+INFO - 2022-01-19 23:02:03 --> Output Class Initialized
+INFO - 2022-01-19 23:02:03 --> Security Class Initialized
+DEBUG - 2022-01-19 23:02:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-19 23:02:03 --> Input Class Initialized
+INFO - 2022-01-19 23:02:03 --> Language Class Initialized
+INFO - 2022-01-19 23:02:03 --> Loader Class Initialized
+INFO - 2022-01-19 23:02:03 --> Helper loaded: url_helper
+INFO - 2022-01-19 23:02:03 --> Helper loaded: util_helper
+INFO - 2022-01-19 23:02:03 --> Database Driver Class Initialized
+DEBUG - 2022-01-19 23:02:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-19 23:02:03 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-19 23:02:03 --> Controller Class Initialized
+INFO - 2022-01-19 23:02:03 --> Model "Parameter" initialized
+INFO - 2022-01-19 23:02:03 --> Final output sent to browser
+DEBUG - 2022-01-19 23:02:03 --> Total execution time: 0.0094

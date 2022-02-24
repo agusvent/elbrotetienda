@@ -1,0 +1,391 @@
+INFO - 2022-01-24 02:34:35 --> Config Class Initialized
+INFO - 2022-01-24 02:34:35 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:34:35 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:34:35 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:34:35 --> URI Class Initialized
+INFO - 2022-01-24 02:34:35 --> Router Class Initialized
+INFO - 2022-01-24 02:34:35 --> Output Class Initialized
+INFO - 2022-01-24 02:34:35 --> Security Class Initialized
+DEBUG - 2022-01-24 02:34:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:34:35 --> Input Class Initialized
+INFO - 2022-01-24 02:34:35 --> Language Class Initialized
+INFO - 2022-01-24 02:34:35 --> Loader Class Initialized
+INFO - 2022-01-24 02:34:35 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:34:35 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:34:35 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:34:35 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:34:35 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:34:35 --> Controller Class Initialized
+INFO - 2022-01-24 02:34:35 --> Model "Order" initialized
+INFO - 2022-01-24 02:34:37 --> Final output sent to browser
+DEBUG - 2022-01-24 02:34:37 --> Total execution time: 2.2757
+INFO - 2022-01-24 02:35:42 --> Config Class Initialized
+INFO - 2022-01-24 02:35:42 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:35:42 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:35:42 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:35:42 --> URI Class Initialized
+INFO - 2022-01-24 02:35:42 --> Router Class Initialized
+INFO - 2022-01-24 02:35:42 --> Output Class Initialized
+INFO - 2022-01-24 02:35:42 --> Security Class Initialized
+DEBUG - 2022-01-24 02:35:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:35:42 --> Input Class Initialized
+INFO - 2022-01-24 02:35:42 --> Language Class Initialized
+INFO - 2022-01-24 02:35:42 --> Loader Class Initialized
+INFO - 2022-01-24 02:35:42 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:35:42 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:35:42 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:35:42 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:35:42 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:35:42 --> Controller Class Initialized
+INFO - 2022-01-24 02:35:42 --> Model "Order" initialized
+INFO - 2022-01-24 02:35:44 --> Final output sent to browser
+DEBUG - 2022-01-24 02:35:44 --> Total execution time: 2.1590
+INFO - 2022-01-24 02:38:13 --> Config Class Initialized
+INFO - 2022-01-24 02:38:13 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:38:13 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:38:13 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:38:13 --> URI Class Initialized
+INFO - 2022-01-24 02:38:13 --> Router Class Initialized
+INFO - 2022-01-24 02:38:13 --> Output Class Initialized
+INFO - 2022-01-24 02:38:13 --> Security Class Initialized
+DEBUG - 2022-01-24 02:38:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:38:13 --> Input Class Initialized
+INFO - 2022-01-24 02:38:13 --> Language Class Initialized
+INFO - 2022-01-24 02:38:13 --> Loader Class Initialized
+INFO - 2022-01-24 02:38:13 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:38:13 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:38:13 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:38:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:38:13 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:38:13 --> Controller Class Initialized
+INFO - 2022-01-24 02:38:13 --> Model "Order" initialized
+ERROR - 2022-01-24 02:38:13 --> Severity: error --> Exception: Too few arguments to function log_message(), 1 passed in /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php on line 1096 and exactly 2 expected /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 459
+INFO - 2022-01-24 02:38:19 --> Config Class Initialized
+INFO - 2022-01-24 02:38:19 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:38:19 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:38:19 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:38:19 --> URI Class Initialized
+INFO - 2022-01-24 02:38:19 --> Router Class Initialized
+INFO - 2022-01-24 02:38:19 --> Output Class Initialized
+INFO - 2022-01-24 02:38:19 --> Security Class Initialized
+DEBUG - 2022-01-24 02:38:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:38:19 --> Input Class Initialized
+INFO - 2022-01-24 02:38:19 --> Language Class Initialized
+INFO - 2022-01-24 02:38:19 --> Loader Class Initialized
+INFO - 2022-01-24 02:38:19 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:38:19 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:38:19 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:38:19 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:38:19 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:38:19 --> Controller Class Initialized
+INFO - 2022-01-24 02:38:19 --> Model "Order" initialized
+INFO - 2022-01-24 02:38:22 --> Final output sent to browser
+DEBUG - 2022-01-24 02:38:22 --> Total execution time: 2.9297
+INFO - 2022-01-24 02:38:47 --> Config Class Initialized
+INFO - 2022-01-24 02:38:47 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:38:47 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:38:47 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:38:47 --> URI Class Initialized
+INFO - 2022-01-24 02:38:47 --> Router Class Initialized
+INFO - 2022-01-24 02:38:47 --> Output Class Initialized
+INFO - 2022-01-24 02:38:47 --> Security Class Initialized
+DEBUG - 2022-01-24 02:38:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:38:47 --> Input Class Initialized
+INFO - 2022-01-24 02:38:47 --> Language Class Initialized
+INFO - 2022-01-24 02:38:47 --> Loader Class Initialized
+INFO - 2022-01-24 02:38:47 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:38:47 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:38:47 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:38:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:38:47 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:38:47 --> Controller Class Initialized
+INFO - 2022-01-24 02:38:47 --> Model "Order" initialized
+ERROR - 2022-01-24 02:38:48 --> HOLAAAAAA
+INFO - 2022-01-24 02:38:49 --> Final output sent to browser
+DEBUG - 2022-01-24 02:38:49 --> Total execution time: 1.7107
+INFO - 2022-01-24 02:40:11 --> Config Class Initialized
+INFO - 2022-01-24 02:40:11 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:40:11 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:40:11 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:40:11 --> URI Class Initialized
+INFO - 2022-01-24 02:40:11 --> Router Class Initialized
+INFO - 2022-01-24 02:40:11 --> Output Class Initialized
+INFO - 2022-01-24 02:40:11 --> Security Class Initialized
+DEBUG - 2022-01-24 02:40:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:40:11 --> Input Class Initialized
+INFO - 2022-01-24 02:40:11 --> Language Class Initialized
+INFO - 2022-01-24 02:40:11 --> Loader Class Initialized
+INFO - 2022-01-24 02:40:11 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:40:11 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:40:11 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:40:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:40:11 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:40:11 --> Controller Class Initialized
+INFO - 2022-01-24 02:40:11 --> Model "Order" initialized
+ERROR - 2022-01-24 02:40:12 --> 
+INFO - 2022-01-24 02:40:13 --> Final output sent to browser
+DEBUG - 2022-01-24 02:40:13 --> Total execution time: 2.1047
+INFO - 2022-01-24 02:40:29 --> Config Class Initialized
+INFO - 2022-01-24 02:40:29 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:40:29 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:40:29 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:40:29 --> URI Class Initialized
+INFO - 2022-01-24 02:40:29 --> Router Class Initialized
+INFO - 2022-01-24 02:40:29 --> Output Class Initialized
+INFO - 2022-01-24 02:40:29 --> Security Class Initialized
+DEBUG - 2022-01-24 02:40:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:40:29 --> Input Class Initialized
+INFO - 2022-01-24 02:40:29 --> Language Class Initialized
+INFO - 2022-01-24 02:40:29 --> Loader Class Initialized
+INFO - 2022-01-24 02:40:29 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:40:29 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:40:29 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:40:29 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:40:29 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:40:29 --> Controller Class Initialized
+INFO - 2022-01-24 02:40:29 --> Model "Order" initialized
+ERROR - 2022-01-24 02:40:30 --> 
+INFO - 2022-01-24 02:40:31 --> Final output sent to browser
+DEBUG - 2022-01-24 02:40:31 --> Total execution time: 1.8709
+INFO - 2022-01-24 02:40:53 --> Config Class Initialized
+INFO - 2022-01-24 02:40:53 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:40:53 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:40:53 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:40:53 --> URI Class Initialized
+INFO - 2022-01-24 02:40:53 --> Router Class Initialized
+INFO - 2022-01-24 02:40:53 --> Output Class Initialized
+INFO - 2022-01-24 02:40:53 --> Security Class Initialized
+DEBUG - 2022-01-24 02:40:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:40:53 --> Input Class Initialized
+INFO - 2022-01-24 02:40:53 --> Language Class Initialized
+INFO - 2022-01-24 02:40:53 --> Loader Class Initialized
+INFO - 2022-01-24 02:40:53 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:40:53 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:40:53 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:40:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:40:53 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:40:53 --> Controller Class Initialized
+INFO - 2022-01-24 02:40:53 --> Model "Order" initialized
+INFO - 2022-01-24 02:40:55 --> Final output sent to browser
+DEBUG - 2022-01-24 02:40:55 --> Total execution time: 1.9929
+INFO - 2022-01-24 02:41:09 --> Config Class Initialized
+INFO - 2022-01-24 02:41:09 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:41:09 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:41:09 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:41:09 --> URI Class Initialized
+INFO - 2022-01-24 02:41:09 --> Router Class Initialized
+INFO - 2022-01-24 02:41:09 --> Output Class Initialized
+INFO - 2022-01-24 02:41:09 --> Security Class Initialized
+DEBUG - 2022-01-24 02:41:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:41:09 --> Input Class Initialized
+INFO - 2022-01-24 02:41:09 --> Language Class Initialized
+INFO - 2022-01-24 02:41:09 --> Loader Class Initialized
+INFO - 2022-01-24 02:41:09 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:41:09 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:41:09 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:41:09 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:41:09 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:41:09 --> Controller Class Initialized
+INFO - 2022-01-24 02:41:09 --> Model "Order" initialized
+INFO - 2022-01-24 02:41:10 --> 
+INFO - 2022-01-24 02:41:11 --> Final output sent to browser
+DEBUG - 2022-01-24 02:41:11 --> Total execution time: 1.7524
+INFO - 2022-01-24 02:58:39 --> Config Class Initialized
+INFO - 2022-01-24 02:58:39 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:58:39 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:58:39 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:58:39 --> URI Class Initialized
+INFO - 2022-01-24 02:58:39 --> Router Class Initialized
+INFO - 2022-01-24 02:58:39 --> Output Class Initialized
+INFO - 2022-01-24 02:58:39 --> Security Class Initialized
+DEBUG - 2022-01-24 02:58:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:58:39 --> Input Class Initialized
+INFO - 2022-01-24 02:58:39 --> Language Class Initialized
+INFO - 2022-01-24 02:58:39 --> Loader Class Initialized
+INFO - 2022-01-24 02:58:39 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:58:39 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:58:39 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:58:39 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:58:39 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:58:39 --> Controller Class Initialized
+INFO - 2022-01-24 02:58:39 --> Model "Order" initialized
+INFO - 2022-01-24 02:58:40 --> Array
+INFO - 2022-01-24 02:58:41 --> Final output sent to browser
+DEBUG - 2022-01-24 02:58:41 --> Total execution time: 1.7111
+INFO - 2022-01-24 02:59:50 --> Config Class Initialized
+INFO - 2022-01-24 02:59:50 --> Hooks Class Initialized
+DEBUG - 2022-01-24 02:59:50 --> UTF-8 Support Enabled
+INFO - 2022-01-24 02:59:50 --> Utf8 Class Initialized
+INFO - 2022-01-24 02:59:50 --> URI Class Initialized
+INFO - 2022-01-24 02:59:50 --> Router Class Initialized
+INFO - 2022-01-24 02:59:50 --> Output Class Initialized
+INFO - 2022-01-24 02:59:50 --> Security Class Initialized
+DEBUG - 2022-01-24 02:59:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 02:59:50 --> Input Class Initialized
+INFO - 2022-01-24 02:59:50 --> Language Class Initialized
+INFO - 2022-01-24 02:59:50 --> Loader Class Initialized
+INFO - 2022-01-24 02:59:50 --> Helper loaded: url_helper
+INFO - 2022-01-24 02:59:50 --> Helper loaded: util_helper
+INFO - 2022-01-24 02:59:50 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 02:59:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 02:59:50 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 02:59:50 --> Controller Class Initialized
+INFO - 2022-01-24 02:59:50 --> Model "Order" initialized
+INFO - 2022-01-24 02:59:51 --> []
+INFO - 2022-01-24 02:59:52 --> Final output sent to browser
+DEBUG - 2022-01-24 02:59:52 --> Total execution time: 1.7789
+INFO - 2022-01-24 03:00:06 --> Config Class Initialized
+INFO - 2022-01-24 03:00:06 --> Hooks Class Initialized
+DEBUG - 2022-01-24 03:00:06 --> UTF-8 Support Enabled
+INFO - 2022-01-24 03:00:06 --> Utf8 Class Initialized
+INFO - 2022-01-24 03:00:06 --> URI Class Initialized
+INFO - 2022-01-24 03:00:06 --> Router Class Initialized
+INFO - 2022-01-24 03:00:06 --> Output Class Initialized
+INFO - 2022-01-24 03:00:06 --> Security Class Initialized
+DEBUG - 2022-01-24 03:00:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 03:00:06 --> Input Class Initialized
+INFO - 2022-01-24 03:00:06 --> Language Class Initialized
+INFO - 2022-01-24 03:00:06 --> Loader Class Initialized
+INFO - 2022-01-24 03:00:06 --> Helper loaded: url_helper
+INFO - 2022-01-24 03:00:06 --> Helper loaded: util_helper
+INFO - 2022-01-24 03:00:06 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 03:00:06 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 03:00:06 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 03:00:06 --> Controller Class Initialized
+INFO - 2022-01-24 03:00:06 --> Model "Order" initialized
+INFO - 2022-01-24 03:00:07 --> {"type":"payment","data_id":"1245595237"}
+INFO - 2022-01-24 03:00:08 --> Final output sent to browser
+DEBUG - 2022-01-24 03:00:08 --> Total execution time: 1.8164
+INFO - 2022-01-24 03:01:36 --> Config Class Initialized
+INFO - 2022-01-24 03:01:36 --> Hooks Class Initialized
+DEBUG - 2022-01-24 03:01:36 --> UTF-8 Support Enabled
+INFO - 2022-01-24 03:01:36 --> Utf8 Class Initialized
+INFO - 2022-01-24 03:01:36 --> URI Class Initialized
+INFO - 2022-01-24 03:01:36 --> Router Class Initialized
+INFO - 2022-01-24 03:01:36 --> Output Class Initialized
+INFO - 2022-01-24 03:01:36 --> Security Class Initialized
+DEBUG - 2022-01-24 03:01:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 03:01:36 --> Input Class Initialized
+INFO - 2022-01-24 03:01:36 --> Language Class Initialized
+INFO - 2022-01-24 03:01:36 --> Loader Class Initialized
+INFO - 2022-01-24 03:01:36 --> Helper loaded: url_helper
+INFO - 2022-01-24 03:01:36 --> Helper loaded: util_helper
+INFO - 2022-01-24 03:01:36 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 03:01:36 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 03:01:36 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 03:01:36 --> Controller Class Initialized
+INFO - 2022-01-24 03:01:36 --> Model "Order" initialized
+INFO - 2022-01-24 03:01:37 --> {"type":"payment","data_id":"1245595237"}
+ERROR - 2022-01-24 03:01:37 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2022-01-24 03:17:29 --> Config Class Initialized
+INFO - 2022-01-24 03:17:29 --> Hooks Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> UTF-8 Support Enabled
+INFO - 2022-01-24 03:17:29 --> Utf8 Class Initialized
+INFO - 2022-01-24 03:17:29 --> URI Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> No URI present. Default controller set.
+INFO - 2022-01-24 03:17:29 --> Router Class Initialized
+INFO - 2022-01-24 03:17:29 --> Output Class Initialized
+INFO - 2022-01-24 03:17:29 --> Security Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 03:17:29 --> Input Class Initialized
+INFO - 2022-01-24 03:17:29 --> Language Class Initialized
+INFO - 2022-01-24 03:17:29 --> Loader Class Initialized
+INFO - 2022-01-24 03:17:29 --> Helper loaded: url_helper
+INFO - 2022-01-24 03:17:29 --> Helper loaded: util_helper
+INFO - 2022-01-24 03:17:29 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 03:17:29 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 03:17:29 --> Controller Class Initialized
+INFO - 2022-01-24 03:17:29 --> Model "Pocket" initialized
+INFO - 2022-01-24 03:17:29 --> Model "Office" initialized
+INFO - 2022-01-24 03:17:29 --> Model "Extra" initialized
+INFO - 2022-01-24 03:17:29 --> Model "Parameter" initialized
+INFO - 2022-01-24 03:17:29 --> Model "Barrio" initialized
+INFO - 2022-01-24 03:17:29 --> Model "DiasEntregaPedidos" initialized
+INFO - 2022-01-24 03:17:29 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2022-01-24 03:17:29 --> Final output sent to browser
+DEBUG - 2022-01-24 03:17:29 --> Total execution time: 0.0541
+INFO - 2022-01-24 03:17:29 --> Config Class Initialized
+INFO - 2022-01-24 03:17:29 --> Hooks Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> UTF-8 Support Enabled
+INFO - 2022-01-24 03:17:29 --> Utf8 Class Initialized
+INFO - 2022-01-24 03:17:29 --> URI Class Initialized
+INFO - 2022-01-24 03:17:29 --> Router Class Initialized
+INFO - 2022-01-24 03:17:29 --> Output Class Initialized
+INFO - 2022-01-24 03:17:29 --> Security Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 03:17:29 --> Input Class Initialized
+INFO - 2022-01-24 03:17:29 --> Language Class Initialized
+INFO - 2022-01-24 03:17:29 --> Loader Class Initialized
+INFO - 2022-01-24 03:17:29 --> Helper loaded: url_helper
+INFO - 2022-01-24 03:17:29 --> Helper loaded: util_helper
+INFO - 2022-01-24 03:17:29 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 03:17:29 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 03:17:29 --> Controller Class Initialized
+INFO - 2022-01-24 03:17:29 --> Model "Parameter" initialized
+INFO - 2022-01-24 03:17:29 --> Final output sent to browser
+DEBUG - 2022-01-24 03:17:29 --> Total execution time: 0.0227
+INFO - 2022-01-24 03:17:29 --> Config Class Initialized
+INFO - 2022-01-24 03:17:29 --> Hooks Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> UTF-8 Support Enabled
+INFO - 2022-01-24 03:17:29 --> Utf8 Class Initialized
+INFO - 2022-01-24 03:17:29 --> URI Class Initialized
+INFO - 2022-01-24 03:17:29 --> Router Class Initialized
+INFO - 2022-01-24 03:17:29 --> Output Class Initialized
+INFO - 2022-01-24 03:17:29 --> Security Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 03:17:29 --> Input Class Initialized
+INFO - 2022-01-24 03:17:29 --> Language Class Initialized
+INFO - 2022-01-24 03:17:29 --> Loader Class Initialized
+INFO - 2022-01-24 03:17:29 --> Helper loaded: url_helper
+INFO - 2022-01-24 03:17:29 --> Helper loaded: util_helper
+INFO - 2022-01-24 03:17:29 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 03:17:29 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 03:17:29 --> Controller Class Initialized
+INFO - 2022-01-24 03:17:29 --> Model "Extra" initialized
+INFO - 2022-01-24 03:17:29 --> Final output sent to browser
+DEBUG - 2022-01-24 03:17:29 --> Total execution time: 0.0119
+INFO - 2022-01-24 03:17:29 --> Config Class Initialized
+INFO - 2022-01-24 03:17:29 --> Hooks Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> UTF-8 Support Enabled
+INFO - 2022-01-24 03:17:29 --> Utf8 Class Initialized
+INFO - 2022-01-24 03:17:29 --> URI Class Initialized
+INFO - 2022-01-24 03:17:29 --> Router Class Initialized
+INFO - 2022-01-24 03:17:29 --> Output Class Initialized
+INFO - 2022-01-24 03:17:29 --> Security Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 03:17:29 --> Input Class Initialized
+INFO - 2022-01-24 03:17:29 --> Language Class Initialized
+INFO - 2022-01-24 03:17:29 --> Loader Class Initialized
+INFO - 2022-01-24 03:17:29 --> Helper loaded: url_helper
+INFO - 2022-01-24 03:17:29 --> Helper loaded: util_helper
+INFO - 2022-01-24 03:17:29 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 03:17:29 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 03:17:29 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 03:17:29 --> Controller Class Initialized
+INFO - 2022-01-24 03:17:29 --> Model "Parameter" initialized
+INFO - 2022-01-24 03:17:29 --> Final output sent to browser
+DEBUG - 2022-01-24 03:17:29 --> Total execution time: 0.0103
+INFO - 2022-01-24 03:17:30 --> Config Class Initialized
+INFO - 2022-01-24 03:17:30 --> Hooks Class Initialized
+DEBUG - 2022-01-24 03:17:30 --> UTF-8 Support Enabled
+INFO - 2022-01-24 03:17:30 --> Utf8 Class Initialized
+INFO - 2022-01-24 03:17:30 --> URI Class Initialized
+INFO - 2022-01-24 03:17:30 --> Router Class Initialized
+INFO - 2022-01-24 03:17:30 --> Output Class Initialized
+INFO - 2022-01-24 03:17:30 --> Security Class Initialized
+DEBUG - 2022-01-24 03:17:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2022-01-24 03:17:30 --> Input Class Initialized
+INFO - 2022-01-24 03:17:30 --> Language Class Initialized
+INFO - 2022-01-24 03:17:30 --> Loader Class Initialized
+INFO - 2022-01-24 03:17:30 --> Helper loaded: url_helper
+INFO - 2022-01-24 03:17:30 --> Helper loaded: util_helper
+INFO - 2022-01-24 03:17:30 --> Database Driver Class Initialized
+DEBUG - 2022-01-24 03:17:30 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2022-01-24 03:17:30 --> Session: Class initialized using 'files' driver.
+INFO - 2022-01-24 03:17:30 --> Controller Class Initialized
+INFO - 2022-01-24 03:17:30 --> Model "Parameter" initialized
+INFO - 2022-01-24 03:17:30 --> Final output sent to browser
+DEBUG - 2022-01-24 03:17:30 --> Total execution time: 0.0104

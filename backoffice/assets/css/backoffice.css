@@ -1,0 +1,622 @@
+@import "toggle.min.css";
+
+html,body {
+    background-color: #f2f2f2;
+}
+
+/* card override */
+.card {
+    border: none;
+    margin-top: 25px;
+}
+
+/* btn override*/ 
+.btn {
+    border-radius: .5rem;
+}
+
+.btn-square {
+    border-radius: 0!important;
+    height:35px;
+}
+
+/* btn-primary override */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active {
+    background-color: #015a6a;
+    border-color: #015a6a;
+}
+
+.btn-green,
+.btn-green:hover,
+.btn-green:active {
+    background-color: #16b108;
+    border-color: #16b108;
+    color:#FFFFFF;
+    font-weight:600;
+}
+
+.btn-blue,
+.btn-blue:hover,
+.btn-blue:active {
+    background-color: #2708b1;
+    border-color: #2708b1;
+    color:#FFFFFF;
+    font-weight:600;
+}
+
+.topbar {
+    background-image: url('../img/topbar-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 18vh;
+}
+
+.topbar-logo {
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.login-wrapper {
+    max-width: 500px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.content-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.options-container-left,
+.options-container-right {
+    width: 49%;
+    margin-left: .4%;
+    margin-right: .4%;
+}
+
+.options-container-right {
+    text-align: right;
+}
+
+input[name="dataFrom"],
+input[name="dataTo"] {
+    display: inline;
+    width: 30%;
+}
+
+.tab-content {
+    padding-top: 30px;
+    border: 1px solid #dee2e6;
+    border-top: 0px;
+}
+
+.xlsExportTable th{
+    background-color:#FFFFFF;
+    text-align:center;
+    font-weight: 600;
+}
+
+.xlsExportTable .nombreGrupo{
+    background-color:#000000;
+    color:#FFFFFF;
+    text-align:left;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.infoPedidosTableHead{
+    background-color: #000000;
+    border-bottom: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    font-weight: 600;
+    text-align:center;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+
+.infoPedidosTableTitle{
+    background-color: #000000;
+    border-bottom: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    font-weight: 600;
+    text-align:left;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+
+.infoPedidosTableInfo{  
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #000000;
+    text-align:center;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+
+.borderRight{
+    border-right:1px solid #000000;
+}
+
+.borderLeft {
+    border-left:1px solid #000000;
+}
+
+.marginTop10{
+    margin-top:10px;
+}
+
+@media (max-width: 450px) {
+    .options-container-left {
+      width:100%;
+      margin: 0;
+    }
+    .options-container-right{
+        width:100%;
+        margin:0;
+        text-align:left;
+        margin-top:20px;
+    }
+    .form-check{
+        padding-left:0;
+    }
+    input[name="dataFrom"], input[name="dataTo"] {
+        width: 40%;
+    }
+}
+
+.noDisplay{
+    display:none;
+}
+
+.red-message-error {
+    color: #FF0000;
+    font-size:12px;
+}
+
+.input-error {
+    border: 1px solid #FF0000!important;
+}
+
+#divSubtotal{
+    border-radius:25px;
+    width: 200px;
+    height:50px;
+    background-color:#FF0000;
+    color: #FFFFFF;
+    text-align:center;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size:24px;
+    /*position:fixed;
+    right:9%;*/
+    display:inline-block;
+}
+
+#lSubtotal{
+    margin-top: 3%;
+    font-weight: 600;
+}
+
+#lEditarPedidoSubtotal{
+    margin-top: 3%;
+    font-weight: 600;
+}
+
+#lDebe{
+    margin-top: 3%;
+    font-weight: 600;
+}
+
+#lEditarPedidoDebe{
+    margin-top: 3%;
+    font-weight: 600;
+}
+
+#divAPagar{
+    border-radius:25px;
+    width: 200px;
+    height:50px;
+    background-color:#00b31e;
+    color: #FFFFFF;
+    text-align:center;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size:24px;
+    /*position:fixed;
+    right:9%;
+    margin-top:5%;*/
+    display:inline-block;
+}
+
+#ulExtrasList{
+    padding-left:0px;
+    padding-top:0px;
+}
+
+.altaPedidoForm::placeholder{
+    font-size:14px;
+    font-style: italic;
+    padding-left: 5px;
+}
+
+.stockDisponible{
+    width:40%;
+    float:left;
+}
+
+/*Loader Spinner*/
+.loader-container{
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: visible;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display:none;
+}
+
+.sk-cube-grid {
+    position: relative;
+
+    margin: auto;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+  
+.sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    float: left;
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+  .sk-cube-grid .sk-cube1 {
+    background-color: #dcd892;
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  .sk-cube-grid .sk-cube2 {
+    background-color: #34576a;
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s; }
+  .sk-cube-grid .sk-cube3 {
+    background-color: #dcd892;
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s; }
+  .sk-cube-grid .sk-cube4 {
+    background-color: #34576a;
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s; }
+  .sk-cube-grid .sk-cube5 {
+    background-color: #dcd892;
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  .sk-cube-grid .sk-cube6 {
+    background-color: #34576a;
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s; }
+  .sk-cube-grid .sk-cube7 {
+    background-color: #dcd892;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s; }
+  .sk-cube-grid .sk-cube8 {
+    background-color: #34576a;
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s; }
+  .sk-cube-grid .sk-cube9 {
+    background-color: #dcd892;
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  
+  @-webkit-keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+      -webkit-transform: scale3D(1, 1, 1);
+              transform: scale3D(1, 1, 1);
+    } 35% {
+      -webkit-transform: scale3D(0, 0, 1);
+              transform: scale3D(0, 0, 1); 
+    }
+  }
+  
+  @keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+      -webkit-transform: scale3D(1, 1, 1);
+              transform: scale3D(1, 1, 1);
+    } 35% {
+      -webkit-transform: scale3D(0, 0, 1);
+              transform: scale3D(0, 0, 1);
+    } 
+  }
+
+
+/* Absolute Center Spinner */
+.loading {
+    position: fixed;
+    z-index: 9999;
+    height: 2em;
+    width: 2em;
+    overflow: visible;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display:none;
+  }
+  
+  /* Transparent Overlay */
+  .loading:before {
+    content: '';
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+  }
+  
+
+  /* btn-primary override */
+.btn-green,
+.btn-green:hover,
+.btn-green:active {
+    background-color: #00af1d;
+    border-color: #00af1d;
+}
+
+.listadoPedidosTable{
+    font-size:12px;
+}
+
+#tableListadoPedidosBody>tr:nth-child(even){
+    background-color:#c3c3c3;
+}
+
+#tableListadoPedidosBody>tr:nth-child(odd){
+    background-color:#ffffff;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding: 2px!important;
+    margin-left: 0px!important;
+}
+.paginate_button,
+.paginate_button:active,
+.paginate_button:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button,
+.dataTables_wrapper .dataTables_paginate .paginate_button:focus,
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button:active,
+.dataTables_wrapper .dataTables_paginate .paginate_button .page-link,
+.dataTables_wrapper .dataTables_paginate .paginate_button .page-link:focus,
+.dataTables_wrapper .dataTables_paginate .paginate_button .page-link:hover{
+    border: 0px!important;
+}
+
+.listadoPedidosTable th,  .listadoPedidosTable td{
+    padding: 10px 10px!important;
+}
+
+.pedidoCancelado{
+    background-color: #bb5757!important;
+}
+
+.pedidoBonificado, .pedidoAbonado{
+    background-color: #57bb5f!important;
+}
+
+.pedidoEspecial{
+    background-color: #e7b04a!important;
+}
+
+.rowFiltroPedidos{
+    padding-bottom:10px;
+}
+
+.rowEditarExtra{
+    padding-bottom:10px;
+}
+
+.extras-wrapper{
+    width:100%;
+}
+
+.extras-caja{
+    display: inline-block;
+    width: 30%;
+    /*height: 160px;*/
+    background: #ffffff;
+    border: 1px solid #000000;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px #858585
+}
+
+.extras-caja-titulo{
+    background-color:#015a6a;    
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size:14px;
+    text-align:center;
+    padding:5px;
+}
+.extras-caja-info{
+    color: #000000;
+    font-size:12px;
+    padding-bottom:5px;
+}
+
+.extras-caja-info a{
+    color: #2f00ff;
+}
+
+.cupones-caja{
+    display: inline-block;
+    width: 30%;
+    /*height: 160px;*/
+    background: #ffffff;
+    border: 1px solid #000000;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px #858585
+}
+
+.cupones-caja-titulo{
+    background-color:#015a6a;    
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size:14px;
+    text-align:center;
+    padding:5px;
+}
+.cupones-caja-info{
+    color: #000000;
+    font-size:12px;
+    padding-top:5px;
+    padding-bottom:10px;
+}
+
+.cupones-caja-info a{
+    color: #2f00ff;
+}
+
+.cupones-wrapper{
+    width:100%;
+}
+
+.listado-cajas-wrapper{
+    width:100%;
+}
+
+.listado-cajas-caja{
+    display: inline-block;
+    width: 30%;
+    /*height: 160px;*/
+    background: #ffffff;
+    border: 1px solid #000000;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px #858585
+}
+
+.listado-cajas-caja-titulo{
+    background-color:#015a6a;    
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size:14px;
+    text-align:center;
+    padding:5px;
+}
+.listado-cajas-caja-info{
+    color: #000000;
+    font-size:12px;
+    padding-bottom:5px;
+}
+
+.listado-cajas-caja-info a{
+    color: #2f00ff;
+}
+.listado-cajas-caja-info.texto-grande{
+    font-size:14px;
+}
+
+.editPuntosRetiroBarriosForm h5{
+    text-decoration:underline;
+    margin-bottom:20px;
+}
+
+.editPuntosRetiroBarriosForm label{
+    padding-left:5px;
+}
+
+#divPuntosDeRetiro{
+    padding:5px;
+    font-size:12px;
+}
+
+#divBarrios{
+    padding:5px;
+    font-size:14px;
+}
+
+.caja-camion-preConfigurado{
+    background-color: #cccccc;
+    border-radius: 0px;
+    border: 1px solid #cccccc;
+    padding-left:5px;
+    padding-top: 7px;
+    
+}
+
+.caja-listado-cajas{
+    background-color: #cccccc;
+    border-radius: 0px;
+    border: 1px solid #cccccc;
+    padding-left:5px;
+    padding-top: 7px;
+    
+}
+
+.marginLeft5{
+    margin-left:5px;
+}
+
+.btn-small{
+    font-size:12px;
+    height:30px;
+}
+
+.extra-caja-monto{
+    font-size:11px;
+}  
+
+@media (min-width: 992px){
+    .modal-lg{
+        max-width:1000px!important;
+    }
+}
+
+@media (max-width: 600px){
+    .stockDisponible{
+        width:100%;
+    }
+    .globosMontosPedidos{
+        margin-top:10px;
+    }
+    .mobileAlignRight{
+        text-align:right;
+    }
+    .extras-caja{
+        width:100%;
+    }
+    .extras-caja-info{
+        padding-bottom:10px;
+    }
+    .listado-cajas-caja{
+        width:100%;
+    }
+    .listado-cajas-caja-info{
+        padding-bottom:10px;
+    }
+}
+
+@media (min-width: 1240px){
+    .modal-xl {
+        max-width: 1220px;
+    }
+}
