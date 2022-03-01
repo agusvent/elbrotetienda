@@ -4783,13 +4783,26 @@ class Api extends CI_Controller
         $cabeceraHTML .= "<td text-rotate='90' style='width:30px;min-width:30px;max-width:30px;text-align:center;border:1px solid #000000;'>Bolsón Familiar (8kg)</td>";
         $cabeceraHTML .= "<td text-rotate='90' style='width:40px;min-width:40px;max-width:40px;text-align:center;border:1px solid #000000;'>Precio Bolsón Familiar</td>";
 
+        $contExtra = 0;
+
+        $pedidoResaltado = false;
+
         foreach($cExtras as $oExtra){
+            $extraName = "";
             if(isset($oExtra->nombre_corto) && $oExtra->nombre_corto!=""){
-                $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->nombre_corto."</td>";
-            }else{
-                $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->name."</td>";
+                $extraName = $oExtra->nombre_corto;
+            } else {
+                $extraName = $oExtra->name;
             }
-        }        
+            $backgroundColor = "";
+            if($contExtra % 2 == 0){
+                $backgroundColor = "background-color:#ebebeb";
+            } else {
+                $backgroundColor = "background-color:#FFFFFF";
+            }
+            $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;".$backgroundColor."'>".$extraName."</td>";
+            $contExtra++;
+        }
 
         $cabeceraHTML .= "<td text-rotate='90' style='width:40px;min-width:40px;max-width:40px;text-align:center;border:1px solid #000000;'>Reserva Abonada</td>";
         $cabeceraHTML .= "<td text-rotate='90' style='width:40px;min-width:40px;max-width:40px;text-align:center;border:1px solid #000000;'>Total a Cobrar</td>";
@@ -4860,21 +4873,21 @@ class Api extends CI_Controller
             $html .= "<td style='border:1px solid #000000;'></td>"; //TD VACIO PORQUE ACA OBSERVACIONES NO TIENE VALOR
             $html .= "</tr>";
             
-
-
             foreach($cOrders as $oOrder){
+                $pedidoResaltado = false;
                 if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
                     $html .= "<tr style='font-size:12px;background-color:#b8b8b8;'>";
+                    $pedidoResaltado = true;
                 }else{
                     $html .= "<tr style='font-size:12px;'>";
                 }
 
-                $html .= "<td height='35' style='border:1px solid #000000;'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
+                $html .= "<td height='35' style='border:1px solid #000000;'><p style='font-size:12px;'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</p></td>";
                 
-                $html .= "<td height='35' style='border:1px solid #000000;'>".$oOrder['mail']."</td>";
+                $html .= "<td height='35' style='border:1px solid #000000;'><p style='font-size:10px;'>".$oOrder['mail']."</p></td>";
 
                 $celularFormateado = $this->formatCelular($oOrder['celular']);
-                $html .= "<td style='text-align:right;border:1px solid #000000;'>".$celularFormateado."</td>";
+                $html .= "<td style='text-align:right;border:1px solid #000000;'><p style='font-size:12px;'>".$celularFormateado."</p></td>";
 
                 $cantidadBolson = 0;
                 $precioBolson = 0;
@@ -4887,15 +4900,26 @@ class Api extends CI_Controller
                 if($precioBolson==0) {
                     $precioBolson = "-";
                 }else{
-                    $precioBolson = "$".$precioBolson;
+                    $precioBolson = "$".intval($precioBolson);
                 }
 
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$cantidadBolson."</td>";
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$precioBolson."</td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$cantidadBolson."</p></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$precioBolson."</p></td>";
 
                 $extrasArray = $oOrder['extras'];
+                $contExtra = 0;
                 foreach($cExtras as $oExtra){ //Array de extras activos en la base de datos (con esto identifico la columna)
-                    $html .= "<td style='text-align:center;border:1px solid #000000;'>";
+                    $backgroundColor = "";
+                    if(!$pedidoResaltado) {
+                        if($contExtra % 2 == 0){
+                            $backgroundColor = "background-color:#ebebeb";
+                        } else {
+                            $backgroundColor = "background-color:#ffffff";
+                        }
+                    }
+                    $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><p style='font-size:10px;'>";
+                    $contExtra++;
+
                     foreach($extrasArray as $ordenExtra){ //Array de extras en la orden (con esto pongo el precio en la columna correcta)
                         if($oExtra->id == $ordenExtra['id_extra']){
                             $cantExtra = $this->Order->getCantOrderExtraByPedidoAndExtra($oOrder['order_id'],$oExtra->id);
@@ -4908,12 +4932,12 @@ class Api extends CI_Controller
                             $precio = ($oExtra->price * $cantExtra); 
 
                             //$html .= "$".$oExtra->price;
-                            $html .= "$".$precio;
+                            $html .= "$ ".$precio;
                             $html .= "<br />(x".$cantExtra.")";
                         }
                         
                     }
-                    $html .= "</td>";
+                    $html .= "</p></td>";
                 }
 
                 $valMontoPagado;
@@ -4931,8 +4955,8 @@ class Api extends CI_Controller
                     $valMontoDebe = "$".$oOrder['monto_debe'];
                 }
 
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$valMontoPagado."</td>";
-                $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$valMontoDebe."</b></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$valMontoPagado."</p></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'><b>".$valMontoDebe."</b></p></td>";
 
                 $obs = "";
 
@@ -4954,7 +4978,7 @@ class Api extends CI_Controller
                     }    
                 }
     
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$obs."</td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$obs."</p></td>";
 
                 $html .= "</tr>";
                 $pedidosCounter++;
@@ -5012,13 +5036,25 @@ class Api extends CI_Controller
             $cabeceraHTML .= "<td width='80' style='text-align:center;border:1px solid #000000;'>Celular</td>";
             $cabeceraHTML .= "<td text-rotate='90' style='width:30px;text-align:center;border:1px solid #000000;'>Bolsón Familiar (8kg)</td>";
             $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Precio Bolsón Familiar</td>";
-    
+
+            $contExtra = 0;
+            $pedidoResaltado = false;
+
             foreach($cExtras as $oExtra){
+                $extraName = "";
                 if(isset($oExtra->nombre_corto) && $oExtra->nombre_corto!=""){
-                    $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;max-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->nombre_corto."</td>";
-                }else{
-                    $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;max-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->name."</td>";
+                    $extraName = $oExtra->nombre_corto;
+                } else {
+                    $extraName = $oExtra->name;
                 }
+                $backgroundColor = "";
+                if($contExtra % 2 == 0){
+                    $backgroundColor = "background-color:#ebebeb";
+                } else {
+                    $backgroundColor = "background-color:#FFFFFF";
+                }
+                $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;max-width:30px;text-align:center;border:1px solid #000000;".$backgroundColor."'>".$extraName."</td>";
+                $contExtra++;
             }        
             
             $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Reserva Abonada</td>";
@@ -5054,16 +5090,18 @@ class Api extends CI_Controller
 
 
             foreach($cOrders as $oOrder){
+                $pedidoResaltado = false;
                 if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
                     $html .= "<tr style='font-size:12px;background-color:#b8b8b8;'>";
+                    $pedidoResaltado = true;
                 }else{
                     $html .= "<tr style='font-size:12px;'>";
                 }
 
-                $html .= "<td height='35' style='border:1px solid #000000;'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
-                $html .= "<td height='35' style='border:1px solid #000000;'>".$oOrder['mail']."</td>";
+                $html .= "<td height='35' style='border:1px solid #000000;'><p style='font-size:12px;'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</p></td>";
+                $html .= "<td height='35' style='border:1px solid #000000;'><p style='font-size:12px;'>".$oOrder['mail']."</p></td>";
                 $celularFormateado = $this->formatCelular($oOrder['celular']);
-                $html .= "<td style='text-align:right;border:1px solid #000000;'>".$celularFormateado."</td>";
+                $html .= "<td style='text-align:right;border:1px solid #000000;'><p style='font-size:12px;'>".$celularFormateado."</p></td>";
                 
                 $cantidadBolson = 0;
                 $precioBolson = 0;
@@ -5077,16 +5115,27 @@ class Api extends CI_Controller
                 if($precioBolson==0) {
                     $precioBolson = "-";
                 }else{
-                    $precioBolson = "$".$precioBolson;
+                    $precioBolson = "$".intval($precioBolson);
                 }
 
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$cantidadBolson."</td>";
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$precioBolson."</td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$cantidadBolson."</p></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$precioBolson."</p></td>";
 
 
                 $extrasArray = $oOrder['extras'];
+                $contExtra = 0;
                 foreach($cExtras as $oExtra){ //Array de extras activos en la base de datos (con esto identifico la columna)
-                    $html .= "<td style='text-align:center;border:1px solid #000000;'>";
+                    $backgroundColor = "";
+                    if(!$pedidoResaltado) {
+                        if($contExtra % 2 == 0){
+                            $backgroundColor = "background-color:#ebebeb";
+                        } else {
+                            $backgroundColor = "background-color:#ffffff";
+                        }
+                    }
+                    $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><p style='font-size:12px;'>";
+                    $contExtra++;
+
                     foreach($extrasArray as $ordenExtra){ //Array de extras en la orden (con esto pongo el precio en la columna correcta)
                         if($oExtra->id == $ordenExtra['id_extra']){
                             $cantExtra = $this->Order->getCantOrderExtraByPedidoAndExtra($oOrder['order_id'],$oExtra->id);
@@ -5099,12 +5148,12 @@ class Api extends CI_Controller
                             $precio = ($oExtra->price * $cantExtra); 
 
                             //$html .= "$".$oExtra->price;
-                            $html .= "$".$precio;
+                            $html .= "$ ".$precio;
                             $html .= "<br />(x".$cantExtra.")";
                         }
                         
                     }
-                    $html .= "</td>";
+                    $html .= "</p></td>";
                 }
                 
                 $valMontoPagado;
@@ -5122,8 +5171,8 @@ class Api extends CI_Controller
                     $valMontoDebe = "$".$oOrder['monto_debe'];
                 }
 
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$valMontoPagado."</td>";
-                $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$valMontoDebe."</b></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$valMontoPagado."</p></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'><b>".$valMontoDebe."</b></p></td>";
 
                 $obs = "";
 
@@ -5145,7 +5194,7 @@ class Api extends CI_Controller
                     }    
                 }
                     
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$obs."</td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$obs."</p></td>";
 
                 $html .= "</tr>";
                 $pedidosCounter++;
@@ -5558,14 +5607,26 @@ class Api extends CI_Controller
             $cabeceraHTML .= "<td text-rotate='90' style='width:30px;text-align:center;border:1px solid #000000;'>Bolsón Familiar (8kg)</td>";
             $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Precio Bolsón Familiar</td>";
     
-            foreach($cExtras as $oExtra){
-                if(isset($oExtra->nombre_corto) && $oExtra->nombre_corto!=""){
-                    $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->nombre_corto."</td>";
-                }else{
-                    $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->name."</td>";
-                }
-            }        
+            $contExtra = 0;
+            $pedidoResaltado = false;
 
+            foreach($cExtras as $oExtra){
+                $extraName = "";
+                if(isset($oExtra->nombre_corto) && $oExtra->nombre_corto!=""){
+                    $extraName = $oExtra->nombre_corto;
+                } else {
+                    $extraName = $oExtra->name;
+                }
+                $backgroundColor = "";
+                if($contExtra % 2 == 0){
+                    $backgroundColor = "background-color:#ebebeb";
+                } else {
+                    $backgroundColor = "background-color:#FFFFFF";
+                }
+                $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;text-align:center;border:1px solid #000000;".$backgroundColor."'>".$extraName."</td>";
+                $contExtra++;
+            }        
+    
             $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Reserva Abonada</td>";
             $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Total a Cobrar</td>";
             $cabeceraHTML .= "<td style='width:80px;text-align:center;border:1px solid #000000;'>Observaciones</td>";
@@ -5599,20 +5660,22 @@ class Api extends CI_Controller
 
 
             foreach($cOrders as $oOrder){
+                $pedidoResaltado = false;
                 if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
+                    $pedidoResaltado = true;
                     $html .= "<tr style='font-size:12px;background-color:#b8b8b8;'>";
                 }else{
                     $html .= "<tr style='font-size:12px;'>";
                 }
                 
-                $html .= "<td height='35' style='border:1px solid #000000;'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
+                $html .= "<td height='35' style='border:1px solid #000000;'><p style='font-size:12px;'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</p></td>";
                 
-                $html .= "<td height='35' style='border:1px solid #000000;'>".$oOrder['mail']."</td>";
+                $html .= "<td height='35' style='border:1px solid #000000;'><p style='font-size:12px;'>".$oOrder['mail']."</p></td>";
 
                 $celularFormateado = $this->formatCelular($oOrder['celular']);
-                $html .= "<td style='text-align:right;border:1px solid #000000;'>".$celularFormateado."</td>";
+                $html .= "<td style='text-align:right;border:1px solid #000000;'><p style='font-size:12px;'>".$celularFormateado."</p></td>";
 
-                $html .= "<td style='border:1px solid #000000;'>".$oOrder['cliente_domicilio_full']."</td>";
+                $html .= "<td style='border:1px solid #000000;'><p style='font-size:12px;'>".$oOrder['cliente_domicilio_full']."</p></td>";
 
                 $cantidadBolson = 0;
                 $precioBolson = 0;
@@ -5625,16 +5688,26 @@ class Api extends CI_Controller
                 if($precioBolson == 0) {
                     $precioBolson = "-";
                 } else {
-                    $precioBolson = "$".$precioBolson;
+                    $precioBolson = "$".intval($precioBolson);
                 }
 
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$cantidadBolson."</td>";
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$precioBolson."</td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$cantidadBolson."</p></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$precioBolson."</p></td>";
 
 
                 $extrasArray = $oOrder['extras'];
+                $contExtra = 0;
                 foreach($cExtras as $oExtra){ //Array de extras activos en la base de datos (con esto identifico la columna)
-                    $html .= "<td style='text-align:center;border:1px solid #000000;'>";
+                    $backgroundColor = "";
+                    if(!$pedidoResaltado) {
+                        if($contExtra % 2 == 0){
+                            $backgroundColor = "background-color:#ebebeb";
+                        } else {
+                            $backgroundColor = "background-color:#ffffff";
+                        }
+                    }
+                    $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><p style='font-size:12px;'>";
+                    $contExtra++;
                     foreach($extrasArray as $ordenExtra){ //Array de extras en la orden (con esto pongo el precio en la columna correcta)
                         if($oExtra->id == $ordenExtra['id_extra']){
                             $cantExtra = $this->Order->getCantOrderExtraByPedidoAndExtra($oOrder['order_id'],$oExtra->id);
@@ -5646,12 +5719,12 @@ class Api extends CI_Controller
                             //print_r($cantExtra);
                             $precio = ($oExtra->price * $cantExtra); 
 
-                            $html .= "$".$precio;
+                            $html .= "$ ".$precio;
                             $html .= "<br />(x".$cantExtra.")";
                         }
                         
                     }
-                    $html .= "</td>";
+                    $html .= "</p></td>";
                 }
 
                 $valMontoPagado;
@@ -5669,8 +5742,8 @@ class Api extends CI_Controller
                     $valMontoDebe = "$".$oOrder['monto_debe'];
                 }
 
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$valMontoPagado."</td>";
-                $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$valMontoDebe."</b></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$valMontoPagado."</p></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'><b>".$valMontoDebe."</b></p></td>";
 
                 $obs = "";
 
@@ -5692,7 +5765,7 @@ class Api extends CI_Controller
                     }    
                 }
 
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$obs."</td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$obs."</p></td>";
 
                 $html .= "</tr>";
                 $pedidosCounter++;
@@ -5726,13 +5799,25 @@ class Api extends CI_Controller
         $cabeceraHTML .= "<td width='160' style='width:160px;max-width:160px;min-width:160px;text-align:center;border:1px solid #000000;'>Dirección</td>";
         $cabeceraHTML .= "<td text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;'>Bolsón Familiar (8kg)</td>";
         $cabeceraHTML .= "<td text-rotate='90' style='width:40px;max-width:40px;min-width:40px;text-align:center;border:1px solid #000000;'>Precio Bolsón Familiar</td>";
+        $contExtra = 0;
+
+        $pedidoResaltado = false;
 
         foreach($cExtras as $oExtra){
+            $extraName = "";
             if(isset($oExtra->nombre_corto) && $oExtra->nombre_corto!=""){
-                $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->nombre_corto."</td>";
-            }else{
-                $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->name."</td>";
+                $extraName = $oExtra->nombre_corto;
+            } else {
+                $extraName = $oExtra->name;
             }
+            $backgroundColor = "";
+            if($contExtra % 2 == 0){
+                $backgroundColor = "background-color:#ebebeb";
+            } else {
+                $backgroundColor = "background-color:#FFFFFF";
+            }
+            $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;".$backgroundColor."'>".$extraName."</td>";
+            $contExtra++;
         }        
 
         $cabeceraHTML .= "<td text-rotate='90' style='width:40px;max-width:40px;min-width:40px;text-align:center;border:1px solid #000000;'>Reserva Abonada</td>";
@@ -5809,19 +5894,21 @@ class Api extends CI_Controller
 
 
             foreach($cOrders as $oOrder){
+                $pedidoResaltado = false;
                 if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
+                    $pedidoResaltado = true;
                     $html .= "<tr style='font-size:12px;background-color:#b8b8b8;'>";
                 }else{
                     $html .= "<tr style='font-size:12px;'>";
                 }
-                $html .= "<td height='35' style='border:1px solid #000000;'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
+                $html .= "<td height='35' style='border:1px solid #000000;'><p style='font-size:12px;'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</p></td>";
                 
-                $html .= "<td height='35' style='border:1px solid #000000;'>".$oOrder['mail']."</td>";
+                $html .= "<td height='35' style='border:1px solid #000000;'><p style='font-size:12px;'>".$oOrder['mail']."</p></td>";
                 
                 $celularFormateado = $this->formatCelular($oOrder['celular']);
-                $html .= "<td style='text-align:right;border:1px solid #000000;'>".$celularFormateado."</td>";
+                $html .= "<td style='text-align:right;border:1px solid #000000;'><p style='font-size:10px;'>".$celularFormateado."</p></td>";
 
-                $html .= "<td style='border:1px solid #000000;'>".$oOrder['cliente_domicilio_full']."</td>";
+                $html .= "<td style='border:1px solid #000000;'><p style='font-size:12px;'>".$oOrder['cliente_domicilio_full']."</p></td>";
                 
                 $cantidadBolson = 0;
                 $precioBolson = 0;
@@ -5834,15 +5921,25 @@ class Api extends CI_Controller
                 if($precioBolson == 0) {
                     $precioBolson = "-";
                 } else {
-                    $precioBolson = "$".$precioBolson;
+                    $precioBolson = "$".intval($precioBolson);
                 }
 
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$cantidadBolson."</td>";
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$precioBolson."</td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$cantidadBolson."</p></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$precioBolson."</p></td>";
 
                 $extrasArray = $oOrder['extras'];
+                $contExtra = 0;
                 foreach($cExtras as $oExtra){ //Array de extras activos en la base de datos (con esto identifico la columna)
-                    $html .= "<td style='text-align:center;border:1px solid #000000;'>";
+                    $backgroundColor = "";
+                    if(!$pedidoResaltado) {
+                        if($contExtra % 2 == 0){
+                            $backgroundColor = "background-color:#ebebeb";
+                        } else {
+                            $backgroundColor = "background-color:#ffffff";
+                        }
+                    }
+                    $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><p style='font-size:12px;'>";
+                    $contExtra++;
                     foreach($extrasArray as $ordenExtra){ //Array de extras en la orden (con esto pongo el precio en la columna correcta)
                         if($oExtra->id == $ordenExtra['id_extra']){
                             $cantExtra = $this->Order->getCantOrderExtraByPedidoAndExtra($oOrder['order_id'],$oExtra->id);
@@ -5853,12 +5950,12 @@ class Api extends CI_Controller
                             }
                             $precio = ($oExtra->price * $cantExtra); 
 
-                            $html .= "$".$precio;
+                            $html .= "$ ".$precio;
                             $html .= "<br />(x".$cantExtra.")";
                         }
                         
                     }
-                    $html .= "</td>";
+                    $html .= "</p></td>";
                 }
 
                 $valMontoPagado;
@@ -5876,8 +5973,8 @@ class Api extends CI_Controller
                     $valMontoDebe = "$".$oOrder['monto_debe'];
                 }
 
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$valMontoPagado."</td>";
-                $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$valMontoDebe."</b></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$valMontoPagado."</p></td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'><b>".$valMontoDebe."</b></p></td>";
 
                 $obs = "";
 
@@ -5899,7 +5996,7 @@ class Api extends CI_Controller
                     }    
                 }
                     
-                $html .= "<td style='text-align:center;border:1px solid #000000;'>".$obs."</td>";
+                $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$obs."</p></td>";
 
                 $html .= "</tr>";
                 $pedidosCounter++;
