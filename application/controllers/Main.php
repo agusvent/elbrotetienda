@@ -889,11 +889,9 @@ class Main extends CI_Controller
         if (!$order) {
             redirect('/failure');
         }
-
         // Ejecuto tareas de validación y mailing solo la primera vez.
         if (!$order->valid) {
             $this->Order->validate($orderHash, 1);
-            
             $this->sendConfirmationMail($order);
             
         } else {
@@ -1025,7 +1023,7 @@ class Main extends CI_Controller
         $mail->isSMTP();
         $mail->Host = "vps-2291735-x.dattaweb.com";
         $mail->Username = "hola@elbrotetienda.com";
-        $mail->Password = "3lBr0t3t13nd4";
+        $mail->Password = "Br0t3t13nd4";
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
@@ -1180,7 +1178,6 @@ class Main extends CI_Controller
         $this->load->model('Pocket');
         $this->load->model('Office');
         $this->load->model('Barrio');
-        
         $montoDescuento = 0;
         $hayDescuento = false;
         if( isset($order->monto_descuento) && $order->monto_descuento>0 ) {
@@ -1248,7 +1245,8 @@ class Main extends CI_Controller
         $mail->isSMTP();
         $mail->Host = "vps-2291735-x.dattaweb.com";
         $mail->Username = "hola@elbrotetienda.com";
-        $mail->Password = "3lBr0t3t13nd4";
+        //$mail->Password = "3lBr0t3t13nd4";
+        $mail->Password = "Br0t3t13nd4";
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
