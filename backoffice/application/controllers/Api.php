@@ -5921,7 +5921,7 @@ class Api extends CI_Controller
                 if($precioBolson == 0) {
                     $precioBolson = "-";
                 } else {
-                    $precioBolson = "$".intval($precioBolson);
+                    $precioBolson = "$ ".intval($precioBolson);
                 }
 
                 $html .= "<td style='text-align:center;border:1px solid #000000;'><p style='font-size:12px;'>".$cantidadBolson."</p></td>";
