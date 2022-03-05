@@ -4784,7 +4784,6 @@ class Api extends CI_Controller
         $cabeceraHTML .= "<td text-rotate='90' style='width:40px;min-width:40px;max-width:40px;text-align:center;border:1px solid #000000;'>Precio Bolsón Familiar</td>";
 
         $contExtra = 0;
-
         $pedidoResaltado = false;
 
         foreach($cExtras as $oExtra){
@@ -4796,7 +4795,7 @@ class Api extends CI_Controller
             }
             $backgroundColor = "";
             if($contExtra % 2 == 0){
-                $backgroundColor = "background-color:#ebebeb";
+                $backgroundColor = "background-color:#dadada";
             } else {
                 $backgroundColor = "background-color:#FFFFFF";
             }
@@ -4912,7 +4911,7 @@ class Api extends CI_Controller
                     $backgroundColor = "";
                     if(!$pedidoResaltado) {
                         if($contExtra % 2 == 0){
-                            $backgroundColor = "background-color:#ebebeb";
+                            $backgroundColor = "background-color:#dadada";
                         } else {
                             $backgroundColor = "background-color:#ffffff";
                         }
@@ -5049,7 +5048,7 @@ class Api extends CI_Controller
                 }
                 $backgroundColor = "";
                 if($contExtra % 2 == 0){
-                    $backgroundColor = "background-color:#ebebeb";
+                    $backgroundColor = "background-color:#dadada";
                 } else {
                     $backgroundColor = "background-color:#FFFFFF";
                 }
@@ -5128,7 +5127,7 @@ class Api extends CI_Controller
                     $backgroundColor = "";
                     if(!$pedidoResaltado) {
                         if($contExtra % 2 == 0){
-                            $backgroundColor = "background-color:#ebebeb";
+                            $backgroundColor = "background-color:#dadada";
                         } else {
                             $backgroundColor = "background-color:#ffffff";
                         }
@@ -5619,7 +5618,7 @@ class Api extends CI_Controller
                 }
                 $backgroundColor = "";
                 if($contExtra % 2 == 0){
-                    $backgroundColor = "background-color:#ebebeb";
+                    $backgroundColor = "background-color:#dadada";
                 } else {
                     $backgroundColor = "background-color:#FFFFFF";
                 }
@@ -5701,7 +5700,7 @@ class Api extends CI_Controller
                     $backgroundColor = "";
                     if(!$pedidoResaltado) {
                         if($contExtra % 2 == 0){
-                            $backgroundColor = "background-color:#ebebeb";
+                            $backgroundColor = "background-color:#dadada";
                         } else {
                             $backgroundColor = "background-color:#ffffff";
                         }
@@ -5812,7 +5811,7 @@ class Api extends CI_Controller
             }
             $backgroundColor = "";
             if($contExtra % 2 == 0){
-                $backgroundColor = "background-color:#ebebeb";
+                $backgroundColor = "background-color:#dadada";
             } else {
                 $backgroundColor = "background-color:#FFFFFF";
             }
@@ -5933,7 +5932,7 @@ class Api extends CI_Controller
                     $backgroundColor = "";
                     if(!$pedidoResaltado) {
                         if($contExtra % 2 == 0){
-                            $backgroundColor = "background-color:#ebebeb";
+                            $backgroundColor = "background-color:#dadada";
                         } else {
                             $backgroundColor = "background-color:#ffffff";
                         }
@@ -6073,13 +6072,23 @@ class Api extends CI_Controller
             $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Bolsones</td>";
             $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Especiales</td>";
             
+            $contExtra = 0;            
             foreach($cExtras as $oExtra){
+                $extraName = "";
                 if(isset($oExtra->nombre_corto) && $oExtra->nombre_corto!=""){
-                    $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->nombre_corto."</td>";
-                }else{
-                    $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->name."</td>";
+                    $extraName = $oExtra->nombre_corto;
+                } else {
+                    $extraName = $oExtra->name;
                 }
-            }        
+                $backgroundColor = "";
+                if($contExtra % 2 == 0){
+                    $backgroundColor = "background-color:#dadada";
+                } else {
+                    $backgroundColor = "background-color:#FFFFFF";
+                }
+                $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;".$backgroundColor."'>".$extraName."</td>";
+                $contExtra++;
+            }
 
             $cabeceraHTML .= "</tr>";
             $html .= $cabeceraHTML;
@@ -6097,6 +6106,7 @@ class Api extends CI_Controller
                     $html .= "<td style='width:40px;text-align:center;border:1px solid #000000;'><b>".$oLogistica->cantidad_especiales."</b></td>";
                     $cantTotalEspeciales = $cantTotalEspeciales+$oLogistica->cantidad_especiales;
                     
+                    $contExtra = 0;
                     foreach($cExtras as $oExtra){
                         $totalExtras = $this->Order->getTotalExtrasByPuntoDeRetiroByIdDiaEntregaByIdExtra(
                             $oLogistica->id_punto_retiro,
@@ -6108,8 +6118,16 @@ class Api extends CI_Controller
                             'idExtra' => $oExtra->id,
                             'cant' => $totalExtras
                         ));
+                        
+                        $backgroundColor = "";
+                        if($contExtra % 2 == 0){
+                            $backgroundColor = "background-color:#dadada";
+                        } else {
+                            $backgroundColor = "background-color:#FFFFFF";
+                        }
+                        $contExtra++;
 
-                        $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$totalExtras."</b></td>";
+                        $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><b>".$totalExtras."</b></td>";
                     }     
                     $html .= "</tr>";
     
@@ -6615,20 +6633,29 @@ class Api extends CI_Controller
                     $cabeceraHTML .= "<td height='90' style='height:90px;width:130px;text-align:center;border:1px solid #000000;background-color:#000000;color:#FFFFFF;'><b>".$oLogisticaCamion->camion."</b></td>";
                     $cabeceraHTML .= "<td text-rotate='90' text style='width:40px;text-align:center;border:1px solid #000000;'>Bolson Familiar (8kg)</td>";
                     $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Esp. Familiares</td>";
-                    
+
+                    $contExtra = 0;            
                     foreach($cExtras as $oExtra){
+                        $extraName = "";
                         if(isset($oExtra->nombre_corto) && $oExtra->nombre_corto!=""){
-                            $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->nombre_corto."</td>";
-                            
-                        }else{
-                            $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->name."</td>";
+                            $extraName = $oExtra->nombre_corto;
+                        } else {
+                            $extraName = $oExtra->name;
                         }
+                        $backgroundColor = "";
+                        if($contExtra % 2 == 0){
+                            $backgroundColor = "background-color:#dadada";
+                        } else {
+                            $backgroundColor = "background-color:#FFFFFF";
+                        }
+                        $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;".$backgroundColor."'>".$extraName."</td>";
                         if($oExtra->id == 1) {
                             //SI ES EL BOLSON INDIVIDUAL, AL LADO VA LA CABECERA DE LA COLUMNA ESPCIALES INDIVIDUALES
                             $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;text-align:center;border:1px solid #000000;'>Esp. Individual</td>";
                         }
-                    }        
-        
+                        $contExtra++;
+                    }
+
                     $cabeceraHTML .= "</tr>";
                     $html .= $cabeceraHTML;
                     foreach($cLogisticaFromCamion as $oLogistica){
@@ -6646,6 +6673,7 @@ class Api extends CI_Controller
                             $html .= "<td style='width:40px;text-align:center;border:1px solid #000000;'><b>".$oLogistica->cantidad_especiales."</b></td>";
                             $cantTotalEspeciales = $cantTotalEspeciales+$oLogistica->cantidad_especiales;
                             
+                            $contExtra = 0;
                             foreach($cExtras as $oExtra){
                                 $totalExtras = $this->Order->getTotalExtrasByPuntoDeRetiroByIdDiaEntregaByIdExtra(
                                     $oLogistica->id_punto_retiro,
@@ -6657,8 +6685,16 @@ class Api extends CI_Controller
                                     'idExtra' => $oExtra->id,
                                     'cant' => $totalExtras
                                 ));
-        
-                                $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$totalExtras."</b></td>";
+
+                                $backgroundColor = "";
+                                if($contExtra % 2 == 0){
+                                    $backgroundColor = "background-color:#dadada";
+                                } else {
+                                    $backgroundColor = "background-color:#FFFFFF";
+                                }
+                                $contExtra++;
+
+                                $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><b>".$totalExtras."</b></td>";
                                 if($oExtra->id == 1) {
                                     //SI ES EL BOLSON INDIVIDUAL, ACA PONGO LA CANTIDAD TOTAL DE ESPECIALES INDIVIDUALES
                                     $cantTotalEspecialesIndividuales = $cantTotalEspecialesIndividuales + $oLogistica->cantidad_bolsones_individuales_especiales;
@@ -6683,7 +6719,8 @@ class Api extends CI_Controller
         
                             $html .= "<td style='width:40px;text-align:center;border:1px solid #000000;'><b>".$oLogistica->cantidad_especiales."</b></td>";
                             $cantTotalEspeciales = $cantTotalEspeciales+$oLogistica->cantidad_especiales;
-                            
+
+                            $contExtra = 0;
                             foreach($cExtras as $oExtra){
                                 $totalExtras = $this->Order->getTotalExtrasByBarrioByIdDiaEntregaByIdExtra(
                                     $oLogistica->id_barrio,
@@ -6695,8 +6732,16 @@ class Api extends CI_Controller
                                     'idExtra' => $oExtra->id,
                                     'cant' => $totalExtras
                                 ));
+
+                                $backgroundColor = "";
+                                if($contExtra % 2 == 0){
+                                    $backgroundColor = "background-color:#dadada";
+                                } else {
+                                    $backgroundColor = "background-color:#FFFFFF";
+                                }
+                                $contExtra++;
                     
-                                $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$totalExtras."</b></td>";
+                                $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><b>".$totalExtras."</b></td>";
                                 if($oExtra->id == 1) {
                                     //SI ES EL BOLSON INDIVIDUAL, ACA PONGO LA CANTIDAD TOTAL DE ESPECIALES INDIVIDUALES
                                     $cantTotalEspecialesIndividuales = $cantTotalEspecialesIndividuales + $oLogistica->cantidad_bolsones_individuales_especiales;
@@ -7901,14 +7946,26 @@ class Api extends CI_Controller
                 $cabeceraHTML .= "<td width='160' style='width:160px;max-width:160px;min-width:160px;text-align:center;border:1px solid #000000;'>Dirección</td>";
                 $cabeceraHTML .= "<td text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;'>Bolsón Familiar (8kg)</td>";
                 $cabeceraHTML .= "<td text-rotate='90' style='width:40px;max-width:40px;min-width:40px;text-align:center;border:1px solid #000000;'>Precio Bolsón Familiar</td>";
+
+                $contExtra = 0;
+                $pedidoResaltado = false;
         
                 foreach($cExtras as $oExtra){
+                    $extraName = "";
                     if(isset($oExtra->nombre_corto) && $oExtra->nombre_corto!=""){
-                        $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->nombre_corto."</td>";
-                    }else{
-                        $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->name."</td>";
+                        $extraName = $oExtra->nombre_corto;
+                    } else {
+                        $extraName = $oExtra->name;
                     }
-                }        
+                    $backgroundColor = "";
+                    if($contExtra % 2 == 0){
+                        $backgroundColor = "background-color:#dadada";
+                    } else {
+                        $backgroundColor = "background-color:#FFFFFF";
+                    }
+                    $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;".$backgroundColor."'>".$extraName."</td>";
+                    $contExtra++;
+                }
         
                 $cabeceraHTML .= "<td text-rotate='90' style='width:40px;max-width:40px;min-width:40px;text-align:center;border:1px solid #000000;'>Reserva Abonada</td>";
                 $cabeceraHTML .= "<td text-rotate='90' style='width:40px;max-width:40px;min-width:40px;text-align:center;border:1px solid #000000;'>Total a Cobrar</td>";
@@ -7973,8 +8030,10 @@ class Api extends CI_Controller
                     $html .= "</tr>";
         
                     foreach($cOrders as $oOrder){
+                        $pedidoResaltado = false;
                         if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
                             $html .= "<tr style='font-size:12px;background-color:#b8b8b8;'>";
+                            $pedidoResaltado = true;
                         }else{
                             $html .= "<tr style='font-size:12px;'>";
                         }
@@ -7998,15 +8057,27 @@ class Api extends CI_Controller
                         if($precioBolson == 0) {
                             $precioBolson = "-";
                         } else {
-                            $precioBolson = "$".$precioBolson;
+                            $precioBolson = "$ ".intval($precioBolson);
                         }
         
                         $html .= "<td style='text-align:center;border:1px solid #000000;'>".$cantidadBolson."</td>";
                         $html .= "<td style='text-align:center;border:1px solid #000000;'>".$precioBolson."</td>";
         
                         $extrasArray = $oOrder['extras'];
+
+                        $contExtra = 0;
                         foreach($cExtras as $oExtra){ //Array de extras activos en la base de datos (con esto identifico la columna)
-                            $html .= "<td style='text-align:center;border:1px solid #000000;'>";
+                            $backgroundColor = "";
+                            if(!$pedidoResaltado) {
+                                if($contExtra % 2 == 0){
+                                    $backgroundColor = "background-color:#dadada";
+                                } else {
+                                    $backgroundColor = "background-color:#ffffff";
+                                }
+                            }
+                            $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><p style='font-size:10px;'>";
+                            $contExtra++;
+
                             foreach($extrasArray as $ordenExtra){ //Array de extras en la orden (con esto pongo el precio en la columna correcta)
                                 if($oExtra->id == $ordenExtra['id_extra']){
                                     $cantExtra = $this->Order->getCantOrderExtraByPedidoAndExtra($oOrder['order_id'],$oExtra->id);
@@ -8017,7 +8088,7 @@ class Api extends CI_Controller
                                     }
                                     $precio = ($oExtra->price * $cantExtra); 
         
-                                    $html .= "$".$precio;
+                                    $html .= "$ ".$precio;
                                     $html .= "<br />(x".$cantExtra.")";
                                 }
                                 
@@ -8094,14 +8165,26 @@ class Api extends CI_Controller
                     $cabeceraHTML .= "<td width='80' style='text-align:center;border:1px solid #000000;'>Celular</td>";
                     $cabeceraHTML .= "<td text-rotate='90' style='width:30px;text-align:center;border:1px solid #000000;'>Bolsón Familiar (8kg)</td>";
                     $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Precio Bolsón Familiar</td>";
+
+                    $contExtra = 0;
+                    $pedidoResaltado = false;
             
                     foreach($cExtras as $oExtra){
+                        $extraName = "";
                         if(isset($oExtra->nombre_corto) && $oExtra->nombre_corto!=""){
-                            $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;max-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->nombre_corto."</td>";
-                        }else{
-                            $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;max-width:30px;text-align:center;border:1px solid #000000;'>".$oExtra->name."</td>";
+                            $extraName = $oExtra->nombre_corto;
+                        } else {
+                            $extraName = $oExtra->name;
                         }
-                    }        
+                        $backgroundColor = "";
+                        if($contExtra % 2 == 0){
+                            $backgroundColor = "background-color:#dadada";
+                        } else {
+                            $backgroundColor = "background-color:#FFFFFF";
+                        }
+                        $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;".$backgroundColor."'>".$extraName."</td>";
+                        $contExtra++;
+                    }
                     
                     $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Reserva Abonada</td>";
                     $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Total a Cobrar</td>";
@@ -8132,8 +8215,10 @@ class Api extends CI_Controller
                     $html .= "</tr>";
                     
                     foreach($cOrders as $oOrder){
+                        $pedidoResaltado = false;
                         if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
                             $html .= "<tr style='font-size:12px;background-color:#b8b8b8;'>";
+                            $pedidoResaltado = true;
                         }else{
                             $html .= "<tr style='font-size:12px;'>";
                         }
@@ -8163,8 +8248,18 @@ class Api extends CI_Controller
 
 
                         $extrasArray = $oOrder['extras'];
+                        $contExtra = 0;
                         foreach($cExtras as $oExtra){ //Array de extras activos en la base de datos (con esto identifico la columna)
-                            $html .= "<td style='text-align:center;border:1px solid #000000;'>";
+                            $backgroundColor = "";
+                            if(!$pedidoResaltado) {
+                                if($contExtra % 2 == 0){
+                                    $backgroundColor = "background-color:#dadada";
+                                } else {
+                                    $backgroundColor = "background-color:#ffffff";
+                                }
+                            }
+                            $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><p style='font-size:10px;'>";
+                            $contExtra++;
                             foreach($extrasArray as $ordenExtra){ //Array de extras en la orden (con esto pongo el precio en la columna correcta)
                                 if($oExtra->id == $ordenExtra['id_extra']){
                                     $cantExtra = $this->Order->getCantOrderExtraByPedidoAndExtra($oOrder['order_id'],$oExtra->id);
@@ -8177,7 +8272,7 @@ class Api extends CI_Controller
                                     $precio = ($oExtra->price * $cantExtra); 
 
                                     //$html .= "$".$oExtra->price;
-                                    $html .= "$".$precio;
+                                    $html .= "$ ".$precio;
                                     $html .= "<br />(x".$cantExtra.")";
                                 }
                                 
