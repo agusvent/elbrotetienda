@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/new_design/assets/css/plugins.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=234239">
-    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=2123412">
+    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=4312983">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -753,7 +753,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="col-sm-1 footer-redes">
                 <div class="footer-widget">
                     <div class="footer-title logo-redes">
-                        <a href="https://wa.me/+5491131816011?text=¡Hola%20Brote%20Tienda!%20Quisiera%20hacerles%20una%20consulta." target="_blank" target="_blank">
+                        <a href="https://wa.me/+5491131816011?text=¡Hola%20Brote%20Tienda!%20Quisiera%20hacerles%20una%20consulta." target="_blank">
                             <div class="footerWp"></div>
                         </a>
                         <a href="https://www.facebook.com/elbrotetienda/" target="_blank">
@@ -781,6 +781,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="loading">
     <div class="loader">Loading...</div>
 </div>
+
+<a id="aEBTWhatsApp" href="https://wa.me/+5491131816011?text=¡Hola%20Brote%20Tienda!%20Quisiera%20hacerles%20una%20consulta." class="whatsapp" target="_blank" style="display:none"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 
 <div class="finalizarCompraSection">
     <div class="cart-shiping-update-wrapper">
@@ -930,13 +932,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="assets/new_design/assets/js/vendor/jquery-migrate-v3.3.2.min.js"></script>
 <script src="assets/new_design/assets/js/vendor/popper.min.js"></script>
 <script src="assets/new_design/assets/js/vendor/bootstrap.min.js"></script>
-<script src="assets/new_design/assets/js/plugins.js"></script>
+<script src="assets/new_design/assets/js/plugins.js?v=3293"></script>
 <script src="https://kit.fontawesome.com/64e240b8d6.js" crossorigin="anonymous"></script>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=99283423"></script>
-<script src="assets/new_design/assets/js/main.js?v=234234"></script>
+<script src="assets/js/mainv2.js?v=1297632"></script>
+<script src="assets/new_design/assets/js/main.js?v=9237697"></script>
 
 
 </body>

@@ -12,18 +12,32 @@ $(window).on("load", function () {
 });
 
 $(document).ready(function() {
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $("#aEBTWhatsApp").addClass("mobile");
+            $("#aEBTWhatsApp").show();
+        }
+        if(!window.matchMedia("(max-width: 767px)").matches){
+            ocultarColumnasResumenPedido();
+        }
+        
         //ESTA FUNCION ES PARA LA ACTIVACION DE COLOR EN LOS ELEMENTOS DEL HEADER
         window.addEventListener('scroll', function(e) {
             $(".eboMenuLinks").removeClass("eboMenuLinkActivo")
             $(".eboMenuMobileLink").removeClass("eboMenuLinkActivo")
-            
+    
             if( isOnScreen( $("#elbrote" ) ) ) { 
                 $("#eboMenuHome").addClass("eboMenuLinkActivo");
                 changeURL("elbrote");
+                if(!$("#aEBTWhatsApp").hasClass("mobile")) {
+                    $("#aEBTWhatsApp").fadeOut();
+                }
             }else if( isOnScreen( $("#nuestrosBolsones" ) ) ) { 
                 $("#eboMenuBolsones").addClass("eboMenuLinkActivo");
                 $("#eboMenuMobileBolsones").addClass("eboMenuLinkActivo");
                 changeURL("nuestrosBolsones");
+                if(!$("#aEBTWhatsApp").hasClass("mobile")) {
+                    $("#aEBTWhatsApp").fadeIn();
+                }
             }else if( isOnScreen( $("#tienda" ) ) ) { 
                 $("#eboMenuTienda").addClass("eboMenuLinkActivo");
                 $("#eboMenuMobileTienda").addClass("eboMenuLinkActivo");
@@ -38,9 +52,6 @@ $(document).ready(function() {
                 ocultarFinalizarCompra();
             }
         });
-        if(!window.matchMedia("(max-width: 767px)").matches){
-            ocultarColumnasResumenPedido();
-        }
 
         $(".eboMenuMobileLink").on("click",function(e){
             e.preventDefault();
@@ -72,6 +83,9 @@ $(document).ready(function() {
         //TEXTO DE INFO ADICIONAL AL SELECCIONAR UN PDR
         $(".infoAdicionalPdR").hide();
 
+        $("#aEBTWhatsApp").on("click",function(){
+            $("#aEBTWhatsApp").blur();
+        });
         var formEnabled = getFormStatus();
         if(formEnabled==1) {
             initMarket();
@@ -1421,8 +1435,6 @@ function changeURL(element){
     const nextState = { additionalInformation: 'Updated the URL with JS' };
     // This will create a new entry in the browser's history, without reloading
     window.history.pushState({}, '', nextURL);
-
-    
 }
 
 function getFormStatus(){

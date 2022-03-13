@@ -529,14 +529,14 @@
     
     /*--------------------------
         ScrollUp
-    ---------------------------- */
+    ---------------------------- 
     $.scrollUp({
-        scrollText: '<i class="fa fa-angle-double-up"></i>',
+        scrollText: '<i class="fab fa-angle-double-up"></i>',
         easingType: 'linear',
         scrollSpeed: 900,
         animation: 'fade'
     });
-    
+    */
     
     /*--------------------------
         Isotope
