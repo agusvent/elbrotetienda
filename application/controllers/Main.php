@@ -1023,7 +1023,7 @@ class Main extends CI_Controller
         $mail->isSMTP();
         $mail->Host = "vps-2291735-x.dattaweb.com";
         $mail->Username = "hola@elbrotetienda.com";
-        $mail->Password = "3lBr0t3t13nd4";
+        $mail->Password = "Br0t3T13nd4M41l";
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
@@ -1245,7 +1245,7 @@ class Main extends CI_Controller
         $mail->isSMTP();
         $mail->Host = "vps-2291735-x.dattaweb.com";
         $mail->Username = "hola@elbrotetienda.com";
-        $mail->Password = "3lBr0t3t13nd4";
+        $mail->Password = "Br0t3T13nd4M41l";
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
