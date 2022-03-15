@@ -2542,7 +2542,8 @@ class Api extends CI_Controller
             $pedidosCreados = $pedidosCreados."<p>".$oPedidoFijo->client_name.".</p>";
 
             $cExtrasExistentes = $this->Order->getExtras($oPedidoFijo->id);
-            
+            $sumaTotalExtras = 0;
+            $totalPedido = 0;
             if(!empty($cExtrasExistentes)){
                 $this->load->model('Extra');
                 foreach($cExtrasExistentes as $oExtra){
@@ -2550,7 +2551,13 @@ class Api extends CI_Controller
                     if($oExtra->stock_ilimitado == 1 || ($oExtra->stock_ilimitado == 0 && $oExtra->stock_disponible >= $cant)) {    
                         $this->Order->addExtra($newOrderId,$oExtra->id,$cant);
                         $this->Extra->reducirStockExtra($oExtra->id,$cant);
+                        $sumaTotalExtras = $sumaTotalExtras + ($oExtra->price * $cant);
                     }
+                }
+                $totalPedido = intval($precio) + intval($sumaTotalExtras);
+                $this->Order->updateMontoTotal($newOrderId, $totalPedido);
+                if($oPedidoFijo->id_estado_pedido==3){
+                    $this->Order->updateMontoPagado($newOrderId, $totalPedido);
                 }
             }
         }
