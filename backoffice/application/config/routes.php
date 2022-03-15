@@ -65,6 +65,7 @@ $route['contenidos/sucursales'] = 'Dashboard/offices';
 $route['contenidos/barrios'] = 'Dashboard/barrios';
 $route['contenidos/newsletter'] = 'Dashboard/newsletter';
 $route['contenidos/cupones'] = 'Dashboard/cupones';
+$route['contenidos/diasEntrega'] = 'Dashboard/diasEntrega';
 // Api
 $route['api/offices/status/(:num)/(:num)'] = 'Api/officeActiveToggle/$1/$2';
 $route['api/offices/update'] = 'Api/officeUpdate';
@@ -103,6 +104,7 @@ $route['api/orders/consultaPedidos'] = 'Api/consultaPedidos';
 $route['api/orders/editarPedido'] = 'Api/editarPedido';
 $route['api/crearDiaEntrega'] = 'Api/crearDiaEntrega';
 $route['api/diaEntrega/uploadImagenBolson'] = 'Api/uploadImagenBolson';
+$route['api/diasEntrega/getDiasEntrega'] = 'Api/getDiasEntregaActivos';
 $route['api/crearCamionPreConfigurado'] = 'Api/crearCamionPreConfigurado';
 $route['api/camionesPreConfigurados/getById/(:num)'] = 'Api/getCamionPreConfiguradoById/$1';
 $route['api/camionesPreConfigurados/editar'] = 'Api/editarCamionPreConfigurado';

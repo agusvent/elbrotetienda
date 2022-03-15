@@ -585,6 +585,27 @@ input[name="dataTo"] {
     font-size:11px;
 }  
 
+.img-thumbnail {
+    max-width:45px;
+    min-width:45px;
+    min-height:45px;
+    border: 2px solid grey;
+}
+
+.diasEntrega-inner-caja {
+    display: inline-block;
+    width: 50%;
+    margin:-1px;
+}
+
+.diasEntrega-inner-caja.alineado-izq {
+    text-align:left;
+}
+
+.diasEntrega-inner-caja.alineado-der {
+    text-align:right;
+}
+
 @media (min-width: 992px){
     .modal-lg{
         max-width:1000px!important;

@@ -50,7 +50,7 @@ class DiasEntregaPedidos extends CI_Model
         $this->db->where($where);
         $this->db->order_by('d.fecha_creacion', 'DESC');
         return $this->db->get()->result();
-    }    
+    }
 
     public function setEstadoEnPreparacion($id)
     {
@@ -99,6 +99,16 @@ class DiasEntregaPedidos extends CI_Model
 
         $result = $this->db->get();
         return $result->result()[0];
+    }
+
+    public function getAllActivos()
+    {
+        $this->db->select('d.id_dia_entrega, d.fecha_entrega as fechaEntrega, d.descripcion, d.id_estado_logistica, d.fecha_creacion, d.acepta_pedidos as aceptaPedidos, d.acepta_bolsones as aceptaBolsones, d.archivado, d.imagen');
+        $this->db->from('dias_entrega_pedidos as d');
+        $where = "d.archivado = 0";
+        $this->db->where($where);
+        $this->db->order_by('d.fecha_entrega', 'ASC');
+        return $this->db->get()->result();
     }
 
 }

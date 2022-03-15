@@ -555,7 +555,6 @@
         });
     });
     
-    
     /*--- Clickable menu active ----*/
     const slinky = $('#menu').slinky()
     

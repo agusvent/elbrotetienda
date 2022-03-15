@@ -457,4 +457,16 @@ class Dashboard extends CI_Controller
         $this->load->view('dashboard/footer');
     }
 
+    public function diasEntrega() 
+    {
+        if(!valid_session()) {
+            redirect('/logout');
+        }
+        $this->load->model('DiasEntregaPedidos');
+
+        $this->renderHead('Días de Entrega');
+        $this->load->view('dashboard/diasEntrega', []);
+        $this->load->view('dashboard/footer');
+    }
+
 }    

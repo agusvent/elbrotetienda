@@ -42,5 +42,6 @@
 <script type="text/javascript" src="<?=assets();?>js/mainHelper.js?v=91912"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery.numeric.js"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery.table2excel.js"></script>
+<script type="text/javascript" src="<?=assets();?>js/jquery-dateformat.js"></script>
 </body>
 </html>

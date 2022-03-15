@@ -8334,4 +8334,24 @@ class Api extends CI_Controller
         $oPDF->Output('CamionesLogistica.pdf', 'F');
         return 1;        
     }
+
+    public function getDiasEntregaActivos() {
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+        $cDiasEntrega = [];
+        $cDiasEntrega = $this->DiasEntregaPedidos->getAllActivos();
+        
+        $return['status'] = self::OK_VALUE;
+        $return['cDiasEntrega'] = $cDiasEntrega;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
 }
