@@ -1018,21 +1018,26 @@ class Main extends CI_Controller
 
     public function sendNewsletterMail($destinatario) {
         $this->load->library('phpmailer_lib');
+        $this->load->model('Parameter');
+        $mailServer = $this->Parameter->get("mail_server");
+        $mailAccount = $this->Parameter->get("mail_account");
+        $mailCopy = $this->Parameter->get("mail_copy");
+        $mailPass = $this->Parameter->get("mail_pass");
         $mail = $this->phpmailer_lib->load();
         $mail->CharSet = 'UTF-8';
         $mail->isSMTP();
-        $mail->Host = "vps-2291735-x.dattaweb.com";
-        $mail->Username = "hola@elbrotetienda.com";
-        $mail->Password = "Br0t3T13nd4M41l";
+        $mail->Host = $mailServer;
+        $mail->Username = $mailAccount;
+        $mail->Password = $mailPass;
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
-        $mail->setFrom("hola@elbrotetienda.com", "El Brote Tienda Natural");
+        $mail->setFrom($mailAccount, "El Brote Tienda Natural");
         $mail->addAddress(str_replace(' ','',$destinatario));
-        $mail->addReplyTo("hola@elbrotetienda.com", "El Brote Tienda Natural");
+        $mail->addReplyTo($mailAccount, "El Brote Tienda Natural");
         
-        $mail->addBCC("copy@elbrotetienda.com");
+        $mail->addBCC($mailCopy);
 
         $mailingData = [
             'mail' => $destinatario
@@ -1240,20 +1245,27 @@ class Main extends CI_Controller
         }
 
         $this->load->library('phpmailer_lib');
+        $this->load->model('Parameter');
+        
+        $mailServer = $this->Parameter->get("mail_server");
+        $mailAccount = $this->Parameter->get("mail_account");
+        $mailCopy = $this->Parameter->get("mail_copy");
+        $mailPass = $this->Parameter->get("mail_pass");
+        
         $mail = $this->phpmailer_lib->load();
         $mail->CharSet = 'UTF-8';
         $mail->isSMTP();
-        $mail->Host = "vps-2291735-x.dattaweb.com";
-        $mail->Username = "hola@elbrotetienda.com";
-        $mail->Password = "Br0t3T13nd4M41l";
+        $mail->Host = $mailServer;
+        $mail->Username = $mailAccount;
+        $mail->Password = $mailPass;
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
-        $mail->setFrom("hola@elbrotetienda.com", "El Brote Tienda Natural");
+        $mail->setFrom($mailAccount, "El Brote Tienda Natural");
         $mail->addAddress(str_replace(' ','',$order->email));
-        $mail->addReplyTo("hola@elbrotetienda.com", "El Brote Tienda Natural");
-        $mail->addBCC("copy@elbrotetienda.com");
+        $mail->addReplyTo($mailAccount, "El Brote Tienda Natural");
+        $mail->addBCC($mailCopy);
 
         $mail->isHTML(true);
         $mail->Subject = 'Pedido confirmado en El Brote Tienda Natural.';
