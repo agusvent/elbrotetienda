@@ -1116,6 +1116,15 @@ class Order extends CI_Model
         return true;
     }
 
+    public function updateMontoPagado($id, $montoPagado)
+    {
+        $this->db->set('monto_pagado', $montoPagado);
+        $this->db->where('id', $id);
+        $this->db->update('orders');
+
+        return true;
+    }
+
     public function updatePedido($id, $nombre, $telefono, $mail, $direccion, $direccionPisoDepto, $idTipoPedido, $idBarrio, $idSucursal, 
                                  $idBolson, $cantBolson, $montoTotal, $montoPagado, $idEstadoPedido, $observaciones, $idCupon, $montoDescuento, $idPedidoFijo)
     {
