@@ -2424,23 +2424,30 @@ class Api extends CI_Controller
         }
 
         $this->load->library('phpmailer_lib');
+
+        $this->load->model('Content');
+        $mailServer = $this->Content->get("mail_server");
+        $mailAccount = $this->Content->get("mail_account");
+        $mailCopy = $this->Content->get("mail_copy");
+        $mailPass = $this->Content->get("mail_pass");
+
         $mail = $this->phpmailer_lib->load();
         $mail->CharSet = 'UTF-8';
         $mail->isSMTP();
-        $mail->Host = "c1510066.ferozo.com";
-        $mail->Username = "hola@elbroteorganico.com";
-        $mail->Password = "Br0t32019";
+        $mail->Host = $mailServer;
+        $mail->Username = $mailAccount;
+        $mail->Password = $mailPass;
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
-        $mail->setFrom("hola@elbroteorganico.com", "El Brote Orgánico");
+        $mail->setFrom($mailAccount, "El Brote Tienda Natural");
         $mail->addAddress(str_replace(' ','',$order->email));
-        $mail->addReplyTo("hola@elbroteorganico.com", "El Brote Orgánico");
-        $mail->addBCC("copy@elbrotetienda.com");
+        $mail->addReplyTo($mailAccount, "El Brote Tienda Natural");
+        $mail->addBCC($mailCopy);
 
         $mail->isHTML(true);
-        $mail->Subject = 'Pedido de bolsón confirmado.';
+        $mail->Subject = 'Pedido confirmado en El Brote Tienda Natural.';
         $mail->Body = $this->load->view('mailing/'.$viewName, $mailingData, true);
         $mail->AltBody = $this->load->view('mailing/'.$viewAltName, $mailingData, true);
 
