@@ -54,4 +54,4 @@
   </div>
 </div>
 
-<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=91823"></script>
+<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=68172"></script>

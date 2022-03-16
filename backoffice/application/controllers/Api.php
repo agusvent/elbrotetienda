@@ -2546,10 +2546,12 @@ class Api extends CI_Controller
             if(!empty($cExtrasExistentes)){
                 $this->load->model('Extra');
                 foreach($cExtrasExistentes as $oExtra){
-                    $cant = $this->Order->getCantExtraByPedidoAndExtra($oPedidoFijo->id, $oExtra->id);
-                    if($oExtra->stock_ilimitado == 1 || ($oExtra->stock_ilimitado == 0 && $oExtra->stock_disponible >= $cant)) {    
-                        $this->Order->addExtra($newOrderId,$oExtra->id,$cant);
-                        $this->Extra->reducirStockExtra($oExtra->id,$cant);
+                    if($oExtra->active == 1) {
+                        $cant = $this->Order->getCantExtraByPedidoAndExtra($oPedidoFijo->id, $oExtra->id);
+                        if($oExtra->stock_ilimitado == 1 || ($oExtra->stock_ilimitado == 0 && $oExtra->stock_disponible >= $cant)) {    
+                            $this->Order->addExtra($newOrderId,$oExtra->id,$cant);
+                            $this->Extra->reducirStockExtra($oExtra->id,$cant);
+                        }
                     }
                 }
             }
@@ -8361,4 +8363,25 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode($return));
     }
 
+    public function aceptaBolsonesStatus() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $aceptaBolsones = $this->input->post('aceptaBolsones', true);
+
+        if(!valid_session() || !isset($idDiaEntrega) || !isset($aceptaBolsones)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+
+        $this->DiasEntregaPedidos->updateAceptaBolsonStatus($idDiaEntrega, $aceptaBolsones);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
 }

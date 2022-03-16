@@ -105,6 +105,7 @@ $route['api/orders/editarPedido'] = 'Api/editarPedido';
 $route['api/crearDiaEntrega'] = 'Api/crearDiaEntrega';
 $route['api/diaEntrega/uploadImagenBolson'] = 'Api/uploadImagenBolson';
 $route['api/diasEntrega/getDiasEntrega'] = 'Api/getDiasEntregaActivos';
+$route['api/diasEntrega/aceptaBolsones'] = 'Api/aceptaBolsonesStatus';
 $route['api/crearCamionPreConfigurado'] = 'Api/crearCamionPreConfigurado';
 $route['api/camionesPreConfigurados/getById/(:num)'] = 'Api/getCamionPreConfiguradoById/$1';
 $route['api/camionesPreConfigurados/editar'] = 'Api/editarCamionPreConfigurado';

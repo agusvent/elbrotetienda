@@ -1,7 +1,32 @@
 $(document).ready(function() {
     loadDiasEntregaTable();
     $("input.numeric").numeric();
+
+    $('body').on('change', "input[id*='dia_entrega_acepta_bolsones_']", function(e) {
+        e.preventDefault();
+        let idDiaEntrega = $(this).attr('data-dia-entrega-id');
+        let aceptaBolsones = $(this).is(':checked') ? 1 : 0;
+        setAceptaBolsonesStatus(idDiaEntrega, aceptaBolsones);
+    });
 });
+
+function setAceptaBolsonesStatus(idDiaEntrega, aceptaBolsones) {
+    let data = {
+        'idDiaEntrega': idDiaEntrega,
+        'aceptaBolsones': aceptaBolsones
+    };
+    $.ajax({
+        url: ajaxURL + 'diasEntrega/aceptaBolsones',
+        data: data,
+        method: 'post',
+        async: false
+    }).done(function(result) {
+        ocultarLoader();
+        if(result.status != 'ok') {
+            Swal.fire('Error', 'No se pudo modificar la opción. Intenta de nuevo.', 'error');
+        }
+    });
+}
 
 function getDiasEntrega() {
     var cDiasEntrega;
@@ -45,6 +70,23 @@ function loadDiasEntregaTable() {
             html +=" </span>";
             html +=" </div>";
             html +=" <div class='cupones-caja-info'> ";
+            html +=" <p style='text-align:center'><b>Tipos de Pedido Habilitados</b></p>";
+            html +="Punto de Retiro:&nbsp;";
+            if(cDiasEntrega[i].puntoDeRetiroEnabled == 1) {
+                html +=" <input data-type='checkbox-active' data-dia-entrega-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_bolsones_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' checked data-toggle='toggle' data-onstyle='success' data-size='xs'>";
+            } else {
+                html +=" <input data-dia-entrega-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_bolsones_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' data-toggle='toggle' data-onstyle='success' data-size='xs'>";
+            }
+            html +=" <span style='float:right'>";
+            html +=" Envíos a Domicilio: &nbsp;";
+            if(cDiasEntrega[i].deliveryEnabled == 1) {
+                html +=" <input data-type='checkbox-active' data-cupon-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_pedidos_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' checked data-toggle='toggle' data-onstyle='success' data-size='xs'>";
+            } else {
+                html +=" <input data-cupon-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_pedidos_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' data-toggle='toggle' data-onstyle='success' data-size='xs'>";
+            }
+            html +=" </span>";
+            html +=" </div>";
+            html +=" <div class='cupones-caja-info'> ";
             html +=" <div class='diasEntrega-inner-caja alineado-izq'>";
                 html +=" <a href='javascript:openImage(\""+cDiasEntrega[i].imagen+"\")'>";
                     html +=" <img class='img-thumbnail' src='../../assets/img/dias-entrega-imagenes/"+cDiasEntrega[i].imagen+"'/>";
@@ -53,7 +95,6 @@ function loadDiasEntregaTable() {
                 html +=" <a style='margin-left:2px;' href='javascript:editarDiaEntrega("+cDiasEntrega[i].id_dia_entrega+");'>Editar</a>";
             html +=" </div>";
             html +=" <div class='diasEntrega-inner-caja alineado-der'>";
-                html +=" <button type='button' id='bArchivarDiaEntrega"+cDiasEntrega[i].id_dia_entrega+"' class='btn btn-small btn-green'>Archivar</button>";
             html +=" </div>";
             html +=" </div>";
             html +=" </div>";

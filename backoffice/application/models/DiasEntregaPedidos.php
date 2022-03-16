@@ -103,12 +103,20 @@ class DiasEntregaPedidos extends CI_Model
 
     public function getAllActivos()
     {
-        $this->db->select('d.id_dia_entrega, d.fecha_entrega as fechaEntrega, d.descripcion, d.id_estado_logistica, d.fecha_creacion, d.acepta_pedidos as aceptaPedidos, d.acepta_bolsones as aceptaBolsones, d.archivado, d.imagen');
+        $this->db->select('d.id_dia_entrega, d.fecha_entrega as fechaEntrega, d.descripcion, d.id_estado_logistica, d.fecha_creacion, d.acepta_pedidos as aceptaPedidos, d.acepta_bolsones as aceptaBolsones, d.archivado, d.imagen, d.punto_de_retiro_enabled as puntoDeRetiroEnabled, d.delivery_enabled as deliveryEnabled');
         $this->db->from('dias_entrega_pedidos as d');
         $where = "d.archivado = 0";
         $this->db->where($where);
         $this->db->order_by('d.fecha_entrega', 'ASC');
         return $this->db->get()->result();
+    }
+
+    public function updateAceptaBolsonStatus($idDiaEntrega, $status) {
+        $this->db->set('acepta_bolsones', $status);
+        $this->db->where('id_dia_entrega', $idDiaEntrega);
+        $this->db->update('dias_entrega_pedidos');
+        
+        return true;
     }
 
 }
