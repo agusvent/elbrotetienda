@@ -2475,20 +2475,26 @@ class Api extends CI_Controller
         $diaEntregaCreado = false;
         $diaEntregaFecha = $this->input->post('diaEntregaFecha', true);
         $diaEntregaLabelFinal = $this->input->post('diaEntregaLabelFinal', true);
+        $aceptaBolsones = $this->input->post('aceptaBolsones', true);
+        $puntoDeRetiroStatus = $this->input->post('puntoDeRetiroStatus', true);
+        $deliveryStatus = $this->input->post('deliveryStatus', true);
 
         if(isset($diaEntregaFecha) && !empty($diaEntregaFecha)){
             $this->load->model('DiasEntregaPedidos');
         
-            $retId = $this->DiasEntregaPedidos->add($diaEntregaFecha,$diaEntregaLabelFinal);
+            $retId = $this->DiasEntregaPedidos->add($diaEntregaFecha,$diaEntregaLabelFinal, $aceptaBolsones, $puntoDeRetiroStatus, $deliveryStatus);
             if($retId > 0){
                 $diaEntregaCreado = true;
             }
         }
 
-        /*
-            ACA TENGO QUE PISAR EL DIA DEL FORMULARIO, ASI CON ESTO QUEDA CAMBIADO.
-            Y TENGO QUE BARRER CON LOS FIJOS PARA CREAR LOS PEDIDOS PRE FIJADOS.
-        */
+        /***
+         * 
+         * 
+         * ME FALTA REVISAR POR QUE NO ME CARGA BIEN LA IMAGEN DEL BOLSON
+         * 
+         */
+
         $this->load->model('Content');
         $this->Content->set("confirmation_label",$diaEntregaLabelFinal);
 
@@ -8386,6 +8392,81 @@ class Api extends CI_Controller
         $this->load->model('DiasEntregaPedidos');
 
         $this->DiasEntregaPedidos->updateAceptaBolsonStatus($idDiaEntrega, $aceptaBolsones);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function diaEntregaPuntoRetiroStatus() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $puntoDeRetiroHabilitado = $this->input->post('puntoDeRetiroHabilitado', true);
+
+        if(!valid_session() || !isset($idDiaEntrega) || !isset($puntoDeRetiroHabilitado)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Error en diaEntregaPuntoRetiroStatus.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+
+        $this->DiasEntregaPedidos->updatePuntosDeRetiroEnabled($idDiaEntrega, $puntoDeRetiroHabilitado);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }    
+
+    public function diaEntregaDeliveryStatus() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $deliveryHabilitado = $this->input->post('deliveryHabilitado', true);
+
+        if(!valid_session() || !isset($idDiaEntrega) || !isset($deliveryHabilitado)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Error en diaEntregaDeliveryStatus.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+
+        $this->DiasEntregaPedidos->updateDeliveryEnabled($idDiaEntrega, $deliveryHabilitado);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }    
+
+    public function diaEntregaUpdateStatus() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+
+        if(!valid_session() || !isset($idDiaEntrega)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Error en diaEntregaUpdateStatus.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+        $oDiaEntrega = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        $hasAtLeastOneTipoPedidoEnabled = false;
+        if(!is_null($oDiaEntrega)) {
+            if($oDiaEntrega->puntoDeRetiroEnabled == 1 || $oDiaEntrega->deliveryEnabled == 1 ) {
+                $hasAtLeastOneTipoPedidoEnabled = true;
+            }
+        }        
+        $status = 0;
+        if($hasAtLeastOneTipoPedidoEnabled) {
+            $status = 1;
+        }
+        $this->DiasEntregaPedidos->updateAceptaPedidosStatus($idDiaEntrega, $status);
 
         $return['status'] = self::OK_VALUE;
         $this->output->set_status_header(200);

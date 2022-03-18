@@ -532,7 +532,10 @@ $config['csrf_exclude_uris'] = array(
     'api/cupones/setModuloCuponesStatus',
     'api/cupones/eliminarCupon',
     'api/cupones/status',
-    'api/diasEntrega/aceptaBolsones'
+    'api/diasEntrega/aceptaBolsones',
+    'api/diasEntrega/puntoDeRetiroStatus',
+    'api/diasEntrega/deliveryStatus',
+    'api/diasEntrega/updateStatus'
 );
 
 /*

@@ -56,84 +56,6 @@ var mainHelper = {
             $("#modalCrearDiaEntrega").modal("hide");
         });
 
-        $("#bCrearNuevoDiaEntrega").on("click",function(e){
-            e.preventDefault();
-            mostrarLoader();
-            var msj = checkFormCrearNuevoDiaEntrega();
-            if(msj!=""){
-                ocultarLoader();
-                return Swal.fire('Error', msj, 'error');
-            }else{
-                $("#bCrearNuevoDiaEntrega").prop("disabled",true);
-                var diaEntregaFecha = $("#crearDiaEntregaFecha").val();
-                var diaEntregaLabelFinal = $("#crearDiaEntregaLabelFinal").val();
-
-                let data = {
-                    'diaEntregaFecha': diaEntregaFecha,
-                    'diaEntregaLabelFinal': diaEntregaLabelFinal
-                };
-                $.ajax({
-                    url: ajaxURL + 'crearDiaEntrega',
-                    data: data,
-                    method: 'post'
-                }).done(function(res) {
-                    ocultarLoader();
-                    //console.log(res);
-                    
-                    var imagenBolsonData = $('#crearDiaEntregaImagenBolson').prop('files')[0];  
-                    var imagenBolsonDataExtension = $('#crearDiaEntregaImagenBolson').val().substr(($('#crearDiaEntregaImagenBolson').val().lastIndexOf('.') + 1));
-
-                    var form_data = new FormData();         
-                    form_data.append('file', imagenBolsonData);    
-                    form_data.append('fileExtension', imagenBolsonDataExtension);
-
-                    $.ajax({
-                        url: ajaxURL + 'diaEntrega/uploadImagenBolson', // point to server-side PHP script 
-                        dataType: 'text', // what to expect back from the PHP script, if anything
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                        data: form_data,             
-                        type: 'post',
-                        success: function(res){
-                            //console.log("HOLA",res);
-                            //extrasHelper.cleanAddExtraForm();
-                            window.location.reload(true); 
-                        }
-                    });  
-
-
-                    var respuesta = JSON.parse(res);
-                    if(respuesta.diaEntregaCreado){
-                        // Limpio el formulario y escondo el modal
-                        limpiarFormularioCrearNuevoDiaEntrega();
-                        $("#lDiaBolsonFormulario").html(diaEntregaLabelFinal);
-                        $("#modalCrearDiaEntrega").modal("hide");
-                        return Swal.fire('Dia de Entrega Creado', '<p>El día '+diaEntregaLabelFinal+' ha sido creado satisfactoriamente. Se crearon los pedidos fijos para: </p>'+respuesta.pedidosCreados, 'success');
-                    }else{
-                        return Swal.fire('Error', 'No se pudo crear el dia de entrega. Intenta de nuevo.', 'error');
-                    }
-                });
-            }  
-  
-        });
-
-        $("#crearDiaEntregaFecha").on("change",function(e){
-            var weekday = ["LUNES","MARTES","MIÉRCOLES","JUEVES","VIERNES","SÁBADO","DOMINGO"];
-            var meses = ["ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"];
-            var fecha = $(this).val();
-            var dia = fecha.substr(8,9);
-            var fechaFormateada = new Date(fecha);
-            var mes = fechaFormateada.getMonth();
-            if(dia == 1){
-                if(mes < 11){
-                    mes = mes + 1;
-                }else{
-                    mes = 0;
-                }
-            }
-            $("#crearDiaEntregaLabelFinal").val((weekday[fechaFormateada.getDay()]) + " " + dia +  " de " + (meses[mes]));
-        });
         $("#bPreCrearNuevoDiaEntrega").on("click",function(e){
             crearNuevoDiaDeEntrega();
         });
@@ -387,31 +309,4 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBol
         $("#lFiltradoPor").html("Fechas: "+fechaDesde+" / "+fechaHasta);
     }
     $("#infoBolsonesBox").html(htmlBolsonesAndExtras);   
-}
-
-function crearNuevoDiaDeEntrega(){
-    $("#modalCrearDiaEntrega").modal("show");
-}
-
-function limpiarFormularioCrearNuevoDiaEntrega(){
-    $("#crearDiaEntregaFecha").val("");
-    $("#crearDiaEntregaLabelFinal").val("");    
-    $("#bCrearNuevoDiaEntrega").prop("disabled",false);
-}
-
-function checkFormCrearNuevoDiaEntrega(){
-    var msj = "";
-    if($("#crearDiaEntregaFecha").val()==""){
-        msj += "<p>Debe seleccionar una fecha en 'Nuevo Día de Entrega'.</p>";
-    }
-    if($("#crearDiaEntregaImagenBolson").val()==""){
-        msj += "<p>Debe seleccionar una imagen en 'Imagen del Bolsón'.</p>";
-    }else{
-        var extensionDocumento = $('#crearDiaEntregaImagenBolson').val().substr(($('#crearDiaEntregaImagenBolson').val().lastIndexOf('.') + 1));
-        extensionDocumento = extensionDocumento.toLowerCase();
-        if(extensionDocumento!="jpg" && extensionDocumento!="jpeg" && extensionDocumento!="png") {
-            msj += "<p>El archivo de 'Imagen del Bolsón' puede ser JPG, JPEG o PNG.</p>";
-        }
-    }
-    return msj;
 }
