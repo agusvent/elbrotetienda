@@ -2547,7 +2547,7 @@ class Api extends CI_Controller
             if(!empty($cExtrasExistentes)){
                 $this->load->model('Extra');
                 foreach($cExtrasExistentes as $oExtra){
-                    if($oExtra->active == 1) {
+                    if( !is_null($oExtra->active) && $oExtra->active == 1) {
                         $cant = $this->Order->getCantExtraByPedidoAndExtra($oPedidoFijo->id, $oExtra->id);
                         if($oExtra->stock_ilimitado == 1 || ($oExtra->stock_ilimitado == 0 && $oExtra->stock_disponible >= $cant)) {    
                             $this->Order->addExtra($newOrderId,$oExtra->id,$cant);
