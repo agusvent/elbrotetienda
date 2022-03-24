@@ -98,8 +98,10 @@ const altaPedidosHelper = {
             $("#cantBolson").val(-1);
         //$("#altaPedidoCostoEnvio").val(0);
             $("#altaPedidoMontoPagado").val(0);
-            $("#idBolson").val(-1);
-            $("#idBolson").prop("disabled",false);
+            if(!$("#idBolson").prop("disabled")) {
+                $("#idBolson").val(-1);
+                $("#idBolson").prop("disabled",false);
+            }
             if( $(this).val()==1 ){
                 //SI ES SUCURSAL
                 $("#divBarrios").hide();
@@ -189,7 +191,6 @@ const altaPedidosHelper = {
                 return Swal.fire('Atención', mensajeForm, 'error');
             }else{
                 let data = {
-                    'diaBolson': diaBolson,
                     'idDiaBolson': idDiaBolson,
                     'nombre' : nombre,
                     'telefono' : telefono,
@@ -251,6 +252,15 @@ const altaPedidosHelper = {
         });
         $("#idBarrio").on("change",function() {
             recalcularCostoEnvio(this);
+        });
+        $("#idDiaEntregaPedido").on("change",function(e){
+            e.preventDefault();
+            let idDiaEntrega = $(this).val();
+            if(idDiaEntrega >0){
+                setFormByConfigDiaEntrega(getConfigDiaEntrega(idDiaEntrega));
+            } else {
+                $("#idTipoPedido").html("");
+            }
         })
     },
     init: function() {
@@ -364,6 +374,7 @@ function initSelectExtras(){
 
 function checkAltaPedidoForm(){
     var mensaje = "";
+    var idDiaEntrega = $("#idDiaEntregaPedido").val();
     var nombre = $("#altaPedidoNombreCompleto").val();
     var telefono = $("#altaPedidoTelefono").val();
     var mail = $("#altaPedidoMail").val();
@@ -374,6 +385,9 @@ function checkAltaPedidoForm(){
     var idBolson = $("#idBolson").val();
     var montoPagado = $("#altaPedidoMontoPagado").val();
     var idEstadoPedido = $("#idEstadoPedido").val();
+    if(idDiaEntrega==-1){
+        mensaje += "<p>Debe seleccionar el Día de Entrega.</p>";
+    }    
     if(nombre==""){
         mensaje += "<p>Debe ingresar el nombre del cliente.</p>";
     }
@@ -431,6 +445,7 @@ function checkAltaPedidoForm(){
 
 function clearAltaPedidoForm(){
     mostrarLoader();
+    $("#idDiaEntregaPedido").val(-1);
     $("#altaPedidoNombreCompleto").val("");
     $("#altaPedidoTelefono").val("");
     $("#altaPedidoMail").val("");
@@ -438,6 +453,7 @@ function clearAltaPedidoForm(){
     $("#altaPedidoDireccionPisoDepto").val("");
     $("#divDireccion").hide();
     $("#idTipoPedido").val(-1);
+    $("#idTipoPedido").html("");
     $("#idBarrio").val(-1);
     $("#divBarrios").hide();
     $("#divCostoEnvio").hide();
@@ -553,4 +569,41 @@ function recalcularCostoEnvio(select) {
     $("#lSubtotal").html(subtotal)
     calcularDebe();
     $("#idBarrio option").attr('data-barrio-costoEnvioAnterior',costoEnvio);   
+}
+
+function getConfigDiaEntrega(idDiaEntrega) {
+    let configDiaEntrega;
+    var data = {
+        "idDiaEntrega": idDiaEntrega
+    }
+    $.ajax({
+        url: ajaxURL + 'diasEntrega/getConfigDiaEntrega/',
+        method: 'post',
+        data: data,
+        async: false
+    }).done(function(result) {
+        configDiaEntrega = {
+            "puntoRetiroEnabled": result.puntoRetiroEnabled,
+            "deliveryEnabled": result.deliveryEnabled,
+            "bolsonEnabled": result.bolsonEnabled
+        }
+    });
+    return configDiaEntrega;
+}
+
+function setFormByConfigDiaEntrega(configDiaEntrega) {
+    var html = "<option value='-1' selected>Seleccione</option>";
+    if(configDiaEntrega.puntoRetiroEnabled == 1) {
+        html += "<option value='1'>Sucursal</option>";
+    }
+    if(configDiaEntrega.deliveryEnabled == 1) {
+        html += "<option value='2'>Domicilio</option>";
+    }
+    $("#idTipoPedido").html(html);
+
+    if(configDiaEntrega.bolsonEnabled == 1) {
+        $("#idBolson").prop("disabled",false);
+    }else{
+        $("#idBolson").prop("disabled",true);
+    }
 }

@@ -28,6 +28,10 @@ $(document).ready(function() {
         refreshImagenBolsonField(bolsonesEnabled);
     });
 
+    $('#apagarFormularioPedidos').change(function(){
+        changeFormStatus($(this).is(':checked') ? 0 : 1);
+    });
+
     $("#bCrearNuevoDiaEntrega").on("click",function(e){
         e.preventDefault();
         mostrarLoader();
@@ -38,35 +42,41 @@ $(document).ready(function() {
         }else{
             $("#bCrearNuevoDiaEntrega").prop("disabled",true);
             var diaEntregaFecha = $("#crearDiaEntregaFecha").val();
+            $("#crearDiaEntregaLabelFinal").prop("disabled",false);
             var diaEntregaLabelFinal = $("#crearDiaEntregaLabelFinal").val();
             let aceptaBolsones = $("#diaEntregaAceptaBolsones").is(':checked') ? 1 : 0;
             let puntoDeRetiroStatus = $("#diaEntregaPuntoDeRetiroStatus").is(':checked') ? 1 : 0;
             let deliveryStatus = $("#diaEntregaDeliveryStatus").is(':checked') ? 1 : 0;
+            let cargaPedidosFijos = $("#diaEntregaCargaPedidosFijos").is(':checked') ? 1 : 0;
 
             let data = {
                 'diaEntregaFecha': diaEntregaFecha,
                 'diaEntregaLabelFinal': diaEntregaLabelFinal,
                 'aceptaBolsones': aceptaBolsones,
                 'puntoDeRetiroStatus': puntoDeRetiroStatus,
-                'deliveryStatus': deliveryStatus
+                'deliveryStatus': deliveryStatus,
+                'cargaPedidosFijos': cargaPedidosFijos
             };
             $.ajax({
                 url: ajaxURL + 'crearDiaEntrega',
                 data: data,
-                method: 'post'
+                method: 'post',
+                async: false
             }).done(function(res) {
                 ocultarLoader();
-                //console.log(res);
-                
+                let response = JSON.parse(res);
+                console.log("RES:",response);
+                let idDiaEntrega = response[0].idDiaEntrega;
                 var imagenBolsonData = $('#crearDiaEntregaImagenBolson').prop('files')[0];  
                 var imagenBolsonDataExtension = $('#crearDiaEntregaImagenBolson').val().substr(($('#crearDiaEntregaImagenBolson').val().lastIndexOf('.') + 1));
 
                 var form_data = new FormData();         
                 form_data.append('file', imagenBolsonData);    
                 form_data.append('fileExtension', imagenBolsonDataExtension);
+                form_data.append('idDiaEntrega', idDiaEntrega);
 
                 $.ajax({
-                    url: ajaxURL + 'diaEntrega/uploadImagenBolson', // point to server-side PHP script 
+                    url: ajaxURL + 'diaEntrega/uploadImagenDiaEntrega', // point to server-side PHP script 
                     dataType: 'text', // what to expect back from the PHP script, if anything
                     cache: false,
                     contentType: false,
@@ -80,9 +90,7 @@ $(document).ready(function() {
                     }
                 });  
 
-
-                var respuesta = JSON.parse(res);
-                if(respuesta.diaEntregaCreado){
+                /*if(respuesta.diaEntregaCreado){
                     // Limpio el formulario y escondo el modal
                     limpiarFormularioCrearNuevoDiaEntrega();
                     $("#lDiaBolsonFormulario").html(diaEntregaLabelFinal);
@@ -90,10 +98,9 @@ $(document).ready(function() {
                     return Swal.fire('Dia de Entrega Creado', '<p>El día '+diaEntregaLabelFinal+' ha sido creado satisfactoriamente. Se crearon los pedidos fijos para: </p>'+respuesta.pedidosCreados, 'success');
                 }else{
                     return Swal.fire('Error', 'No se pudo crear el dia de entrega. Intenta de nuevo.', 'error');
-                }
+                }*/
             });
         }  
-
     });
 
     $("#crearDiaEntregaFecha").on("change",function(e){
@@ -111,6 +118,20 @@ $(document).ready(function() {
             }
         }
         $("#crearDiaEntregaLabelFinal").val((weekday[fechaFormateada.getDay()]) + " " + dia +  " de " + (meses[mes]));
+    });
+
+    $("#bEditarImagenDiaEntrega").on("click",function(e){
+        e.preventDefault();
+        mostrarLoader();
+        var msj = "";
+        msj = checkFormEditarImagen();
+        if(msj == ""){
+            cargarImagen($("#idDiaEntregaEditar").val(),$('#diaEntregaEditarImagen'));
+        }else{
+            ocultarLoader();
+            $("#diaEntregaEditarImagen").css("border","1px solid red");
+            $("#lErrorEditarImagen").html(msj);
+        }
     });
 });
 
@@ -307,4 +328,72 @@ function checkFormCrearNuevoDiaEntrega(){
         }    
     }
     return msj;
+}
+
+function checkFormEditarImagen(){
+    var msj = "";
+    if($("#diaEntregaEditarImagen").val()==""){
+        msj += "<p>Debe seleccionar una imagen en 'Imagen'.</p>";
+    }else{
+        var extensionDocumento = $('#diaEntregaEditarImagen').val().substr(($('#diaEntregaEditarImagen').val().lastIndexOf('.') + 1));
+        extensionDocumento = extensionDocumento.toLowerCase();
+        if(extensionDocumento!="jpg" && extensionDocumento!="jpeg" && extensionDocumento!="png") {
+            msj += "<p>El archivo 'Imagen' puede ser JPG, JPEG o PNG.</p>";
+        }
+    }    
+    return msj;
+}
+
+function changeFormStatus(newStatus){
+    Swal.fire({
+        title: 'Seguro?',
+        text: "Activar/desactivar esto significa que los usuarios podrán (o no) hacer pedidos desde la web. Revisa bien antes de continuar.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar'
+        }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                url: ajaxURL + 'formStatus/' + newStatus,
+                method: 'get'
+            }).done(function() {
+                window.location.reload(true);
+            });
+        }else{
+            window.location.reload(true);
+        }
+    });    
+}
+
+function editarDiaEntrega(idDiaEntrega) {
+    $("#modalEditarImagenDia").modal("show");
+    $("#idDiaEntregaEditar").val(idDiaEntrega);
+}
+
+function cargarImagen(idDiaEntrega,input) {
+    var imagenBolsonData = input.prop('files')[0];  
+    var imagenBolsonDataExtension = input.val().substr((input.val().lastIndexOf('.') + 1));
+
+    var form_data = new FormData();         
+    form_data.append('file', imagenBolsonData);    
+    form_data.append('fileExtension', imagenBolsonDataExtension);
+    form_data.append('idDiaEntrega', idDiaEntrega);
+
+    $.ajax({
+        url: ajaxURL + 'diaEntrega/uploadImagenDiaEntrega', // point to server-side PHP script 
+        dataType: 'text', // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,             
+        type: 'post',
+        success: function(res){
+            //console.log("HOLA",res);
+            //extrasHelper.cleanAddExtraForm();
+            window.location.reload(true); 
+        }
+    });
 }

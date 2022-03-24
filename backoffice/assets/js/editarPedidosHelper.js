@@ -100,7 +100,7 @@ const editarPedidosHelper = {
             $("#editarPedidoCostoEnvio").val(0);
             $("#editarPedidoMontoPagado").val(0);
             $("#editarPedidoIdBolson").val(-1);
-            $("#editarPedidoIdBolson").prop("disabled",false);
+            //$("#editarPedidoIdBolson").prop("disabled",false);
             hideShowFields(idTipoPedido);
             cargarExtras(idTipoPedido);
             /*if(idTipoPedido==2){
@@ -129,6 +129,7 @@ const editarPedidosHelper = {
             mostrarLoader();
             $("#bGrabarEditar").prop("disabled",true);
             var idPedido = $("#editarPedidoIdPedido").val();
+            var idDiaEntrega = $("#idDiaEntregaPedido").val();
             var nombre = $("#editarPedidoNombreCompleto").val();
             var telefono = $("#editarPedidoTelefono").val();
             var mail = $("#editarPedidoMail").val();
@@ -175,6 +176,7 @@ const editarPedidosHelper = {
             }else{
                 let data = {
                     'idPedido': idPedido,
+                    'idDiaEntrega': idDiaEntrega,
                     'nombre' : nombre,
                     'telefono' : telefono,
                     'mail' : mail,
@@ -258,7 +260,16 @@ const editarPedidosHelper = {
         $("#editarPedidoIdBarrio").on("change",function() {
             recalcularCostoEnvio(this);
         });
-        
+
+        $("#idDiaEntregaPedido").on("change",function(e){
+            e.preventDefault();
+            let idDiaEntrega = $(this).val();
+            if(idDiaEntrega >0){
+                setFormByConfigDiaEntrega(getConfigDiaEntrega(idDiaEntrega));
+            } else {
+                $("#idTipoPedido").html("");
+            }
+        })
     },
     init: function() {
         this.asignoEventos();
@@ -622,4 +633,42 @@ function recalcularCostoEnvio(select) {
     $("#lEditarPedidoSubtotal").html(subtotal)
     editarPedidoCalcularDebe();
     $("#editarPedidoIdBarrio option").attr('data-barrio-costoEnvioAnterior',costoEnvio);   
+}
+
+function setFormByConfigDiaEntrega(configDiaEntrega) {
+    var html = "<option value='-1' selected>Seleccione</option>";
+    if(configDiaEntrega.puntoRetiroEnabled == 1) {
+        html += "<option value='1'>Sucursal</option>";
+    }
+    if(configDiaEntrega.deliveryEnabled == 1) {
+        html += "<option value='2'>Domicilio</option>";
+    }
+    $("#editarPedidoIdTipoPedido").html(html);
+    $("#editarPedidoIdTipoPedido").change();
+
+    if(configDiaEntrega.bolsonEnabled == 1) {
+        $("#editarPedidoIdBolson").prop("disabled",false);
+    }else{
+        $("#editarPedidoIdBolson").prop("disabled",true);
+    }
+}
+
+function getConfigDiaEntrega(idDiaEntrega) {
+    let configDiaEntrega;
+    var data = {
+        "idDiaEntrega": idDiaEntrega
+    }
+    $.ajax({
+        url: ajaxURL + 'diasEntrega/getConfigDiaEntrega/',
+        method: 'post',
+        data: data,
+        async: false
+    }).done(function(result) {
+        configDiaEntrega = {
+            "puntoRetiroEnabled": result.puntoRetiroEnabled,
+            "deliveryEnabled": result.deliveryEnabled,
+            "bolsonEnabled": result.bolsonEnabled
+        }
+    });
+    return configDiaEntrega;
 }

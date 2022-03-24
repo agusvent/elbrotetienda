@@ -14,19 +14,6 @@
         <button type="button" id="bDownloadExcel" class="btn btn-sm btn-primary marginTop10">Descargar Excel</button>
         <button type="button" id="bConsultar" class="btn btn-sm btn-primary marginTop10">Consultar</button>
     </div>
-    <div class="options-container-right">
-        <div class="form-check pl-0">
-            <label for="stackedCheck2" class="form-check-label">¿Se aceptan pedidos?</label>
-            <input id="stackedCheck2" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs" <?=($formEnabled == 1) ? 'checked':'';?>>
-        </div>
-        <!--<div class="form-check pl-0">
-            <label for="stackedCheck3" class="form-check-label">¿Se aceptan pedidos a domicilio?</label>
-            <input id="stackedCheck3" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs" <?=($deliveryEnabled == 1) ? 'checked':'';?>>
-        </div>-->
-        <div>
-            <button type="button" id="bPreCrearNuevoDiaEntrega" class="btn btn-sm btn-green marginTop10">Crear Nuevo D&iacute;a de Entrega</button>
-        </div>
-    </div>
 </div>
 
 <div class="card">

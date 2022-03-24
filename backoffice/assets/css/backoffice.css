@@ -589,6 +589,7 @@ input[name="dataTo"] {
     max-width:45px;
     min-width:45px;
     min-height:45px;
+    max-height:45px;
     border: 2px solid grey;
 }
 

@@ -1020,7 +1020,6 @@ class Order extends CI_Model
     }
 
     public function addOrder(
-                        $diaBolson,
                         $idDiaBolson,
                         $nombre,
                         $telefono,
@@ -1091,7 +1090,9 @@ class Order extends CI_Model
             $total = $cantBolson * $oBolson->price;
             $this->db->set('total_bolson', $total);
         }
-        $this->db->set('deliver_date', $diaBolson);
+        $this->load->model('DiasEntregaPedidos');
+        $oDiaEntrega = $this->DiasEntregaPedidos->getById($idDiaBolson);
+        $this->db->set('deliver_date', $oDiaEntrega->descripcion);
         $this->db->set('id_dia_entrega', $idDiaBolson);
 
         if(isset($idCupon) && $idCupon > 0 && isset($montoDescuento) && $montoDescuento > 0) {
@@ -1125,7 +1126,7 @@ class Order extends CI_Model
         return true;
     }
 
-    public function updatePedido($id, $nombre, $telefono, $mail, $direccion, $direccionPisoDepto, $idTipoPedido, $idBarrio, $idSucursal, 
+    public function updatePedido($id, $idDiaEntrega, $nombre, $telefono, $mail, $direccion, $direccionPisoDepto, $idTipoPedido, $idBarrio, $idSucursal, 
                                  $idBolson, $cantBolson, $montoTotal, $montoPagado, $idEstadoPedido, $observaciones, $idCupon, $montoDescuento, $idPedidoFijo)
     {
 
@@ -1138,6 +1139,11 @@ class Order extends CI_Model
         $oTipoPedido = $this->TiposPedidos->getById($idTipoPedido);
         $this->db->set('deliver_type', $oTipoPedido->codigo);
 
+        $this->load->model('DiasEntregaPedidos');
+        $oDiaEntrega = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        $this->db->set('id_dia_entrega', $idDiaEntrega);
+        $this->db->set('deliver_date', $oDiaEntrega->descripcion);
+        
         if($idTipoPedido==1){
             //SI ES SUCURSAL
             $this->db->set('office_id', $idSucursal);
@@ -1233,7 +1239,7 @@ class Order extends CI_Model
 
     public function getById($orderId)
     {
-        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, monto_total, monto_pagado, id_estado_pedido, observaciones, id_tipo_pedido, id_pedido_fijo, id_pedido_original, cant_bolson, total_bolson, id_cupon, monto_descuento');
+        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, monto_total, monto_pagado, id_estado_pedido, observaciones, id_tipo_pedido, id_pedido_fijo, id_pedido_original, cant_bolson, total_bolson, id_cupon, monto_descuento, id_dia_entrega');
         $this->db->from('orders');
         $this->db->order_by('created_at', 'DESC');
         $this->db->where('id', $orderId);
@@ -1247,7 +1253,7 @@ class Order extends CI_Model
         return $query->result();
     }
 
-    public function getOrdersFromConsultaPedidos($diaBolson,$soloDiaBolson,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido){
+    public function getOrdersFromConsultaPedidos($idDiaEntrega,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido){
         $this->db->select('o.id, o.client_name, o.email, o.phone, o.deliver_type, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, barrio.id as id_barrio, barrio.nombre as nombre_barrio, o.deliver_address as cliente_domicilio, o.deliver_extra as cliente_domicilio_extra, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, o.deliver_date, o.created_at, o.observaciones, o.monto_total, o.monto_pagado, o.id_estado_pedido, ep.descripcion as estadoPedido');
         $this->db->from('orders as o');
         $this->db->join('offices as sucursal', 'sucursal.id = o.office_id', 'left');
@@ -1259,9 +1265,9 @@ class Order extends CI_Model
         if(isset($nroPedido) && $nroPedido != "") {
             $where .= " AND o.id = ".$nroPedido;
         }else{
-            //SI FILTRO POR BOLSON DEL DIA NO PUEDO FILTRAR POR FECHA
-            if(isset($soloDiaBolson) && $soloDiaBolson==1){
-                $where .= " AND o.deliver_date = '".$diaBolson."'";
+            //SI FILTRO POR DIA DE ENTREGA NO PUEDO FILTRAR POR FECHA
+            if(isset($idDiaEntrega) && $idDiaEntrega>0){
+                $where .= " AND o.id_dia_entrega = ".$idDiaEntrega;
             }else{
                 if(isset($fechaDesde) && $fechaDesde != "") {
                     $where .= " AND o.created_at >= '".$fechaDesde." 00:00:00'";

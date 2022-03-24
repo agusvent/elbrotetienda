@@ -511,7 +511,7 @@ $config['csrf_exclude_uris'] = array(
     'api/preciosPedidosExtra/editMontoMinimoPedidosExtras',
     'api/preciosPedidosExtra/editCostoEnvioPedidosExtras',
     'api/preciosPedidosExtra/editMontoMinimoEnvioSinCargoPedidosExtras',
-    'api/diaEntrega/uploadImagenBolson',
+    'api/diaEntrega/uploadImagenDiaEntrega',
     'api/preciosPedidosExtra/puntoRetiroHabilitado',
     'api/preciosPedidosExtra/domicilioHabilitado',
     'api/logistica/setNroOrdenForPedidosByDiaEntrega',
@@ -535,7 +535,8 @@ $config['csrf_exclude_uris'] = array(
     'api/diasEntrega/aceptaBolsones',
     'api/diasEntrega/puntoDeRetiroStatus',
     'api/diasEntrega/deliveryStatus',
-    'api/diasEntrega/updateStatus'
+    'api/diasEntrega/updateStatus',
+    'api/diasEntrega/getConfigDiaEntrega'
 );
 
 /*

@@ -643,7 +643,6 @@ class Api extends CI_Controller
 
         $this->load->model('Content');
         $this->Content->set('form_enabled', $status);
-
         $return['status'] = self::OK_VALUE;
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode(true));
@@ -2146,8 +2145,7 @@ class Api extends CI_Controller
             $this->output->set_status_header(401);
             return $this->output->set_output(json_encode($return));
         }
-        $diaBolson = $this->input->post('diaBolson', true);
-        $soloDiaBolson = $this->input->post('soloDiaBolson', true);
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
         $incluirCancelados = $this->input->post('incluirCancelados', true);
         $nombre = $this->input->post('nombre', true);
         $mail = $this->input->post('mail', true);
@@ -2157,7 +2155,7 @@ class Api extends CI_Controller
 
         $this->load->model('Order');
         
-        $pedidos = $this->Order->getOrdersFromConsultaPedidos($diaBolson,$soloDiaBolson,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido);
+        $pedidos = $this->Order->getOrdersFromConsultaPedidos($idDiaEntrega,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido);
         
 
         $return['status'] = self::OK_VALUE;
@@ -2178,7 +2176,6 @@ class Api extends CI_Controller
             $this->output->set_status_header(401);
             return $this->output->set_output(json_encode($return));
         }
-        $diaBolson = $this->input->post('diaBolson', true);
         $idDiaBolson = $this->input->post('idDiaBolson', true);
         $nombre = $this->input->post('nombre', true);
         $telefono = $this->input->post('telefono', true);
@@ -2207,7 +2204,6 @@ class Api extends CI_Controller
         $this->load->model('Order');
         $newOrderId = -1;
         $newOrderId = $this->Order->addOrder(
-            $diaBolson,
             $idDiaBolson,
             $nombre,
             $telefono,
@@ -2472,107 +2468,100 @@ class Api extends CI_Controller
             return $this->output->set_output(json_encode($return));
         }
 
+        $this->load->model('Order');
+        $this->load->model('Pocket');
+
         $diaEntregaCreado = false;
         $diaEntregaFecha = $this->input->post('diaEntregaFecha', true);
         $diaEntregaLabelFinal = $this->input->post('diaEntregaLabelFinal', true);
         $aceptaBolsones = $this->input->post('aceptaBolsones', true);
         $puntoDeRetiroStatus = $this->input->post('puntoDeRetiroStatus', true);
         $deliveryStatus = $this->input->post('deliveryStatus', true);
+        $cargaPedidosFijos = $this->input->post('cargaPedidosFijos', true);
 
+        $idDiaEntrega = -1;
         if(isset($diaEntregaFecha) && !empty($diaEntregaFecha)){
             $this->load->model('DiasEntregaPedidos');
         
-            $retId = $this->DiasEntregaPedidos->add($diaEntregaFecha,$diaEntregaLabelFinal, $aceptaBolsones, $puntoDeRetiroStatus, $deliveryStatus);
-            if($retId > 0){
+            $idDiaEntrega = $this->DiasEntregaPedidos->add($diaEntregaFecha,$diaEntregaLabelFinal, $aceptaBolsones, $puntoDeRetiroStatus, $deliveryStatus);
+            if($idDiaEntrega > 0){
                 $diaEntregaCreado = true;
             }
         }
+        //$this->load->model('Content');
+        //$this->Content->set("confirmation_label",$diaEntregaLabelFinal);    
 
-        /***
-         * 
-         * 
-         * ME FALTA REVISAR POR QUE NO ME CARGA BIEN LA IMAGEN DEL BOLSON
-         * 
-         */
-
-        $this->load->model('Content');
-        $this->Content->set("confirmation_label",$diaEntregaLabelFinal);
-
-        $this->load->model('Order');
-        $this->load->model('Content');
-        $this->load->model('Pocket');
-        
-
-        $cPedidosFijos = $this->Order->getAllPedidosFijos();
-        
         $pedidosCreados = "";
-        
-        foreach($cPedidosFijos as $oPedidoFijo){
-            $newOrderId = -1;
-            $oBolson = $this->Pocket->getById(1);
-            $precio = $oBolson->price;
-            $cantBolson = 0;
-            $montoPagado = 0;
-            if($oPedidoFijo->cant_bolson > 0) {
-                $cantBolson = $oPedidoFijo->cant_bolson;
-                $precio = $precio * $cantBolson;
-            }
-            if($oPedidoFijo->id_estado_pedido==3){
-                //SI ES BONIFICADO, MONTO PAGADO ES IGUAL AL VALOR DEL BOLSON, PARA QUE QUEDE DEBE = $0.
-                $montoPagado = $precio;
-            }else{
-                $montoPagado = $oPedidoFijo->monto_pagado;
-            }
-            $newOrderId = $this->Order->addOrder(
-                $diaEntregaLabelFinal,
-                $retId,
-                $oPedidoFijo->client_name,
-                $oPedidoFijo->phone,
-                $oPedidoFijo->email,
-                $oPedidoFijo->deliver_address,
-                $oPedidoFijo->deliver_extra,
-                $oPedidoFijo->id_tipo_pedido,
-                $oPedidoFijo->barrio_id,
-                $oPedidoFijo->office_id,
-                $oBolson->id,
-                $cantBolson,
-                $precio,
-                $montoPagado,
-                $oPedidoFijo->id_estado_pedido,
-                $oPedidoFijo->observaciones,
-                -1,
-                -1,
-                0, //ACA DEJO EL PEDIDO COMO NO FIJO PORQUE EL FIJO ES EL ORIGINAL
-                $oPedidoFijo->id
-            );
-            $pedidosCreados = $pedidosCreados."<p>".$oPedidoFijo->client_name.".</p>";
+        if($cargaPedidosFijos==1) {
+            $cPedidosFijos = $this->Order->getAllPedidosFijos();
+            foreach($cPedidosFijos as $oPedidoFijo){
+                $newOrderId = -1;
+                $oBolson = $this->Pocket->getById(1);
+                $precio = $oBolson->price;
+                $cantBolson = 0;
+                $montoPagado = 0;
+                if($oPedidoFijo->cant_bolson > 0) {
+                    $cantBolson = $oPedidoFijo->cant_bolson;
+                    $precio = $precio * $cantBolson;
+                }
+                if($oPedidoFijo->id_estado_pedido==3){
+                    //SI ES BONIFICADO, MONTO PAGADO ES IGUAL AL VALOR DEL BOLSON, PARA QUE QUEDE DEBE = $0.
+                    $montoPagado = $precio;
+                }else{
+                    $montoPagado = $oPedidoFijo->monto_pagado;
+                }
+                $newOrderId = $this->Order->addOrder(
+                    $idDiaEntrega,
+                    $oPedidoFijo->client_name,
+                    $oPedidoFijo->phone,
+                    $oPedidoFijo->email,
+                    $oPedidoFijo->deliver_address,
+                    $oPedidoFijo->deliver_extra,
+                    $oPedidoFijo->id_tipo_pedido,
+                    $oPedidoFijo->barrio_id,
+                    $oPedidoFijo->office_id,
+                    $oBolson->id,
+                    $cantBolson,
+                    $precio,
+                    $montoPagado,
+                    $oPedidoFijo->id_estado_pedido,
+                    $oPedidoFijo->observaciones,
+                    -1,
+                    -1,
+                    0, //ACA DEJO EL PEDIDO COMO NO FIJO PORQUE EL FIJO ES EL ORIGINAL
+                    $oPedidoFijo->id
+                );
+                $pedidosCreados = $pedidosCreados."<p>".$oPedidoFijo->client_name.".</p>";
 
-            $cExtrasExistentes = $this->Order->getExtras($oPedidoFijo->id);
-            $sumaTotalExtras = 0;
-            $totalPedido = 0;
-            if(!empty($cExtrasExistentes)){
-                $this->load->model('Extra');
-                foreach($cExtrasExistentes as $oExtra){
-                    if( !is_null($oExtra->active) && $oExtra->active == 1) {
-                        $cant = $this->Order->getCantExtraByPedidoAndExtra($oPedidoFijo->id, $oExtra->id);
-                        if($oExtra->stock_ilimitado == 1 || ($oExtra->stock_ilimitado == 0 && $oExtra->stock_disponible >= $cant)) {    
-                            $this->Order->addExtra($newOrderId,$oExtra->id,$cant);
-                            $this->Extra->reducirStockExtra($oExtra->id,$cant);
-                            $sumaTotalExtras = $sumaTotalExtras + ($oExtra->price * $cant);
+                $cExtrasExistentes = $this->Order->getExtras($oPedidoFijo->id);
+                $sumaTotalExtras = 0;
+                $totalPedido = 0;
+                if(!empty($cExtrasExistentes)){
+                    $this->load->model('Extra');
+                    foreach($cExtrasExistentes as $oExtra){
+                        if( !is_null($oExtra->active) && $oExtra->active == 1) {
+                            $cant = $this->Order->getCantExtraByPedidoAndExtra($oPedidoFijo->id, $oExtra->id);
+                            if($oExtra->stock_ilimitado == 1 || ($oExtra->stock_ilimitado == 0 && $oExtra->stock_disponible >= $cant)) {    
+                                $this->Order->addExtra($newOrderId,$oExtra->id,$cant);
+                                $this->Extra->reducirStockExtra($oExtra->id,$cant);
+                                $sumaTotalExtras = $sumaTotalExtras + ($oExtra->price * $cant);
+                            }
                         }
                     }
-                }
-                $totalPedido = intval($precio) + intval($sumaTotalExtras);
-                $this->Order->updateMontoTotal($newOrderId, $totalPedido);
-                if($oPedidoFijo->id_estado_pedido==3){
-                    $this->Order->updateMontoPagado($newOrderId, $totalPedido);
+                    $totalPedido = intval($precio) + intval($sumaTotalExtras);
+                    $this->Order->updateMontoTotal($newOrderId, $totalPedido);
+                    if($oPedidoFijo->id_estado_pedido==3){
+                        $this->Order->updateMontoPagado($newOrderId, $totalPedido);
+                    }
                 }
             }
         }
-
-        $return['status'] = self::OK_VALUE;
-        $return['pedidosCreados'] = $pedidosCreados;
-        $return['diaEntregaCreado'] = $diaEntregaCreado;
+        $return[] = array(
+            'status' => self::OK_VALUE,
+            'pedidosCreados' => $pedidosCreados,
+            'diaEntregaCreado' => $diaEntregaCreado,
+            'idDiaEntrega' => $idDiaEntrega
+        );
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
 
@@ -2590,6 +2579,7 @@ class Api extends CI_Controller
         }
 
         $idPedido = $this->input->post('idPedido', true);
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
         $nombre = $this->input->post('nombre', true);
         $telefono = $this->input->post('telefono', true);
         $mail = $this->input->post('mail', true);
@@ -2618,6 +2608,7 @@ class Api extends CI_Controller
         
         $this->Order->updatePedido(
             $idPedido,
+            $idDiaEntrega,
             $nombre,
             $telefono,
             $mail,
@@ -3441,7 +3432,7 @@ class Api extends CI_Controller
         $this->load->model('DiasEntregaPedidos');
         
         //$cDiasEntrega = $this->DiasEntregaPedidos->getAllDiasByEstadoLogisticaNotCerrados();
-        $cDiasEntrega = $this->DiasEntregaPedidos->getAllDiasLastMonth();
+        $cDiasEntrega = $this->DiasEntregaPedidos->getAllActivos();
         //print_r($cDiasEntrega);
         $return['status'] = self::OK_VALUE;
         $return['cDiasEntrega'] = $cDiasEntrega;
@@ -7333,15 +7324,18 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode($return));           
     }
 
-    public function uploadImagenBolson(){
+    public function uploadImagenDiaEntrega(){
+        $idDiaEntrega = $_POST['idDiaEntrega'];
         $fileExtension = $_POST['fileExtension'];
-        $fileName = "imagenBolson".'.'.$fileExtension;
+        
+        $fileName = "imagen_dia_".$idDiaEntrega.".".$fileExtension;
+
         if ( 0 < $_FILES['file']['error'] ) {
             echo 'Error: ' . $_FILES['file']['error'] . '<br>';
         }else {
-            if(move_uploaded_file($_FILES['file']['tmp_name'], '../assets/img/bolson-del-dia/'.$fileName)){
-                $this->load->model('Content');
-                $this->Content->set("archivo_imagen_bolson",$fileName);        
+            if(move_uploaded_file($_FILES['file']['tmp_name'], '../assets/img/dias-entrega-imagenes/'.$fileName)){
+                $this->load->model('DiasEntregaPedidos');
+                $this->DiasEntregaPedidos->setImagen($idDiaEntrega,$fileName);        
             }
         }
         $return['status'] = self::OK_VALUE;
@@ -8471,5 +8465,31 @@ class Api extends CI_Controller
         $return['status'] = self::OK_VALUE;
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
+    }
+
+    function getConfigDiaEntrega() {
+        $this->output->set_content_type('application/json');
+        
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+
+        if(!valid_session() || !isset($idDiaEntrega)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Error en diaEntregaUpdateStatus.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+    
+        $this->load->model('DiasEntregaPedidos');
+        $oDiaEntrega = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        $puntoRetiroEnabled = $oDiaEntrega->puntoDeRetiroEnabled;
+        $deliveryEnabled = $oDiaEntrega->deliveryEnabled;
+        $bolsonEnabled = $oDiaEntrega->aceptaBolsones;
+        $return['status'] = self::OK_VALUE;
+        $return['puntoRetiroEnabled'] = $puntoRetiroEnabled;
+        $return['deliveryEnabled'] = $deliveryEnabled;
+        $return['bolsonEnabled'] = $bolsonEnabled;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    
     }
 }

@@ -195,6 +195,7 @@ class Dashboard extends CI_Controller
             'cBolsones' => $this->Pocket->getAll(),
             'cEstadosPedidos' => $this->EstadosPedidos->getAll(),
             'diaBolson' => $this->DiasEntregaPedidos->getLastDay(),
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos(),
             'costoEnvioPedidos' => $this->Content->get("costoEnvioPedidos"),
             'cCupones' => $this->Cupones->getAllActivos()
             ]
@@ -210,10 +211,12 @@ class Dashboard extends CI_Controller
         $this->load->model('TiposPedidos');
         $this->load->model('EstadosPedidos');
         $this->load->model('Content');
+        $this->load->model('DiasEntregaPedidos');
         $this->renderHead('EBO - Listado de Pedidos');
         $this->load->view('dashboard/listadoPedidos',[
             'cTiposPedidos' => $this->TiposPedidos->getAll(),
-            'diaBolson' => $this->Content->get("confirmation_label")]
+            'diaBolson' => $this->Content->get("confirmation_label"),
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos(),]
         );
         $this->load->view('dashboard/footer');
     }
@@ -226,9 +229,8 @@ class Dashboard extends CI_Controller
         $accion = $this->input->post('accion', true);
         $consultaFechaDesde = $this->input->post('consultaFechaDesde', true);
         $consultaFechaHasta = $this->input->post('consultaFechaHasta', true);
-        $consultaSoloDiaBolson = $this->input->post('consultaSoloDiaBolson', true);
         $consultaIncluirCancelados = $this->input->post('consultaIncluirCancelados', true);
-        $consultaDiaBolson = $this->input->post('consultaDiaBolson', true);
+        $consultaIdDiaEntrega = $this->input->post('consultaIdDiaEntrega', true);
         $consultaNombre = $this->input->post('consultaNombre', true);
         $consultaMail = $this->input->post('consultaMail', true);
         $consultaNroPedido = $this->input->post('consultaNroPedido', true);
@@ -236,18 +238,15 @@ class Dashboard extends CI_Controller
 
         }
         $this->load->model('Order');
-        $soloDiaBolson = 0;
         $incluirCancelados = 1;
-        if($consultaSoloDiaBolson=="true"){
-            $soloDiaBolson = 1;
-        }
         if($consultaIncluirCancelados=="false"){
             $incluirCancelados = 0;
         }
-        $cPedidos = $this->Order->getOrdersFromConsultaPedidos($consultaDiaBolson,$soloDiaBolson,$incluirCancelados,$consultaFechaDesde,$consultaFechaHasta,$consultaNombre,$consultaMail,$consultaNroPedido);
+        $cPedidos = $this->Order->getOrdersFromConsultaPedidos($consultaIdDiaEntrega,$incluirCancelados,$consultaFechaDesde,$consultaFechaHasta,$consultaNombre,$consultaMail,$consultaNroPedido);
         $this->load->model('TiposPedidos');
         $this->load->model('EstadosPedidos');
-            
+        $this->load->model('DiasEntregaPedidos');
+
         $this->renderHead('EBO - Listado de Pedidos');
         $this->load->view('dashboard/listadoPedidos',[
             'cPedidos' => $cPedidos,
@@ -255,11 +254,12 @@ class Dashboard extends CI_Controller
             'diaBolson' => $this->Content->get("confirmation_label"),
             'consultaFechaDesde' => $consultaFechaDesde,
             'consultaFechaHasta' => $consultaFechaHasta,
-            'consultaSoloDiaBolson' => $consultaSoloDiaBolson,
+            'consultaIdDiaEntrega' => $consultaIdDiaEntrega,
             'consultaIncluirCancelados' => $consultaIncluirCancelados,
             'consultaNombre' => $consultaNombre,
             'consultaMail' => $consultaMail,
-            'consultaNroPedido' => $consultaNroPedido
+            'consultaNroPedido' => $consultaNroPedido,
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
             ]
         );
         $this->load->view('dashboard/footer');
@@ -287,9 +287,8 @@ class Dashboard extends CI_Controller
         $idPedido = $this->input->post('idPedido', true);
         $consultaFechaDesde = $this->input->post('consultaFechaDesde', true);
         $consultaFechaHasta = $this->input->post('consultaFechaHasta', true);
-        $consultaSoloDiaBolson = $this->input->post('consultaSoloDiaBolson', true);
         $consultaIncluirCancelados = $this->input->post('consultaIncluirCancelados', true);
-        $consultaDiaBolson = $this->input->post('consultaDiaBolson', true);
+        $consultaIdDiaEntrega = $this->input->post('consultaIdDiaEntrega', true);
         $consultaNombre = $this->input->post('consultaNombre', true);
         $consultaMail = $this->input->post('consultaMail', true);
         $consultaNroPedido = $this->input->post('consultaNroPedido', true);
@@ -299,11 +298,11 @@ class Dashboard extends CI_Controller
         $this->load->model('TiposPedidos');
         $this->load->model('Barrio');
         $this->load->model('Office');
-        
         $this->load->model('EstadosPedidos');
         $this->load->model('Cupones');
         $this->load->model('Content');
-        
+        $this->load->model('DiasEntregaPedidos');
+
         $pedido = $this->Order->getById($idPedido);
 
         $bolson = null;
@@ -318,7 +317,7 @@ class Dashboard extends CI_Controller
             $barrio = $this->Barrio->getById($pedido->barrio_id);
             $costoEnvio = $barrio->costo_envio;
         }
-
+        print_r($pedido->id_dia_entrega);
         $this->renderHead('EBO - Editar Pedidos');
         $this->load->view('dashboard/editarPedido',[
             'pedido' => $pedido,
@@ -330,21 +329,19 @@ class Dashboard extends CI_Controller
             'cEstadosPedidos' => $this->EstadosPedidos->getAll(),
             'consultaFechaDesde' => $consultaFechaDesde,
             'consultaFechaHasta' => $consultaFechaHasta,
-            'consultaSoloDiaBolson' => $consultaSoloDiaBolson,
             'consultaIncluirCancelados' => $consultaIncluirCancelados,
-            'consultaDiaBolson' => $consultaDiaBolson,
+            'consultaIdDiaEntrega' => $consultaIdDiaEntrega,
             'consultaNombre' => $consultaNombre,
             'consultaMail' => $consultaMail,
             'consultaNroPedido' => $consultaNroPedido,
             'costoEnvio' => $costoEnvio,
-            //precioBolson, precioDeliveryBolson, montoTotalExtras los defino y llevo a editar porque si el 
-            //pedido tiene el monto total en null, tengo que poder calcularlo.
             'precioBolson' => $bolson->price ?? null,
             'precioDeliveryBolson' =>$bolson->delivery_price ?? null,
             'montoTotalExtras' => $this->Order->getMontoTotalExtrasSumadosByPedido($idPedido),
             'diaBolson' => $this->Content->get("confirmation_label"),
             'tieneBolson' => $tieneBolson,
-            'cCupones' => $this->Cupones->getAllActivos()]
+            'cCupones' => $this->Cupones->getAllActivos(),
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()]
         );
         $this->load->view('dashboard/footer');
     }    
@@ -358,7 +355,7 @@ class Dashboard extends CI_Controller
         $this->renderHead('EBO - Logística');
         $this->load->view('dashboard/logistica',
             [
-            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllDiasByEstadoLogisticaNotCerrados()
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
             ]
         );
         $this->load->view('dashboard/footer');

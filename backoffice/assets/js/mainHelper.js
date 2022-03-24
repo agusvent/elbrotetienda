@@ -25,9 +25,6 @@ var mainHelper = {
     },
 
     asignoEventos: function() {
-        $('#officeSelector').change(function() {
-            //mainHelper.reloadOfficeOrdersTable($(this).val());
-        });
         $('#stackedCheck2').change(function(){
             mainHelper.changeFormStatus($(this).is(':checked') ? 1 : 0);
         });
