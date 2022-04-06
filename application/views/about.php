@@ -89,7 +89,7 @@
     </div>
 </header>
 
-<div class="welcome-area pt-70 pb-95">
+<div class="welcome-area pt-70 pb-60">
     <div class="container">
         <div class="welcome-content text-center">
             <h5>¡Bienvenidos!</h5>
@@ -97,6 +97,39 @@
             <p>El Brote Tienda Natural creemos firmemente que una mejor y más saludable alimentación es posible. Y buscamos hacerla accesible a todas las personas y familias.</p>
             <p>Argentina es una de los pocos países del mundo con un clima y un suelo tan variado como apto para el cultivo de cientos de frutas y verduras a lo largo y ancho de nuestra tierra. Nuestro arreglo exclusivo y directo con diferentes productores y huertas orgánicas y agroecológicas de todo el país, nos permite hacerte llegar una amplia variedad de frutas y verduras libres de agrotóxicos al mejor precio (eliminando costos y comisiones innecesarias y pagando un precio más justo a los productores por su trabajo).</p>
             <p>En nuestra tienda online vas a encontrar todos los cultivos de temporada para que tu alimentación sea 100% natural. Bienvenido!</p>
+        </div>
+    </div>
+</div>
+<div id="sponsors" class="suppoer-area pt-70 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="support-wrap-2 mb-30 support-shape text-center">
+                    <div class="support-content-2">
+                        <img class="animated" src="assets/new_design/assets/img/icon-img/support-1.png" alt="">
+                        <h5>Env&iacute;o Gratis</h5>
+                        <p>Hace tu pedido con Env&iacute;o a Domicilio y te lo llevamos sin cargo (con tu compra superior a $<?=$montoMinimoEnvioSinCargoPedidoExtra;?>). En CABA y GBA.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="support-wrap-2 mb-30 support-shape text-center">
+                    <div class="support-content-2">
+                        <img class="animated" src="assets/img/comercial.jpeg" alt="">
+                        <h5>M&aacute;s de 50 Puntos de Retiro</h5>
+                        <p>Contamos con Puntos de Retiro en todo CABA y GBA. Hac&eacute; tu pedido en nuestra tiena y retiralo por tu sucursal m&aacute;s cercana.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="support-wrap-2 mb-30 text-center">
+                    <div class="support-content-2">
+                        <img class="animated" src="assets/img/mercaderia.jpeg" alt="">
+                        <h5>Cultivos 100% Frescos</h5>
+                        <p>Nuestro acuerdo directo con los productores, nos permite ofrecerte mercader&iacute;a reci&eacute;n cosechada, semana tras semana.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

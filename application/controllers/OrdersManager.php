@@ -8,13 +8,14 @@ class OrdersManager extends CI_Controller{
         
         $mail = $this->input->post('mail', true);
         $telefono = $this->input->post('telefono', true);
-        
-        $this->load->model('Parameter');
-
-        $diaBolsonActual = $this->Parameter->get('confirmation_label');
-        
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+                
         $this->load->model('Order');
-        $cOrders = $this->Order->getOrdersByDiaBolsonAndMail($diaBolsonActual,$mail,$telefono);
+        $this->load->model('DiasEntregaPedidos');
+        
+        $oDiaEntrega = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        
+        $cOrders = $this->Order->getOrdersByDiaBolsonAndMail($idDiaEntrega,$mail,$telefono);
 
         if(isset($cOrders) && count($cOrders)>0){
             $return['existePedidoCargado'] = true;    
@@ -22,7 +23,7 @@ class OrdersManager extends CI_Controller{
             $return['existePedidoCargado'] = false;    
         }
         $return['status'] = "ok";
-        $return['diaBolson'] = $diaBolsonActual;
+        $return['diaBolson'] = $oDiaEntrega->descripcion;
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
         

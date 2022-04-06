@@ -607,6 +607,10 @@ input[name="dataTo"] {
     text-align:right;
 }
 
+.home-filtro-dia-entrega {
+    display: inline-block!important;
+    width:70%!important;
+}
 @media (min-width: 992px){
     .modal-lg{
         max-width:1000px!important;

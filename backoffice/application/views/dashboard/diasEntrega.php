@@ -117,4 +117,4 @@
 </div>
 <!-- Fin Modal Crear Dia de Entrega-->
 
-<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=91723"></script>
+<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=827634"></script>

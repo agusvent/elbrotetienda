@@ -693,7 +693,9 @@ class Api extends CI_Controller
 
     public function getOrdersInfoFromDiaBolson(){
         $this->load->model('DiasEntregaPedidos');
-        $diaBolson = $this->DiasEntregaPedidos->getLastDay();
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $this->load->model('DiasEntregaPedidos');
+        $oDiaBolson = $this->DiasEntregaPedidos->getById($idDiaEntrega);
         $idBolson = 1; //Se usa solo este bolson.
         $this->load->model('Pocket');
 
@@ -712,10 +714,10 @@ class Api extends CI_Controller
         $totalPedidosSucursal = 0;
         $totalPedidosDomicilio = 0;
 
-        $totalPedidosSucursal = $this->Order->getTotalPedidosByDiaBolsonForPuntoDeRetiro($diaBolson->id_dia_entrega);
-        $totalPedidosDomicilio = $this->Order->getTotalPedidosByDiaBolsonForDomicilio($diaBolson->id_dia_entrega);
+        $totalPedidosSucursal = $this->Order->getTotalPedidosByDiaBolsonForPuntoDeRetiro($idDiaEntrega);
+        $totalPedidosDomicilio = $this->Order->getTotalPedidosByDiaBolsonForDomicilio($idDiaEntrega);
 
-        $cPedidosConBolsonFamiliarSucursal = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForSucursal($diaBolson->id_dia_entrega, $oBolson->id);
+        $cPedidosConBolsonFamiliarSucursal = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForSucursal($idDiaEntrega, $oBolson->id);
         
         $totalBolsonesSucursal = 0;
         if(count($cPedidosConBolsonFamiliarSucursal)>0) {
@@ -724,7 +726,7 @@ class Api extends CI_Controller
             }
         }
 
-        $cPedidosConBolsonFamiliarDomicilio = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForDomicilio($diaBolson->id_dia_entrega, $oBolson->id);
+        $cPedidosConBolsonFamiliarDomicilio = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForDomicilio($idDiaEntrega, $oBolson->id);
         
         $totalBolsonesDomicilio = 0;
         if(count($cPedidosConBolsonFamiliarDomicilio)>0) {
@@ -757,9 +759,9 @@ class Api extends CI_Controller
             $totalSucursal = 0;
             $totalDomicilio = 0;
             $subtotalExtra = 0;
-            $totalSucursal = $this->Order->getTotalExtraByDiaBolsonByExtra($diaBolson->id_dia_entrega,$oExtra->id);
+            $totalSucursal = $this->Order->getTotalExtraByDiaBolsonByExtra($idDiaEntrega,$oExtra->id);
             
-            $totalDomicilio = $this->Order->getTotalExtraADomicilioByDiaBolsonByExtra($diaBolson->id_dia_entrega,$oExtra->id);
+            $totalDomicilio = $this->Order->getTotalExtraADomicilioByDiaBolsonByExtra($idDiaEntrega,$oExtra->id);
             
             $subtotalExtra = $totalSucursal + $totalDomicilio;
             array_push($arrayInfoExtrasPedidosBox,array(
@@ -778,7 +780,7 @@ class Api extends CI_Controller
             'aInfoExtrasPedidosBox' => $arrayInfoExtrasPedidosBox,
             //'totalPedidos' => 0, //TODO: LO DEJO EN 0. DEPSUES LO BORRO BIEN. En mainHelper se usa bastante
             'totalBolsones' => $totalBolsones,
-            'diaBolson' => $diaBolson
+            'diaBolson' => $oDiaBolson
         );
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
@@ -910,7 +912,7 @@ class Api extends CI_Controller
         return $celularFormateado;
     }
 
-    public function getOrdersFromDateToDate($fechaDesde,$fechaHasta,$soloBolsonDia) 
+    public function getOrdersFromDateToDateOld($fechaDesde,$fechaHasta,$idDiaEntrega) 
     {
         $spreadsheet = new Spreadsheet();
         $spreadsheet->getDefaultStyle()->getFont()->setName('Arial');
@@ -971,10 +973,9 @@ class Api extends CI_Controller
             )
         );
 
-        if($soloBolsonDia=='true'){
-            $this->load->model('Content');
-            $diaBolson = $this->Content->getConfirmationLabel();
-            $cOrders = $this->Order->getOrdersSucursalWithExtrasByDiaDeBolson($diaBolson);
+        if($idDiaEntrega>0){
+            $cOrders = $this->Order->getOrdersSucursalWithExtrasByDiaDeBolson($idDiaEntrega);
+            print_r($idDiaEntrega);
         }else{
             $cOrders = $this->Order->getOrdersSucursalWithExtrasBetweenDates(
                 $fechaDesde,
@@ -1498,10 +1499,8 @@ class Api extends CI_Controller
 
         $this->load->model('Order');
         $diaBolson = "";
-        if($soloBolsonDia=='true'){
-            $this->load->model('Content');
-            $diaBolson = $this->Content->getConfirmationLabel();
-            $cOrders = $this->Order->getOrdersADomicilioWithExtrasByDiaDeBolson($diaBolson);
+        if($idDiaEntrega>0){
+            $cOrders = $this->Order->getOrdersADomicilioWithExtrasByDiaDeBolson($idDiaEntrega);
         }else{
             $cOrders = $this->Order->getOrdersADomicilioWithExtrasBetweenDates(
                 $fechaDesde,
@@ -2480,10 +2479,14 @@ class Api extends CI_Controller
         $cargaPedidosFijos = $this->input->post('cargaPedidosFijos', true);
 
         $idDiaEntrega = -1;
+        $aceptaPedidos = 0;
+        if($puntoDeRetiroStatus==1 || $deliveryStatus==1) {
+            $aceptaPedidos = 1;
+        }
         if(isset($diaEntregaFecha) && !empty($diaEntregaFecha)){
             $this->load->model('DiasEntregaPedidos');
         
-            $idDiaEntrega = $this->DiasEntregaPedidos->add($diaEntregaFecha,$diaEntregaLabelFinal, $aceptaBolsones, $puntoDeRetiroStatus, $deliveryStatus);
+            $idDiaEntrega = $this->DiasEntregaPedidos->add($diaEntregaFecha,$diaEntregaLabelFinal, $aceptaBolsones, $puntoDeRetiroStatus, $deliveryStatus, $aceptaPedidos);
             if($idDiaEntrega > 0){
                 $diaEntregaCreado = true;
             }
@@ -3135,7 +3138,7 @@ class Api extends CI_Controller
         $this->load->model('Order');
         $nroOrden = 1;
 
-        $cOrders = $this->Order->getOrdersInDiaEntrega($idDiaEntrega);
+        $cOrders = $this->Order->getOrdersForEnumerationInDiaEntrega($idDiaEntrega);
         foreach($cOrders as $order){
             $this->Order->setNroOrden($order->id, $nroOrden);
             $nroOrden++;
@@ -8490,6 +8493,145 @@ class Api extends CI_Controller
         $return['bolsonEnabled'] = $bolsonEnabled;
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
-    
     }
+
+    public function getOrdersFromDateToDate($fechaDesde,$fechaHasta,$idDiaEntrega) {
+        $this->output->set_content_type('application/json');
+
+        $this->load->model('Order');
+        $cOrders = null;
+        if($idDiaEntrega>0){
+            $cOrders = $this->Order->getOrdersInDiaEntrega($idDiaEntrega);
+        }else{
+            $cOrders = $this->Order->getOrdersBetweenDates(
+                $fechaDesde,
+                $fechaHasta
+            );    
+        }
+
+        $this->createXlsClientsPhoneAndMail($cOrders);
+        $fileName = "ClientesOrdenes.xls";
+        $return['status'] = self::OK_VALUE;
+        $return['fileName'] = $fileName;
+        return $this->output->set_output(json_encode($return));        
+    }
+
+    private function createXlsClientsPhoneAndMail($cOrders){
+        $xlsCreado = false;
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle("Clientes");
+        $lastColumn = 'A';
+        $xlsCol = 'A';
+        $xlsRow = 1;
+
+        //Array de estilos para las celdas. Lo aplico por fila.
+        $headerStyleArray = array(
+            'borders' => array(
+                'allBorders' => array(
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN
+                )
+            ),
+            'font'  => array(
+                'size'  => 14
+            ),
+            'fill' => array(
+                'fillType' => Fill::FILL_SOLID,
+                'startColor' => array('argb' => 'FFB8B8B8')
+            )
+        );
+
+        $styleArray = array(
+            'borders' => array(
+                'allBorders' => array(
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN
+                )
+            ),
+            'font'  => array(
+                'size'  => 12
+            )
+        );        
+    
+        $sheet->setTitle('CLIENTES');
+        $spreadsheet->getDefaultStyle()->getFont()->setName('Arial');
+        $spreadsheet->getActiveSheet()->getPageSetup()->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
+        $spreadsheet->getActiveSheet()->getPageSetup()->setPaperSize(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::PAPERSIZE_LEGAL);
+        $spreadsheet->getActiveSheet()->getPageMargins()->setRight(0.1);
+        $spreadsheet->getActiveSheet()->getPageMargins()->setLeft(0.1);
+
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Cliente');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Teléfono');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Mail');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+        
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Fecha Pedido');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Dia de Entrega');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $lastColumn = $xlsCol;
+        
+        $sheet->getRowDimension($xlsRow)->setRowHeight(35);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($headerStyleArray);
+
+        $xlsRow++;
+
+        $xlsCol = 'A';
+        foreach($cOrders as $oOrder){
+            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->client_name);
+            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+            $xlsCol++;
+
+            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->phone);
+            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+            $xlsCol++;
+
+            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->email);
+            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+            $xlsCol++;
+
+            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->fechaPedido);
+            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+            $xlsCol++;
+
+            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->diaEntrega);
+            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+            $sheet->getRowDimension($xlsRow)->setRowHeight(20);
+            $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+            $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($styleArray);
+            $xlsRow++;
+            $xlsCol = 'A';
+        }
+
+        $fileName = "ClientesOrdenes.xls";
+        $writer = new Xlsx($spreadsheet);        
+        $writer->save($fileName);    
+        $xlsCreado = true;
+        return $xlsCreado;
+    }    
 }

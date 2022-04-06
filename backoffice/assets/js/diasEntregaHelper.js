@@ -7,6 +7,7 @@ $(document).ready(function() {
         let idDiaEntrega = $(this).attr('data-dia-entrega-id');
         let aceptaBolsones = $(this).is(':checked') ? 1 : 0;
         setAceptaBolsonesStatus(idDiaEntrega, aceptaBolsones);
+        updateDiaEntregaBox(idDiaEntrega, aceptaBolsones);
     });
     $('body').on('change', "input[id*='dia_entrega_punto_retiro_enabled_']", function(e) {
         e.preventDefault();
@@ -265,12 +266,20 @@ function loadDiasEntregaTable() {
             html +=" </span>";
             html +=" </div>";
             html +=" <div class='cupones-caja-info'> ";
-            html +=" <div class='diasEntrega-inner-caja alineado-izq'>";
-                html +=" <a href='javascript:openImage(\""+cDiasEntrega[i].imagen+"\")'>";
-                    html +=" <img class='img-thumbnail' src='../../assets/img/dias-entrega-imagenes/"+cDiasEntrega[i].imagen+"'/>";
-                html +=" </a>";
-                html +=" <br />";
-                html +=" <a style='margin-left:2px;' href='javascript:editarDiaEntrega("+cDiasEntrega[i].id_dia_entrega+");'>Editar</a>";
+            html +=" <div id='imagenDia"+cDiasEntrega[i].id_dia_entrega+"' class='diasEntrega-inner-caja alineado-izq'>";
+
+            let imagen = "not-available.png";
+            let rutaImagen = "../assets/img/";
+            if(cDiasEntrega[i].imagen!=undefined && cDiasEntrega[i].imagen.length > 0) {
+                rutaImagen = "../../assets/img/dias-entrega-imagenes/";
+                imagen = cDiasEntrega[i].imagen;
+            }
+
+            html +=" <a href='javascript:openImage(\""+imagen+"\")'>";
+                html +=" <img class='img-thumbnail' src='"+rutaImagen+imagen+"'/>";
+            html +=" </a>";
+            html +=" <br />";
+            html +=" <a style='margin-left:2px;' href='javascript:editarDiaEntrega("+cDiasEntrega[i].id_dia_entrega+");'>Editar</a>";
             html +=" </div>";
             html +=" <div class='diasEntrega-inner-caja alineado-der'>";
             html +=" </div>";
@@ -396,4 +405,12 @@ function cargarImagen(idDiaEntrega,input) {
             window.location.reload(true); 
         }
     });
+}
+
+function updateDiaEntregaBox(idDiaEntrega, aceptaBolsones) {
+    if(aceptaBolsones==1) {
+        $("#imagenDia"+idDiaEntrega).css("visibility","visible");
+    } else {
+        $("#imagenDia"+idDiaEntrega).css("visibility","hidden");
+    }
 }

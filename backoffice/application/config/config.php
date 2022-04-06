@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 #$config['base_url'] = 'https://elbroteorganico.com/backoffice/';
-$config['base_url'] = 'http://192.168.1.159/ebo/backoffice/';
+$config['base_url'] = 'http://localhost/ebo/backoffice/';
 #$config['base_url'] = 'https://elbrotetienda.com/backoffice_new/';
 
 /*
@@ -536,7 +536,8 @@ $config['csrf_exclude_uris'] = array(
     'api/diasEntrega/puntoDeRetiroStatus',
     'api/diasEntrega/deliveryStatus',
     'api/diasEntrega/updateStatus',
-    'api/diasEntrega/getConfigDiaEntrega'
+    'api/diasEntrega/getConfigDiaEntrega',
+    'api/getOrdersInfoFromDiaBolson'
 );
 
 /*

@@ -12,13 +12,10 @@ class Dashboard extends CI_Controller
         $this->db->where('id', 2);
         $this->db->update('users');*/
 
-        $this->load->model('Order');
-        $this->load->model('Office');
+        $this->load->model('DiasEntregaPedidos');
         $this->renderHead('Inicio');
         $this->load->view('dashboard/main',[
-            //'ordersResume' => $this->Order->getOrdersResume(),
-            //'officeOrders' => $this->Order->buildOfficeOrdersTable(1),
-            'offices'      => $this->Office->getAll()
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
         ]);
         $this->load->view('dashboard/footer');
     }

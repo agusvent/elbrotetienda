@@ -8,8 +8,23 @@
         Hasta:&nbsp; 
         <input type="date" class="form-control form-control-sm" name="dataTo" id="dataTo" value="<?=$_SESSION['dataTo'] ?? date('Y-m-d');?>" max="<?=date('Y-m-d');?>">        
         <br />        
-        <label for="checkSoloBolsonDelDia" class="form-check-label">Solo <label id="lDiaBolsonFormulario"></label></label>
-        <input id="checkSoloBolsonDelDia" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs">
+        <div class="marginTop10">
+            <div class="col-xs-12">
+                <label class="form-check-label">Día de Entrega:</label>
+                <select class="form-control home-filtro-dia-entrega" name="idDiaEntregaPedido" id="idDiaEntregaPedido">
+                    <option value="-1">Seleccione</option>
+                    <?php foreach($cDiasEntrega as $diaEntrega): ?>
+                        <?php if($diaEntrega->id_dia_entrega == $pedido->id_dia_entrega) { ?>
+                            <option value="<?=$diaEntrega->id_dia_entrega;?>" selected>
+                        <?php } else { ?>
+                            <option value="<?=$diaEntrega->id_dia_entrega;?>">
+                        <?php }?>
+                        <?=$diaEntrega->descripcion; ?>
+                    </option>
+                    <?php endforeach; ?>
+                </select>                    
+            </div>
+        </div>
         <br />
         <button type="button" id="bDownloadExcel" class="btn btn-sm btn-primary marginTop10">Descargar Excel</button>
         <button type="button" id="bConsultar" class="btn btn-sm btn-primary marginTop10">Consultar</button>

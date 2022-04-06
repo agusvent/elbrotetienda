@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 #$config['base_url'] = 'https://elbroteorganico.com/test/';
 #$config['base_url'] = 'https://elbrotetienda.com/';
-$config['base_url'] = 'http://192.168.1.159/ebo/';
+$config['base_url'] = 'http://localhost/ebo/';
 #$config['base_url'] = 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/';
 /*
 |--------------------------------------------------------------------------

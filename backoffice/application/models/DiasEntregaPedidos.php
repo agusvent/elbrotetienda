@@ -14,13 +14,14 @@ class DiasEntregaPedidos extends CI_Model
         return $this->db->get()->result();
     }
 
-    public function add($fecha_entrega, $descripcion, $aceptaBolsones, $puntoDeRetiroStatus, $deliveryStatus)
+    public function add($fecha_entrega, $descripcion, $aceptaBolsones, $puntoDeRetiroStatus, $deliveryStatus, $aceptaPedidos)
     {
         $this->db->set('fecha_entrega', $fecha_entrega);
         $this->db->set('descripcion', $descripcion);
         $this->db->set('acepta_bolsones', $aceptaBolsones);
         $this->db->set('punto_de_retiro_enabled', $puntoDeRetiroStatus);
         $this->db->set('delivery_enabled', $deliveryStatus);
+        $this->db->set('acepta_pedidos', $aceptaPedidos);
         $this->db->insert('dias_entrega_pedidos');
         
         return $this->db->insert_id();

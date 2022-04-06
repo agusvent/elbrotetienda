@@ -348,3 +348,6 @@ ERROR - 2022-03-24 19:57:07 --> 404 Page Not Found: Assets/dt
 ERROR - 2022-03-24 19:57:19 --> 404 Page Not Found: Assets/css
 ERROR - 2022-03-24 19:57:19 --> 404 Page Not Found: Assets/dt
 ERROR - 2022-03-24 19:57:19 --> 404 Page Not Found: Assets/js
+ERROR - 2022-03-24 20:36:42 --> 404 Page Not Found: Assets/css
+ERROR - 2022-03-24 20:36:42 --> 404 Page Not Found: Assets/js
+ERROR - 2022-03-24 20:36:42 --> 404 Page Not Found: Assets/dt

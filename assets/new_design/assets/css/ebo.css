@@ -109,8 +109,17 @@
     height:730px!important;
 }
 
-.bannerTextoPpal{
-    color:#FFFFFF!important;
+.banner-color h1, .banner-color h3, .banner-color p, .banner-color a, .bannerTextoPpal{
+    color: #DBB893!important;
+}
+
+.bannerTextoPpalColor{
+    color: #DBB893!important;
+    line-height:70px;
+}
+
+.bannerTextoPpalBlanco{
+    color: #FFFFFF!important;
     line-height:70px;
 }
 
@@ -216,6 +225,20 @@
 
 
 #modalAvisoPedidosCargados .modal-dialog {
+    margin: 3% auto;
+    max-width: 600px;
+    width: 90%;
+    padding: 35px;
+}
+
+#modalDiaEntregaSinBolson .modal-dialog {
+    margin: 3% auto;
+    max-width: 650px;
+    width: 90%;
+    padding: 35px;
+}
+
+#modalDiaEntregaSinBolsonShort .modal-dialog {
     margin: 3% auto;
     max-width: 600px;
     width: 90%;
@@ -672,6 +695,21 @@
     transform: translateZ(0);
 }
 
+.form-dia-entrega {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.form-dia-entrega-div {
+    float:left;
+}
+
+.h5ComoHacerTuPedido {
+    line-height:22px;
+}
+
 @-webkit-keyframes load5 {
     0%,
     100% {
@@ -880,6 +918,13 @@
     #modalNewsletterBody h1 {
         font-size:35px;
         line-height:45px;
+    }
+    .form-dia-entrega {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .form-dia-entrega div {
+        width:100%;
     }
 }
 

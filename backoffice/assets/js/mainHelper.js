@@ -36,12 +36,15 @@ var mainHelper = {
             mainHelper.updateFromValue(newDataFrom, dataTo);
         });
 
-        $('#bDownloadExcel').click(function() {
+        $('#bDownloadExcel').click(function(e) {
             mostrarLoader();
+            e.preventDefault();
+            var dt = new Date();
+            var time = dt.getHours() + dt.getMinutes() + dt.getSeconds();
             var fechaDesde = $('input[type="date"][name="dataFrom"]').val();
             var fechaHasta = $('input[type="date"][name="dataTo"]').val();
-            var soloBolsonDia = $('#checkSoloBolsonDelDia').prop("checked");
-            mainHelper.downloadExcelOfOrdersFromDate(fechaDesde, fechaHasta, soloBolsonDia);
+            var idDiaEntrega = $('#idDiaEntregaPedido').val();
+            mainHelper.downloadExcelOfOrdersFromDate(fechaDesde, fechaHasta, idDiaEntrega);
         });
 
         $('#bConsultar').click(function() {
@@ -148,30 +151,34 @@ var mainHelper = {
         });
     },
 
-    downloadExcelOfOrdersFromDate: function(fechaDesde,fechaHasta,soloBolsonDia) {
+    downloadExcelOfOrdersFromDate: function(fechaDesde,fechaHasta,idDiaEntrega) {
         var fDesde = fechaDesde;
         var fHasta = fechaHasta;
         var dt = new Date();
         var time = dt.getHours() +""+ dt.getMinutes() +""+ dt.getSeconds();
         
         $.ajax({
-            url: ajaxURL + 'getOrdersFromDateToDate/'+fDesde+'/'+fHasta+'/'+soloBolsonDia+"?v="+time,
+            url: ajaxURL + 'getOrdersFromDateToDate/'+fDesde+'/'+fHasta+'/'+idDiaEntrega+"?v="+time,
             method: 'get',
             dataType: 'JSON',
         }).done(function(res) {
-            //console.log(res[0].fileName);
-            //Armo la variable time y la paso como parametro para que siempre me actualice donde 
-
-            window.location.href = baseURL+res[0].fileName;
             ocultarLoader();
+            console.log(baseURL);
+            console.log(res);
+            console.log(res.fileName);
+            window.open(baseURL+res.fileName+"?v="+time, "popupWindow", "width=600, height=400, scrollbars=yes");
         });
     },
     loadInfoPedidos: function(){
-        var bBolsonDiaChecked = $("#checkSoloBolsonDelDia").prop("checked");
-        if(bBolsonDiaChecked){
+        var idDiaEntrega = $("#idDiaEntregaPedido").val();
+        if(idDiaEntrega > 0){
+            let data = {
+                'idDiaEntrega': idDiaEntrega
+            }
             $.ajax({
                 url: ajaxURL + 'getOrdersInfoFromDiaBolson',
-                method: 'get',
+                method: 'post',
+                data: data,
                 dataType: 'JSON',
             }).done(function(res) {
                 var aInfoPedidosByTipoBolson = res[0].aInfoPedidosByTipoBolson;
@@ -187,7 +194,6 @@ var mainHelper = {
             if(msj==""){
                 var fDesde = $("#dataFrom").val();
                 var fHasta = $("#dataTo").val();
-                console.log("HOLA");
                 $.ajax({
                     url: ajaxURL + 'getOrdersInfoFromFechaDesdeHasta/'+fDesde+'/'+fHasta,
                     method: 'get',
@@ -264,22 +270,7 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBol
         htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
         htmlBolsonesAndExtras += '</div>';
     }
-/*    htmlBolsonesAndExtras += '<div class="row">';
-    htmlBolsonesAndExtras += '<div class="col-sm-1">';
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-4 infoPedidosTableTitle">';
-    htmlBolsonesAndExtras += 'TOTALES';
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
-    htmlBolsonesAndExtras += '<b>'+totalBolsones+'</b>';    
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
-    htmlBolsonesAndExtras += '</div>';
-*/
+
     for(var i=0;i<aInfoExtrasPedidosBox.length;i++){
         htmlBolsonesAndExtras += '<div class="row">';
         htmlBolsonesAndExtras += '<div class="col-sm-1">';

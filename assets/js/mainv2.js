@@ -90,68 +90,82 @@ $(document).ready(function() {
         if(formEnabled==1) {
             initMarket();
             $(".rbBolson").on("click",function(){
-                var idBolson = $(this).attr("data-idbolson");
-                var bolsonName = $(this).attr("data-bolsonname");
-                var bolsonImg = "assets/img/bolson-del-dia/imagenBolson.jpeg";
-                var cant = $(this).val();
-                var precio = $(this).attr("data-bolsonprice");
-                var total = 0;
-                precio = parseInt(precio);
-                total = precio * cant;
-                oBolson = [];
-                oBolson = {
-                    "idBolson": idBolson,
-                    "name": bolsonName,
-                    "cant": cant,
-                    "precioUnitario": precio,
-                    "total": total,
-                    "img": bolsonImg
+                let aceptaBolsones = diaAceptaBolsones();
+
+                if(aceptaBolsones) {
+                    var idBolson = $(this).attr("data-idbolson");
+                    var bolsonName = $(this).attr("data-bolsonname");
+                    var bolsonImg = "assets/img/bolson-del-dia/imagenBolson.jpeg";
+                    var cant = $(this).val();
+                    var precio = $(this).attr("data-bolsonprice");
+                    var total = 0;
+                    precio = parseInt(precio);
+                    total = precio * cant;
+                    oBolson = [];
+                    oBolson = {
+                        "idBolson": idBolson,
+                        "name": bolsonName,
+                        "cant": cant,
+                        "precioUnitario": precio,
+                        "total": total,
+                        "img": bolsonImg
+                        
+                    };            
                     
-                };            
-                
-                $("#bolsonIndividualTotal").html(calcularSubtotalBolsonIndividual(cant));
+                    $("#bolsonIndividualTotal").html(calcularSubtotalBolsonIndividual(cant));
+        
+                    getResumenPedido();
+                    refreshCart();
+                    if(!window.matchMedia("(max-width: 767px)").matches){
+                        if(!$('.shopping-cart-content').hasClass("cart-visible")){
+                            if(!$('.shopping-cart-content').hasClass("cart-visible")){
+                                $('.shopping-cart-content').toggleClass('cart-visible');
+                                setTimeout(function(){
+                                    $('.shopping-cart-content').toggleClass('cart-visible');
+                                },3000);
+                            }    
+                        }
+                    }
+                    mostrarFinalizarCompra();
+                    $("#errorBolsonIndividual").html("");
+                } else {
+                    $("#modalDiaEntregaSinBolsonShort").modal("show");
+                    $("input[type='radio'][class='rbBolson']").prop("checked",false);
+                }
+            });  
     
-                getResumenPedido();
-                refreshCart();
-                if(!window.matchMedia("(max-width: 767px)").matches){
-                    if(!$('.shopping-cart-content').hasClass("cart-visible")){
+            $(".rbBolsonBasico").on("click",function(){
+                let aceptaBolsones = diaAceptaBolsones();
+
+                if(aceptaBolsones) {
+    
+                    var idExtra = $(this).attr("data-extraid");
+                    var extraName = $(this).attr("data-extraName");
+                    var extraImg = $(this).attr("data-extraImg");
+                    var cant = $(this).val();
+                    var precio = $(this).attr("data-extraprice");
+                    var total = 0;
+                    precio = parseInt(precio);
+                    total = precio * cant;
+                    //Remuevo por las dudas si es que esta el extra primero y despues agrego, ya que puede estar con una cantidad X y entra a este else porque ahora tiene cantidad Y.
+                    removeExtraFromArray(idExtra);
+                    addExtraToArray(idExtra,cant,precio,total,extraName,extraImg);
+                    $("#bolsonBasicoTotal").html(calcularSubtotalBolsonBasico(cant));
+                    getResumenPedido();
+                    refreshCart();
+                    if(!window.matchMedia("(max-width: 767px)").matches){
                         if(!$('.shopping-cart-content').hasClass("cart-visible")){
                             $('.shopping-cart-content').toggleClass('cart-visible');
                             setTimeout(function(){
                                 $('.shopping-cart-content').toggleClass('cart-visible');
                             },3000);
-                        }    
-                    }
+                        }
+                    }   
+                    mostrarFinalizarCompra(); 
+                } else {
+                    $("#modalDiaEntregaSinBolsonShort").modal("show");
+                    $("input[type='radio'][class='rbBolsonBasico']").prop("checked",false);
                 }
-                mostrarFinalizarCompra();
-                $("#errorBolsonIndividual").html("");
-            });  
-    
-            $(".rbBolsonBasico").on("click",function(){
-    
-                var idExtra = $(this).attr("data-extraid");
-                var extraName = $(this).attr("data-extraName");
-                var extraImg = $(this).attr("data-extraImg");
-                var cant = $(this).val();
-                var precio = $(this).attr("data-extraprice");
-                var total = 0;
-                precio = parseInt(precio);
-                total = precio * cant;
-                //Remuevo por las dudas si es que esta el extra primero y despues agrego, ya que puede estar con una cantidad X y entra a este else porque ahora tiene cantidad Y.
-                removeExtraFromArray(idExtra);
-                addExtraToArray(idExtra,cant,precio,total,extraName,extraImg);
-                $("#bolsonBasicoTotal").html(calcularSubtotalBolsonBasico(cant));
-                getResumenPedido();
-                refreshCart();
-                if(!window.matchMedia("(max-width: 767px)").matches){
-                    if(!$('.shopping-cart-content').hasClass("cart-visible")){
-                        $('.shopping-cart-content').toggleClass('cart-visible');
-                        setTimeout(function(){
-                            $('.shopping-cart-content').toggleClass('cart-visible');
-                        },3000);
-                    }
-                }   
-                mostrarFinalizarCompra(); 
             });  
     
     
@@ -233,7 +247,15 @@ $(document).ready(function() {
                 $("#modalImagenBolson").modal("hide");
                 $("#bRealizarPedido").prop("disabled",true);
             });
-    
+
+            $(".close, .closeDiaEntregaSinBolsonShort").on("click",function(e){
+                $("#modalDiaEntregaSinBolsonShort").modal("hide");
+            });
+
+            $("#bDiaEntregaSinBolsonShort").on("click",function(e) {
+                $("#modalDiaEntregaSinBolsonShort").modal("hide");
+            });
+
             $("#bAgregarBolson").on("click",function(e){
                 e.preventDefault();
                 cerrarModalImagenBolson();
@@ -282,6 +304,27 @@ $(document).ready(function() {
             $("#errorCuponDescuento").html("");
             $("#successCuponDescuento").html("");
         })
+        $("#idDiaEntrega").on("change",function(e){
+            if($(this).val()>0) {
+                $("#pErrorDiaEntrega").html("");
+                loadDiaEntregaConfig($(this).val());
+            } else {
+                clearClienteForm();
+            }
+        });
+
+        //ES PARA QUE NO PUEDAN HACER CLICK POR FUERA DEL MODAL
+        $('#modalDiaEntregaSinBolson').modal({backdrop: 'static', keyboard: false}) 
+
+        $("#bCambiarDiaEntrega").on("click",function(e) {
+            e.preventDefault();
+            cambiarDiaEntrega();
+        });
+
+        $("#bEliminarBolsonesPedido").on("click",function(e) {
+            e.preventDefault();
+            eliminarBolsonesDelPedido();
+        });
 });
 
 
@@ -296,9 +339,6 @@ function scrollToTargetAdjusted(id){
         element = element.offsetParent;
     }
 
-    //var elementPosition = element.getBoundingClientRect().top;
-    //var offsetPosition = elementPosition - headerOffset;
-
     window.scrollTo({
          top: top - offset,
          behavior: "smooth"
@@ -306,11 +346,9 @@ function scrollToTargetAdjusted(id){
 }
 
 function initMarket(){
-    //var cExtras = getMarketByTipoPedido(idTipoPedido);
     var cExtras = getMarket();
     drawMarket(cExtras);
     initMarketRadioButtons();
-    //prepareFormOrderByTipoPedido(idTipoPedido);
 }
 
 function initMarketDiferencial(){
@@ -523,8 +561,6 @@ function prepareFormOrderByTipoPedido(idTipoPedido){
         //calcularPrecioDelivery();
     }
     calcularTotalPedido();
-    /*$("#totalPedido").html(0);
-    aExtras = [];*/
     $("#tipoPedidoOrden").html(tipoPedido)
 }
 
@@ -1061,6 +1097,10 @@ function finalizarCompra(){
 
 function checkForm(){
     var formOK = true;
+    if($("#idDiaEntrega").val()==-1){
+        $("#pErrorDiaEntrega").html("Por favor, seleccioná un día de entrega.");
+        formOK = false;
+    }
     if(idTipoPedidoSelected==0){
         $("#pErrorTipoPedido").html("Por favor, seleccioná un método de entrega.");
         formOK = false;
@@ -1249,9 +1289,12 @@ function openImagenBolson(){
 
 function searchOrdersDuplicadas(mail,celular){
     var response  = false;
+    let idDiaEntrega = $("#idDiaEntrega").val();
+
     let data = {
         'mail' : mail,
-        'telefono': celular
+        'telefono': celular,
+        'idDiaEntrega': idDiaEntrega
     };
     $.ajax({
         url: baseURL + 'searchOrdersByDiaActualBolsonAndMailAndPhone',
@@ -1625,4 +1668,111 @@ function showModuloCupones() {
 function disableCupon() {
     $("#cuponDescuento").prop("disabled",true);
     $("#bAplicarCupon").hide();
+}
+
+function loadDiaEntregaConfig(idDiaEntrega) {
+    let diaEntrega = getDiaEntrega(idDiaEntrega);
+    refreshFormByConfigDiaEntrega(diaEntrega);
+}
+
+function getDiaEntrega(idDiaEntrega) {
+    let diaEntrega;
+    let data = {
+        'idDiaEntrega' : idDiaEntrega
+    };
+    $.ajax({
+        url: baseURL + 'getDiaEntrega',
+        method: 'post',
+        data: data,
+        async: false
+    }).done(function(result) {
+        diaEntrega = result.diaEntrega;
+    });
+    return diaEntrega;
+}
+
+function refreshFormByConfigDiaEntrega(diaEntrega) {
+    let puntoRetiro = false;
+    let domicilio = false;
+    if(diaEntrega.puntoDeRetiroEnabled != undefined && diaEntrega.puntoDeRetiroEnabled == 1) {
+        $("#bPuntosRetiro").prop("disabled",false);
+        $("#bPuntosRetiro").show();
+        puntoRetiro = true;
+    }else{
+        $("#bPuntosRetiro").prop("disabled",true);
+        $("#bPuntosRetiro").hide();
+        puntoRetiro = false;
+    }
+    if(diaEntrega.deliveryEnabled != undefined && diaEntrega.deliveryEnabled == 1) {
+        $("#bDomicilio").prop("disabled",false);
+        $("#bDomicilio").show();
+        domicilio = true;
+    }else{
+        $("#bDomicilio").prop("disabled",true);
+        $("#bDomicilio").hide();
+        domicilio = false;
+    }
+    if(puntoRetiro && !domicilio) {
+        $("#bPuntosRetiro").click();
+    } else if(!puntoRetiro && domicilio) {
+        $("#bDomicilio").click();
+    } else {
+        $("#bPuntosRetiro").removeClass("buttonSelected");
+        $("#bDomicilio").removeClass("buttonSelected");
+        $(".input-datos-pedido-domicilio").css("display","none");
+        $(".input-datos-pedido-puntoretiro").css("display","none");
+   }
+
+   if(isAnyBolsonSelected() && diaEntrega.aceptaBolsones == 0) {
+       $("#modalDiaEntregaSinBolson").modal("show");
+   }
+}
+
+function isAnyBolsonSelected() {
+    return ( (oBolson!=undefined && oBolson!=null) ||  isBolsonInExtras()) ? true : false;
+}
+
+function isBolsonInExtras() {
+    var idBolsonExtra = 1;
+    var bolsonIndex = aExtras.findIndex( oExtra => oExtra.idExtra == idBolsonExtra );
+    return (bolsonIndex > -1) ? true : false;
+}
+
+function cambiarDiaEntrega() {
+    $("#idDiaEntrega").val(-1);
+    $("#idDiaEntrega").change();
+    $("#modalDiaEntregaSinBolson").modal("hide");
+}
+
+function clearClienteForm() {
+    $(".cart-btn-tipo-pedido").removeClass("buttonSelected");
+    $("#bPuntosRetiro").show();
+    $("#bDomicilio").show();
+    $("#pErrorTipoPedido").html("");
+    $("#errorBolsonIndividual").html("");
+    $("#datosPuntoDeRetiro").html("");
+    $(".infoAdicionalPdR").hide();
+    $("#tipoPedidoOrden").html("Seleccioná un método de entrega.");
+    clearPuntosDeRetiroForm();
+    clearDomicilioForm();
+    $(".input-datos-pedido-domicilio").css("display","none");
+    $(".input-datos-pedido-puntoretiro").css("display","none");
+}
+
+function eliminarBolsonesDelPedido() {
+    deleteBolsonFromCarrito(1);
+    deleteProduct(1);
+    $("#modalDiaEntregaSinBolson").modal("hide");
+    scrollToTargetAdjusted('seccionResumenPedido');         
+}
+
+function diaAceptaBolsones() {
+    let aceptaBolsones = true;
+    if($("#idDiaEntrega").val()>0) {
+        let diaEntrega = getDiaEntrega($("#idDiaEntrega").val());
+        if(diaEntrega.aceptaBolsones == 0) {
+            aceptaBolsones = false;
+        }
+    }
+    return aceptaBolsones;
 }

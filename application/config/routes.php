@@ -80,3 +80,4 @@ $route['newsletterSuscribe'] = 'Main/newsletterSuscribe';
 $route['getIsMailSuscribedToNewsletter'] = 'Main/getIsMailSuscribedToNewsletter';
 $route['getCuponByCodigo'] = 'Main/getCuponByCodigo';
 $route['getModuloCuponesEnabled'] = 'ParametersManager/getModuloCuponesEnabled';
+$route['getDiaEntrega'] = 'MultiHelper/getDiaEntrega';

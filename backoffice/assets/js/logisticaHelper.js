@@ -61,6 +61,7 @@ const logisticaHelper = {
                 var idDiaEntrega = $("#idDiaEntregaPedido :selected").val();
                 cerrarLogistica(idDiaEntrega);
                 ocultarLoader();
+                window.location.reload(true);
             },300);
         });
 
@@ -85,19 +86,14 @@ const logisticaHelper = {
                         $("#idDiaEntregaSeleccionado").val(idDiaEntregaAPreparar);
                         $("#divPuntosRetiro").show();
                         $("#divBarrios").show();
-                        if($("#idEstadoLogisticaDiaEntrega").val()==2){
+                        //if($("#idEstadoLogisticaDiaEntrega").val()==2){
                             $("#aDeletePreparacionLogisticaDiaEntrega").show();
                             $("#aCloseLogisticaDiaEntrega").show();
                             $("#aDispCamion").prop("href","javascript:openDisponibilizarCamion();");
-                        }
+                        //}
                         $("#aResumenPedidos").prop("href","javascript:getResumenPedidos();");
                         $("#aListCamiones").prop("href","javascript:openListCamiones();");
                         $("#aPrintSelected").prop("href","javascript:openPrintSelectedPreferences();");
-                        //TENGO QUE EMPEZAR A CARGAR LOS RESUMENES
-                        //PRIMERO CARGAR RESUMEN DE PUNTOS DE RETIRO
-                        //CANTIDAD TOTAL DE BOLSONES (SIN CANCELADOS)
-                        //POSIBILIDAD DE EDITAR EL TOTAL DE BOLSONES DE CADA PUNTO
-                        //HACER QUERIES QUE BUSQUEN POR ID_DIA_ENTREGA EN LOS PEDIDOS Y EN DONDE OFFICE_ID SEA NO NULL Y BARRIO_ID SEA NULL AGRUPADO POR PUNTO DE RETIRO
                         var diaEntregaHasItems = checkIfDiaEntregaHasLogisticaItems(idDiaEntregaAPreparar);
                         if(diaEntregaHasItems==false){
                             var registrosLogisticaCreados = crearRegistrosInicialesLogistica(idDiaEntregaAPreparar);

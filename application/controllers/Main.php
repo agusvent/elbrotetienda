@@ -872,7 +872,8 @@ class Main extends CI_Controller
             'descripcionTienda'  => $this->Parameter->get('descripcionTienda'),
             'descripcionTiendaFormCerrado'  => $this->Parameter->get('descripcionTiendaFormCerrado'),
             'imagenBolson' => $this->Parameter->get('archivo_imagen_bolson'),
-            'moduloCuponesEnabled' => $this->Parameter->get('moduloCuponesEnabled')
+            'moduloCuponesEnabled' => $this->Parameter->get('moduloCuponesEnabled'),
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
         ]));
     }
 
