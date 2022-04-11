@@ -14,6 +14,9 @@
             <a id="aPrintSelected" href="#" style="margin-top:5px;width:49px;height:49px;float:right;border: solid 2px #000000;border-radius: 50px;background-color: #f77070;text-align:center;">
                 <img src="<?=assets();?>img/printer.png" style="width:38px;margin-top: 3px;margin-left: 1px;"/>
             </a>
+            <a id="aPrintSelectedInCards" href="#" style="margin-top:5px;width:49px;height:49px;float:right;border: solid 2px #000000;border-radius: 50px;background-color: #d4d4d4;text-align:center;">
+                <img src="<?=assets();?>img/print-cards.png" style="width:38px;margin-top: 3px;margin-left: 1px;"/>
+            </a>
         </h4>
         <p style="margin-top:15px;margin-bottom:15px;">&nbsp;</p>
 
@@ -441,4 +444,4 @@
 <input type="hidden" id="idDiaEntregaSeleccionado" value="-1"/>
 <input type="hidden" id="idEstadoLogisticaDiaEntrega" value="-1"/>
 
-<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=6678686"></script>
+<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=12312"></script>

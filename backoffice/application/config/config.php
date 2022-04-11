@@ -502,6 +502,7 @@ $config['csrf_exclude_uris'] = array(
     'api/logistica/setCamionToLogistica',
     'api/logistica/printLogisticaIndividual',
     'api/logistica/printLogisticaMultiple',
+    'api/logistica/printLogisticaMultipleInCards',
     'api/logistica/printCamionIndividual',
     'api/logistica/printAllCamiones',
     'api/logistica/printAllCamionesConDetalles',

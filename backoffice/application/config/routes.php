@@ -169,6 +169,7 @@ $route['api/logistica/setNroOrdenForPedidosByDiaEntrega'] = 'Api/setNroOrdenForP
 
 $route['api/logistica/printLogisticaIndividual'] = 'Api/printLogisticaIndividual';
 $route['api/logistica/printLogisticaMultiple'] = 'Api/printLogisticaMultiple';
+$route['api/logistica/printLogisticaMultipleInCards'] = 'Api/printLogisticaMultipleInCards';
 $route['api/logistica/printCamionIndividual'] = 'Api/printCamionIndividual';
 $route['api/logistica/printAllCamiones'] = 'Api/printAllCamiones';
 $route['api/logistica/printAllCamionesConDetalles'] = 'Api/printAllCamionesConDetalles';
