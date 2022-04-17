@@ -174,6 +174,7 @@ $route['api/logistica/printCamionIndividual'] = 'Api/printCamionIndividual';
 $route['api/logistica/printAllCamiones'] = 'Api/printAllCamiones';
 $route['api/logistica/printAllCamionesConDetalles'] = 'Api/printAllCamionesConDetalles';
 $route['api/logistica/printCamionesSeleccionados'] = 'Api/printCamionesSeleccionados';
+$route['api/logistica/printCamionesSeleccionadosInCards'] = 'Api/printCamionesSeleccionadosInCards';
 $route['api/logistica/getCamionByIdCamion/(:num)'] = 'Api/getCamionByIdCamion/$1';
 $route['api/logistica/deleteCamionDisponibilizado'] = 'Api/deleteCamionDisponibilizado';
 $route['api/logistica/closeRegistroLogistica'] = 'Api/closeRegistroLogistica';

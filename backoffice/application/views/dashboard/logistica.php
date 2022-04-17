@@ -218,6 +218,7 @@
         <form class="listadoCamionesForm">
             <div style="width:100%">
               <p style="text-align:right;margin-bottom:0px;">
+                <button type="button" class="btn btn-small btn-primary" style="padding-top: 4px" id="bImprimirSeleccionComandas"><img src="<?=assets();?>img/printer.png" style="width:20px;"/>&nbsp;Imprimir Comandas Selecci&oacute;n</button>
                 <button type="button" class="btn btn-small btn-primary" style="padding-top: 4px" id="bImprimirSeleccion"><img src="<?=assets();?>img/printer.png" style="width:20px;"/>&nbsp;Imprimir Selecci&oacute;n</button>
                 <button type="button" class="btn btn-small btn-primary" style="padding-top: 4px" id="bImprimirAllCamiones"><img src="<?=assets();?>img/printer.png" style="width:20px;"/>&nbsp;Imprimir Todos</button>
                 <button type="button" class="btn btn-small btn-primary" style="padding-top: 4px" id="bImprimirAllCamionesConDetalles"><img src="<?=assets();?>img/printer.png" style="width:20px;"/>&nbsp;Imprimir Barrios Detalles</button>
@@ -444,4 +445,4 @@
 <input type="hidden" id="idDiaEntregaSeleccionado" value="-1"/>
 <input type="hidden" id="idEstadoLogisticaDiaEntrega" value="-1"/>
 
-<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=12312"></script>
+<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=134"></script>
