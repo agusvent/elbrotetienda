@@ -8116,8 +8116,8 @@ class Api extends CI_Controller
             'mode' => 'utf-8',
             'format'=> 'Legal',
             'orientation' => 'P',
-            'margin_left' => '5',
-            'margin_right' => '5',
+            'margin_left' => '2',
+            'margin_right' => '2',
             'margin_top' => '45',
             'fontdata' => $fontData + [
                 'helvetica-r' => [
@@ -8134,7 +8134,7 @@ class Api extends CI_Controller
         $oPDF->SetTitle('CamionesComandas');
 
         $maxOrdersByPage = 9;
-        $maxExtrasByPage = 15;
+        $maxExtrasByPage = 13;
 
         foreach($arrayCamiones as $camion){
             $cLogisticaPdR = $this->Logistica->getAllPuntosRetiroByIdCamion($camion['idCamion']);
@@ -8160,21 +8160,24 @@ class Api extends CI_Controller
         
                     $html = "<div style='width:100%'>";
                     $contOrders = 0;
+                    $cantOrders = count($cOrders);
                     $contExtras = 0;
                     foreach ($cOrders as $oOrder) {
                         $contOrders++;
-                        if($contOrders==1 || $contOrders == 4) {
-                            $contExtras = $contExtras + $oOrder['cant_items'];
+                        if($contOrders == 4 || $contOrders == 7) {
+                            $contExtras = $contExtras + count($oOrder['extras']);
                         }
-                        
-                        if($contOrders == 7) {
-                            $futureExtrasCant = $maxExtrasByPage + $oOrder['cant_items'];
-                            if( $futureExtrasCant > 16 ) {
+
+                        if($contOrders == 4 || $contOrders == 7) {
+                            $futureExtrasCant = $contExtras + count($oOrder['extras']);
+                            if( $futureExtrasCant > $maxExtrasByPage) {
                                 $oPDF->WriteHTML($html."</div><div style='width:100%'>");
                                 $html = "";
-                                $oPDF->AddPage();
-                                $contOrders = 0;
-                                $contExtras = 0;
+                                if($contOrders < $cantOrders) {
+                                    $oPDF->AddPage();
+                                    $contOrders = 0;
+                                    $contExtras = 0;
+                                }
                             }
                         }
         
@@ -8183,9 +8186,11 @@ class Api extends CI_Controller
                             //printf($oPuntoDeRetiro->name." paso el limite de hojas");
                             $oPDF->WriteHTML($html."</div><div style='width:100%'>");
                             $html = "";
-                            $oPDF->AddPage();
-                            $contOrders = 0;
-                            $contExtras = 0;
+                            if($contOrders < $cantOrders) {
+                                $oPDF->AddPage();
+                                $contOrders = 0;
+                                $contExtras = 0;
+                            }
                         }
                     }
                     if ($html!="") {
@@ -8213,36 +8218,47 @@ class Api extends CI_Controller
                     $cOrders = $this->Order->getOrdersBarriosWithExtrasByIdDiaEntregaAndIdBarrioOrderedByCantExtras($idDiaEntrega,$idBarrio);
                     $html = "<div style='width:100%'>";
                     $contOrders = 0;
+                    $cantOrders = count($cOrders);
+                    $contExtras = 0;
                     foreach ($cOrders as $oOrder) {
                         $contOrders++;
-                        if($contOrders==1 || $contOrders == 4) {
-                            $contExtras = $contExtras + $oOrder['cant_items'];
+
+                        if($contOrders == 1) {
+                            $contExtras = $contExtras + count($oOrder['extras']);
                         }
-                        
-                        if($contOrders == 7) {
-                            $futureExtrasCant = $maxExtrasByPage + $oOrder['cant_items'];
-                            if( $futureExtrasCant > 16 ) {
+
+                        if($contOrders == 4 || $contOrders == 7) {
+                            $futureExtrasCant = $contExtras + count($oOrder['extras']);
+                            if( $futureExtrasCant > $maxExtrasByPage) {
                                 $oPDF->WriteHTML($html."</div><div style='width:100%'>");
                                 $html = "";
                                 $oPDF->AddPage();
-                                $contOrders = 0;
+                                $contOrders = 1;
                                 $contExtras = 0;
+                            } else {
+                                $contExtras = $contExtras + count($oOrder['extras']);
                             }
+                            
                         }
 
                         $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $oBarrio->nombre);
                         if ($contOrders == $maxOrdersByPage) {
                             $oPDF->WriteHTML($html."</div><div style='width:100%'>");
                             $html = "";
-                            $oPDF->AddPage();
-                            $contOrders = 0;
-                            $contExtras = 0;
+                            if($contOrders < $cantOrders) {
+                                //printf("\n\nCORTA HOJA\n\n");
+                                $oPDF->AddPage();
+                                $contOrders = 0;
+                                $contExtras = 0;
+                            }
                         }
                     }
                     if ($html!="") {
                         $oPDF->WriteHTML($html."</div>");
                     }
                     $html = "";
+                    $contOrders = 0;
+                    $contExtras = 0;
                 }
             }            
             $html .= "</div>";
