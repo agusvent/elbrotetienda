@@ -14,6 +14,9 @@
             <a id="aPrintSelected" href="#" style="margin-top:5px;width:49px;height:49px;float:right;border: solid 2px #000000;border-radius: 50px;background-color: #f77070;text-align:center;">
                 <img src="<?=assets();?>img/printer.png" style="width:38px;margin-top: 3px;margin-left: 1px;"/>
             </a>
+            <a id="aPrintSelectedInCards" href="#" style="margin-top:5px;width:49px;height:49px;float:right;border: solid 2px #000000;border-radius: 50px;background-color: #d4d4d4;text-align:center;">
+                <img src="<?=assets();?>img/print-cards.png" style="width:38px;margin-top: 3px;margin-left: 1px;"/>
+            </a>
         </h4>
         <p style="margin-top:15px;margin-bottom:15px;">&nbsp;</p>
 
@@ -215,6 +218,7 @@
         <form class="listadoCamionesForm">
             <div style="width:100%">
               <p style="text-align:right;margin-bottom:0px;">
+                <button type="button" class="btn btn-small btn-primary" style="padding-top: 4px" id="bImprimirSeleccionComandas"><img src="<?=assets();?>img/printer.png" style="width:20px;"/>&nbsp;Imprimir Comandas Selecci&oacute;n</button>
                 <button type="button" class="btn btn-small btn-primary" style="padding-top: 4px" id="bImprimirSeleccion"><img src="<?=assets();?>img/printer.png" style="width:20px;"/>&nbsp;Imprimir Selecci&oacute;n</button>
                 <button type="button" class="btn btn-small btn-primary" style="padding-top: 4px" id="bImprimirAllCamiones"><img src="<?=assets();?>img/printer.png" style="width:20px;"/>&nbsp;Imprimir Todos</button>
                 <button type="button" class="btn btn-small btn-primary" style="padding-top: 4px" id="bImprimirAllCamionesConDetalles"><img src="<?=assets();?>img/printer.png" style="width:20px;"/>&nbsp;Imprimir Barrios Detalles</button>
@@ -441,4 +445,4 @@
 <input type="hidden" id="idDiaEntregaSeleccionado" value="-1"/>
 <input type="hidden" id="idEstadoLogisticaDiaEntrega" value="-1"/>
 
-<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=917263"></script>
+<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=134"></script>

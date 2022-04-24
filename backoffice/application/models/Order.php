@@ -36,6 +36,17 @@ class Order extends CI_Model
         return $toReturn;
     }
 
+    public function getExtrasWithCantidad($orderId) 
+    {
+        $this->load->model('Extra');
+        $this->db->select('oe.extra_id, oe.cant, oe.total, extra.name, extra.nombre_corto, extra.price');
+        $this->db->from('orders_extras as oe');
+        $this->db->join('extra_products as extra', 'oe.extra_id = extra.id', 'left');
+        $this->db->where('order_id', $orderId);
+        $orderExtras = $this->db->get()->result();
+        return $orderExtras;
+    }
+
     public function getCantOrderExtraByPedidoAndExtra($orderId, $extraId) 
     {
         $this->db->select('cant');
@@ -247,16 +258,21 @@ class Order extends CI_Model
         $toAppend = [];
         foreach ($orders as $order){
 
-            $orderExtras = $this->getExtras($order->id);
-                $extrasArray = [];
-                foreach($orderExtras as $extra) {
-                    array_push($extrasArray,array(
-                       'id_extra' => $extra->id,
-                       'name' => $extra->name,
-                       'nombre_corto' => $extra->nombre_corto,
-                       'extra_price' =>  $extra->price
-                    ));
+            $orderExtras = $this->getExtrasWithCantidad($order->id);
+            $extrasArray = [];
+            $cant_bolsones_individuales = "-";
+            foreach($orderExtras as $extra) {
+                array_push($extrasArray,array(
+                    'id_extra' => $extra->extra_id,
+                    'name' => $extra->name,
+                    'nombre_corto' => $extra->nombre_corto,
+                    'extra_price' =>  $extra->price
+                ));
+                if($extra->extra_id == 1) {
+                    //SI ES EL BOLSON INDIVIDUAL
+                    $cant_bolsones_individuales = $extra->cant;
                 }
+            }
             $idEstadoPedido = 0;
             if(isset($order->id_estado_pedido)){
                 $idEstadoPedido = $order->id_estado_pedido;
@@ -277,6 +293,7 @@ class Order extends CI_Model
                 //'precio_bolson' => $order->precio_bolson,
                 'total_bolson' => $order->total_bolson,
                 'cant_bolson' => $order->cant_bolson,
+                'cant_bolsones_individuales' => $cant_bolsones_individuales,
                 'fecha_entrega' => $order->deliver_date,
                 'fecha_creacion' => $order->created_at,
                 'observaciones' => $order->observaciones,
@@ -287,7 +304,9 @@ class Order extends CI_Model
                 'extras' => $extrasArray,
                 'nro_orden' => $order->nro_orden,
                 'id_cupon' => $order->id_cupon,
-                'monto_descuento' => $order->monto_descuento
+                'monto_descuento' => $order->monto_descuento,
+                'id_tipo_pedido' => $order->id_tipo_pedido,
+                'cant_items' => isset($order->cantItems) ? $order->cantItems : 0
             ));
                                         
         }
@@ -297,16 +316,20 @@ class Order extends CI_Model
     public function generateOrdersDeliveryArray($orders){
         $toAppend = [];
         foreach ($orders as $order){
-
-            $orderExtras = $this->getExtras($order->id);
+            $cant_bolsones_individuales = "-";
+            $orderExtras = $this->getExtrasWithCantidad($order->id);
                 $extrasArray = [];
                 foreach($orderExtras as $extra) {
                     array_push($extrasArray,array(
-                       'id_extra' => $extra->id,
+                       'id_extra' => $extra->extra_id,
                        'name' => $extra->name,
                        'nombre_corto' => $extra->nombre_corto,
                        'extra_price' =>  $extra->price
                     ));
+                    if($extra->extra_id == 1) {
+                        //SI ES EL BOLSON INDIVIDUAL
+                        $cant_bolsones_individuales = $extra->cant;
+                    }    
                 }
 
             $montoDebe = 0;
@@ -320,9 +343,11 @@ class Order extends CI_Model
                 'id_barrio' => $order->id_barrio,
                 'barrio' => $order->nombre_barrio,
                 'barrio_observaciones' => $order->barrio_observaciones,
+                'costo_envio' => $order->costo_envio,
                 'nombre_bolson' => $order->nombre_bolson,
                 'total_bolson' => $order->total_bolson,
                 'cant_bolson' => $order->cant_bolson,
+                'cant_bolsones_individuales' => $cant_bolsones_individuales,
                 'fecha_entrega' => $order->deliver_date,
                 'cliente_domicilio' => $order->cliente_domicilio,
                 'cliente_domicilio_extra' => $order->cliente_domicilio_extra,
@@ -336,7 +361,9 @@ class Order extends CI_Model
                 'extras' => $extrasArray,
                 'nro_orden' => $order->nro_orden,
                 'id_cupon' => $order->id_cupon,
-                'monto_descuento' => $order->monto_descuento
+                'monto_descuento' => $order->monto_descuento,
+                'id_tipo_pedido' => $order->id_tipo_pedido,
+                'cant_items' => isset($order->cantItems) ? $order->cantItems : 0
             ));
         }
         return $toAppend;
@@ -389,7 +416,7 @@ class Order extends CI_Model
 
     public function getOrdersADomicilioWithExtrasByDiaDeBolson($idDiaEntrega){
         //FUNCION QUE SE USA PARA EL EXPORT A EXCEL DE LOS PEDIDOS ENTRE LAS FECHAS A DOMICILIO
-        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, barrio.id as id_barrio, barrio.nombre as nombre_barrio, barrio.observaciones as barrio_observaciones, orders.deliver_address as cliente_domicilio, orders.deliver_extra as cliente_domicilio_extra, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento');
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, barrio.id as id_barrio, barrio.nombre as nombre_barrio, barrio.observaciones as barrio_observaciones, barrio.costo_envio, orders.deliver_address as cliente_domicilio, orders.deliver_extra as cliente_domicilio_extra, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento');
         $this->db->from('orders');
         $this->db->join('barrios as barrio', 'barrio.id = orders.barrio_id', 'left');
         $this->db->join('pockets as bolson', 'bolson.id = orders.pocket_id', 'left');
@@ -1435,7 +1462,7 @@ class Order extends CI_Model
 
     public function getOrdersPuntosRetiroWithExtrasByIdDiaEntregaAndIdPuntoRetiro($idDiaEntrega, $idPuntoRetiro){
         //FUNCION QUE SE USA PARA EL EXPORT A EXCEL DE LOS PEDIDOS ENTRE LAS FECHAS DE SUCURSAL
-        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, orders.id_dia_entrega, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento');
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.id_tipo_pedido, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, orders.id_dia_entrega, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento');
         $this->db->from('orders');
         $this->db->join('offices as sucursal', 'sucursal.id = orders.office_id', 'left');
         $this->db->join('pockets as bolson', 'bolson.id = orders.pocket_id', 'left');
@@ -1471,7 +1498,7 @@ class Order extends CI_Model
 
     public function getOrdersBarriosWithExtrasByIdDiaEntregaAndIdBarrio($idDiaEntrega, $idBarrio){
         //FUNCION QUE SE USA PARA EL EXPORT A EXCEL DE LOS PEDIDOS ENTRE LAS FECHAS DE SUCURSAL
-        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, barrio.id as id_barrio, barrio.nombre as nombre_barrio, barrio.observaciones as barrio_observaciones, orders.deliver_address as cliente_domicilio, orders.deliver_extra as cliente_domicilio_extra, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, orders.id_dia_entrega, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento');
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.id_tipo_pedido, barrio.id as id_barrio, barrio.nombre as nombre_barrio, barrio.observaciones as barrio_observaciones, barrio.costo_envio, orders.deliver_address as cliente_domicilio, orders.deliver_extra as cliente_domicilio_extra, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, orders.id_dia_entrega, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento');
         $this->db->from('orders');
         $this->db->join('barrios as barrio', 'barrio.id = orders.barrio_id', 'left');
         $this->db->join('pockets as bolson', 'bolson.id = orders.pocket_id', 'left');
@@ -1681,5 +1708,48 @@ class Order extends CI_Model
         $this->db->order_by('orders.client_name', 'ASC');
         $orders = $this->db->get()->result();
         return $orders;
+    }
+
+    public function getOrdersPuntosRetiroWithExtrasByIdDiaEntregaAndIdPuntoRetiroOrderedByCantExtras($idDiaEntrega, $idPuntoRetiro){
+        //FUNCION QUE SE USA PARA EL EXPORT A PDF DE PEDIDOS EN TARJETAS.
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.id_tipo_pedido, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, orders.id_dia_entrega, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento, count(oe.order_id)+ifnull(cant_bolson,0)  as cantItems');
+        $this->db->from('orders');
+        $this->db->join('offices as sucursal', 'sucursal.id = orders.office_id', 'left');
+        $this->db->join('pockets as bolson', 'bolson.id = orders.pocket_id', 'left');
+        $this->db->join('orders_extras as oe', 'oe.order_id = orders.id', 'left');
+        $where = "orders.deliver_type = 'SUC' AND orders.valid = 1 AND orders.id_dia_entrega = '$idDiaEntrega' AND orders.office_id = '$idPuntoRetiro' AND orders.id_estado_pedido not in (4)";    
+        
+        $this->db->where($where);
+        $this->db->order_by('sucursal ASC, cantItems DESC, orders.client_name ASC');
+        $this->db->group_by('orders.id');
+        $orders = $this->db->get()->result();
+
+        $toAppend = [];
+        if(!empty($orders)){
+            $toAppend = $this->generateOrdersArray($orders);
+        }
+        return $toAppend;
+    }    
+
+    public function getOrdersBarriosWithExtrasByIdDiaEntregaAndIdBarrioOrderedByCantExtras($idDiaEntrega, $idBarrio){
+        //FUNCION QUE SE USA PARA EL EXPORT A PDF DE PEDIDOS EN TARJETAS.
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.id_tipo_pedido, barrio.id as id_barrio, barrio.nombre as nombre_barrio, barrio.observaciones as barrio_observaciones, barrio.costo_envio, orders.deliver_address as cliente_domicilio, orders.deliver_extra as cliente_domicilio_extra, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, orders.id_dia_entrega, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento, count(oe.order_id) as cantExtras');
+        $this->db->from('orders');
+        $this->db->join('barrios as barrio', 'barrio.id = orders.barrio_id', 'left');
+        $this->db->join('pockets as bolson', 'bolson.id = orders.pocket_id', 'left');
+        $this->db->join('orders_extras as oe', 'oe.order_id = orders.id', 'left');
+        //Excluyo los pedidos en estado CANCELADO
+        $where = "orders.deliver_type = 'DEL' AND orders.valid = 1 AND orders.id_dia_entrega = '$idDiaEntrega' AND orders.barrio_id = '$idBarrio' AND orders.id_estado_pedido not in (4)";    
+        
+        $this->db->where($where);
+        $this->db->order_by('nombre_barrio ASC, cantExtras DESC, orders.client_name ASC');
+        $this->db->group_by('orders.id');
+        $orders = $this->db->get()->result();
+
+        $toAppend = [];
+        if(!empty($orders)){
+            $toAppend = $this->generateOrdersDeliveryArray($orders);
+        }
+        return $toAppend;
     }
 }

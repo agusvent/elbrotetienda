@@ -4358,6 +4358,51 @@ class Api extends CI_Controller
 
     }    
 
+    public function printLogisticaMultipleInCards() {
+        $this->output->set_content_type('application/json');
+
+        $preArrayLogistica = $this->input->post('arrayLogistica', true);
+        $idTipoLogistica = $this->input->post('idTipoLogistica', true);
+
+        if(is_null($preArrayLogistica) || is_null($idTipoLogistica)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'No se recibieron los parámetros necesarios.';
+            $this->output->set_status_header(403);
+            return $this->output->set_output(json_encode($return));
+        }
+        $fileName = "";
+        $idsLogistica = "";
+        foreach($preArrayLogistica as $logistica){
+            if($idsLogistica!=""){
+                $idsLogistica .= ",";
+            }
+            $idsLogistica .= $logistica['idLogistica'];
+        }
+        $this->load->model('Logistica');
+        $cLogistica = $this->Logistica->getByIds($idsLogistica);
+        $arrayLogistica = [];
+        foreach($cLogistica as $oLogistica){
+            array_push($arrayLogistica,array(
+                'idLogistica' => $oLogistica->id_logistica
+            ));
+        }
+        
+        $fileName = "ComandasPedidos.pdf";
+
+        if(isset($idTipoLogistica) && $idTipoLogistica==1){
+            //PdR
+            $this->createPDFComandasPedidosByLogisticaPuntosRetiro($arrayLogistica);
+        } else {
+            //Domicilio
+            $this->createPDFComandasPedidosByLogisticaBarrios($arrayLogistica);
+        }
+        
+        $return['status'] = self::OK_VALUE;
+        $return['fileName'] = $fileName;
+        //$this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));           
+    }
+
     public function printLogisticaMultiple(){
         $this->output->set_content_type('application/json');
 
@@ -5001,17 +5046,150 @@ class Api extends CI_Controller
 
             
         }
-
-        
-
         $html .= "</tbody></table>";
-        
-
-
         $oPDF->WriteHTML($html);
         $oPDF->Output('Logistica.pdf', 'F');
         return 1;
 
+    }
+
+    private function createPDFComandasPedidosByLogisticaBarrios($arrayLogistica) {
+        $this->load->model('Logistica');
+        $this->load->model('Extra');
+        $this->load->model('Order');
+        $this->load->model('Barrio');
+
+        $cExtras = $this->Extra->getActive();
+        
+        $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
+        $fontDirs = $defaultConfig['fontDir'];
+        
+        $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
+        $fontData = $defaultFontConfig['fontdata'];        
+        
+        $fontDir = realpath(__DIR__ . '/../../assets/fonts');
+        
+        $oPDF = new \Mpdf\Mpdf([
+            'mode' => 'utf-8',
+            'format'=> 'Legal',
+            'orientation' => 'P',
+            'margin_left' => '5',
+            'margin_right' => '5',
+            'margin_top' => '30',
+            'fontdata' => $fontData + [
+                'helvetica-r' => [
+                    'R' => 'HelveticaNeueLTCom-LtCn.ttf',
+                    'B' => 'HelveticaNeueLTCom-LtCn.ttf',
+                ],
+                'helvetica-b' => [
+                    'R' => 'HelveticaNeueLTCom-BdCn.ttf',
+                    'B' => 'HelveticaNeueLTCom-BdCn.ttf',
+                ]
+            ]
+        ]);
+
+        $oPDF->SetTitle('ComandasPedidos');
+        
+        foreach($arrayLogistica as $logistica){
+            $oLogistica = $this->Logistica->getById($logistica['idLogistica']);
+            $idDiaEntrega = $oLogistica->id_dia_entrega;
+            $idBarrio = $oLogistica->id_barrio;
+            $oBarrio = $this->Barrio->getById($idBarrio);
+            $cOrders = $this->Order->getOrdersBarriosWithExtrasByIdDiaEntregaAndIdBarrioOrderedByCantExtras($idDiaEntrega,$idBarrio);
+            $headerHtml = "<div style='width:100%'>";
+            $headerHtml .= "<h1 style='font-family: helvetica-r; padding-bottom:10px;border-bottom:4px solid #000000'>DOMICILIO - BARRIO: <span style='font-family:helvetica-b;'>".strtoupper($oBarrio->nombre)."</span></h1>";
+            $headerHtml .= "</div>";
+            $oPDF->SetHTMLHeader($headerHtml);
+            $oPDF->setFooter('{PAGENO}');
+            $oPDF->AddPage(); 
+            $html = "<div style='width:100%'>";
+            $maxOrdersByPage = 9;
+            $contOrders = 0;
+            foreach($cOrders as $oOrder) {
+                $contOrders++;
+                $html .= $this->generateComandaPedidoHtml($oOrder, 2, $oBarrio->nombre);
+                if($contOrders == $maxOrdersByPage) {
+                    $oPDF->WriteHTML($html."</div><div style='width:100%'>");
+                    $html = "";
+                    $oPDF->AddPage();
+                    $contOrders = 0;
+                }
+            }
+            $html .= "</div>";
+            $oPDF->WriteHTML($html);
+        }
+        $oPDF->Output('ComandasPedidos.pdf', 'F');
+        return 1;        
+    }
+
+    private function createPDFComandasPedidosByLogisticaPuntosRetiro($arrayLogistica) {
+        $this->load->model('Logistica');
+        $this->load->model('Extra');
+        $this->load->model('Order');
+        $this->load->model('Office');
+
+        $cExtras = $this->Extra->getActive();
+        
+        $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
+        $fontDirs = $defaultConfig['fontDir'];
+        
+        $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
+        $fontData = $defaultFontConfig['fontdata'];        
+        
+        $fontDir = realpath(__DIR__ . '/../../assets/fonts');
+        
+        $oPDF = new \Mpdf\Mpdf([
+            'mode' => 'utf-8',
+            'format'=> 'Legal',
+            'orientation' => 'P',
+            'margin_left' => '5',
+            'margin_right' => '5',
+            'margin_top' => '30',
+            'fontdata' => $fontData + [
+                'helvetica-r' => [
+                    'R' => 'HelveticaNeueLTCom-LtCn.ttf',
+                    'B' => 'HelveticaNeueLTCom-LtCn.ttf',
+                ],
+                'helvetica-b' => [
+                    'R' => 'HelveticaNeueLTCom-BdCn.ttf',
+                    'B' => 'HelveticaNeueLTCom-BdCn.ttf',
+                ]
+            ]
+        ]);
+
+        $oPDF->SetTitle('ComandasPedidos');
+        
+        
+        foreach($arrayLogistica as $logistica){
+            $oLogistica = $this->Logistica->getById($logistica['idLogistica']);
+            $idDiaEntrega = $oLogistica->id_dia_entrega;
+            $idPuntoRetiro = $oLogistica->id_punto_retiro;
+            $oPuntoDeRetiro = $this->Office->getById($idPuntoRetiro);
+            $cOrders = $this->Order->getOrdersPuntosRetiroWithExtrasByIdDiaEntregaAndIdPuntoRetiroOrderedByCantExtras($idDiaEntrega,$idPuntoRetiro);
+            $headerHtml = "<div style='width:100%'>";
+            $headerHtml .= "<h1 style='font-family: helvetica-r; padding-bottom:10px;border-bottom:4px solid #000000'>PUNTO DE RETIRO - <span style='font-family:helvetica-b;'>".$oPuntoDeRetiro->name."</span></h1>";
+            $headerHtml .= "</div>";
+            $oPDF->SetHTMLHeader($headerHtml);
+            $oPDF->setFooter('{PAGENO}');
+            $oPDF->AddPage(); 
+            $html = "<div style='width:100%'>";
+            $maxOrdersByPage = 9;
+            $contOrders = 0;
+            foreach($cOrders as $oOrder) {
+                $contOrders++;
+                $html .= $this->generateComandaPedidoHtml($oOrder, 1, $oPuntoDeRetiro->name);
+                if($contOrders == $maxOrdersByPage) {
+                    $oPDF->WriteHTML($html."</div><div style='width:100%'>");
+                    $html = "";
+                    $oPDF->AddPage();
+                    $contOrders = 0;
+                }
+            }
+            $html .= "</div>";
+            $oPDF->WriteHTML($html);
+        }
+        $oPDF->Output('ComandasPedidos.pdf', 'F');
+        return 1;
     }
 
     private function createPDFMultipleLogisticaPuntosRetiroUnoPorHoja($arrayLogistica){
@@ -7889,6 +8067,496 @@ class Api extends CI_Controller
         $return['status'] = self::OK_VALUE;
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
+    }
+
+    public function printCamionesSeleccionadosInCards() {
+        $this->output->set_content_type('application/json');
+
+        $preArrayCamiones = $this->input->post('arrayCamiones', true);
+        $fileName = "";
+        $arrayCamiones = [];
+
+        if(is_null($preArrayCamiones)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'No se recibieron los parámetros necesarios.';
+            $this->output->set_status_header(403);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        foreach($preArrayCamiones as $camiones){
+            array_push($arrayCamiones,array(
+                'idCamion' => $camiones['idCamion']
+            ));
+        }
+        $this->createPDFForCamionesSeleccionadosInCards($arrayCamiones);
+        $fileName = "CamionesComandas.pdf";
+
+        $return['status'] = self::OK_VALUE;
+        $return['fileName'] = $fileName;
+        //$this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));                
+    }
+
+    private function createPDFForCamionesSeleccionadosInCards($arrayCamiones) {
+        $this->load->model('Logistica');
+        $this->load->model('LogisticaDiasEntregaCamiones');
+        $this->load->model('Extra');
+        $this->load->model('Order');
+        $this->load->model('Office');
+        $this->load->model('Barrio');
+
+        $cExtras = $this->Extra->getActive();
+        
+        $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
+        $fontDirs = $defaultConfig['fontDir'];
+        
+        $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
+        $fontData = $defaultFontConfig['fontdata'];        
+        
+        $fontDir = realpath(__DIR__ . '/../../assets/fonts');
+        
+        $oPDF = new \Mpdf\Mpdf([
+            'mode' => 'utf-8',
+            'format'=> 'Legal',
+            'orientation' => 'P',
+            'margin_left' => '2',
+            'margin_right' => '2',
+            'margin_top' => '45',
+            'fontdata' => $fontData + [
+                'helvetica-r' => [
+                    'R' => 'HelveticaNeueLTCom-LtCn.ttf',
+                    'B' => 'HelveticaNeueLTCom-LtCn.ttf',
+                ],
+                'helvetica-b' => [
+                    'R' => 'HelveticaNeueLTCom-BdCn.ttf',
+                    'B' => 'HelveticaNeueLTCom-BdCn.ttf',
+                ]
+            ]
+        ]);
+
+        $oPDF->SetTitle('CamionesComandas');
+
+        $maxOrdersByPage = 9;
+        $maxExtrasByPage = 15;
+
+        foreach($arrayCamiones as $camion){
+            $cLogisticaPdR = $this->Logistica->getAllPuntosRetiroByIdCamion($camion['idCamion']);
+            $cLogisticaBarrios = $this->Logistica->getAllBarriosByIdCamion($camion['idCamion']);
+            $oCamion = $this->LogisticaDiasEntregaCamiones->getById($camion['idCamion']);
+
+            if (count($cLogisticaPdR)>0) {
+                foreach($cLogisticaPdR as $oLogistica) {
+                    $idPuntoRetiro = $oLogistica->id_punto_retiro;
+                    $idDiaEntrega = $oLogistica->id_dia_entrega;
+                    $oPuntoDeRetiro = $this->Office->getById($idPuntoRetiro);
+                    $cOrders = $this->Order->getOrdersPuntosRetiroWithExtrasByIdDiaEntregaAndIdPuntoRetiroOrderedByCantExtras($idDiaEntrega,$idPuntoRetiro);
+                    $oPDF->SetHTMLHeader("");
+                    $oPDF->setFooter('{PAGENO}');
+                    $oPDF->AddPageByArray(array(
+                        'orientation' => 'L',
+                        'mgt' => '2'));
+                    $html = $this->generateResumenReducidoLogisticaPuntoDeRetiro($oCamion,$oLogistica,$cOrders);
+                    $oPDF->WriteHTML($html);
+
+                    $html = "";
+
+                    $headerHtml = "<div style='width:100%'>";
+                    $headerHtml .= "<h1 style='font-family: helvetica-r;margin-bottom:0px;padding-bottom:0px;'><span style='font-family:helvetica-b;'>"
+                        .strtoupper($oCamion->camion)."</span></h1>";
+                    $headerHtml .=  "<h3 style='font-family:helvetica-r; padding-bottom:10px;border-bottom:4px solid #000000'>PUNTO DE RETIRO: <span style='font-family:helvetica-b;'>"
+                        .strtoupper($oPuntoDeRetiro->name)."</span> - ".strtoupper($oPuntoDeRetiro->address)."</h3>";
+                    $headerHtml .= "</div>";
+                    $oPDF->SetHTMLHeader($headerHtml);
+                    $oPDF->setFooter('{PAGENO}');
+                    $oPDF->AddPageByArray(array(
+                        'mgt' => '45'));
+        
+                    $html = "<div style='width:100%'>";
+                    $contOrders = 0;
+                    $cantOrders = count($cOrders);
+                    $contExtras = 0;
+                    foreach ($cOrders as $oOrder) {
+                        $contOrders++;
+                        if($contOrders == 4 || $contOrders == 7) {
+                            $contExtras = $contExtras + count($oOrder['extras']);
+                        }
+
+                        /*if($contOrders == 4 || $contOrders == 7) {
+                            $futureExtrasCant = $contExtras + count($oOrder['extras']);
+                            if( $futureExtrasCant > $maxExtrasByPage) {
+                                $oPDF->WriteHTML($html."</div><div style='width:100%'>");
+                                $html = "";
+                                if($contOrders < $cantOrders) {
+                                    $oPDF->AddPage();
+                                    $contOrders = 0;
+                                    $contExtras = 0;
+                                }
+                            }
+                        }*/
+        
+                        $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $oPuntoDeRetiro->name);
+                        if ($contOrders == $maxOrdersByPage) {
+                            //printf($oPuntoDeRetiro->name." paso el limite de hojas");
+                            $oPDF->WriteHTML($html."</div><div style='width:100%'>");
+                            $html = "";
+                            if($contOrders < $cantOrders) {
+                                $oPDF->AddPage();
+                                $contOrders = 0;
+                                $contExtras = 0;
+                            }
+                        }
+                    }
+                    if ($html!="") {
+                        $oPDF->SetHTMLHeader("");
+
+                        $oPDF->WriteHTML($html."</div>");
+                    }
+                    $html = "";
+                }
+            }
+            if (count($cLogisticaBarrios)>0) {
+                $html = "";
+                $oPDF->SetHTMLHeader("");
+                $oPDF->setFooter('{PAGENO}');
+                $oPDF->AddPageByArray(array(
+                    'orientation' => 'L',
+                    'mgt' => '2'));
+
+                $html = "<table style='border-collapse:collapse;border:1px solid #000000;width:100%;font-family:Arial;font-size:14px;'>";
+                $html .= "<thead>";
+                $html .= "<tr><td colspan='9' style='text-align:left;border:1px solid #000000;'>".$oCamion->camion."</td></tr>";
+                $html .= "</thead>";
+                $html .= "<tbody>";
+                $html .= "</tbody>";
+                $html .= "</table>";
+
+                foreach($cLogisticaBarrios as $oLogistica) {
+                    $idBarrio = $oLogistica->id_barrio;
+                    $idDiaEntrega = $oLogistica->id_dia_entrega;
+                    $cOrders = $this->Order->getOrdersBarriosWithExtrasByIdDiaEntregaAndIdBarrioOrderedByCantExtras($idDiaEntrega,$idBarrio);
+                    $html .= $this->generateResumenReducidoLogisticaBarrios($oLogistica,$cOrders);
+                }
+                $oPDF->WriteHTML($html);
+                $html = "";
+                foreach($cLogisticaBarrios as $oLogistica) {
+                    $idBarrio = $oLogistica->id_barrio;
+                    $idDiaEntrega = $oLogistica->id_dia_entrega;
+                    $cOrders = $this->Order->getOrdersBarriosWithExtrasByIdDiaEntregaAndIdBarrioOrderedByCantExtras($idDiaEntrega,$idBarrio);
+                    $oBarrio = $this->Barrio->getById($idBarrio);
+                    $headerHtml = "<div style='width:100%'>";
+                    $headerHtml .= "<h1 style='font-family: helvetica-r;margin-bottom:0px;padding-bottom:0px;'><span style='font-family:helvetica-b;'>"
+                        .strtoupper($oCamion->camion)."</span></h1>";
+                    $headerHtml .=  "<h3 style='font-family:helvetica-r; padding-bottom:10px;border-bottom:4px solid #000000'>DOMICILIO: <span style='font-family:helvetica-b;'>"
+                        .strtoupper($oBarrio->nombre)."</span> - ".strtoupper($oBarrio->observaciones)."</h3>";
+
+                    $headerHtml .= "</div>";
+                    $oPDF->SetHTMLHeader($headerHtml);
+                    $oPDF->setFooter('{PAGENO}');
+                    $oPDF->AddPageByArray(array(
+                        'mgt' => '45'));
+                    
+                    $html = "<div style='width:100%'>";
+                    $contOrders = 0;
+                    $cantOrders = count($cOrders);
+                    $contExtras = 0;
+                    foreach ($cOrders as $oOrder) {
+                        $contOrders++;
+
+                        if($contOrders == 1) {
+                            $contExtras = $contExtras + count($oOrder['extras']);
+                        }
+
+                        if($contOrders == 4 || $contOrders == 7) {
+                            $futureExtrasCant = $contExtras + count($oOrder['extras']);
+                            if( $futureExtrasCant > $maxExtrasByPage) {
+                                $oPDF->WriteHTML($html."</div><div style='width:100%'>");
+                                $html = "";
+                                $oPDF->AddPage();
+                                $contOrders = 1;
+                                $contExtras = 0;
+                            } else {
+                                $contExtras = $contExtras + count($oOrder['extras']);
+                            }
+                            
+                        }
+
+                        $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $oBarrio->nombre);
+                        if ($contOrders == $maxOrdersByPage) {
+                            $oPDF->WriteHTML($html."</div><div style='width:100%'>");
+                            $html = "";
+                            if($contOrders < $cantOrders) {
+                                //printf("\n\nCORTA HOJA\n\n");
+                                $oPDF->AddPage();
+                                $contOrders = 0;
+                                $contExtras = 0;
+                            }
+                        }
+                    }
+                    if ($html!="") {
+                        $oPDF->WriteHTML($html."</div>");
+                    }
+                    $html = "";
+                    $contOrders = 0;
+                    $contExtras = 0;
+                }
+            }            
+            $html .= "</div>";
+            $oPDF->WriteHTML($html);
+        }
+        $oPDF->Output('CamionesComandas.pdf', 'F');
+        return 1;        
+    }    
+
+    private function generateResumenReducidoLogisticaBarrios($oLogistica,$cOrders) {
+        $html = "<table style='border-collapse:collapse;border:1px solid #000000;width:100%;font-family:Arial;font-size:14px;'>";
+        $html .= "<thead style='height:20px;max-height:20px;'>";
+        $html .= "<tr style='height:20px;max-height:20px;'>";
+        $html .= "<th style='font-size:12px;width:22%;border:1px solid'>Cliente</th>";
+        $html .= "<th style='font-size:12px;width:10%;border:1px solid'>Celular</th>";
+        $html .= "<th style='font-size:12px;width:22%;border:1px solid'>Dirección</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Bols. Fam. (8kg)</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Bols. Ind. (5kg)</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Bolsas de Friselina</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Reserva Abonada</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Total a Cobrar</th>";
+        $html .= "<th style='font-size:12px;width:10%;border:1px solid'>Observaciones</th>";
+        $html .= "</tr>";
+        $html .= "</thead>";
+        $html .= "<tbody style='font-size:16px'>";
+        $html .= "<tr style='background-color:#d1d1d1;'>";
+        $html .= "<td colspan='3' style='color:#000000;font-size:18px'><b>";
+        $html .= $cOrders[0]['barrio']." - ".$cOrders[0]['barrio_observaciones'];
+        $html .= "</b></td>";
+        $html .= "<td style='font-size:20px;color:#000000; text-align:center;border:1px solid #000000;' ><b>".$oLogistica->cantidad_modificada."</b></td>"; 
+        $html .= "<td style='font-size:20px;color:#000000; text-align:center;border:1px solid #000000;' ><b>".$oLogistica->cantidad_bolsones_individuales_modificado."</b></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "</tr>";
+        foreach($cOrders as $oOrder) {
+            if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
+                $html .= "<tr style='background-color:#d1d1d1;'>";
+            }else{
+                $html .= "<tr>";
+            }
+            $html .= "<td style='font-size:16px;min-height:45px;height:45px;border:1px solid'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
+            $html .= "<td style='font-size:16px;border:1px solid'>".$oOrder['celular']."</td>";
+            $html .= "<td style='font-size:16px;border:1px solid'>".$oOrder['cliente_domicilio_full']."</td>";
+
+            $cant_bolson = "-";
+            if(!is_null($oOrder['cant_bolson']) && $oOrder['cant_bolson']!=""){
+                $cant_bolson = intval($oOrder['cant_bolson']);
+            }
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>".$cant_bolson."</td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>".$oOrder['cant_bolsones_individuales']."</td>";
+            $html .= "<td style='border:1px solid'></td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>$".$oOrder['monto_pagado']."</td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'><b>$".$oOrder['monto_debe']."</b></td>";
+
+            $obs = "";        
+            if($oOrder['id_estado_pedido']==2){
+                $obs .= "ESPECIAL - ";
+            }
+            if($oOrder['id_estado_pedido']==3){
+                $obs .= "BONIFICADO - ";
+            }
+
+            if($oOrder['id_cupon'] != null && $oOrder['id_cupon']>0) {
+                if($obs==""){
+                    $obs = "Cupón de Descuento aplicado.";
+                }else{
+                    $obs = $obs." - "."Cupón de Descuento aplicado.";
+                }    
+            }
+    
+            if($oOrder['observaciones']!=""){
+                $obs .= $oOrder['observaciones'];
+            }
+            $html .= "<td style='font-size:12px;border:1px solid'>".$obs."</td>";
+            $html .= "</tr>";
+        }
+        $html .= "<tr><td colspan='9'>&nbsp;</td></tr>";
+        $html .= "</tbody>";
+        $html .= "</table>";
+        return $html;
+    }
+
+    private function generateResumenReducidoLogisticaPuntoDeRetiro($oCamion,$oLogistica,$cOrders) {
+        $html = "<table style='border-collapse:collapse;border:1px solid #000000;width:100%;font-family:Arial;'>";
+        $html .= "<thead>";
+        $html .= "<tr><td colspan='9' style='text-align:left;border:1px solid #000000;'>".$oCamion->camion."</td></tr>";
+        $html .= "<tr>";
+        $html .= "<th style='font-size:12px;width:30%;border:1px solid'>Cliente</th>";
+        $html .= "<th style='font-size:12px;width:14%;border:1px solid'>Celular</th>";
+        
+        $html .= "<th style='font-size:12px;width:7%;word-wrap:break-word;max-height:30px;height:30px;border:1px solid'>Bolsón Familiar (8kg)</th>";
+        $html .= "<th style='font-size:12px;width:8%;word-wrap:break-word;max-height:30px;height:30px;border:1px solid'>Bolsón Individual (5kg)</th>";
+        $html .= "<th style='font-size:12px;width:5%;border:1px solid'>Bolsas de Friselina</th>";
+        $html .= "<th style='font-size:12px;width:7%;border:1px solid'>Reserva Abonada</th>";
+        $html .= "<th style='font-size:12px;width:7%;border:1px solid'>Total a Cobrar</th>";
+        $html .= "<th style='font-size:12px;width:6%;border:1px solid'>Pedido Entregado</th>";
+        $html .= "<th style='font-size:12px;width:16%;border:1px solid'>Observaciones</th>";
+        $html .= "</tr>";
+        $html .= "</thead>";
+        $html .= "<tbody style='font-size:16px'>";
+        $html .= "<tr style='background-color:#d1d1d1;'>";
+        $html .= "<td colspan='2' style='color:#000000;font-size:18px;'><b>";
+        $html .= $cOrders[0]['sucursal']." - ".$cOrders[0]['domicilio_sucursal'];
+        $html .= "</b></td>";
+        $html .= "<td style='font-size:20px;color:#000000; text-align:center;border:1px solid #000000;'><b>".$oLogistica->cantidad_modificada."</b></td>"; 
+        $html .= "<td style='font-size:20px;color:#000000; text-align:center;border:1px solid #000000;'><b>".$oLogistica->cantidad_bolsones_individuales_modificado."</b></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "</tr>";
+        foreach($cOrders as $oOrder) {
+            if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
+                $html .= "<tr style='background-color:#d1d1d1;'>";
+            }else{
+                $html .= "<tr>";
+            }
+
+            $html .= "<td style='font-size:16px;min-height:45px;height:45px;border:1px solid'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
+            $html .= "<td style='font-size:16px;border:1px solid'>".$oOrder['celular']."</td>";
+
+            $cant_bolson = "-";
+            if(!is_null($oOrder['cant_bolson']) && $oOrder['cant_bolson']!=""){
+                $cant_bolson = intval($oOrder['cant_bolson']);
+            }
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>".$cant_bolson."</td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>".$oOrder['cant_bolsones_individuales']."</td>";
+            $html .= "<td style='font-size:16px;border:1px solid'></td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>$".$oOrder['monto_pagado']."</td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'><b>$".$oOrder['monto_debe']."</b></td>";
+            $html .= "<td style='font-size:16px;border:1px solid'></td>";
+
+            $obs = "";        
+            if($oOrder['id_estado_pedido']==2){
+                $obs .= "ESPECIAL - ";
+            }
+            if($oOrder['id_estado_pedido']==3){
+                $obs .= "BONIFICADO - ";
+            }
+
+            if($oOrder['id_cupon'] != null && $oOrder['id_cupon']>0) {
+                if($obs==""){
+                    $obs = "Cupón de Descuento aplicado.";
+                }else{
+                    $obs = $obs." - "."Cupón de Descuento aplicado.";
+                }    
+            }
+    
+            if($oOrder['observaciones']!=""){
+                $obs .= $oOrder['observaciones'];
+            }
+            $html .= "<td style='font-size:16px;border:1px solid'>".$obs."</td>";
+            $html .= "</tr>";
+        }
+        $html .= "</tbody>";
+        $html .= "</table>";
+        return $html;
+    }
+
+    private function generateComandaPedidoHtml($oOrder, $idTipoPedido, $tipoPedidoLugar) {
+        $this->load->model('Order');
+        $html = "";
+        $tipoPedido = "";
+        $direccion = "";
+        $extrasArray = $this->Order->getExtrasWithCantidad($oOrder["order_id"]);
+        if($idTipoPedido == 1) {
+            $tipoPedido = "SUCURSAL";
+        } else {
+            $tipoPedido = "BARRIO";
+            $direccion = $oOrder["cliente_domicilio_full"];
+        }
+        $html .= "<div style='width:30%; border:1px solid #000000; margin-right: 10px; margin-left: 10px; margin-bottom: 10px; padding:5px; float:left;'>";
+        $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b; margin-top:0px; margin-bottom:0px;font-size:14px;'>PEDIDO: ".$oOrder["nro_orden"]." - ".$oOrder["cliente"]."</h5>";
+        $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3; font-family: helvetica-b; margin-top:0px; margin-bottom:5px;font-size:14px;'>TEL.: ".$oOrder["celular"]."</h5>";
+        
+        if($idTipoPedido == 2) {
+            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;'>".$tipoPedido.": ".$tipoPedidoLugar."</h5>";
+            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:2px solid #000000;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;'>DIRECCIÓN: <span style='font-family: helvetica-r'>".$direccion."</span></h5>";
+        } else {
+            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; border-bottom:2px solid #000000; margin-top:0px; margin-bottom:0px;'>".$tipoPedido.": ".$tipoPedidoLugar."</h5>";
+        }
+        $html .= "<table style='width:100%;letter-spacing:0.5px;line-height:20px;font-family: helvetica-b; border-bottom:2px solid #000000;'>";
+        $html .= "<thead><tr>";
+        $html .= "<th align='left' style='letter-spacing:0.5px;line-height:20px;width:70%;font-size:10px;'>ARTÍCULO</th>";
+        $html .= "<th align='center' style='letter-spacing:0.5px;line-height:20px;width:10%;font-size:10px;'>CANT.</th>";
+        $html .= "<th align='right' style='letter-spacing:0.5px;line-height:20px;width:20%;font-size:10px;'>PRECIO</th>";
+        $html .= "</tr></thead>";
+        $html .= "<tbody style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;'>";
+        if(intval($oOrder["cant_bolson"])>0) {
+            $html .= "<tr>";
+            $html .= "<td align='left' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>".$oOrder["nombre_bolson"]."</td>";
+            $html .= "<td align='center' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>".$oOrder["cant_bolson"]."</td>";
+            $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>$".intval($oOrder["total_bolson"])/intval($oOrder["cant_bolson"])."</td>";
+            $html .= "</tr>";
+        }
+        if(count($extrasArray)>0) {
+            foreach($extrasArray as $oExtra) {
+                $html .= "<tr>";
+                $html .= "<td align='left' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>".$oExtra->nombre_corto."</td>";
+                $html .= "<td align='center' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>".$oExtra->cant."</td>";
+                $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'><b>$".intval($oExtra->total)/intval($oExtra->cant)."</b></td>";
+                $html .= "</tr>";
+            }
+        }
+        if(intval($idTipoPedido) == 2) {
+            $html .= "<tr>";
+            $html .= "<td align='left' colspan='2' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>ENVÍO (abonado por Mercado pago)</td>";
+            $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>$".intval($oOrder["costo_envio"])."</td>";
+            $html .= "</tr>";
+        }
+        $html .= "</tbody>";
+        $html .= "</tr></tbody>";
+        $html .= "</table>";
+        $html .= "<table style='width:100%;margin-top:0px; margin-bottom:0px;border-bottom:2px solid #000000;'>";
+        $html .= "<thead><tr>";
+        $html .= "<th align='right' style='width:70%;'></th>";
+        $html .= "<th align='right' style='width:30%;'></th>";
+        $html .= "</thead>";
+        $html .= "<tbody>";
+        $html .= "<tr>";
+        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>MONTO ABONADO:</td>";
+        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>$".$oOrder['monto_pagado']."</td>";
+        $html .= "</tr>";
+        $html .= "<tr>";
+        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b;font-size:12px;'><h2>TOTAL A ABONAR:</h2></td>";
+        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b;font-size:12px;'><h2>$".$oOrder['monto_debe']."</h2></td>";
+        $html .= "</tr>";
+        $html .= "</tbody>";
+        $html .= "</table>";
+        $html .= "<p style='min-height:50px;height:50px;letter-spacing:0.5px;margin-top:10px;font-family: helvetica-r; text-align: justify;font-size:10px;'>";
+        $html .= "COMENTARIO: <br />";
+
+        $obs = "";
+        
+        if($oOrder['id_estado_pedido']==2){
+            $obs .= "ESPECIAL - ";
+        }
+        if($oOrder['id_estado_pedido']==3){
+            $obs .= "BONIFICADO - ";
+        }
+        if($oOrder['observaciones']!=""){
+            $obs .= $oOrder['observaciones'];
+        }
+
+        if($oOrder['id_cupon'] != null && $oOrder['id_cupon']>0) {
+            if($obs==""){
+                $obs = "Cupón de Descuento aplicado.";
+            }else{
+                $obs = $obs." - "."Cupón de Descuento aplicado.";
+            }    
+        }
+
+        $html .= $obs;
+        $html .= "</p>";
+        $html .= "</div>";
+        return $html;
     }
 
     public function printCamionesSeleccionados(){

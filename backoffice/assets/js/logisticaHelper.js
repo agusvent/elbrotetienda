@@ -94,6 +94,12 @@ const logisticaHelper = {
                         $("#aResumenPedidos").prop("href","javascript:getResumenPedidos();");
                         $("#aListCamiones").prop("href","javascript:openListCamiones();");
                         $("#aPrintSelected").prop("href","javascript:openPrintSelectedPreferences();");
+                        $("#aPrintSelectedInCards").prop("href","javascript:printSelectedInCards();");
+                        //TENGO QUE EMPEZAR A CARGAR LOS RESUMENES
+                        //PRIMERO CARGAR RESUMEN DE PUNTOS DE RETIRO
+                        //CANTIDAD TOTAL DE BOLSONES (SIN CANCELADOS)
+                        //POSIBILIDAD DE EDITAR EL TOTAL DE BOLSONES DE CADA PUNTO
+                        //HACER QUERIES QUE BUSQUEN POR ID_DIA_ENTREGA EN LOS PEDIDOS Y EN DONDE OFFICE_ID SEA NO NULL Y BARRIO_ID SEA NULL AGRUPADO POR PUNTO DE RETIRO
                         var diaEntregaHasItems = checkIfDiaEntregaHasLogisticaItems(idDiaEntregaAPreparar);
                         if(diaEntregaHasItems==false){
                             var registrosLogisticaCreados = crearRegistrosInicialesLogistica(idDiaEntregaAPreparar);
@@ -111,7 +117,7 @@ const logisticaHelper = {
                         return Swal.fire('Error', 'No se pudo seleccionar el dia indicado.', 'error');
                     }
                 }).fail( function( jqXHR, textStatus, errorThrown ) {
-                    console.log(jqXHR );
+                    console.log("Error",jqXHR );
                 });       
             },400);
         });
@@ -149,17 +155,23 @@ const logisticaHelper = {
         });
         $('#listadoPuntosRetiroYBarriosDeCamionModal').on('hidden.bs.modal', function () {
             $("#listadoCamionesModal").modal("show");
-        })
+        });
 
         $('#deleteLogisticaCamionModal').on('hidden.bs.modal', function () {
             $("#listadoCamionesModal").modal("show");
             $("#idLogisticaCamionDelete").val(-1);
-        })
+        });
         
+
         $('#disponibilizarCamionModal').on('hidden.bs.modal', function () {
             $("#disponibilizarCamionNombre").val("");
-        })
+        });
         
+        $('#listadoCamionesModal').on('hidden.bs.modal', function () {
+            arrayCamionesToPrint = [];
+        });
+        
+
         $("#bAsociarPuntoRetiroOBarrioACamion").on("click",function(){
             if($("input:radio[name='radioCamionesDisponibles']:checked").length>0){
                 mostrarLoader();
@@ -291,9 +303,21 @@ const logisticaHelper = {
             e.preventDefault();
             printAllCamionesConDetalles();
         });
+        $("#bImprimirSeleccionComandas").on("click",function(e){
+            e.preventDefault();
+            if(arrayCamionesToPrint.length>0) {
+                printCamionesSeleccionadosInCards();
+            } else {
+                alert("Debe seleccionar algún camión.");
+            }
+        });
         $("#bImprimirSeleccion").on("click",function(e){
             e.preventDefault();
-            printCamionesSeleccionados();
+            if(arrayCamionesToPrint.length>0) {
+                printCamionesSeleccionados();
+            } else {
+                alert("Debe seleccionar algún camión.");
+            }
         });
     },
 
@@ -381,7 +405,7 @@ function drawLogisticaPuntosRetiro(cLogisticaPuntosRetiro,idEstadoLogistica){
 }
 
 function generateHtmlForPuntoRetiroLogisticaBox(oLogisticaPuntoRetiro,idEstadoLogistica){
-    console.log(oLogisticaPuntoRetiro);
+    //console.log(oLogisticaPuntoRetiro);
     var auxHtml = "";
     var sumaCantBolsonesModificados = parseInt(oLogisticaPuntoRetiro.cantidad_modificada) + parseInt(oLogisticaPuntoRetiro.cantidad_bolsones_individuales_modificado);
     auxHtml += '<div class="col-sm-3" style="margin-bottom: 10px;padding-left:5px;padding-right:5px;">';
@@ -1017,7 +1041,7 @@ function printLogisticaPuntoRetiro(idLogistica){
         method: 'post',
         async: false
     }).done(function(result) {
-        console.log(result.fileName);
+        //console.log(result.fileName);
         window.open(baseURL+result.fileName+"?v="+time, "popupWindow", "width=600, height=400, scrollbars=yes");
     });
 }
@@ -1066,7 +1090,7 @@ function printLogisticaBarrio(idLogistica){
         method: 'post',
         async: false
     }).done(function(result) {
-        console.log(result.fileName);
+        //console.log(result.fileName);
         window.open(baseURL+result.fileName+"?v="+time, "popupWindow", "width=600, height=400, scrollbars=yes");
     });
 }
@@ -1240,7 +1264,6 @@ function cerrarLogistica(idDiaEntrega){
 }
 
 function printCamionesSeleccionados(){
-
     var dt = new Date();
     var time = dt.getHours() + dt.getMinutes() + dt.getSeconds();
     
@@ -1254,6 +1277,56 @@ function printCamionesSeleccionados(){
         async: false
     }).done(function(result) {
         
+        window.open(baseURL+result.fileName+"?v="+time, "popupWindow", "width=600, height=400, scrollbars=yes");
+    });
+}
+
+function printCamionesSeleccionadosInCards() {
+    var dt = new Date();
+    var time = dt.getHours() + dt.getMinutes() + dt.getSeconds();
+    
+    let data = {
+        'arrayCamiones': arrayCamionesToPrint //variable global
+    };
+    $.ajax({
+        url: ajaxURL + 'logistica/printCamionesSeleccionadosInCards/',
+        data: data, 
+        method: 'post',
+        async: false
+    }).done(function(result) {
+        
+        window.open(baseURL+result.fileName+"?v="+time, "popupWindow", "width=600, height=400, scrollbars=yes");
+    });
+}
+
+function printSelectedInCards() {
+    if(arrayLogisticaParaImprimir.length>0){
+        mostrarLoader();
+        setTimeout(function(){
+            if(arrayLogisticaParaImprimir.length>0){
+                printLogisticaMultipleCards();
+            }    
+        },200);
+    }else{
+        alert("Debe seleccionar algún Punto de Retiro o Barrio");
+    }
+}
+
+function printLogisticaMultipleCards(){
+    var dt = new Date();
+    var time = dt.getHours() + dt.getMinutes() + dt.getSeconds();
+    
+    let data = {
+        'arrayLogistica': arrayLogisticaParaImprimir, //variable global
+        'idTipoLogistica': idTipoLogisticaSeleccionado //variable global
+    };
+    $.ajax({
+        url: ajaxURL + 'logistica/printLogisticaMultipleInCards/',
+        data: data, 
+        method: 'post',
+        async: false
+    }).done(function(result) {
+        ocultarLoader();
         window.open(baseURL+result.fileName+"?v="+time, "popupWindow", "width=600, height=400, scrollbars=yes");
     });
 }
