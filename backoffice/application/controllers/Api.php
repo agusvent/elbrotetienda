@@ -8134,7 +8134,7 @@ class Api extends CI_Controller
         $oPDF->SetTitle('CamionesComandas');
 
         $maxOrdersByPage = 9;
-        $maxExtrasByPage = 13;
+        $maxExtrasByPage = 15;
 
         foreach($arrayCamiones as $camion){
             $cLogisticaPdR = $this->Logistica->getAllPuntosRetiroByIdCamion($camion['idCamion']);
@@ -8311,25 +8311,33 @@ class Api extends CI_Controller
         $html .= "<th style='font-size:12px;width:22%;border:1px solid'>Cliente</th>";
         $html .= "<th style='font-size:12px;width:10%;border:1px solid'>Celular</th>";
         $html .= "<th style='font-size:12px;width:22%;border:1px solid'>Dirección</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:5%;height:20px;max-height:20px;border:1px solid'>Bols. Fam. (8kg)</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:5%;height:20px;max-height:20px;border:1px solid'>Bols. Ind. (5kg)</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:5%;height:20px;max-height:20px;border:1px solid'>Bolsas de Friselina</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:5%;height:20px;max-height:20px;border:1px solid'>Reserva Abonada</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:5%;height:20px;max-height:20px;border:1px solid'>Total a Cobrar</th>";
-        $html .= "<th style='font-size:12px;width:20%;border:1px solid'>Observaciones</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Bols. Fam. (8kg)</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Bols. Ind. (5kg)</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Bolsas de Friselina</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Reserva Abonada</th>";
+        $html .= "<th style='font-size:12px;width:7%;height:20px;max-height:20px;border:1px solid'>Total a Cobrar</th>";
+        $html .= "<th style='font-size:12px;width:10%;border:1px solid'>Observaciones</th>";
         $html .= "</tr>";
         $html .= "</thead>";
         $html .= "<tbody style='font-size:16px'>";
-        $html .= "<tr style='background-color:#000000;'>";
-        $html .= "<td colspan='3' style='color:#FFFFFF;font-size:18px'><b>";
+        $html .= "<tr style='background-color:#d1d1d1;'>";
+        $html .= "<td colspan='3' style='color:#000000;font-size:18px'><b>";
         $html .= $cOrders[0]['barrio']." - ".$cOrders[0]['barrio_observaciones'];
         $html .= "</b></td>";
-        $html .= "<td style='font-size:18px;color:#FFFFFF; text-align:center;border:1px solid #000000;' ><b>".$oLogistica->cantidad_modificada."</b></td>"; 
-        $html .= "<td style='font-size:18px;color:#FFFFFF; text-align:center;border:1px solid #000000;' ><b>".$oLogistica->cantidad_bolsones_individuales_modificado."</b></td>"; 
+        $html .= "<td style='font-size:20px;color:#000000; text-align:center;border:1px solid #000000;' ><b>".$oLogistica->cantidad_modificada."</b></td>"; 
+        $html .= "<td style='font-size:20px;color:#000000; text-align:center;border:1px solid #000000;' ><b>".$oLogistica->cantidad_bolsones_individuales_modificado."</b></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
         $html .= "</tr>";
         foreach($cOrders as $oOrder) {
-            $html .= "<tr>";
-            $html .= "<td style='font-size:16px;min-height:30px;height:30px;border:1px solid'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
+            if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
+                $html .= "<tr style='background-color:#d1d1d1;'>";
+            }else{
+                $html .= "<tr>";
+            }
+            $html .= "<td style='font-size:16px;min-height:45px;height:45px;border:1px solid'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
             $html .= "<td style='font-size:16px;border:1px solid'>".$oOrder['celular']."</td>";
             $html .= "<td style='font-size:16px;border:1px solid'>".$oOrder['cliente_domicilio_full']."</td>";
 
@@ -8337,11 +8345,11 @@ class Api extends CI_Controller
             if(!is_null($oOrder['cant_bolson']) && $oOrder['cant_bolson']!=""){
                 $cant_bolson = intval($oOrder['cant_bolson']);
             }
-            $html .= "<td style='font-size:16px;text-align:center;border:1px solid'>".$cant_bolson."</td>";
-            $html .= "<td style='font-size:16px;text-align:center;border:1px solid'>".$oOrder['cant_bolsones_individuales']."</td>";
-            $html .= "<td style='font-size:16px;border:1px solid'></td>";
-            $html .= "<td style='font-size:16px;text-align:center;border:1px solid'>$".$oOrder['monto_pagado']."</td>";
-            $html .= "<td style='font-size:16px;text-align:center;border:1px solid'><b>$".$oOrder['monto_debe']."</b></td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>".$cant_bolson."</td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>".$oOrder['cant_bolsones_individuales']."</td>";
+            $html .= "<td style='border:1px solid'></td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>$".$oOrder['monto_pagado']."</td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'><b>$".$oOrder['monto_debe']."</b></td>";
 
             $obs = "";        
             if($oOrder['id_estado_pedido']==2){
@@ -8362,7 +8370,7 @@ class Api extends CI_Controller
             if($oOrder['observaciones']!=""){
                 $obs .= $oOrder['observaciones'];
             }
-            $html .= "<td style='font-size:16px;border:1px solid'>".$obs."</td>";
+            $html .= "<td style='font-size:12px;border:1px solid'>".$obs."</td>";
             $html .= "</tr>";
         }
         $html .= "<tr><td colspan='9'>&nbsp;</td></tr>";
@@ -8379,37 +8387,47 @@ class Api extends CI_Controller
         $html .= "<th style='font-size:12px;width:30%;border:1px solid'>Cliente</th>";
         $html .= "<th style='font-size:12px;width:14%;border:1px solid'>Celular</th>";
         
-        $html .= "<th text-rotate='90' style='font-size:12px;width:4%;word-wrap:break-word;max-height:30px;height:30px;border:1px solid'>Bolsón Familiar (8kg)</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:4%;word-wrap:break-word;max-height:30px;height:30px;border:1px solid'>Bolsón Individual (5kg)</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:4%;border:1px solid'>Bolsas de Friselina</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:6%;border:1px solid'>Reserva Abonada</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:6%;border:1px solid'>Total a Cobrar</th>";
-        $html .= "<th text-rotate='90' style='font-size:12px;width:4%;border:1px solid'>Pedido Entregado</th>";
-        $html .= "<th style='font-size:12px;width:28%;border:1px solid'>Observaciones</th>";
+        $html .= "<th style='font-size:12px;width:7%;word-wrap:break-word;max-height:30px;height:30px;border:1px solid'>Bolsón Familiar (8kg)</th>";
+        $html .= "<th style='font-size:12px;width:8%;word-wrap:break-word;max-height:30px;height:30px;border:1px solid'>Bolsón Individual (5kg)</th>";
+        $html .= "<th style='font-size:12px;width:5%;border:1px solid'>Bolsas de Friselina</th>";
+        $html .= "<th style='font-size:12px;width:7%;border:1px solid'>Reserva Abonada</th>";
+        $html .= "<th style='font-size:12px;width:7%;border:1px solid'>Total a Cobrar</th>";
+        $html .= "<th style='font-size:12px;width:6%;border:1px solid'>Pedido Entregado</th>";
+        $html .= "<th style='font-size:12px;width:16%;border:1px solid'>Observaciones</th>";
         $html .= "</tr>";
         $html .= "</thead>";
         $html .= "<tbody style='font-size:16px'>";
-        $html .= "<tr style='background-color:#000000;'>";
-        $html .= "<td colspan='2' style='color:#FFFFFF;font-size:18px'><b>";
+        $html .= "<tr style='background-color:#d1d1d1;'>";
+        $html .= "<td colspan='2' style='color:#000000;font-size:18px;'><b>";
         $html .= $cOrders[0]['sucursal']." - ".$cOrders[0]['domicilio_sucursal'];
         $html .= "</b></td>";
-        $html .= "<td style='font-size:18px;color:#FFFFFF; text-align:center;border:1px solid #000000;' ><b>".$oLogistica->cantidad_modificada."</b></td>"; 
-        $html .= "<td style='font-size:18px;color:#FFFFFF; text-align:center;border:1px solid #000000;' ><b>".$oLogistica->cantidad_bolsones_individuales_modificado."</b></td>"; 
+        $html .= "<td style='font-size:20px;color:#000000; text-align:center;border:1px solid #000000;'><b>".$oLogistica->cantidad_modificada."</b></td>"; 
+        $html .= "<td style='font-size:20px;color:#000000; text-align:center;border:1px solid #000000;'><b>".$oLogistica->cantidad_bolsones_individuales_modificado."</b></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
+        $html .= "<td style='border:1px solid #000000;'></td>"; 
         $html .= "</tr>";
         foreach($cOrders as $oOrder) {
-            $html .= "<tr>";
-            $html .= "<td style='font-size:16px;min-height:30px;height:30px;border:1px solid'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
+            if($oOrder['id_estado_pedido']==2 || $oOrder['id_estado_pedido']==3){
+                $html .= "<tr style='background-color:#d1d1d1;'>";
+            }else{
+                $html .= "<tr>";
+            }
+
+            $html .= "<td style='font-size:16px;min-height:45px;height:45px;border:1px solid'>".$oOrder['nro_orden']." - ".$oOrder['cliente']."</td>";
             $html .= "<td style='font-size:16px;border:1px solid'>".$oOrder['celular']."</td>";
 
             $cant_bolson = "-";
             if(!is_null($oOrder['cant_bolson']) && $oOrder['cant_bolson']!=""){
                 $cant_bolson = intval($oOrder['cant_bolson']);
             }
-            $html .= "<td style='font-size:16px;text-align:center;border:1px solid'>".$cant_bolson."</td>";
-            $html .= "<td style='font-size:16px;text-align:center;border:1px solid'>".$oOrder['cant_bolsones_individuales']."</td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>".$cant_bolson."</td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>".$oOrder['cant_bolsones_individuales']."</td>";
             $html .= "<td style='font-size:16px;border:1px solid'></td>";
-            $html .= "<td style='font-size:16px;text-align:center;border:1px solid'>$".$oOrder['monto_pagado']."</td>";
-            $html .= "<td style='font-size:16px;text-align:center;border:1px solid'><b>$".$oOrder['monto_debe']."</b></td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'>$".$oOrder['monto_pagado']."</td>";
+            $html .= "<td style='font-size:20px;text-align:center;border:1px solid'><b>$".$oOrder['monto_debe']."</b></td>";
             $html .= "<td style='font-size:16px;border:1px solid'></td>";
 
             $obs = "";        
