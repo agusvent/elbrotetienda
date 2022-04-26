@@ -538,7 +538,8 @@ $config['csrf_exclude_uris'] = array(
     'api/diasEntrega/deliveryStatus',
     'api/diasEntrega/updateStatus',
     'api/diasEntrega/getConfigDiaEntrega',
-    'api/getOrdersInfoFromDiaBolson'
+    'api/getOrdersInfoFromDiaBolson',
+    'api/diasEntrega/aceptaPedidosFrontend'
 );
 
 /*

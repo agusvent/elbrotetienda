@@ -306,10 +306,17 @@ $(document).ready(function() {
         })
         $("#idDiaEntrega").on("change",function(e){
             if($(this).val()>0) {
+                $("#dTiposEntregaButtons").show();
                 $("#pErrorDiaEntrega").html("");
+                $("#messageProductoEliminado").html("");
+                $("#messageProductoEliminado").hide();            
                 loadDiaEntregaConfig($(this).val());
             } else {
                 clearClienteForm();
+                $("#dTiposEntregaButtons").hide();
+                $("#bPuntosRetiro").prop("disabled",true);
+                $("#bDomicilio").prop("disabled",true);
+
             }
         });
 
@@ -1762,6 +1769,8 @@ function clearClienteForm() {
 function eliminarBolsonesDelPedido() {
     deleteBolsonFromCarrito(1);
     deleteProduct(1);
+    $("#messageProductoEliminado").html("Los bolsones fueron eliminados del pedido. Para continuar toca Finalizar Compra");
+    $("#messageProductoEliminado").show();
     $("#modalDiaEntregaSinBolson").modal("hide");
     scrollToTargetAdjusted('seccionResumenPedido');         
 }

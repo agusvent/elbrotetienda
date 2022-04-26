@@ -314,7 +314,7 @@ class Dashboard extends CI_Controller
             $barrio = $this->Barrio->getById($pedido->barrio_id);
             $costoEnvio = $barrio->costo_envio;
         }
-        print_r($pedido->id_dia_entrega);
+        
         $this->renderHead('EBO - Editar Pedidos');
         $this->load->view('dashboard/editarPedido',[
             'pedido' => $pedido,

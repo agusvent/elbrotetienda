@@ -4875,6 +4875,11 @@ a.default-btn {
   border: 1px solid #4caf50;
   color: #fff;
 }
+.slider-content-3 .slider-btn.btn-hover.btn-banner-color a:hover {
+  border: 1px solid #DBB893!important;
+  color: #FFFFFF!important;
+}
+
 .slider-content-3.slider-content-3-white h3 {
   color: #fff;
 }
@@ -16008,4 +16013,9 @@ button.newsletter-btn-enviar:hover {
   .cart-btn-tipo-pedido{
     margin-bottom:10px;
   }
+}
+
+
+.messageProductoEliminado {
+  margin-top:40px;
 }

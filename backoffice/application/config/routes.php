@@ -106,6 +106,7 @@ $route['api/crearDiaEntrega'] = 'Api/crearDiaEntrega';
 $route['api/diaEntrega/uploadImagenDiaEntrega'] = 'Api/uploadImagenDiaEntrega';
 $route['api/diasEntrega/getDiasEntrega'] = 'Api/getDiasEntregaActivos';
 $route['api/diasEntrega/aceptaBolsones'] = 'Api/aceptaBolsonesStatus';
+$route['api/diasEntrega/aceptaPedidosFrontend'] = 'Api/updateDiaEntregaAceptaPedidosFrontend';
 $route['api/diasEntrega/puntoDeRetiroStatus'] = 'Api/diaEntregaPuntoRetiroStatus';
 $route['api/diasEntrega/deliveryStatus'] = 'Api/diaEntregaDeliveryStatus';
 $route['api/diasEntrega/updateStatus'] = 'Api/diaEntregaUpdateStatus';

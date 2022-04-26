@@ -109,8 +109,20 @@
     height:730px!important;
 }
 
-.banner-color h1, .banner-color h3, .banner-color p, .banner-color a, .bannerTextoPpal{
+.banner-color h1, .banner-color h3,  .banner-color p, .banner-color a, .bannerTextoPpal{
     color: #DBB893!important;
+}
+.banner-color h3::before, .banner-color h3::after {
+    background-color: #DBB893!important;
+}
+
+.btn-banner-color a::before{
+    border:1px solid #DBB893!important;
+}
+
+.btn-banner-color a::after{
+    background-color:#DBB893!important;
+    color: #FFFFFF;
 }
 
 .bannerTextoPpalColor{
@@ -710,6 +722,10 @@
     line-height:22px;
 }
 
+.messageProductoEliminado {
+    margin-top:40px;
+}
+
 @-webkit-keyframes load5 {
     0%,
     100% {
@@ -770,7 +786,7 @@
     .banner3{
         background-position:left;
         background-repeat: no-repeat;
-        background-color: #dcb993;
+        /*background-color: #dcb993;*/
         background-size: contain;
     }
 }

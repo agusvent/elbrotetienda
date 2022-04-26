@@ -317,4 +317,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=43762834"></script>
+<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=192348"></script>

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/new_design/assets/css/plugins.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=998">
-    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=1234">
+    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=123">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -161,7 +161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <h3 class="animated">ENV&iacute;O A DOMICILIO</h3>
                             <h1 class="animated bannerTextoPpalColor" style="">Bols&oacute;n Org&aacute;nico y Agroecol&oacute;gico</h1>
                             <p class="animated">Libre de Agrot&oacute;xicos</p>
-                            <div class="slider-btn btn-hover">
+                            <div class="slider-btn btn-hover btn-banner-color">
                                 <a class="animated" href="javascript:scrollToTargetAdjusted('nuestrosBolsones');">COMPRAR</a>
                             </div>
                         </div>
@@ -524,6 +524,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="cart-shiping-update-wrapper">
                                 <div class="cart-shiping-update">
                                     <a href="javascript:scrollToTargetAdjusted('datosPedido');">FINALIZAR COMPRA</a>
+                                    <p id="messageProductoEliminado" class="messageProductoEliminado">
+                                    </p>
                                 </div>
                                 <div class="cart-clear">
                                     <!--<button>Update Shopping Cart</button>
@@ -582,7 +584,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                 Tipo de Pedido: <b><label id="tipoPedidoOrden">Seleccioná un m&eacute;todo de entrega.</label></b>
                                             </label>
                                         </div>
-                                        <div class="tax-select input-datos-pedido" style="text-align:center;">
+                                        <div id="dTiposEntregaButtons" class="tax-select input-datos-pedido" style="text-align:center;display:none;">
                                             <button id="bPuntosRetiro" class="cart-btn-tipo-pedido" type="button" onclick="javascript:prepareFormOrderByTipoPedido(1);" disabled>Punto de Retiro</button>
                                             <button id="bDomicilio" class="cart-btn-tipo-pedido" type="button" onclick="javascript:prepareFormOrderByTipoPedido(2);" disabled>Env&iacute;o a Domicilio</button>
                                             <p id="pErrorTipoPedido" class="pFormError pt-10" style="text-align:left;"></p>
@@ -1031,7 +1033,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=98"></script>
+<script src="assets/js/mainv2.js?v=2366324"></script>
 <script src="assets/new_design/assets/js/main.js?v=1234"></script>
 
 

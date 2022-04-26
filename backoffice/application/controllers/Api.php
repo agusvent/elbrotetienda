@@ -975,7 +975,6 @@ class Api extends CI_Controller
 
         if($idDiaEntrega>0){
             $cOrders = $this->Order->getOrdersSucursalWithExtrasByDiaDeBolson($idDiaEntrega);
-            print_r($idDiaEntrega);
         }else{
             $cOrders = $this->Order->getOrdersSucursalWithExtrasBetweenDates(
                 $fechaDesde,
@@ -9057,6 +9056,28 @@ class Api extends CI_Controller
         $this->load->model('DiasEntregaPedidos');
 
         $this->DiasEntregaPedidos->updateAceptaBolsonStatus($idDiaEntrega, $aceptaBolsones);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function updateDiaEntregaAceptaPedidosFrontend() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $aceptaPedidosFrontend = $this->input->post('aceptaPedidosFrontend', true);
+
+        if(!valid_session() || !isset($idDiaEntrega) || !isset($aceptaPedidosFrontend)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+
+        $this->DiasEntregaPedidos->updateAceptaPedidosStatus($idDiaEntrega, $aceptaPedidosFrontend);
 
         $return['status'] = self::OK_VALUE;
         $this->output->set_status_header(200);

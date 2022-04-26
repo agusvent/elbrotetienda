@@ -100,6 +100,8 @@ const editarPedidosHelper = {
             $("#editarPedidoCostoEnvio").val(0);
             $("#editarPedidoMontoPagado").val(0);
             $("#editarPedidoIdBolson").val(-1);
+            $("#idCupon").val(-1);
+            $("#editarPedidoMontoDescuento").val(0);
             //$("#editarPedidoIdBolson").prop("disabled",false);
             hideShowFields(idTipoPedido);
             cargarExtras(idTipoPedido);

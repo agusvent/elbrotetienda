@@ -9,19 +9,24 @@ $(document).ready(function() {
         setAceptaBolsonesStatus(idDiaEntrega, aceptaBolsones);
         updateDiaEntregaBox(idDiaEntrega, aceptaBolsones);
     });
+    $('body').on('change', "input[id*='dia_entrega_acepta_pedidos_']", function(e) {
+        e.preventDefault();
+        let idDiaEntrega = $(this).attr('data-dia-entrega-id');
+        let aceptaPedidosFrontend = $(this).is(':checked') ? 1 : 0;
+        setAceptaPedidosFrontend(idDiaEntrega, aceptaPedidosFrontend);
+    });
+
     $('body').on('change', "input[id*='dia_entrega_punto_retiro_enabled_']", function(e) {
         e.preventDefault();
         let idDiaEntrega = $(this).attr('data-dia-entrega-id');
         let puntoDeRetiroStatus = $(this).is(':checked') ? 1 : 0;
         setPuntoDeRetiroStatus(idDiaEntrega, puntoDeRetiroStatus);
-        updateDiaEntregaStatus(idDiaEntrega);
     });
     $('body').on('change', "input[id*='dia_entrega_delivery_enabled_']", function(e) {
         e.preventDefault();
         let idDiaEntrega = $(this).attr('data-dia-entrega-id');
         let deliveryStatus = $(this).is(':checked') ? 1 : 0;
         setDeliveryStatus(idDiaEntrega, deliveryStatus);
-        updateDiaEntregaStatus(idDiaEntrega);
     });
     $('body').on('change', "input[id*='diaEntregaAceptaBolsones']", function(e) {
         e.preventDefault();
@@ -136,6 +141,24 @@ $(document).ready(function() {
     });
 });
 
+function setAceptaPedidosFrontend(idDiaEntrega, aceptaPedidosFrontend) {
+    let data = {
+        'idDiaEntrega': idDiaEntrega,
+        'aceptaPedidosFrontend': aceptaPedidosFrontend
+    };
+    $.ajax({
+        url: ajaxURL + 'diasEntrega/aceptaPedidosFrontend',
+        data: data,
+        method: 'post',
+        async: false
+    }).done(function(result) {
+        ocultarLoader();
+        if(result.status != 'ok') {
+            Swal.fire('Error', 'No se pudo modificar la opción. Intenta de nuevo.', 'error');
+        }
+    });
+}
+
 function setAceptaBolsonesStatus(idDiaEntrega, aceptaBolsones) {
     let data = {
         'idDiaEntrega': idDiaEntrega,
@@ -239,14 +262,14 @@ function loadDiasEntregaTable() {
             } else {
                 html +=" <input data-dia-entrega-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_bolsones_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' data-toggle='toggle' data-onstyle='success' data-size='xs'>";
             }
-            /*html +=" <span style='float:right'>";
-            html +=" Acepta Pedidos: &nbsp;";
+            html +=" <span style='float:right'>";
+            html +=" Frontend: &nbsp;";
             if(cDiasEntrega[i].aceptaPedidos == 1) {
-                html +=" <input data-type='checkbox-active' data-cupon-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_pedidos_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' checked data-toggle='toggle' data-onstyle='success' data-size='xs'>";
+                html +=" <input data-type='checkbox-active' data-dia-entrega-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_pedidos_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' checked data-toggle='toggle' data-onstyle='success' data-size='xs'>";
             } else {
-                html +=" <input data-cupon-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_pedidos_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' data-toggle='toggle' data-onstyle='success' data-size='xs'>";
+                html +=" <input data-dia-entrega-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_pedidos_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' data-toggle='toggle' data-onstyle='success' data-size='xs'>";
             }
-            html +=" </span>";*/
+            html +=" </span>";
             html +=" </div>";
             html +=" <div class='cupones-caja-info'> ";
             html +=" <p style='text-align:center'><b>Tipos de Pedido Habilitados</b></p>";
