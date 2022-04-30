@@ -611,6 +611,25 @@ input[name="dataTo"] {
     display: inline-block!important;
     width:70%!important;
 }
+
+.modal-body-dia-entrega {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#newDiaBarriosHabilitados {
+    width:49%;
+    display:none;
+    padding: 5px;
+}
+
+.diaEntregaBarriosList {
+    font-size:12px;
+    max-height:260px;
+    overflow-y:scroll;
+}
+
 @media (min-width: 992px){
     .modal-lg{
         max-width:1000px!important;

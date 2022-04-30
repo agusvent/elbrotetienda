@@ -78,6 +78,8 @@ $route['api/barrios/update'] = 'Api/barrioUpdate';
 $route['api/barrios/add'] = 'Api/barrioAdd';
 $route['api/barrios/delete/(:num)'] = 'Api/barrioDelete/$1';
 $route['api/barrios/getAllBarrios'] = 'Api/getAllBarrios';
+$route['api/barrios/getAllActivos'] = 'Api/getAllBarriosActivos';
+$route['api/barrios/getBarriosHabilitadosForDiaEntrega'] = 'Api/getBarriosByDiaEntrega';
 
 $route['api/pockets/status/(:num)/(:num)'] = 'Api/pocketActiveToggle/$1/$2';
 $route['api/pockets/update'] = 'Api/pocketUpdate';
@@ -111,6 +113,7 @@ $route['api/diasEntrega/puntoDeRetiroStatus'] = 'Api/diaEntregaPuntoRetiroStatus
 $route['api/diasEntrega/deliveryStatus'] = 'Api/diaEntregaDeliveryStatus';
 $route['api/diasEntrega/updateStatus'] = 'Api/diaEntregaUpdateStatus';
 $route['api/diasEntrega/getConfigDiaEntrega'] = 'Api/getConfigDiaEntrega';
+$route['api/diasEntrega/editarBarriosHabilitados'] = 'Api/editBarriosHabilitadosByDiaEntrega';
 $route['api/crearCamionPreConfigurado'] = 'Api/crearCamionPreConfigurado';
 $route['api/camionesPreConfigurados/getById/(:num)'] = 'Api/getCamionPreConfiguradoById/$1';
 $route['api/camionesPreConfigurados/editar'] = 'Api/editarCamionPreConfigurado';

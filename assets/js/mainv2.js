@@ -592,15 +592,14 @@ function preparePuntosDeRetiro(){
 }
 
 function prepareBarrios(){
-    var cBarrios = getBarrios();
+    var cBarrios = getBarriosHabilitados();
+    var html = "<option value='-1'>-- Seleccione --</option>";
     if(cBarrios!=null && cBarrios.length>0){
-        var html = "";
-        html += "<option value='-1'>--Seleccione--</option>";
         for(var i=0;i<cBarrios.length;i++){
             html += "<option data-horarioEntrega='"+cBarrios[i].observaciones+"' value='"+cBarrios[i].id+"'>"+cBarrios[i].nombre+"</option>";
         }
-        $("#idBarrio").html(html);
     }
+    $("#idBarrio").html(html);
     $("#bDomicilio").addClass("buttonSelected");
     $(".input-datos-pedido-puntoretiro").css("display","none");
     $(".input-datos-pedido-domicilio").css("display","block");
@@ -638,6 +637,24 @@ function getBarrios(){
         }
     });
     return cBarrios;
+}
+
+function getBarriosHabilitados(){
+    var cBarriosHabilitados = [];
+    var data = {
+        "idDiaEntrega": $("#idDiaEntrega").val()
+    }
+    $.ajax({
+        url: baseURL + 'getBarriosHabilitados',
+        method: 'post',
+        data: data,
+        async: false
+    }).done(function(result) {
+        if(result.cBarriosHabilitados!=null) {
+            cBarriosHabilitados = result.cBarriosHabilitados;
+        }
+    });
+    return cBarriosHabilitados;
 }
 
 function removeExtraFromArray(idExtra){

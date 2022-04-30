@@ -2468,6 +2468,7 @@ class Api extends CI_Controller
 
         $this->load->model('Order');
         $this->load->model('Pocket');
+        $this->load->model('DiasEntregaBarrios');
 
         $diaEntregaCreado = false;
         $diaEntregaFecha = $this->input->post('diaEntregaFecha', true);
@@ -2476,7 +2477,9 @@ class Api extends CI_Controller
         $puntoDeRetiroStatus = $this->input->post('puntoDeRetiroStatus', true);
         $deliveryStatus = $this->input->post('deliveryStatus', true);
         $cargaPedidosFijos = $this->input->post('cargaPedidosFijos', true);
-
+        $preCollectionIdBarriosHabilitados = $this->input->post('arrayBarriosHabilitados', true);
+        $cBarriosHabilitados = [];
+        
         $idDiaEntrega = -1;
         $aceptaPedidos = 0;
         if($puntoDeRetiroStatus==1 || $deliveryStatus==1) {
@@ -2488,6 +2491,18 @@ class Api extends CI_Controller
             $idDiaEntrega = $this->DiasEntregaPedidos->add($diaEntregaFecha,$diaEntregaLabelFinal, $aceptaBolsones, $puntoDeRetiroStatus, $deliveryStatus, $aceptaPedidos);
             if($idDiaEntrega > 0){
                 $diaEntregaCreado = true;
+                if($deliveryStatus==1) {
+                    if(isset($preCollectionIdBarriosHabilitados) && count($preCollectionIdBarriosHabilitados)>0) {
+                        foreach($preCollectionIdBarriosHabilitados as $barrio){
+                            array_push($cBarriosHabilitados,array(
+                                'idBarrio' => $barrio['idBarrio']
+                            ));
+                        }
+                        foreach($cBarriosHabilitados as $oIdBarrio) {
+                            $this->DiasEntregaBarrios->add($idDiaEntrega, $oIdBarrio["idBarrio"]);
+                        }                
+                    }
+                }
             }
         }
         //$this->load->model('Content');
@@ -2773,6 +2788,24 @@ class Api extends CI_Controller
         $this->load->model('Barrio');
         $cBarrios = [];
         $cBarrios = $this->Barrio->getAll();
+        
+        $return['status'] = self::OK_VALUE;
+        $return['cBarrios'] = $cBarrios;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function getAllBarriosActivos(){
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+        $this->load->model('Barrio');
+        $cBarrios = [];
+        $cBarrios = $this->Barrio->getActivos();
         
         $return['status'] = self::OK_VALUE;
         $return['cBarrios'] = $cBarrios;
@@ -3750,6 +3783,52 @@ class Api extends CI_Controller
         $return['cBarrios'] = $cBarrios;
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));                
+    }
+
+    public function getBarriosByDiaEntrega() {
+        $this->output->set_content_type('application/json');
+        $this->load->model('Barrio');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+
+        $cBarriosHabilitados = $this->Barrio->getBarriosHabilitadosByDiaEntrega($idDiaEntrega);
+        if(isset($cBarriosHabilitados) && count($cBarriosHabilitados)>0){
+            $return['success'] = true;    
+        }else{
+            $return['success'] = false;    
+        }
+        $return['cBarriosHabilitados'] = $cBarriosHabilitados;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+
+    }
+
+    public function editBarriosHabilitadosByDiaEntrega() {
+        $this->output->set_content_type('application/json');
+        $this->load->model('DiasEntregaBarrios');
+        
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $preCollectionIdBarriosHabilitados = $this->input->post('arrayBarriosHabilitados', true);
+        $cBarriosHabilitados = [];
+        $editOK = false;
+
+        if(isset($preCollectionIdBarriosHabilitados) && count($preCollectionIdBarriosHabilitados)>0) {
+            $this->DiasEntregaBarrios->deleteAllBarrios($idDiaEntrega);
+            foreach($preCollectionIdBarriosHabilitados as $barrio){
+                array_push($cBarriosHabilitados,array(
+                    'idBarrio' => $barrio['idBarrio']
+                ));
+            }
+            foreach($cBarriosHabilitados as $oIdBarrio) {
+                $this->DiasEntregaBarrios->add($idDiaEntrega, $oIdBarrio["idBarrio"]);
+            }                
+            $editOK = true;
+        }
+
+        $return['success'] = $editOK;    
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+
     }
 
     public function deleteLogisticaFromCamion(){

@@ -29,50 +29,68 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="row rowFiltroPedidos">
-                    <div class="col-xs-4 col-sm-6">
-                        Nuevo D&iacute;a de Entrega: 
-                        <input type="date" class="form-control form-control-sm" name="crearDiaEntregaFecha" id="crearDiaEntregaFecha" />
+            <div class="modal-body modal-body-dia-entrega">
+                <div id="newDiaForm" style="width:100%;">
+                    <div class="row rowFiltroPedidos">
+                        <div class="col-xs-4 col-sm-6">
+                            Nuevo D&iacute;a de Entrega: 
+                            <input type="date" class="form-control form-control-sm" name="crearDiaEntregaFecha" id="crearDiaEntregaFecha" />
+                        </div>
                     </div>
-                </div>
-                <div class="row rowFiltroPedidos">
-                    <div class="col-xs-12 col-sm-12">
-                        Texto Final: 
-                        <input type="text" class="form-control form-control-sm" name="crearDiaEntregaLabelFinal" id="crearDiaEntregaLabelFinal" value="" disabled/>
+                    <div class="row rowFiltroPedidos">
+                        <div class="col-xs-12 col-sm-12">
+                            Texto Final: 
+                            <input type="text" class="form-control form-control-sm" name="crearDiaEntregaLabelFinal" id="crearDiaEntregaLabelFinal" value="" disabled/>
+                        </div>
+                    </div>                
+                    <div class="row rowFiltroPedidos" style="margin-top:25px">
+                        <div class="col-xs-12 col-sm-12">
+                            <p><b>Tipos de Pedido</b></p> 
+                            <div style="text-align:center">
+                                <span style="margin-right:15%;">
+                                    Punto De Retiro:
+                                    <input id='diaEntregaPuntoDeRetiroStatus' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs">
+                                </span>
+                                <span style="">
+                                    Delivery:
+                                    <input id='diaEntregaDeliveryStatus' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs">
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>                
-                <div class="row rowFiltroPedidos" style="margin-top:25px">
-                    <div class="col-xs-12 col-sm-12">
-                        <p><b>Tipos de Pedido</b></p> 
-                        <div style="text-align:center">
-                            <span style="margin-right:15%;">
-                                Punto De Retiro:
-                                <input id='diaEntregaPuntoDeRetiroStatus' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs">
+                    <div class="row rowFiltroPedidos" style="margin-top:25px">
+                        <div class="col-xs-12 col-sm-12">
+                            <span style="width:40%; float:left;">
+                                Acepta Bolsones: 
+                                <input id='diaEntregaAceptaBolsones' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs">
                             </span>
-                            <span style="">
-                                Delivery:
-                                <input id='diaEntregaDeliveryStatus' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs">
+                            <span style="width:50%; float:right;">
+                                Carga Pedidos Fijos: 
+                                <input id='diaEntregaCargaPedidosFijos' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs">
                             </span>
                         </div>
                     </div>
-                </div>
-                <div class="row rowFiltroPedidos" style="margin-top:25px">
-                    <div class="col-xs-12 col-sm-12">
-                        <span style="width:40%; float:left;">
-                            Acepta Bolsones: 
-                            <input id='diaEntregaAceptaBolsones' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs">
-                        </span>
-                        <span style="width:50%; float:right;">
-                            Carga Pedidos Fijos: 
-                            <input id='diaEntregaCargaPedidosFijos' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs">
-                        </span>
+                    <div id="rowImagenBolson" class="row rowFiltroPedidos" style="display:none;margin-top:25px">
+                        <div class="col-xs-12 col-sm-12">
+                            <label>Imagen del Bols&oacute;n:</label>
+                            <input type="file" class="form-control" name="crearDiaEntregaImagenBolson" id="crearDiaEntregaImagenBolson">
+                        </div>
                     </div>
                 </div>
-                <div id="rowImagenBolson" class="row rowFiltroPedidos" style="display:none;margin-top:25px">
-                    <div class="col-xs-12 col-sm-12">
-                        <label>Imagen del Bols&oacute;n:</label>
-                        <input type="file" class="form-control" name="crearDiaEntregaImagenBolson" id="crearDiaEntregaImagenBolson">
+                <div id="newDiaBarriosHabilitados">
+                    <div style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;">
+                        <h4>Barrios Habilitados</h4>
+                        <span><input id='seleccionarTodosBarriosHabilitados' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs"><label for="seleccionarTodosBarriosHabilitados" style="font-size:12px;">Seleccionar Todos</label></span>
+                    </div>
+                    <div id="diaEntregaBarriosList" class="diaEntregaBarriosList">
+                        <!--modelo de item
+                        <div class="col-xs-12 col-sm-4">
+                            <span>
+                                Acepta Bolsones: 
+                                <input id='diaEntregaAceptaBolsones' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs">
+                            </span>
+                        </div>                    
+                        -->
                     </div>
                 </div>
 
@@ -110,11 +128,38 @@
                     <button type="submit" id="bEditarImagenDiaEntrega" class="btn btn-primary btn-sm">Grabar</button>
                     <button type="button" id="bCerrarEditarImagen" data-dismiss="modal" class="btn btn-danger btn-sm">Cancelar</button>
                 </div>
-                <input type="hidden" id="idDiaEntregaEditar" value="0">
             </div>
         </div>
     </div>
 </div>
 <!-- Fin Modal Crear Dia de Entrega-->
 
-<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=971623"></script>
+<!-- Modal Editar Barrios-->
+<div class="modal fade" id="modalEditarBarrios" tabindex="-1" role="dialog" aria-labelledby="modalEditarBarrios" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><label id="lNombreDiaEntrega"></label></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-body-dia-entrega">
+                <div id="editarBarriosHabilitados">
+                    <h4>Barrios Habilitados</h4>
+                    <div id="editarBarriosHabilitadosList" class="diaEntregaBarriosList">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="bEditarBarriosHabilitados" class="btn btn-primary btn-sm">Editar</button>
+                <button type="button" id="bCancelarEditarBarriosHabilitados" data-dismiss="modal" class="btn btn-danger btn-sm">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Modal Editar Barrios-->
+
+<input type="hidden" id="idDiaEntregaEditar" value="0">
+<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=8712"></script>

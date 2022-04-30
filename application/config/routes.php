@@ -70,6 +70,7 @@ $route['getTipoPedidoHasPedidosExtrasHabilitado'] = 'ParametersManager/getTipoPe
 $route['getExtrasByTipoPedido'] = 'ExtrasManager/getExtrasByTipoPedido';
 $route['getPuntosDeRetiro'] = 'MultiHelper/getPuntosDeRetiro';
 $route['getBarrios'] = 'MultiHelper/getBarrios';
+$route['getBarriosHabilitados'] = 'MultiHelper/getBarriosHabilitados';
 $route['getExtras'] = 'ExtrasManager/getExtrasActivos';
 $route['getValorReservaByValorInRango'] = 'ParametersManager/getValorReservaByValorInRango';
 $route['getBolson'] = 'MultiHelper/getBolson';

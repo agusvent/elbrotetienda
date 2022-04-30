@@ -37,6 +37,24 @@ class MultiHelper extends CI_Controller{
         return $this->output->set_output(json_encode($return));
     }
 
+    public function getBarriosHabilitados(){
+        $this->output->set_content_type('application/json');
+        $this->load->model('Barrio');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+
+        $cBarriosHabilitados = $this->Barrio->getBarriosHabilitadosByDiaEntrega($idDiaEntrega);
+        
+        if(isset($cBarriosHabilitados) && count($cBarriosHabilitados)>0){
+            $return['success'] = true;    
+        }else{
+            $return['success'] = false;    
+        }
+        $return['cBarriosHabilitados'] = $cBarriosHabilitados;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
     public function getBolson(){
         $this->output->set_content_type('application/json');
         
