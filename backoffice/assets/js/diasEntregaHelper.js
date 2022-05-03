@@ -448,7 +448,6 @@ function checkFormCrearNuevoDiaEntrega(){
         msj += "<p>Debe seleccionar una fecha en 'Nuevo Día de Entrega'.</p>";
     }
     let aceptaBolsones = $("#diaEntregaAceptaBolsones").is(':checked') ? 1 : 0;
-    console.log(aceptaBolsones);
     if (aceptaBolsones == 1) {
         if($("#crearDiaEntregaImagenBolson").val()==""){
             msj += "<p>Debe seleccionar una imagen en 'Imagen del Bolsón'.</p>";

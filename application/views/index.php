@@ -257,7 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <div class="product-img bolsonIndividual">
                                         <a href="javascript:selectBolsonCant(1);">
                                             <!--<img class="default-img" src="assets/img/bolson-del-dia/imagenBolson.jpeg" alt="">-->
-                                            <img class="default-img" src="assets/img/bolson-del-dia/<?= $imagenBolson ?>" alt="">
+                                            <img class="default-img" src="assets/img/dias-entrega-imagenes/<?= $imagenBolson ?>" alt="">
                                         </a>
                                         <!--<span class="pink">-10%</span>-->
                                         <div class="product-action">

@@ -844,7 +844,6 @@ class Main extends CI_Controller
             ];
         }
         
-        
         //$this->load->view('main', array_merge($args, [
         $this->load->view('index', array_merge($args, [
             'bolsones'           => $this->Pocket->getAll(),
@@ -871,7 +870,7 @@ class Main extends CI_Controller
             'descripcionBolsonesFormCerrado'  => $this->Parameter->get('descripcionBolsonesFormCerrado'),
             'descripcionTienda'  => $this->Parameter->get('descripcionTienda'),
             'descripcionTiendaFormCerrado'  => $this->Parameter->get('descripcionTiendaFormCerrado'),
-            'imagenBolson' => $this->Parameter->get('archivo_imagen_bolson'),
+            'imagenBolson' => $this->DiasEntregaPedidos->getLastDayWithAceptaBolsones()->imagen,
             'moduloCuponesEnabled' => $this->Parameter->get('moduloCuponesEnabled'),
             'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
         ]));
