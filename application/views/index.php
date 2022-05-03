@@ -20,8 +20,8 @@
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/new_design/assets/css/plugins.css">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=998">
-    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=123">
+    <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=56758">
+    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=414353">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -199,7 +199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="support-content">
                                 <h5 class="h5ComoHacerTuPedido">Elegí el día de entrega*</h5>
-                                <p>Entregamos a domicilio Lunes, Miércoles y Viernes.</p>
+                                <p>Entregamos a domicilio Miércoles y Viernes.</p>
                             </div>
                         </div>
                     </div>

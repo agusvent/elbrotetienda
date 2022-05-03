@@ -942,6 +942,12 @@
     .form-dia-entrega div {
         width:100%;
     }
+    .welcome-content h1 {
+        font-size:18px;
+    }
+    .welcome-content p {
+        line-height:23px;
+    }
 }
 
 @media only screen and (max-width: 425px) {

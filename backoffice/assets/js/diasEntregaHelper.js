@@ -419,10 +419,12 @@ function limpiarFormularioCrearNuevoDiaEntrega(){
 function updateModalSize() {
     $("#modalCrearDiaEntrega").find(".modal-dialog").toggleClass("modal-xl");
     if($("#modalCrearDiaEntrega").find(".modal-dialog").hasClass("modal-xl")) {
-        $("#newDiaForm").css("width","49%");
+        $("#newDiaForm").css("width","39%");
+        $("#newDiaBarriosHabilitados").css("width","61%");
         $("#newDiaBarriosHabilitados").show();
     } else {
         $("#newDiaBarriosHabilitados").hide();
+        $("#newDiaBarriosHabilitados").css("width","0%");
         arrayBarriosHabilitados = [];
         $("#newDiaForm").css("width","100%");
     }

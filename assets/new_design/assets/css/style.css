@@ -12334,7 +12334,7 @@ a.default-btn {
 @media only screen and (max-width: 767px) {
   .welcome-content p {
     width: 100%;
-    font-size: 15px;
+    font-size: 12px;
   }
 }
 
@@ -14618,6 +14618,22 @@ button.newsletter-btn-enviar:hover {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
+
+@media only screen and (max-width: 767px) {
+  .ebo-cart-btn-green {
+    font-size:12px;
+    padding:6px 42px 6px;
+  }
+  .rowAvisoPedidosCargados{
+    padding-top:0;
+    padding-bottom:0;
+  }
+  .welcome-area {
+    padding-top:0px!important;
+    padding-bottom:0px!important;
+  }
+}
+
 .ebo-cart-btn-green:hover {
   background-color: #333;
 }
