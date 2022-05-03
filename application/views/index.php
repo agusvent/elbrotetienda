@@ -176,7 +176,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="dComoHacerTuPedido" class="shop-area pt-150 mb-60">
         <div class="container">
             <div class="section-title text-center mb-55">
-                <h2>¿CÓMO HACER TU PEDIDO?</h2>
+                <h2 class="comoHacerPedido">¿CÓMO HACER TU PEDIDO?</h2>
             </div>
 
             <div class="pt-30">
@@ -969,9 +969,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="welcome-content text-center">
                             <h5>¡Atenci&oacute;n!</h5>
-                            <h1>El día que seleccionaste para tu pedido, no entrega bolsones.</h1>
+                            <h1>El día que seleccionaste para tu pedido no entregamos bolsones.</h1>
                             <p>
-                                Para continuar, podes eliminar los bolsones de tu pedido o cambiar el día de entrega.
+                                Solo entregamos bolsones los días Miércoles, el resto de los días habilitados enviamos productos de la tienda. Para seguir con tu pedido podés elegir entre estas dos opciones.
                             </p>
                         </div>
                     </div>

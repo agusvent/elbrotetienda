@@ -581,7 +581,7 @@ class Main extends CI_Controller
 
         // URLs de retorno
         /*COMENTO ESTO SOLO POR PRUEBAS: PARA DESPLEGAR VA ESTO DESCOMENTADO*/
-        /*
+        
         if($orderData['idTipoPedido'] == 1){
             $preference->back_urls = [
                 'success' => base_url().'success/'.$orderData['hash'].'/',
@@ -594,13 +594,13 @@ class Main extends CI_Controller
             ];
         }
         $preference->notification_url = base_url().'payment_confirmation/'.$orderData['hash'];
-        */
+        
         /*  Esta propiedad se define para que en el momento que se procesa OK el pago en la web de MP, 
             si el cliente no espera a retornar a la web y cierra la ventana, MP nos notifique a nosotros del pago realizado.
         */
     
         /*Back URLs de prueba */
-        
+        /*
         if($orderData['idTipoPedido'] == 1){
             $preference->back_urls = [
                 'success' => 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/success/'.$orderData['hash'].'/',
@@ -613,7 +613,7 @@ class Main extends CI_Controller
             ];
         }
         $preference->notification_url = 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/payment_confirmation/'.$orderData['hash'];
-        
+        */
 
         // Desactivo estado 'pendiente' y métodos en efectivo.
         $preference->binary_mode = true;

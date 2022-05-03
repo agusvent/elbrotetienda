@@ -966,6 +966,9 @@
     .modal-dialog .modal-header .close {
         font-size:40px;
     }
+    .comoHacerPedido {
+        width:65%;
+    }
 }
 
 @media only screen and (max-width: 375px) {
