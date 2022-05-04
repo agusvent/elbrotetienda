@@ -257,7 +257,6 @@ class Order extends CI_Model
     public function generateOrdersArray($orders){
         $toAppend = [];
         foreach ($orders as $order){
-
             $orderExtras = $this->getExtrasWithCantidad($order->id);
             $extrasArray = [];
             $cant_bolsones_individuales = "-";
@@ -266,7 +265,7 @@ class Order extends CI_Model
                     'id_extra' => $extra->extra_id,
                     'name' => $extra->name,
                     'nombre_corto' => $extra->nombre_corto,
-                    'extra_price' =>  $extra->price
+                    'extra_price' =>  intval($extra->total)/intval($extra->cant)
                 ));
                 if($extra->extra_id == 1) {
                     //SI ES EL BOLSON INDIVIDUAL
@@ -324,7 +323,7 @@ class Order extends CI_Model
                        'id_extra' => $extra->extra_id,
                        'name' => $extra->name,
                        'nombre_corto' => $extra->nombre_corto,
-                       'extra_price' =>  $extra->price
+                       'extra_price' =>  intval($extra->total)/intval($extra->cant)
                     ));
                     if($extra->extra_id == 1) {
                         //SI ES EL BOLSON INDIVIDUAL
@@ -1689,7 +1688,7 @@ class Order extends CI_Model
     }
 
     public function getOrdersInDiaEntrega($idDiaEntrega){
-        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.created_at as fechaPedido, d.descripcion as diaEntrega');
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.created_at as fechaPedido, orders.id_tipo_pedido, d.descripcion as diaEntrega');
         $this->db->from('orders');
         $this->db->join('dias_entrega_pedidos as d', 'd.id_dia_entrega = orders.id_dia_entrega', 'left');
         $where = "orders.id_estado_pedido not in (4) AND orders.id_dia_entrega = '$idDiaEntrega' AND orders.valid = 1";        
@@ -1700,10 +1699,30 @@ class Order extends CI_Model
     }
 
     public function getOrdersBetweenDates($fechaDesde,$fechaHasta){
-        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.created_at as fechaPedido, d.descripcion as diaEntrega');
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.created_at as fechaPedido, orders.id_tipo_pedido, d.descripcion as diaEntrega');
         $this->db->from('orders');
         $this->db->join('dias_entrega_pedidos as d', 'd.id_dia_entrega = orders.id_dia_entrega', 'left');
         $where = "valid = 1 AND created_at >= '$fechaDesde 00:00:00' AND created_at <= '$fechaHasta 23:59:59' AND id_estado_pedido not in (4)";
+        $this->db->where($where);        
+        $this->db->order_by('orders.client_name', 'ASC');
+        $orders = $this->db->get()->result();
+        return $orders;
+    }
+
+    public function getOrdersBetweenDatesAndDiaEntrega($fechaDesde,$fechaHasta, $idDiaEntrega){
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.created_at as fechaPedido, orders.id_tipo_pedido, d.descripcion as diaEntrega');
+        $this->db->from('orders');
+        $this->db->join('dias_entrega_pedidos as d', 'd.id_dia_entrega = orders.id_dia_entrega', 'left');
+        $where = "valid = 1 AND id_estado_pedido not in (4)";
+        if(isset($fechaDesde) && $fechaDesde!="") {
+            $where .= " AND orders.created_at >= '$fechaDesde 00:00:00'";
+        }
+        if(isset($fechaHasta) && $fechaHasta!="") {
+            $where .= " AND orders.created_at <= '$fechaHasta 23:59:59'";
+        }
+        if(isset($idDiaEntrega) && $idDiaEntrega>0) {
+            $where .= " AND orders.id_dia_entrega = '$idDiaEntrega' ";
+        }
         $this->db->where($where);        
         $this->db->order_by('orders.client_name', 'ASC');
         $orders = $this->db->get()->result();

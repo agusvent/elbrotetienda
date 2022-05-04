@@ -1216,7 +1216,7 @@ class Api extends CI_Controller
                         }else{
                             $cantExtra = $cantExtra[0]->cant;
                         }
-                        $precio = ($oExtra->price * $cantExtra);                        
+                        $precio = ($ordenExtra['extra_price'] * $cantExtra);                        
                         //print_r($precio."\n");
                         $sheet->setCellValue($xlsCol.$xlsRow, $precio);
                         $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
@@ -1783,7 +1783,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra."\n");
-                            $precio = ($oExtra->price * $cantExtra);                        
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra);                        
                             //print_r($precio."\n");    
                             $sheet->setCellValue($xlsCol.$xlsRow, $precio);
                             //$sheet->getColumnDimension($xlsCol)->setAutoSize(true);
@@ -3806,7 +3806,7 @@ class Api extends CI_Controller
     public function editBarriosHabilitadosByDiaEntrega() {
         $this->output->set_content_type('application/json');
         $this->load->model('DiasEntregaBarrios');
-        
+
         $idDiaEntrega = $this->input->post('idDiaEntrega', true);
         $preCollectionIdBarriosHabilitados = $this->input->post('arrayBarriosHabilitados', true);
         $cBarriosHabilitados = [];
@@ -4076,7 +4076,7 @@ class Api extends CI_Controller
                             $cantExtra = $cantExtra[0]->cant;
                         }
                         //print_r($cantExtra);
-                        $precio = ($oExtra->price * $cantExtra);
+                        $precio = ($ordenExtra['extra_price'] * $cantExtra);
 
                         $precioCant = "$".$precio;
                         $precioCant .= "\n(x".$cantExtra.")";
@@ -4327,7 +4327,7 @@ class Api extends CI_Controller
                             $cantExtra = $cantExtra[0]->cant;
                         }
                         //print_r($cantExtra);
-                        $precio = ($oExtra->price * $cantExtra);                        
+                        $precio = ($ordenExtra['extra_price'] * $cantExtra);                        
 
                         $precioCant = "$".$precio;
                         $precioCant .= "\n(x".$cantExtra.")";
@@ -4814,7 +4814,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             $precioCant = "$".$precio;
                             $precioCant .= "\n(x".$cantExtra.")";
@@ -5067,7 +5067,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             //$html .= "$".$oExtra->price;
                             $html .= "$ ".$precio;
@@ -5416,7 +5416,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             //$html .= "$".$oExtra->price;
                             $html .= "$ ".$precio;
@@ -5752,7 +5752,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             $precioCant = "$".$precio;
                             $precioCant .= "\n(x".$cantExtra.")";
@@ -5988,7 +5988,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             $html .= "$ ".$precio;
                             $html .= "<br />(x".$cantExtra.")";
@@ -6219,7 +6219,7 @@ class Api extends CI_Controller
                             }else{
                                 $cantExtra = $cantExtra[0]->cant;
                             }
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             $html .= "$ ".$precio;
                             $html .= "<br />(x".$cantExtra.")";
@@ -7331,7 +7331,7 @@ class Api extends CI_Controller
                                         $cantExtra = 1;
                                     }
                                     $cantExtra = $cantExtra[0]->cant;
-                                    $precio = ($oExtra->price * $cantExtra);
+                                    $precio = ($ordenExtra['extra_price'] * $cantExtra);
 
                                     $precioCant = "$".$precio;
                                     $precioCant .= "\n(x".$cantExtra.")";
@@ -8851,7 +8851,7 @@ class Api extends CI_Controller
                                     }else{
                                         $cantExtra = $cantExtra[0]->cant;
                                     }
-                                    $precio = ($oExtra->price * $cantExtra); 
+                                    $precio = ($ordenExtra['extra_price'] * $cantExtra); 
         
                                     $html .= "$ ".$precio;
                                     $html .= "<br />(x".$cantExtra.")";
@@ -9034,7 +9034,7 @@ class Api extends CI_Controller
                                         $cantExtra = $cantExtra[0]->cant;
                                     }
                                     //print_r($cantExtra);
-                                    $precio = ($oExtra->price * $cantExtra); 
+                                    $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                                     //$html .= "$".$oExtra->price;
                                     $html .= "$ ".$precio;
@@ -9267,7 +9267,9 @@ class Api extends CI_Controller
         $this->output->set_content_type('application/json');
 
         $this->load->model('Order');
-        $cOrders = null;
+        /* ESTA ES LA NUEVA. USARLA PERO CREO QUE ESTA MAL LA QUERY
+        $cOrders = $this->Order->getOrdersBetweenDatesAndDiaEntrega($fechaDesde,$fechaHasta,$idDiaEntrega);
+        */
         if($idDiaEntrega>0){
             $cOrders = $this->Order->getOrdersInDiaEntrega($idDiaEntrega);
         }else{
@@ -9321,7 +9323,7 @@ class Api extends CI_Controller
             )
         );        
     
-        $sheet->setTitle('CLIENTES');
+        $sheet->setTitle('PUNTOS DE RETIRO');
         $spreadsheet->getDefaultStyle()->getFont()->setName('Arial');
         $spreadsheet->getActiveSheet()->getPageSetup()->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
         $spreadsheet->getActiveSheet()->getPageSetup()->setPaperSize(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::PAPERSIZE_LEGAL);
@@ -9361,39 +9363,124 @@ class Api extends CI_Controller
 
         $xlsCol = 'A';
         foreach($cOrders as $oOrder){
-            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->client_name);
-            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
-            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+            if($oOrder->id_tipo_pedido==1) {
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->client_name);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
-            $xlsCol++;
+                $xlsCol++;
 
-            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->phone);
-            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
-            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->phone);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
-            $xlsCol++;
+                $xlsCol++;
 
-            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->email);
-            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
-            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->email);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
-            $xlsCol++;
+                $xlsCol++;
 
-            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->fechaPedido);
-            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
-            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->fechaPedido);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
-            $xlsCol++;
+                $xlsCol++;
 
-            $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->diaEntrega);
-            $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
-            $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->diaEntrega);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
-            $sheet->getRowDimension($xlsRow)->setRowHeight(20);
-            $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
-            $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($styleArray);
-            $xlsRow++;
-            $xlsCol = 'A';
+                $sheet->getRowDimension($xlsRow)->setRowHeight(20);
+                $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+                $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($styleArray);
+                $xlsRow++;
+                $xlsCol = 'A';
+            }
+        }
+
+        $lastColumn = 'A';
+        $xlsCol = 'A';
+        $xlsRow = 1;
+
+        $sheet = $spreadsheet->createSheet();
+        $sheet->setTitle('DOMICILIO');
+
+        $spreadsheet->getDefaultStyle()->getFont()->setName('Arial');
+        $spreadsheet->getActiveSheet()->getPageSetup()->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
+        $spreadsheet->getActiveSheet()->getPageSetup()->setPaperSize(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::PAPERSIZE_LEGAL);
+        $spreadsheet->getActiveSheet()->getPageMargins()->setRight(0.1);
+        $spreadsheet->getActiveSheet()->getPageMargins()->setLeft(0.1);
+
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Cliente');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Teléfono');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Mail');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+        
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Fecha Pedido');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Dia de Entrega');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $lastColumn = $xlsCol;
+        
+        $sheet->getRowDimension($xlsRow)->setRowHeight(35);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($headerStyleArray);
+
+        $xlsRow++;
+
+        $xlsCol = 'A';
+        foreach($cOrders as $oOrder){
+            if($oOrder->id_tipo_pedido==2) {
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->client_name);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->phone);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->email);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->fechaPedido);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->diaEntrega);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $sheet->getRowDimension($xlsRow)->setRowHeight(20);
+                $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+                $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($styleArray);
+                $xlsRow++;
+                $xlsCol = 'A';
+            }
         }
 
         $fileName = "ClientesOrdenes.xls";
