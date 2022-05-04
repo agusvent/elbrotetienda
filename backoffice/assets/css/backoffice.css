@@ -658,6 +658,9 @@ input[name="dataTo"] {
     .listado-cajas-caja-info{
         padding-bottom:10px;
     }
+    .cupones-caja {
+        width: 100%;
+    }
 }
 
 @media (min-width: 1240px){

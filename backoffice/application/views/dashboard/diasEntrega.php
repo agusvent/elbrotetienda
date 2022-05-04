@@ -162,4 +162,4 @@
 <!-- Fin Modal Editar Barrios-->
 
 <input type="hidden" id="idDiaEntregaEditar" value="0">
-<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=18237"></script>
+<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=63424"></script>

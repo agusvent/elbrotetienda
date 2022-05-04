@@ -38,7 +38,7 @@ class DiasEntregaPedidos extends CI_Model
     {
         $this->db->select('d.id_dia_entrega, d.fecha_entrega as fechaEntrega, d.descripcion, d.acepta_bolsones as aceptaBolsones, d.punto_de_retiro_enabled as puntoDeRetiroEnabled, d.delivery_enabled as deliveryEnabled, imagen');
         $this->db->from('dias_entrega_pedidos as d');
-        $where = "d.acepta_pedidos = 1 AND d.acepta_bolsones = 1 AND d.archivado = 0";
+        $where = "d.acepta_bolsones = 1 AND d.archivado = 0";
         $this->db->where($where);
         $this->db->order_by('d.id_dia_entrega', 'DESC');
         return $this->db->get()->result()[0];
