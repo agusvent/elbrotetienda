@@ -862,14 +862,15 @@ function drawPuntosDeRetiroByCamiones(cPuntosDeRetiro){
     if(cPuntosDeRetiro.length>0){
         var totalBolsones = 0;
         for(var i=0;i<cPuntosDeRetiro.length;i++){
-            totalBolsones = parseInt(cPuntosDeRetiro[i].cantidad_modificada) + parseInt(cPuntosDeRetiro[i].cantidad_bolsones_individuales_modificado);
+            //totalBolsones = parseInt(cPuntosDeRetiro[i].cantidad_modificada) + parseInt(cPuntosDeRetiro[i].cantidad_bolsones_individuales_modificado);
             html += "<tr style='border-bottom:1px dotted #000000;line-height: 30px;'>";
             html += "<td id='tdLogistcaName"+cPuntosDeRetiro[i].id_logistica+"'>"+cPuntosDeRetiro[i].puntoRetiro+"</td>";
-            html += "<td style='text-align:center;background-color:#cccccc'>"+totalBolsones+"</td>";
+            html += "<td style='text-align:center;background-color:#cccccc'>"+cPuntosDeRetiro[i].total_pedidos+"</td>";
             html += "<td style='text-align:center'>"+cPuntosDeRetiro[i].cantidad_modificada+"</td>";
             html += "<td style='text-align:center'>"+cPuntosDeRetiro[i].cantidad_bolsones_individuales_modificado+"</td>";
             html += "<td style='text-align:center'>"+cPuntosDeRetiro[i].cantidad_especiales+"</td>";
             html += "<td style='text-align:center'>"+cPuntosDeRetiro[i].cantidad_bolsones_individuales_especiales+"</td>";
+            html += "<td style='text-align:center'>"+cPuntosDeRetiro[i].total_pedidos_tienda+"</td>";
             html += "<td style='text-align:center'><a href='javascript:deleteLogisticaFromCamion("+cPuntosDeRetiro[i].id_logistica+")'>";
             html += "<img src='../assets/img/trash.png' style='width:32px'/>";
             html += "</a></td>";
@@ -886,14 +887,15 @@ function drawBarriosByCamiones(cBarrios){
     if(cBarrios.length>0){
         var totalBolsones = 0;
         for(var i=0;i<cBarrios.length;i++){
-            totalBolsones = parseInt(cBarrios[i].cantidad_modificada) + parseInt(cBarrios[i].cantidad_bolsones_individuales_modificado);
+            //totalBolsones = parseInt(cBarrios[i].cantidad_modificada) + parseInt(cBarrios[i].cantidad_bolsones_individuales_modificado);
             html += "<tr style='border-bottom:1px dotted #000000;line-height: 30px;'>";
             html += "<td id='tdLogistcaName"+cBarrios[i].id_logistica+"'>"+cBarrios[i].barrio+"</td>";
-            html += "<td style='text-align:center;background-color:#cccccc'>"+totalBolsones+"</td>";
+            html += "<td style='text-align:center;background-color:#cccccc'>"+cBarrios[i].total_pedidos+"</td>";
             html += "<td style='text-align:center'>"+cBarrios[i].cantidad_modificada+"</td>";
             html += "<td style='text-align:center'>"+cBarrios[i].cantidad_bolsones_individuales_modificado+"</td>";
             html += "<td style='text-align:center'>"+cBarrios[i].cantidad_especiales+"</td>";
             html += "<td style='text-align:center'>"+cBarrios[i].cantidad_bolsones_individuales_especiales+"</td>";
+            html += "<td style='text-align:center'>"+cBarrios[i].total_pedidos_tienda+"</td>";
             html += "<td style='text-align:center'><a href='javascript:deleteLogisticaFromCamion("+cBarrios[i].id_logistica+")'>";
             html += "<img src='../assets/img/trash.png' style='width:32px'/>";
             html += "</a></td>";
