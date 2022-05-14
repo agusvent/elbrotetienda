@@ -234,6 +234,7 @@
                       <td style="text-align:center;width:15%">INDIVIDUALES</td>
                       <td style="text-align:center;width:15%">FAMILIARES ESPECIALES</td>
                       <td style="text-align:center;width:15%">INDIVIDUALES ESPECIALES</td>
+                      <td style="text-align:center;width:15%">PEDIDOS TIENDA</td>
                       <td style="text-align:center;width:15%">&nbsp;</td>
                       <td style="text-align:center;width:10%">&nbsp;</td>
                       <td style="text-align:center;width:10%">&nbsp;</td>
@@ -445,4 +446,4 @@
 <input type="hidden" id="idDiaEntregaSeleccionado" value="-1"/>
 <input type="hidden" id="idEstadoLogisticaDiaEntrega" value="-1"/>
 
-<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=134"></script>
+<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=92734"></script>

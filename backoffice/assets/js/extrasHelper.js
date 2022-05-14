@@ -313,9 +313,10 @@ function openEditExtraImage(idExtra){
 }
 
 function viewImagenExtra(idExtra){
+    let extra = getExtraById(idExtra);
     //como siempre son jpg, lo puedo hacer directo así.
     //Sino, tendría que ir a buscar el nombre del archivo para ponerlo directo aca abajo
-    var w = window.open("../../assets/img/extras/"+idExtra+".jpg", "popupWindow", "width=600, height=400, scrollbars=yes");
+    var w = window.open("../../assets/img/extras/"+extra.imagen, "popupWindow", "width=600, height=400, scrollbars=yes");
 }
 
 function completarFormularioEdicionExtra(oExtra){
@@ -352,6 +353,22 @@ function openEditExtra(idExtra){
         ocultarLoader();
     });
     $("#modalEditarExtra").modal('show');
+}
+
+function getExtraById(idExtra) {
+    let extra = null;
+    mostrarLoader();
+    $.ajax({
+        url: ajaxURL + 'extras/getExtraById/' + idExtra,
+        method: 'get',
+        async: false
+    }).done(function(result) {
+        if(result.status == 'ok') {
+            extra = result.extra;
+        }
+        ocultarLoader();
+    });
+    return extra;
 }
 
 function checkFormEditarExtra(){

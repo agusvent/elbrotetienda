@@ -3813,12 +3813,16 @@ class Api extends CI_Controller
             $cantBolsonesFamiliaresEspeciales = 0;
             $cantBolsonesIndividuales = 0;
             $cantBolsonesIndividualesEspeciales = 0;
+            $cantPedidosTienda = 0;
+            $cantPedidosTotales = 0;
 
             foreach($cLogisticas as $oLogistica){
                 $cantBolsonesFamiliares = $cantBolsonesFamiliares + $oLogistica->cantidad_modificada;
                 $cantBolsonesFamiliaresEspeciales = $cantBolsonesFamiliaresEspeciales + $oLogistica->cantidad_especiales;
                 $cantBolsonesIndividuales = $cantBolsonesIndividuales + $oLogistica->cantidad_bolsones_individuales_modificado;
                 $cantBolsonesIndividualesEspeciales = $cantBolsonesIndividualesEspeciales + $oLogistica->cantidad_bolsones_individuales_especiales;
+                $cantPedidosTienda = $cantPedidosTienda + $oLogistica->total_pedidos_tienda;
+                $cantPedidosTotales = $cantPedidosTotales + $oLogistica->total_pedidos;
             }
         
             array_push($arrayCamionesConCantidad,array(
@@ -3827,7 +3831,9 @@ class Api extends CI_Controller
                 'cantBolsonesFamiliares' => $cantBolsonesFamiliares,
                 'cantBolsonesFamiliaresEspeciales' => $cantBolsonesFamiliaresEspeciales,
                 'cantBolsonesIndividuales' => $cantBolsonesIndividuales,
-                'cantBolsonesIndividualesEspeciales' => $cantBolsonesIndividualesEspeciales
+                'cantBolsonesIndividualesEspeciales' => $cantBolsonesIndividualesEspeciales,
+                'cantPedidosTienda' => $cantPedidosTienda,
+                'cantPedidosTotales' => $cantPedidosTotales
             ));
         
         }
