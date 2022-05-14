@@ -227,6 +227,7 @@ class Dashboard extends CI_Controller
         $consultaFechaDesde = $this->input->post('consultaFechaDesde', true);
         $consultaFechaHasta = $this->input->post('consultaFechaHasta', true);
         $consultaIncluirCancelados = $this->input->post('consultaIncluirCancelados', true);
+        $consultaSoloNoValidos = $this->input->post('consultaSoloNoValidos', true);
         $consultaIdDiaEntrega = $this->input->post('consultaIdDiaEntrega', true);
         $consultaNombre = $this->input->post('consultaNombre', true);
         $consultaMail = $this->input->post('consultaMail', true);
@@ -239,7 +240,11 @@ class Dashboard extends CI_Controller
         if($consultaIncluirCancelados=="false"){
             $incluirCancelados = 0;
         }
-        $cPedidos = $this->Order->getOrdersFromConsultaPedidos($consultaIdDiaEntrega,$incluirCancelados,$consultaFechaDesde,$consultaFechaHasta,$consultaNombre,$consultaMail,$consultaNroPedido);
+        $soloNoValidos = 1;
+        if($consultaSoloNoValidos=="false"){
+            $soloNoValidos = 0;
+        }
+        $cPedidos = $this->Order->getOrdersFromConsultaPedidos($consultaIdDiaEntrega,$incluirCancelados,$consultaFechaDesde,$consultaFechaHasta,$consultaNombre,$consultaMail,$consultaNroPedido,$soloNoValidos);
         $this->load->model('TiposPedidos');
         $this->load->model('EstadosPedidos');
         $this->load->model('DiasEntregaPedidos');
@@ -253,6 +258,7 @@ class Dashboard extends CI_Controller
             'consultaFechaHasta' => $consultaFechaHasta,
             'consultaIdDiaEntrega' => $consultaIdDiaEntrega,
             'consultaIncluirCancelados' => $consultaIncluirCancelados,
+            'consultaSoloNoValidos' => $consultaSoloNoValidos,
             'consultaNombre' => $consultaNombre,
             'consultaMail' => $consultaMail,
             'consultaNroPedido' => $consultaNroPedido,
@@ -285,6 +291,7 @@ class Dashboard extends CI_Controller
         $consultaFechaDesde = $this->input->post('consultaFechaDesde', true);
         $consultaFechaHasta = $this->input->post('consultaFechaHasta', true);
         $consultaIncluirCancelados = $this->input->post('consultaIncluirCancelados', true);
+        $consultaSoloNoValidos = $this->input->post('consultaSoloNoValidos', true);
         $consultaIdDiaEntrega = $this->input->post('consultaIdDiaEntrega', true);
         $consultaNombre = $this->input->post('consultaNombre', true);
         $consultaMail = $this->input->post('consultaMail', true);
@@ -327,6 +334,7 @@ class Dashboard extends CI_Controller
             'consultaFechaDesde' => $consultaFechaDesde,
             'consultaFechaHasta' => $consultaFechaHasta,
             'consultaIncluirCancelados' => $consultaIncluirCancelados,
+            'consultaSoloNoValidos' => $consultaSoloNoValidos,
             'consultaIdDiaEntrega' => $consultaIdDiaEntrega,
             'consultaNombre' => $consultaNombre,
             'consultaMail' => $consultaMail,

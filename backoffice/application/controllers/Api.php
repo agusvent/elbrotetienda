@@ -2238,6 +2238,7 @@ class Api extends CI_Controller
         }
         $idDiaEntrega = $this->input->post('idDiaEntrega', true);
         $incluirCancelados = $this->input->post('incluirCancelados', true);
+        $soloNoValidos = $this->input->post('soloNoValidos', true);
         $nombre = $this->input->post('nombre', true);
         $mail = $this->input->post('mail', true);
         $fechaDesde = $this->input->post('fechaDesde', true);
@@ -2246,7 +2247,7 @@ class Api extends CI_Controller
 
         $this->load->model('Order');
         
-        $pedidos = $this->Order->getOrdersFromConsultaPedidos($idDiaEntrega,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido);
+        $pedidos = $this->Order->getOrdersFromConsultaPedidos($idDiaEntrega,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido,$soloNoValidos);
         
 
         $return['status'] = self::OK_VALUE;
