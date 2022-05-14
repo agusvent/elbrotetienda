@@ -3,8 +3,9 @@
         <h4 style="border-bottom:2px solid #FF0000;">
             Pedidos
         </h4>
-
         <div class="extras-wrapper" style="text-align:center">
+        <!--
+        EL COSTO DE ENVIO AHORA LO DEFINE EL BARRIO    
             <div class="extras-caja">
                 <div class="extras-caja-titulo">Costo de Envío</div>
                 <div style="padding:5px;">
@@ -20,6 +21,7 @@
                     </div>                    
                 </div>
             </div>
+            -->
             <div class="extras-caja">
                 <div class="extras-caja-titulo">Reserva de Pedidos</div>
                 <div style="padding:5px;">
@@ -91,6 +93,8 @@
                 </div>
             </div>
 
+            <!--
+                ESTO ES VIEJO
             <div class="extras-caja">
                 <div class="extras-caja-titulo">Costo de Env&iacute;o</div>
                 <div style="padding:5px;">
@@ -106,7 +110,7 @@
                     </div>                    
                 </div>
             </div>
-
+            -->
             <div class="extras-caja">
                 <div class="extras-caja-titulo">Monto M&iacute;nimo para Env&iacute;o Sin Cargo</div>
                 <div style="padding:5px;">

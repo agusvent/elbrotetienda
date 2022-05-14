@@ -17,17 +17,10 @@ var mainHelper = {
         this.asignoEventos();
         this.initOrdersTable();
         this.loadBolsonDiaFormulario();
-        
-        //$("#checkSoloBolsonDelDia").prop("checked",true);
-        //$("#checkSoloBolsonDelDia").parent().toggleClass("btn-light off btn-primary");
-
         this.loadInfoPedidos();
     },
 
     asignoEventos: function() {
-        $('#officeSelector').change(function() {
-            //mainHelper.reloadOfficeOrdersTable($(this).val());
-        });
         $('#stackedCheck2').change(function(){
             mainHelper.changeFormStatus($(this).is(':checked') ? 1 : 0);
         });
@@ -39,12 +32,15 @@ var mainHelper = {
             mainHelper.updateFromValue(newDataFrom, dataTo);
         });
 
-        $('#bDownloadExcel').click(function() {
+        $('#bDownloadExcel').click(function(e) {
             mostrarLoader();
+            e.preventDefault();
+            var dt = new Date();
+            var time = dt.getHours() + dt.getMinutes() + dt.getSeconds();
             var fechaDesde = $('input[type="date"][name="dataFrom"]').val();
             var fechaHasta = $('input[type="date"][name="dataTo"]').val();
-            var soloBolsonDia = $('#checkSoloBolsonDelDia').prop("checked");
-            mainHelper.downloadExcelOfOrdersFromDate(fechaDesde, fechaHasta, soloBolsonDia);
+            var idDiaEntrega = $('#idDiaEntregaPedido').val();
+            mainHelper.downloadExcelOfOrdersFromDate(fechaDesde, fechaHasta, idDiaEntrega);
         });
 
         $('#bConsultar').click(function() {
@@ -56,84 +52,6 @@ var mainHelper = {
             $("#modalCrearDiaEntrega").modal("hide");
         });
 
-        $("#bCrearNuevoDiaEntrega").on("click",function(e){
-            e.preventDefault();
-            mostrarLoader();
-            var msj = checkFormCrearNuevoDiaEntrega();
-            if(msj!=""){
-                ocultarLoader();
-                return Swal.fire('Error', msj, 'error');
-            }else{
-                $("#bCrearNuevoDiaEntrega").prop("disabled",true);
-                var diaEntregaFecha = $("#crearDiaEntregaFecha").val();
-                var diaEntregaLabelFinal = $("#crearDiaEntregaLabelFinal").val();
-
-                let data = {
-                    'diaEntregaFecha': diaEntregaFecha,
-                    'diaEntregaLabelFinal': diaEntregaLabelFinal
-                };
-                $.ajax({
-                    url: ajaxURL + 'crearDiaEntrega',
-                    data: data,
-                    method: 'post'
-                }).done(function(res) {
-                    ocultarLoader();
-                    //console.log(res);
-                    
-                    var imagenBolsonData = $('#crearDiaEntregaImagenBolson').prop('files')[0];  
-                    var imagenBolsonDataExtension = $('#crearDiaEntregaImagenBolson').val().substr(($('#crearDiaEntregaImagenBolson').val().lastIndexOf('.') + 1));
-
-                    var form_data = new FormData();         
-                    form_data.append('file', imagenBolsonData);    
-                    form_data.append('fileExtension', imagenBolsonDataExtension);
-
-                    $.ajax({
-                        url: ajaxURL + 'diaEntrega/uploadImagenBolson', // point to server-side PHP script 
-                        dataType: 'text', // what to expect back from the PHP script, if anything
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                        data: form_data,             
-                        type: 'post',
-                        success: function(res){
-                            //console.log("HOLA",res);
-                            //extrasHelper.cleanAddExtraForm();
-                            window.location.reload(true); 
-                        }
-                    });  
-
-
-                    var respuesta = JSON.parse(res);
-                    if(respuesta.diaEntregaCreado){
-                        // Limpio el formulario y escondo el modal
-                        limpiarFormularioCrearNuevoDiaEntrega();
-                        $("#lDiaBolsonFormulario").html(diaEntregaLabelFinal);
-                        $("#modalCrearDiaEntrega").modal("hide");
-                        return Swal.fire('Dia de Entrega Creado', '<p>El día '+diaEntregaLabelFinal+' ha sido creado satisfactoriamente. Se crearon los pedidos fijos para: </p>'+respuesta.pedidosCreados, 'success');
-                    }else{
-                        return Swal.fire('Error', 'No se pudo crear el dia de entrega. Intenta de nuevo.', 'error');
-                    }
-                });
-            }  
-  
-        });
-
-        $("#crearDiaEntregaFecha").on("change",function(e){
-            var weekday = ["LUNES","MARTES","MIÉRCOLES","JUEVES","VIERNES","SÁBADO","DOMINGO"];
-            var meses = ["ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"];
-            var fecha = $(this).val();
-            var dia = fecha.substr(8,9);
-            var fechaFormateada = new Date(fecha);
-            var mes = fechaFormateada.getMonth();
-            if(dia == 1){
-                if(mes < 11){
-                    mes = mes + 1;
-                }else{
-                    mes = 0;
-                }
-            }
-            $("#crearDiaEntregaLabelFinal").val((weekday[fechaFormateada.getDay()]) + " " + dia +  " de " + (meses[mes]));
-        });
         $("#bPreCrearNuevoDiaEntrega").on("click",function(e){
             crearNuevoDiaDeEntrega();
         });
@@ -229,65 +147,45 @@ var mainHelper = {
         });
     },
 
-    downloadExcelOfOrdersFromDate: function(fechaDesde,fechaHasta,soloBolsonDia) {
+    downloadExcelOfOrdersFromDate: function(fechaDesde,fechaHasta,idDiaEntrega) {
         var fDesde = fechaDesde;
         var fHasta = fechaHasta;
         var dt = new Date();
         var time = dt.getHours() +""+ dt.getMinutes() +""+ dt.getSeconds();
         
         $.ajax({
-            url: ajaxURL + 'getOrdersFromDateToDate/'+fDesde+'/'+fHasta+'/'+soloBolsonDia+"?v="+time,
+            url: ajaxURL + 'getOrdersFromDateToDate/'+fDesde+'/'+fHasta+'/'+idDiaEntrega+"?v="+time,
             method: 'get',
             dataType: 'JSON',
         }).done(function(res) {
-            //console.log(res[0].fileName);
-            //Armo la variable time y la paso como parametro para que siempre me actualice donde 
-
-            window.location.href = baseURL+res[0].fileName;
             ocultarLoader();
+            window.open(baseURL+res.fileName+"?v="+time, "popupWindow", "width=600, height=400, scrollbars=yes");
         });
     },
     loadInfoPedidos: function(){
-        var bBolsonDiaChecked = $("#checkSoloBolsonDelDia").prop("checked");
-        if(bBolsonDiaChecked){
-            $.ajax({
-                url: ajaxURL + 'getOrdersInfoFromDiaBolson',
-                method: 'get',
-                dataType: 'JSON',
-            }).done(function(res) {
-                var aInfoPedidosByTipoBolson = res[0].aInfoPedidosByTipoBolson;
-                var aInfoExtrasPedidosBox = res[0].aInfoExtrasPedidosBox;
-                var totalPedidosPuntoDeRetiro = res[0].totalPedidosSucursal;
-                var totalPedidosDomicilio = res[0].totalPedidosDomicilio;
-                var totalBolsones = res[0].totalBolsones;
-                var diaBolson = res[0].diaBolson;
-                drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBolsones,diaBolson,"","",totalPedidosPuntoDeRetiro,totalPedidosDomicilio); 
-            });    
-        }else{
-            var msj = checkInfoPedidosForm();
-            if(msj==""){
-                var fDesde = $("#dataFrom").val();
-                var fHasta = $("#dataTo").val();
-                console.log("HOLA");
-                $.ajax({
-                    url: ajaxURL + 'getOrdersInfoFromFechaDesdeHasta/'+fDesde+'/'+fHasta,
-                    method: 'get',
-                    dataType: 'JSON',
-                }).done(function(res) {
-                    
-                    var aInfoPedidosByTipoBolson = res[0].aInfoPedidosByTipoBolson;
-                    var aInfoExtrasPedidosBox = res[0].aInfoExtrasPedidosBox;
-                    var totalPedidosPuntoDeRetiro = res[0].totalPedidosSucursal;
-                    var totalPedidosDomicilio = res[0].totalPedidosDomicilio;    
-                    var totalBolsones = res[0].totalBolsones;
-                    drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBolsones,"",fDesde,fHasta,totalPedidosPuntoDeRetiro,totalPedidosDomicilio); 
-                }).fail(function (jqXHR, textStatus) {
-                    console.log("Response",jqXHR);
-                });
-            }else{
-                //alert(msj);
-            }
+        var idDiaEntrega = $("#idDiaEntregaPedido").val();
+        var fDesde = $("#dataFrom").val();
+        var fHasta = $("#dataTo").val();
+        let data = {
+            'idDiaEntrega': idDiaEntrega,
+            'fechaDesde': fDesde,
+            'fechaHasta': fHasta
         }
+        $.ajax({
+            url: ajaxURL + 'getOrdersInfoHomeFilter',
+            method: 'post',
+            data: data,
+            dataType: 'JSON',
+            async: false
+        }).done(function(res) {
+            var aInfoPedidosByTipoBolson = res[0].aInfoPedidosByTipoBolson;
+            var aInfoExtrasPedidosBox = res[0].aInfoExtrasPedidosBox;
+            var totalPedidosPuntoDeRetiro = res[0].totalPedidosSucursal;
+            var totalPedidosDomicilio = res[0].totalPedidosDomicilio;
+            var totalBolsones = res[0].totalBolsones;
+            var diaBolson = res[0].diaBolson;
+            drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBolsones,diaBolson,fDesde,fHasta,totalPedidosPuntoDeRetiro,totalPedidosDomicilio); 
+        });
     }
 
 };
@@ -345,22 +243,7 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBol
         htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
         htmlBolsonesAndExtras += '</div>';
     }
-/*    htmlBolsonesAndExtras += '<div class="row">';
-    htmlBolsonesAndExtras += '<div class="col-sm-1">';
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-4 infoPedidosTableTitle">';
-    htmlBolsonesAndExtras += 'TOTALES';
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
-    htmlBolsonesAndExtras += '<b>'+totalBolsones+'</b>';    
-    htmlBolsonesAndExtras += '</div>';
-    htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
-    htmlBolsonesAndExtras += '</div>';
-*/
+
     for(var i=0;i<aInfoExtrasPedidosBox.length;i++){
         htmlBolsonesAndExtras += '<div class="row">';
         htmlBolsonesAndExtras += '<div class="col-sm-1">';
@@ -380,38 +263,10 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBol
         htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
         htmlBolsonesAndExtras += '</div>';
     }   
-
-    if(diaBolson!=""){
+    if(diaBolson!=null && diaBolson!=""){
         $("#lFiltradoPor").html("Bolson del "+diaBolson.descripcion);
     }else{
         $("#lFiltradoPor").html("Fechas: "+fechaDesde+" / "+fechaHasta);
     }
     $("#infoBolsonesBox").html(htmlBolsonesAndExtras);   
-}
-
-function crearNuevoDiaDeEntrega(){
-    $("#modalCrearDiaEntrega").modal("show");
-}
-
-function limpiarFormularioCrearNuevoDiaEntrega(){
-    $("#crearDiaEntregaFecha").val("");
-    $("#crearDiaEntregaLabelFinal").val("");    
-    $("#bCrearNuevoDiaEntrega").prop("disabled",false);
-}
-
-function checkFormCrearNuevoDiaEntrega(){
-    var msj = "";
-    if($("#crearDiaEntregaFecha").val()==""){
-        msj += "<p>Debe seleccionar una fecha en 'Nuevo Día de Entrega'.</p>";
-    }
-    if($("#crearDiaEntregaImagenBolson").val()==""){
-        msj += "<p>Debe seleccionar una imagen en 'Imagen del Bolsón'.</p>";
-    }else{
-        var extensionDocumento = $('#crearDiaEntregaImagenBolson').val().substr(($('#crearDiaEntregaImagenBolson').val().lastIndexOf('.') + 1));
-        extensionDocumento = extensionDocumento.toLowerCase();
-        if(extensionDocumento!="jpg" && extensionDocumento!="jpeg" && extensionDocumento!="png") {
-            msj += "<p>El archivo de 'Imagen del Bolsón' puede ser JPG, JPEG o PNG.</p>";
-        }
-    }
-    return msj;
 }

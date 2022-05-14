@@ -643,7 +643,6 @@ class Api extends CI_Controller
 
         $this->load->model('Content');
         $this->Content->set('form_enabled', $status);
-
         $return['status'] = self::OK_VALUE;
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode(true));
@@ -692,19 +691,26 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode(true));
     }
 
-    public function getOrdersInfoFromDiaBolson(){
+    public function getOrdersInfoHomeFilter(){
         $this->load->model('DiasEntregaPedidos');
-        $diaBolson = $this->DiasEntregaPedidos->getLastDay();
-        $idBolson = 1; //Se usa solo este bolson.
         $this->load->model('Pocket');
+        $this->load->model('Order');
 
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $fechaDesde = $this->input->post('fechaDesde', true);
+        $fechaHasta = $this->input->post('fechaHasta', true);
+        if(isset($idDiaEntrega) && $idDiaEntrega>0) {
+            $oDiaBolson = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        }
+
+        $idBolson = 1; //Se usa solo este bolson.
+        
         $oBolson = $this->Pocket->getById($idBolson);        
         $auxSum = 0;
         $arrayInfoPedidosBox = [];
         $totalPedidos = 0;
         $totalBolsones = 0;
     
-        $this->load->model('Order');
         $totalBolsonesSucursal = 0;
         $totalBolsonesDomicilio = 0;
         $subtotalBolsones = 0;
@@ -713,10 +719,10 @@ class Api extends CI_Controller
         $totalPedidosSucursal = 0;
         $totalPedidosDomicilio = 0;
 
-        $totalPedidosSucursal = $this->Order->getTotalPedidosByDiaBolsonForPuntoDeRetiro($diaBolson->id_dia_entrega);
-        $totalPedidosDomicilio = $this->Order->getTotalPedidosByDiaBolsonForDomicilio($diaBolson->id_dia_entrega);
+        $totalPedidosSucursal = $this->Order->getTotalOrdersBetweenDatesAndDiaEntregaPuntoDeRetiro($idDiaEntrega,$fechaDesde,$fechaHasta);
+        $totalPedidosDomicilio = $this->Order->getTotalOrdersBetweenDatesAndDiaEntregaBarrios($idDiaEntrega,$fechaDesde,$fechaHasta);
 
-        $cPedidosConBolsonFamiliarSucursal = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForSucursal($diaBolson->id_dia_entrega, $oBolson->id);
+        $cPedidosConBolsonFamiliarSucursal = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForSucursal($idDiaEntrega, $fechaDesde, $fechaHasta, $oBolson->id);
         
         $totalBolsonesSucursal = 0;
         if(count($cPedidosConBolsonFamiliarSucursal)>0) {
@@ -725,7 +731,7 @@ class Api extends CI_Controller
             }
         }
 
-        $cPedidosConBolsonFamiliarDomicilio = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForDomicilio($diaBolson->id_dia_entrega, $oBolson->id);
+        $cPedidosConBolsonFamiliarDomicilio = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForDomicilio($idDiaEntrega, $fechaDesde, $fechaHasta, $oBolson->id);
         
         $totalBolsonesDomicilio = 0;
         if(count($cPedidosConBolsonFamiliarDomicilio)>0) {
@@ -734,10 +740,6 @@ class Api extends CI_Controller
             }
         }
 
-        /*$totalSucursal = $this->Order->getTotalOrdersByDiaBolsonAndTipoBolsonForSucursal($diaBolson,$idBolson);
-        $totalDomicilio = $this->Order->getTotalOrdersByDiaBolsonAndTipoBolsonForDomicilio($diaBolson,$idBolson);
-        */
-        
         $subtotalBolsones = $totalBolsonesSucursal + $totalBolsonesDomicilio;
         
         array_push($arrayInfoPedidosBox,array(
@@ -758,9 +760,9 @@ class Api extends CI_Controller
             $totalSucursal = 0;
             $totalDomicilio = 0;
             $subtotalExtra = 0;
-            $totalSucursal = $this->Order->getTotalExtraByDiaBolsonByExtra($diaBolson->id_dia_entrega,$oExtra->id);
+            $totalSucursal = $this->Order->getTotalExtraByDiaBolsonByExtra($idDiaEntrega,$fechaDesde,$fechaHasta,$oExtra->id);
             
-            $totalDomicilio = $this->Order->getTotalExtraADomicilioByDiaBolsonByExtra($diaBolson->id_dia_entrega,$oExtra->id);
+            $totalDomicilio = $this->Order->getTotalExtraADomicilioByDiaBolsonByExtra($idDiaEntrega,$fechaDesde,$fechaHasta,$oExtra->id);
             
             $subtotalExtra = $totalSucursal + $totalDomicilio;
             array_push($arrayInfoExtrasPedidosBox,array(
@@ -779,12 +781,104 @@ class Api extends CI_Controller
             'aInfoExtrasPedidosBox' => $arrayInfoExtrasPedidosBox,
             //'totalPedidos' => 0, //TODO: LO DEJO EN 0. DEPSUES LO BORRO BIEN. En mainHelper se usa bastante
             'totalBolsones' => $totalBolsones,
-            'diaBolson' => $diaBolson
+            'diaBolson' => $oDiaBolson ?? null
         );
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
     }
+/*
+    public function getOrdersInfoFromDiaBolson(){
+        $this->load->model('DiasEntregaPedidos');
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $this->load->model('DiasEntregaPedidos');
+        $oDiaBolson = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        $idBolson = 1; //Se usa solo este bolson.
+        $this->load->model('Pocket');
 
+        $oBolson = $this->Pocket->getById($idBolson);        
+        $auxSum = 0;
+        $arrayInfoPedidosBox = [];
+        $totalPedidos = 0;
+        $totalBolsones = 0;
+    
+        $this->load->model('Order');
+        $totalBolsonesSucursal = 0;
+        $totalBolsonesDomicilio = 0;
+        $subtotalBolsones = 0;
+
+
+        $totalPedidosSucursal = 0;
+        $totalPedidosDomicilio = 0;
+
+        $totalPedidosSucursal = $this->Order->getTotalPedidosByDiaBolsonForPuntoDeRetiro($idDiaEntrega);
+        $totalPedidosDomicilio = $this->Order->getTotalPedidosByDiaBolsonForDomicilio($idDiaEntrega);
+
+        $cPedidosConBolsonFamiliarSucursal = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForSucursal($idDiaEntrega, $oBolson->id);
+        
+        $totalBolsonesSucursal = 0;
+        if(count($cPedidosConBolsonFamiliarSucursal)>0) {
+            foreach($cPedidosConBolsonFamiliarSucursal as $oPedido) {
+                $totalBolsonesSucursal = $totalBolsonesSucursal + $oPedido->cant_bolson;
+            }
+        }
+
+        $cPedidosConBolsonFamiliarDomicilio = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForDomicilio($idDiaEntrega, $oBolson->id);
+        
+        $totalBolsonesDomicilio = 0;
+        if(count($cPedidosConBolsonFamiliarDomicilio)>0) {
+            foreach($cPedidosConBolsonFamiliarDomicilio as $oPedido) {
+                $totalBolsonesDomicilio = $totalBolsonesDomicilio + $oPedido->cant_bolson;
+            }
+        }
+
+        $subtotalBolsones = $totalBolsonesSucursal + $totalBolsonesDomicilio;
+        
+        array_push($arrayInfoPedidosBox,array(
+            'tipoBolson' => $oBolson->name,
+            'totalSucursal' => $totalBolsonesSucursal,
+            'totalDomicilio' => $totalBolsonesDomicilio,
+            'subtotalBolsones' => $subtotalBolsones,
+        ));
+
+        $totalBolsones = $totalBolsones + $subtotalBolsones;
+        
+        $this->load->model('Extra');
+        $aExtras = $this->Extra->getActive();
+        $arrayInfoExtrasPedidosBox = [];
+        
+        foreach($aExtras as $oExtra){
+            $this->load->model('Order');
+            $totalSucursal = 0;
+            $totalDomicilio = 0;
+            $subtotalExtra = 0;
+            $totalSucursal = $this->Order->getTotalExtraByDiaBolsonByExtra($idDiaEntrega,$oExtra->id);
+            
+            $totalDomicilio = $this->Order->getTotalExtraADomicilioByDiaBolsonByExtra($idDiaEntrega,$oExtra->id);
+            
+            $subtotalExtra = $totalSucursal + $totalDomicilio;
+            array_push($arrayInfoExtrasPedidosBox,array(
+                'extraName' => $oExtra->name,
+                'totalSucursal' => $totalSucursal,
+                'totalDomicilio' => $totalDomicilio,
+                'subtotalExtra' => $subtotalExtra
+            ));
+        }        
+
+        $return[] = array(
+            'status' => self::OK_VALUE,
+            'totalPedidosSucursal' => $totalPedidosSucursal,
+            'totalPedidosDomicilio' => $totalPedidosDomicilio,
+            'aInfoPedidosByTipoBolson' => $arrayInfoPedidosBox,
+            'aInfoExtrasPedidosBox' => $arrayInfoExtrasPedidosBox,
+            //'totalPedidos' => 0, //TODO: LO DEJO EN 0. DEPSUES LO BORRO BIEN. En mainHelper se usa bastante
+            'totalBolsones' => $totalBolsones,
+            'diaBolson' => $oDiaBolson
+        );
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+    */
+    
     public function getOrdersInfoFromFechaDesdeHasta($fechaDesde,$fechaHasta){
         $this->output->set_content_type('application/json');
         $this->load->model('Content');
@@ -911,7 +1005,7 @@ class Api extends CI_Controller
         return $celularFormateado;
     }
 
-    public function getOrdersFromDateToDate($fechaDesde,$fechaHasta,$soloBolsonDia) 
+    public function getOrdersFromDateToDateOld($fechaDesde,$fechaHasta,$idDiaEntrega) 
     {
         $spreadsheet = new Spreadsheet();
         $spreadsheet->getDefaultStyle()->getFont()->setName('Arial');
@@ -972,10 +1066,8 @@ class Api extends CI_Controller
             )
         );
 
-        if($soloBolsonDia=='true'){
-            $this->load->model('Content');
-            $diaBolson = $this->Content->getConfirmationLabel();
-            $cOrders = $this->Order->getOrdersSucursalWithExtrasByDiaDeBolson($diaBolson);
+        if($idDiaEntrega>0){
+            $cOrders = $this->Order->getOrdersSucursalWithExtrasByDiaDeBolson($idDiaEntrega);
         }else{
             $cOrders = $this->Order->getOrdersSucursalWithExtrasBetweenDates(
                 $fechaDesde,
@@ -1217,7 +1309,7 @@ class Api extends CI_Controller
                         }else{
                             $cantExtra = $cantExtra[0]->cant;
                         }
-                        $precio = ($oExtra->price * $cantExtra);                        
+                        $precio = ($ordenExtra['extra_price'] * $cantExtra);                        
                         //print_r($precio."\n");
                         $sheet->setCellValue($xlsCol.$xlsRow, $precio);
                         $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
@@ -1499,10 +1591,8 @@ class Api extends CI_Controller
 
         $this->load->model('Order');
         $diaBolson = "";
-        if($soloBolsonDia=='true'){
-            $this->load->model('Content');
-            $diaBolson = $this->Content->getConfirmationLabel();
-            $cOrders = $this->Order->getOrdersADomicilioWithExtrasByDiaDeBolson($diaBolson);
+        if($idDiaEntrega>0){
+            $cOrders = $this->Order->getOrdersADomicilioWithExtrasByDiaDeBolson($idDiaEntrega);
         }else{
             $cOrders = $this->Order->getOrdersADomicilioWithExtrasBetweenDates(
                 $fechaDesde,
@@ -1786,7 +1876,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra."\n");
-                            $precio = ($oExtra->price * $cantExtra);                        
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra);                        
                             //print_r($precio."\n");    
                             $sheet->setCellValue($xlsCol.$xlsRow, $precio);
                             //$sheet->getColumnDimension($xlsCol)->setAutoSize(true);
@@ -2146,8 +2236,7 @@ class Api extends CI_Controller
             $this->output->set_status_header(401);
             return $this->output->set_output(json_encode($return));
         }
-        $diaBolson = $this->input->post('diaBolson', true);
-        $soloDiaBolson = $this->input->post('soloDiaBolson', true);
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
         $incluirCancelados = $this->input->post('incluirCancelados', true);
         $nombre = $this->input->post('nombre', true);
         $mail = $this->input->post('mail', true);
@@ -2157,7 +2246,7 @@ class Api extends CI_Controller
 
         $this->load->model('Order');
         
-        $pedidos = $this->Order->getOrdersFromConsultaPedidos($diaBolson,$soloDiaBolson,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido);
+        $pedidos = $this->Order->getOrdersFromConsultaPedidos($idDiaEntrega,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido);
         
 
         $return['status'] = self::OK_VALUE;
@@ -2178,7 +2267,6 @@ class Api extends CI_Controller
             $this->output->set_status_header(401);
             return $this->output->set_output(json_encode($return));
         }
-        $diaBolson = $this->input->post('diaBolson', true);
         $idDiaBolson = $this->input->post('idDiaBolson', true);
         $nombre = $this->input->post('nombre', true);
         $telefono = $this->input->post('telefono', true);
@@ -2207,7 +2295,6 @@ class Api extends CI_Controller
         $this->load->model('Order');
         $newOrderId = -1;
         $newOrderId = $this->Order->addOrder(
-            $diaBolson,
             $idDiaBolson,
             $nombre,
             $telefono,
@@ -2472,101 +2559,119 @@ class Api extends CI_Controller
             return $this->output->set_output(json_encode($return));
         }
 
+        $this->load->model('Order');
+        $this->load->model('Pocket');
+        $this->load->model('DiasEntregaBarrios');
+
         $diaEntregaCreado = false;
         $diaEntregaFecha = $this->input->post('diaEntregaFecha', true);
         $diaEntregaLabelFinal = $this->input->post('diaEntregaLabelFinal', true);
-
+        $aceptaBolsones = $this->input->post('aceptaBolsones', true);
+        $puntoDeRetiroStatus = $this->input->post('puntoDeRetiroStatus', true);
+        $deliveryStatus = $this->input->post('deliveryStatus', true);
+        $cargaPedidosFijos = $this->input->post('cargaPedidosFijos', true);
+        $preCollectionIdBarriosHabilitados = $this->input->post('arrayBarriosHabilitados', true);
+        $cBarriosHabilitados = [];
+        
+        $idDiaEntrega = -1;
+        $aceptaPedidos = 0;
+        if($puntoDeRetiroStatus==1 || $deliveryStatus==1) {
+            $aceptaPedidos = 1;
+        }
         if(isset($diaEntregaFecha) && !empty($diaEntregaFecha)){
             $this->load->model('DiasEntregaPedidos');
         
-            $retId = $this->DiasEntregaPedidos->add($diaEntregaFecha,$diaEntregaLabelFinal);
-            if($retId > 0){
+            $idDiaEntrega = $this->DiasEntregaPedidos->add($diaEntregaFecha,$diaEntregaLabelFinal, $aceptaBolsones, $puntoDeRetiroStatus, $deliveryStatus, $aceptaPedidos);
+            if($idDiaEntrega > 0){
                 $diaEntregaCreado = true;
-            }
-        }
-
-        /*
-            ACA TENGO QUE PISAR EL DIA DEL FORMULARIO, ASI CON ESTO QUEDA CAMBIADO.
-            Y TENGO QUE BARRER CON LOS FIJOS PARA CREAR LOS PEDIDOS PRE FIJADOS.
-        */
-        $this->load->model('Content');
-        $this->Content->set("confirmation_label",$diaEntregaLabelFinal);
-
-        $this->load->model('Order');
-        $this->load->model('Content');
-        $this->load->model('Pocket');
-        
-
-        $cPedidosFijos = $this->Order->getAllPedidosFijos();
-        
-        $pedidosCreados = "";
-        
-        foreach($cPedidosFijos as $oPedidoFijo){
-            $newOrderId = -1;
-            $oBolson = $this->Pocket->getById(1);
-            $precio = $oBolson->price;
-            $cantBolson = 0;
-            $montoPagado = 0;
-            if($oPedidoFijo->cant_bolson > 0) {
-                $cantBolson = $oPedidoFijo->cant_bolson;
-                $precio = $precio * $cantBolson;
-            }
-            if($oPedidoFijo->id_estado_pedido==3){
-                //SI ES BONIFICADO, MONTO PAGADO ES IGUAL AL VALOR DEL BOLSON, PARA QUE QUEDE DEBE = $0.
-                $montoPagado = $precio;
-            }else{
-                $montoPagado = $oPedidoFijo->monto_pagado;
-            }
-            $newOrderId = $this->Order->addOrder(
-                $diaEntregaLabelFinal,
-                $retId,
-                $oPedidoFijo->client_name,
-                $oPedidoFijo->phone,
-                $oPedidoFijo->email,
-                $oPedidoFijo->deliver_address,
-                $oPedidoFijo->deliver_extra,
-                $oPedidoFijo->id_tipo_pedido,
-                $oPedidoFijo->barrio_id,
-                $oPedidoFijo->office_id,
-                $oBolson->id,
-                $cantBolson,
-                $precio,
-                $montoPagado,
-                $oPedidoFijo->id_estado_pedido,
-                $oPedidoFijo->observaciones,
-                -1,
-                -1,
-                0, //ACA DEJO EL PEDIDO COMO NO FIJO PORQUE EL FIJO ES EL ORIGINAL
-                $oPedidoFijo->id
-            );
-            $pedidosCreados = $pedidosCreados."<p>".$oPedidoFijo->client_name.".</p>";
-
-            $cExtrasExistentes = $this->Order->getExtras($oPedidoFijo->id);
-            $sumaTotalExtras = 0;
-            $totalPedido = 0;
-            if(!empty($cExtrasExistentes)){
-                $this->load->model('Extra');
-                foreach($cExtrasExistentes as $oExtra){
-                    if( !is_null($oExtra->active) && $oExtra->active == 1) {
-                        $cant = $this->Order->getCantExtraByPedidoAndExtra($oPedidoFijo->id, $oExtra->id);
-                        if($oExtra->stock_ilimitado == 1 || ($oExtra->stock_ilimitado == 0 && $oExtra->stock_disponible >= $cant)) {    
-                            $this->Order->addExtra($newOrderId,$oExtra->id,$cant);
-                            $this->Extra->reducirStockExtra($oExtra->id,$cant);
-                            $sumaTotalExtras = $sumaTotalExtras + ($oExtra->price * $cant);
+                if($deliveryStatus==1) {
+                    if(isset($preCollectionIdBarriosHabilitados) && count($preCollectionIdBarriosHabilitados)>0) {
+                        foreach($preCollectionIdBarriosHabilitados as $barrio){
+                            array_push($cBarriosHabilitados,array(
+                                'idBarrio' => $barrio['idBarrio']
+                            ));
                         }
+                        foreach($cBarriosHabilitados as $oIdBarrio) {
+                            $this->DiasEntregaBarrios->add($idDiaEntrega, $oIdBarrio["idBarrio"]);
+                        }                
                     }
                 }
-                $totalPedido = intval($precio) + intval($sumaTotalExtras);
-                $this->Order->updateMontoTotal($newOrderId, $totalPedido);
+            }
+        }
+        //$this->load->model('Content');
+        //$this->Content->set("confirmation_label",$diaEntregaLabelFinal);    
+
+        $pedidosCreados = "";
+        if($cargaPedidosFijos==1) {
+            $cPedidosFijos = $this->Order->getAllPedidosFijos();
+            foreach($cPedidosFijos as $oPedidoFijo){
+                $newOrderId = -1;
+                $oBolson = $this->Pocket->getById(1);
+                $precio = $oBolson->price;
+                $cantBolson = 0;
+                $montoPagado = 0;
+                if($oPedidoFijo->cant_bolson > 0) {
+                    $cantBolson = $oPedidoFijo->cant_bolson;
+                    $precio = $precio * $cantBolson;
+                }
                 if($oPedidoFijo->id_estado_pedido==3){
-                    $this->Order->updateMontoPagado($newOrderId, $totalPedido);
+                    //SI ES BONIFICADO, MONTO PAGADO ES IGUAL AL VALOR DEL BOLSON, PARA QUE QUEDE DEBE = $0.
+                    $montoPagado = $precio;
+                }else{
+                    $montoPagado = $oPedidoFijo->monto_pagado;
+                }
+                $newOrderId = $this->Order->addOrder(
+                    $idDiaEntrega,
+                    $oPedidoFijo->client_name,
+                    $oPedidoFijo->phone,
+                    $oPedidoFijo->email,
+                    $oPedidoFijo->deliver_address,
+                    $oPedidoFijo->deliver_extra,
+                    $oPedidoFijo->id_tipo_pedido,
+                    $oPedidoFijo->barrio_id,
+                    $oPedidoFijo->office_id,
+                    $oBolson->id,
+                    $cantBolson,
+                    $precio,
+                    $montoPagado,
+                    $oPedidoFijo->id_estado_pedido,
+                    $oPedidoFijo->observaciones,
+                    -1,
+                    -1,
+                    0, //ACA DEJO EL PEDIDO COMO NO FIJO PORQUE EL FIJO ES EL ORIGINAL
+                    $oPedidoFijo->id
+                );
+                $pedidosCreados = $pedidosCreados."<p>".$oPedidoFijo->client_name.".</p>";
+
+                $cExtrasExistentes = $this->Order->getExtras($oPedidoFijo->id);
+                $sumaTotalExtras = 0;
+                $totalPedido = 0;
+                if(!empty($cExtrasExistentes)){
+                    $this->load->model('Extra');
+                    foreach($cExtrasExistentes as $oExtra){
+                        if( !is_null($oExtra->active) && $oExtra->active == 1) {
+                            $cant = $this->Order->getCantExtraByPedidoAndExtra($oPedidoFijo->id, $oExtra->id);
+                            if($oExtra->stock_ilimitado == 1 || ($oExtra->stock_ilimitado == 0 && $oExtra->stock_disponible >= $cant)) {    
+                                $this->Order->addExtra($newOrderId,$oExtra->id,$cant);
+                                $this->Extra->reducirStockExtra($oExtra->id,$cant);
+                                $sumaTotalExtras = $sumaTotalExtras + ($oExtra->price * $cant);
+                            }
+                        }
+                    }
+                    $totalPedido = intval($precio) + intval($sumaTotalExtras);
+                    $this->Order->updateMontoTotal($newOrderId, $totalPedido);
+                    if($oPedidoFijo->id_estado_pedido==3){
+                        $this->Order->updateMontoPagado($newOrderId, $totalPedido);
+                    }
                 }
             }
         }
-
-        $return['status'] = self::OK_VALUE;
-        $return['pedidosCreados'] = $pedidosCreados;
-        $return['diaEntregaCreado'] = $diaEntregaCreado;
+        $return[] = array(
+            'status' => self::OK_VALUE,
+            'pedidosCreados' => $pedidosCreados,
+            'diaEntregaCreado' => $diaEntregaCreado,
+            'idDiaEntrega' => $idDiaEntrega
+        );
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
 
@@ -2584,6 +2689,7 @@ class Api extends CI_Controller
         }
 
         $idPedido = $this->input->post('idPedido', true);
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
         $nombre = $this->input->post('nombre', true);
         $telefono = $this->input->post('telefono', true);
         $mail = $this->input->post('mail', true);
@@ -2612,6 +2718,7 @@ class Api extends CI_Controller
         
         $this->Order->updatePedido(
             $idPedido,
+            $idDiaEntrega,
             $nombre,
             $telefono,
             $mail,
@@ -2774,6 +2881,24 @@ class Api extends CI_Controller
         $this->load->model('Barrio');
         $cBarrios = [];
         $cBarrios = $this->Barrio->getAll();
+        
+        $return['status'] = self::OK_VALUE;
+        $return['cBarrios'] = $cBarrios;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function getAllBarriosActivos(){
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+        $this->load->model('Barrio');
+        $cBarrios = [];
+        $cBarrios = $this->Barrio->getActivos();
         
         $return['status'] = self::OK_VALUE;
         $return['cBarrios'] = $cBarrios;
@@ -3138,7 +3263,7 @@ class Api extends CI_Controller
         $this->load->model('Order');
         $nroOrden = 1;
 
-        $cOrders = $this->Order->getOrdersInDiaEntrega($idDiaEntrega);
+        $cOrders = $this->Order->getOrdersForEnumerationInDiaEntrega($idDiaEntrega);
         foreach($cOrders as $order){
             $this->Order->setNroOrden($order->id, $nroOrden);
             $nroOrden++;
@@ -3435,7 +3560,7 @@ class Api extends CI_Controller
         $this->load->model('DiasEntregaPedidos');
         
         //$cDiasEntrega = $this->DiasEntregaPedidos->getAllDiasByEstadoLogisticaNotCerrados();
-        $cDiasEntrega = $this->DiasEntregaPedidos->getAllDiasLastMonth();
+        $cDiasEntrega = $this->DiasEntregaPedidos->getAllActivos();
         //print_r($cDiasEntrega);
         $return['status'] = self::OK_VALUE;
         $return['cDiasEntrega'] = $cDiasEntrega;
@@ -3753,6 +3878,52 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode($return));                
     }
 
+    public function getBarriosByDiaEntrega() {
+        $this->output->set_content_type('application/json');
+        $this->load->model('Barrio');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+
+        $cBarriosHabilitados = $this->Barrio->getBarriosHabilitadosByDiaEntrega($idDiaEntrega);
+        if(isset($cBarriosHabilitados) && count($cBarriosHabilitados)>0){
+            $return['success'] = true;    
+        }else{
+            $return['success'] = false;    
+        }
+        $return['cBarriosHabilitados'] = $cBarriosHabilitados;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+
+    }
+
+    public function editBarriosHabilitadosByDiaEntrega() {
+        $this->output->set_content_type('application/json');
+        $this->load->model('DiasEntregaBarrios');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $preCollectionIdBarriosHabilitados = $this->input->post('arrayBarriosHabilitados', true);
+        $cBarriosHabilitados = [];
+        $editOK = false;
+
+        if(isset($preCollectionIdBarriosHabilitados) && count($preCollectionIdBarriosHabilitados)>0) {
+            $this->DiasEntregaBarrios->deleteAllBarrios($idDiaEntrega);
+            foreach($preCollectionIdBarriosHabilitados as $barrio){
+                array_push($cBarriosHabilitados,array(
+                    'idBarrio' => $barrio['idBarrio']
+                ));
+            }
+            foreach($cBarriosHabilitados as $oIdBarrio) {
+                $this->DiasEntregaBarrios->add($idDiaEntrega, $oIdBarrio["idBarrio"]);
+            }                
+            $editOK = true;
+        }
+
+        $return['success'] = $editOK;    
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+
+    }
+
     public function deleteLogisticaFromCamion(){
         $this->output->set_content_type('application/json');
         
@@ -3998,7 +4169,7 @@ class Api extends CI_Controller
                             $cantExtra = $cantExtra[0]->cant;
                         }
                         //print_r($cantExtra);
-                        $precio = ($oExtra->price * $cantExtra);
+                        $precio = ($ordenExtra['extra_price'] * $cantExtra);
 
                         $precioCant = "$".$precio;
                         $precioCant .= "\n(x".$cantExtra.")";
@@ -4249,7 +4420,7 @@ class Api extends CI_Controller
                             $cantExtra = $cantExtra[0]->cant;
                         }
                         //print_r($cantExtra);
-                        $precio = ($oExtra->price * $cantExtra);                        
+                        $precio = ($ordenExtra['extra_price'] * $cantExtra);                        
 
                         $precioCant = "$".$precio;
                         $precioCant .= "\n(x".$cantExtra.")";
@@ -4736,7 +4907,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             $precioCant = "$".$precio;
                             $precioCant .= "\n(x".$cantExtra.")";
@@ -4989,7 +5160,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             //$html .= "$".$oExtra->price;
                             $html .= "$ ".$precio;
@@ -5338,7 +5509,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             //$html .= "$".$oExtra->price;
                             $html .= "$ ".$precio;
@@ -5674,7 +5845,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             $precioCant = "$".$precio;
                             $precioCant .= "\n(x".$cantExtra.")";
@@ -5910,7 +6081,7 @@ class Api extends CI_Controller
                                 $cantExtra = $cantExtra[0]->cant;
                             }
                             //print_r($cantExtra);
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             $html .= "$ ".$precio;
                             $html .= "<br />(x".$cantExtra.")";
@@ -6141,7 +6312,7 @@ class Api extends CI_Controller
                             }else{
                                 $cantExtra = $cantExtra[0]->cant;
                             }
-                            $precio = ($oExtra->price * $cantExtra); 
+                            $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                             $html .= "$ ".$precio;
                             $html .= "<br />(x".$cantExtra.")";
@@ -7253,7 +7424,7 @@ class Api extends CI_Controller
                                         $cantExtra = 1;
                                     }
                                     $cantExtra = $cantExtra[0]->cant;
-                                    $precio = ($oExtra->price * $cantExtra);
+                                    $precio = ($ordenExtra['extra_price'] * $cantExtra);
 
                                     $precioCant = "$".$precio;
                                     $precioCant .= "\n(x".$cantExtra.")";
@@ -7505,15 +7676,18 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode($return));           
     }
 
-    public function uploadImagenBolson(){
+    public function uploadImagenDiaEntrega(){
+        $idDiaEntrega = $_POST['idDiaEntrega'];
         $fileExtension = $_POST['fileExtension'];
-        $fileName = "imagenBolson".'.'.$fileExtension;
+        
+        $fileName = "imagen_dia_".$idDiaEntrega.".".$fileExtension;
+
         if ( 0 < $_FILES['file']['error'] ) {
             echo 'Error: ' . $_FILES['file']['error'] . '<br>';
         }else {
-            if(move_uploaded_file($_FILES['file']['tmp_name'], '../assets/img/bolson-del-dia/'.$fileName)){
-                $this->load->model('Content');
-                $this->Content->set("archivo_imagen_bolson",$fileName);        
+            if(move_uploaded_file($_FILES['file']['tmp_name'], '../assets/img/dias-entrega-imagenes/'.$fileName)){
+                $this->load->model('DiasEntregaPedidos');
+                $this->DiasEntregaPedidos->setImagen($idDiaEntrega,$fileName);        
             }
         }
         $return['status'] = self::OK_VALUE;
@@ -8770,7 +8944,7 @@ class Api extends CI_Controller
                                     }else{
                                         $cantExtra = $cantExtra[0]->cant;
                                     }
-                                    $precio = ($oExtra->price * $cantExtra); 
+                                    $precio = ($ordenExtra['extra_price'] * $cantExtra); 
         
                                     $html .= "$ ".$precio;
                                     $html .= "<br />(x".$cantExtra.")";
@@ -8953,7 +9127,7 @@ class Api extends CI_Controller
                                         $cantExtra = $cantExtra[0]->cant;
                                     }
                                     //print_r($cantExtra);
-                                    $precio = ($oExtra->price * $cantExtra); 
+                                    $precio = ($ordenExtra['extra_price'] * $cantExtra); 
 
                                     //$html .= "$".$oExtra->price;
                                     $html .= "$ ".$precio;
@@ -9018,4 +9192,394 @@ class Api extends CI_Controller
         $oPDF->Output('CamionesLogistica.pdf', 'F');
         return 1;        
     }
+
+    public function getDiasEntregaActivos() {
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+        $cDiasEntrega = [];
+        $cDiasEntrega = $this->DiasEntregaPedidos->getAllActivos();
+        
+        $return['status'] = self::OK_VALUE;
+        $return['cDiasEntrega'] = $cDiasEntrega;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function aceptaBolsonesStatus() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $aceptaBolsones = $this->input->post('aceptaBolsones', true);
+
+        if(!valid_session() || !isset($idDiaEntrega) || !isset($aceptaBolsones)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+
+        $this->DiasEntregaPedidos->updateAceptaBolsonStatus($idDiaEntrega, $aceptaBolsones);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function updateDiaEntregaAceptaPedidosFrontend() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $aceptaPedidosFrontend = $this->input->post('aceptaPedidosFrontend', true);
+
+        if(!valid_session() || !isset($idDiaEntrega) || !isset($aceptaPedidosFrontend)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+
+        $this->DiasEntregaPedidos->updateAceptaPedidosStatus($idDiaEntrega, $aceptaPedidosFrontend);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function diaEntregaPuntoRetiroStatus() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $puntoDeRetiroHabilitado = $this->input->post('puntoDeRetiroHabilitado', true);
+
+        if(!valid_session() || !isset($idDiaEntrega) || !isset($puntoDeRetiroHabilitado)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Error en diaEntregaPuntoRetiroStatus.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+
+        $this->DiasEntregaPedidos->updatePuntosDeRetiroEnabled($idDiaEntrega, $puntoDeRetiroHabilitado);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }    
+
+    public function diaEntregaDeliveryStatus() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $deliveryHabilitado = $this->input->post('deliveryHabilitado', true);
+
+        if(!valid_session() || !isset($idDiaEntrega) || !isset($deliveryHabilitado)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Error en diaEntregaDeliveryStatus.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+
+        $this->DiasEntregaPedidos->updateDeliveryEnabled($idDiaEntrega, $deliveryHabilitado);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }    
+
+    public function diaEntregaUpdateStatus() {
+        $this->output->set_content_type('application/json');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+
+        if(!valid_session() || !isset($idDiaEntrega)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Error en diaEntregaUpdateStatus.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('DiasEntregaPedidos');
+        $oDiaEntrega = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        $hasAtLeastOneTipoPedidoEnabled = false;
+        if(!is_null($oDiaEntrega)) {
+            if($oDiaEntrega->puntoDeRetiroEnabled == 1 || $oDiaEntrega->deliveryEnabled == 1 ) {
+                $hasAtLeastOneTipoPedidoEnabled = true;
+            }
+        }        
+        $status = 0;
+        if($hasAtLeastOneTipoPedidoEnabled) {
+            $status = 1;
+        }
+        $this->DiasEntregaPedidos->updateAceptaPedidosStatus($idDiaEntrega, $status);
+
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    function getConfigDiaEntrega() {
+        $this->output->set_content_type('application/json');
+        
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+
+        if(!valid_session() || !isset($idDiaEntrega)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Error en diaEntregaUpdateStatus.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+    
+        $this->load->model('DiasEntregaPedidos');
+        $oDiaEntrega = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        $puntoRetiroEnabled = $oDiaEntrega->puntoDeRetiroEnabled;
+        $deliveryEnabled = $oDiaEntrega->deliveryEnabled;
+        $bolsonEnabled = $oDiaEntrega->aceptaBolsones;
+        $return['status'] = self::OK_VALUE;
+        $return['puntoRetiroEnabled'] = $puntoRetiroEnabled;
+        $return['deliveryEnabled'] = $deliveryEnabled;
+        $return['bolsonEnabled'] = $bolsonEnabled;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function getOrdersFromDateToDate($fechaDesde,$fechaHasta,$idDiaEntrega) {
+        $this->output->set_content_type('application/json');
+
+        $this->load->model('Order');
+        
+        $cOrders = $this->Order->getOrdersBetweenDatesAndDiaEntrega($fechaDesde,$fechaHasta,$idDiaEntrega);
+        
+        /*if($idDiaEntrega>0){
+            $cOrders = $this->Order->getOrdersInDiaEntrega($idDiaEntrega);
+        }else{
+            $cOrders = $this->Order->getOrdersBetweenDates(
+                $fechaDesde,
+                $fechaHasta
+            );    
+        }*/
+
+        $this->createXlsClientsPhoneAndMail($cOrders);
+        $fileName = "ClientesOrdenes.xls";
+        $return['status'] = self::OK_VALUE;
+        $return['fileName'] = $fileName;
+        return $this->output->set_output(json_encode($return));        
+    }
+
+    private function createXlsClientsPhoneAndMail($cOrders){
+        $xlsCreado = false;
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle("Clientes");
+        $lastColumn = 'A';
+        $xlsCol = 'A';
+        $xlsRow = 1;
+
+        //Array de estilos para las celdas. Lo aplico por fila.
+        $headerStyleArray = array(
+            'borders' => array(
+                'allBorders' => array(
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN
+                )
+            ),
+            'font'  => array(
+                'size'  => 14
+            ),
+            'fill' => array(
+                'fillType' => Fill::FILL_SOLID,
+                'startColor' => array('argb' => 'FFB8B8B8')
+            )
+        );
+
+        $styleArray = array(
+            'borders' => array(
+                'allBorders' => array(
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN
+                )
+            ),
+            'font'  => array(
+                'size'  => 12
+            )
+        );        
+    
+        $sheet->setTitle('PUNTOS DE RETIRO');
+        $spreadsheet->getDefaultStyle()->getFont()->setName('Arial');
+        $spreadsheet->getActiveSheet()->getPageSetup()->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
+        $spreadsheet->getActiveSheet()->getPageSetup()->setPaperSize(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::PAPERSIZE_LEGAL);
+        $spreadsheet->getActiveSheet()->getPageMargins()->setRight(0.1);
+        $spreadsheet->getActiveSheet()->getPageMargins()->setLeft(0.1);
+
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Cliente');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Teléfono');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Mail');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+        
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Fecha Pedido');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Dia de Entrega');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $lastColumn = $xlsCol;
+        
+        $sheet->getRowDimension($xlsRow)->setRowHeight(35);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($headerStyleArray);
+
+        $xlsRow++;
+
+        $xlsCol = 'A';
+        foreach($cOrders as $oOrder){
+            if($oOrder->id_tipo_pedido==1) {
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->client_name);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->phone);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->email);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->fechaPedido);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->diaEntrega);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $sheet->getRowDimension($xlsRow)->setRowHeight(20);
+                $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+                $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($styleArray);
+                $xlsRow++;
+                $xlsCol = 'A';
+            }
+        }
+
+        $lastColumn = 'A';
+        $xlsCol = 'A';
+        $xlsRow = 1;
+
+        $sheet = $spreadsheet->createSheet();
+        $sheet->setTitle('DOMICILIO');
+
+        $spreadsheet->getDefaultStyle()->getFont()->setName('Arial');
+        $spreadsheet->getActiveSheet()->getPageSetup()->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
+        $spreadsheet->getActiveSheet()->getPageSetup()->setPaperSize(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::PAPERSIZE_LEGAL);
+        $spreadsheet->getActiveSheet()->getPageMargins()->setRight(0.1);
+        $spreadsheet->getActiveSheet()->getPageMargins()->setLeft(0.1);
+
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Cliente');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Teléfono');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Mail');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+        
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Fecha Pedido');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Dia de Entrega');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $lastColumn = $xlsCol;
+        
+        $sheet->getRowDimension($xlsRow)->setRowHeight(35);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($headerStyleArray);
+
+        $xlsRow++;
+
+        $xlsCol = 'A';
+        foreach($cOrders as $oOrder){
+            if($oOrder->id_tipo_pedido==2) {
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->client_name);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->phone);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->email);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->fechaPedido);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->diaEntrega);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $sheet->getRowDimension($xlsRow)->setRowHeight(20);
+                $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+                $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($styleArray);
+                $xlsRow++;
+                $xlsCol = 'A';
+            }
+        }
+
+        $fileName = "ClientesOrdenes.xls";
+        $writer = new Xlsx($spreadsheet);        
+        $writer->save($fileName);    
+        $xlsCreado = true;
+        return $xlsCreado;
+    }    
 }

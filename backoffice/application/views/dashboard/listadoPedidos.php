@@ -13,9 +13,8 @@
             <input type="hidden" id="idPedido" name="idPedido" value="0"/>
             <input type="hidden" id="consultaFechaDesde" name="consultaFechaDesde" value="<?=$consultaFechaDesde ?? ''?>"/>
             <input type="hidden" id="consultaFechaHasta" name="consultaFechaHasta" value="<?=$consultaFechaHasta ?? ''?>"/>
-            <input type="hidden" id="consultaSoloDiaBolson" name="consultaSoloDiaBolson" value="<?=$consultaSoloDiaBolson ?? false?>"/>
             <input type="hidden" id="consultaIncluirCancelados" name="consultaIncluirCancelados" value="<?=$consultaIncluirCancelados ?? false?>"/>
-            <input type="hidden" id="consultaDiaBolson" name="consultaDiaBolson" value="<?=$consultaDiaBolson ?? ''?>"/>
+            <input type="hidden" id="consultaIdDiaEntrega" name="consultaIdDiaEntrega" value="<?=$consultaIdDiaEntrega ?? ''?>"/>
             <input type="hidden" id="consultaNombre" name="consultaNombre" value="<?=$consultaNombre ?? ''?>"/>
             <input type="hidden" id="consultaMail" name="consultaMail" value="<?=$consultaMail ?? ''?>"/>
             <input type="hidden" id="consultaNroPedido" name="consultaNroPedido" value="<?=$consultaNroPedido ?? ''?>"/>
@@ -85,12 +84,19 @@
             <div class="modal-body">
                 <div class="row rowFiltroPedidos">
                     <div class="col-xs-12 col-sm-12">
-                        <label for="checkSoloBolsonDelDia" class="form-check-label">Solo <label id="lDiaBolsonFormulario"></label></label>
-                        <?php if(isset($consultaSoloDiaBolson) && $consultaSoloDiaBolson=="true"){?>
-                            <input id="checkSoloBolsonDelDia" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs" checked>
-                        <?php }else{ ?>
-                            <input id="checkSoloBolsonDelDia" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs">
-                        <?php }?>
+                        <label for="idDiaEntregaPedido" class="form-check-label"><label>Día de Entrega:</label></label>
+                        <select class="form-control" name="idDiaEntregaPedido" id="idDiaEntregaPedido" required>
+                            <option value="-1" selected>Seleccione</option>
+                            <?php foreach($cDiasEntrega as $diaEntrega): ?>
+                            <?php if($diaEntrega->id_dia_entrega == $consultaIdDiaEntrega) { ?>
+                                <option value="<?=$diaEntrega->id_dia_entrega;?>" selected>
+                            <?php } else { ?>
+                                <option value="<?=$diaEntrega->id_dia_entrega;?>">
+                            <?php } ?>
+                                <?=$diaEntrega->descripcion; ?>
+                            </option>
+                            <?php endforeach; ?>
+                        </select>                    
                     </div>
                 </div>
                 <div class="row rowFiltroPedidos">
@@ -139,4 +145,4 @@
 </div>
 <!-- Fin Modal Filtro de Pedidos-->
 
-<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=20072021"></script>
+<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=9187263"></script>

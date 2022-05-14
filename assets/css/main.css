@@ -481,8 +481,14 @@ footer.default-footer {
 
 .flex-wrapper > * {
     flex: 1 100%;
-  }
-  
+}
+ 
+.form-dia-entrega {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
 
 @media (max-width: 500px){
     @supports (-webkit-touch-callout: none) {

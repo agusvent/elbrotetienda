@@ -10,12 +10,7 @@ $( document ).ready(function() {
         $('#modalFiltroPedidos').modal("hide");
         mostrarLoader();
         var diaBolson = $("#lDiaBolsonFormulario").html();
-        var soloDiaBolson = $("#checkSoloBolsonDelDia").prop("checked");
-        if(soloDiaBolson){
-            soloDiaBolson = 1;
-        }else{
-            soloDiaBolson = 0;
-        }
+        var idDiaEntrega = $("#idDiaEntregaPedido").val();
         var incluirCancelados = $("#checkIncluirCancelados").prop("checked");
         if(incluirCancelados){
             incluirCancelados = 1;
@@ -29,7 +24,7 @@ $( document ).ready(function() {
         var nroPedido = $("#filtroNroPedido").val();
         let data = {
             'diaBolson': diaBolson,
-            'soloDiaBolson':  soloDiaBolson,
+            'idDiaEntrega':  idDiaEntrega,
             'incluirCancelados':  incluirCancelados,
             'nombre' : nombre,
             'mail' : mail,
@@ -114,11 +109,6 @@ function cargarListadoPedidos(pedidos){
 
 function fEditarPedido(idPedido){
     $("#idPedido").val(idPedido);
-    if( $("#checkSoloBolsonDelDia").prop("checked") ){
-        $("#consultaSoloDiaBolson").val(true);
-    }else{
-        $("#consultaSoloDiaBolson").val(false);
-    }
     if( $("#checkIncluirCancelados").prop("checked") ){
         $("#consultaIncluirCancelados").val(true);
     }else{
@@ -127,7 +117,7 @@ function fEditarPedido(idPedido){
     
     $("#consultaFechaDesde").val($("#filtroFechaDesde").val());
     $("#consultaFechaHasta").val($("#filtroFechaHasta").val());
-    $("#consultaDiaBolson").val($("#lDiaBolsonFormulario").html());
+    $("#consultaIdDiaEntrega").val($("#idDiaEntregaPedido").val());
     $("#consultaNombre").val($("#filtroNombre").val());
     $("#consultaMail").val($("#filtroMail").val());
     $("#consultaNroPedido").val($("#filtroNroPedido").val());

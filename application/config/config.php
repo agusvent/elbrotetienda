@@ -23,10 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-#$config['base_url'] = 'https://elbroteorganico.com/test/';
 #$config['base_url'] = 'https://elbrotetienda.com/';
-$config['base_url'] = 'http://192.168.1.46/ebo/';
-#$config['base_url'] = 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/';
+$config['base_url'] = 'http://190.246.199.238:81/ebo/';
 /*
 |--------------------------------------------------------------------------
 | Index File

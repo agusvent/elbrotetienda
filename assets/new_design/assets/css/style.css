@@ -4812,6 +4812,27 @@ a.default-btn {
   height: 2px;
   background-color: #FFFFFF;
 }
+
+.slider-content-3 .banner3 h3::before {
+  position: absolute;
+  left: -110px;
+  top: 16px;
+  content: "";
+  width: 80px;
+  height: 2px;
+  background-color: #DBB893;
+}
+.slider-content-3 .banner3 h3::after {
+  position: absolute;
+  right: -110px;
+  top: 16px;
+  content: "";
+  width: 80px;
+  height: 2px;
+  background-color: #DBB893 ;
+}
+
+
 .slider-content-3 h1 {
   font-size: 72px;
   line-height: 56px;
@@ -4854,6 +4875,11 @@ a.default-btn {
   border: 1px solid #4caf50;
   color: #fff;
 }
+.slider-content-3 .slider-btn.btn-hover.btn-banner-color a:hover {
+  border: 1px solid #DBB893!important;
+  color: #FFFFFF!important;
+}
+
 .slider-content-3.slider-content-3-white h3 {
   color: #fff;
 }
@@ -6738,8 +6764,8 @@ a.default-btn {
 }
 .support-wrap .support-icon {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 50px;
-          flex: 0 0 50px;
+      -ms-flex: 0 0 43px;
+          flex: 0 0 43px;
   margin-right: 20px;
 }
 .support-wrap .support-icon img {
@@ -6773,8 +6799,8 @@ a.default-btn {
 }
 .support-wrap.support-2 .support-icon {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 41px;
-          flex: 0 0 41px;
+      -ms-flex: 0 0 43px;
+          flex: 0 0 43px;
 }
 .support-wrap.support-3 {
   margin-left: 9px;
@@ -6796,8 +6822,8 @@ a.default-btn {
 }
 .support-wrap.support-3 .support-icon {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 41px;
-          flex: 0 0 41px;
+      -ms-flex: 0 0 43px;
+          flex: 0 0 43px;
 }
 .support-wrap.support-4 {
   margin-left: 23px;
@@ -6819,8 +6845,8 @@ a.default-btn {
 }
 .support-wrap.support-4 .support-icon {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 35px;
-          flex: 0 0 35px;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
 }
 .support-wrap:hover .support-icon img {
   -webkit-animation: 500ms ease-in-out 0s normal none 1 running tada;
@@ -12308,7 +12334,7 @@ a.default-btn {
 @media only screen and (max-width: 767px) {
   .welcome-content p {
     width: 100%;
-    font-size: 15px;
+    font-size: 12px;
   }
 }
 
@@ -14592,6 +14618,22 @@ button.newsletter-btn-enviar:hover {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
+
+@media only screen and (max-width: 767px) {
+  .ebo-cart-btn-green {
+    font-size:12px;
+    padding:6px 42px 6px;
+  }
+  .rowAvisoPedidosCargados{
+    padding-top:0;
+    padding-bottom:0;
+  }
+  .welcome-area {
+    padding-top:0px!important;
+    padding-bottom:0px!important;
+  }
+}
+
 .ebo-cart-btn-green:hover {
   background-color: #333;
 }
@@ -15987,4 +16029,9 @@ button.newsletter-btn-enviar:hover {
   .cart-btn-tipo-pedido{
     margin-bottom:10px;
   }
+}
+
+
+.messageProductoEliminado {
+  margin-top:40px;
 }

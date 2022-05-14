@@ -17,7 +17,7 @@
     $('.slider-active').owlCarousel({
         loop: true,
         nav: true,
-        autoplay: true,
+        autoplay: false,
         navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
         autoplayTimeout: 5000,
         animateOut: 'fadeOut',
@@ -554,7 +554,6 @@
             }
         });
     });
-    
     
     /*--- Clickable menu active ----*/
     const slinky = $('#menu').slinky()

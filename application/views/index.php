@@ -20,8 +20,8 @@
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/new_design/assets/css/plugins.css">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=234239">
-    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=4312983">
+    <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=56758">
+    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=414353">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -127,7 +127,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="col-xl-6 col-lg-7 col-md-8 col-12 ms-auto">
                         <div class="slider-content-3 slider-animated-1 text-center banner1-margin-correction">
                             <h3 class="animated" style="color:#FFFFFF!important;">ENV&Iacute;O A DOMICILIO</h3>
-                            <h1 class="animated bannerTextoPpal" style="">Fruta y Verdura Org&aacute;nica y Agroecol&oacute;gica</h1>
+                            <h1 class="animated bannerTextoPpalBlanco" style="">Fruta y Verdura Org&aacute;nica y Agroecol&oacute;gica</h1>
                             <p class="animated" style="color:#FFFFFF!important;">Libre de Agrot&oacute;xicos</p>
                             <div class="slider-btn btn-hover">
                                 <a class="animated" href="javascript:scrollToTargetAdjusted('nuestrosBolsones');">COMPRAR</a>
@@ -141,9 +141,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="container container-banner">
                 <div class="row">
                     <div class="col-xl-6 col-lg-7 col-md-8 col-12 ms-auto">
-                        <div class="slider-content-3 slider-animated-1 text-center banner2-margin-correction">
+                        <div class="slider-content-3 banner3 slider-animated-1 text-center banner2-margin-correction">
                             <h3 class="animated" style="color:#FFFFFF!important;">ENV&Iacute;O A DOMICILIO</h3>
-                            <h1 class="animated bannerTextoPpal" style="">Arm&aacute; tu pedido en nuestra tienda online</h1>
+                            <h1 class="animated bannerTextoPpalBlanco" style="">Arm&aacute; tu pedido en nuestra tienda online</h1>
                             <p class="animated" style="color:#FFFFFF!important;">Org&aacute;nico y Agroecol&oacute;gico</p>
                             <div class="slider-btn btn-hover">
                                 <a class="animated" href="javascript:scrollToTargetAdjusted('tienda');">IR A LA TIENDA</a>
@@ -153,15 +153,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-        <div class="single-slider-2 slider-height-2 d-flex align-items-center bg-img banner3 banner3-height" style="background-image:url(assets/img/banner_web_05.jpg);">
+        <div class="single-slider-2 slider-height-2 d-flex align-items-center bg-img banner3" style="background-image:url(assets/img/banner_web_05.jpg);">
             <div class="container container-banner">
                 <div class="row">
                     <div class="col-xl-6 col-lg-7 col-md-8 col-12 ms-auto">
-                        <div class="slider-content-3 slider-animated-1 text-center banner3-margin-correction">
-                            <h3 class="animated" style="color:#FFFFFF!important;">ENV&iacute;O A DOMICILIO</h3>
-                            <h1 class="animated bannerTextoPpal" style="">Bols&oacute;n Org&aacute;nico y Agroecol&oacute;gico</h1>
-                            <p class="animated" style="color:#FFFFFF!important;">Libre de Agrot&oacute;xicos</p>
-                            <div class="slider-btn btn-hover">
+                        <div class="slider-content-3 slider-animated-1 text-center banner3-margin-correction banner-color">
+                            <h3 class="animated">ENV&iacute;O A DOMICILIO</h3>
+                            <h1 class="animated bannerTextoPpalColor" style="">Bols&oacute;n Org&aacute;nico y Agroecol&oacute;gico</h1>
+                            <p class="animated">Libre de Agrot&oacute;xicos</p>
+                            <div class="slider-btn btn-hover btn-banner-color">
                                 <a class="animated" href="javascript:scrollToTargetAdjusted('nuestrosBolsones');">COMPRAR</a>
                             </div>
                         </div>
@@ -171,42 +171,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </div>
-<div id="sponsors" class="suppoer-area pt-100 pb-60">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="support-wrap-2 mb-30 support-shape text-center">
-                    <div class="support-content-2">
-                        <img class="animated" src="assets/new_design/assets/img/icon-img/support-1.png" alt="">
-                        <h5>Env&iacute;o Gratis</h5>
-                        <p>Hace tu pedido con Env&iacute;o a Domicilio y te lo llevamos sin cargo (con tu compra superior a $<?=$montoMinimoEnvioSinCargoPedidoExtra;?>). En CABA y GBA.</p>
-                    </div>
-                </div>
+<form method="post" class="ebo-form" action="<?=$_SERVER['PHP_SELF'];?>">
+
+    <div id="dComoHacerTuPedido" class="shop-area pt-150 mb-60">
+        <div class="container">
+            <div class="section-title text-center mb-55">
+                <h2 class="comoHacerPedido">¿CÓMO HACER TU PEDIDO?</h2>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="support-wrap-2 mb-30 support-shape text-center">
-                    <div class="support-content-2">
-                        <img class="animated" src="assets/img/comercial.jpeg" alt="">
-                        <h5>M&aacute;s de 50 Puntos de Retiro</h5>
-                        <p>Contamos con Puntos de Retiro en todo CABA y GBA. Hac&eacute; tu pedido en nuestra tiena y retiralo por tu sucursal m&aacute;s cercana.</p>
+
+            <div class="pt-30">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="support-wrap mb-30 support-1">
+                            <div class="support-icon">
+                                <img class="animated" src="assets/img/como_pedir_1.png" alt="">
+                            </div>
+                            <div class="support-content">
+                                <h5 class="h5ComoHacerTuPedido">Armá tu pedido</h5>
+                                <p>Seleccionando los productos que quieras.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="support-wrap-2 mb-30 text-center">
-                    <div class="support-content-2">
-                        <img class="animated" src="assets/img/mercaderia.jpeg" alt="">
-                        <h5>Cultivos 100% Frescos</h5>
-                        <p>Nuestro acuerdo directo con los productores, nos permite ofrecerte mercader&iacute;a reci&eacute;n cosechada, semana tras semana.</p>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="support-wrap mb-30 support-2">
+                            <div class="support-icon">
+                                <img class="animated" src="assets/img/como_pedir_2.png" alt="">
+                            </div>
+                            <div class="support-content">
+                                <h5 class="h5ComoHacerTuPedido">Elegí el día de entrega*</h5>
+                                <p>Entregamos a domicilio Miércoles y Viernes.</p>
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="support-wrap mb-30 support-3">
+                            <div class="support-icon">
+                                <img class="animated" src="assets/img/como_pedir_3.png" alt="">
+                            </div>
+                            <div class="support-content">
+                                <h5 class="h5ComoHacerTuPedido">Completá tus datos</h5>
+                                <p>¡Es muy rápido y no tenés que registrarte!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="support-wrap mb-30 support-4">
+                            <div class="support-icon">
+                                <img class="animated" src="assets/img/como_pedir_4.png" alt="">
+                            </div>
+                            <div class="support-content">
+                                <h5 class="h5ComoHacerTuPedido">Recibí tu pedido y aboná en efectivo</h5>
+                                <p>Revisá la franja horaria de entrega y asegurate de estar disponible.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size:12px;">* ATENCIÓN: Nuestros bolsones de fruta y verdura se entregan únicamente los días Miércoles de cada semana. El resto de los días se entregan productos de nuestra tienda online.</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<form method="post" class="ebo-form" action="<?=$_SERVER['PHP_SELF'];?>">
-    <div id="nuestrosBolsones" class="shop-area pt-50 mb-60">
+
+
+
+    <div id="nuestrosBolsones" class="shop-area pt-70 mb-60">
         <div class="container">
             <div class="section-title text-center mb-55">
                 <h2>NUESTROS BOLSONES</h2>
@@ -229,7 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <div class="product-img bolsonIndividual">
                                         <a href="javascript:selectBolsonCant(1);">
                                             <!--<img class="default-img" src="assets/img/bolson-del-dia/imagenBolson.jpeg" alt="">-->
-                                            <img class="default-img" src="assets/img/bolson-del-dia/<?= $imagenBolson ?>" alt="">
+                                            <img class="default-img" src="assets/img/dias-entrega-imagenes/<?= $imagenBolson ?>" alt="">
                                         </a>
                                         <!--<span class="pink">-10%</span>-->
                                         <div class="product-action">
@@ -496,6 +524,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="cart-shiping-update-wrapper">
                                 <div class="cart-shiping-update">
                                     <a href="javascript:scrollToTargetAdjusted('datosPedido');">FINALIZAR COMPRA</a>
+                                    <p id="messageProductoEliminado" class="messageProductoEliminado">
+                                    </p>
                                 </div>
                                 <div class="cart-clear">
                                     <!--<button>Update Shopping Cart</button>
@@ -526,18 +556,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <!--<p>Enter your destination to get a shipping estimate.</p>-->
                                     <div class="tax-select-wrapper">
                                         <div class="tax-select form-dia-entrega">
-                                            <label>
-                                                D&iacute;a de entrega: <b><label id="ldiaDeEntrega"><?=$diaEntregaPedidos->descripcion?></label></b>
-                                            </label>
+                                            <div class="col-xs-12">
+                                                <span>
+                                                    <label>
+                                                        D&iacute;a de entrega:&nbsp;&nbsp;
+                                                    </label>
+                                                </span>
+                                                <span>
+                                                    <select class="tax-select" name="idDiaEntrega" id="idDiaEntrega" required>
+                                                        <option value="-1">Seleccione</option>
+                                                        <?php foreach($cDiasEntrega as $diaEntrega): ?>
+                                                            <?php if($diaEntrega->id_dia_entrega == $pedido->id_dia_entrega) { ?>
+                                                                <option value="<?=$diaEntrega->id_dia_entrega;?>" selected>
+                                                            <?php } else { ?>
+                                                                <option value="<?=$diaEntrega->id_dia_entrega;?>">
+                                                            <?php }?>
+                                                            <?=$diaEntrega->descripcion; ?>
+                                                        </option>
+                                                        <?php endforeach; ?>
+                                                    </select>                                                
+                                                </span>
+                                            </div>
                                         </div>
+                                        <p id="pErrorDiaEntrega" class="pFormError"></p>
                                         <div class="tax-select form-tipo-pedido">
                                             <label>
                                                 Tipo de Pedido: <b><label id="tipoPedidoOrden">Seleccioná un m&eacute;todo de entrega.</label></b>
                                             </label>
                                         </div>
-                                        <div class="tax-select input-datos-pedido" style="text-align:center;">
-                                            <button id="bPuntosRetiro" class="cart-btn-tipo-pedido" type="button" onclick="javascript:prepareFormOrderByTipoPedido(1);">Punto de Retiro</button>
-                                            <button id="bDomicilio" class="cart-btn-tipo-pedido" type="button" onclick="javascript:prepareFormOrderByTipoPedido(2);">Env&iacute;o a Domicilio</button>
+                                        <div id="dTiposEntregaButtons" class="tax-select input-datos-pedido" style="text-align:center;display:none;">
+                                            <button id="bPuntosRetiro" class="cart-btn-tipo-pedido" type="button" onclick="javascript:prepareFormOrderByTipoPedido(1);" disabled>Punto de Retiro</button>
+                                            <button id="bDomicilio" class="cart-btn-tipo-pedido" type="button" onclick="javascript:prepareFormOrderByTipoPedido(2);" disabled>Env&iacute;o a Domicilio</button>
                                             <p id="pErrorTipoPedido" class="pFormError pt-10" style="text-align:left;"></p>
                                         </div>
                                         <div class="tax-select input-datos-pedido input-datos-pedido-puntoretiro">
@@ -693,7 +742,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <input type="hidden" id="montoMinimoPedidoExtras" value="<?=$montoMinimoPedidoExtra;?>">
     <input type="hidden" id="costoEnvioPedidoExtra" value="<?=$costoEnvioPedidoExtra;?>">
     <input type="hidden" id="montoMinimoEnvioSinCargoPedidoExtra" value="<?=$montoMinimoEnvioSinCargoPedidoExtra;?>">
-    <input type="hidden" id="idDiaEntrega" name="idDiaEntrega" value="<?=$diaEntregaPedidos->id_dia_entrega;?>">
     <input type="hidden" name="arrExtras-ebo" id="arrExtras-ebo" value="">
     <input type="hidden" name="montoDelivery" id="montoDelivery" value="">
     <input type="hidden" name="csrfv" id="csrfv" value="<?=rand(1000,5000);?>">
@@ -820,23 +868,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-
-
-
-               <!--<div class="row rowAvisoPedidosCargados">
-                    <div class="col-xs-12 col-sm-12">
-                        <h5>Ya ten&eacute;s cargado un pedido a tu nombre, para el <b><label id="labelAvisoPedidosCargadosDiaBolson"></label>.</b></h5>
-                        <p>
-                            Si quer&eacute;s modificar tu pedido, comunicate por WhatsApp.
-                        </p>
-                        <p>
-                            Si quer&eacute;s cargar un nuevo pedido a tu nombre, apret&aacute; el bot&oacute;n de continuar.
-                        </p>
-                        <p>
-                            De lo contrario, te esperamos el Mi&eacute;rcoles para que disfrutes de tu bols&oacute;n!
-                        </p>    
-                    </div>
-                </div>-->
                 <div class="row rowAvisoPedidosCargados" style="text-align:center">
                     <div class="col-xs-12 col-sm-4">
                         <button type="button" id="bWhatsapp" class="ebo-cart-btn ebo-cart-btn-green" >WHATSAPP</button>
@@ -923,6 +954,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Fin Modal Newsletter-->
 
+<!-- Modal Dia Entrega Sin Bolson-->
+<div class="modal fade" id="modalDiaEntregaSinBolson" tabindex="-1" role="dialog" aria-labelledby="modalDiaEntregaSinBolson" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><!--Hola!</h5>-->
+                <!--<button type="button" class="close closeDiaEntregaSinBolson" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>-->
+            </div>
+            <div class="modal-body" style="padding-top:0px;margin-top:0px;">
+                <div class="welcome-area pt-20 pb-20">
+                    <div class="container">
+                        <div class="welcome-content text-center">
+                            <h5>¡Atenci&oacute;n!</h5>
+                            <h1>El día que seleccionaste para tu pedido no entregamos bolsones.</h1>
+                            <p>
+                                Solo entregamos bolsones los días Miércoles, el resto de los días habilitados enviamos productos de la tienda. Para seguir con tu pedido podés elegir entre estas dos opciones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row rowAvisoPedidosCargados" style="text-align:center">
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" id="bEliminarBolsonesPedido" class="ebo-cart-btn ebo-cart-btn-green">ELIMINAR BOLSONES</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" id="bCambiarDiaEntrega" class="ebo-cart-btn ebo-cart-btn-green">CAMBIAR DIA ENTREGA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Dia Entrega Sin Bolson-->
+<div class="modal fade" id="modalDiaEntregaSinBolsonShort" tabindex="-1" role="dialog" aria-labelledby="modalDiaEntregaSinBolsonShort" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><!--Hola!</h5>-->
+                <button type="button" class="close closeDiaEntregaSinBolsonShort" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding-top:0px;margin-top:0px;">
+                <div class="welcome-area pt-20 pb-20">
+                    <div class="container">
+                        <div class="welcome-content text-center">
+                            <h5>¡Atenci&oacute;n!</h5>
+                            <h1>El día que seleccionaste para tu pedido, no entrega bolsones.</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row rowAvisoPedidosCargados" style="text-align:center">
+                    <div class="col-xs-12">
+                        <button type="button" id="bDiaEntregaSinBolsonShort" class="ebo-cart-btn ebo-cart-btn-green">CERRAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">const baseURL = "<?=base_url();?>";</script>
 <!-- All JS is here
 ============================================ -->
@@ -937,8 +1033,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=1297632"></script>
-<script src="assets/new_design/assets/js/main.js?v=9237697"></script>
+<script src="assets/js/mainv2.js?v=97129"></script>
+<script src="assets/new_design/assets/js/main.js?v=1234"></script>
 
 
 </body>

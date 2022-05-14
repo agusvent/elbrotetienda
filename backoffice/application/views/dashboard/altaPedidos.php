@@ -9,8 +9,14 @@
                     <label>Pedido para el:</label>
                 </div>
                 <div class="col-xs-12 col-sm-5">
-                    <input type="text" id="altaPedidoDiaBolson" name="altaPedidoDiaBolson" style="width:100%" value="<?=$diaBolson->descripcion; ?>" disabled></input>
-                    <input type="hidden" id="idDiaEntregaPedido" name="idDiaEntregaPedido" style="width:100%" value="<?=$diaBolson->id_dia_entrega; ?>" disabled></input>
+                    <select class="form-control" name="idDiaEntregaPedido" id="idDiaEntregaPedido" required>
+                        <option value="-1" selected>Seleccione</option>
+                        <?php foreach($cDiasEntrega as $diaEntrega): ?>
+                            <option value="<?=$diaEntrega->id_dia_entrega;?>">
+                            <?=$diaEntrega->descripcion; ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>                    
                 </div>
             </div>
             <div class="row form-group">
@@ -44,11 +50,6 @@
                 <div class="col-xs-12 col-sm-5">
                     <select class="form-control" name="idTipoPedido" id="idTipoPedido" required>
                         <option value="-1" selected>Seleccione</option>
-                        <?php foreach($cTiposPedidos as $tipoPedido): ?>
-                        <option value="<?=$tipoPedido->idTipoPedido;?>" ;?>
-                            <?=$tipoPedido->descripcion; ?>
-                        </option>
-                        <?php endforeach; ?>
                     </select>                    
                 </div>
             </div>
@@ -232,4 +233,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?=assets();?>js/altaPedidosHelper.js?v=283746283"></script>
+<script type="text/javascript" src="<?=assets();?>js/altaPedidosHelper.js?v=92392"></script>

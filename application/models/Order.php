@@ -144,12 +144,12 @@ class Order extends CI_Model
         return true;
     }       
 
-    public function getOrdersByDiaBolsonAndMail($diaBolson,$mailCliente,$telefono){
+    public function getOrdersByDiaBolsonAndMail($idDiaEntrega,$mailCliente,$telefono){
         $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, id_estado_pedido, cant_bolson, total_bolson');
         $this->db->from('orders');
         $this->db->where('valid', 1);
         $this->db->where('email', $mailCliente);
-        $this->db->where('deliver_date', $diaBolson);
+        $this->db->where('id_dia_entrega', $idDiaEntrega);
         $this->db->where('phone', $telefono);
 
         return $this->db->get()->result();

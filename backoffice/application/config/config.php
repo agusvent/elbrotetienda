@@ -24,7 +24,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://192.168.1.159/ebo/backoffice/';
-#$config['base_url'] = 'https://elbrotetienda.com/back2/';
 #$config['base_url'] = 'https://elbrotetienda.com/backoffice/';
 /*
 |--------------------------------------------------------------------------
@@ -512,7 +511,7 @@ $config['csrf_exclude_uris'] = array(
     'api/preciosPedidosExtra/editMontoMinimoPedidosExtras',
     'api/preciosPedidosExtra/editCostoEnvioPedidosExtras',
     'api/preciosPedidosExtra/editMontoMinimoEnvioSinCargoPedidosExtras',
-    'api/diaEntrega/uploadImagenBolson',
+    'api/diaEntrega/uploadImagenDiaEntrega',
     'api/preciosPedidosExtra/puntoRetiroHabilitado',
     'api/preciosPedidosExtra/domicilioHabilitado',
     'api/logistica/setNroOrdenForPedidosByDiaEntrega',
@@ -532,7 +531,17 @@ $config['csrf_exclude_uris'] = array(
     'api/cupones/editarCupon',
     'api/cupones/setModuloCuponesStatus',
     'api/cupones/eliminarCupon',
-    'api/cupones/status'
+    'api/cupones/status',
+    'api/diasEntrega/aceptaBolsones',
+    'api/diasEntrega/puntoDeRetiroStatus',
+    'api/diasEntrega/deliveryStatus',
+    'api/diasEntrega/updateStatus',
+    'api/diasEntrega/getConfigDiaEntrega',
+    'api/getOrdersInfoFromDiaBolson',
+    'api/getOrdersInfoHomeFilter',
+    'api/diasEntrega/aceptaPedidosFrontend',
+    'api/diasEntrega/editarBarriosHabilitados',
+    'api/barrios/getBarriosHabilitadosForDiaEntrega'
 );
 
 /*

@@ -7,9 +7,8 @@
             <input type="hidden" name="editarPedidoIdPedido" id="editarPedidoIdPedido" value="<?=$pedido->id?>"/>
             <input type="hidden" name="consultaFechaDesde" id="consultaFechaDesde" value="<?=$consultaFechaDesde?>"/>
             <input type="hidden" name="consultaFechaHasta" id="consultaFechaHasta" value="<?=$consultaFechaHasta?>"/>
-            <input type="hidden" name="consultaSoloDiaBolson" id="consultaSoloDiaBolson" value="<?=$consultaSoloDiaBolson?>"/>
             <input type="hidden" name="consultaIncluirCancelados" id="consultaIncluirCancelados" value="<?=$consultaIncluirCancelados?>"/>
-            <input type="hidden" name="consultaDiaBolson" id="consultaDiaBolson" value="<?=$consultaDiaBolson?>"/>
+            <input type="hidden" name="consultaIdDiaEntrega" id="consultaIdDiaEntrega" value="<?=$consultaIdDiaEntrega?>"/>
             <input type="hidden" name="consultaNombre" id="consultaNombre" value="<?=$consultaNombre?>"/>
             <input type="hidden" name="consultaNroPedido" id="consultaNroPedido" value="<?=$consultaNroPedido?>"/>
             <input type="hidden" name="consultaMail" id="consultaMail" value="<?=$consultaMail?>"/>
@@ -23,7 +22,18 @@
                     <label>Pedido para el:</label>
                 </div>
                 <div class="col-xs-12 col-sm-5">
-                    <input type="text" id="editarPedidoDiaBolson" name="editarPedidoDiaBolson" style="width:100%" value="<?=$pedido->deliver_date?>" disabled></input>
+                    <select class="form-control" name="idDiaEntregaPedido" id="idDiaEntregaPedido" required>
+                        <option value="-1">Seleccione</option>
+                        <?php foreach($cDiasEntrega as $diaEntrega): ?>
+                            <?php if($diaEntrega->id_dia_entrega == $pedido->id_dia_entrega) { ?>
+                                <option value="<?=$diaEntrega->id_dia_entrega;?>" selected>
+                            <?php } else { ?>
+                                <option value="<?=$diaEntrega->id_dia_entrega;?>">
+                            <?php }?>
+                            <?=$diaEntrega->descripcion; ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>                    
                 </div>
             </div>
             <div class="row form-group">
@@ -307,4 +317,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=165735682"></script>
+<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=192348"></script>

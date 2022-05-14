@@ -109,8 +109,29 @@
     height:730px!important;
 }
 
-.bannerTextoPpal{
-    color:#FFFFFF!important;
+.banner-color h1, .banner-color h3,  .banner-color p, .banner-color a, .bannerTextoPpal{
+    color: #DBB893!important;
+}
+.banner-color h3::before, .banner-color h3::after {
+    background-color: #DBB893!important;
+}
+
+.btn-banner-color a::before{
+    border:1px solid #DBB893!important;
+}
+
+.btn-banner-color a::after{
+    background-color:#DBB893!important;
+    color: #FFFFFF;
+}
+
+.bannerTextoPpalColor{
+    color: #DBB893!important;
+    line-height:70px;
+}
+
+.bannerTextoPpalBlanco{
+    color: #FFFFFF!important;
     line-height:70px;
 }
 
@@ -216,6 +237,20 @@
 
 
 #modalAvisoPedidosCargados .modal-dialog {
+    margin: 3% auto;
+    max-width: 600px;
+    width: 90%;
+    padding: 35px;
+}
+
+#modalDiaEntregaSinBolson .modal-dialog {
+    margin: 3% auto;
+    max-width: 650px;
+    width: 90%;
+    padding: 35px;
+}
+
+#modalDiaEntregaSinBolsonShort .modal-dialog {
     margin: 3% auto;
     max-width: 600px;
     width: 90%;
@@ -672,6 +707,25 @@
     transform: translateZ(0);
 }
 
+.form-dia-entrega {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.form-dia-entrega-div {
+    float:left;
+}
+
+.h5ComoHacerTuPedido {
+    line-height:22px;
+}
+
+.messageProductoEliminado {
+    margin-top:40px;
+}
+
 @-webkit-keyframes load5 {
     0%,
     100% {
@@ -732,7 +786,7 @@
     .banner3{
         background-position:left;
         background-repeat: no-repeat;
-        background-color: #dcb993;
+        /*background-color: #dcb993;*/
         background-size: contain;
     }
 }
@@ -881,6 +935,19 @@
         font-size:35px;
         line-height:45px;
     }
+    .form-dia-entrega {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .form-dia-entrega div {
+        width:100%;
+    }
+    .welcome-content h1 {
+        font-size:18px;
+    }
+    .welcome-content p {
+        line-height:23px;
+    }
 }
 
 @media only screen and (max-width: 425px) {
@@ -904,6 +971,9 @@
     }
     .modal-dialog .modal-header .close {
         font-size:40px;
+    }
+    .comoHacerPedido {
+        width:65%;
     }
 }
 

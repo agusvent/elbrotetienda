@@ -29,4 +29,9 @@ class Barrio extends CI_Model
         $result = $this->db->get();
         return $result->result()[0];
     }
+
+    public function getBarriosHabilitadosByDiaEntrega($idDiaEntrega) {
+        $query = $this->db->query("SELECT b.* FROM barrios b LEFT JOIN dias_entrega_barrios deb ON (b.id = deb.id_barrio) WHERE deb.id_dia_entrega = " . $idDiaEntrega . " order by b.nombre asc");
+        return $query->result();
+    }
 }

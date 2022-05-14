@@ -581,7 +581,7 @@ class Main extends CI_Controller
 
         // URLs de retorno
         /*COMENTO ESTO SOLO POR PRUEBAS: PARA DESPLEGAR VA ESTO DESCOMENTADO*/
-        
+        /*
         if($orderData['idTipoPedido'] == 1){
             $preference->back_urls = [
                 'success' => base_url().'success/'.$orderData['hash'].'/',
@@ -594,26 +594,26 @@ class Main extends CI_Controller
             ];
         }
         $preference->notification_url = base_url().'payment_confirmation/'.$orderData['hash'];
-        
+        */
         /*  Esta propiedad se define para que en el momento que se procesa OK el pago en la web de MP, 
             si el cliente no espera a retornar a la web y cierra la ventana, MP nos notifique a nosotros del pago realizado.
         */
     
         /*Back URLs de prueba */
-        /*
+        
         if($orderData['idTipoPedido'] == 1){
             $preference->back_urls = [
-                'success' => 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/success/'.$orderData['hash'].'/',
-                'failure' => 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/failure/'.$orderData['hash'].'/'
+                'success' => 'http://190.246.199.238:81/ebo/success/'.$orderData['hash'].'/',
+                'failure' => 'http://190.246.199.238:81/ebo/failure/'.$orderData['hash'].'/'
             ];
         }else{
             $preference->back_urls = [
-                'success' => 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/success/'.$orderData['hash'].'/delivery/',
-                'failure' => 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/failure/'.$orderData['hash'].'/'
+                'success' => 'http://190.246.199.238:81/ebo/success/'.$orderData['hash'].'/delivery/',
+                'failure' => 'http://190.246.199.238:81/ebo/failure/'.$orderData['hash'].'/'
             ];
         }
-        $preference->notification_url = 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/payment_confirmation/'.$orderData['hash'];
-        */
+        $preference->notification_url = 'http://190.246.199.238:81/ebo/payment_confirmation/'.$orderData['hash'];
+        
 
         // Desactivo estado 'pendiente' y métodos en efectivo.
         $preference->binary_mode = true;
@@ -844,7 +844,6 @@ class Main extends CI_Controller
             ];
         }
         
-        
         //$this->load->view('main', array_merge($args, [
         $this->load->view('index', array_merge($args, [
             'bolsones'           => $this->Pocket->getAll(),
@@ -871,8 +870,9 @@ class Main extends CI_Controller
             'descripcionBolsonesFormCerrado'  => $this->Parameter->get('descripcionBolsonesFormCerrado'),
             'descripcionTienda'  => $this->Parameter->get('descripcionTienda'),
             'descripcionTiendaFormCerrado'  => $this->Parameter->get('descripcionTiendaFormCerrado'),
-            'imagenBolson' => $this->Parameter->get('archivo_imagen_bolson'),
-            'moduloCuponesEnabled' => $this->Parameter->get('moduloCuponesEnabled')
+            'imagenBolson' => $this->DiasEntregaPedidos->getLastDayWithAceptaBolsones()->imagen,
+            'moduloCuponesEnabled' => $this->Parameter->get('moduloCuponesEnabled'),
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
         ]));
     }
 

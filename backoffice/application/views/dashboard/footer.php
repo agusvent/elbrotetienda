@@ -25,7 +25,7 @@
 
 <script type="text/javascript" src="<?=assets();?>js/popper.min.js"></script>
 <script type="text/javascript" src="<?=assets();?>js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?=assets();?>js/toggle.min.js"></script>
+<script type="text/javascript" src="<?=assets();?>js/toggle.min.js?v=213874"></script>
 <script type="text/javascript" src="<?=assets();?>js/swal.min.js"></script>
 <script type="text/javascript" src="<?=assets();?>dt/datatables.min.js"></script>
 <script type="text/javascript">const ajaxURL = "<?=base_url();?>api/";</script>
@@ -39,8 +39,9 @@
 
 
 
-<script type="text/javascript" src="<?=assets();?>js/mainHelper.js?v=91912"></script>
+<script type="text/javascript" src="<?=assets();?>js/mainHelper.js?v=12344"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery.numeric.js"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery.table2excel.js"></script>
+<script type="text/javascript" src="<?=assets();?>js/jquery-dateformat.js"></script>
 </body>
 </html>
