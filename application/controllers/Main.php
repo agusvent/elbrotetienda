@@ -603,16 +603,16 @@ class Main extends CI_Controller
         
         if($orderData['idTipoPedido'] == 1){
             $preference->back_urls = [
-                'success' => 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/success/'.$orderData['hash'].'/',
-                'failure' => 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/failure/'.$orderData['hash'].'/'
+                'success' => 'http://190.246.199.238:81/ebo/success/'.$orderData['hash'].'/',
+                'failure' => 'http://190.246.199.238:81/ebo/failure/'.$orderData['hash'].'/'
             ];
         }else{
             $preference->back_urls = [
-                'success' => 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/success/'.$orderData['hash'].'/delivery/',
-                'failure' => 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/failure/'.$orderData['hash'].'/'
+                'success' => 'http://190.246.199.238:81/ebo/success/'.$orderData['hash'].'/delivery/',
+                'failure' => 'http://190.246.199.238:81/ebo/failure/'.$orderData['hash'].'/'
             ];
         }
-        $preference->notification_url = 'http://antezana228.ar.camaras.proseguralarmas.com:81/ebo/payment_confirmation/'.$orderData['hash'];
+        $preference->notification_url = 'http://190.246.199.238:81/ebo/payment_confirmation/'.$orderData['hash'];
         
 
         // Desactivo estado 'pendiente' y métodos en efectivo.

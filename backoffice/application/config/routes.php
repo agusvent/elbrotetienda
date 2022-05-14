@@ -138,6 +138,7 @@ $route['api/getBolsonDiaFormulario'] = 'Api/getBolsonDiaFormulario';
 
 //Para infoPedidosBox
 $route['api/getOrdersInfoFromDiaBolson'] = 'Api/getOrdersInfoFromDiaBolson';
+$route['api/getOrdersInfoHomeFilter'] = 'Api/getOrdersInfoHomeFilter';
 $route['api/getOrdersInfoFromFechaDesdeHasta'] = 'Api/getOrdersInfoFromFechaDesdeHasta';
 
 // Bolsones y extras

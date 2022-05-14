@@ -17,10 +17,6 @@ var mainHelper = {
         this.asignoEventos();
         this.initOrdersTable();
         this.loadBolsonDiaFormulario();
-        
-        //$("#checkSoloBolsonDelDia").prop("checked",true);
-        //$("#checkSoloBolsonDelDia").parent().toggleClass("btn-light off btn-primary");
-
         this.loadInfoPedidos();
     },
 
@@ -163,56 +159,33 @@ var mainHelper = {
             dataType: 'JSON',
         }).done(function(res) {
             ocultarLoader();
-            console.log(baseURL);
-            console.log(res);
-            console.log(res.fileName);
             window.open(baseURL+res.fileName+"?v="+time, "popupWindow", "width=600, height=400, scrollbars=yes");
         });
     },
     loadInfoPedidos: function(){
         var idDiaEntrega = $("#idDiaEntregaPedido").val();
-        if(idDiaEntrega > 0){
-            let data = {
-                'idDiaEntrega': idDiaEntrega
-            }
-            $.ajax({
-                url: ajaxURL + 'getOrdersInfoFromDiaBolson',
-                method: 'post',
-                data: data,
-                dataType: 'JSON',
-            }).done(function(res) {
-                var aInfoPedidosByTipoBolson = res[0].aInfoPedidosByTipoBolson;
-                var aInfoExtrasPedidosBox = res[0].aInfoExtrasPedidosBox;
-                var totalPedidosPuntoDeRetiro = res[0].totalPedidosSucursal;
-                var totalPedidosDomicilio = res[0].totalPedidosDomicilio;
-                var totalBolsones = res[0].totalBolsones;
-                var diaBolson = res[0].diaBolson;
-                drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBolsones,diaBolson,"","",totalPedidosPuntoDeRetiro,totalPedidosDomicilio); 
-            });    
-        }else{
-            var msj = checkInfoPedidosForm();
-            if(msj==""){
-                var fDesde = $("#dataFrom").val();
-                var fHasta = $("#dataTo").val();
-                $.ajax({
-                    url: ajaxURL + 'getOrdersInfoFromFechaDesdeHasta/'+fDesde+'/'+fHasta,
-                    method: 'get',
-                    dataType: 'JSON',
-                }).done(function(res) {
-                    
-                    var aInfoPedidosByTipoBolson = res[0].aInfoPedidosByTipoBolson;
-                    var aInfoExtrasPedidosBox = res[0].aInfoExtrasPedidosBox;
-                    var totalPedidosPuntoDeRetiro = res[0].totalPedidosSucursal;
-                    var totalPedidosDomicilio = res[0].totalPedidosDomicilio;    
-                    var totalBolsones = res[0].totalBolsones;
-                    drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBolsones,"",fDesde,fHasta,totalPedidosPuntoDeRetiro,totalPedidosDomicilio); 
-                }).fail(function (jqXHR, textStatus) {
-                    console.log("Response",jqXHR);
-                });
-            }else{
-                //alert(msj);
-            }
+        var fDesde = $("#dataFrom").val();
+        var fHasta = $("#dataTo").val();
+        let data = {
+            'idDiaEntrega': idDiaEntrega,
+            'fechaDesde': fDesde,
+            'fechaHasta': fHasta
         }
+        $.ajax({
+            url: ajaxURL + 'getOrdersInfoHomeFilter',
+            method: 'post',
+            data: data,
+            dataType: 'JSON',
+            async: false
+        }).done(function(res) {
+            var aInfoPedidosByTipoBolson = res[0].aInfoPedidosByTipoBolson;
+            var aInfoExtrasPedidosBox = res[0].aInfoExtrasPedidosBox;
+            var totalPedidosPuntoDeRetiro = res[0].totalPedidosSucursal;
+            var totalPedidosDomicilio = res[0].totalPedidosDomicilio;
+            var totalBolsones = res[0].totalBolsones;
+            var diaBolson = res[0].diaBolson;
+            drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBolsones,diaBolson,fDesde,fHasta,totalPedidosPuntoDeRetiro,totalPedidosDomicilio); 
+        });
     }
 
 };
@@ -290,8 +263,7 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBol
         htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
         htmlBolsonesAndExtras += '</div>';
     }   
-
-    if(diaBolson!=""){
+    if(diaBolson!=null && diaBolson!=""){
         $("#lFiltradoPor").html("Bolson del "+diaBolson.descripcion);
     }else{
         $("#lFiltradoPor").html("Fechas: "+fechaDesde+" / "+fechaHasta);

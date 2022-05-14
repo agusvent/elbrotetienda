@@ -39,7 +39,7 @@
 
 
 
-<script type="text/javascript" src="<?=assets();?>js/mainHelper.js?v=917263"></script>
+<script type="text/javascript" src="<?=assets();?>js/mainHelper.js?v=12344"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery.numeric.js"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery.table2excel.js"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery-dateformat.js"></script>

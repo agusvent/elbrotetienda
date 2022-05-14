@@ -691,6 +691,102 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode(true));
     }
 
+    public function getOrdersInfoHomeFilter(){
+        $this->load->model('DiasEntregaPedidos');
+        $this->load->model('Pocket');
+        $this->load->model('Order');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $fechaDesde = $this->input->post('fechaDesde', true);
+        $fechaHasta = $this->input->post('fechaHasta', true);
+        if(isset($idDiaEntrega) && $idDiaEntrega>0) {
+            $oDiaBolson = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        }
+
+        $idBolson = 1; //Se usa solo este bolson.
+        
+        $oBolson = $this->Pocket->getById($idBolson);        
+        $auxSum = 0;
+        $arrayInfoPedidosBox = [];
+        $totalPedidos = 0;
+        $totalBolsones = 0;
+    
+        $totalBolsonesSucursal = 0;
+        $totalBolsonesDomicilio = 0;
+        $subtotalBolsones = 0;
+
+
+        $totalPedidosSucursal = 0;
+        $totalPedidosDomicilio = 0;
+
+        $totalPedidosSucursal = $this->Order->getTotalOrdersBetweenDatesAndDiaEntregaPuntoDeRetiro($idDiaEntrega,$fechaDesde,$fechaHasta);
+        $totalPedidosDomicilio = $this->Order->getTotalOrdersBetweenDatesAndDiaEntregaBarrios($idDiaEntrega,$fechaDesde,$fechaHasta);
+
+        $cPedidosConBolsonFamiliarSucursal = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForSucursal($idDiaEntrega, $fechaDesde, $fechaHasta, $oBolson->id);
+        
+        $totalBolsonesSucursal = 0;
+        if(count($cPedidosConBolsonFamiliarSucursal)>0) {
+            foreach($cPedidosConBolsonFamiliarSucursal as $oPedido) {
+                $totalBolsonesSucursal = $totalBolsonesSucursal + $oPedido->cant_bolson;
+            }
+        }
+
+        $cPedidosConBolsonFamiliarDomicilio = $this->Order->getTotalPedidosConBolsonesFamiliaresByDiaBolsonForDomicilio($idDiaEntrega, $fechaDesde, $fechaHasta, $oBolson->id);
+        
+        $totalBolsonesDomicilio = 0;
+        if(count($cPedidosConBolsonFamiliarDomicilio)>0) {
+            foreach($cPedidosConBolsonFamiliarDomicilio as $oPedido) {
+                $totalBolsonesDomicilio = $totalBolsonesDomicilio + $oPedido->cant_bolson;
+            }
+        }
+
+        $subtotalBolsones = $totalBolsonesSucursal + $totalBolsonesDomicilio;
+        
+        array_push($arrayInfoPedidosBox,array(
+            'tipoBolson' => $oBolson->name,
+            'totalSucursal' => $totalBolsonesSucursal,
+            'totalDomicilio' => $totalBolsonesDomicilio,
+            'subtotalBolsones' => $subtotalBolsones,
+        ));
+
+        $totalBolsones = $totalBolsones + $subtotalBolsones;
+        
+        $this->load->model('Extra');
+        $aExtras = $this->Extra->getActive();
+        $arrayInfoExtrasPedidosBox = [];
+        
+        foreach($aExtras as $oExtra){
+            $this->load->model('Order');
+            $totalSucursal = 0;
+            $totalDomicilio = 0;
+            $subtotalExtra = 0;
+            $totalSucursal = $this->Order->getTotalExtraByDiaBolsonByExtra($idDiaEntrega,$fechaDesde,$fechaHasta,$oExtra->id);
+            
+            $totalDomicilio = $this->Order->getTotalExtraADomicilioByDiaBolsonByExtra($idDiaEntrega,$fechaDesde,$fechaHasta,$oExtra->id);
+            
+            $subtotalExtra = $totalSucursal + $totalDomicilio;
+            array_push($arrayInfoExtrasPedidosBox,array(
+                'extraName' => $oExtra->name,
+                'totalSucursal' => $totalSucursal,
+                'totalDomicilio' => $totalDomicilio,
+                'subtotalExtra' => $subtotalExtra
+            ));
+        }        
+
+        $return[] = array(
+            'status' => self::OK_VALUE,
+            'totalPedidosSucursal' => $totalPedidosSucursal,
+            'totalPedidosDomicilio' => $totalPedidosDomicilio,
+            'aInfoPedidosByTipoBolson' => $arrayInfoPedidosBox,
+            'aInfoExtrasPedidosBox' => $arrayInfoExtrasPedidosBox,
+            //'totalPedidos' => 0, //TODO: LO DEJO EN 0. DEPSUES LO BORRO BIEN. En mainHelper se usa bastante
+            'totalBolsones' => $totalBolsones,
+            'diaBolson' => $oDiaBolson ?? null
+        );
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+/*
     public function getOrdersInfoFromDiaBolson(){
         $this->load->model('DiasEntregaPedidos');
         $idDiaEntrega = $this->input->post('idDiaEntrega', true);
@@ -735,10 +831,6 @@ class Api extends CI_Controller
             }
         }
 
-        /*$totalSucursal = $this->Order->getTotalOrdersByDiaBolsonAndTipoBolsonForSucursal($diaBolson,$idBolson);
-        $totalDomicilio = $this->Order->getTotalOrdersByDiaBolsonAndTipoBolsonForDomicilio($diaBolson,$idBolson);
-        */
-        
         $subtotalBolsones = $totalBolsonesSucursal + $totalBolsonesDomicilio;
         
         array_push($arrayInfoPedidosBox,array(
@@ -785,7 +877,8 @@ class Api extends CI_Controller
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
     }
-
+    */
+    
     public function getOrdersInfoFromFechaDesdeHasta($fechaDesde,$fechaHasta){
         $this->output->set_content_type('application/json');
         $this->load->model('Content');
@@ -9267,17 +9360,17 @@ class Api extends CI_Controller
         $this->output->set_content_type('application/json');
 
         $this->load->model('Order');
-        /* ESTA ES LA NUEVA. USARLA PERO CREO QUE ESTA MAL LA QUERY
+        
         $cOrders = $this->Order->getOrdersBetweenDatesAndDiaEntrega($fechaDesde,$fechaHasta,$idDiaEntrega);
-        */
-        if($idDiaEntrega>0){
+        
+        /*if($idDiaEntrega>0){
             $cOrders = $this->Order->getOrdersInDiaEntrega($idDiaEntrega);
         }else{
             $cOrders = $this->Order->getOrdersBetweenDates(
                 $fechaDesde,
                 $fechaHasta
             );    
-        }
+        }*/
 
         $this->createXlsClientsPhoneAndMail($cOrders);
         $fileName = "ClientesOrdenes.xls";
