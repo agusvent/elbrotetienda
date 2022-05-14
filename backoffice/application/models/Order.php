@@ -1322,29 +1322,30 @@ class Order extends CI_Model
         return $query->result();
     }
 
-    public function getOrdersFromConsultaPedidos($idDiaEntrega,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido){
+    public function getOrdersFromConsultaPedidos($idDiaEntrega,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido,$soloNoValidos){
         $this->db->select('o.id, o.client_name, o.email, o.phone, o.deliver_type, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, barrio.id as id_barrio, barrio.nombre as nombre_barrio, o.deliver_address as cliente_domicilio, o.deliver_extra as cliente_domicilio_extra, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, o.deliver_date, o.created_at, o.observaciones, o.monto_total, o.monto_pagado, o.id_estado_pedido, ep.descripcion as estadoPedido');
         $this->db->from('orders as o');
         $this->db->join('offices as sucursal', 'sucursal.id = o.office_id', 'left');
         $this->db->join('barrios as barrio', 'barrio.id = o.barrio_id', 'left');
         $this->db->join('pockets as bolson', 'bolson.id = o.pocket_id', 'left');
         $this->db->join('estados_pedidos as ep', 'ep.id_estado_pedido = o.id_estado_pedido', 'left');
-        //$where = "(o.deliver_type = 'SUC' or (o.deliver_type = 'DEL' and o.valid = 1))";        
-        $where = "o.valid = 1";        
+        if(isset($soloNoValidos) && $soloNoValidos==1) {
+            $where = "o.valid = 0";
+        } else {
+            $where = "o.valid = 1";        
+        }
         if(isset($nroPedido) && $nroPedido != "") {
             $where .= " AND o.id = ".$nroPedido;
         }else{
-            //SI FILTRO POR DIA DE ENTREGA NO PUEDO FILTRAR POR FECHA
             if(isset($idDiaEntrega) && $idDiaEntrega>0){
                 $where .= " AND o.id_dia_entrega = ".$idDiaEntrega;
-            }else{
-                if(isset($fechaDesde) && $fechaDesde != "") {
-                    $where .= " AND o.created_at >= '".$fechaDesde." 00:00:00'";
-                }
-                if(isset($fechaHasta) && $fechaHasta != "") {
-                    $where .= " AND o.created_at <= '".$fechaHasta." 23:59:59'";
-                }    
             }
+            if(isset($fechaDesde) && $fechaDesde != "") {
+                $where .= " AND o.created_at >= '".$fechaDesde." 00:00:00'";
+            }
+            if(isset($fechaHasta) && $fechaHasta != "") {
+                $where .= " AND o.created_at <= '".$fechaHasta." 23:59:59'";
+            }    
             if(isset($incluirCancelados) && $incluirCancelados==0){
                 //ID ESTADO = 4 ==> CANCELADO
                 $where .= " AND o.id_estado_pedido not in (4)";

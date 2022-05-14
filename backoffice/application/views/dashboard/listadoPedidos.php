@@ -14,6 +14,7 @@
             <input type="hidden" id="consultaFechaDesde" name="consultaFechaDesde" value="<?=$consultaFechaDesde ?? ''?>"/>
             <input type="hidden" id="consultaFechaHasta" name="consultaFechaHasta" value="<?=$consultaFechaHasta ?? ''?>"/>
             <input type="hidden" id="consultaIncluirCancelados" name="consultaIncluirCancelados" value="<?=$consultaIncluirCancelados ?? false?>"/>
+            <input type="hidden" id="consultaSoloNoValidos" name="consultaSoloNoValidos" value="<?=$consultaSoloNoValidos ?? false?>"/>
             <input type="hidden" id="consultaIdDiaEntrega" name="consultaIdDiaEntrega" value="<?=$consultaIdDiaEntrega ?? ''?>"/>
             <input type="hidden" id="consultaNombre" name="consultaNombre" value="<?=$consultaNombre ?? ''?>"/>
             <input type="hidden" id="consultaMail" name="consultaMail" value="<?=$consultaMail ?? ''?>"/>
@@ -100,12 +101,20 @@
                     </div>
                 </div>
                 <div class="row rowFiltroPedidos">
-                    <div class="col-xs-12 col-sm-12">
+                    <div class="col-xs-12 col-sm-6">
                         <label for="checkIncluirCancelados" class="form-check-label"><label>Incluir Cancelados</label></label>
-                        <?php if((isset($consultaIncluirCancelados) && $consultaIncluirCancelados=="true") || isset($consultaIncluirCancelados)==false){?>
+                        <?php if((isset($consultaIncluirCancelados) && $consultaIncluirCancelados=="true") || isset($consultaIncluirCancelados)==true){?>
                             <input id="checkIncluirCancelados" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs" checked>
                         <?php }else{ ?>
                             <input id="checkIncluirCancelados" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs">
+                        <?php }?>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <label for="checkSoloNoValidos" class="form-check-label"><label>Solo NO Válidos</label></label>
+                        <?php if((isset($consultaSoloNoValidos) && $consultaSoloNoValidos=="true") || isset($consultaSoloNoValidos)==true){?>
+                            <input id="checkSoloNoValidos" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs" checked>
+                        <?php }else{ ?>
+                            <input id="checkSoloNoValidos" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs">
                         <?php }?>
                     </div>
                 </div>
@@ -113,6 +122,7 @@
                     <div class="col-xs-6 col-sm-6">
                         Desde: 
                         <input type="date" class="form-control form-control-sm" name="filtroFechaDesde" id="filtroFechaDesde" value="<?=$consultaFechaDesde ?? date('Y-m-d');?>" max="<?=date('Y-m-d');?>" required>
+                        <button type="button" id="bBorrarFechasFiltro" class="btn btn-xs btn-primary btn-borrar-fechas marginTop10">Borrar Fechas</button>
                     </div>
                     <div class="col-xs-6 col-sm-6">
                     Hasta:&nbsp; 
@@ -145,4 +155,4 @@
 </div>
 <!-- Fin Modal Filtro de Pedidos-->
 
-<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=9187263"></script>
+<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=12341"></script>

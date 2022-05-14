@@ -8,6 +8,7 @@
             <input type="hidden" name="consultaFechaDesde" id="consultaFechaDesde" value="<?=$consultaFechaDesde?>"/>
             <input type="hidden" name="consultaFechaHasta" id="consultaFechaHasta" value="<?=$consultaFechaHasta?>"/>
             <input type="hidden" name="consultaIncluirCancelados" id="consultaIncluirCancelados" value="<?=$consultaIncluirCancelados?>"/>
+            <input type="hidden" name="consultaSoloNoValidos" id="consultaSoloNoValidos"  value="<?=$consultaSoloNoValidos ?? false?>"/>
             <input type="hidden" name="consultaIdDiaEntrega" id="consultaIdDiaEntrega" value="<?=$consultaIdDiaEntrega?>"/>
             <input type="hidden" name="consultaNombre" id="consultaNombre" value="<?=$consultaNombre?>"/>
             <input type="hidden" name="consultaNroPedido" id="consultaNroPedido" value="<?=$consultaNroPedido?>"/>

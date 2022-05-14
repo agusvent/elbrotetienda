@@ -17,6 +17,12 @@ $( document ).ready(function() {
         }else{
             incluirCancelados = 0;
         }
+        var soloNoValidos = $("#checkSoloNoValidos").prop("checked");
+        if(soloNoValidos){
+            soloNoValidos = 1;
+        }else{
+            soloNoValidos = 0;
+        }
         var nombre = $("#filtroNombre").val();
         var mail = $("#filtroMail").val();
         var fechaDesde = $("#filtroFechaDesde").val();
@@ -26,6 +32,7 @@ $( document ).ready(function() {
             'diaBolson': diaBolson,
             'idDiaEntrega':  idDiaEntrega,
             'incluirCancelados':  incluirCancelados,
+            'soloNoValidos': soloNoValidos,
             'nombre' : nombre,
             'mail' : mail,
             'fechaDesde': fechaDesde,
@@ -42,6 +49,10 @@ $( document ).ready(function() {
             ocultarLoader();
         });                
 
+    });
+    $("#bBorrarFechasFiltro").on("click",function(e){
+        $("#filtroFechaDesde").val("");
+        $("#filtroFechaHasta").val("");
     });
     
 });
@@ -113,6 +124,11 @@ function fEditarPedido(idPedido){
         $("#consultaIncluirCancelados").val(true);
     }else{
         $("#consultaIncluirCancelados").val(false);
+    }
+    if( $("#checkSoloNoValidos").prop("checked") ){
+        $("#consultaSoloNoValidos").val(true);
+    }else{
+        $("#consultaSoloNoValidos").val(false);
     }
     
     $("#consultaFechaDesde").val($("#filtroFechaDesde").val());
