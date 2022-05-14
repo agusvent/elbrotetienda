@@ -184,11 +184,12 @@ var mainHelper = {
         }).done(function(res) {
             var aInfoPedidosByTipoBolson = res[0].aInfoPedidosByTipoBolson;
             var aInfoExtrasPedidosBox = res[0].aInfoExtrasPedidosBox;
+            var aInfoExtrasTotalesBox = res[0].aInfoExtrasTotalesBox;
             var totalPedidosPuntoDeRetiro = res[0].totalPedidosSucursal;
             var totalPedidosDomicilio = res[0].totalPedidosDomicilio;
             var totalBolsones = res[0].totalBolsones;
             var diaBolson = res[0].diaBolson;
-            drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBolsones,diaBolson,fDesde,fHasta,totalPedidosPuntoDeRetiro,totalPedidosDomicilio); 
+            drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,aInfoExtrasTotalesBox,totalBolsones,diaBolson,fDesde,fHasta,totalPedidosPuntoDeRetiro,totalPedidosDomicilio); 
         });
     }
 
@@ -205,7 +206,7 @@ function checkInfoPedidosForm(){
     return msj;
 }
 
-function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBolsones,diaBolson,fechaDesde,fechaHasta,totalPedidosPuntoDeRetiro,totalPedidosDomicilio){
+function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,aInfoExtrasTotalesBox,totalBolsones,diaBolson,fechaDesde,fechaHasta,totalPedidosPuntoDeRetiro,totalPedidosDomicilio){
     var htmlPedidos = "";
     var totalPedidos = parseInt(totalPedidosPuntoDeRetiro) + parseInt(totalPedidosDomicilio);
     htmlPedidos += '<div class="row">';
@@ -248,6 +249,27 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBol
         htmlBolsonesAndExtras += '</div>';
     }
 
+    var htmlTotalesExtras = "";
+    for(var i=0;i<aInfoExtrasTotalesBox.length;i++){
+        htmlTotalesExtras += '<div class="row">';
+        htmlTotalesExtras += '<div class="col-sm-1">';
+        htmlTotalesExtras += '</div>';
+        htmlTotalesExtras += '<div class="col-sm-4 infoPedidosTableTitle">';
+        htmlTotalesExtras += aInfoExtrasTotalesBox[i]['nombre'];
+        htmlTotalesExtras += '</div>';
+        htmlTotalesExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
+        htmlTotalesExtras += aInfoExtrasTotalesBox[i]['totalSucursal'];
+        htmlTotalesExtras += '</div>';
+        htmlTotalesExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
+        htmlTotalesExtras += aInfoExtrasTotalesBox[i]['totalDomicilio'];
+        htmlTotalesExtras += '</div>';
+        htmlTotalesExtras += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
+        htmlTotalesExtras += aInfoExtrasTotalesBox[i]['totalExtras'];
+        htmlTotalesExtras += '</div>';
+        htmlTotalesExtras += '<div class="col-sm-1"></div>';
+        htmlTotalesExtras += '</div>';
+    }
+
     for(var i=0;i<aInfoExtrasPedidosBox.length;i++){
         htmlBolsonesAndExtras += '<div class="row">';
         htmlBolsonesAndExtras += '<div class="col-sm-1">';
@@ -266,6 +288,9 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,totalBol
         htmlBolsonesAndExtras += '</div>';
         htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
         htmlBolsonesAndExtras += '</div>';
+        if(aInfoExtrasPedidosBox[i]['idExtra']==1) {
+            htmlBolsonesAndExtras += htmlTotalesExtras;
+        }
     }   
     if(diaBolson!=null && diaBolson!=""){
         $("#lFiltradoPor").html("Bolson del "+diaBolson.descripcion);
