@@ -149,4 +149,4 @@
 </div>
 <!-- Fin Modal Editar Extras-->
 
-<script type="text/javascript" src="<?=assets();?>js/extrasHelper.js"></script>
+<script type="text/javascript" src="<?=assets();?>js/extrasHelper.js?v=234"></script>

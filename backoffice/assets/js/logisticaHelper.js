@@ -70,7 +70,7 @@ const logisticaHelper = {
             mostrarLoader();
             setTimeout(function(){
                 let idDiaEntregaAPreparar = $("#idDiaEntregaPedido").val();
-                $("#idDiaEntregaPedido").prop("disabled",true);
+                //$("#idDiaEntregaPedido").prop("disabled",true);
                 let data = {
                     'idDiaEntregaAPreparar': idDiaEntregaAPreparar
                 };
@@ -319,6 +319,9 @@ const logisticaHelper = {
                 alert("Debe seleccionar algún camión.");
             }
         });
+        $("#idDiaEntregaPedido").on("change",function(e){
+            $("#bPrepararLogisticaDiaEntrega").click();
+        })
     },
 
     init: function(){
@@ -542,7 +545,7 @@ function deleteRegistrosLogistica(idDiaEntrega){
 
 function deletePreparacionLogistica(){
     var idDiaEntrega = $("#idDiaEntregaPedido").val();
-    $("#idDiaEntregaPedido").prop("disabled",false);
+    //$("#idDiaEntregaPedido").prop("disabled",false);
     deleteRegistrosLogistica(idDiaEntrega);
     limpiarContenidoDivPuntosRetiro();
     limpiarContenidoDivBarrios();
@@ -758,19 +761,23 @@ function drawCamionesList(cCamiones){
     var html = "";
     var total = 0;
     for(var i=0;i<cCamiones.length;i++){
+        /*
         subtotal = parseInt(cCamiones[i].cantBolsonesFamiliares) + parseInt(cCamiones[i].cantBolsonesIndividuales);
         total = total + subtotal;
+        */
+       total = total + cCamiones[i].cantPedidosTotales;
 
         html += "<tr style='border-bottom:1px dotted #000000;line-height: 30px;'>";
         html += "<td style='text-align:center'><input type='checkbox' class='checkCamionToPrint' name='checkCamionToPrint"+cCamiones[i].idLogisticaCamion+"' id='checkCamionToPrint"+cCamiones[i].idLogisticaCamion+"' value='"+cCamiones[i].idLogisticaCamion+"'>";
         html += "<td id='tdNombreCamionLogistica"+cCamiones[i].idLogisticaCamion+"'>"+cCamiones[i].nombreCamion+"</td>";
-        html += "<td style='text-align:center;background-color:#cccccc'>"+subtotal+"</td>";
+        html += "<td style='text-align:center;background-color:#cccccc'>"+cCamiones[i].cantPedidosTotales+"</td>";
         
         html += "<td style='text-align:center'>"+cCamiones[i].cantBolsonesFamiliares+"</td>";
         html += "<td style='text-align:center'>"+cCamiones[i].cantBolsonesIndividuales+"</td>";
         
         html += "<td style='text-align:center'>"+cCamiones[i].cantBolsonesFamiliaresEspeciales+"</td>";
         html += "<td style='text-align:center'>"+cCamiones[i].cantBolsonesIndividualesEspeciales+"</td>";
+        html += "<td style='text-align:center'>"+cCamiones[i].cantPedidosTienda+"</td>";
         html += "<td style='text-align:center'><a href='javascript:viewPuntosYBarriosByCamion("+cCamiones[i].idLogisticaCamion+")'>";
         html += "<img src='../assets/img/eye.png' style='width:32px'/>";
         html += "</a></td>";
