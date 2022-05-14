@@ -754,7 +754,10 @@ class Api extends CI_Controller
         $this->load->model('Extra');
         $aExtras = $this->Extra->getActive();
         $arrayInfoExtrasPedidosBox = [];
-        
+
+        $subtotalExtrasSucursal = 0;
+        $subtotalExtrasDomicilio = 0;
+
         foreach($aExtras as $oExtra){
             $this->load->model('Order');
             $totalSucursal = 0;
@@ -763,15 +766,27 @@ class Api extends CI_Controller
             $totalSucursal = $this->Order->getTotalExtraByDiaBolsonByExtra($idDiaEntrega,$fechaDesde,$fechaHasta,$oExtra->id);
             
             $totalDomicilio = $this->Order->getTotalExtraADomicilioByDiaBolsonByExtra($idDiaEntrega,$fechaDesde,$fechaHasta,$oExtra->id);
-            
-            $subtotalExtra = $totalSucursal + $totalDomicilio;
+            $subtotalExtra = $totalSucursal + $totalDomicilio;            
             array_push($arrayInfoExtrasPedidosBox,array(
+                'idExtra' => $oExtra->id,
                 'extraName' => $oExtra->name,
                 'totalSucursal' => $totalSucursal,
                 'totalDomicilio' => $totalDomicilio,
                 'subtotalExtra' => $subtotalExtra
             ));
+
+            $subtotalExtrasSucursal = $subtotalExtrasSucursal + $totalSucursal;
+            $subtotalExtrasDomicilio = $subtotalExtrasDomicilio + $totalDomicilio;
         }        
+
+        $arrayInfoExtrasTotalesBox = [];
+        $totalExtras = $subtotalExtrasSucursal + $subtotalExtrasDomicilio;
+        array_push($arrayInfoExtrasTotalesBox,array(
+            'nombre' => "TOTAL EXTRAS",
+            'totalSucursal' => $subtotalExtrasSucursal,
+            'totalDomicilio' => $subtotalExtrasDomicilio,
+            'totalExtras' => $totalExtras,
+        ));
 
         $return[] = array(
             'status' => self::OK_VALUE,
@@ -779,6 +794,7 @@ class Api extends CI_Controller
             'totalPedidosDomicilio' => $totalPedidosDomicilio,
             'aInfoPedidosByTipoBolson' => $arrayInfoPedidosBox,
             'aInfoExtrasPedidosBox' => $arrayInfoExtrasPedidosBox,
+            'aInfoExtrasTotalesBox' => $arrayInfoExtrasTotalesBox,
             //'totalPedidos' => 0, //TODO: LO DEJO EN 0. DEPSUES LO BORRO BIEN. En mainHelper se usa bastante
             'totalBolsones' => $totalBolsones,
             'diaBolson' => $oDiaBolson ?? null
