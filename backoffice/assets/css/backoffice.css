@@ -581,6 +581,11 @@ input[name="dataTo"] {
     height:30px;
 }
 
+.btn-borrar-fechas{
+    padding: 8px 8px 8px 8px!important;
+    font-size: 12px!important;
+}
+
 .extra-caja-monto{
     font-size:11px;
 }  

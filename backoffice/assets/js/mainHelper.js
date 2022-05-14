@@ -55,6 +55,10 @@ var mainHelper = {
         $("#bPreCrearNuevoDiaEntrega").on("click",function(e){
             crearNuevoDiaDeEntrega();
         });
+        $("#bBorrarFechasFiltro").on("click",function(e){
+            $("#dataFrom").val("");
+            $("#dataTo").val("");
+        });
     },
 
     initOrdersTable: function() {

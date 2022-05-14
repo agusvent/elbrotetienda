@@ -7,6 +7,7 @@
         <br />
         Hasta:&nbsp; 
         <input type="date" class="form-control form-control-sm" name="dataTo" id="dataTo" value="<?=$_SESSION['dataTo'] ?? date('Y-m-d');?>" max="<?=date('Y-m-d');?>">        
+        <button type="button" id="bBorrarFechasFiltro" class="btn btn-xs btn-primary btn-borrar-fechas">Borrar Fechas</button>
         <br />        
         <div class="marginTop10">
             <div class="col-xs-12">
