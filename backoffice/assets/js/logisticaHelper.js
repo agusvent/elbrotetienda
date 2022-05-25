@@ -962,13 +962,14 @@ function asociarACamion(idLogistica){
 
 function drawCamionesDisponiblesList(cCamiones){
     var html = "";
-    var totalBolsonesCamion = 0;
+    var total = 0;
     for(var i=0;i<cCamiones.length;i++){
-        totalBolsonesCamion = parseInt(cCamiones[i].cantBolsonesFamiliares) + parseInt(cCamiones[i].cantBolsonesIndividuales);
+        //totalBolsonesCamion = parseInt(cCamiones[i].cantBolsonesFamiliares) + parseInt(cCamiones[i].cantBolsonesIndividuales);
+        total = total + cCamiones[i].cantPedidosTotales;
         html += "<tr style='border-bottom:1px dotted #000000;line-height: 30px;'>";
         html += "<td style='text-align:center; vertical-align: top;padding-top: 5px;'><input class='form-check-input' type='radio' name='radioCamionesDisponibles' id='radioCamionDisponible"+cCamiones[i].idLogisticaCamion+"' value='"+cCamiones[i].idLogisticaCamion+"'></td>";
         html += "<td id='tdNombreCamionLogistica"+cCamiones[i].idLogisticaCamion+"'>"+cCamiones[i].nombreCamion+"</td>";
-        html += "<td style='text-align:center;background-color:#cccccc'>"+totalBolsonesCamion+"</td>";
+        html += "<td style='text-align:center;background-color:#cccccc'>"+cCamiones[i].cantPedidosTotales+"</td>";
         html += "</tr>";
     }
     html += "</ul>";

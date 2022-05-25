@@ -171,6 +171,9 @@ $(document).ready(function() {
     });
     
     $("#bEditarBarriosHabilitados").on("click",function(e) {
+        if(arrayBarriosHabilitados.length==0){
+            arrayBarriosHabilitados = null;
+        }
         mostrarLoader();
         e.preventDefault();
         let data = {
@@ -189,17 +192,39 @@ $(document).ready(function() {
     });
 
     $("#seleccionarTodosBarriosHabilitados").on("change",function(e){
-        let todosHabilitados = $(this).is(':checked') ? 1 : 0;
-        if( todosHabilitados == 1){
-            $('input[id^="diaEntregaBarrio"]').each(function(index){
-                $(this).prop("checked",true);
-                var oBarrio = {
-                    "idBarrio": parseInt($(this).attr("attr-barrio-id"))
-                };    
-                arrayBarriosHabilitados.push(oBarrio)
-            });
+        let todosHabilitados = $(this).is(':checked');
+        $('input[id^="diaEntregaBarrio"]').each(function(index){
+            $(this).prop("checked",todosHabilitados);
+            var oBarrio = {
+                "idBarrio": parseInt($(this).attr("attr-barrio-id"))
+            };    
+            if(todosHabilitados) {
+                arrayBarriosHabilitados.push(oBarrio);
+            }
+        });
+        if(!todosHabilitados) {
+            arrayBarriosHabilitados = [];
         }
     });
+
+    $("#editarSeleccionarTodosBarriosHabilitados").on("change",function(e){
+        let todosHabilitados = $(this).is(':checked');
+        arrayBarriosHabilitados = [];
+        $('input[id^="diaEntregaEdicionBarrio"]').each(function(index){
+            $(this).prop("checked",todosHabilitados);
+            var oBarrio = {
+                "idBarrio": parseInt($(this).attr("attr-barrio-id"))
+            };    
+            if(todosHabilitados) {
+                arrayBarriosHabilitados.push(oBarrio);
+            }
+        });
+    });
+
+    $("#modalCrearDiaEntrega").on("hidden.bs.modal", function () {
+        limpiarFormularioCrearNuevoDiaEntrega();
+    });
+        
 });
 
 function updateDiaEntregaBarrio(elem) {
@@ -414,6 +439,24 @@ function limpiarFormularioCrearNuevoDiaEntrega(){
     $("#bCrearNuevoDiaEntrega").prop("disabled",false);
     $("#diaEntregaBarriosList").html("");
     $("#newDiaBarriosHabilitados").hide();
+    $("#diaEntregaDeliveryStatus").prop("checked",false);
+    $("#diaEntregaDeliveryStatus").parent().removeClass("btn-success"); 
+    $("#diaEntregaDeliveryStatus").parent().addClass("btn-light off");
+    $("#diaEntregaPuntoDeRetiroStatus").prop("checked",false);
+    $("#diaEntregaPuntoDeRetiroStatus").parent().removeClass("btn-success"); 
+    $("#diaEntregaPuntoDeRetiroStatus").parent().addClass("btn-light off");
+    $("#diaEntregaAceptaBolsones").prop("checked",false);
+    $("#diaEntregaAceptaBolsones").parent().removeClass("btn-success"); 
+    $("#diaEntregaAceptaBolsones").parent().addClass("btn-light off");
+    $("#diaEntregaCargaPedidosFijos").prop("checked",false);
+    $("#diaEntregaCargaPedidosFijos").parent().removeClass("btn-success"); 
+    $("#diaEntregaCargaPedidosFijos").parent().addClass("btn-light off");
+    $("#seleccionarTodosBarriosHabilitados").prop("checked",false);
+    $("#seleccionarTodosBarriosHabilitados").parent().removeClass("btn-success"); 
+    $("#seleccionarTodosBarriosHabilitados").parent().addClass("btn-light off");
+    $("#crearDiaEntregaImagenBolson").val("");
+    $("#rowImagenBolson").hide();
+    updateModalSize();
 }
 
 function updateModalSize() {

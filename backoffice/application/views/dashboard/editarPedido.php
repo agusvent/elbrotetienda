@@ -8,7 +8,7 @@
             <input type="hidden" name="consultaFechaDesde" id="consultaFechaDesde" value="<?=$consultaFechaDesde?>"/>
             <input type="hidden" name="consultaFechaHasta" id="consultaFechaHasta" value="<?=$consultaFechaHasta?>"/>
             <input type="hidden" name="consultaIncluirCancelados" id="consultaIncluirCancelados" value="<?=$consultaIncluirCancelados?>"/>
-            <input type="hidden" name="consultaSoloNoValidos" id="consultaSoloNoValidos"  value="<?=$consultaSoloNoValidos ?? false?>"/>
+            <input type="hidden" name="consultaSoloNoValidos" id="consultaSoloNoValidos"  value="<?=$consultaSoloNoValidos?>"/>
             <input type="hidden" name="consultaIdDiaEntrega" id="consultaIdDiaEntrega" value="<?=$consultaIdDiaEntrega?>"/>
             <input type="hidden" name="consultaNombre" id="consultaNombre" value="<?=$consultaNombre?>"/>
             <input type="hidden" name="consultaNroPedido" id="consultaNroPedido" value="<?=$consultaNroPedido?>"/>
@@ -24,7 +24,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-5">
                     <select class="form-control" name="idDiaEntregaPedido" id="idDiaEntregaPedido" required>
-                        <option value="-1">Seleccione</option>
+                        <option value="-2">Seleccione</option>
+                        <!-- se controla con -2 porque existe el dia de entrega -1 y solo puede aparecer en el editar pedido porque es el dia SIN FECHA SISTEMA -->
                         <?php foreach($cDiasEntrega as $diaEntrega): ?>
                             <?php if($diaEntrega->id_dia_entrega == $pedido->id_dia_entrega) { ?>
                                 <option value="<?=$diaEntrega->id_dia_entrega;?>" selected>
@@ -287,7 +288,7 @@
                         <?php } ?>
                     <?php } ?>
                     <?php if((isset($pedido->id_pedido_original) && $pedido->id_pedido_original>0)){?>
-                        <label style="font-size:12px">(No se puede fijar ya que fijado está el pedido original #<?=$pedido->id_pedido_original?>)</label>
+                        <label style="font-size:12px">(No se puede fijar porque este pedido viene de uno fijo: #<?=$pedido->id_pedido_original?>)</label>
                     <?php }?>
                 </div>
             </div>
@@ -318,4 +319,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=192348"></script>
+<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=971382"></script>

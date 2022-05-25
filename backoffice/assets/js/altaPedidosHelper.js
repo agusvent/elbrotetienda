@@ -108,12 +108,15 @@ const altaPedidosHelper = {
                 $("#divDireccion").hide();
                 $("#divCostoEnvio").hide();
                 $("#divPuntosRetiro").show();
+                $("#idBarrio").val(-1);
             }else if( $(this).val()==2 ){
                 //SI ES DOMICILIO
                 $("#divPuntosRetiro").hide();
                 $("#divDireccion").show();
                 $("#divBarrios").show();
                 $("#divCostoEnvio").show();
+                $("#idSucursal").val(-1);
+                recalcularCostoEnvio($("#idBarrio"));
             }else{
                 $("#divPuntosRetiro").hide();
                 $("#divBarrios").hide();
@@ -305,7 +308,7 @@ function armarHtmlItemExtra(oExtra){
         }
     }
     htmlExtraItem += "</select>";
-    htmlExtraItem += "&nbsp;<label for='selExtra"+oExtra.id+"' class='form-check-label'>"+oExtra.name+"</label>";
+    htmlExtraItem += "&nbsp;<label for='selExtra"+oExtra.id+"' class='form-check-label'>"+oExtra.nombre_corto+"</label>";
     htmlExtraItem += "<label class='form-check-label' style='float:right'>$"+oExtra.price+"</label>";
     htmlExtraItem += "<input type='hidden' id='extraPrice"+oExtra.id+"' value='"+oExtra.price+"'/>"; 
     htmlExtraItem += "</li>";    
@@ -565,7 +568,10 @@ function recalcularCostoEnvio(select) {
     let costoEnvioAnterior = parseInt($('option:selected', select).attr('data-barrio-costoEnvioAnterior'));
     $("#altaPedidoCostoEnvio").val(costoEnvio);
     let subtotal = parseInt($("#lSubtotal").html());
-    subtotal = subtotal - costoEnvioAnterior + costoEnvio;
+    if(subtotal>0){
+        subtotal = subtotal - costoEnvioAnterior;
+    }
+    subtotal = subtotal + costoEnvio;
     $("#lSubtotal").html(subtotal)
     calcularDebe();
     $("#idBarrio option").attr('data-barrio-costoEnvioAnterior',costoEnvio);   

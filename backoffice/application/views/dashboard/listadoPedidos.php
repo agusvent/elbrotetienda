@@ -103,7 +103,7 @@
                 <div class="row rowFiltroPedidos">
                     <div class="col-xs-12 col-sm-6">
                         <label for="checkIncluirCancelados" class="form-check-label"><label>Incluir Cancelados</label></label>
-                        <?php if((isset($consultaIncluirCancelados) && $consultaIncluirCancelados=="true") || isset($consultaIncluirCancelados)==true){?>
+                        <?php if(isset($consultaIncluirCancelados) && $consultaIncluirCancelados=="true"){?>
                             <input id="checkIncluirCancelados" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs" checked>
                         <?php }else{ ?>
                             <input id="checkIncluirCancelados" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs">
@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <label for="checkSoloNoValidos" class="form-check-label"><label>Solo NO Válidos</label></label>
-                        <?php if((isset($consultaSoloNoValidos) && $consultaSoloNoValidos=="true") || isset($consultaSoloNoValidos)==true){?>
+                        <?php if(isset($consultaSoloNoValidos) && $consultaSoloNoValidos=="true"){?>
                             <input id="checkSoloNoValidos" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs" checked>
                         <?php }else{ ?>
                             <input id="checkSoloNoValidos" class="form-check-input" type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" data-size="xs">

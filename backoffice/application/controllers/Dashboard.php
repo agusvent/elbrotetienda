@@ -308,7 +308,7 @@ class Dashboard extends CI_Controller
         $this->load->model('DiasEntregaPedidos');
 
         $pedido = $this->Order->getById($idPedido);
-
+        $oDiaEntregaPedido = $this->DiasEntregaPedidos->getById($pedido->id_dia_entrega);
         $bolson = null;
         $costoEnvio = 0;
         $tieneBolson = 0;
@@ -322,6 +322,18 @@ class Dashboard extends CI_Controller
             $costoEnvio = $barrio->costo_envio;
         }
         
+        $cDiasEntrega = $this->DiasEntregaPedidos->getAllActivos();
+        $diaEntregaPedidoIsActivo = false;
+        foreach($cDiasEntrega as $diaEntrega) {
+            if($diaEntrega->id_dia_entrega == $pedido->id_dia_entrega) {
+                $diaEntregaPedidoIsActivo = true;
+            }
+        }
+
+        if ( !$diaEntregaPedidoIsActivo ) {
+            array_push($cDiasEntrega, $oDiaEntregaPedido);
+        }
+
         $this->renderHead('EBO - Editar Pedidos');
         $this->load->view('dashboard/editarPedido',[
             'pedido' => $pedido,
@@ -346,7 +358,7 @@ class Dashboard extends CI_Controller
             'diaBolson' => $this->Content->get("confirmation_label"),
             'tieneBolson' => $tieneBolson,
             'cCupones' => $this->Cupones->getAllActivos(),
-            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()]
+            'cDiasEntrega' => $cDiasEntrega]
         );
         $this->load->view('dashboard/footer');
     }    

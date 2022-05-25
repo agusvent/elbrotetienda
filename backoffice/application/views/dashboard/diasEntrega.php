@@ -104,7 +104,7 @@
 </div>
 <!-- Fin Modal Crear Dia de Entrega-->
 
-<!-- Modal Crear Dia de Entrega-->
+<!-- Modal Editar Imagen Dia Entrega-->
 <div class="modal fade" id="modalEditarImagenDia" tabindex="-1" role="dialog" aria-labelledby="modalEditarImagenDia" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -132,7 +132,7 @@
         </div>
     </div>
 </div>
-<!-- Fin Modal Crear Dia de Entrega-->
+<!-- Fin Modal Editar Imagen Dia Entrega-->
 
 <!-- Modal Editar Barrios-->
 <div class="modal fade" id="modalEditarBarrios" tabindex="-1" role="dialog" aria-labelledby="modalEditarBarrios" aria-hidden="true">
@@ -146,7 +146,10 @@
             </div>
             <div class="modal-body modal-body-dia-entrega">
                 <div id="editarBarriosHabilitados">
-                    <h4>Barrios Habilitados</h4>
+                <div style="display: flex;flex-direction: row;align-items: center;justify-content: space-between;">
+                        <h4>Barrios Habilitados</h4>
+                        <span><input id='editarSeleccionarTodosBarriosHabilitados' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs"><label for="editarSeleccionarTodosBarriosHabilitados" style="font-size:12px;">Seleccionar Todos</label></span>
+                    </div>                    
                     <div id="editarBarriosHabilitadosList" class="diaEntregaBarriosList">
                     </div>
                 </div>
@@ -162,4 +165,4 @@
 <!-- Fin Modal Editar Barrios-->
 
 <input type="hidden" id="idDiaEntregaEditar" value="0">
-<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=63424"></script>
+<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=97263"></script>

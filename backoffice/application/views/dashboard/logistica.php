@@ -448,4 +448,4 @@
 <input type="hidden" id="idDiaEntregaSeleccionado" value="-1"/>
 <input type="hidden" id="idEstadoLogisticaDiaEntrega" value="-1"/>
 
-<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=123413"></script>
+<script type="text/javascript" src="<?=assets();?>js/logisticaHelper.js?v=4123"></script>
