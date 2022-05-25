@@ -389,7 +389,13 @@ function loadDiasEntregaTable() {
             html +=" </span>";
             html +=" </div>";
             html +=" <div class='cupones-caja-info'> ";
-            html +=" <div id='imagenDia"+cDiasEntrega[i].id_dia_entrega+"' class='diasEntrega-inner-caja alineado-izq'>";
+
+            var showEditImagenBolson = "";
+            if(cDiasEntrega[i].aceptaBolsones == 0) {
+                showEditImagenBolson = "style='visibility:hidden'";
+            }
+
+            html +=" <div id='imagenDia"+cDiasEntrega[i].id_dia_entrega+"' class='diasEntrega-inner-caja alineado-izq' "+showEditImagenBolson+">";
 
             let imagen = "not-available.png";
             let rutaImagen = "../assets/img/";
