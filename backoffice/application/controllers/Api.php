@@ -3927,19 +3927,20 @@ class Api extends CI_Controller
         $preCollectionIdBarriosHabilitados = $this->input->post('arrayBarriosHabilitados', true);
         $cBarriosHabilitados = [];
         $editOK = false;
-
-        if(isset($preCollectionIdBarriosHabilitados) && count($preCollectionIdBarriosHabilitados)>0) {
-            $this->DiasEntregaBarrios->deleteAllBarrios($idDiaEntrega);
+        
+        $this->DiasEntregaBarrios->deleteAllBarrios($idDiaEntrega);
+        //print_r(gettype($preCollectionIdBarriosHabilitados));
+        if(gettype($preCollectionIdBarriosHabilitados)=="array"){
             foreach($preCollectionIdBarriosHabilitados as $barrio){
                 array_push($cBarriosHabilitados,array(
                     'idBarrio' => $barrio['idBarrio']
-                ));
+                )); 
             }
             foreach($cBarriosHabilitados as $oIdBarrio) {
                 $this->DiasEntregaBarrios->add($idDiaEntrega, $oIdBarrio["idBarrio"]);
             }                
-            $editOK = true;
         }
+        $editOK = true;
 
         $return['success'] = $editOK;    
         $this->output->set_status_header(200);
@@ -6448,6 +6449,7 @@ class Api extends CI_Controller
             $html = "";
             $cantTotalBolsones = 0;
             $cantTotalEspeciales = 0;
+            $cantTotalEspecialesIndividuales = 0;
             $arrayTotalesExtrasPuntosRetiro = [];
             $arrayTotalesExtrasBarrios = [];
             $htmlInitTable = "<table style='border-collapse:collapse;border:1px solid #FF0000;width:100%;font-family:Arial;font-size:10px;'><tbody>";
@@ -6457,8 +6459,8 @@ class Api extends CI_Controller
 
             $cabeceraHTML .= "<tr>";
             $cabeceraHTML .= "<td height='90' style='height:90px;width:130px;text-align:center;border:1px solid #000000;background-color:#000000;color:#FFFFFF;'><b>".$oLogisticaCamion->camion."</b></td>";
-            $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Bolsones</td>";
-            $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Especiales</td>";
+            $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Bolson Familiar (8kg)</td>";
+            $cabeceraHTML .= "<td text-rotate='90' style='width:40px;text-align:center;border:1px solid #000000;'>Esp. Familiares</td>";
             
             $contExtra = 0;            
             foreach($cExtras as $oExtra){
@@ -6475,6 +6477,10 @@ class Api extends CI_Controller
                     $backgroundColor = "background-color:#FFFFFF";
                 }
                 $cabeceraHTML .= "<td valign='middle' text-rotate='90' style='width:30px;max-width:30px;min-width:30px;text-align:center;border:1px solid #000000;".$backgroundColor."'>".$extraName."</td>";
+                if($oExtra->id == 1) {
+                    //SI ES EL BOLSON INDIVIDUAL, AL LADO VA LA CABECERA DE LA COLUMNA ESPCIALES INDIVIDUALES
+                    $cabeceraHTML .= "<td valign='middle' text-rotate='90' width='30' style='width:30px;text-align:center;border:1px solid #000000;'>Esp. Individual</td>";
+                }
                 $contExtra++;
             }
 
@@ -6516,6 +6522,11 @@ class Api extends CI_Controller
                         $contExtra++;
 
                         $html .= "<td style='text-align:center;border:1px solid #000000;".$backgroundColor."'><b>".$totalExtras."</b></td>";
+                        if($oExtra->id == 1) {
+                            //SI ES EL BOLSON INDIVIDUAL, ACA PONGO LA CANTIDAD TOTAL DE ESPECIALES INDIVIDUALES
+                            $cantTotalEspecialesIndividuales = $cantTotalEspecialesIndividuales + $oLogistica->cantidad_bolsones_individuales_especiales;
+                            $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$oLogistica->cantidad_bolsones_individuales_especiales."</b></td>";
+                        }
                     }     
                     $html .= "</tr>";
     
@@ -6549,6 +6560,11 @@ class Api extends CI_Controller
                         ));
             
                         $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$totalExtras."</b></td>";
+                        if($oExtra->id == 1) {
+                            //SI ES EL BOLSON INDIVIDUAL, ACA PONGO LA CANTIDAD TOTAL DE ESPECIALES INDIVIDUALES
+                            $cantTotalEspecialesIndividuales = $cantTotalEspecialesIndividuales + $oLogistica->cantidad_bolsones_individuales_especiales;
+                            $html .= "<td style='text-align:center;border:1px solid #000000;'><b>".$oLogistica->cantidad_bolsones_individuales_especiales."</b></td>";
+                        }
                     }     
                     $html .= "</tr>";
                 }
@@ -6575,6 +6591,9 @@ class Api extends CI_Controller
                 }
 
                 $html .= "<td style='text-align:center;border:1px solid #000000;background-color:#000000;color:#FFFFFF;'><b>".$total."</b></td>";
+                if($cExtras[$i]->id == 1) {
+                    $html .= "<td style='text-align:center;border:1px solid #000000;background-color:#000000;color:#FFFFFF;'><b>".$cantTotalEspecialesIndividuales."</b></td>";
+                }
             }
             $html .= "</tr>";
             $html .= "</tbody></table>";

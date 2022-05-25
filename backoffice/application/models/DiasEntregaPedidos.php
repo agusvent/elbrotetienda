@@ -81,6 +81,7 @@ class DiasEntregaPedidos extends CI_Model
         $this->db->where('id_dia_entrega', $id);
         /*LO PASAMOS A ESTADO CERRADO*/
         $this->db->set('id_estado_logistica', 3);
+        $this->db->set('archivado', 1);
         $this->db->update('dias_entrega_pedidos');
 
         return true;

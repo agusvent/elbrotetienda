@@ -109,7 +109,7 @@ class Extra extends CI_Model
 
     public function getAllVisiblesInSucursal() 
     {
-        $this->db->select('id, name, price, imagen, stock_disponible, stock_ilimitado, orden, orden_listados');
+        $this->db->select('id, name, price, imagen, stock_disponible, stock_ilimitado, orden, orden_listados, nombre_corto');
         $this->db->from('extra_products');
         /*$this->db->where('active', 1);
         $this->db->where('visible_sucursal', 1);
@@ -126,7 +126,7 @@ class Extra extends CI_Model
 
     public function getAllVisiblesInDomicilio() 
     {
-        $this->db->select('id, name, price, imagen, stock_disponible, stock_ilimitado, orden, orden_listados');
+        $this->db->select('id, name, price, imagen, stock_disponible, stock_ilimitado, orden, orden_listados, nombre_corto');
         $this->db->from('extra_products as ep');
         /*$this->db->where('active', 1);
         $this->db->where('visible_domicilio', 1);

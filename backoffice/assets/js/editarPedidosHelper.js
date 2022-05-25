@@ -129,6 +129,7 @@ const editarPedidosHelper = {
         $("#bGrabarEditar").on("click",function(e){
             e.preventDefault();
             mostrarLoader();
+            
             $("#bGrabarEditar").prop("disabled",true);
             var idPedido = $("#editarPedidoIdPedido").val();
             var idDiaEntrega = $("#idDiaEntregaPedido").val();
@@ -169,7 +170,6 @@ const editarPedidosHelper = {
                     extras.push(oExtra);
                 }
             });
-            console.log(extras);
             var mensajeForm = checkEditarPedidoForm();            
             if(mensajeForm!=""){
                 $("#bGrabarEditar").prop("disabled",false);
@@ -320,6 +320,12 @@ function checkEditarPedidoForm(){
     var idBolson = $("#editarPedidoIdBolson").val();
     var montoPagado = $("#editarPedidoMontoPagado").val();
     var idEstadoPedido = $("#editarPedidoIdEstadoPedido").val();
+    var idDiaEntrega = $("#idDiaEntregaPedido").val();
+
+    if(idDiaEntrega==-2) {
+        mensaje += "<p>Debe seleccionar un dia de entrega.</p>";
+    }
+
     if(nombre==""){
         mensaje += "<p>Debe ingresar el nombre del cliente.</p>";
     }
@@ -491,7 +497,7 @@ function editarPedidoArmarHtmlItemExtra(oExtra){
         }
     }
     htmlExtraItem += "</select>";
-    htmlExtraItem += "&nbsp;<label for='selExtra"+oExtra.id+"' class='form-check-label'>"+oExtra.name+"</label>";
+    htmlExtraItem += "&nbsp;<label for='selExtra"+oExtra.id+"' class='form-check-label'>"+oExtra.nombre_corto+"</label>";
     htmlExtraItem += "<label class='form-check-label' style='float:right'>$"+oExtra.price+"</label>";
     htmlExtraItem += "<input type='hidden' id='editarPedidoExtraPrice"+oExtra.id+"' value='"+oExtra.price+"'/>"; 
     htmlExtraItem += "</li>";    
