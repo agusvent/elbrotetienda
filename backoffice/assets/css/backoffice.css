@@ -467,6 +467,13 @@ input[name="dataTo"] {
     color: #2f00ff;
 }
 
+.extras-caja-info .botonera{
+    display: flex;
+    width: 100%;
+    align-content: space-between;
+    justify-content: space-around;
+}
+
 .cupones-caja{
     display: inline-block;
     width: 30%;

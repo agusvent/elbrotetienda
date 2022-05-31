@@ -417,20 +417,20 @@ function editExtra(){
         if(seEditaImagen){
             var file_data = $('#editExtraImageForm-image').prop('files')[0];   
             var fileExtension = $('#editExtraImageForm-image').val().substr(($('#editExtraImageForm-image').val().lastIndexOf('.') + 1));
-            var form_data = new FormData();                  
-            form_data.append('file', file_data);        
+            var form_data = new FormData();
+            form_data.append('file', file_data);
             form_data.append('idExtra', extraId);
             form_data.append('fileExtension', fileExtension);
             $.ajax({
                 url: ajaxURL + 'extras/uploadExtraImage', // point to server-side PHP script 
-                dataType: 'text',  // what to expect back from the PHP script, if anything
+                dataType: 'text', // what to expect back from the PHP script, if anything
                 cache: false,
                 contentType: false,
                 processData: false,
-                data: form_data,                         
+                data: form_data,
                 type: 'post',
                 async:false,
-                success: function(res){
+                success: function(res){
                     window.location.reload(true); 
                     return Swal.fire('Edicion de Producto Extra', 'Producto editado con éxito.', 'success');
                 }
@@ -440,4 +440,18 @@ function editExtra(){
             return Swal.fire('Edicion de Producto Extra', 'Producto editado con éxito.', 'success');
         }
     }
+}
+
+function viewInTienda(idProducto){
+    window.open("https://elbrotetienda.com/#tienda-"+idProducto);    
+}
+
+function copyLink(idProducto){
+    var url = `https://elbrotetienda.com/#tienda-${idProducto}`;
+    const elem = document.createElement('textarea');
+    elem.value = url;
+    document.body.appendChild(elem);
+    elem.select();
+    document.execCommand('copy');
+    document.body.removeChild(elem);
 }
