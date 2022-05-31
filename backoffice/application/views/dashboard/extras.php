@@ -40,8 +40,16 @@
                         <b>#<?=$extra->orden_listados;?></b> 
                     </div>         
                     <div class="extras-caja-info"> 
-                        <a href="javascript:viewImagenExtra(<?=$extra->id;?>);">Ver Imagen</a> &nbsp;
-                        <span style="float:right"><a href="javascript:openEditExtra(<?=$extra->id;?>);">Editar</a></span>
+                        <div class="botonera">
+                            <a href="javascript:viewImagenExtra(<?=$extra->id;?>);">Ver Imagen</a>
+                            <span>
+                                <a href="javascript:viewInTienda(<?=$extra->id;?>);">Ver en Tienda</a>
+                                <a href="javascript:copyLink(<?=$extra->id;?>);">
+                                    <img src="<?=assets();?>img/copy-link.png" width="16"/>
+                                </a>
+                            </span>
+                            <a href="javascript:openEditExtra(<?=$extra->id;?>);">Editar</a>
+                        </div>
                     </div>         
                     
                 </div>
@@ -149,4 +157,4 @@
 </div>
 <!-- Fin Modal Editar Extras-->
 
-<script type="text/javascript" src="<?=assets();?>js/extrasHelper.js?v=234"></script>
+<script type="text/javascript" src="<?=assets();?>js/extrasHelper.js?v=1876111"></script>

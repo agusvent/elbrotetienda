@@ -59,6 +59,19 @@ var mainHelper = {
             $("#dataFrom").val("");
             $("#dataTo").val("");
         });
+        $('body').on('change', "input[id='filtroFechasSwitch']", function(e) {
+            e.preventDefault();
+            let fechasEnabled = $(this).is(':checked');
+            if(!fechasEnabled) {
+                $("#filtroFechasSwitch").attr("data-fecha-prev-desde", $("#dataFrom").val());
+                $("#filtroFechasSwitch").attr("data-fecha-prev-hasta", $("#dataTo").val());
+                $("#dataFrom").val("");
+                $("#dataTo").val("");
+            } else {
+                $("#dataFrom").val($("#filtroFechasSwitch").attr("data-fecha-prev-desde"));
+                $("#dataTo").val($("#filtroFechasSwitch").attr("data-fecha-prev-hasta"));
+            }
+        });
     },
 
     initOrdersTable: function() {

@@ -4,11 +4,11 @@ let idTipoPedidoSelected = 0;
 let pedidoSoloExtras = false;
 
 $(window).on("load", function () {
-    /*var urlHash = window.location.href.split("#")[1];
+    var urlHash = window.location.href.split("#")[1];
     var section = $("#"+urlHash);
     $('html, body').animate({
-        scrollTop: section.offset().top-90
-    }, 500);*/
+        scrollTop: section.offset().top-200
+    }, 500);
 });
 
 $(document).ready(function() {
@@ -402,7 +402,7 @@ function drawMarketDiferencal(cExtras){
     if(cExtras!=null && cExtras.length>0){
         var html = '';
         for(var i=0;i<cExtras.length;i++){
-            html += '<div id="producto2-'+cExtras[i].id+'" class="custom-col-5 mb-40">';
+            html += '<div id="tienda-'+cExtras[i].id+'" class="custom-col-5 mb-40">';
                 html += '<div class="product-wrap-2 mb-25 scroll-zoom">';
                     html += '<div class="product-img">';
                         html += '<div>';
@@ -444,7 +444,7 @@ function drawMarket(cExtras){
     if(cExtras!=null && cExtras.length>0){
         var html = '';
         for(var i=0;i<cExtras.length;i++){
-            html += '<div id="producto2-'+cExtras[i].id+'" class="custom-col-5 mb-40">';
+            html += '<div id="tienda-'+cExtras[i].id+'" class="custom-col-5 mb-40">';
                 html += '<div class="product-wrap-2 mb-25 scroll-zoom">';
                     html += '<div class="product-img">';
                         html += '<div>';
@@ -935,7 +935,7 @@ function refreshCart(){
             htmlCarrito += '</td>';
             htmlCarrito += '<td class="product-subtotal">$'+aExtras[i].total+'</td>';
             htmlCarrito += '<td class="product-remove">';
-            htmlCarrito += '<a href="javascript:scrollToTargetAdjusted(\'producto2-'+aExtras[i].idExtra+'\');"><i class="fa fa-pencil"></i></a>';
+            htmlCarrito += '<a href="javascript:scrollToTargetAdjusted(\'tienda-'+aExtras[i].idExtra+'\');"><i class="fa fa-pencil"></i></a>';
             htmlCarrito += '<a href="javascript:deleteProduct('+aExtras[i].idExtra+')"><i class="fa fa-times"></i></a>';
             htmlCarrito += '</td>';
             htmlCarrito += '</tr>';
@@ -950,7 +950,7 @@ function refreshCart(){
             htmlCarritoMobile += '</td>';
             htmlCarritoMobile += '<td class="product-subtotal">$'+aExtras[i].total+'</td>';
             htmlCarritoMobile += '<td class="product-remove">';
-            htmlCarritoMobile += '<a href="javascript:scrollToTargetAdjusted(\'producto2-'+aExtras[i].idExtra+'\');"><i class="fa fa-pencil"></i></a>';
+            htmlCarritoMobile += '<a href="javascript:scrollToTargetAdjusted(\'tienda-'+aExtras[i].idExtra+'\');"><i class="fa fa-pencil"></i></a>';
             htmlCarritoMobile += '<a href="javascript:deleteProduct('+aExtras[i].idExtra+')"><i class="fa fa-times"></i></a>';
             htmlCarritoMobile += '</td>';
             htmlCarritoMobile += '</tr>';
