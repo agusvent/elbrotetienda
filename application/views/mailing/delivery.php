@@ -13,7 +13,7 @@
     <tr style="padding: 0;"><td style="padding:20px;">
             <h2 align="center">¡Pedido confirmado!</h2>
             <p>¡Hola <strong><?=$nombre;?></strong>! Muchas gracias por tu compra. </p>
-            <p>Tu pedido ya está confirmado y será enviado a tu domicilio este Miércoles. 
+            <p>Tu pedido ya está confirmado y será enviado a domicilio para el día de entrega seleccionado.
             </p>
             <p>Recordá que tu compra se abona solo en efectivo, al momento de la entrega.</p>
             <p>

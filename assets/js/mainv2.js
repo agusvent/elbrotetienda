@@ -31,10 +31,10 @@ $(document).ready(function() {
                 if(!$("#aEBTWhatsApp").hasClass("mobile")) {
                     $("#aEBTWhatsApp").fadeOut();
                 }
-            }else if( isOnScreen( $("#nuestrosBolsones" ) ) ) { 
-                $("#eboMenuBolsones").addClass("eboMenuLinkActivo");
-                $("#eboMenuMobileBolsones").addClass("eboMenuLinkActivo");
-                changeURL("nuestrosBolsones");
+            }else if( isOnScreen( $("#comboFamiliar" ) ) ) { 
+                $("#eboMenuComboFamiliar").addClass("eboMenuLinkActivo");
+                $("#eboMenuMobileComboFamiliar").addClass("eboMenuLinkActivo");
+                changeURL("comboFamiliar");
                 if(!$("#aEBTWhatsApp").hasClass("mobile")) {
                     $("#aEBTWhatsApp").fadeIn();
                 }
@@ -95,7 +95,7 @@ $(document).ready(function() {
                 if(aceptaBolsones) {
                     var idBolson = $(this).attr("data-idbolson");
                     var bolsonName = $(this).attr("data-bolsonname");
-                    var bolsonImg = "assets/img/bolson-del-dia/imagenBolson.jpeg";
+                    var bolsonImg = $("#imgBolsonPortada").prop("src");
                     var cant = $(this).val();
                     var precio = $(this).attr("data-bolsonprice");
                     var total = 0;
@@ -259,7 +259,7 @@ $(document).ready(function() {
             $("#bAgregarBolson").on("click",function(e){
                 e.preventDefault();
                 cerrarModalImagenBolson();
-                scrollToTargetAdjusted("nuestrosBolsones");
+                scrollToTargetAdjusted("comboFamiliar");
                 $(".loading").hide();
             });
             
@@ -863,11 +863,12 @@ function refreshCart(){
     var htmlCarrito = "";
     var htmlCarritoMobile = "";
     var htmlResumenHeader = "";
+    var imagenBolson = $("#imgBolsonPortada").prop("src");
 
     if(oBolson){
         htmlCarrito += '<tr>';
         htmlCarrito += '<td class="product-thumbnail">';
-        htmlCarrito += '<a href="#"><img class="ebo-cart-img" src="assets/img/bolson-del-dia/imagenBolson.jpeg" alt=""></a>';
+        htmlCarrito += '<a href="#"><img class="ebo-cart-img" src="'+imagenBolson+'" alt=""></a>';
         htmlCarrito += '</td>';
         htmlCarrito += '<td class="product-name">'+oBolson.name+'</td>';
         htmlCarrito += '<td class="product-price-cart"><span class="amount">$'+oBolson.precioUnitario+'</span></td>';
@@ -902,7 +903,7 @@ function refreshCart(){
         //CARRITO RESUMEN DEL BOTON DEL HEADER
         htmlResumenHeader += '<li class="single-shopping-cart">';
         htmlResumenHeader += '<div class="shopping-cart-img">';
-        htmlResumenHeader += '<a href="#"><img class="ebo-cart-header-img" alt="" src="assets/img/bolson-del-dia/imagenBolson.jpeg"></a>';
+        htmlResumenHeader += '<a href="#"><img class="ebo-cart-header-img" alt="" src="'+imagenBolson+'"></a>';
         htmlResumenHeader += '</div>';
         htmlResumenHeader += '<div class="shopping-cart-title">';
         htmlResumenHeader += '<h4>'+oBolson.name+'</h4>';
@@ -1222,7 +1223,7 @@ function checkConfiguracionPedido(){
         pedidoSoloExtras = false;
         if(oBolson===undefined || oBolson===null){
             configurationOK = false;
-            $("#errorBolsonIndividual").html("Por favor, elige un <a class='red-link' href='javascript:scrollToTargetAdjusted(\"nuestrosBolsones\");'>bolsón</a>.")
+            $("#errorBolsonIndividual").html("Por favor, elige un <a class='red-link' href='javascript:scrollToTargetAdjusted(\"comboFamiliar\");'>bolsón</a>.")
         }
     }else if(pedidosExtrasEnabled==1){
         if((oBolson===undefined || oBolson===null) && aExtras.length==0){

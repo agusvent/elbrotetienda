@@ -7440,6 +7440,7 @@ a.default-btn {
 .product-wrap .product-img {
   position: relative;
   overflow: hidden;
+  height: 370px;
 }
 .product-wrap .product-img img {
   width: 100%;
@@ -7476,7 +7477,7 @@ a.default-btn {
 .product-wrap .product-img .product-action {
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 2px;
   width: 100%;
   z-index: 9;
   -webkit-transform: translateX(-50%);
