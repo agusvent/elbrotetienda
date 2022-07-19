@@ -664,6 +664,10 @@
     background-color:#dbdbdb;
 }
 
+.productos-portada-row {
+    justify-content: center;
+}
+
 .loading {
     position: fixed;
     z-index: 999;
@@ -789,6 +793,12 @@
         /*background-color: #dcb993;*/
         background-size: contain;
     }
+    .product-wrap .product-img .product-action {
+        bottom: 3px!important;
+    }
+    .product-wrap .product-img {
+        height: 590px!important;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
@@ -797,7 +807,34 @@
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 1275px) and (max-width: 1440px) {
+    .product-wrap .product-img {
+        height: 538px!important;
+    }
+}
+
+@media only screen and (min-width: 1021px) and (max-width: 1270px) {
+    .product-wrap .product-img {
+        height: 438px!important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1020px) {
+    .product-wrap .product-img .product-action {
+        bottom: 3px!important;
+    }
+    .product-wrap .product-img {
+        height: 305px!important;
+    }
+    .product-wrap .product-img img {
+        width:137%;
+    }    
+
+}
+@media only screen and (max-width: 768px) {
+    .product-wrap .product-img {
+        height: 443px!important;
+    }
     .boxed label {
         min-width: 30px;
     }
@@ -951,6 +988,15 @@
 }
 
 @media only screen and (max-width: 425px) {
+    .product-wrap .product-img .product-action {
+        bottom: -5px!important;
+    }
+    .product-wrap .product-img img {
+        width: 150%!important;
+    }
+    .product-wrap .product-img {
+        height: 375px!important;
+    }
     .boxed label {
         min-width: 27px;
     }
@@ -977,7 +1023,19 @@
     }
 }
 
+@media only screen and (max-width: 390px) {
+    .product-wrap .product-img .product-action {
+        bottom: 23px!important;
+    }
+}
+
 @media only screen and (max-width: 375px) {
+    .product-wrap .product-img .product-action {
+        bottom: 6px!important;
+    }
+    .product-wrap .product-img {
+        height: 345px!important;
+    }
     .newsletter-wrapper {
         padding-left: 30px;
         padding-right:  30px;
@@ -997,6 +1055,9 @@
 }
 
 @media only screen and (max-width: 340px) {
+    .product-wrap .product-img {
+        height: 300px!important;
+    }
     .newsletter-wrapper {
         padding-left: 25px;
         padding-right:  25px;

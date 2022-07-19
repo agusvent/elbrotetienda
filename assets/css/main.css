@@ -490,6 +490,10 @@ footer.default-footer {
     align-items: center;
 }
 
+.productos-portada-row {
+    justify-content: center;
+}
+
 @media (max-width: 500px){
     @supports (-webkit-touch-callout: none) {
         .checkbox label input[type=checkbox]:checked+.checkbox-decorator .check, label.checkbox-inline input[type=checkbox]:checked+.checkbox-decorator .check{

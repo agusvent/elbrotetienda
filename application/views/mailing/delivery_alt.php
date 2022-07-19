@@ -2,7 +2,7 @@
 
 ¡Hola <?=$nombre;?>! Muchas gracias por tu compra.
 
-Tu pedido ya está confirmado y será enviado a tu domicilio este Miércoles. 
+Tu pedido ya está confirmado y será enviado a domicilio para el día de entrega seleccionado.
 Recordá que tu compra se abona solo en efectivo, al momento de la entrega.
 
 Reserva abonada: $<?=$montoPagado?>

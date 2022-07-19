@@ -20,8 +20,8 @@
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/new_design/assets/css/plugins.css">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=56758">
-    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=414353">
+    <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=18712">
+    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=1233">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -57,7 +57,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <li>
                                     <a id="eboMenuHome" class="eboMenuLinks eboMenuLinkActivo" href="#elbrote">Inicio</a>
                                 </li>
-                                <li><a id="eboMenuBolsones" class="eboMenuLinks" href="<?=base_url();?>#nuestrosBolsones">Bolsones</a></li>
+                                <li><a id="eboMenuComboFamiliar" class="eboMenuLinks" href="<?=base_url();?>#comboFamiliar">Combo Familiar</a></li>
                                 <li><a id="eboMenuTienda" class="eboMenuLinks" href="<?=base_url();?>#tienda"> Tienda</a>
                                 <li><a href="<?=base_url();?>about">El Brote</a></li>
                                 <li><a id="eboMenuCertificaciones" class="eboMenuLinks" href="<?=base_url();?>#certificaciones">Certificaciones</a></li>
@@ -107,8 +107,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="mobile-menu">
                     <nav id="mobile-menu-active">
                         <ul class="menu-overflow">
-                            <li><a id="eboMenuMobileBolsones" class="eboMenuMobileLink" href="<?=base_url();?>#elbrote">Inicio</a></li>
-                            <li><a id="eboMenuMobileBolsones" class="eboMenuMobileLink" href="<?=base_url();?>#nuestrosBolsones">Bolsones</a></li>
+                            <li><a id="eboMenuMobileHome" class="eboMenuMobileLink" href="<?=base_url();?>#elbrote">Inicio</a></li>
+                            <li><a id="eboMenuMobileComboFamiliar" class="eboMenuMobileLink" href="<?=base_url();?>#comboFamiliar">Bolsones</a></li>
                             <li><a id="eboMenuMobileTienda" class="eboMenuMobileLink" href="<?=base_url();?>#tienda"> Tienda</a>
                             <li><a href="<?=base_url();?>about">El Brote</a></li>
                             <li><a id="eboMenuMobileCertificaciones" class="eboMenuMobileLink" href="<?=base_url();?>#certificaciones">Certificaciones</a></li>
@@ -127,10 +127,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="col-xl-6 col-lg-7 col-md-8 col-12 ms-auto">
                         <div class="slider-content-3 slider-animated-1 text-center banner1-margin-correction">
                             <h3 class="animated" style="color:#FFFFFF!important;">ENV&Iacute;O A DOMICILIO</h3>
-                            <h1 class="animated bannerTextoPpalBlanco" style="">Fruta y Verdura Org&aacute;nica y Agroecol&oacute;gica</h1>
-                            <p class="animated" style="color:#FFFFFF!important;">Libre de Agrot&oacute;xicos</p>
+                            <h1 class="animated bannerTextoPpalBlanco" style="">Fruta y Verdura Premium & Org&aacute;nica</h1>
+                            <p class="animated" style="color:#FFFFFF!important;">Del productor a tu mesa</p>
                             <div class="slider-btn btn-hover">
-                                <a class="animated" href="javascript:scrollToTargetAdjusted('nuestrosBolsones');">COMPRAR</a>
+                                <a class="animated" href="javascript:scrollToTargetAdjusted('comboFamiliar');">COMPRAR</a>
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="slider-content-3 banner3 slider-animated-1 text-center banner2-margin-correction">
                             <h3 class="animated" style="color:#FFFFFF!important;">ENV&Iacute;O A DOMICILIO</h3>
                             <h1 class="animated bannerTextoPpalBlanco" style="">Arm&aacute; tu pedido en nuestra tienda online</h1>
-                            <p class="animated" style="color:#FFFFFF!important;">Org&aacute;nico y Agroecol&oacute;gico</p>
+                            <p class="animated" style="color:#FFFFFF!important;">Cultivos Premium Seleccionados</p>
                             <div class="slider-btn btn-hover">
                                 <a class="animated" href="javascript:scrollToTargetAdjusted('tienda');">IR A LA TIENDA</a>
                             </div>
@@ -159,10 +159,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="col-xl-6 col-lg-7 col-md-8 col-12 ms-auto">
                         <div class="slider-content-3 slider-animated-1 text-center banner3-margin-correction banner-color">
                             <h3 class="animated">ENV&iacute;O A DOMICILIO</h3>
-                            <h1 class="animated bannerTextoPpalColor" style="">Bols&oacute;n Org&aacute;nico y Agroecol&oacute;gico</h1>
-                            <p class="animated">Libre de Agrot&oacute;xicos</p>
+                            <h1 class="animated bannerTextoPpalColor" style="">Combo Familiar con cultivos de estaci&oacute;n</h1>
+                            <p class="animated">Fruta y Verdura Seleccionada</p>
                             <div class="slider-btn btn-hover btn-banner-color">
-                                <a class="animated" href="javascript:scrollToTargetAdjusted('nuestrosBolsones');">COMPRAR</a>
+                                <a class="animated" href="javascript:scrollToTargetAdjusted('comboFamiliar');">COMPRAR</a>
                             </div>
                         </div>
                     </div>
@@ -234,10 +234,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    <div id="nuestrosBolsones" class="shop-area pt-70 mb-60">
+    <div id="comboFamiliar" class="shop-area pt-70 mb-60">
         <div class="container">
             <div class="section-title text-center mb-55">
-                <h2>NUESTROS BOLSONES</h2>
+                <h2>COMBO FAMILIAR</h2>
             </div>
             <div class="section-title-2 text-center mt-60 mb-60 section-text-angosta">
                 <?php if($enabled == 1) {?>
@@ -250,14 +250,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div id="seccionProductoBolsones" class="shop-bottom-area mt-35">
                 <div class="tab-content jump">
                     <div id="shop-1" class="tab-pane active">
-                        <div class="row">
+                        <div class="row productos-portada-row">
                             <!--<div class="col-sm-2"></div>-->
-                            <div id="producto1-<?=$bolsonIndividual->id;?>" class="col-xl-6 col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                            <div id="producto1-<?=$bolsonIndividual->id;?>" class="col-sm-9 col-xs-12">
                                 <div class="product-wrap mb-25 scroll-zoom">
                                     <div class="product-img bolsonIndividual">
                                         <a href="javascript:selectBolsonCant(1);">
                                             <!--<img class="default-img" src="assets/img/bolson-del-dia/imagenBolson.jpeg" alt="">-->
-                                            <img class="default-img" src="assets/img/dias-entrega-imagenes/<?= $imagenBolson ?>" alt="">
+                                            <img id="imgBolsonPortada" class="default-img" src="assets/img/dias-entrega-imagenes/<?= $imagenBolson ?>" alt="">
                                         </a>
                                         <!--<span class="pink">-10%</span>-->
                                         <div class="product-action">
@@ -301,56 +301,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         </div>
                                     </div>
 
-                                </div>
-                            </div>
-                            <div id="producto2-<?=$bolsonBasico->id;?>" class="col-xl-6 col-md-6 col-lg-6 col-sm-6 col-xs-6">
-                                <div class="product-wrap mb-25 scroll-zoom">
-                                    <div class="product-img bolsonBasico">
-                                        <a href="javascript:selectBolsonBasicoCant(1);">
-                                            <img class="default-img" src="assets/img/extras/<?=$bolsonBasico->imagen;?>" alt="">
-                                            <!--<img class="hover-img" src="assets/img/extras/<?=$bolsonBasico->imagen;?>" alt="">-->
-                                        </a>
-                                        <!--<span class="purple">New</span>-->
-                                        <div class="product-action">
-                                            <div class="pro-same-action pro-cart comprarVisible">
-                                                <a title="Comprar" href="javascript:selectBolsonBasicoCant(1);"><i class="pe-7s-cart"></i> COMPRAR</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><?=$bolsonBasico->name;?></h3>
-                                        <div class="product-price mt-10">
-                                            <span style="font-size: 24px;color: #fe5252;">$<?=$bolsonBasico->price;?></span>
-                                        </div>
-                                    </div>
-                                    <div class="pro-details-quality mt-10">
-                                        <span>Elegir Cantidad</span>
-                                        <div class="pro-details-size-content boxed">
-                                            <ul>
-                                                <li>
-                                                    <input type="radio" id="rbExtras<?=$bolsonBasico->id;?>-1" data-extraName="<?=$bolsonBasico->name;?>" data-extraPrice="<?=$bolsonBasico->price;?>" data-extraId="<?=$bolsonBasico->id;?>" data-extraImg="<?=$bolsonBasico->imagen;?>" name="rbBolsonBasico" class="rbBolsonBasico" value="1">
-                                                    <label for="rbExtras<?=$bolsonBasico->id;?>-1">1</label>
-                                                </li>
-                                                <li>
-                                                <input type="radio" id="rbExtras<?=$bolsonBasico->id;?>-2" data-extraName="<?=$bolsonBasico->name;?>" data-extraPrice="<?=$bolsonBasico->price;?>" data-extraId="<?=$bolsonBasico->id;?>" data-extraImg="<?=$bolsonBasico->imagen;?>" name="rbBolsonBasico" class="rbBolsonBasico" value="2">
-                                                    <label for="rbExtras<?=$bolsonBasico->id;?>-2">2</label>
-                                                </li>
-                                                <li>
-                                                <input type="radio" id="rbExtras<?=$bolsonBasico->id;?>-3" data-extraName="<?=$bolsonBasico->name;?>" data-extraPrice="<?=$bolsonBasico->price;?>" data-extraId="<?=$bolsonBasico->id;?>" data-extraImg="<?=$bolsonBasico->imagen;?>" name="rbBolsonBasico" class="rbBolsonBasico" value="3">
-                                                    <label for="rbExtras<?=$bolsonBasico->id;?>-3">3</label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>         
-                                    <div class="title-price-wrap-2 mt-10">
-                                        <div class="price-2">
-                                            <span>Precio Unitario: $<label id="precioUnitarioBolsonBasico"><?=$bolsonBasico->price;?></span>
-                                            
-                                        </div>
-                                        <div class="price-2">
-                                            <span><b>Total: $<label id="bolsonBasicoTotal">0</b></span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1033,7 +983,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=36543"></script>
+<script src="assets/js/mainv2.js?v=21341"></script>
 <script src="assets/new_design/assets/js/main.js?v=1234"></script>
 
 
