@@ -108,7 +108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <nav id="mobile-menu-active">
                         <ul class="menu-overflow">
                             <li><a id="eboMenuMobileHome" class="eboMenuMobileLink" href="<?=base_url();?>#elbrote">Inicio</a></li>
-                            <li><a id="eboMenuMobileComboFamiliar" class="eboMenuMobileLink" href="<?=base_url();?>#comboFamiliar">Bolsones</a></li>
+                            <li><a id="eboMenuMobileComboFamiliar" class="eboMenuMobileLink" href="<?=base_url();?>#comboFamiliar">COMBO FAMILIAR</a></li>
                             <li><a id="eboMenuMobileTienda" class="eboMenuMobileLink" href="<?=base_url();?>#tienda"> Tienda</a>
                             <li><a href="<?=base_url();?>about">El Brote</a></li>
                             <li><a id="eboMenuMobileCertificaciones" class="eboMenuMobileLink" href="<?=base_url();?>#certificaciones">Certificaciones</a></li>
@@ -294,7 +294,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <div class="title-price-wrap-2 mt-10">
                                         <div class="price-2">
                                             <span>Precio Unitario: $<label id="precioUnitarioBolsonIndividual"><?=$bolsonIndividual->price;?></span>
-                                            
                                         </div>
                                         <div class="price-2">
                                             <span><b>Total: $<label id="bolsonIndividualTotal">0</b></span>
