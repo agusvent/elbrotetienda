@@ -283,6 +283,8 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,aInfoExt
         htmlTotalesExtras += '</div>';
     }
 
+    htmlBolsonesAndExtras += htmlTotalesExtras;
+
     for(var i=0;i<aInfoExtrasPedidosBox.length;i++){
         htmlBolsonesAndExtras += '<div class="row">';
         htmlBolsonesAndExtras += '<div class="col-sm-1">';
@@ -301,9 +303,6 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,aInfoExt
         htmlBolsonesAndExtras += '</div>';
         htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
         htmlBolsonesAndExtras += '</div>';
-        if(aInfoExtrasPedidosBox[i]['idExtra']==1) {
-            htmlBolsonesAndExtras += htmlTotalesExtras;
-        }
     }   
     if(diaBolson!=null && diaBolson!=""){
         $("#lFiltradoPor").html("Bolson del "+diaBolson.descripcion);

@@ -44,7 +44,7 @@
                                 <li>
                                     <a class="eboMenuLinks" href="<?=base_url();?>#elbrote">Inicio</a>
                                 </li>
-                                <li><a class="eboMenuLinks" href="<?=base_url();?>#nuestrosBolsones">Bolsones</a></li>
+                                <li><a class="eboMenuLinks" href="<?=base_url();?>#comboFamiliar">Combo Familiar</a></li>
                                 <li><a class="eboMenuLinks" href="<?=base_url();?>#tienda"> Tienda</a>
                                 <li><a class="eboMenuLinkActivo" href="<?=base_url();?>about">El Brote</a></li>
                                 <li><a class="eboMenuLinks" href="<?=base_url();?>#certificaciones">Certificaciones</a></li>
@@ -77,7 +77,7 @@
                     <nav id="mobile-menu-active">
                         <ul class="menu-overflow">
                             <li><a href="<?=base_url();?>#elbrote">Inicio</a></li>
-                            <li><a href="<?=base_url();?>#nuestrosBolsones">Bolsones</a></li>
+                            <li><a href="<?=base_url();?>#comboFamiliar">Combo Familiar</a></li>
                             <li><a href="<?=base_url();?>#tienda"> Tienda</a>
                             <li><a class="eboMenuLinkActivo" href="<?=base_url();?>about">El Brote</a></li>
                             <li><a href="<?=base_url();?>#certificaciones">Certificaciones</a></li>
