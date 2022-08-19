@@ -58,7 +58,7 @@ $route['success/(:any)'] = 'Main/success/$1';
 $route['success/(:any)/delivery'] = 'Main/success/$1';
 $route['failure/(:any)'] = 'Main/failure/$1';
 $route['about'] = 'Main/about';
-$route['payment_confirmation/(:any)'] = 'Main/paymenConfirmation/$1';
+$route['payment_confirmation/(:any)'] = 'Main/paymentConfirmation/$1';
 
 $route['searchOrdersByDiaActualBolsonAndMailAndPhone'] = 'OrdersManager/searchOrdersByDiaActualBolsonAndMailAndPhone';
 $route['getMontoMinimoPedidoExtras'] = 'ParametersManager/getMontoMinimoPedidoExtras';

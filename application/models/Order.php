@@ -81,6 +81,13 @@ class Order extends CI_Model
         $this->db->update('orders');
     }
 
+    public function mailConfirmationSent($id) 
+    {
+        $this->db->where('id', $id);
+        $this->db->set('mail_confirmation_sent', 1);
+        $this->db->update('orders');
+    }
+
     public function setObs($hash, $obs) 
     {
         $this->db->where('hash', $hash);
@@ -96,7 +103,7 @@ class Order extends CI_Model
 
     public function getByHash($hash) 
     {
-        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, cant_bolson, total_bolson, id_tipo_pedido, monto_total, monto_pagado, monto_descuento');
+        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, cant_bolson, total_bolson, id_tipo_pedido, monto_total, monto_pagado, monto_descuento, mail_confirmation_sent');
         $this->db->from('orders');
         $this->db->where('hash', $hash);
 
