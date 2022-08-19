@@ -581,7 +581,7 @@ class Main extends CI_Controller
 
         // URLs de retorno
         /*COMENTO ESTO SOLO POR PRUEBAS: PARA DESPLEGAR VA ESTO DESCOMENTADO*/
-        /*
+        
         if($orderData['idTipoPedido'] == 1){
             $preference->back_urls = [
                 'success' => base_url().'success/'.$orderData['hash'].'/',
@@ -594,13 +594,13 @@ class Main extends CI_Controller
             ];
         }
         $preference->notification_url = base_url().'payment_confirmation/'.$orderData['hash'];
-        */
+        
         /*  Esta propiedad se define para que en el momento que se procesa OK el pago en la web de MP, 
             si el cliente no espera a retornar a la web y cierra la ventana, MP nos notifique a nosotros del pago realizado.
         */
     
         /*Back URLs de prueba */
-        
+        /*
         if($orderData['idTipoPedido'] == 1){
             $preference->back_urls = [
                 'success' => 'http://190.246.199.238:81/ebo/success/'.$orderData['hash'].'/',
@@ -613,7 +613,7 @@ class Main extends CI_Controller
             ];
         }
         $preference->notification_url = 'http://190.246.199.238:81/ebo/payment_confirmation/'.$orderData['hash'];
-        
+        */
 
         // Desactivo estado 'pendiente' y métodos en efectivo.
         $preference->binary_mode = true;
@@ -893,9 +893,10 @@ class Main extends CI_Controller
         if (!$order->valid) {
             $this->Order->validate($orderHash, 1);
             $this->sendConfirmationMail($order);
-            
         } else {
-            //error_log("\nORDEN YA VALIDADA!\n".json_encode($order),3,"/home/c1510066/public_html/application/logs/debug.log");
+            if (is_null($order->mail_confirmation_sent) || ($order->mail_confirmation_sent < 1)) {
+                $this->sendConfirmationMail($order);
+            }
         }
 
         $extras = $this->Order->getDetailedExtras($order->id);
@@ -1094,7 +1095,7 @@ class Main extends CI_Controller
         return $this->output->set_output(json_encode($return));                  
     }
 
-    function paymenConfirmation($hash) {
+    function paymentConfirmation($hash) {
         $this->output->set_content_type('application/json');
         $this->load->model('Order');
         $this->load->model('Parameter');
@@ -1170,8 +1171,6 @@ class Main extends CI_Controller
         
         if(isset($status) && $status=="paid") {
             $this->Order->validate($hash,1);
-
-            $this->sendConfirmationMail($order);        
         }
         
         $this->output->set_status_header(200);
@@ -1185,96 +1184,99 @@ class Main extends CI_Controller
         $this->load->model('Barrio');
         $montoDescuento = 0;
         $hayDescuento = false;
-        if( isset($order->monto_descuento) && $order->monto_descuento>0 ) {
-            $montoDescuento = $order->monto_descuento;
-            $hayDescuento = true;
-        }
-        
-        $bolson = $this->Pocket->getById($order->pocket_id);
-        
-        $totalPriceExtras = 0;
-        
-        $extras = $this->Order->getDetailedExtras($order->id);
-        if(!empty($extras) && is_array($extras)) {
-            foreach ($extras as $extra) {
-                $totalPriceExtras += (int)$extra->total;
+        if ($order->mail_confirmation_sent < 1) {
+            if( isset($order->monto_descuento) && $order->monto_descuento>0 ) {
+                $montoDescuento = $order->monto_descuento;
+                $hayDescuento = true;
             }
-        }
-        
-        $totalPrice = (int)$order->monto_total - (int)$order->monto_pagado;
-        
-        if ($order->deliver_type == 'SUC') {
-            $viewName = 'normal';
-            $viewAltName = 'alt';
-            $sucursal = $this->Office->getById($order->office_id);
-            $mailingData = [
-                'nombre'   => $order->client_name,
-                'bolson'   => $bolson,
-                'cantBolson' => $order->cant_bolson,
-                'totalBolson' => $order->total_bolson,
-                'sucursal' => $sucursal->name . ' > ' . $sucursal->address,
-                'retiro'   => $order->deliver_date,
-                'extras'   => $extras,
-                'totalPrice' => $totalPrice,
-                'montoDescuento'   => $montoDescuento,
-                'montoPagado' => $order->monto_pagado,
-                'hayDescuento' => $hayDescuento
-            ];
-        } else {
-            $viewName = 'delivery';
-            $viewAltName = 'delivery_alt';
-            $barrio = $this->Barrio->getById($order->barrio_id);
-            $mailingData = [
-                'nombre' => $order->client_name,
-                'bolson' => $bolson,
-                'cantBolson' => $order->cant_bolson,
-                'totalBolson' => $order->total_bolson,
-                'extras' => $extras,
-                'entrega' => $order->deliver_date,
-                'direccion' => $order->deliver_address . ' ' . $order->deliver_extra . ' - ' . $barrio->nombre,
-                'totalPrice' => $totalPrice,
-                'horarioEntrega' => $barrio->observaciones,
-                'montoDescuento'   => $montoDescuento,
-                'montoPagado' => $order->monto_pagado,
-                'hayDescuento' => $hayDescuento
-            ];
-        }
+            
+            $bolson = $this->Pocket->getById($order->pocket_id);
+            
+            $totalPriceExtras = 0;
+            
+            $extras = $this->Order->getDetailedExtras($order->id);
+            if(!empty($extras) && is_array($extras)) {
+                foreach ($extras as $extra) {
+                    $totalPriceExtras += (int)$extra->total;
+                }
+            }
+            
+            $totalPrice = (int)$order->monto_total - (int)$order->monto_pagado;
+            
+            if ($order->deliver_type == 'SUC') {
+                $viewName = 'normal';
+                $viewAltName = 'alt';
+                $sucursal = $this->Office->getById($order->office_id);
+                $mailingData = [
+                    'nombre'   => $order->client_name,
+                    'bolson'   => $bolson,
+                    'cantBolson' => $order->cant_bolson,
+                    'totalBolson' => $order->total_bolson,
+                    'sucursal' => $sucursal->name . ' > ' . $sucursal->address,
+                    'retiro'   => $order->deliver_date,
+                    'extras'   => $extras,
+                    'totalPrice' => $totalPrice,
+                    'montoDescuento'   => $montoDescuento,
+                    'montoPagado' => $order->monto_pagado,
+                    'hayDescuento' => $hayDescuento
+                ];
+            } else {
+                $viewName = 'delivery';
+                $viewAltName = 'delivery_alt';
+                $barrio = $this->Barrio->getById($order->barrio_id);
+                $mailingData = [
+                    'nombre' => $order->client_name,
+                    'bolson' => $bolson,
+                    'cantBolson' => $order->cant_bolson,
+                    'totalBolson' => $order->total_bolson,
+                    'extras' => $extras,
+                    'entrega' => $order->deliver_date,
+                    'direccion' => $order->deliver_address . ' ' . $order->deliver_extra . ' - ' . $barrio->nombre,
+                    'totalPrice' => $totalPrice,
+                    'horarioEntrega' => $barrio->observaciones,
+                    'montoDescuento'   => $montoDescuento,
+                    'montoPagado' => $order->monto_pagado,
+                    'hayDescuento' => $hayDescuento
+                ];
+            }
 
-        if(!isset($extras)) {
-            unset($mailingData['extras']);
-        }
+            if(!isset($extras)) {
+                unset($mailingData['extras']);
+            }
 
-        $this->load->library('phpmailer_lib');
-        $this->load->model('Parameter');
-        
-        $mailServer = $this->Parameter->get("mail_server");
-        $mailAccount = $this->Parameter->get("mail_account");
-        $mailCopy = $this->Parameter->get("mail_copy");
-        $mailPass = $this->Parameter->get("mail_pass");
-        
-        $mail = $this->phpmailer_lib->load();
-        $mail->CharSet = 'UTF-8';
-        $mail->isSMTP();
-        $mail->Host = $mailServer;
-        $mail->Username = $mailAccount;
-        $mail->Password = $mailPass;
-        $mail->SMTPAuth = true;
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
+            $this->load->library('phpmailer_lib');
+            $this->load->model('Parameter');
+            
+            $mailServer = $this->Parameter->get("mail_server");
+            $mailAccount = $this->Parameter->get("mail_account");
+            $mailCopy = $this->Parameter->get("mail_copy");
+            $mailPass = $this->Parameter->get("mail_pass");
+            
+            $mail = $this->phpmailer_lib->load();
+            $mail->CharSet = 'UTF-8';
+            $mail->isSMTP();
+            $mail->Host = $mailServer;
+            $mail->Username = $mailAccount;
+            $mail->Password = $mailPass;
+            $mail->SMTPAuth = true;
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465;
 
-        $mail->setFrom($mailAccount, "El Brote Tienda Natural");
-        $mail->addAddress(str_replace(' ','',$order->email));
-        $mail->addReplyTo($mailAccount, "El Brote Tienda Natural");
-        $mail->addBCC($mailCopy);
+            $mail->setFrom($mailAccount, "El Brote Tienda Natural");
+            $mail->addAddress(str_replace(' ','',$order->email));
+            $mail->addReplyTo($mailAccount, "El Brote Tienda Natural");
+            $mail->addBCC($mailCopy);
 
-        $mail->isHTML(true);
-        $mail->Subject = 'Pedido confirmado en El Brote Tienda Natural.';
-        $mail->Body = $this->load->view('mailing/'.$viewName, $mailingData, true);
-        $mail->AltBody = $this->load->view('mailing/'.$viewAltName, $mailingData, true);
+            $mail->isHTML(true);
+            $mail->Subject = 'Pedido confirmado en El Brote Tienda Natural.';
+            $mail->Body = $this->load->view('mailing/'.$viewName, $mailingData, true);
+            $mail->AltBody = $this->load->view('mailing/'.$viewAltName, $mailingData, true);
 
-        try {
-            $mail->send();
-        } catch (Exception $e) {
-        }            
+            try {
+                $mail->send();
+                $this->Order->mailConfirmationSent($order->id);
+            } catch (Exception $e) {
+            } 
+        }           
     }
 }
