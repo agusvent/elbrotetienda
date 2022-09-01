@@ -25,8 +25,9 @@ $( document ).ready(function() {
         }
         var nombre = $("#filtroNombre").val();
         var mail = $("#filtroMail").val();
-        var fechaDesde = $("#filtroFechaDesde").val();
-        var fechaHasta = $("#filtroFechaHasta").val();
+        var fechaDesde = $("#filtroFechaDesde").val() ? $("#filtroFechaDesde").val() : "";
+        var fechaHasta = $("#filtroFechaHasta").val() ? $("#filtroFechaHasta").val() : "";
+        var filtroFechasOn = $("#filtroPedidosFechasSwitch").is(':checked');
         var nroPedido = $("#filtroNroPedido").val();
         let data = {
             'diaBolson': diaBolson,
@@ -37,7 +38,8 @@ $( document ).ready(function() {
             'mail' : mail,
             'fechaDesde': fechaDesde,
             'fechaHasta': fechaHasta,
-            'nroPedido': nroPedido
+            'nroPedido': nroPedido,
+            'filtroFechasOn': filtroFechasOn
         };
         $.ajax({
             url: ajaxURL + 'orders/consultaPedidos',
@@ -54,7 +56,19 @@ $( document ).ready(function() {
         $("#filtroFechaDesde").val("");
         $("#filtroFechaHasta").val("");
     });
-    
+    $('body').on('change', "input[id='filtroPedidosFechasSwitch']", function(e) {
+        e.preventDefault();
+        let fechasEnabled = $(this).is(':checked');
+        if(!fechasEnabled) {
+            $("#filtroPedidosFechasSwitch").attr("data-fecha-prev-desde", $("#filtroFechaDesde").val());
+            $("#filtroPedidosFechasSwitch").attr("data-fecha-prev-hasta", $("#filtroFechaHasta").val());
+            $("#filtroFechaDesde").val("");
+            $("#filtroFechaHasta").val("");
+        } else {
+            $("#filtroFechaDesde").val($("#filtroPedidosFechasSwitch").attr("data-fecha-prev-desde"));
+            $("#filtroFechaHasta").val($("#filtroPedidosFechasSwitch").attr("data-fecha-prev-hasta"));
+        }
+    });    
 });
 
 function preFiltrar(){
@@ -106,16 +120,49 @@ function cargarListadoPedidos(pedidos){
                 }else{
                     html += "<td>"+pedidos[i].nombre_barrio+"</td>"
                 }
+                html += "<td><a href='javascript:fEditarPedido("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a></td>"
                 
-                //html += "<td><a href='"+baseURL+"ordenes/editarPedido?idPedido="+pedidos[i].id+"'><img class='img img-responsive' src='../assets/img/edit.png' width='30'/></a></td>"
-                //html += "<td><a href='javascript:fEditarPedido("+pedidos[i].id+")'><button type='submit'><img class='img img-responsive' src='../assets/img/edit.png' width='30'/></button></a></td>"
-                html += "<td><a href='javascript:fEditarPedido("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/edit.png' width='30'/></a></td>"
+                html += "<td><a href='javascript:fReenviarMailConfirmacion("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/send_mail.png' width='24'/></a>"
+                html += "<a href='javascript:fImprimirComanda("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/comanda.png' width='24'/></a></td>"
             html += "</tr>";
         }
     }
     $("#tableListadoPedidosBody").html(html);
     
     initListadoPedidosDatatable();
+}
+
+function fImprimirComanda(idPedido) {
+    mostrarLoader();
+    var dt = new Date();
+    var time = dt.getHours() + dt.getMinutes() + dt.getSeconds();
+    let data = {
+        'idPedido': idPedido,
+    };
+    $.ajax({
+        url: ajaxURL + 'internal/printComandaPedido',
+        data: data,
+        method: 'post'
+    }).done(function(result) {
+        ocultarLoader();
+        window.open(baseURL+result.fileName+"?v="+time, "popupWindow", "width=600, height=400, scrollbars=yes");
+    });                    
+}
+
+function fReenviarMailConfirmacion(idPedido) {
+    mostrarLoader();
+    let data = {
+        'idPedido': idPedido,
+    };
+    $.ajax({
+        url: ajaxURL + 'internal/reenviarMailConfirmacion',
+        data: data,
+        method: 'post'
+    }).done(function(result) {
+        ocultarLoader();
+        alert("Mail enviado.");
+    });                
+    
 }
 
 function fEditarPedido(idPedido){
@@ -130,13 +177,18 @@ function fEditarPedido(idPedido){
     }else{
         $("#consultaSoloNoValidos").val(false);
     }
-    
-    $("#consultaFechaDesde").val($("#filtroFechaDesde").val());
-    $("#consultaFechaHasta").val($("#filtroFechaHasta").val());
+    if($("#filtroPedidosFechasSwitch").is(':checked')) {
+        $("#consultaFechaDesde").val($("#filtroFechaDesde").val());
+        $("#consultaFechaHasta").val($("#filtroFechaHasta").val());    
+    } else {
+        $("#consultaFechaDesde").val($("#filtroPedidosFechasSwitch").attr("data-fecha-prev-desde"));
+        $("#consultaFechaHasta").val($("#filtroPedidosFechasSwitch").attr("data-fecha-prev-hasta"));    
+    }
     $("#consultaIdDiaEntrega").val($("#idDiaEntregaPedido").val());
     $("#consultaNombre").val($("#filtroNombre").val());
     $("#consultaMail").val($("#filtroMail").val());
     $("#consultaNroPedido").val($("#filtroNroPedido").val());
+    $("#consultaFiltroFechasOn").val($("#filtroPedidosFechasSwitch").is(':checked'));
     $('form.listadoPedidosForm').submit();
 }
 

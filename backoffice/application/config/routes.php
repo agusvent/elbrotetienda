@@ -216,3 +216,6 @@ $route['api/cupones/getCuponById/(:num)'] = 'Api/getCuponById/$1';
 $route['api/cupones/setModuloCuponesStatus'] = 'Api/setModuloCuponesStatus';
 $route['api/cupones/eliminarCupon'] = 'Api/deleteCupon';
 $route['api/cupones/status'] = 'Api/statusCupon';
+
+$route['api/internal/reenviarMailConfirmacion'] = 'Api/sendConfirmationMail';
+$route['api/internal/printComandaPedido'] = 'Api/printComandaPedido';

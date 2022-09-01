@@ -767,16 +767,18 @@ class Api extends CI_Controller
             
             $totalDomicilio = $this->Order->getTotalExtraADomicilioByDiaBolsonByExtra($idDiaEntrega,$fechaDesde,$fechaHasta,$oExtra->id);
             $subtotalExtra = $totalSucursal + $totalDomicilio;            
-            array_push($arrayInfoExtrasPedidosBox,array(
-                'idExtra' => $oExtra->id,
-                'extraName' => $oExtra->name,
-                'totalSucursal' => $totalSucursal,
-                'totalDomicilio' => $totalDomicilio,
-                'subtotalExtra' => $subtotalExtra
-            ));
-
-            $subtotalExtrasSucursal = $subtotalExtrasSucursal + $totalSucursal;
-            $subtotalExtrasDomicilio = $subtotalExtrasDomicilio + $totalDomicilio;
+            
+                array_push($arrayInfoExtrasPedidosBox,array(
+                    'idExtra' => $oExtra->id,
+                    'extraName' => $oExtra->name,
+                    'totalSucursal' => $totalSucursal,
+                    'totalDomicilio' => $totalDomicilio,
+                    'subtotalExtra' => $subtotalExtra
+                ));
+            if($oExtra->id > 1) {
+                $subtotalExtrasSucursal = $subtotalExtrasSucursal + $totalSucursal;
+                $subtotalExtrasDomicilio = $subtotalExtrasDomicilio + $totalDomicilio;
+            }
         }        
 
         $arrayInfoExtrasTotalesBox = [];
@@ -2458,6 +2460,13 @@ class Api extends CI_Controller
         $return['status'] = self::OK_VALUE;
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
+    }
+
+    public function sendConfirmationMail() {
+        $this->load->model('Order');
+        $idPedido = $this->input->post('idPedido', true);
+        $order = $this->Order->getById($idPedido);
+        $this->envioMail($order);
     }
 
     public function envioMail($order){
@@ -5247,6 +5256,65 @@ class Api extends CI_Controller
         return 1;
 
     }
+
+    public function printComandaPedido(){
+        $this->output->set_content_type('application/json');
+        $this->load->model('Order');
+        $this->load->model('Office');
+        $this->load->model('Barrio');
+
+        $idPedido = $this->input->post('idPedido', true);
+
+        $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
+        $fontDirs = $defaultConfig['fontDir'];
+        
+        $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
+        $fontData = $defaultFontConfig['fontdata'];        
+        
+        $fontDir = realpath(__DIR__ . '/../../assets/fonts');
+        
+        $oPDF = new \Mpdf\Mpdf([
+            'mode' => 'utf-8',
+            'format'=> 'Legal',
+            'orientation' => 'P',
+            'margin_left' => '5',
+            'margin_right' => '5',
+            'margin_top' => '30',
+            'fontdata' => $fontData + [
+                'helvetica-r' => [
+                    'R' => 'HelveticaNeueLTCom-LtCn.ttf',
+                    'B' => 'HelveticaNeueLTCom-LtCn.ttf',
+                ],
+                'helvetica-b' => [
+                    'R' => 'HelveticaNeueLTCom-BdCn.ttf',
+                    'B' => 'HelveticaNeueLTCom-BdCn.ttf',
+                ]
+            ]
+        ]);
+
+        $oPDF->SetTitle('Comanda Pedido');
+        $html = "<div style='width:100%'>";
+        $oOrder = $this->Order->getFullById($idPedido);
+        $pdrBarrioName = '';
+        if ($oOrder["id_tipo_pedido"]==1) {
+            $oPuntoDeRetiro = $this->Office->getById($oOrder["id_sucursal"]);
+            $pdrBarrioName = $oPuntoDeRetiro->name;
+        } else {
+            $oBarrio = $this->Barrio->getById($oOrder["id_barrio"]);
+            $pdrBarrioName = $oBarrio->nombre;
+        }
+        $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $pdrBarrioName);
+        $html .= "</div>";
+        $oPDF->WriteHTML($html);
+        $hash = strval(date('Hms'));
+        $fileName = 'ComandaPedido'.$hash.'.pdf';
+        $oPDF->Output($fileName, 'F');
+
+        $return['status'] = self::OK_VALUE;
+        $return['fileName'] = $fileName;
+        return $this->output->set_output(json_encode($return));           
+    }
+
 
     private function createPDFComandasPedidosByLogisticaBarrios($arrayLogistica) {
         $this->load->model('Logistica');

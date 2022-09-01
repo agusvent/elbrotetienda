@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.1.159/ebo/backoffice/';
-#$config['base_url'] = 'https://elbrotetienda.com/backoffice/';
+#$config['base_url'] = 'http://192.168.0.113/ebo/backoffice/';
+$config['base_url'] = 'https://elbrotetienda.com/backoffice/';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -541,7 +541,9 @@ $config['csrf_exclude_uris'] = array(
     'api/getOrdersInfoHomeFilter',
     'api/diasEntrega/aceptaPedidosFrontend',
     'api/diasEntrega/editarBarriosHabilitados',
-    'api/barrios/getBarriosHabilitadosForDiaEntrega'
+    'api/barrios/getBarriosHabilitadosForDiaEntrega',
+    'api/internal/reenviarMailConfirmacion',
+    'api/internal/printComandaPedido'
 );
 
 /*

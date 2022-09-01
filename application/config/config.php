@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 #$config['base_url'] = 'https://elbrotetienda.com/';
-$config['base_url'] = 'http://192.168.1.100/ebo/';
+$config['base_url'] = 'http://192.168.0.113/ebo/';
 /*
 |--------------------------------------------------------------------------
 | Index File
