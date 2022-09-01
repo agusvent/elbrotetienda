@@ -380,6 +380,81 @@ class Order extends CI_Model
         return $toAppend;
     }
 
+
+    public function getFullById($idPedido){
+        //FUNCION QUE SE USA PARA EL EXPORT A EXCEL DE LOS PEDIDOS ENTRE LAS FECHAS A DOMICILIO
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, barrio.id as id_barrio, barrio.nombre as nombre_barrio, barrio.observaciones as barrio_observaciones, barrio.costo_envio, orders.deliver_address as cliente_domicilio, orders.deliver_extra as cliente_domicilio_extra, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento, orders.id_tipo_pedido, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal');
+        $this->db->from('orders');
+        $this->db->join('barrios as barrio', 'barrio.id = orders.barrio_id', 'left');
+        $this->db->join('offices as sucursal', 'sucursal.id = orders.office_id', 'left');
+        $this->db->join('pockets as bolson', 'bolson.id = orders.pocket_id', 'left');
+        $this->db->where('orders.id', $idPedido);
+        $order = $this->db->get()->result()[0];
+
+        if(!is_null($order)){
+            $order = $this->generateFormatted($order);
+        }
+        return $order;
+
+    }
+
+
+    public function generateFormatted($order) {
+        $cant_bolsones_individuales = "-";
+        $orderExtras = $this->getExtrasWithCantidad($order->id);
+        $extrasArray = [];
+        foreach($orderExtras as $extra) {
+            array_push($extrasArray,array(
+                'id_extra' => $extra->extra_id,
+                'name' => $extra->name,
+                'nombre_corto' => $extra->nombre_corto,
+                'extra_price' =>  intval($extra->total)/intval($extra->cant)
+            ));
+            if($extra->extra_id == 1) {
+                //SI ES EL BOLSON INDIVIDUAL
+                $cant_bolsones_individuales = $extra->cant;
+            }    
+        }
+
+        $montoDebe = 0;
+        $montoDebe = round(intval($order->monto_total) - intval($order->monto_pagado),0);
+        $toAppend = [];
+        array_push($toAppend, array(
+            'order_id' => $order->id,
+            'cliente' => $order->client_name,
+            'mail' => $order->email,
+            'celular' => $order->phone,
+            'id_sucursal' => $order->id_sucursal,
+            'sucursal' => $order->sucursal,
+            'domicilio_sucursal' => $order->domicilio_sucursal,
+            'id_barrio' => $order->id_barrio,
+            'barrio' => $order->nombre_barrio,
+            'barrio_observaciones' => $order->barrio_observaciones,
+            'costo_envio' => $order->costo_envio,
+            'nombre_bolson' => $order->nombre_bolson,
+            'total_bolson' => $order->total_bolson,
+            'cant_bolson' => $order->cant_bolson,
+            'cant_bolsones_individuales' => $cant_bolsones_individuales,
+            'fecha_entrega' => $order->deliver_date,
+            'cliente_domicilio' => $order->cliente_domicilio,
+            'cliente_domicilio_extra' => $order->cliente_domicilio_extra,
+            'cliente_domicilio_full' => $order->cliente_domicilio." ".$order->cliente_domicilio_extra,
+            'fecha_creacion' => $order->created_at,
+            'observaciones' => $order->observaciones,
+            'monto_total' => $order->monto_total,
+            'monto_pagado' => round($order->monto_pagado,0),
+            'monto_debe' => $montoDebe,
+            'id_estado_pedido' => $order->id_estado_pedido,
+            'extras' => $extrasArray,
+            'nro_orden' => $order->nro_orden,
+            'id_cupon' => $order->id_cupon,
+            'monto_descuento' => $order->monto_descuento,
+            'id_tipo_pedido' => $order->id_tipo_pedido,
+            'cant_items' => isset($order->cantItems) ? $order->cantItems : 0
+        ));
+        return $toAppend[0];
+    }
+
     public function getOrdersSucursalWithExtrasBetweenDates($fechaDesde,$fechaHasta){
         //FUNCION QUE SE USA PARA EL EXPORT A EXCEL DE LOS PEDIDOS ENTRE LAS FECHAS DE SUCURSAL
         //$this->db->select('orders.id, orders.client_name, orders.email, orders.phone, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, bolson.name as cantidad_bolsones, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden');

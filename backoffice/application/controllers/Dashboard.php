@@ -232,6 +232,7 @@ class Dashboard extends CI_Controller
         $consultaNombre = $this->input->post('consultaNombre', true);
         $consultaMail = $this->input->post('consultaMail', true);
         $consultaNroPedido = $this->input->post('consultaNroPedido', true);
+        $consultaFiltroFechasOn = $this->input->post('consultaFiltroFechasOn', true);
         if($accion=="editar"){
 
         }
@@ -244,7 +245,12 @@ class Dashboard extends CI_Controller
         if($consultaSoloNoValidos=="false"){
             $soloNoValidos = 0;
         }
-        $cPedidos = $this->Order->getOrdersFromConsultaPedidos($consultaIdDiaEntrega,$incluirCancelados,$consultaFechaDesde,$consultaFechaHasta,$consultaNombre,$consultaMail,$consultaNroPedido,$soloNoValidos);
+        if($consultaFiltroFechasOn=="true") {
+            $cPedidos = $this->Order->getOrdersFromConsultaPedidos($consultaIdDiaEntrega,$incluirCancelados,$consultaFechaDesde,$consultaFechaHasta,$consultaNombre,$consultaMail,$consultaNroPedido,$soloNoValidos);
+        } else {
+            $cPedidos = $this->Order->getOrdersFromConsultaPedidos($consultaIdDiaEntrega,$incluirCancelados,"","",$consultaNombre,$consultaMail,$consultaNroPedido,$soloNoValidos);
+        }
+        
         $this->load->model('TiposPedidos');
         $this->load->model('EstadosPedidos');
         $this->load->model('DiasEntregaPedidos');
@@ -262,6 +268,7 @@ class Dashboard extends CI_Controller
             'consultaNombre' => $consultaNombre,
             'consultaMail' => $consultaMail,
             'consultaNroPedido' => $consultaNroPedido,
+            'consultaFiltroFechasOn' => $consultaFiltroFechasOn,
             'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
             ]
         );
@@ -296,6 +303,7 @@ class Dashboard extends CI_Controller
         $consultaNombre = $this->input->post('consultaNombre', true);
         $consultaMail = $this->input->post('consultaMail', true);
         $consultaNroPedido = $this->input->post('consultaNroPedido', true);
+        $consultaFiltroFechasOn = $this->input->post('consultaFiltroFechasOn', true);
 
         $this->load->model('Order');
         $this->load->model('Pocket');
@@ -351,6 +359,7 @@ class Dashboard extends CI_Controller
             'consultaNombre' => $consultaNombre,
             'consultaMail' => $consultaMail,
             'consultaNroPedido' => $consultaNroPedido,
+            'consultaFiltroFechasOn' => $consultaFiltroFechasOn,
             'costoEnvio' => $costoEnvio,
             'precioBolson' => $bolson->price ?? null,
             'precioDeliveryBolson' =>$bolson->delivery_price ?? null,

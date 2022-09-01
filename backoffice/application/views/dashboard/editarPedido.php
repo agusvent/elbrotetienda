@@ -12,6 +12,7 @@
             <input type="hidden" name="consultaIdDiaEntrega" id="consultaIdDiaEntrega" value="<?=$consultaIdDiaEntrega?>"/>
             <input type="hidden" name="consultaNombre" id="consultaNombre" value="<?=$consultaNombre?>"/>
             <input type="hidden" name="consultaNroPedido" id="consultaNroPedido" value="<?=$consultaNroPedido?>"/>
+            <input type="hidden" name="consultaFiltroFechasOn" id="consultaFiltroFechasOn" value="<?=$consultaFiltroFechasOn?>"/>
             <input type="hidden" name="consultaMail" id="consultaMail" value="<?=$consultaMail?>"/>
             <input type="hidden" name="precioBolson" id="precioBolson" value="<?=$precioBolson ?? ''?>"/>
             <input type="hidden" name="precioDeliveryBolson" id="precioDeliveryBolson" value="<?=$precioDeliveryBolson ?? ''?>"/>

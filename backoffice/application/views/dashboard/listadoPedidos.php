@@ -15,6 +15,7 @@
             <input type="hidden" id="consultaFechaHasta" name="consultaFechaHasta" value="<?=$consultaFechaHasta ?? ''?>"/>
             <input type="hidden" id="consultaIncluirCancelados" name="consultaIncluirCancelados" value="<?=$consultaIncluirCancelados ?? false?>"/>
             <input type="hidden" id="consultaSoloNoValidos" name="consultaSoloNoValidos" value="<?=$consultaSoloNoValidos ?? false?>"/>
+            <input type="hidden" id="consultaFiltroFechasOn" name="consultaFiltroFechasOn" value="<?=$consultaFiltroFechasOn ?? false?>"/>
             <input type="hidden" id="consultaIdDiaEntrega" name="consultaIdDiaEntrega" value="<?=$consultaIdDiaEntrega ?? ''?>"/>
             <input type="hidden" id="consultaNombre" name="consultaNombre" value="<?=$consultaNombre ?? ''?>"/>
             <input type="hidden" id="consultaMail" name="consultaMail" value="<?=$consultaMail ?? ''?>"/>
@@ -23,14 +24,15 @@
             <table class="listadoPedidosTable" id="tableListadoPedidos">
                 <thead>
                     <tr>
-                        <th style="text-align:left;width:17%">Fecha</th>
-                        <th style="text-align:left;width:17%">Cliente</th>
-                        <th style="text-align:left;width:8%">Tel&eacute;fono</th>
-                        <th style="text-align:left;width:15%">Mail</th>
+                        <th style="text-align:left;width:16%">Fecha</th>
+                        <th style="text-align:left;width:16%">Cliente</th>
+                        <th style="text-align:left;width:7%">Tel&eacute;fono</th>
+                        <th style="text-align:left;width:14%">Mail</th>
                         <th style="text-align:left;width:10%">Estado</th>
                         <th style="text-align:left;width:5%">Tipo</th>
-                        <th style="text-align:left;width:23%">P.Retiro / Barrio</th>
-                        <th style="text-align:left;width:5%">&nbsp;</th>
+                        <th style="text-align:left;width:21%">P.Retiro / Barrio</th>
+                        <th style="text-align:left;width:3%">&nbsp;</th>
+                        <th style="text-align:left;width:8%">&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody id="tableListadoPedidosBody">
@@ -60,7 +62,11 @@
                                         <?php }else{?>
                                             <td><?=$oPedido->nombre_barrio ?? ""?>
                                         <?php }?>
-                                        <td><a href='javascript:fEditarPedido("<?=$oPedido->id?>")'><img class='img img-responsive' src='../assets/img/edit.png' width='30'/></a></td>
+                                        <td><a href='javascript:fEditarPedido("<?=$oPedido->id?>")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a></td>
+                                        <td>
+                                            <a href='javascript:fReenviarMailConfirmacion("<?=$oPedido->id?>")'><img class='img img-responsive' src='../assets/img/send_mail.png' width='24'/></a>
+                                            <a href='javascript:fImprimirComanda("<?=$oPedido->id?>")'><img class='img img-responsive' src='../assets/img/comanda.png' width='24'/></a>
+                                        </td>
                                 </tr>
                                 <?php
                             }
@@ -121,12 +127,31 @@
                 <div class="row rowFiltroPedidos">
                     <div class="col-xs-6 col-sm-6">
                         Desde: 
-                        <input type="date" class="form-control form-control-sm" name="filtroFechaDesde" id="filtroFechaDesde" value="<?=$consultaFechaDesde ?? date('Y-m-d');?>" max="<?=date('Y-m-d');?>" required>
-                        <button type="button" id="bBorrarFechasFiltro" class="btn btn-xs btn-primary btn-borrar-fechas marginTop10">Borrar Fechas</button>
+                        <?php if(isset($consultaFiltroFechasOn) && $consultaFiltroFechasOn=="false") { ?>
+                            <input type="date" class="form-control form-control-sm" name="filtroFechaDesde" id="filtroFechaDesde" value="" required>
+                        <?php } else { ?>
+                            <input type="date" class="form-control form-control-sm" name="filtroFechaDesde" id="filtroFechaDesde" value="<?=$consultaFechaDesde ?? date('Y-m-d');?>" max="<?=date('Y-m-d');?>" required>
+                        <?php } ?>
+                        <label for='filtroPedidosFechasSwitch'>Fechas</label>
+                        <?php if(isset($consultaFiltroFechasOn)) { ?>
+                            <?php if($consultaFiltroFechasOn=="true") {?>
+                                <input id='filtroPedidosFechasSwitch' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs" checked>
+                            <?php } else { ?>
+                                <input id='filtroPedidosFechasSwitch' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs" data-fecha-prev-desde="<?=$consultaFechaDesde?>" data-fecha-prev-hasta="<?=$consultaFechaHasta?>" >
+                            <?php } ?>
+                        <?php } else { ?>
+                            <input id='filtroPedidosFechasSwitch' type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs" checked>
+                        <?php } ?>
+                        
+                        <!--<button type="button" id="bBorrarFechasFiltro" class="btn btn-xs btn-primary btn-borrar-fechas marginTop10">Borrar Fechas</button>-->
                     </div>
                     <div class="col-xs-6 col-sm-6">
-                    Hasta:&nbsp; 
-                    <input type="date" class="form-control form-control-sm" name="filtroFechaHasta" id="filtroFechaHasta" value="<?=$consultaFechaHasta ?? date('Y-m-d');?>" max="<?=date('Y-m-d');?>">        
+                        Hasta:&nbsp; 
+                        <?php if(isset($consultaFiltroFechasOn) && $consultaFiltroFechasOn=="false") { ?>
+                            <input type="date" class="form-control form-control-sm" name="filtroFechaHasta" id="filtroFechaHasta" value="">        
+                        <?php } else { ?>
+                            <input type="date" class="form-control form-control-sm" name="filtroFechaHasta" id="filtroFechaHasta" value="<?=$consultaFechaHasta ?? date('Y-m-d');?>" max="<?=date('Y-m-d');?>">        
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="row rowFiltroPedidos">
@@ -155,4 +180,4 @@
 </div>
 <!-- Fin Modal Filtro de Pedidos-->
 
-<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=12341"></script>
+<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=98631243"></script>
