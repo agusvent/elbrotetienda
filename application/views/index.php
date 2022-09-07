@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/new_design/assets/css/plugins.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=18712">
-    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=1233">
+    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=827364">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -968,6 +968,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 
+<!-- Modal Dia Entrega Deshabiltado-->
+<div class="modal fade" id="modalDiaEntregaDisabled" tabindex="-1" role="dialog" aria-labelledby="modalDiaEntregaSinBolsonShort" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                <button type="button" class="close closeDiaEntregaDisabled" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding-top:0px;margin-top:0px;">
+                <div class="welcome-area pt-20 pb-20">
+                    <div class="container">
+                        <div class="welcome-content text-center">
+                            <h5>¡Lo sentimos!</h5>
+                            <h1>El dia seleccionado ya no esta habilitado para tomar pedidos.</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row rowAvisoPedidosCargados" style="text-align:center">
+                    <div class="col-xs-12">
+                        <button type="button" id="bDiaEntregaDisabled" class="ebo-cart-btn ebo-cart-btn-green">ACEPTAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">const baseURL = "<?=base_url();?>";</script>
 <!-- All JS is here
 ============================================ -->
@@ -982,7 +1011,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=21341"></script>
+<script src="assets/js/mainv2.js?v=12341"></script>
 <script src="assets/new_design/assets/js/main.js?v=1234"></script>
 
 

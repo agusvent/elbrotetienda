@@ -211,12 +211,15 @@ $(document).ready(function() {
                         $("#labelAvisoPedidosCargadosDiaBolson").html(responseSearch.diaBolson);
                         $("#modalAvisoPedidosCargados").modal("show");
                     }else{
-                        eboSubmit();
+                        if(checkDiaEntregaHabilitado()) {
+                            eboSubmit();
+                        }else{
+                            $("#modalDiaEntregaDisabled").modal("show");
+                        }            
                     }
                 }else if(!checkForm()){
                     scrollToTargetAdjusted("datosPedido");
                 }
-
             });
 
             $("#modalAvisoPedidosCargados").on("hide.bs.modal",function(){
@@ -225,7 +228,11 @@ $(document).ready(function() {
 
             $("#bContinuarConPedido").on("click",function(e){
                 $("#modalAvisoPedidosCargados").modal("hide");
-                eboSubmit();
+                if(checkDiaEntregaHabilitado()) {
+                    eboSubmit();
+                }else{
+                    $("#modalDiaEntregaDisabled").modal("show");
+                }
             });
         
             $("#bWhatsapp").on("click",function(e){
@@ -252,6 +259,10 @@ $(document).ready(function() {
                 $("#modalDiaEntregaSinBolsonShort").modal("hide");
             });
 
+            $(".close, .closeDiaEntregaDisabled").on("click",function(e){
+                rebootWeb();
+            });
+
             $("#bDiaEntregaSinBolsonShort").on("click",function(e) {
                 $("#modalDiaEntregaSinBolsonShort").modal("hide");
             });
@@ -272,6 +283,11 @@ $(document).ready(function() {
                     $("#modalAvisoPedidosCargados").modal("show");
                 }
             });    
+
+            $("#bDiaEntregaDisabled").on("click",function(e){
+                rebootWeb();
+            });
+
             initMasMenosCantProductoResumen();
         } else {
             hideSections();
@@ -1211,6 +1227,24 @@ function getTipoPedidoHasPedidosExtrasHabilitado(){
     return tipoPedidoHasPedidosExtrasHabilitado;
 }
 
+function checkDiaEntregaHabilitado(){
+    var diaEntregaHabilitado = false;
+    let idDiaEntrega = $("#idDiaEntrega").val();
+
+    let data = {
+        'idDiaEntrega': idDiaEntrega
+    };
+    $.ajax({
+        url: baseURL + 'getDiaEntregaHabilitado',
+        data: data,
+        method: 'post',
+        async: false
+    }).done(function(result) {
+        diaEntregaHabilitado = result.dia_entrega_enabled;
+    });
+    return diaEntregaHabilitado;    
+}
+
 function checkConfiguracionPedido(){
     //FUNCION PARA SABER SI ACEPTA O NO PEDIDOS SOLO DE EXTRAS EN BASE AL TIPO DE PEDIDO SELECCIONADO (PUNTO DE RETIRO / DOMICILIO)
     var configurationOK = true;
@@ -1802,4 +1836,8 @@ function diaAceptaBolsones() {
         }
     }
     return aceptaBolsones;
+}
+
+function rebootWeb(){
+    window.location = baseURL;
 }
