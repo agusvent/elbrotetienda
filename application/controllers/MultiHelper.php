@@ -101,5 +101,20 @@ class MultiHelper extends CI_Controller{
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
     }
+
+    public function getDiaEntregaEnabled() {
+        $this->output->set_content_type('application/json');
+        $return['diaEntregaEnabled'] = false;
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        
+        $this->load->model('DiasEntregaPedidos');
+        $oDiaEntrega = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        
+        if($oDiaEntrega->acepta_pedidos == 1) {
+            $return['dia_entrega_enabled'] = true;
+        }
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
 }
 

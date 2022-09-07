@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-#$config['base_url'] = 'http://192.168.0.113/ebo/backoffice/';
-$config['base_url'] = 'https://elbrotetienda.com/backoffice/';
+$config['base_url'] = 'http://192.168.1.100/ebo/backoffice/';
+#$config['base_url'] = 'https://elbrotetienda.com/backoffice/';
 /*
 |--------------------------------------------------------------------------
 | Index File

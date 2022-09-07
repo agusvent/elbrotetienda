@@ -17,7 +17,7 @@ class DiasEntregaPedidos extends CI_Model
 
     public function getById($idDiaEntrega) 
     {
-        $this->db->select('d.id_dia_entrega, d.fecha_entrega as fechaEntrega, d.descripcion, d.acepta_bolsones as aceptaBolsones, d.punto_de_retiro_enabled as puntoDeRetiroEnabled, d.delivery_enabled as deliveryEnabled, d.imagen');
+        $this->db->select('d.id_dia_entrega, d.fecha_entrega as fechaEntrega, d.descripcion, d.acepta_bolsones as aceptaBolsones, d.punto_de_retiro_enabled as puntoDeRetiroEnabled, d.delivery_enabled as deliveryEnabled, d.imagen, d.acepta_pedidos');
         $this->db->from('dias_entrega_pedidos as d');
         $this->db->where('id_dia_entrega', $idDiaEntrega);
         $result = $this->db->get();
