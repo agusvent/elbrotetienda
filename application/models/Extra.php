@@ -20,7 +20,7 @@ class Extra extends CI_Model
 
     public function getById($id) 
     {
-        $this->db->select('id, name, price, imagen, stock_disponible, stock_ilimitado');
+        $this->db->select('id, name, price, imagen, stock_disponible, stock_ilimitado, visible_domicilio, visible_sucursal');
         $this->db->from('extra_products');
         $this->db->where('active', 1);
         $this->db->where('id', $id);
