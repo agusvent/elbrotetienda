@@ -257,6 +257,13 @@
     padding: 35px;
 }
 
+#modalExtraDisabledTipoPedido .modal-dialog {
+    margin: 3% auto;
+    max-width: 650px;
+    width: 90%;
+    padding: 35px;
+}
+
 #modalDiaEntregaDisabled .modal-dialog {
     margin: 3% auto;
     max-width: 650px;
@@ -1033,6 +1040,9 @@
     .comoHacerPedido {
         width:65%;
     }
+    #modalExtraDisabledTipoPedido .modal-dialog h2{
+        font-size:18px;
+    }    
 }
 
 @media only screen and (max-width: 390px) {

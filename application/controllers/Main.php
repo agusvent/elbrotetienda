@@ -603,16 +603,16 @@ class Main extends CI_Controller
         /*
         if($orderData['idTipoPedido'] == 1){
             $preference->back_urls = [
-                'success' => 'http://190.246.199.238:81/ebo/success/'.$orderData['hash'].'/',
-                'failure' => 'http://190.246.199.238:81/ebo/failure/'.$orderData['hash'].'/'
+                'success' => 'http://agus.tplinkdns.com/ebo/success/'.$orderData['hash'].'/',
+                'failure' => 'http://agus.tplinkdns.com/ebo/failure/'.$orderData['hash'].'/'
             ];
         }else{
             $preference->back_urls = [
-                'success' => 'http://190.246.199.238:81/ebo/success/'.$orderData['hash'].'/delivery/',
-                'failure' => 'http://190.246.199.238:81/ebo/failure/'.$orderData['hash'].'/'
+                'success' => 'http://agus.tplinkdns.com/ebo/success/'.$orderData['hash'].'/delivery/',
+                'failure' => 'http://agus.tplinkdns.com/ebo/failure/'.$orderData['hash'].'/'
             ];
         }
-        $preference->notification_url = 'http://190.246.199.238:81/ebo/payment_confirmation/'.$orderData['hash'];
+        $preference->notification_url = 'http://agus.tplinkdns.com/ebo/payment_confirmation/'.$orderData['hash'];
         */
 
         // Desactivo estado 'pendiente' y métodos en efectivo.

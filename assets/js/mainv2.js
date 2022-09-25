@@ -1,4 +1,5 @@
 let aExtras = [];
+let disabledExtras = [];
 let oBolson = undefined;
 let idTipoPedidoSelected = 0;
 let pedidoSoloExtras = false;
@@ -211,11 +212,7 @@ $(document).ready(function() {
                         $("#labelAvisoPedidosCargadosDiaBolson").html(responseSearch.diaBolson);
                         $("#modalAvisoPedidosCargados").modal("show");
                     }else{
-                        if(checkDiaEntregaHabilitado()) {
-                            eboSubmit();
-                        }else{
-                            $("#modalDiaEntregaDisabled").modal("show");
-                        }            
+                        validationsAndSubmit();
                     }
                 }else if(!checkForm()){
                     scrollToTargetAdjusted("datosPedido");
@@ -228,11 +225,7 @@ $(document).ready(function() {
 
             $("#bContinuarConPedido").on("click",function(e){
                 $("#modalAvisoPedidosCargados").modal("hide");
-                if(checkDiaEntregaHabilitado()) {
-                    eboSubmit();
-                }else{
-                    $("#modalDiaEntregaDisabled").modal("show");
-                }
+                validationsAndSubmit();
             });
         
             $("#bWhatsapp").on("click",function(e){
@@ -323,6 +316,7 @@ $(document).ready(function() {
         $("#idDiaEntrega").on("change",function(e){
             if($(this).val()>0) {
                 $("#dTiposEntregaButtons").show();
+                $("#tipoPedidoOrden").html("Seleccioná un método de entrega.");
                 $("#pErrorDiaEntrega").html("");
                 $("#messageProductoEliminado").html("");
                 $("#messageProductoEliminado").hide();            
@@ -335,9 +329,29 @@ $(document).ready(function() {
 
             }
         });
+        
+        $("#bCambiarTipoPedido").on("click", function(e){
+            e.preventDefault();
+            $("#idDiaEntrega").change();
+            $("#tipoPedidoOrden").html("Seleccioná un método de entrega.");
+            disabledExtras = [];
+            idTipoPedidoSelected = 0;
+            $("#modalExtraDisabledTipoPedido").modal("hide");
+        });
+
+        $("#bEliminarProductosPedido").on("click", function(e) {
+            e.preventDefault();
+            deleteDisabledExtras();
+
+            $("#messageProductoEliminado").html("Los productos fueron eliminados del pedido. Para continuar toca Finalizar Compra");
+            $("#messageProductoEliminado").show();
+            $("#modalExtraDisabledTipoPedido").modal("hide");
+            scrollToTargetAdjusted('seccionResumenPedido');                 
+        });
 
         //ES PARA QUE NO PUEDAN HACER CLICK POR FUERA DEL MODAL
         $('#modalDiaEntregaSinBolson').modal({backdrop: 'static', keyboard: false}) 
+        $('#modalExtraDisabledTipoPedido').modal({backdrop: 'static', keyboard: false}) 
 
         $("#bCambiarDiaEntrega").on("click",function(e) {
             e.preventDefault();
@@ -379,6 +393,24 @@ function initMarketDiferencial(){
     drawMarketDiferencal(cExtras);
 }
 
+function validationsAndSubmit() {
+    var response_extras_enabled = verifyExtrasEnabledByTipoPedido(idTipoPedidoSelected);
+    if(response_extras_enabled.extras_enabled) {
+        if(checkDiaEntregaHabilitado()) {
+            eboSubmit();
+        }else{
+            $("#modalDiaEntregaDisabled").modal("show");
+        }            
+    } else {
+        var errores = "";
+        for(var i=0; i<response_extras_enabled.errores.length; i++) {
+            errores += "<li> * " + response_extras_enabled.errores[i].name + "</li>";
+            disabledExtras.push(response_extras_enabled.errores[i].id_extra);
+        }
+        $("#erroresExtrasDisabled").html(errores);        
+        $("#modalExtraDisabledTipoPedido").modal("show");                    
+    }    
+}
 
 function getMarket(){
     var cExtras = [];
@@ -585,6 +617,23 @@ function prepareFormOrderByTipoPedido(idTipoPedido){
     }
     calcularTotalPedido();
     $("#tipoPedidoOrden").html(tipoPedido)
+}
+
+function verifyExtrasEnabledByTipoPedido(idTipoPedido) {
+    var response = {};
+    var data = {
+        "extras" :JSON.stringify(aExtras),
+        "id_tipo_pedido": idTipoPedido
+    }
+    $.ajax({
+        url: baseURL + 'verifyExtrasEnabledByTipoPedido',
+        method: 'post',
+        data: data,
+        async: false
+    }).done(function(result) {
+        response = result;
+    });
+    return response;
 }
 
 function preparePuntosDeRetiro(){
@@ -1051,7 +1100,15 @@ function deleteBolsonFromCarrito(idBolson){
     refreshCart();
     getResumenPedido();
 }
- function goToAbout(){
+
+function deleteDisabledExtras() {
+    for(var i=0; i<disabledExtras.length; i++) {
+        deleteProduct(disabledExtras[i]);
+    }
+    disabledExtras = [];
+}
+
+function goToAbout(){
     $.ajax({
         url: baseURL + 'about',
         method: 'post'
