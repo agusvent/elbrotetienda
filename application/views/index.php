@@ -199,7 +199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="support-content">
                                 <h5 class="h5ComoHacerTuPedido">Elegí el día de entrega*</h5>
-                                <p>Entregamos a domicilio Miércoles y Viernes.</p>
+                                <p>Entregamos a domicilio Lunes, Miércoles y Viernes.</p>
                             </div>
                         </div>
                     </div>
