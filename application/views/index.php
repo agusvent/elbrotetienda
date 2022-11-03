@@ -225,7 +225,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                     </div>
-                    <p style="font-size:12px;">* ATENCIÓN: Nuestros bolsones de fruta y verdura se entregan únicamente los días Miércoles de cada semana. El resto de los días se entregan productos de nuestra tienda online.</p>
                 </div>
             </div>
         </div>
