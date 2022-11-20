@@ -481,10 +481,7 @@ function editarPedidoArmarHtmlItemExtra(oExtra){
     }
     htmlExtraItem += "<option selected value='0'>0</option>";
     if(parseInt(oExtra.stock_ilimitado)==0){
-        for(var i=1;i<=10;i++){
-            if(i==11){
-                break;
-            }
+        for(var i=1;i<21;i++){
             if(i<= parseInt(oExtra.stock_disponible)){
                 htmlExtraItem += "<option value='"+i+"'>"+i+"</option>";
             }else{
@@ -492,7 +489,7 @@ function editarPedidoArmarHtmlItemExtra(oExtra){
             }
         }
     }else{
-        for(var i=1;i<11;i++){
+        for(var i=1;i<21;i++){
             htmlExtraItem += "<option value='"+i+"'>"+i+"</option>";
         }
     }

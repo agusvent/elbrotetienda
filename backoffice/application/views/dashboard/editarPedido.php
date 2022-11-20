@@ -320,4 +320,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=971382"></script>
+<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=1241234"></script>
