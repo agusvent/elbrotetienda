@@ -297,13 +297,13 @@ function armarHtmlItemExtra(oExtra){
     htmlExtraItem += "<option selected value='0'>0</option>";
     if(parseInt(oExtra.stock_ilimitado)==0){
         for(var i=1;i<=parseInt(oExtra.stock_disponible);i++){
-            if(i==11){
+            if(i==21){
                 break;
             }
             htmlExtraItem += "<option value='"+i+"'>"+i+"</option>";
         }
     }else{
-        for(var i=1;i<11;i++){
+        for(var i=1;i<21;i++){
             htmlExtraItem += "<option value='"+i+"'>"+i+"</option>";
         }
     }
