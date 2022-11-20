@@ -6488,33 +6488,19 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode($return));             
     }
 
-    private function createPDFIndividualLogisticaCamion($idLogisticaCamion,$idDiaEntrega){
+    private function createHtmlForIndividualLogisticaCamion($oLogisticaCamion, $cLogisticaFromCamion, $idDiaEntrega) {
         $this->load->model('Logistica');
         $this->load->model('Extra');
         $this->load->model('LogisticaDiasEntregaCamiones');
         $this->load->model('Order');
         $this->load->model('Office');
         $this->load->model('Barrio');
-        
-        $oLogisticaCamion = $this->LogisticaDiasEntregaCamiones->getById($idLogisticaCamion);
+
         $hayPedidosPuntosDeRetiro = false;
-        $cExtras = $this->Extra->getActive();
-        $cLogisticaFromCamion = $this->Logistica->getLogisticaByDiaEntregaAndCamion($idDiaEntrega,$idLogisticaCamion);
         $itemCounter = 1;
-        if(!is_null($cLogisticaFromCamion) && count($cLogisticaFromCamion)>0){
-            $oPDF = new \Mpdf\Mpdf([
-                'mode' => 'utf-8',
-                'format'=> 'Legal',
-                'orientation' => 'L',
-                'margin_left' => '5',
-                'margin_right' => '5',
-                'margin_top' => '5',
-                'margin_bottom' => '0'
-            ]);
-    
-            $oPDF->SetTitle('Logística Camiones');
-            
-            $html = "";
+
+        $cExtras = $this->Extra->getActive();
+        $html = "";
             $cantTotalBolsones = 0;
             $cantTotalEspeciales = 0;
             $cantTotalEspecialesIndividuales = 0;
@@ -6665,6 +6651,34 @@ class Api extends CI_Controller
             }
             $html .= "</tr>";
             $html .= "</tbody></table>";
+            return $html;
+    }
+
+    private function createPDFIndividualLogisticaCamion($idLogisticaCamion,$idDiaEntrega){
+        $this->load->model('Logistica');
+        $this->load->model('Extra');
+        $this->load->model('LogisticaDiasEntregaCamiones');
+        $this->load->model('Order');
+        $this->load->model('Office');
+        $this->load->model('Barrio');
+        
+        $oLogisticaCamion = $this->LogisticaDiasEntregaCamiones->getById($idLogisticaCamion);
+        $cLogisticaFromCamion = $this->Logistica->getLogisticaByDiaEntregaAndCamion($idDiaEntrega,$idLogisticaCamion);
+        if(!is_null($cLogisticaFromCamion) && count($cLogisticaFromCamion)>0){
+            $oPDF = new \Mpdf\Mpdf([
+                'mode' => 'utf-8',
+                'format'=> 'Legal',
+                'orientation' => 'L',
+                'margin_left' => '5',
+                'margin_right' => '5',
+                'margin_top' => '5',
+                'margin_bottom' => '0'
+            ]);
+    
+            $oPDF->SetTitle('Logística Camiones');
+            
+            $html = $this->createHtmlForIndividualLogisticaCamion($oLogisticaCamion, $cLogisticaFromCamion, $idDiaEntrega);
+            
             $oPDF->WriteHTML($html);
             $oPDF->Output('LogisticaCamiones.pdf', 'F');
         }
@@ -8419,11 +8433,30 @@ class Api extends CI_Controller
 
         $maxOrdersByPage = 9;
         $maxExtrasByPage = 15;
+        $firstTime = true;
 
         foreach($arrayCamiones as $camion){
             $cLogisticaPdR = $this->Logistica->getAllPuntosRetiroByIdCamion($camion['idCamion']);
             $cLogisticaBarrios = $this->Logistica->getAllBarriosByIdCamion($camion['idCamion']);
             $oCamion = $this->LogisticaDiasEntregaCamiones->getById($camion['idCamion']);
+            $idDiaEntrega = -1;
+            if (!is_null($cLogisticaPdR) && count($cLogisticaPdR)>0){
+                $idDiaEntrega = $cLogisticaPdR[0]->id_dia_entrega;
+            } else {
+                $idDiaEntrega = $cLogisticaBarrios[0]->id_dia_entrega;
+            }
+            
+            $cLogisticaFromCamion = $this->Logistica->getLogisticaByDiaEntregaAndCamion($idDiaEntrega,$oCamion->id);
+            
+            if(!$firstTime) {
+                $oPDF->AddPage();                
+            } else {
+                $firstTime = false;
+            }
+            $html = $this->createHtmlForIndividualLogisticaCamion($oCamion, $cLogisticaFromCamion, $idDiaEntrega);                
+            
+            $oPDF->WriteHTML($html);
+            $html = "";
 
             if (count($cLogisticaPdR)>0) {
                 foreach($cLogisticaPdR as $oLogistica) {
