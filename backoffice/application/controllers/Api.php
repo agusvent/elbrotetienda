@@ -8453,6 +8453,13 @@ class Api extends CI_Controller
             } else {
                 $firstTime = false;
             }
+
+            $oPDF->SetHTMLHeader("");
+            $oPDF->setFooter('{PAGENO}');
+            $oPDF->AddPageByArray(array(
+                'orientation' => 'L',
+                'mgt' => '2'));
+
             $html = $this->createHtmlForIndividualLogisticaCamion($oCamion, $cLogisticaFromCamion, $idDiaEntrega);                
             
             $oPDF->WriteHTML($html);
