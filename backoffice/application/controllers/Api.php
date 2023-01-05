@@ -9004,7 +9004,8 @@ class Api extends CI_Controller
         
         if($idTipoPedido == 2) {
             $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;'>".$tipoPedido.": ".$tipoPedidoLugar."</h5>";
-            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:2px solid #000000;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;'>DIRECCIÓN: <span style='font-family: helvetica-r'>".$direccion."</span></h5>";
+            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;'>DIRECCIÓN: <span style='font-family: helvetica-r'>".$direccion."</span></h5>";
+            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:2px solid #000000;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;'>FORMA DE PAGO: <span style='font-family: helvetica-r'>".$oOrder["forma_pago"]."</span></h5>";
         } else {
             $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; border-bottom:2px solid #000000; margin-top:0px; margin-bottom:0px;'>".$tipoPedido.": ".$tipoPedidoLugar."</h5>";
         }
@@ -9033,7 +9034,7 @@ class Api extends CI_Controller
         }
         if(intval($idTipoPedido) == 2) {
             $html .= "<tr>";
-            $html .= "<td align='left' colspan='2' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>ENVÍO (abonado por Mercado pago)</td>";
+            $html .= "<td align='left' colspan='2' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>ENVÍO</td>";
             $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>$".intval($oOrder["costo_envio"])."</td>";
             $html .= "</tr>";
         }
@@ -9770,7 +9771,7 @@ class Api extends CI_Controller
                 'size'  => 12
             )
         );        
-    
+        /*
         $sheet->setTitle('PUNTOS DE RETIRO');
         $spreadsheet->getDefaultStyle()->getFont()->setName('Arial');
         $spreadsheet->getActiveSheet()->getPageSetup()->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
@@ -9799,6 +9800,11 @@ class Api extends CI_Controller
         $xlsCol++;
         
         $sheet->setCellValue($xlsCol.$xlsRow, 'Dia de Entrega');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Monto Total');
         $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
         $lastColumn = $xlsCol;
@@ -9840,6 +9846,12 @@ class Api extends CI_Controller
                 $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
                 $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->montoTotal);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
                 $sheet->getRowDimension($xlsRow)->setRowHeight(20);
                 $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
                 $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($styleArray);
@@ -9851,8 +9863,9 @@ class Api extends CI_Controller
         $lastColumn = 'A';
         $xlsCol = 'A';
         $xlsRow = 1;
-
+        
         $sheet = $spreadsheet->createSheet();
+        */
         $sheet->setTitle('DOMICILIO');
 
         $spreadsheet->getDefaultStyle()->getFont()->setName('Arial');
@@ -9884,6 +9897,11 @@ class Api extends CI_Controller
         $sheet->setCellValue($xlsCol.$xlsRow, 'Dia de Entrega');
         $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
+        $xlsCol++;
+        
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Monto Total');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
         $lastColumn = $xlsCol;
         
         $sheet->getRowDimension($xlsRow)->setRowHeight(35);
@@ -9893,6 +9911,9 @@ class Api extends CI_Controller
         $xlsRow++;
 
         $xlsCol = 'A';
+        $firstRow = 2;
+        $xlsColMontoTotal = 'F';
+        
         foreach($cOrders as $oOrder){
             if($oOrder->id_tipo_pedido==2) {
                 $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->client_name);
@@ -9923,6 +9944,14 @@ class Api extends CI_Controller
                 $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
                 $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->montoTotal);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+                $sheet->getStyle($xlsCol.$xlsRow)->getNumberFormat()->setFormatCode('"$"#');
+    
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
                 $sheet->getRowDimension($xlsRow)->setRowHeight(20);
                 $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
                 $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($styleArray);
@@ -9930,6 +9959,25 @@ class Api extends CI_Controller
                 $xlsCol = 'A';
             }
         }
+        $lastRow = $xlsRow-1;
+        $xlsRow++;
+        $rango = $xlsColMontoTotal.$firstRow.":".$xlsColMontoTotal.($xlsRow-1);
+        
+        $sumMontoTotal = '=SUM('.$rango.')';
+        $xlsCol++;
+        $xlsCol++;
+        $xlsCol++;
+        $xlsCol++;
+        $xlsCol++;
+
+        $sheet->setCellValue($xlsCol.$xlsRow, $sumMontoTotal);
+        $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+        $sheet->getStyle($xlsCol.$xlsRow)->getNumberFormat()->setFormatCode('"$"#');
+        $sheet->getStyle($xlsCol.$xlsRow)->getFont()->setBold(true);
+
+        $sheet->getRowDimension($xlsRow)->setRowHeight(20);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+        $sheet->getStyle('A'.$xlsRow.':'.$lastColumn.$xlsRow)->applyFromArray($styleArray);
 
         $fileName = "ClientesOrdenes.xls";
         $writer = new Xlsx($spreadsheet);        
