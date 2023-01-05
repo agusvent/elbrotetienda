@@ -11,7 +11,7 @@
             <div style="margin-bottom:15px;">
                 Apagar formulario:
                     <input id="apagarFormularioPedidos" type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs" <?=($formEnabled == 0) ? 'checked':'';?>>
-                &nbsp;( modo vacaciones )
+                &nbsp;( Tienda Cerrada )
             </div>
             <div id="diasEntregaList" class="cupones-wrapper">
             </div>
@@ -164,5 +164,54 @@
 </div>
 <!-- Fin Modal Editar Barrios-->
 
+<!-- Modal Pedidoss Fijos Creados-->
+<div class="modal fade" id="modalPedidosFijosCreados" tabindex="-1" role="dialog" aria-labelledby="modalPedidosFijosCreados" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title"><label>Pedidos Creados</label></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="editarPedidosFijosCreadosList" class="pedidosFijosCreadosList">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Modal Pedidoss Fijos Creados-->
+
+
+<!--Modal Confirm Pedidos Fijos -->
+<div class="modal fade" tabindex="-1" role="dialog" id="crearPedidosFijosConfirmationModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Pedidos Fijos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="deleteRegistrosLogisticaForm">
+            <div class="form-group">
+                <h6>Estas por crear todos los pedidos fijos cargados.</h6>
+                <h6>¿Quer&eacute;s continuar? </h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="bCrearPedidosFijos" class="btn btn-green">Continuar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+        </form>
+       </div>
+    </div>
+  </div>
+</div>
+<!--Fin Modal Confirm Despachado-->
+
 <input type="hidden" id="idDiaEntregaEditar" value="0">
-<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=65342"></script>
+<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=211992"></script>

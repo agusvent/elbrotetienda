@@ -188,11 +188,11 @@ $(document).ready(function() {
             });
     
             $("#idBarrio").on("change",function(e){
-                let subtotal = $("#totalPedido").html();
+                //let subtotal = $("#totalPedido").html();
                 var infoDelBarrio = $("option:selected",this).attr("data-horarioEntrega");
                 $("#datosBarrio").html(infoDelBarrio);
                 $(".infoAdicionalBarrios").show();
-                calcularPrecioDelivery(subtotal)
+                //calcularPrecioDelivery(subtotal);
                 calcularTotalPedido();
             });
 
@@ -206,16 +206,25 @@ $(document).ready(function() {
             }); 
     
             $("#bFinalizarPedido").on("click",function(e){
+                var isMobile = detectMobile();
                 if(checkForm() && checkConfiguracionPedido()){
                     var responseSearch = searchOrdersDuplicadas($("#mail").val(),$("#celular").val());
-                    if(responseSearch.existePedidoCargado){
+                    /*if(responseSearch.existePedidoCargado){
                         $("#labelAvisoPedidosCargadosDiaBolson").html(responseSearch.diaBolson);
                         $("#modalAvisoPedidosCargados").modal("show");
                     }else{
                         validationsAndSubmit();
                     }
+                    */
+                    validationsAndSubmit();
                 }else if(!checkForm()){
-                    scrollToTargetAdjusted("datosPedido");
+                    if(isMobile) {
+                        scrollToTargetAdjusted("datosPedido");
+                    } 
+                } else {
+                    if(isMobile) {
+                        scrollToTargetAdjusted("errorBolsonIndividual");
+                    }
                 }
             });
 
@@ -313,22 +322,13 @@ $(document).ready(function() {
             $("#errorCuponDescuento").html("");
             $("#successCuponDescuento").html("");
         })
-        $("#idDiaEntrega").on("change",function(e){
-            if($(this).val()>0) {
-                $("#dTiposEntregaButtons").show();
-                $("#tipoPedidoOrden").html("Seleccioná un método de entrega.");
-                $("#pErrorDiaEntrega").html("");
-                $("#messageProductoEliminado").html("");
-                $("#messageProductoEliminado").hide();            
-                loadDiaEntregaConfig($(this).val());
-            } else {
-                clearClienteForm();
-                $("#dTiposEntregaButtons").hide();
-                $("#bPuntosRetiro").prop("disabled",true);
-                $("#bDomicilio").prop("disabled",true);
 
-            }
-        });
+        $("#dTiposEntregaButtons").show();
+        $("#tipoPedidoOrden").html("Seleccioná un método de entrega.");
+        $("#pErrorDiaEntrega").html("");
+        $("#messageProductoEliminado").html("");
+        $("#messageProductoEliminado").hide();            
+        loadDiaEntregaConfig($(this).val());
         
         $("#bCambiarTipoPedido").on("click", function(e){
             e.preventDefault();
@@ -394,13 +394,15 @@ function initMarketDiferencial(){
 }
 
 function validationsAndSubmit() {
-    var response_extras_enabled = verifyExtrasEnabledByTipoPedido(idTipoPedidoSelected);
+/*  var response_extras_enabled = verifyExtrasEnabledByTipoPedido(idTipoPedidoSelected);
     if(response_extras_enabled.extras_enabled) {
-        if(checkDiaEntregaHabilitado()) {
+        */
+        if(checkTiendaOpen()) {        
             eboSubmit();
-        }else{
+        } else {
             $("#modalDiaEntregaDisabled").modal("show");
         }            
+    /*
     } else {
         var errores = "";
         for(var i=0; i<response_extras_enabled.errores.length; i++) {
@@ -409,7 +411,8 @@ function validationsAndSubmit() {
         }
         $("#erroresExtrasDisabled").html(errores);        
         $("#modalExtraDisabledTipoPedido").modal("show");                    
-    }    
+    } 
+    */   
 }
 
 function getMarket(){
@@ -800,6 +803,36 @@ function setSubTotalPedido(subtotal){
     $("#subtotalHeader").html(subtotal);
 }
 
+function calcularFormaDePago(total) {
+    var cFormasPago = getFormasPagoByTotal(total);
+    populateFormasPago(cFormasPago);
+}
+
+function populateFormasPago(cFormasPago){
+    $("#idFormaPago").empty();
+    var options = "";
+    for(var i=0;i<cFormasPago.length;i++) {
+        options += "<option value='"+cFormasPago[i].id+"'>"+cFormasPago[i].descripcion+"</option>";
+    }
+    $("#idFormaPago").html(options);
+}
+
+function getFormasPagoByTotal(total){
+    var cFormasPago;
+    let data = {
+        'importe_total' : total
+    };
+    $.ajax({
+        url: baseURL + 'getFormasDePago',
+        data: data,
+        method: 'post',
+        async: false
+    }).done(function(result) {
+        cFormasPago = result.cFormasPago;
+    });
+    return cFormasPago;        
+}
+
 function calcularTotalPedido(){
     var cantBolson = 0;
     var totalExtras = parseFloat(0);
@@ -808,17 +841,19 @@ function calcularTotalPedido(){
     var precioBolson  = 0;
     var precioDelivery = 0;
 
-    //cantBolson = $("#cantidadBolson").val();
     cantBolson = $('input[name=rbBolson]:checked').val();    
     if(cantBolson>0){
         precioBolson = parseFloat(getPrecioBolson()) * cantBolson;
-        //precioBolson  = parseFloat($("#precioUnitarioBolsonIndividual").html()) * cantBolson;
     }
 
     for(var i=0;i<aExtras.length;i++){
         totalExtras = totalExtras + parseFloat(aExtras[i].total);
     }
     subtotal = precioBolson + totalExtras;
+
+    precioDelivery = calcularPrecioDelivery(subtotal);
+    
+    /*
 
     var valorReserva = 0;
     if(idTipoPedidoSelected>0){
@@ -835,6 +870,8 @@ function calcularTotalPedido(){
     }
     total = subtotal - valorReserva;
 
+    */
+
     var montoDescuento = 0;
     var cuponAplicado = $("#cuponAplicado").val();
     if(cuponAplicado==1) {
@@ -848,9 +885,9 @@ function calcularTotalPedido(){
         }
     }
 
-    total = total - montoDescuento;
-
-    setValorReserva(valorReserva);
+    total = subtotal + precioDelivery - montoDescuento;
+    calcularFormaDePago(total);
+    //setValorReserva(valorReserva);
     setSubTotalPedido(subtotal);
     setTotalPedido(total);
     setMontoDescuento(montoDescuento);
@@ -882,14 +919,14 @@ function calcularPrecioDelivery(subtotal){
         if(costoDelivery > 0){
             $("#tituloEnvioPedido").css("text-decoration","none");
             $("#agregadoTituloEnvioPedido").html("")
-            $("#mensajeReservaCostoEnvio").show();
-            $("#liResumenPedidoReserva").hide();
+            //$("#mensajeReservaCostoEnvio").show();
+            //$("#liResumenPedidoReserva").hide();
         }else{
             $("#tituloEnvioPedido").css("text-decoration","line-through");
             $("#agregadoTituloEnvioPedido").html(" Bonificado!")
             $("#agregadoTituloEnvioPedido").css("text-decoration","none");
-            $("#mensajeReservaCostoEnvio").hide();
-            $("#liResumenPedidoReserva").show();
+            //$("#mensajeReservaCostoEnvio").hide();
+            //$("#liResumenPedidoReserva").show();
         }
         $("#valorEnvioDomicilio").html(costoDelivery);
     }else{
@@ -1195,10 +1232,6 @@ function finalizarCompra(){
 
 function checkForm(){
     var formOK = true;
-    if($("#idDiaEntrega").val()==-1){
-        $("#pErrorDiaEntrega").html("Por favor, seleccioná un día de entrega.");
-        formOK = false;
-    }
     if(idTipoPedidoSelected==0){
         $("#pErrorTipoPedido").html("Por favor, seleccioná un método de entrega.");
         formOK = false;
@@ -1284,6 +1317,8 @@ function getTipoPedidoHasPedidosExtrasHabilitado(){
     return tipoPedidoHasPedidosExtrasHabilitado;
 }
 
+//LA USAMOS PARA CONTROLAR QUE NO SE CARGUEN PEDIDOS UNA VEZ CERRADO EL DIA DE ENTREGA 
+//COMO AHORA SE VA A ENTREGAR TODOS LOS DIAS, SIEMPRE VA A ESTAR HABILITADO
 function checkDiaEntregaHabilitado(){
     var diaEntregaHabilitado = false;
     let idDiaEntrega = $("#idDiaEntrega").val();
@@ -1300,6 +1335,18 @@ function checkDiaEntregaHabilitado(){
         diaEntregaHabilitado = result.dia_entrega_enabled;
     });
     return diaEntregaHabilitado;    
+}
+
+function checkTiendaOpen(){
+    var tiendaOpen = true;
+    $.ajax({
+        url: baseURL + 'getTiendaAbierta',
+        method: 'get',
+        async: false
+    }).done(function(result) {
+        tiendaOpen = result.tienda_open;
+    });
+    return tiendaOpen;    
 }
 
 function checkConfiguracionPedido(){
@@ -1786,20 +1833,16 @@ function disableCupon() {
     $("#bAplicarCupon").hide();
 }
 
-function loadDiaEntregaConfig(idDiaEntrega) {
-    let diaEntrega = getDiaEntrega(idDiaEntrega);
+function loadDiaEntregaConfig() {
+    let diaEntrega = getDiaEntrega();
     refreshFormByConfigDiaEntrega(diaEntrega);
 }
 
-function getDiaEntrega(idDiaEntrega) {
+function getDiaEntrega() {
     let diaEntrega;
-    let data = {
-        'idDiaEntrega' : idDiaEntrega
-    };
     $.ajax({
         url: baseURL + 'getDiaEntrega',
         method: 'post',
-        data: data,
         async: false
     }).done(function(result) {
         diaEntrega = result.diaEntrega;

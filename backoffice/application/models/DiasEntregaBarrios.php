@@ -121,7 +121,7 @@ class DiasEntregaBarrios extends CI_Model
         $this->db->select('d.id_dia_entrega, d.fecha_entrega as fechaEntrega, d.descripcion, d.id_estado_logistica, d.fecha_creacion, d.acepta_pedidos as aceptaPedidos, d.acepta_bolsones as aceptaBolsones, d.archivado, d.imagen, d.punto_de_retiro_enabled as puntoDeRetiroEnabled, d.delivery_enabled as deliveryEnabled, el.descripcion as estadoLogistica');
         $this->db->from('dias_entrega_pedidos as d');
         $this->db->join('estados_logistica as el', 'el.id_estado_logistica = d.id_estado_logistica', 'left');
-        $where = "d.archivado = 0 and d.id_estado_logistica in (1,2)";
+        $where = "d.archivado = 0 and d.id_estado_logistica in (1,2,4)";
         $this->db->where($where);
         $this->db->order_by('d.fecha_entrega', 'ASC');
         return $this->db->get()->result();

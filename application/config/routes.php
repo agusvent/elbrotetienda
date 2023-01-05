@@ -84,3 +84,5 @@ $route['getModuloCuponesEnabled'] = 'ParametersManager/getModuloCuponesEnabled';
 $route['getDiaEntrega'] = 'MultiHelper/getDiaEntrega';
 $route['getDiaEntregaHabilitado'] = 'MultiHelper/getDiaEntregaEnabled';
 $route['verifyExtrasEnabledByTipoPedido'] = 'ExtrasManager/verifyExtrasEnabledByTipoPedido';
+$route['getFormasDePago'] = 'MultiHelper/getFormasPagoByImporte';
+$route['getTiendaAbierta'] = 'MultiHelper/getTiendaAbierta';

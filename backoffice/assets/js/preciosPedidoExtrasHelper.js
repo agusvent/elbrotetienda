@@ -166,29 +166,25 @@ const preciosPedidoExtrasHelper = {
             }
         });
 
-        $("#bGuardarSenasPedidos").on("click",function(e){
+        $("#bGuardarFormasPago").on("click",function(e){
             e.preventDefault();
             mostrarLoader();
             if(checkSeniasForm()){
-                var valorReservaRango1 = $("#valorReservaRango1").val();
-                var valorReservaRango2 = $("#valorReservaRango2").val();
-                var valorReservaRango3 = $("#valorReservaRango3").val();
+                var valorFormasPago = $("#valorFormasPago").val();
                 let data = {
-                    'valorReservaRango1': valorReservaRango1,
-                    'valorReservaRango2': valorReservaRango2,
-                    'valorReservaRango3': valorReservaRango3
+                    'valorFormasPago': valorFormasPago
                 };
                 $.ajax({
-                    url: ajaxURL + 'configuradorPedidos/editSenasRangos',
+                    url: ajaxURL + 'configuradorPedidos/editLimiteValorFormasPago',
                     data: data,
                     method: 'post'
                 }).done(function(result) {
                     if(result.updateOK == true) {
                         ocultarLoader();
-                        return Swal.fire('Costo de Envio', 'Monto editado satisfactoriamente.', 'success');
+                        return Swal.fire('Formas de Pago', 'Monto límite para pago en efectivo editado satisfactoriamente.', 'success');
                     }else{
                         ocultarLoader();
-                        return Swal.fire('Costo de Envio', 'No se pudo editar el monto. Intenta de nuevo.', 'error');
+                        return Swal.fire('Formas de Pago', 'No se pudo editar el monto. Intenta de nuevo.', 'error');
                     }
                 });                
             }else{

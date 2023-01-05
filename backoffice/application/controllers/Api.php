@@ -2246,6 +2246,44 @@ class Api extends CI_Controller
 
     }
 
+    public function pedidosPendientes() {
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('Order');
+        $cPedidosPendientes = $this->Order->getPedidosPendientesInFechaGenerica();
+        $return['status'] = self::OK_VALUE;
+        $return['pedidos'] = $cPedidosPendientes;
+        
+        $this->output->set_status_header(200);
+
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function pedidosPendientesSinVer() {
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('Order');
+        $cPedidosPendientes = $this->Order->getPedidosPendientesSinVerInFechaGenerica();
+        $return['status'] = self::OK_VALUE;
+        $return['pedidos'] = $cPedidosPendientes;
+        
+        $this->output->set_status_header(200);
+
+        return $this->output->set_output(json_encode($return));
+    }
+
     public function consultaPedidos(){
         $this->output->set_content_type('application/json');
         if(!valid_session()) {
@@ -2274,7 +2312,85 @@ class Api extends CI_Controller
         $this->output->set_status_header(200);
 
         return $this->output->set_output(json_encode($return));
+    }
 
+    public function turnOffAlarmaPendiente() {
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+        $this->load->model('Order');
+
+        $idPedido = $this->input->post('idPedido', true);
+        $return['alarma_off'] = $this->Order->turnOffAlarmaPendiente($idPedido);
+        
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function despacharPedido() {
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+        $this->load->model('Order');
+
+        $idPedido = $this->input->post('idPedido', true);
+        $despachado = false;
+        $despachado = $this->Order->despachado($idPedido);
+        
+        $return['despachado'] = $despachado;
+        $return['status'] = self::OK_VALUE;
+        $return['idPedido'] = $idPedido;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function entregarPedido() {
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+        $this->load->model('Order');
+
+        $idPedido = $this->input->post('idPedido', true);
+        $entregado = false;
+        $entregado = $this->Order->entregado($idPedido);
+        
+        $return['entregado'] = $entregado;
+        $return['status'] = self::OK_VALUE;
+        $return['idPedido'] = $idPedido;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function getPedidoById() {
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+        $this->load->model('Order');
+
+        $idPedido = $this->input->post('idPedido', true);
+        $pedido = $this->Order->getOrderById($idPedido)[0];
+        
+        $return['status'] = self::OK_VALUE;
+        $return['pedido'] = $pedido;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
     }
 
     public function crearPedido()
@@ -2304,6 +2420,7 @@ class Api extends CI_Controller
         $idCupon = $this->input->post('idCupon', true);
         $montoDescuento = $this->input->post('montoDescuento', true);
         $idPedidoFijo = $this->input->post('idPedidoFijo', true);
+        $idFormaPago = $this->input->post('idFormaPago', true);
         $cExtras = $this->input->post('extras', true);
         
         if(isset($idEstadoPedido) && ($idEstadoPedido==3 || $idEstadoPedido==5)){
@@ -2332,7 +2449,8 @@ class Api extends CI_Controller
             $idCupon,
             $montoDescuento,
             $idPedidoFijo,
-            0
+            0,
+            $idFormaPago
         );
         if(!empty($cExtras)){
             $this->load->model('Extra');
@@ -2524,7 +2642,7 @@ class Api extends CI_Controller
                 'extras' => $extras,
                 'entrega' => $order->deliver_date,
                 'direccion' => $order->deliver_address . ' ' . $order->deliver_extra . ' - ' . $barrio->nombre,
-                'totalPrice' => $montoDebe,
+                'totalPrice' => $order->monto_total,
                 'horarioEntrega' => $barrio->observaciones,
                 'montoDescuento'   => $montoDescuento,
                 'montoPagado' => $order->monto_pagado,
@@ -2575,6 +2693,96 @@ class Api extends CI_Controller
             ];
             $this->Error->add($e->getMessage(), $e->getFile(), $e->getLine(), json_encode($extras));*/
         }        
+    }
+
+    public function procesarPedidosFijos() {
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('Order');
+        $this->load->model('Pocket');
+        $this->load->model('DiasEntregaBarrios');
+
+        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
+        $pedidosCreados = "";
+        $cPedidosFijos = $this->Order->getAllPedidosFijos();
+        $cPedidosCreados = [];
+        foreach($cPedidosFijos as $oPedidoFijo){
+            $newOrderId = -1;
+            $oBolson = $this->Pocket->getById(1);
+            $precio = $oBolson->price;
+            $cantBolson = 0;
+            $montoPagado = 0;
+            if($oPedidoFijo->cant_bolson > 0) {
+                $cantBolson = $oPedidoFijo->cant_bolson;
+                $precio = $precio * $cantBolson;
+            }
+            if($oPedidoFijo->id_estado_pedido==3){
+                //SI ES BONIFICADO, MONTO PAGADO ES IGUAL AL VALOR DEL BOLSON, PARA QUE QUEDE DEBE = $0.
+                $montoPagado = $precio;
+            }else{
+                $montoPagado = $oPedidoFijo->monto_pagado;
+            }
+            $newOrderId = $this->Order->addOrder(
+                $idDiaEntrega,
+                $oPedidoFijo->client_name,
+                $oPedidoFijo->phone,
+                $oPedidoFijo->email,
+                $oPedidoFijo->deliver_address,
+                $oPedidoFijo->deliver_extra,
+                $oPedidoFijo->id_tipo_pedido,
+                $oPedidoFijo->barrio_id,
+                $oPedidoFijo->office_id,
+                $oBolson->id,
+                $cantBolson,
+                $precio,
+                $montoPagado,
+                $oPedidoFijo->id_estado_pedido,
+                $oPedidoFijo->observaciones,
+                -1,
+                -1,
+                0, //ACA DEJO EL PEDIDO COMO NO FIJO PORQUE EL FIJO ES EL ORIGINAL
+                $oPedidoFijo->id,
+                $oPedidoFijo->id_forma_pago,
+            );
+            $pedidosCreados = $pedidosCreados."<p>".$oPedidoFijo->client_name;
+
+            array_push($cPedidosCreados,array(
+                $oPedidoFijo->client_name
+            ));
+
+
+            $cExtrasExistentes = $this->Order->getExtras($oPedidoFijo->id);
+            $sumaTotalExtras = 0;
+            $totalPedido = 0;
+            if(!empty($cExtrasExistentes)){
+                $this->load->model('Extra');
+                foreach($cExtrasExistentes as $oExtra){
+                    if( !is_null($oExtra->active) && $oExtra->active == 1) {
+                        $cant = $this->Order->getCantExtraByPedidoAndExtra($oPedidoFijo->id, $oExtra->id);
+                        if($oExtra->stock_ilimitado == 1 || ($oExtra->stock_ilimitado == 0 && $oExtra->stock_disponible >= $cant)) {    
+                            $this->Order->addExtra($newOrderId,$oExtra->id,$cant);
+                            $this->Extra->reducirStockExtra($oExtra->id,$cant);
+                            $sumaTotalExtras = $sumaTotalExtras + ($oExtra->price * $cant);
+                        }
+                    }
+                }
+                $totalPedido = intval($precio) + intval($sumaTotalExtras);
+                $this->Order->updateMontoTotal($newOrderId, $totalPedido);
+                if($oPedidoFijo->id_estado_pedido==3){
+                    $this->Order->updateMontoPagado($newOrderId, $totalPedido);
+                }
+            }
+        }
+        
+        $return['pedidosCreados'] = $cPedidosCreados;
+        $return['success'] = true;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($cPedidosCreados));
     }
 
     public function crearDiaEntrega(){
@@ -2733,8 +2941,8 @@ class Api extends CI_Controller
         $idCupon = $this->input->post('idCupon', true);
         $montoDescuento = $this->input->post('montoDescuento', true);
         $idPedidoFijo = $this->input->post('idPedidoFijo', true);
+        $idFormaPago = $this->input->post('idFormaPago', true);
         $cExtras = $this->input->post('extras', true);
-
         if(isset($idEstadoPedido) && ($idEstadoPedido==3 || $idEstadoPedido==5)){
             //SI ES BONIFICADO O ABONADO
             $montoPagado = $montoTotal;
@@ -2761,7 +2969,8 @@ class Api extends CI_Controller
             $observaciones,
             $idCupon,
             $montoDescuento,
-            $idPedidoFijo
+            $idPedidoFijo,
+            $idFormaPago
         );
 
         //PRIMERO ELIMINO LOS EXTRAS QUE EXISTAN PARA DESPUES, SI CORRESPONDE, AGREGAR LOS SELECCIONADOS EN EDITAR
@@ -3586,7 +3795,7 @@ class Api extends CI_Controller
         $this->load->model('DiasEntregaPedidos');
         
         //$cDiasEntrega = $this->DiasEntregaPedidos->getAllDiasByEstadoLogisticaNotCerrados();
-        $cDiasEntrega = $this->DiasEntregaPedidos->getAllActivos();
+        $cDiasEntrega = $this->DiasEntregaPedidos->getAllActivosSinExcluidos();
         //print_r($cDiasEntrega);
         $return['status'] = self::OK_VALUE;
         $return['cDiasEntrega'] = $cDiasEntrega;
@@ -7873,15 +8082,13 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode($return));                  
     }
 
-    public function editSenasRangos(){
+    public function editLimiteValorFormasPago(){
         $this->output->set_content_type('application/json');
         $updateOK = false;
         
-        $valorReservaRango1 = $this->input->post('valorReservaRango1', true);
-        $valorReservaRango2 = $this->input->post('valorReservaRango2', true);
-        $valorReservaRango3 = $this->input->post('valorReservaRango3', true);
+        $valorFormasPago = $this->input->post('valorFormasPago', true);
 
-        if(is_null($valorReservaRango1) || is_null($valorReservaRango2) || is_null($valorReservaRango3)) {
+        if(is_null($valorFormasPago)) {
             $return['status'] = self::FAIL_VALUE;
             $return['message'] = 'No se recibieron los parámetros necesarios.';
             $this->output->set_status_header(403);
@@ -7891,9 +8098,7 @@ class Api extends CI_Controller
         try{
             $this->load->model('Content');
             
-            $this->Content->set("valorReservaRango1",$valorReservaRango1);
-            $this->Content->set("valorReservaRango2",$valorReservaRango2);
-            $this->Content->set("valorReservaRango3",$valorReservaRango3);
+            $this->Content->set("limite_pago_efectivo",$valorFormasPago);
             $updateOK = true;
             
         }catch(\Exception $ex){

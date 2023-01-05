@@ -23,27 +23,21 @@
             </div>
             -->
             <div class="extras-caja">
-                <div class="extras-caja-titulo">Reserva de Pedidos</div>
+                <div class="extras-caja-titulo">Formas de Pago</div>
                 <div style="padding:5px;">
                     <div class="extras-caja-info" style="margin-bottom:20px;"> 
-                        Monto se le cobra al cliente, en concepto de seña por el pedido realizado, mediante Mercado Pago. Los envíos a domicilio se les cobra solo el envío, no ésta reserva.
+                        EFECTIVO / MERCADO PAGO <br />
+                        Si el monto del pedido, incluyendo el costo de envío, supera éste valor, la única forma de pago posible es Mercado Pago.
                     </div>
                     <div class="row extras-caja-info"> 
-                        <div class="col-sm-4 extra-caja-monto">
-                            <label>$1 a $2500:</label>
-                            <input type="text" style="text-align:center;" class="form-control numeric" name="valorReservaRango1" id="valorReservaRango1" value="<?=$valorReservaRango1?>">
+                        <div class="col-sm-4"></div>
+                        <div class="col-xs-12 col-sm-4 extra-caja-monto">
+                            <input type="text" style="text-align:center;" class="form-control numeric" name="valorFormasPago" id="valorFormasPago" value="<?=$valorFormasPago?>">
                         </div>
-                        <div class="col-sm-4 extra-caja-monto">
-                            <label>$2501 a $3999:</label>
-                            <input type="text" style="text-align:center;" class="form-control numeric" name="valorReservaRango2" id="valorReservaRango2" value="<?=$valorReservaRango2?>">
-                        </div>
-                        <div class="col-sm-4 extra-caja-monto">
-                            <label>$4000 y m&aacute;s:</label>
-                            <input type="text" style="text-align:center;" class="form-control numeric" name="valorReservaRango3" id="valorReservaRango3" value="<?=$valorReservaRango3?>">
-                        </div>
+                        <div class="col-sm-4"></div>
                     </div>
                     <div class="extras-caja-info" style="text-align:right"> 
-                        <button type="button" id="bGuardarSenasPedidos" class="btn btn-small btn-green">Guardar</button>
+                        <button type="button" id="bGuardarFormasPago" class="btn btn-small btn-green">Guardar</button>
                     </div>                    
                 </div>
             </div>

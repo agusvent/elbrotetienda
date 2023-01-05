@@ -143,25 +143,19 @@
                             <?=$barrio->nombre;?>
                         </p>
                         <p class="mt-10">
-                            <strong>Fecha de entrega: </strong>
-                            <?=$order->deliver_date;?>
-                        </p>
-                        <p class="mt-10">
                             <strong>Recibe a nombre de: </strong>
                             <?=$order->client_name;?>
                         </p>
                     <?php endif; ?>
 
-                    <?php if ($montoPagado) { ?>
+                    <?php if ($order->id_forma_pago == 2) { ?>
                         <p class="mt-10">
-                            <strong>Reserva abonada: </strong>
+                            <strong>Total abonado: </strong>
                             $<?=$montoPagado;?>
                         </p>
-                    <?php } ?>                    
-
-                    <?php if ($totalPrice) { ?>
+                    <?php } else { ?>      
                         <p class="mt-10">
-                            <strong>Saldo restante a abonar (en efectivo): </strong>
+                            <strong>Total a abonar (en efectivo): </strong>
                             $<?=$totalPrice;?>
                         </p>
                     <?php } ?>                    

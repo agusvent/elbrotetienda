@@ -23,8 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.1.100/ebo/backoffice/';
-#$config['base_url'] = 'https://elbrotetienda.com/backoffice/';
+#$config['base_url'] = 'http://192.168.1.100/ebo/backoffice/';
+#$config['base_url'] = 'http://agusventu.tplinkdns.com/ebo/backoffice/';
+$config['base_url'] = 'https://elbrotetienda.com/backoffice/';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -474,6 +475,11 @@ $config['csrf_exclude_uris'] = array(
     'api/orders/crearPedido',
     'api/orders/consultaPedidos',
     'api/orders/editarPedido',
+    'api/orders/turnOffAlarmaPendiente',
+    'api/orders/getPedidoById',
+    'api/orders/despacharPedido',
+    'api/orders/entregarPedido',
+    'api/orders/procesarPedidosFijos',
     'ordenes/goToEditarPedido',
     'api/extras/getExtrasByIdPedido',
     'ordenes/volverListadoPedidos',
@@ -517,7 +523,7 @@ $config['csrf_exclude_uris'] = array(
     'api/logistica/setNroOrdenForPedidosByDiaEntrega',
     'api/logistica/printResumenPedido',
     'api/configuradorPedidos/editCostoEnvioPedidos',
-    'api/configuradorPedidos/editSenasRangos',
+    'api/configuradorPedidos/editLimiteValorFormasPago',
     'ordenes/getCostoEnvioPedidos',
     'api/newsletter/setRecetarioStatus',
     'api/newsletter/setNewsletterStatus',
