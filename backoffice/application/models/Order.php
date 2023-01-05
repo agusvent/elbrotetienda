@@ -390,11 +390,12 @@ class Order extends CI_Model
 
     public function getFullById($idPedido){
         //FUNCION QUE SE USA PARA EL EXPORT A EXCEL DE LOS PEDIDOS ENTRE LAS FECHAS A DOMICILIO
-        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, barrio.id as id_barrio, barrio.nombre as nombre_barrio, barrio.observaciones as barrio_observaciones, barrio.costo_envio, orders.deliver_address as cliente_domicilio, orders.deliver_extra as cliente_domicilio_extra, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento, orders.id_tipo_pedido, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal');
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, orders.deliver_date, barrio.id as id_barrio, barrio.nombre as nombre_barrio, barrio.observaciones as barrio_observaciones, barrio.costo_envio, orders.deliver_address as cliente_domicilio, orders.deliver_extra as cliente_domicilio_extra, orders.created_at, orders.observaciones, orders.monto_total, orders.monto_pagado, orders.id_estado_pedido, orders.nro_orden, orders.cant_bolson, orders.total_bolson, orders.id_cupon, orders.monto_descuento, orders.id_tipo_pedido, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, orders.id_forma_pago, fpagos.descripcion as forma_pago');
         $this->db->from('orders');
         $this->db->join('barrios as barrio', 'barrio.id = orders.barrio_id', 'left');
         $this->db->join('offices as sucursal', 'sucursal.id = orders.office_id', 'left');
         $this->db->join('pockets as bolson', 'bolson.id = orders.pocket_id', 'left');
+        $this->db->join('formas_pago as fpagos', 'fpagos.id = orders.id_forma_pago', 'left');
         $this->db->where('orders.id', $idPedido);
         $order = $this->db->get()->result()[0];
 
@@ -457,7 +458,9 @@ class Order extends CI_Model
             'id_cupon' => $order->id_cupon,
             'monto_descuento' => $order->monto_descuento,
             'id_tipo_pedido' => $order->id_tipo_pedido,
-            'cant_items' => isset($order->cantItems) ? $order->cantItems : 0
+            'cant_items' => isset($order->cantItems) ? $order->cantItems : 0,
+            'forma_pago' => $order->forma_pago,
+            'id_forma_pago' => $order->id_forma_pago
         ));
         return $toAppend[0];
     }
@@ -1912,7 +1915,7 @@ class Order extends CI_Model
     }
 
     public function getOrdersBetweenDatesAndDiaEntrega($fechaDesde,$fechaHasta,$idDiaEntrega){
-        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.created_at as fechaPedido, orders.id_tipo_pedido, d.descripcion as diaEntrega');
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.created_at as fechaPedido, orders.id_tipo_pedido, d.descripcion as diaEntrega, orders.monto_total as montoTotal');
         $this->db->from('orders');
         $this->db->join('dias_entrega_pedidos as d', 'd.id_dia_entrega = orders.id_dia_entrega', 'left');
         $where = "orders.valid = 1 AND orders.id_estado_pedido not in (4)";

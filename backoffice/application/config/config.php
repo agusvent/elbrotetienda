@@ -24,8 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 #$config['base_url'] = 'http://192.168.1.100/ebo/backoffice/';
-#$config['base_url'] = 'http://agusventu.tplinkdns.com/ebo/backoffice/';
-$config['base_url'] = 'https://elbrotetienda.com/backoffice/';
+$config['base_url'] = 'http://agusventu.tplinkdns.com/ebo/backoffice/';
+#$config['base_url'] = 'https://elbrotetienda.com/backoffice/';
 /*
 |--------------------------------------------------------------------------
 | Index File
