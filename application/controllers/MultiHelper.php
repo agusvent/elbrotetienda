@@ -92,10 +92,8 @@ class MultiHelper extends CI_Controller{
     public function getDiaEntrega() {
         $this->output->set_content_type('application/json');
         $return['diaEntrega'] = null;
-        $idDiaEntrega = $this->input->post('idDiaEntrega', true);
-        
         $this->load->model('DiasEntregaPedidos');
-        $oDiaEntrega = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+        $oDiaEntrega = $this->DiasEntregaPedidos->getDiaGenerico();
 
         $return['diaEntrega'] = $oDiaEntrega;
         $this->output->set_status_header(200);
@@ -116,5 +114,41 @@ class MultiHelper extends CI_Controller{
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
     }
-}
 
+    public function getFormasPagoByImporte() {
+        $this->output->set_content_type('application/json');
+        $this->load->model('FormasPago');
+        $this->load->model('Parameter');
+
+        $importe = intval($this->input->post('importe_total', true));
+        $limiteImporte = intval($this->Parameter->get('limite_pago_efectivo'));
+        $cFormasPago = null;
+        
+        if($importe > $limiteImporte) {
+            //ID=2 ==> Mercado Pago
+            $cFormasPago = $this->FormasPago->getById(2);
+        } else {
+            $cFormasPago = $this->FormasPago->getAll();
+
+        }
+
+        $return['cFormasPago'] = $cFormasPago;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
+    public function getTiendaAbierta() {
+        $this->output->set_content_type('application/json');
+        $this->load->model('Parameter');
+
+        $tiendaOpen = intval($this->Parameter->get('form_enabled'));
+        if($tiendaOpen == 1) {
+            $tiendaOpen = true;
+        } else {
+            $tiendaOpen = false;
+        } 
+        $return['tienda_open'] = $tiendaOpen;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));       
+    }
+}

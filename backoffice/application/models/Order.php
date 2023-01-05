@@ -7,6 +7,13 @@ class Order extends CI_Model
         parent::__construct();
     }
 
+    public function getOrderById($idPedido) {
+        $this->db->select('*');
+        $this->db->from('orders');
+        $this->db->where('id', $idPedido);
+        return $this->db->get()->result();
+    }
+
     public function getAll($applyFilter = false, $filterType = 'SUC')
     {
         $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash');
@@ -1183,10 +1190,10 @@ class Order extends CI_Model
                         $montoDescuento,
                         $idPedidoFijo,
                         $idPedidoOriginal,
+                        $idFormaPago,
                         $valid = true
 ) 
     {
-
         $this->db->set('client_name', $nombre);
         $this->db->set('email', $mail);
         $this->db->set('phone', $telefono);
@@ -1243,7 +1250,10 @@ class Order extends CI_Model
             $this->db->set('id_cupon', $idCupon);
             $this->db->set('monto_descuento', $montoDescuento);
         }
-
+        
+        if(isset($idFormaPago)) {
+            $this->db->set('id_forma_pago', $idFormaPago);
+        }
         $this->db->set('valid', $valid);
         $hash = sha1($nombre.uniqid());
         $this->db->set('hash', $hash);
@@ -1271,7 +1281,8 @@ class Order extends CI_Model
     }
 
     public function updatePedido($id, $idDiaEntrega, $nombre, $telefono, $mail, $direccion, $direccionPisoDepto, $idTipoPedido, $idBarrio, $idSucursal, 
-                                 $idBolson, $cantBolson, $montoTotal, $montoPagado, $idEstadoPedido, $observaciones, $idCupon, $montoDescuento, $idPedidoFijo)
+                                 $idBolson, $cantBolson, $montoTotal, $montoPagado, $idEstadoPedido, $observaciones, $idCupon, $montoDescuento, $idPedidoFijo,
+                                 $idFormaPago)
     {
 
         $this->db->set('client_name', $nombre);
@@ -1340,6 +1351,9 @@ class Order extends CI_Model
             $this->db->set('id_cupon', $idCupon);
             $this->db->set('monto_descuento', $montoDescuento);
         }
+        if(isset($idFormaPago)) {
+            $this->db->set('id_forma_pago', $idFormaPago);
+        }
         $this->db->where('id', $id);
         $this->db->update('orders');
 
@@ -1383,7 +1397,7 @@ class Order extends CI_Model
 
     public function getById($orderId)
     {
-        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, monto_total, monto_pagado, id_estado_pedido, observaciones, id_tipo_pedido, id_pedido_fijo, id_pedido_original, cant_bolson, total_bolson, id_cupon, monto_descuento, id_dia_entrega');
+        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, monto_total, monto_pagado, id_estado_pedido, observaciones, id_tipo_pedido, id_pedido_fijo, id_pedido_original, cant_bolson, total_bolson, id_cupon, monto_descuento, id_dia_entrega, despachado, entregado, procesado, id_forma_pago, fecha_despachado, fecha_entregado');
         $this->db->from('orders');
         $this->db->order_by('created_at', 'DESC');
         $this->db->where('id', $orderId);
@@ -1398,7 +1412,7 @@ class Order extends CI_Model
     }
 
     public function getOrdersFromConsultaPedidos($idDiaEntrega,$incluirCancelados,$fechaDesde,$fechaHasta,$nombre,$mail,$nroPedido,$soloNoValidos){
-        $this->db->select('o.id, o.client_name, o.email, o.phone, o.deliver_type, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, barrio.id as id_barrio, barrio.nombre as nombre_barrio, o.deliver_address as cliente_domicilio, o.deliver_extra as cliente_domicilio_extra, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, o.deliver_date, o.created_at, o.observaciones, o.monto_total, o.monto_pagado, o.id_estado_pedido, ep.descripcion as estadoPedido');
+        $this->db->select('o.id, o.client_name, o.email, o.phone, o.deliver_type, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, barrio.id as id_barrio, barrio.nombre as nombre_barrio, o.deliver_address as cliente_domicilio, o.deliver_extra as cliente_domicilio_extra, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, o.deliver_date, o.created_at, o.observaciones, o.monto_total, o.monto_pagado, o.id_estado_pedido, ep.descripcion as estadoPedido, o.despachado, o.entregado, o.procesado');
         $this->db->from('orders as o');
         $this->db->join('offices as sucursal', 'sucursal.id = o.office_id', 'left');
         $this->db->join('barrios as barrio', 'barrio.id = o.barrio_id', 'left');
@@ -1439,13 +1453,47 @@ class Order extends CI_Model
     }
 
     public function getAllPedidosFijos(){
-        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, monto_total, monto_pagado, id_estado_pedido, observaciones, id_tipo_pedido, id_pedido_fijo, cant_bolson, total_bolson');
+        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, monto_total, monto_pagado, id_estado_pedido, observaciones, id_tipo_pedido, id_pedido_fijo, cant_bolson, total_bolson, id_forma_pago');
         $this->db->from('orders');
         $this->db->order_by('created_at', 'DESC');
         $this->db->where('valid', 1);
         $this->db->where('id_pedido_fijo', 1);
 
         return $this->db->get()->result();
+    }
+
+    public function getPedidosPendientesInFechaGenerica(){
+        $this->db->select('o.id, o.client_name, o.email, o.phone, o.deliver_type, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, barrio.id as id_barrio, barrio.nombre as nombre_barrio, o.deliver_address as cliente_domicilio, o.deliver_extra as cliente_domicilio_extra, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, o.deliver_date, o.created_at, o.observaciones, o.monto_total, o.monto_pagado, o.id_estado_pedido, ep.descripcion as estadoPedido, o.despachado, o.entregado, o.procesado, o.alerta_pendiente_on');
+        $this->db->from('orders as o');
+        $this->db->join('offices as sucursal', 'sucursal.id = o.office_id', 'left');
+        $this->db->join('barrios as barrio', 'barrio.id = o.barrio_id', 'left');
+        $this->db->join('pockets as bolson', 'bolson.id = o.pocket_id', 'left');
+        $this->db->join('estados_pedidos as ep', 'ep.id_estado_pedido = o.id_estado_pedido', 'left');
+        $where = "o.valid = 1";        
+        $where .= " AND o.id_dia_entrega = 1000000";
+        $where .= " AND o.procesado = 0";
+        $where .= " AND o.id_estado_pedido <> 4";
+        $this->db->where($where);
+        $this->db->order_by('o.id', 'DESC');
+        $pedidos = $this->db->get()->result();
+        return $pedidos;
+    }
+
+    public function getPedidosPendientesSinVerInFechaGenerica(){
+        $this->db->select('o.id, o.client_name, o.email, o.phone, o.deliver_type, sucursal.id as id_sucursal, sucursal.name as sucursal, sucursal.address as domicilio_sucursal, barrio.id as id_barrio, barrio.nombre as nombre_barrio, o.deliver_address as cliente_domicilio, o.deliver_extra as cliente_domicilio_extra, bolson.name as nombre_bolson, bolson.price as precio_bolson, bolson.cant as cant_bolson, bolson.id as id_bolson, o.deliver_date, o.created_at, o.observaciones, o.monto_total, o.monto_pagado, o.id_estado_pedido, ep.descripcion as estadoPedido, o.despachado, o.entregado, o.procesado, o.alerta_pendiente_on');
+        $this->db->from('orders as o');
+        $this->db->join('offices as sucursal', 'sucursal.id = o.office_id', 'left');
+        $this->db->join('barrios as barrio', 'barrio.id = o.barrio_id', 'left');
+        $this->db->join('pockets as bolson', 'bolson.id = o.pocket_id', 'left');
+        $this->db->join('estados_pedidos as ep', 'ep.id_estado_pedido = o.id_estado_pedido', 'left');
+        $where = "o.valid = 1";        
+        $where .= " AND o.id_dia_entrega = 1000000";
+        $where .= " AND o.procesado = 0";
+        $where .= " AND o.alerta_pendiente_on = 1";
+        $this->db->where($where);
+        $this->db->order_by('o.id', 'DESC');
+        $pedidos = $this->db->get()->result();
+        return $pedidos;
     }
 
     public function getPuntosRetiroInDiaEntrega($idDiaEntrega){
@@ -1652,6 +1700,41 @@ class Order extends CI_Model
     public function setNroOrden($id, $nroOrden)
     {
         $this->db->set('nro_orden', $nroOrden);
+        $this->db->where('id', $id);
+        $this->db->update('orders');
+
+        return true;
+    }
+
+    public function turnOffAlarmaPendiente($id)
+    {
+        $this->db->set('alerta_pendiente_on', 0);
+        $this->db->where('id', $id);
+        $this->db->update('orders');
+
+        return true;
+    }
+
+    public function despachado($id)
+    {
+        date_default_timezone_set('America/Argentina/Buenos_Aires');
+        $despachadoDate = date("Y/m/d H:i:s");
+        $this->db->set('despachado', 1);
+        $this->db->set('alerta_pendiente_on', 0);
+        $this->db->set('fecha_despachado', $despachadoDate);
+        $this->db->where('id', $id);
+        $this->db->update('orders');
+
+        return true;
+    }
+
+    public function entregado($id)
+    {
+        date_default_timezone_set('America/Argentina/Buenos_Aires');
+        $entregadoDate = date("Y/m/d H:i:s");
+        $this->db->set('entregado', 1);
+        $this->db->set('fecha_entregado', $entregadoDate);
+        $this->db->set('procesado', 1);
         $this->db->where('id', $id);
         $this->db->update('orders');
 

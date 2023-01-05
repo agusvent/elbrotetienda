@@ -155,6 +155,22 @@
                     </select>
                 </div>
             </div>
+            <div class="row form-group">
+                <div class="col-xs-12 col-sm-3" style="text-align:right;">
+                    <label>Forma de Pago:</label>
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    <select class="form-control" name="idFormaPago" id="idFormaPago" required>
+                        <option value="-1">Seleccione</option>
+                        <?php foreach($cFormasPago as $formaPago): ?>
+                            <option value="<?=$formaPago->id;?>">
+                                <?=$formaPago->descripcion;?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+
             <div class="row form-group" id="divAltaPedidoMontoPagado">
                 <div class="col-xs-12 col-sm-3" style="text-align:right;">
                     <label>Monto Pagado:</label>
@@ -233,4 +249,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?=assets();?>js/altaPedidosHelper.js?v=4134677"></script>
+<script type="text/javascript" src="<?=assets();?>js/altaPedidosHelper.js?v=9412"></script>

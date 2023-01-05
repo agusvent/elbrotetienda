@@ -59,18 +59,21 @@
           <!--<a class="dropdown-item" href="<?=base_url();?>ordenes/delivery">Pedidos a domicilio</a>-->
           <a class="dropdown-item" href="<?=base_url();?>ordenes/altaPedidos">Alta de Pedidos</a>
           <a class="dropdown-item" href="<?=base_url();?>ordenes/listadoPedidos">Listado de Pedidos</a>
+          <a class="dropdown-item" href="<?=base_url();?>ordenes/listadoPedidosPendientes">Pedidos Pendientes</a>
         </div>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Log&iacute;stica
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?=base_url();?>logistica/camiones-preconfigurados">Camiones PreConfigurados</a>
-          <a class="dropdown-item" href="<?=base_url();?>logistica/logistica">Armado Log&iacute;stica</a>
-        </div>
-      </li>
+      <!--
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Log&iacute;stica
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<?/*=base_url();*/?>logistica/camiones-preconfigurados">Camiones PreConfigurados</a>
+            <a class="dropdown-item" href="<?/*=base_url();*/?>logistica/logistica">Armado Log&iacute;stica</a>
+          </div>
+        </li>
+      -->
 
       <li class="nav-item">
         <a class="nav-link" href="<?=base_url();?>logout">Cerrar sesión</a>
@@ -78,6 +81,15 @@
     </ul>
   </div>
 </nav>
+
+<a class="colorshadow" id="talkbubble" href="<?=base_url();?>ordenes/listadoPedidosPendientes">
+  <div>
+    Pendientes: <label id="labelPedidosPendientesAlert" class="labelPedidosAlerts">...</label>
+    <br />
+    Sin Ver: <label id="labelPedidosSinVerAlert" class="labelPedidosAlerts">...</label>
+  </div>
+</a>
+
 <?php if($formEnabled == 0 || $deliveryEnabled == 0): ?>
 <div class="alert alert-warning"><strong>¡Importante!</strong> El sistema está en modo "no aceptar pedidos" para uno o todos los métodos posibles (sucursal/domicilio).</div>
 <?php endif; ?>

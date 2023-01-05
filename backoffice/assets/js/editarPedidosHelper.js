@@ -148,6 +148,7 @@ const editarPedidosHelper = {
             var idEstadoPedido = $("#editarPedidoIdEstadoPedido").val();
             var observaciones = $("#editarPedidoObservaciones").val();
             var idCupon = $("#idCupon").val();
+            var idFormaPago = $("#editarPedidoIdFormaPago").val();
             var montoDescuento = $("#editarPedidoMontoDescuento").val();
             var checkPedidoFijo = $("#editarPedidoCheckFijarPedido").prop("checked");
             var idPedidoFijo = 0;
@@ -196,6 +197,7 @@ const editarPedidosHelper = {
                     'idCupon': idCupon,
                     'montoDescuento': montoDescuento,
                     'idPedidoFijo': idPedidoFijo,
+                    'idFormaPago': idFormaPago,
                     'extras': extras
                 };
                 $.ajax({

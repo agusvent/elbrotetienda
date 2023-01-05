@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="assets/new_design/assets/css/plugins.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/new_design/assets/css/style.css?v=65418712">
-    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=57364">
+    <link rel="stylesheet" href="assets/new_design/assets/css/ebo.css?v=364">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -121,6 +121,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </header>
 <div id="topbanners" class="slider-area">
     <div class="slider-active owl-carousel nav-style-1  owl-dot-none">
+        <div class="single-slider-2 slider-height-2 d-flex align-items-center bg-img banner_principal" style="background-image:url(assets/img/banner7.jpg);">
+            <div class="container container-banner">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-7 col-md-8 col-12 ms-auto">
+                        <div class="slider-content-3 slider-animated-1 text-center banner1-margin-correction">
+                            <h3 class="animated" style="color:#FFFFFF!important;">ENV&Iacute;O A DOMICILIO</h3>
+                            <h1 class="animated bannerTextoPpalBlanco" style="">Entregas todo el día, de Lunes a Viernes</h1>
+                            <p class="animated" style="color:#FFFFFF!important;">Ped&iacute; hoy, recib&iacute; hoy</p>
+                            <div class="slider-btn btn-hover">
+                                <a class="animated" href="javascript:scrollToTargetAdjusted('comboFamiliar');">COMPRAR</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="single-slider-2 slider-height-2 d-flex align-items-center bg-img banner1" style="background-image:url(assets/img/banner1.jpeg);">
             <div class="container container-banner">
                 <div class="row">
@@ -181,7 +197,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="pt-30">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="support-wrap mb-30 support-1">
                             <div class="support-icon">
                                 <img class="animated" src="assets/img/como_pedir_1.png" alt="">
@@ -192,18 +208,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="support-wrap mb-30 support-2">
-                            <div class="support-icon">
-                                <img class="animated" src="assets/img/como_pedir_2.png" alt="">
-                            </div>
-                            <div class="support-content">
-                                <h5 class="h5ComoHacerTuPedido">Elegí el día de entrega*</h5>
-                                <p>Entregamos a domicilio Lunes, Miércoles y Viernes.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="support-wrap mb-30 support-3">
                             <div class="support-icon">
                                 <img class="animated" src="assets/img/como_pedir_3.png" alt="">
@@ -214,14 +219,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="support-wrap mb-30 support-4">
                             <div class="support-icon">
                                 <img class="animated" src="assets/img/como_pedir_4.png" alt="">
                             </div>
                             <div class="support-content">
-                                <h5 class="h5ComoHacerTuPedido">Recibí tu pedido y aboná en efectivo</h5>
-                                <p>Revisá la franja horaria de entrega y asegurate de estar disponible.</p>
+                                <h5 class="h5ComoHacerTuPedido">¡Recibí tu pedido en el día!</h5>
+                                <p>Escribinos por Whatsapp para recibir el link de seguimiento de tu pedido.</p>
                             </div>
                         </div>
                     </div>
@@ -503,33 +508,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="tax-wrapper">
                                     <!--<p>Enter your destination to get a shipping estimate.</p>-->
                                     <div class="tax-select-wrapper">
-                                        <div class="tax-select form-dia-entrega">
-                                            <div class="col-xs-12">
-                                                <span>
-                                                    <label>
-                                                        D&iacute;a de entrega:&nbsp;&nbsp;
-                                                    </label>
-                                                </span>
-                                                <span>
-                                                    <select class="tax-select" name="idDiaEntrega" id="idDiaEntrega" required>
-                                                        <option value="-1">Seleccione</option>
-                                                        <?php foreach($cDiasEntrega as $diaEntrega): ?>
-                                                            <?php if($diaEntrega->id_dia_entrega == $pedido->id_dia_entrega) { ?>
-                                                                <option value="<?=$diaEntrega->id_dia_entrega;?>" selected>
-                                                            <?php } else { ?>
-                                                                <option value="<?=$diaEntrega->id_dia_entrega;?>">
-                                                            <?php }?>
-                                                            <?=$diaEntrega->descripcion; ?>
-                                                        </option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <p id="pErrorDiaEntrega" class="pFormError"></p>
                                         <div class="tax-select form-tipo-pedido">
                                             <label>
-                                                Tipo de Pedido: <b><label id="tipoPedidoOrden">Seleccioná un m&eacute;todo de entrega.</label></b>
+                                                Tu pedido se entregará <b>hoy mismo</b>
+                                                <!--Tipo de Pedido: <b><label id="tipoPedidoOrden">Seleccioná un m&eacute;todo de entrega.</label></b>-->
                                             </label>
                                         </div>
                                         <div id="dTiposEntregaButtons" class="tax-select input-datos-pedido" style="text-align:center;display:none;">
@@ -545,14 +527,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                             </select>
                                             <label class="infoAdicionalPdR" style="display:none;"><span id="datosPuntoDeRetiro"></span></label>
                                         </div>
-                                        <div class="tax-select input-datos-pedido input-datos-pedido-domicilio">
-                                            <label>
-                                                * Barrio
-                                            </label>
-                                            <select class="email s-email s-wid inputFormEbo" id="idBarrio" name="idBarrio">
-                                            </select>
-                                            <label class="infoAdicionalBarrios" style="display:none;"><span id="datosBarrio"></span></label>
-                                        </div>                                    
                                         <div class="tax-select input-datos-pedido">
                                             <label>
                                                 * Nombre y Apellido
@@ -574,6 +548,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                             <input class="inputFormEbo" type="text" id="celular" name="celular">
                                             <p id="pErrorCelular" class="pFormError"></p>
                                         </div>
+                                        <div class="tax-select input-datos-pedido input-datos-pedido-domicilio">
+                                            <label>
+                                                * Barrio
+                                            </label>
+                                            <select class="email s-email s-wid inputFormEbo" id="idBarrio" name="idBarrio">
+                                            </select>
+                                            <label class="infoAdicionalBarrios" style="display:none;"><span id="datosBarrio"></span></label>
+                                        </div>                                    
                                         <div class="tax-select input-datos-pedido input-datos-pedido-domicilio">
                                             <label>
                                                 * Domicilio
@@ -600,13 +582,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="col-lg-3 col-md-3">
                                 <div class="cart-tax">
                                     <div class="title-wrap">
-                                        <h4 class="cart-bottom-title section-bg-gray">Aplic&aacute; Tu Cup&oacute;n</h4>
+                                        <h4 class="cart-bottom-title section-bg-gray">Cup&oacute;n de Descuento</h4>
                                     </div>
                                     <div class="tax-wrapper">
                                         <div class="tax-select-wrapper">
                                             <div class="tax-select input-datos-pedido">
                                                 <label>
-                                                    Si ten&eacute;s uno, ingres&aacute; el c&oacute;digo de tu cup&oacute;n ac&aacute;.
+                                                    Si ten&eacute;s un cup&oacute;n de descuento, ingres&aacute; el c&oacute;digo ac&aacute;.
                                                 </label>
                                                 <input class="inputFormEbo" type="text" id="cuponDescuento" name="cuponDescuento">
                                                 <input type="hidden" id="cuponAplicado" name="cuponAplicado" value="0">
@@ -638,19 +620,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <ul style="padding-top:0px;">
                                         <li id="liResumenPedidoEnvio" style="display:none">
                                             <input type="checkbox" checked disabled> <label id="tituloEnvioPedido">Env&iacute;o<label id="agregadoTituloEnvioPedido"></label></label> <span>$<span id="valorEnvioDomicilio">0</span></span>
-                                            <p id="mensajeReservaCostoEnvio" class="mensajeReserva">Monto a abonar en MercadoPago.</p>
+                                            <!--<p id="mensajeReservaCostoEnvio" class="mensajeReserva">Monto a abonar en MercadoPago.</p>-->
                                         </li>
-                                        <li id="liResumenPedidoReserva" style="display:none">
+                                        <!--<li id="liResumenPedidoReserva" style="display:none">
                                             <input type="checkbox" checked disabled> <label id="tituloReservaPedido">Reserva</label> <span>$<span id="valorReservaPedido">0</span></span>
                                             <p id="mensajeReservaReserva" class="mensajeReserva">Monto a abonar en MercadoPago.</p>
-                                        </li>
+                                        </li>-->
                                         <li id="liResumenPedidoCuponDescuento" style="display:none">
                                             <input type="checkbox" checked disabled> <label id="tituloCuponDescuento">Cupón Descuento</label> <span id="valorMontoCuponDescuento">0</span>
                                         </li>
                                     </ul>
                                 </div>
-                                <h4 class="grand-totall-title">Total en Efectivo<span>$<span id="valorTotalPedido">0</span></span></h4>
-                                <p class="mensajeReserva">Monto a abonar en EFECTIVO al momento de retirar o recibir el pedido.</p>
+                                <h4 class="grand-totall-title">Total<span>$<span id="valorTotalPedido">0</span></span></h4>
+                                <!--<p class="mensajeReserva">Monto a abonar en EFECTIVO al momento de retirar o recibir el pedido.</p>-->
+
+                                <div class="title-wrap forma-pago-title">
+                                    <h4 class="cart-bottom-title section-bg-gary-cart">Formas de Pago</h4>
+                                </div>
+                                <div class="cart-tax no-padding no-border">
+                                    <div class="tax-wrapper">
+                                        <div class="tax-select-wrapper">
+                                            <div class="tax-select input-datos-pedido input-datos-pedido-domicilio">
+                                                <select class="email s-email s-wid inputFormEbo" id="idFormaPago" name="idFormaPago">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <button class="eboButton green" type="button" id="bFinalizarPedido">Finalizar Pedido</button>
                             </div>
                         </div>
@@ -694,6 +690,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <input type="hidden" name="montoDelivery" id="montoDelivery" value="">
     <input type="hidden" name="csrfv" id="csrfv" value="<?=rand(1000,5000);?>">
     <input type="hidden" name="type" id="type" value="">
+    <input type="hidden" id="idDiaEntrega" value="<?=$idDiaGenerico ;?>">
 </form>
 
 
@@ -1016,7 +1013,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="welcome-content text-center">
                             <h5>¡Lo sentimos!</h5>
-                            <h1>El dia seleccionado ya no esta habilitado para tomar pedidos.</h1>
+                            <h1>Ya cerramos nuestra tienda por hoy. Para recibir en el día, realizá tu pedido de Lunes a Viernes de 10 a 20hs.<br />
+                            ¡Te esperamos!</h1>
                         </div>
                     </div>
                 </div>
@@ -1044,8 +1042,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=8163"></script>
-<script src="assets/new_design/assets/js/main.js?v=1234"></script>
+<script src="assets/js/mainv2.js?v=53123"></script>
+<script src="assets/new_design/assets/js/main.js?v=11117623"></script>
 
 
 </body>

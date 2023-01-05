@@ -106,18 +106,18 @@
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="support-wrap-2 mb-30 support-shape text-center">
                     <div class="support-content-2">
-                        <img class="animated" src="assets/new_design/assets/img/icon-img/support-1.png" alt="">
-                        <h5>Env&iacute;o Gratis</h5>
-                        <p>Hace tu pedido con Env&iacute;o a Domicilio y te lo llevamos sin cargo (con tu compra superior a $<?=$montoMinimoEnvioSinCargoPedidoExtra;?>). En CABA y GBA.</p>
+                        <img class="animated" src="assets/img/calendario.png" alt="">
+                        <h5>Entregas en el día</h5>
+                        <p>¡Pedí HOY, recibí HOY! Estamos abiertos de Lunes a Viernes de 9.30 a 20hs. Hacé tu pedido online y recibí en tu casa fruta y verdura premium, en solo unas horas.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="support-wrap-2 mb-30 support-shape text-center">
                     <div class="support-content-2">
-                        <img class="animated" src="assets/img/comercial.jpeg" alt="">
-                        <h5>M&aacute;s de 50 Puntos de Retiro</h5>
-                        <p>Contamos con Puntos de Retiro en todo CABA y GBA. Hac&eacute; tu pedido en nuestra tiena y retiralo por tu sucursal m&aacute;s cercana.</p>
+                        <img class="animated" src="assets/new_design/assets/img/icon-img/support-1.png" alt="">
+                        <h5>Env&iacute;o Gratis</h5>
+                        <p>Hace tu pedido con Env&iacute;o a Domicilio y te lo llevamos sin cargo (con tu compra superior a $<?=$montoMinimoPedidosExtrasEnvioSinCargo;?>). En CABA y GBA.</p>
                     </div>
                 </div>
             </div>

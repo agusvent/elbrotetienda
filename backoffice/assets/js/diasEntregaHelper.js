@@ -224,8 +224,48 @@ $(document).ready(function() {
     $("#modalCrearDiaEntrega").on("hidden.bs.modal", function () {
         limpiarFormularioCrearNuevoDiaEntrega();
     });
-        
+
+    $(".bProcesarPedidosFijos").on("click", function(){
+        let idDiaEntrega = $(this).attr('data-dia-entrega-id');
+        preCrearPedidosFijos(idDiaEntrega);
+    });
+
+    $("#bCrearPedidosFijos").on("click", function(){
+        mostrarLoader();
+        let idDiaEntrega = $(this).attr('data-dia-entrega-id');
+        var data = {
+            "idDiaEntrega": idDiaEntrega
+        }
+        $.ajax({
+            url: ajaxURL + 'orders/procesarPedidosFijos',
+            method: 'post',
+            data: data,
+            dataType: "JSON",
+            async: false
+        }).done(function(pedidosCreados) {
+            limpiarPreCrearPedidosFijos();
+            var html = "";
+            for(var i=0;i<pedidosCreados.length;i++){
+                html += "<p>"+pedidosCreados[i]+"</p>";
+            }
+            $("#editarPedidosFijosCreadosList").html(html);
+            ocultarLoader();
+            $("#modalPedidosFijosCreados").modal("show")
+        });
+    
+    });
+    
 });
+
+function limpiarPreCrearPedidosFijos() {
+    $("#bCrearPedidosFijos").attr("data-dia-entrega-id", null);
+    $("#crearPedidosFijosConfirmationModal").modal("hide");
+}
+
+function preCrearPedidosFijos(idDiaEntrega) {
+    $("#bCrearPedidosFijos").attr("data-dia-entrega-id", idDiaEntrega);
+    $("#crearPedidosFijosConfirmationModal").modal("show");
+}
 
 function updateDiaEntregaBarrio(elem) {
     let barrioEnabled = elem.is(':checked') ? 1 : 0;
@@ -346,7 +386,8 @@ function getDiasEntrega() {
     return cDiasEntrega;
 }
 
-function loadDiasEntregaTable() {
+/* OLD. Descomentar esta si vuelven varios dias de entrega y comentar la funcion sigueinte que se llama igual*/
+/*function loadDiasEntregaTable() {
     var cDiasEntrega = getDiasEntrega();
     var html = "";
     if(cDiasEntrega.length>0) {
@@ -390,6 +431,69 @@ function loadDiasEntregaTable() {
             html +=" </div>";
             html +=" <div class='cupones-caja-info'> ";
 
+            var showEditImagenBolson = "";
+            if(cDiasEntrega[i].aceptaBolsones == 0) {
+                showEditImagenBolson = "style='visibility:hidden'";
+            }
+
+            html +=" <div id='imagenDia"+cDiasEntrega[i].id_dia_entrega+"' class='diasEntrega-inner-caja alineado-izq' "+showEditImagenBolson+">";
+
+            let imagen = "not-available.png";
+            let rutaImagen = "../assets/img/";
+            if(cDiasEntrega[i].imagen!=undefined && cDiasEntrega[i].imagen.length > 0) {
+                rutaImagen = "../../assets/img/dias-entrega-imagenes/";
+                imagen = cDiasEntrega[i].imagen;
+            }
+
+            html +=" <a href='javascript:openImage(\""+imagen+"\")'>";
+                html +=" <img class='img-thumbnail' src='"+rutaImagen+imagen+"'/>";
+            html +=" </a>";
+            html +=" <br />";
+            html +=" <a style='margin-left:2px;' href='javascript:editarDiaEntrega("+cDiasEntrega[i].id_dia_entrega+");'>Editar</a>";
+            html +=" </div>";
+            var showEditBarrios = "";
+            if(cDiasEntrega[i].deliveryEnabled == 0) {
+                showEditBarrios = "style='display:none'";
+            }
+            html +=" <div id='editarBarrioLink"+cDiasEntrega[i].id_dia_entrega+"' class='diasEntrega-inner-caja alineado-der' "+showEditBarrios+">";
+            var params = ''+cDiasEntrega[i].id_dia_entrega+',"'+cDiasEntrega[i].descripcion+'"';
+            html +=" <a style='margin-left:2px;' href='javascript:editarBarrios("+params+");'>Editar Barrios</a>";
+            html +=" </div>";
+            html +=" </div>";
+            html +=" </div>";
+            html +=" </div>";
+        }
+    }else{
+        html = "<p style='text-align:center'>No se encontraron dias de entrega activos.</p>"
+    }
+    $("#diasEntregaList").html(html);
+    $('[data-type="checkbox-active"]').bootstrapToggle();
+}
+*/
+
+function loadDiasEntregaTable() {
+    var cDiasEntrega = getDiasEntrega();
+    var html = "";
+    if(cDiasEntrega.length>0) {
+        for(var i=0;i<cDiasEntrega.length;i++) {
+            html +=" <div class='cupones-caja'>";
+            html +=" <div class='cupones-caja-titulo'>"+$.format.date(cDiasEntrega[i].fechaEntrega,"dd/MM/yyyy")+"</div>";
+            html +=" <div style='padding:5px;'>";
+            html +=" <div class='cupones-caja-info'> ";
+            html +=" <p style='text-align:center'><b>"+cDiasEntrega[i].descripcion+"</b></p>";
+            html +="Acepta Bolsones:&nbsp;";
+            if(cDiasEntrega[i].aceptaBolsones == 1) {
+                html +=" <input data-type='checkbox-active' data-dia-entrega-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_bolsones_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' checked data-toggle='toggle' data-onstyle='success' data-size='xs'>";
+            } else {
+                html +=" <input data-dia-entrega-id='"+cDiasEntrega[i].id_dia_entrega+"' id='dia_entrega_acepta_bolsones_"+cDiasEntrega[i].id_dia_entrega+"' type='checkbox' data-toggle='toggle' data-onstyle='success' data-size='xs'>";
+            }
+
+            html +=" <span style='float:right'>";
+            html += '<button type="button" data-dia-entrega-id="'+cDiasEntrega[i].id_dia_entrega+'" class="btn btn-primary btn-sm bProcesarPedidosFijos">Procesar Pedidos Fijos</button>';
+            html +=" </span>";
+            html +=" </div>";
+
+            html +=" <div class='cupones-caja-info'> ";
             var showEditImagenBolson = "";
             if(cDiasEntrega[i].aceptaBolsones == 0) {
                 showEditImagenBolson = "style='visibility:hidden'";

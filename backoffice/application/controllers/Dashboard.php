@@ -184,7 +184,10 @@ class Dashboard extends CI_Controller
         $this->load->model('Content');
         $this->load->model('DiasEntregaPedidos');
         $this->load->model('Cupones');
+        $this->load->model('FormasPago');
         $this->renderHead('EBO - Alta de Pedidos');
+        $cDiasEntrega = [];
+        array_push($cDiasEntrega, $this->DiasEntregaPedidos->getDiaGenerico());
         $this->load->view('dashboard/altaPedidos',[
             'cTiposPedidos' => $this->TiposPedidos->getAll(),
             'cBarrios' => $this->Barrio->getAll(),
@@ -192,9 +195,10 @@ class Dashboard extends CI_Controller
             'cBolsones' => $this->Pocket->getAll(),
             'cEstadosPedidos' => $this->EstadosPedidos->getAll(),
             'diaBolson' => $this->DiasEntregaPedidos->getLastDay(),
-            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos(),
+            'cDiasEntrega' => $cDiasEntrega,
             'costoEnvioPedidos' => $this->Content->get("costoEnvioPedidos"),
-            'cCupones' => $this->Cupones->getAllActivos()
+            'cCupones' => $this->Cupones->getAllActivos(),
+            'cFormasPago' => $this->FormasPago->getAll()
             ]
         );
         $this->load->view('dashboard/footer');
@@ -218,12 +222,27 @@ class Dashboard extends CI_Controller
         $this->load->view('dashboard/footer');
     }
 
+    public function listadoPedidosPendientes()
+    {
+        if(!valid_session()) {
+            redirect('/logout');
+        }
+        $this->load->model('TiposPedidos');
+        $this->load->model('EstadosPedidos');
+        $this->load->model('Content');
+        $this->load->model('DiasEntregaPedidos');
+        $this->renderHead('EBO - Pedidos Pendientes');
+        $this->load->view('dashboard/listadoPedidosPendientes',[]);
+        $this->load->view('dashboard/footer');
+    }
+
     public function volverListadoPedidos(){
         if(!valid_session()) {
             redirect('/logout');
         }
 
         $accion = $this->input->post('accion', true);
+        $from = $this->input->post('from', true);
         $consultaFechaDesde = $this->input->post('consultaFechaDesde', true);
         $consultaFechaHasta = $this->input->post('consultaFechaHasta', true);
         $consultaIncluirCancelados = $this->input->post('consultaIncluirCancelados', true);
@@ -254,24 +273,29 @@ class Dashboard extends CI_Controller
         $this->load->model('TiposPedidos');
         $this->load->model('EstadosPedidos');
         $this->load->model('DiasEntregaPedidos');
-
-        $this->renderHead('EBO - Listado de Pedidos');
-        $this->load->view('dashboard/listadoPedidos',[
-            'cPedidos' => $cPedidos,
-            'cTiposPedidos' => $this->TiposPedidos->getAll(),
-            'diaBolson' => $this->Content->get("confirmation_label"),
-            'consultaFechaDesde' => $consultaFechaDesde,
-            'consultaFechaHasta' => $consultaFechaHasta,
-            'consultaIdDiaEntrega' => $consultaIdDiaEntrega,
-            'consultaIncluirCancelados' => $consultaIncluirCancelados,
-            'consultaSoloNoValidos' => $consultaSoloNoValidos,
-            'consultaNombre' => $consultaNombre,
-            'consultaMail' => $consultaMail,
-            'consultaNroPedido' => $consultaNroPedido,
-            'consultaFiltroFechasOn' => $consultaFiltroFechasOn,
-            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
-            ]
-        );
+        
+        if($from=='pedidosPendientes') {
+            $this->renderHead('EBO - Pedidos Pendientes');
+            $this->load->view('dashboard/listadoPedidosPendientes',[]);
+        } else {
+            $this->renderHead('EBO - Listado de Pedidos');
+            $this->load->view('dashboard/listadoPedidos',[
+                'cPedidos' => $cPedidos,
+                'cTiposPedidos' => $this->TiposPedidos->getAll(),
+                'diaBolson' => $this->Content->get("confirmation_label"),
+                'consultaFechaDesde' => $consultaFechaDesde,
+                'consultaFechaHasta' => $consultaFechaHasta,
+                'consultaIdDiaEntrega' => $consultaIdDiaEntrega,
+                'consultaIncluirCancelados' => $consultaIncluirCancelados,
+                'consultaSoloNoValidos' => $consultaSoloNoValidos,
+                'consultaNombre' => $consultaNombre,
+                'consultaMail' => $consultaMail,
+                'consultaNroPedido' => $consultaNroPedido,
+                'consultaFiltroFechasOn' => $consultaFiltroFechasOn,
+                'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
+                ]
+            );    
+        }
         $this->load->view('dashboard/footer');
     }
 
@@ -304,6 +328,7 @@ class Dashboard extends CI_Controller
         $consultaMail = $this->input->post('consultaMail', true);
         $consultaNroPedido = $this->input->post('consultaNroPedido', true);
         $consultaFiltroFechasOn = $this->input->post('consultaFiltroFechasOn', true);
+        $from = $this->input->post('from', true);
 
         $this->load->model('Order');
         $this->load->model('Pocket');
@@ -314,8 +339,10 @@ class Dashboard extends CI_Controller
         $this->load->model('Cupones');
         $this->load->model('Content');
         $this->load->model('DiasEntregaPedidos');
+        $this->load->model('FormasPago');
 
         $pedido = $this->Order->getById($idPedido);
+        print_r($pedido->procesado);
         $oDiaEntregaPedido = $this->DiasEntregaPedidos->getById($pedido->id_dia_entrega);
         $bolson = null;
         $costoEnvio = 0;
@@ -341,12 +368,13 @@ class Dashboard extends CI_Controller
         if ( !$diaEntregaPedidoIsActivo ) {
             array_push($cDiasEntrega, $oDiaEntregaPedido);
         }
-
+        
         $this->renderHead('EBO - Editar Pedidos');
         $this->load->view('dashboard/editarPedido',[
             'pedido' => $pedido,
             'cExtras' => $this->Order->getExtras($idPedido),
             'cTiposPedidos' => $this->TiposPedidos->getAll(),
+            'cFormasPago' => $this->FormasPago->getAll(),
             'cBarrios' => $this->Barrio->getAll(),
             'cSucursales'  => $this->Office->getAllOrderesByNameASC(),
             'cBolsones' => $this->Pocket->getAll(),
@@ -367,7 +395,8 @@ class Dashboard extends CI_Controller
             'diaBolson' => $this->Content->get("confirmation_label"),
             'tieneBolson' => $tieneBolson,
             'cCupones' => $this->Cupones->getAllActivos(),
-            'cDiasEntrega' => $cDiasEntrega]
+            'cDiasEntrega' => $cDiasEntrega,
+            'from' => $from]
         );
         $this->load->view('dashboard/footer');
     }    
@@ -381,7 +410,7 @@ class Dashboard extends CI_Controller
         $this->renderHead('EBO - Logística');
         $this->load->view('dashboard/logistica',
             [
-            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivosSinExcluidos()
             ]
         );
         $this->load->view('dashboard/footer');
@@ -402,9 +431,7 @@ class Dashboard extends CI_Controller
 
         /*Valores de señas para los pedidos. Se cobran por MP.
         */
-        $valorReservaRango1 = $this->Content->get("valorReservaRango1");
-        $valorReservaRango2 = $this->Content->get("valorReservaRango2");
-        $valorReservaRango3 = $this->Content->get("valorReservaRango3");
+        $valorFormasPago = $this->Content->get("limite_pago_efectivo");
 
         $this->renderHead('Precios Pedidos de Extras');
         $this->load->view('dashboard/preciosPedidosExtras', 
@@ -414,9 +441,7 @@ class Dashboard extends CI_Controller
              'montoMinimoEnvioSinCargoPedidoExtras' => $montoMinimoEnvioSinCargoPedidoExtras,
              'pedidoExtrasPuntoDeRetiroHabilitado' => $pedidoExtrasPuntoDeRetiroHabilitado,
              'pedidoExtrasDomicilioHabilitado' => $pedidoExtrasDomicilioHabilitado,
-             'valorReservaRango1' => $valorReservaRango1,
-             'valorReservaRango2' => $valorReservaRango2,
-             'valorReservaRango3' => $valorReservaRango3
+             'valorFormasPago' => $valorFormasPago
             ]
         );
         $this->load->view('dashboard/footer');

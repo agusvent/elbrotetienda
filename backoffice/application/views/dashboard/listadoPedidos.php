@@ -11,6 +11,7 @@
     <div class="card-body">
         <form method="post" class="listadoPedidosForm" action="goToEditarPedido">
             <input type="hidden" id="idPedido" name="idPedido" value="0"/>
+            <input type="hidden" id="from" name="from" value="listadoPedidos"/>
             <input type="hidden" id="consultaFechaDesde" name="consultaFechaDesde" value="<?=$consultaFechaDesde ?? ''?>"/>
             <input type="hidden" id="consultaFechaHasta" name="consultaFechaHasta" value="<?=$consultaFechaHasta ?? ''?>"/>
             <input type="hidden" id="consultaIncluirCancelados" name="consultaIncluirCancelados" value="<?=$consultaIncluirCancelados ?? false?>"/>
@@ -180,4 +181,5 @@
 </div>
 <!-- Fin Modal Filtro de Pedidos-->
 
-<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=98631243"></script>
+<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=51234"></script>
+<script type="text/javascript" src="<?=assets();?>js/shared.js?v=14123"></script>

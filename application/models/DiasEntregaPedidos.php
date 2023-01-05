@@ -24,6 +24,14 @@ class DiasEntregaPedidos extends CI_Model
         return $result->result()[0];
     }
 
+    public function getDiaGenerico(){
+        $this->db->select('d.id_dia_entrega, d.fecha_entrega as fechaEntrega, d.descripcion, d.acepta_bolsones as aceptaBolsones, d.punto_de_retiro_enabled as puntoDeRetiroEnabled, d.delivery_enabled as deliveryEnabled, d.imagen');
+        $this->db->from('dias_entrega_pedidos as d');
+        $where = "d.id_dia_entrega = 1000000";
+        $this->db->where($where);
+        return $this->db->get()->result()[0];
+    }
+
     public function getAllActivos()
     {
         $this->db->select('d.id_dia_entrega, d.fecha_entrega as fechaEntrega, d.descripcion, d.acepta_bolsones as aceptaBolsones, d.punto_de_retiro_enabled as puntoDeRetiroEnabled, d.delivery_enabled as deliveryEnabled');

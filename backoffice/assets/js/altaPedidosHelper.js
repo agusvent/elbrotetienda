@@ -165,6 +165,7 @@ const altaPedidosHelper = {
             var observaciones = $("#altaPedidoObservaciones").val();
             var checkPedidoFijo = $("#altaPedidoCheckFijarPedido").prop("checked");
             var idCupon = $("#idCupon").val();
+            var idFormaPago = $("#idFormaPago").val();
             $("#altaPedidoMontoMontoDescuento").prop("disabled",false);
             var montoDescuento = $("#altaPedidoMontoMontoDescuento").val();
             var idPedidoFijo = 0;
@@ -212,6 +213,7 @@ const altaPedidosHelper = {
                     'idCupon': idCupon,
                     'montoDescuento': montoDescuento,
                     'idPedidoFijo': idPedidoFijo,
+                    'idFormaPago': idFormaPago,
                     'extras': extras
                 };
                 $.ajax({
@@ -387,6 +389,7 @@ function checkAltaPedidoForm(){
     var idSucursal = $("#idSucursal").val();
     var idBolson = $("#idBolson").val();
     var montoPagado = $("#altaPedidoMontoPagado").val();
+    var idFormaPago = $("#idFormaPago").val();
     var idEstadoPedido = $("#idEstadoPedido").val();
     if(idDiaEntrega==-1){
         mensaje += "<p>Debe seleccionar el Día de Entrega.</p>";
@@ -442,6 +445,9 @@ function checkAltaPedidoForm(){
     }
     if(idEstadoPedido==-1){
         mensaje += "<p>Debe seleccionar un Estado del Pedido.</p>";
+    }
+    if(idFormaPago==-1) {
+        mensaje += "<p>Debe seleccionar una Forma de Pago.</p>";
     }
     return mensaje;
 }
@@ -575,26 +581,6 @@ function recalcularCostoEnvio(select) {
     $("#lSubtotal").html(subtotal)
     calcularDebe();
     $("#idBarrio option").attr('data-barrio-costoEnvioAnterior',costoEnvio);   
-}
-
-function getConfigDiaEntrega(idDiaEntrega) {
-    let configDiaEntrega;
-    var data = {
-        "idDiaEntrega": idDiaEntrega
-    }
-    $.ajax({
-        url: ajaxURL + 'diasEntrega/getConfigDiaEntrega/',
-        method: 'post',
-        data: data,
-        async: false
-    }).done(function(result) {
-        configDiaEntrega = {
-            "puntoRetiroEnabled": result.puntoRetiroEnabled,
-            "deliveryEnabled": result.deliveryEnabled,
-            "bolsonEnabled": result.bolsonEnabled
-        }
-    });
-    return configDiaEntrega;
 }
 
 function setFormByConfigDiaEntrega(configDiaEntrega) {

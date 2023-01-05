@@ -14,6 +14,7 @@
             <input type="hidden" name="consultaNroPedido" id="consultaNroPedido" value="<?=$consultaNroPedido?>"/>
             <input type="hidden" name="consultaFiltroFechasOn" id="consultaFiltroFechasOn" value="<?=$consultaFiltroFechasOn?>"/>
             <input type="hidden" name="consultaMail" id="consultaMail" value="<?=$consultaMail?>"/>
+            <input type="hidden" name="from" id="from" value="<?=$from?>"/>
             <input type="hidden" name="precioBolson" id="precioBolson" value="<?=$precioBolson ?? ''?>"/>
             <input type="hidden" name="precioDeliveryBolson" id="precioDeliveryBolson" value="<?=$precioDeliveryBolson ?? ''?>"/>
             <input type="hidden" name="accion" id="accion" value=""/>
@@ -69,18 +70,22 @@
                 </div>
                 <div class="col-xs-12 col-sm-5">
                     <select class="form-control" name="editarPedidoIdTipoPedido" id="editarPedidoIdTipoPedido" required>
-                        <option value="-1" selected>Seleccione</option>
+                        <!--<option value="-1" selected>Seleccione</option>-->
                         <?php foreach($cTiposPedidos as $tipoPedido): ?>
 
                             <?php
-                                if($tipoPedido->codigo == $pedido->deliver_type){?>
-                                    <option selected value="<?=$tipoPedido->idTipoPedido;?>">
-                                <?php 
-                                }else{?>
-                                    <option value="<?=$tipoPedido->idTipoPedido;?>">
+                                //para reactivar SUCURSAL, sacar este if
+                                if($tipoPedido->idTipoPedido == 2){?>
+                                    <?php 
+                                    if($tipoPedido->codigo == $pedido->deliver_type){?>
+                                        <option selected value="<?=$tipoPedido->idTipoPedido;?>">
+                                    <?php 
+                                    }else{?>
+                                        <option value="<?=$tipoPedido->idTipoPedido;?>">
+                                    <?php
+                                    }?>
                                 <?php
                                 }?>
-
                                 <?=$tipoPedido->descripcion; ?>
                             </option>
                         <?php endforeach; ?>
@@ -222,6 +227,28 @@
                     </select>
                 </div>
             </div>
+            <div class="row form-group">
+                <div class="col-xs-12 col-sm-3" style="text-align:right;">
+                    <label>Forma de Pago:</label>
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    <select class="form-control" name="editarPedidoIdFormaPago" id="editarPedidoIdFormaPago" required>
+                        <option value="-1">Seleccione</option>
+                        <?php foreach($cFormasPago as $formaPago): ?>
+                            <?php if($formaPago->id == $pedido->id_forma_pago){?>
+                                <option selected value="<?=$formaPago->id;?>">
+                            <?php 
+                            }else{?>
+                                <option value="<?=$formaPago->id;?>">
+                            <?php
+                            }?>
+
+                                <?=$formaPago->descripcion; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
             <div class="row form-group" id="divEditarPedidoMontoPagado">
                 <div class="col-xs-12 col-sm-3" style="text-align:right;">
                     <label>Monto Pagado:</label>
@@ -294,6 +321,37 @@
                 </div>
             </div>
 
+
+            <div class="row form-group">
+                <div class="col-xs-12 col-sm-3" style="text-align:right;">
+                    <label class="form-check-label"><label>Fecha Creación:</label></label>
+                </div>
+                <div class="col-xs-12 col-sm-5 mobileAlignRight">
+                    <?php if(isset($pedido->created_at)) {?>
+                        <?=$pedido->created_at?>
+                        <?php }?>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-12 col-sm-3" style="text-align:right;">
+                    <label class="form-check-label"><label>Fecha Despachado:</label></label>
+                </div>
+                <div class="col-xs-12 col-sm-5 mobileAlignRight">
+                    <?php if(isset($pedido->fecha_despachado)) {?>
+                        <?=$pedido->fecha_despachado?>
+                        <?php }?>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-12 col-sm-3" style="text-align:right;">
+                    <label class="form-check-label"><label>Fecha Entregado:</label></label>
+                </div>
+                <div class="col-xs-12 col-sm-5 mobileAlignRight">
+                    <?php if(isset($pedido->fecha_entregado)) {?>
+                        <?=$pedido->fecha_entregado?>
+                        <?php }?>
+                </div>
+            </div>
             <div class="row form-group" style="text-align:center">
                 <div class="col-xs-12 col-sm-3">
                     &nbsp;
@@ -312,7 +370,9 @@
                     &nbsp;
                 </div>
                 <div class="col-xs-12 col-sm-5">
-                    <button type="submit" id="bGrabarEditar" class="btn btn-primary btn-sm">Grabar</button>
+                    <?php if($pedido->despachado==0) {?>
+                        <button type="submit" id="bGrabarEditar" class="btn btn-primary btn-sm">Grabar</button>
+                    <?php } ?>
                     <button type="button" id="bCancelarEditar" class="btn btn-danger btn-sm">Cancelar</button>
                 </div>
             </div>
@@ -320,4 +380,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=1241234"></script>
+<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=1234"></script>

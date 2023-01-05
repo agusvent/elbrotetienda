@@ -12,15 +12,12 @@
         </td></tr>
     <tr style="padding: 0;"><td style="padding:20px;">
             <h2 align="center">¡Pedido confirmado!</h2>
-            <p>¡Hola <strong><?=$nombre;?></strong>! Muchas gracias por tu compra. </p>
-            <p>Tu pedido ya está confirmado y será enviado a domicilio para el día de entrega seleccionado.
+            <p>¡Hola <strong><?=$nombre;?></strong>!</p>
+            <p>Queríamos avisarte que tu compra se realizó con éxito.
             </p>
-            <p>Recordá que tu compra se abona solo en efectivo, al momento de la entrega.</p>
+            <p>Ya estamos preparando tu pedido! Y será enviado a tu domicilio hoy mismo!</p>
             <p>
-                Reserva abonada: $<?=$montoPagado?>
-            </p>
-            <p>
-                <b>Total a abonar en efectivo: $<?=$totalPrice?></b>
+                Valor del Pedido: $<?=$totalPrice?>
             </p>
             <p>
                 <strong>Pedido: </strong><br>
@@ -39,18 +36,13 @@
                 </p>
             <?php endif; ?>
             <p>
-                <strong>Día de entrega: <?=$entrega;?><br /></strong>
+                <strong>Dirección de Entrega: <?=$direccion;?><br /></strong>
             </p>
             <p>
-                <strong>Dirección: <?=$direccion;?><br /></strong>
+                <strong>Por cualquier consulta o comentario, estamos a disposición por este medio, en nuestras redes sociales o por whatsapp al 11-3181-6011<br /></strong>
             </p>
-            <p>
-                <strong>Franja Horaria: <?=$horarioEntrega;?><br /></strong>
-            </p>
-            <p>PD: Si ya hiciste un pedido previo de bolsón, te pedimos que lleves la bolsa vacía para que podamos reciclarlas y ayudar con el medio ambiente!</p>
-            <p>Te esperamos,
-                <br>
-                El equipo de El Brote Tienda Natural. </p>
+            <p>¡Muchas gracias por tu compra!</p>
+            <p>El equipo de El Brote Tienda Natural. </p>
             <p>&nbsp;</p>
             <p style="margin-top:20px;font-size:9px;">
                 * Cuestiones climáticas o inconvenientes vinculados con las cosechas pueden dificultar la disponibilidad de algunos cultivos publicados. En esos casos, nos veremos obligados a reemplazar dichos productos por otros que estén disponibles (según cantidad y calidad). Muchas gracias por comprender!

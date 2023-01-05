@@ -31,13 +31,7 @@
 <script type="text/javascript">const ajaxURL = "<?=base_url();?>api/";</script>
 <script type="text/javascript">const baseURL = "<?=base_url();?>";</script>
 <!-- Helpers -->
-<script type="text/javascript" src="<?=assets();?>js/shared.js?v=34758628345"></script>
-
-
-
-
-
-
+<script type="text/javascript" src="<?=assets();?>js/shared.js?v=5123"></script>
 
 <script type="text/javascript" src="<?=assets();?>js/mainHelper.js?v=9817234"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery.numeric.js"></script>

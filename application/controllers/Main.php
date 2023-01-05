@@ -17,6 +17,8 @@ class Main extends CI_Controller
 
         $aExtras      = $this->input->post('arrExtras-ebo', true); 
         $codigoCupon  = $this->input->post('cuponDescuento', true);
+        $idFormaPago  = $this->input->post('idFormaPago', true);
+        
         //$montoDelivery = $this->input->post('montoDelivery', true);
 
         //Con esto revierto el stringify del js.
@@ -26,18 +28,6 @@ class Main extends CI_Controller
         if(isset($aExtras) && count($aExtras)>0){
             $aExtras = json_decode($aExtras);
         }
-        /*
-        printf($nombre."\n");
-        printf($email."\n");
-        printf($celular."\n");
-        printf($barrio."\n");
-        printf($direccion."\n");
-        printf($piso."\n");
-        print("BOLSON CANT.:".$bolsonCant."\n");
-        foreach($aExtras as $oExtra){
-            printf("\nEXTRA: ".$oExtra->idExtra.", ".$oExtra->cantExtra);
-        }
-        */
 
         $errors = [];
         /*if(empty($nombre)) {
@@ -83,7 +73,7 @@ class Main extends CI_Controller
             $idTipoPedido = 2;
             
             $this->load->model('DiasEntregaPedidos');
-            $oDiaEntregaPedido = $this->DiasEntregaPedidos->getById($idDiaEntrega);
+            $oDiaEntregaPedido = $this->DiasEntregaPedidos->getDiaGenerico();
             $pushOrderResult = $this->Order->add(
                 $nombre,
                 $email,
@@ -91,12 +81,13 @@ class Main extends CI_Controller
                 null,
                 $bolsonCant,
                 $oDiaEntregaPedido->descripcion,
-                $idDiaEntrega,
+                $oDiaEntregaPedido->id_dia_entrega,
                 $idTipoPedido,
                 false,
                 $direccion,
                 $piso,
                 $barrio,
+                $idFormaPago,
                 $hash
             );
 
@@ -126,12 +117,13 @@ class Main extends CI_Controller
                     $this->Order->addExtra($pushOrderResult, $oExtra->idExtra, $oExtra->cantExtra);
                     $this->Extra->reducirStockExtra($oExtra->idExtra,$oExtra->cantExtra);
                     $extra = $this->Extra->getById($oExtra->idExtra);
+                    $extra_price = floatval($extra->price) * $oExtra->cantExtra;
                     $_extras[] = [
                         'name'  => $extra->name,
-                        'price' => ($extra->price * $oExtra->cantExtra)
+                        'price' => $extra_price
                     ];
                     if(isset($extra->price)){
-                        $montoTotalPedido = $montoTotalPedido + ($extra->price * $oExtra->cantExtra);
+                        $montoTotalPedido = $montoTotalPedido + $extra_price;
                     }
                 }
             }
@@ -141,25 +133,19 @@ class Main extends CI_Controller
             $esReserva = false;
 
             $this->load->model('Parameter');
+            $this->load->model('Barrio');
             $montoMinimoParaEnvioSinCargo = (int)$this->Parameter->get('montoMinimoPedidosExtrasEnvioSinCargo');
             
-            if($montoTotalPedido>=$montoMinimoParaEnvioSinCargo){
-                //SI EL ENVIO ES SIN CARGO, SE LE COBRA LA RESERVA
-                $valorReserva = $this->getValorReservaByMontoPedido($montoTotalPedido);
-                $esReserva = true;
-            }else{
-                //SI EL ENVIO ES CON CARGO, NO SE COBRA LA RESERVA
-                $this->load->model('Barrio');
-                $oBarrio = $this->Barrio->getById($barrio);
-                $montoDelivery = (int)$oBarrio->costo_envio;
+            $oBarrio = $this->Barrio->getById($barrio);
+            $montoDelivery = intval($oBarrio->costo_envio);
+            $montoTotalPedido = $montoTotalPedido + $montoDelivery;
+            
+            if($montoTotalPedido>$montoMinimoParaEnvioSinCargo){
+                $montoTotalPedido = $montoTotalPedido - $montoDelivery;
             }
 
             //EN ESTE CAMPO UNIFICO EL MONTO DE ENVIO SI ES QUE SE COBRA O LA RESERVA, SI NO SE COBRA EL ENVIO
             $montoEnvioReserva = $montoDelivery + $valorReserva;
-
-            if(!$esReserva) {
-                $montoTotalPedido = $montoTotalPedido + $montoEnvioReserva;
-            }
 
             $montoDescuento = 0;
 
@@ -179,7 +165,9 @@ class Main extends CI_Controller
             }
 
             $this->Order->updateMontoTotal($pushOrderResult,$montoTotalPedido);
-            $this->Order->updateMontoPagado($pushOrderResult,$montoEnvioReserva);
+            if($idFormaPago == 2) {
+                $this->Order->updateMontoPagado($pushOrderResult,$montoTotalPedido);
+            }
             $this->Order->updateMontoDescuento($pushOrderResult,$cupon->idCupon,$montoDescuento);
 
             $orderData = [
@@ -195,12 +183,15 @@ class Main extends CI_Controller
                 'extras' => $_extras,
                 'hash' => $hash,
                 'idTipoPedido' => $idTipoPedido,
-                'montoEnvioReserva' => $montoEnvioReserva
+                'monto_a_pagar' => $montoTotalPedido
             ];
             
-            
-            // Despacho el checkout
-            $this->dispatchCheckout($pushOrderResult, $orderData);
+            if($idFormaPago == 2) {
+                // Despacho el checkout
+                $this->dispatchCheckout($pushOrderResult, $orderData);
+            } else {
+                redirect('/success/'.$hash.'/delivery/');  
+            }
         }
     }
     
@@ -341,197 +332,6 @@ class Main extends CI_Controller
         }
     }
 
-    private function old_process_delivery_form()
-    {   
-        /*********************************************** */
-        //NO SE USA MAS. SI TODO FUNCIONA, DEPSUES LA BORRO
-        /*********************************************** */
-        $nombre       = $this->input->post('nombre', true);
-        $email        = $this->input->post('email', true);
-        $celular      = $this->input->post('celular', true);
-        $barrio       = $this->input->post('barrio', true);
-        $bolson       = $this->input->post('bolson', true);
-        $extras       = $this->input->post('extras', true);
-        $direccion    = $this->input->post('direccion', true);
-        $piso         = $this->input->post('piso', true);
-        //$confirmation = $this->input->post('confirmation', true);
-        $idDiaEntrega = $this->input->post('confirmation', true);
-
-        $aExtras      = $this->input->post('arrExtras-delivery', true); 
-
-        //Con esto revierto el stringify del js.
-        $aExtras = json_decode($aExtras);
-
-        $errors = [];
-        if(empty($nombre)) {
-            array_push($errors, 'Nombre y apellido son obligatorios.');
-        }
-        if(empty($email)) {
-            array_push($errors, 'El correo electrónico es obligatorio.');
-        }
-        if(empty($barrio)) {
-            array_push($errors, 'Elige barrio para entregar el pedido.');
-        }
-        if(empty($direccion)) {
-            array_push($errors, 'La dirección de entrega es obligatoria.');
-        }
-        /*if(!isset($bolson)) {
-            array_push($errors, 'Elige un bolsón para añadir al pedido.');
-        }*/
-        if(!isset($idDiaEntrega)) {
-            array_push($errors, 'Por favor, confirma la fecha de retiro marcando la casilla.');
-        }
-
-        if(count($errors) > 0) {
-            $this->session->processErrors = $errors;
-            $this->renderMain([
-                'nombre' => $nombre ?? null,
-                'email' => $email ?? null,
-                'celular' => $celular ?? null,
-                'barrio' => $barrio ?? null,
-                'bolson' => $bolson ?? null,
-                'extras' => $extras ?? null,
-                'confirmation' => $idDiaEntrega ?? null,
-                'idDiaEntrega' => $idDiaEntrega ?? null,
-                'direccion' => $direccion ?? null,
-                'piso' => $piso ?? null,
-                'errors' => $errors ?? null,
-                'type' => 'delivery'
-            ]);
-        }else{
-            
-            // Todo ok, lo doy de alta
-            $this->load->model('Order');
-            $hash = sha1($nombre.uniqid());
-            /*$celularFormateado = $celular;
-            $celularFormateado = str_replace(" ","",$celularFormateado);
-            $celularFormateado = str_replace("-","",$celularFormateado);
-            if( substr($celularFormateado,0,2)=="15" ){
-                //SI ARRANCA CON 15 HAGO QUE ARRANQUE CON 11 y lo formateo con el +549
-                $celularFormateado = preg_replace("/15/","11",$celularFormateado,1);
-                $celularFormateado = "+549".$celularFormateado;
-            }else if( substr($celularFormateado,0,2)=="11"){
-                //SI ARRANCA CON 11, SOLAMENTE LE AGREGO EL +549 ADELANTE
-                $celularFormateado = "+549".$celularFormateado;
-            }else if( substr($celularFormateado,0,3)=="549"){
-                //SI ARRANCA CON EL 549, SOLAMENTE LE AGREGO EL +
-                $celularFormateado = "+".$celularFormateado;
-            }else if( substr($celularFormateado,0,5)=="+5415"){
-                $celularFormateado = preg_replace("/15/","11",$celularFormateado,1);
-                $celularFormateado = substr_replace( $celularFormateado, "9", 3, 0 );
-            }else if( substr($celularFormateado,0,5)=="+5411"){
-                $celularFormateado = substr_replace( $celularFormateado, "9", 3, 0 );
-            }*/
-
-            //ID TIPO PEDIDO 2 => DELIVERY
-            $idTipoPedido = 2;
-            
-            $this->load->model('DiasEntregaPedidos');
-            $oDiaEntregaPedido = $this->DiasEntregaPedidos->getById($idDiaEntrega);
-            
-            $pushOrderResult = $this->Order->add(
-                $nombre,
-                $email,
-                $celular,
-                null,
-                $bolson,
-                $oDiaEntregaPedido->descripcion,
-                $idDiaEntrega,
-                $idTipoPedido,
-                false,
-                $direccion,
-                $piso,
-                $barrio,
-                $hash
-            );
-
-            $pedidoSoloExtras = false;
-
-            $montoTotalPedido = 0;
-            $montoDelivery = 0;
-            $this->load->model('Pocket');
-            $oBolson = $this->Pocket->getById($bolson);
-                        
-            $_extras = [];
-            if(isset($aExtras)) {
-                $this->load->model('Extra');
-                foreach($aExtras as $oExtra) {
-                    
-                    $this->Order->addExtra($pushOrderResult, $oExtra->idExtra, $oExtra->cantExtra);
-                    $this->Extra->reducirStockExtra($oExtra->idExtra,$oExtra->cantExtra);
-                    $extra = $this->Extra->getById($oExtra->idExtra);
-                    $_extras[] = [
-                        'name'  => $extra->name,
-                        'price' => ($extra->price * $oExtra->cantExtra)
-                    ];
-                    if(isset($extra->price)){
-                        $montoTotalPedido = $montoTotalPedido + ($extra->price * $oExtra->cantExtra);
-                    }
-                }
-            }
-
-            if(isset($oBolson)){
-                if(isset($oBolson->price)){
-                    $montoTotalPedido = $montoTotalPedido + $oBolson->price;
-                    $montoDelivery = $oBolson->delivery_price;
-                    $montoTotalPedido = $montoTotalPedido + $oBolson->delivery_price;
-                }
-            }else{
-                //SI NO TIENE BOLSON ES UN PEDIDO DE EXTRAS SOLAMENTE
-                $pedidoSoloExtras = true;
-                $this->load->model('Parameter');
-                $montoEnvioSinCargo = (double)$this->Parameter->get('montoMinimoPedidosExtrasEnvioSinCargo');
-                $montoDelivery = (double)$this->Parameter->get('costoEnvioPedidosExtras');
-                if($montoTotalPedido < $montoEnvioSinCargo){
-                    //SI NO TIENE ENVIO SIN CARGO
-                    $montoTotalPedido = $montoTotalPedido + $montoDelivery;
-                }
-
-            }
-
-            /*if(isset($extras)) {
-                $this->load->model('Extra');
-                foreach($extras as $extraId) {
-                    $this->Order->addExtra($pushOrderResult, $extraId);
-                    $this->Extra->reducirStockExtra($extraId);
-
-                    $extra = $this->Extra->getById($extraId);
-                    $_extras[] = [
-                        'name'  => $extra->name,
-                        'price' => $extra->price
-                    ];
-
-                    if(isset($extra->price)){
-                        $montoTotalPedido = $montoTotalPedido + $extra->price;
-                    }
-                }
-            }*/
-            
-            $this->Order->updateMontoTotal($pushOrderResult,$montoTotalPedido);
-
-            //EL MONTO DEL DELIVERY DEL BOLSON ES LO QUE EL CLIENTE PAGA POR MERCADO PAGO.
-            $this->Order->updateMontoPagado($pushOrderResult,$montoDelivery);
-            
-            $orderData = [
-                'nombre' => $nombre,
-                'email' => $email,
-                'celular' => $celular,
-                'pocket_id' => $bolson,
-                'deliver_date' => $confirmation,
-                'deliver_address' => $direccion,
-                'deliver_extra' => $piso,
-                'barrio_id' => $barrio,
-                'extras' => $_extras,
-                'pedidoSoloExtras' => $pedidoSoloExtras,
-                'idTipoPedido' => $idTipoPedido,
-                'hash' => $hash
-            ];
-
-            // Despacho el checkout
-            $this->dispatchCheckout($pushOrderResult, $orderData);
-        }
-    }
-
     private function dispatchCheckout($orderId, $orderData)
     {
         $this->load->helper('parser');
@@ -550,22 +350,22 @@ class Main extends CI_Controller
         
         $bolson = $this->Pocket->getById($orderData['pocket_id']);
 
-        $tituloReserva = "";
+        $tituloMercadoPago = "";
 
-        $montoReserva = $orderData['montoEnvioReserva'];
+        $monto_a_pagar = $orderData['monto_a_pagar'];
         
         if($orderData['idTipoPedido'] == 1){
             //PUNTO DE RETIRO
-            $tituloReserva = "Reserva por pedido en El Brote Tienda Natural";
+            $tituloMercadoPago = "Reserva por pedido en El Brote Tienda Natural";
         }else{
-            $tituloReserva = "Envío-Reserva pedido El Brote Tienda";
+            $tituloMercadoPago = "Pedido de El Brote Tienda";
         }
         
         // Agrego el costo de envío como otro ítem
         $shippingItem = new MercadoPago\Item();
-        $shippingItem->title = $tituloReserva;
+        $shippingItem->title = $tituloMercadoPago;
         $shippingItem->quantity = 1;
-        $shippingItem->unit_price = priceToDouble($montoReserva);
+        $shippingItem->unit_price = priceToDouble($monto_a_pagar);
         $orderItems[] = $shippingItem;
 
         $preference->items = $orderItems;
@@ -603,16 +403,15 @@ class Main extends CI_Controller
         /*
         if($orderData['idTipoPedido'] == 1){
             $preference->back_urls = [
-                'success' => 'http://agus.tplinkdns.com/ebo/success/'.$orderData['hash'].'/',
-                'failure' => 'http://agus.tplinkdns.com/ebo/failure/'.$orderData['hash'].'/'
+                'failure' => 'http://agusventu.tplinkdns.com/ebo/failure/'.$orderData['hash'].'/'
             ];
         }else{
             $preference->back_urls = [
-                'success' => 'http://agus.tplinkdns.com/ebo/success/'.$orderData['hash'].'/delivery/',
-                'failure' => 'http://agus.tplinkdns.com/ebo/failure/'.$orderData['hash'].'/'
+                'success' => 'http://agusventu.tplinkdns.com/ebo/success/'.$orderData['hash'].'/delivery/',
+                'failure' => 'http://agusventu.tplinkdns.com/ebo/failure/'.$orderData['hash'].'/'
             ];
         }
-        $preference->notification_url = 'http://agus.tplinkdns.com/ebo/payment_confirmation/'.$orderData['hash'];
+        $preference->notification_url = 'http://agusventu.tplinkdns.com/ebo/payment_confirmation/'.$orderData['hash'];
         */
 
         // Desactivo estado 'pendiente' y métodos en efectivo.
@@ -630,158 +429,6 @@ class Main extends CI_Controller
         $preference->save();
             
         header("Location: " . $preference->init_point);
-    }
-
-    private function old_process_sucursal_form()
-    {
-        $nombre       = $this->input->post('nombre', true);
-        $email        = $this->input->post('email', true);
-        $celular      = $this->input->post('celular', true);
-        $sucursal     = $this->input->post('sucursal', true);
-        $bolson       = $this->input->post('bolson', true);
-        $extras       = $this->input->post('extras', true); 
-
-        $aExtras      = $this->input->post('arrExtras-sucursal', true); 
-        //Con esto revierto el stringify del js.
-        $aExtras = json_decode($aExtras);
-
-        /*foreach($aExtras as $oExtra){    
-            printf($oExtra->idExtra.":".$oExtra->cantExtra."\n");
-        }*/
-
-        //$confirmation = $this->input->post('confirmation', true);
-        
-        $idDiaEntrega = $this->input->post('confirmation', true);
-
-        $errors = [];
-        if(empty($nombre)) {
-            array_push($errors, 'Nombre y apellido son obligatorios.');
-        }
-        if(empty($email)) {
-            array_push($errors, 'El correo electrónico es obligatorio.');
-        }
-        if(empty($sucursal)) {
-            array_push($errors, 'Elige una sucursal para retirar tu pedido.');
-        }
-        /*if(!isset($bolson)) {
-            array_push($errors, 'Elige un bolsón para añadir al pedido.');
-        }*/
-        if(!isset($idDiaEntrega)) {
-            array_push($errors, 'Por favor, confirma la fecha de retiro marcando la casilla.');
-        }
-
-        if(count($errors) > 0) {
-            $this->session->processErrors = $errors;
-            $this->renderMain([
-                'nombre' => $nombre ?? null,
-                'email' => $email ?? null,
-                'celular' => $celular ?? null,
-                'sucursal' => $sucursal ?? null,
-                'bolson' => $bolson ?? null,
-                'extras' => $extras ?? null,
-                'confirmation' => $idDiaEntrega ?? null,
-                'idDiaEntrega' => $idDiaEntrega ?? null,
-                'errors' => $errors ?? null,
-                'type' => 'sucursal'
-            ]);
-        }else{
-            // Todo ok, lo doy de alta
-            $this->load->model('Order');
-            $hash = sha1($nombre.uniqid());
-            /*$celularFormateado = $celular;
-            $celularFormateado = str_replace(" ","",$celularFormateado);
-            $celularFormateado = str_replace("-","",$celularFormateado);
-            if( substr($celularFormateado,0,2)=="15" ){
-                //SI ARRANCA CON 15 HAGO QUE ARRANQUE CON 11 y lo formateo con el +549
-                $celularFormateado = preg_replace("/15/","11",$celularFormateado,1);
-                $celularFormateado = "+549".$celularFormateado;
-            }else if( substr($celularFormateado,0,2)=="11"){
-                //SI ARRANCA CON 11, SOLAMENTE LE AGREGO EL +549 ADELANTE
-                $celularFormateado = "+549".$celularFormateado;
-            }else if( substr($celularFormateado,0,3)=="549"){
-                //SI ARRANCA CON EL 549, SOLAMENTE LE AGREGO EL +
-                $celularFormateado = "+".$celularFormateado;
-            }else if( substr($celularFormateado,0,5)=="+5415"){
-                $celularFormateado = preg_replace("/15/","11",$celularFormateado,1);
-                $celularFormateado = substr_replace( $celularFormateado, "9", 3, 0 );
-            }else if( substr($celularFormateado,0,5)=="+5411"){
-                $celularFormateado = substr_replace( $celularFormateado, "9", 3, 0 );
-            }*/
-            
-            //ID TIPO PEDIDO 1 => SUCURSAL
-            $idTipoPedido = 1;
-
-            $this->load->model('DiasEntregaPedidos');
-            $oDiaEntregaPedido = $this->DiasEntregaPedidos->getById($idDiaEntrega);
-
-            $pushOrderResult = $this->Order->add(
-                $nombre,
-                $email,
-                $celular,
-                $sucursal,
-                $bolson,
-                $oDiaEntregaPedido->descripcion,
-                $idDiaEntrega,
-                $idTipoPedido,
-                false,
-                null,
-                null,
-                null,
-                $hash
-            );
-
-            $montoTotalPedido = 0;
-            $this->load->model('Pocket');
-            $oBolson = $this->Pocket->getById($bolson);
-
-            if(isset($oBolson)){
-                if(isset($oBolson->price)){
-                    $montoTotalPedido = $montoTotalPedido + $oBolson->price;
-                }
-            }
-
-
-            $_extras = [];
-            if(isset($aExtras)) {
-                $this->load->model('Extra');
-                foreach($aExtras as $oExtra) {
-                    $this->Order->addExtra($pushOrderResult, $oExtra->idExtra, $oExtra->cantExtra);
-                    $this->Extra->reducirStockExtra($oExtra->idExtra,$oExtra->cantExtra);
-                    $extra = $this->Extra->getById($oExtra->idExtra);
-                    $_extras[] = [
-                        'name'  => $extra->name,
-                        'price' => ($extra->price * $oExtra->cantExtra)
-                    ];
-                    if(isset($extra->price)){
-                        $montoTotalPedido = $montoTotalPedido + ($extra->price * $oExtra->cantExtra);
-                    }
-                }
-            }
-
-            /*$_extras = [];
-            if(isset($extras)) {
-                $this->load->model('Extra');
-                foreach($extras as $extraId) {
-                    $this->Order->addExtra($pushOrderResult, $extraId);
-                    $this->Extra->reducirStockExtra($extraId);
-                    $extra = $this->Extra->getById($extraId);
-                    $_extras[] = [
-                        'name'  => $extra->name,
-                        'price' => $extra->price
-                    ];
-                    if(isset($extra->price)){
-                        $montoTotalPedido = $montoTotalPedido + $extra->price;
-                    }
-                }
-            }*/
-            //COMO ESTAMOS EN SUCURSAL, EL MONTO QUE DEBE ES IGUAL AL TOTAL YA QUE NO SE PAGA POR ADELANTADO.
-            //ES DIFERENTE PARA DOMICILIOS PORQUE SE TIENE QUE DESCONTAR LO PAGADO POR MERCADO PAGO
-            
-            $this->Order->updateMontoTotal($pushOrderResult,$montoTotalPedido);
-            $this->Order->updateMontoPagado($pushOrderResult,0);
-
-            redirect('/success/'.$hash);
-        }
     }
 
     public function index()
@@ -816,8 +463,10 @@ class Main extends CI_Controller
     }
 
     public function about(){
-        
-        $this->load->view('about');
+        $this->load->model('Parameter');
+        $this->load->view('about', array_merge([
+            'montoMinimoPedidosExtrasEnvioSinCargo' => $this->Parameter->get('montoMinimoPedidosExtrasEnvioSinCargo')
+        ]));
     }
 
     public function renderMain($args = [])
@@ -870,9 +519,10 @@ class Main extends CI_Controller
             'descripcionBolsonesFormCerrado'  => $this->Parameter->get('descripcionBolsonesFormCerrado'),
             'descripcionTienda'  => $this->Parameter->get('descripcionTienda'),
             'descripcionTiendaFormCerrado'  => $this->Parameter->get('descripcionTiendaFormCerrado'),
-            'imagenBolson' => $this->DiasEntregaPedidos->getLastDayWithAceptaBolsones()->imagen,
+            'imagenBolson' => $this->DiasEntregaPedidos->getDiaGenerico()->imagen,
             'moduloCuponesEnabled' => $this->Parameter->get('moduloCuponesEnabled'),
-            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos()
+            'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos(),
+            'idDiaGenerico' => $this->DiasEntregaPedidos->getDiaGenerico()->id_dia_entrega
         ]));
     }
 
@@ -921,7 +571,7 @@ class Main extends CI_Controller
         $bolson = $this->Pocket->getById($order->pocket_id);
 
         $totalPrice = $order->monto_total - $order->monto_pagado;
-
+        
         $this->load->view('success',[
             'confirmationLabel' => $this->Parameter->get('confirmation_label'),
             'successMessage'    => $this->Parameter->get('order_success'),
@@ -1099,7 +749,9 @@ class Main extends CI_Controller
         $this->output->set_content_type('application/json');
         $this->load->model('Order');
         $this->load->model('Parameter');
-/*
+
+        $this->Order->validate($hash,1);
+        /*
         MercadoPago\SDK::setAccessToken("TEST-7107678042081801-051415-08aeeb15d693ede10d6e35cad0e10741-75232795");
         error_log(json_encode($_GET["data_id"]),3,"../../logs/errorAgus.log");
         switch($_GET["type"]) {
@@ -1153,8 +805,10 @@ class Main extends CI_Controller
         
         $order = $this->Order->getByHash($hash);
         $this->Order->savePaymentId($hash,$merchantOrderId);
-        
+
+        /*Esto es para confirmar el pago efectuado en MP*/
         //$ch = curl_init('https://api.mercadopago.com/v1/payments/'.$paymentId);
+        /*
         $ch = curl_init('https://api.mercadopago.com/merchant_orders/'.$merchantOrderId);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -1168,11 +822,7 @@ class Main extends CI_Controller
         $status = $responseJson['order_status'];
         
         //error_log("\Fecha Aprobacion:\n".isset($fechaAprobacion)."\nStatus: ".$status."\n ",3,"../../logs/errorAgus.log");        
-        
-        if(isset($status) && $status=="paid") {
-            $this->Order->validate($hash,1);
-        }
-        
+        */
         $this->output->set_status_header(200);
         return $this->output->set_output(true);
     }
@@ -1201,7 +851,8 @@ class Main extends CI_Controller
                 }
             }
             
-            $totalPrice = (int)$order->monto_total - (int)$order->monto_pagado;
+            //$totalPrice = (int)$order->monto_total - (int)$order->monto_pagado;
+            $totalPrice = (int)$order->monto_total;
             
             if ($order->deliver_type == 'SUC') {
                 $viewName = 'normal';

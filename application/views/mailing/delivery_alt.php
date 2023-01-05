@@ -1,12 +1,10 @@
 ¡Pedido confirmado!
 
-¡Hola <?=$nombre;?>! Muchas gracias por tu compra.
+¡Hola <?=$nombre;?>!.
+Queríamos avisarte que tu compra se realizó con éxito.
+Ya estamos preparando tu pedido! Y será enviado a tu domicilio hoy mismo!
 
-Tu pedido ya está confirmado y será enviado a domicilio para el día de entrega seleccionado.
-Recordá que tu compra se abona solo en efectivo, al momento de la entrega.
-
-Reserva abonada: $<?=$montoPagado?>
-Total a abonar en efectivo: $<?=$totalPrice?>
+Valor del Pedido: $<?=$totalPrice?>
 
 Pedido:
 <?php if (isset($bolson)){?>
@@ -21,8 +19,8 @@ Pedido:
     Cupón de Descuento aplicado: -$<?=$montoDescuento;?><br>
 <?php endif; ?>
 
-Te recordamos la dirección a la que entregaremos: <?=$direccion;?>.
+Dirección de Entrega: <?=$direccion;?>
 
-Te esperamos,
-El equipo del Brote Orgánico.
-* Cuestiones climáticas o inconvenientes vinculados con las cosechas pueden dificultar la disponibilidad de algunos cultivos publicados. En esos casos, nos veremos obligados a reemplazar dichos productos por otros que estén disponibles (según cantidad y calidad). Muchas gracias por comprender!
+Por cualquier consulta o comentario, estamos a disposición por este medio, en nuestras redes sociales o por whatsapp al 11-3181-6011
+¡Muchas gracias por tu compra!
+El equipo de El Brote Tienda Natural.

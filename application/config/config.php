@@ -23,8 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-#$config['base_url'] = 'https://elbrotetienda.com/';
-$config['base_url'] = 'http://192.168.1.100/ebo/';
+$config['base_url'] = 'https://elbrotetienda.com/';
+#$config['base_url'] = 'http://192.168.1.100/ebo/';
+#$config['base_url'] = 'http://agusventu.tplinkdns.com/ebo/';
 /*
 |--------------------------------------------------------------------------
 | Index File

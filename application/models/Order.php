@@ -20,6 +20,7 @@ class Order extends CI_Model
                         $deliverAddress = null,
                         $deliverExtra = null,
                         $idBarrio = null,
+                        $idFormaPago,
                         $hash = null) 
     {
         $this->db->set('client_name', $clientName);
@@ -48,6 +49,7 @@ class Order extends CI_Model
         $this->db->set('deliver_address', $deliverAddress);
         $this->db->set('deliver_extra', $deliverExtra);
         $this->db->set('barrio_id', $idBarrio);
+        $this->db->set('id_forma_pago', $idFormaPago);
         $this->db->set('valid', $valid);
         //LO PONEMOS COMO DEFAULT EN ESTADO 1 ==> CONFIRMADO
         $this->db->set('id_estado_pedido', 1);
@@ -103,7 +105,7 @@ class Order extends CI_Model
 
     public function getByHash($hash) 
     {
-        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, cant_bolson, total_bolson, id_tipo_pedido, monto_total, monto_pagado, monto_descuento, mail_confirmation_sent');
+        $this->db->select('id, client_name, email, phone, office_id, pocket_id, deliver_date, created_at, deliver_type, deliver_address, deliver_extra, barrio_id, valid, hash, cant_bolson, total_bolson, id_tipo_pedido, monto_total, monto_pagado, monto_descuento, mail_confirmation_sent, id_forma_pago');
         $this->db->from('orders');
         $this->db->where('hash', $hash);
 
