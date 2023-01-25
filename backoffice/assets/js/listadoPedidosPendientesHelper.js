@@ -27,7 +27,7 @@ function loadPedidosPendientes() {
     var cPedidos = getPedidosPendientes();
     cargarListadoPedidos(cPedidos);
     ocultarLoader();
-    initListadoPedidosDatatable();
+    initListadoPedidosPendientesDatatable();
     $(".chkDespacharPedido").on("click", function(e){
         e.preventDefault();
         var idPedido = $(this).data("id_pedido");
@@ -203,4 +203,29 @@ function clearModalEntregado(){
     $("#sClientePedidoAEntregar").html("");
     $("#idPedido").val("");
     $("#entregarPedidoConfirmationModal").modal("hide");
+}
+
+function initListadoPedidosPendientesDatatable(){
+    $('#tableListadoPedidos').DataTable({
+        "bPaginate":false,
+        "bLengthChange": false,
+        "bFilter":true,        
+        "bInfo":true,
+        "sPaginationType": "full_numbers",
+        "oLanguage": {
+                "sSearch": 'Buscar En Listado:',
+                "oPaginate": {
+                        "sFirst": '<<',
+                        "sLast": '>>',
+                        "sNext": '>',
+                        "sPrevious": '<'
+                },
+                "sZeroRecords": 'No hay registros para mostrar',
+                "sInfoFiltered": '(Utilizando filtro)',
+                "sInfo": 'Mostrando _START_ a _END_ de un total de _TOTAL_',
+                "sInfoEmpty": "No hay registros"
+        },
+        "bSort": false,
+        "iDisplayLength": 100000
+    });
 }

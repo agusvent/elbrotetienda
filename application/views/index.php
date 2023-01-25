@@ -910,10 +910,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="welcome-content text-center">
                             <h5>¡Atenci&oacute;n!</h5>
-                            <h1>El día que seleccionaste para tu pedido no entregamos bolsones.</h1>
-                            <p>
-                                Solo entregamos bolsones los días Miércoles, el resto de los días habilitados enviamos productos de la tienda. Para seguir con tu pedido podés elegir entre estas dos opciones.
-                            </p>
+                            <h1>Por el momento estamos sin stock de Combo Familiar. No te pierdas de realizar tu compra de productos sueltos en nuestra tienda. Muchas gracias!</h1>
                         </div>
                     </div>
                 </div>
@@ -922,7 +919,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <button type="button" id="bEliminarBolsonesPedido" class="ebo-cart-btn ebo-cart-btn-green">ELIMINAR BOLSONES</button>
                     </div>
                     <div class="col-xs-12 col-sm-6">
-                        <button type="button" id="bCambiarDiaEntrega" class="ebo-cart-btn ebo-cart-btn-green">CAMBIAR DIA ENTREGA</button>
+                        <!--<button type="button" id="bCambiarDiaEntrega" class="ebo-cart-btn ebo-cart-btn-green">CAMBIAR DIA ENTREGA</button>-->
                     </div>
                 </div>
             </div>
@@ -984,7 +981,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="welcome-content text-center">
                             <h5>¡Atenci&oacute;n!</h5>
-                            <h1>El día que seleccionaste para tu pedido, no entrega bolsones.</h1>
+                            <h1>Por el momento estamos sin stock de Combo Familiar. No te pierdas de realizar tu compra de productos sueltos en nuestra tienda. Muchas gracias!</h1>
                         </div>
                     </div>
                 </div>
