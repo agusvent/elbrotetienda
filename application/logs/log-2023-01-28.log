@@ -1,0 +1,2256 @@
+INFO - 2023-01-28 02:19:03 --> Config Class Initialized
+INFO - 2023-01-28 02:19:03 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:19:03 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:19:03 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:19:03 --> URI Class Initialized
+INFO - 2023-01-28 02:19:03 --> Router Class Initialized
+INFO - 2023-01-28 02:19:03 --> Output Class Initialized
+INFO - 2023-01-28 02:19:03 --> Security Class Initialized
+DEBUG - 2023-01-28 02:19:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:19:03 --> Input Class Initialized
+INFO - 2023-01-28 02:19:03 --> Language Class Initialized
+INFO - 2023-01-28 02:19:03 --> Loader Class Initialized
+INFO - 2023-01-28 02:19:03 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:19:03 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:19:03 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:19:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:19:03 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:19:03 --> Controller Class Initialized
+INFO - 2023-01-28 02:19:03 --> Model "Order" initialized
+INFO - 2023-01-28 02:19:03 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:19:04 --> URL Components
+INFO - 2023-01-28 02:19:04 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312133173&type=payment"}
+DEBUG - 2023-01-28 02:19:04 --> type
+INFO - 2023-01-28 02:19:04 --> payment
+DEBUG - 2023-01-28 02:19:04 --> topic
+INFO - 2023-01-28 02:19:04 --> 
+DEBUG - 2023-01-28 02:19:04 --> PAYMENT_ID
+INFO - 2023-01-28 02:19:04 --> 1312133173
+DEBUG - 2023-01-28 02:19:04 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:19:04 --> 0
+DEBUG - 2023-01-28 02:19:04 --> PAYMENT RESPONSE
+INFO - 2023-01-28 02:19:04 --> 
+DEBUG - 2023-01-28 02:19:04 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:19:04 --> rejected
+INFO - 2023-01-28 02:19:05 --> Final output sent to browser
+DEBUG - 2023-01-28 02:19:05 --> Total execution time: 2.0637
+INFO - 2023-01-28 02:20:08 --> Config Class Initialized
+INFO - 2023-01-28 02:20:08 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:20:08 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:20:08 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:20:08 --> URI Class Initialized
+INFO - 2023-01-28 02:20:08 --> Router Class Initialized
+INFO - 2023-01-28 02:20:08 --> Output Class Initialized
+INFO - 2023-01-28 02:20:08 --> Security Class Initialized
+DEBUG - 2023-01-28 02:20:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:20:08 --> Input Class Initialized
+INFO - 2023-01-28 02:20:08 --> Language Class Initialized
+INFO - 2023-01-28 02:20:08 --> Loader Class Initialized
+INFO - 2023-01-28 02:20:08 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:20:08 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:20:08 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:20:08 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:20:08 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:20:08 --> Controller Class Initialized
+INFO - 2023-01-28 02:20:08 --> Model "Order" initialized
+INFO - 2023-01-28 02:20:08 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:20:09 --> URL Components
+INFO - 2023-01-28 02:20:09 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312133187&type=payment"}
+DEBUG - 2023-01-28 02:20:09 --> type
+INFO - 2023-01-28 02:20:09 --> payment
+DEBUG - 2023-01-28 02:20:09 --> topic
+INFO - 2023-01-28 02:20:09 --> 
+DEBUG - 2023-01-28 02:20:09 --> PAYMENT_ID
+INFO - 2023-01-28 02:20:09 --> 1312133187
+DEBUG - 2023-01-28 02:20:09 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:20:09 --> 0
+DEBUG - 2023-01-28 02:20:09 --> PAYMENT RESPONSE
+INFO - 2023-01-28 02:20:09 --> 
+DEBUG - 2023-01-28 02:20:09 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:20:09 --> rejected
+INFO - 2023-01-28 02:20:10 --> Final output sent to browser
+DEBUG - 2023-01-28 02:20:10 --> Total execution time: 1.8937
+INFO - 2023-01-28 02:23:19 --> Config Class Initialized
+INFO - 2023-01-28 02:23:19 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:23:19 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:23:19 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:23:19 --> URI Class Initialized
+INFO - 2023-01-28 02:23:19 --> Router Class Initialized
+INFO - 2023-01-28 02:23:19 --> Output Class Initialized
+INFO - 2023-01-28 02:23:19 --> Security Class Initialized
+DEBUG - 2023-01-28 02:23:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:23:19 --> Input Class Initialized
+INFO - 2023-01-28 02:23:19 --> Language Class Initialized
+INFO - 2023-01-28 02:23:19 --> Loader Class Initialized
+INFO - 2023-01-28 02:23:19 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:23:19 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:23:19 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:23:19 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:23:19 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:23:19 --> Controller Class Initialized
+INFO - 2023-01-28 02:23:19 --> Model "Order" initialized
+INFO - 2023-01-28 02:23:19 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:23:20 --> URL Components
+INFO - 2023-01-28 02:23:20 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312131107&type=payment"}
+DEBUG - 2023-01-28 02:23:20 --> type
+INFO - 2023-01-28 02:23:20 --> payment
+DEBUG - 2023-01-28 02:23:20 --> topic
+INFO - 2023-01-28 02:23:20 --> 
+DEBUG - 2023-01-28 02:23:20 --> PAYMENT_ID
+INFO - 2023-01-28 02:23:20 --> 1312131107
+DEBUG - 2023-01-28 02:23:20 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:23:20 --> 0
+DEBUG - 2023-01-28 02:23:20 --> PAYMENT_ID
+INFO - 2023-01-28 02:23:20 --> 1312131107
+DEBUG - 2023-01-28 02:23:20 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:23:20 --> 0
+DEBUG - 2023-01-28 02:23:21 --> PAYMENT RESPONSE
+INFO - 2023-01-28 02:23:21 --> 
+DEBUG - 2023-01-28 02:23:21 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:23:21 --> rejected
+INFO - 2023-01-28 02:23:21 --> Final output sent to browser
+DEBUG - 2023-01-28 02:23:21 --> Total execution time: 2.1165
+INFO - 2023-01-28 02:26:22 --> Config Class Initialized
+INFO - 2023-01-28 02:26:22 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:26:22 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:26:22 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:26:22 --> URI Class Initialized
+INFO - 2023-01-28 02:26:22 --> Router Class Initialized
+INFO - 2023-01-28 02:26:22 --> Output Class Initialized
+INFO - 2023-01-28 02:26:22 --> Security Class Initialized
+DEBUG - 2023-01-28 02:26:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:26:22 --> Input Class Initialized
+INFO - 2023-01-28 02:26:22 --> Language Class Initialized
+INFO - 2023-01-28 02:26:22 --> Loader Class Initialized
+INFO - 2023-01-28 02:26:22 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:26:22 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:26:23 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:26:23 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:26:23 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:26:23 --> Controller Class Initialized
+INFO - 2023-01-28 02:26:23 --> Model "Order" initialized
+INFO - 2023-01-28 02:26:23 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:26:23 --> URL Components
+INFO - 2023-01-28 02:26:23 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312131129&type=payment"}
+DEBUG - 2023-01-28 02:26:23 --> type
+INFO - 2023-01-28 02:26:23 --> payment
+DEBUG - 2023-01-28 02:26:23 --> topic
+INFO - 2023-01-28 02:26:23 --> 
+DEBUG - 2023-01-28 02:26:23 --> PAYMENT_ID
+INFO - 2023-01-28 02:26:23 --> 1312131129
+DEBUG - 2023-01-28 02:26:23 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:26:23 --> 0
+DEBUG - 2023-01-28 02:26:23 --> PAYMENT_ID
+INFO - 2023-01-28 02:26:23 --> 1312131129
+DEBUG - 2023-01-28 02:26:23 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:26:23 --> 0
+DEBUG - 2023-01-28 02:26:24 --> PAYMENT RESPONSE
+INFO - 2023-01-28 02:26:24 --> Array
+DEBUG - 2023-01-28 02:26:24 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:26:24 --> rejected
+INFO - 2023-01-28 02:26:24 --> Final output sent to browser
+DEBUG - 2023-01-28 02:26:24 --> Total execution time: 1.9113
+INFO - 2023-01-28 02:26:56 --> Config Class Initialized
+INFO - 2023-01-28 02:26:56 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:26:56 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:26:56 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:26:56 --> URI Class Initialized
+INFO - 2023-01-28 02:26:56 --> Router Class Initialized
+INFO - 2023-01-28 02:26:56 --> Output Class Initialized
+INFO - 2023-01-28 02:26:56 --> Security Class Initialized
+DEBUG - 2023-01-28 02:26:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:26:56 --> Input Class Initialized
+INFO - 2023-01-28 02:26:56 --> Language Class Initialized
+INFO - 2023-01-28 02:26:56 --> Loader Class Initialized
+INFO - 2023-01-28 02:26:56 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:26:56 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:26:56 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:26:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:26:56 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:26:56 --> Controller Class Initialized
+INFO - 2023-01-28 02:26:56 --> Model "Order" initialized
+INFO - 2023-01-28 02:26:56 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:26:57 --> URL Components
+INFO - 2023-01-28 02:26:57 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312133219&type=payment"}
+DEBUG - 2023-01-28 02:26:57 --> type
+INFO - 2023-01-28 02:26:57 --> payment
+DEBUG - 2023-01-28 02:26:57 --> topic
+INFO - 2023-01-28 02:26:57 --> 
+DEBUG - 2023-01-28 02:26:57 --> PAYMENT_ID
+INFO - 2023-01-28 02:26:57 --> 1312133219
+DEBUG - 2023-01-28 02:26:57 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:26:57 --> 0
+DEBUG - 2023-01-28 02:26:57 --> PAYMENT_ID
+INFO - 2023-01-28 02:26:57 --> 1312133219
+DEBUG - 2023-01-28 02:26:57 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:26:57 --> 0
+DEBUG - 2023-01-28 02:26:58 --> PAYMENT RESPONSE
+INFO - 2023-01-28 02:26:58 --> Array
+DEBUG - 2023-01-28 02:26:58 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:26:58 --> rejected
+INFO - 2023-01-28 02:26:58 --> Final output sent to browser
+DEBUG - 2023-01-28 02:26:58 --> Total execution time: 1.8871
+INFO - 2023-01-28 02:28:16 --> Config Class Initialized
+INFO - 2023-01-28 02:28:16 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:28:16 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:28:16 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:28:16 --> URI Class Initialized
+INFO - 2023-01-28 02:28:16 --> Router Class Initialized
+INFO - 2023-01-28 02:28:16 --> Output Class Initialized
+INFO - 2023-01-28 02:28:16 --> Security Class Initialized
+DEBUG - 2023-01-28 02:28:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:28:16 --> Input Class Initialized
+INFO - 2023-01-28 02:28:16 --> Language Class Initialized
+INFO - 2023-01-28 02:28:16 --> Loader Class Initialized
+INFO - 2023-01-28 02:28:16 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:28:16 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:28:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:28:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:28:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:28:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:28:16 --> Model "Order" initialized
+INFO - 2023-01-28 02:28:16 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:28:17 --> URL Components
+INFO - 2023-01-28 02:28:17 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312133227&type=payment"}
+DEBUG - 2023-01-28 02:28:17 --> type
+INFO - 2023-01-28 02:28:17 --> payment
+DEBUG - 2023-01-28 02:28:17 --> topic
+INFO - 2023-01-28 02:28:17 --> 
+DEBUG - 2023-01-28 02:28:17 --> PAYMENT_ID
+INFO - 2023-01-28 02:28:17 --> 1312133227
+DEBUG - 2023-01-28 02:28:17 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:28:17 --> 0
+DEBUG - 2023-01-28 02:28:17 --> PAYMENT_ID
+INFO - 2023-01-28 02:28:17 --> 1312133227
+DEBUG - 2023-01-28 02:28:17 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:28:17 --> 0
+DEBUG - 2023-01-28 02:28:18 --> PAYMENT RESPONSE
+INFO - 2023-01-28 02:28:18 --> 
+DEBUG - 2023-01-28 02:28:18 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:28:18 --> rejected
+INFO - 2023-01-28 02:28:18 --> Final output sent to browser
+DEBUG - 2023-01-28 02:28:18 --> Total execution time: 2.0328
+INFO - 2023-01-28 02:28:57 --> Config Class Initialized
+INFO - 2023-01-28 02:28:57 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:28:57 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:28:57 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:28:57 --> URI Class Initialized
+INFO - 2023-01-28 02:28:57 --> Router Class Initialized
+INFO - 2023-01-28 02:28:57 --> Output Class Initialized
+INFO - 2023-01-28 02:28:57 --> Security Class Initialized
+DEBUG - 2023-01-28 02:28:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:28:57 --> Input Class Initialized
+INFO - 2023-01-28 02:28:57 --> Language Class Initialized
+INFO - 2023-01-28 02:28:57 --> Loader Class Initialized
+INFO - 2023-01-28 02:28:57 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:28:57 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:28:57 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:28:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:28:57 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:28:57 --> Controller Class Initialized
+INFO - 2023-01-28 02:28:57 --> Model "Order" initialized
+INFO - 2023-01-28 02:28:57 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:28:58 --> URL Components
+INFO - 2023-01-28 02:28:58 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312133245&type=payment"}
+DEBUG - 2023-01-28 02:28:58 --> type
+INFO - 2023-01-28 02:28:58 --> payment
+DEBUG - 2023-01-28 02:28:58 --> topic
+INFO - 2023-01-28 02:28:58 --> 
+DEBUG - 2023-01-28 02:28:58 --> PAYMENT_ID
+INFO - 2023-01-28 02:28:58 --> 1312133245
+DEBUG - 2023-01-28 02:28:58 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:28:58 --> 0
+DEBUG - 2023-01-28 02:28:58 --> PAYMENT_ID
+INFO - 2023-01-28 02:28:58 --> 1312133245
+DEBUG - 2023-01-28 02:28:58 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:28:58 --> 0
+DEBUG - 2023-01-28 02:28:58 --> PAYMENT RESPONSE
+INFO - 2023-01-28 02:28:58 --> 
+DEBUG - 2023-01-28 02:28:58 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:28:58 --> rejected
+INFO - 2023-01-28 02:28:59 --> Final output sent to browser
+DEBUG - 2023-01-28 02:28:59 --> Total execution time: 1.9434
+INFO - 2023-01-28 02:30:00 --> Config Class Initialized
+INFO - 2023-01-28 02:30:00 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:30:00 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:30:00 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:30:00 --> URI Class Initialized
+INFO - 2023-01-28 02:30:00 --> Router Class Initialized
+INFO - 2023-01-28 02:30:00 --> Output Class Initialized
+INFO - 2023-01-28 02:30:00 --> Security Class Initialized
+DEBUG - 2023-01-28 02:30:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:30:00 --> Input Class Initialized
+INFO - 2023-01-28 02:30:00 --> Language Class Initialized
+INFO - 2023-01-28 02:30:00 --> Loader Class Initialized
+INFO - 2023-01-28 02:30:00 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:30:00 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:30:00 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:30:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:30:00 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:30:00 --> Controller Class Initialized
+INFO - 2023-01-28 02:30:00 --> Model "Order" initialized
+INFO - 2023-01-28 02:30:00 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:30:01 --> URL Components
+INFO - 2023-01-28 02:30:01 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312131153&type=payment"}
+DEBUG - 2023-01-28 02:30:01 --> type
+INFO - 2023-01-28 02:30:01 --> payment
+DEBUG - 2023-01-28 02:30:01 --> topic
+INFO - 2023-01-28 02:30:01 --> 
+DEBUG - 2023-01-28 02:30:01 --> PAYMENT_ID
+INFO - 2023-01-28 02:30:01 --> 1312131153
+DEBUG - 2023-01-28 02:30:01 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:30:01 --> 0
+DEBUG - 2023-01-28 02:30:01 --> PAYMENT_ID
+INFO - 2023-01-28 02:30:01 --> 1312131153
+DEBUG - 2023-01-28 02:30:01 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:30:01 --> 0
+DEBUG - 2023-01-28 02:30:02 --> PAYMENT RESPONSE DATA
+INFO - 2023-01-28 02:30:02 --> 
+DEBUG - 2023-01-28 02:30:02 --> PAYMENT RESPONSE ALONE
+INFO - 2023-01-28 02:30:02 --> {"acquirer_reconciliation":[],"additional_info":{"authentication_code":null,"available_balance":null,"ip_address":"186.136.197.135","items":[{"category_id":null,"description":null,"id":null,"picture_url":null,"quantity":"1","title":"Pedido de El Brote Tienda","unit_price":"1950"}],"nsu_processadora":null,"payer":{"phone":{"number":"1531649523"}}},"authorization_code":null,"binary_mode":true,"brand_id":null,"build_version":"2.129.1","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"11111111","type":"DNI"},"name":"OTHE"},"date_created":"2023-01-27T21:30:00.000-04:00","date_last_updated":"2023-01-27T21:30:00.000-04:00","expiration_month":11,"expiration_year":2025,"first_six_digits":"503175","id":null,"last_four_digits":"0604"},"charges_details":[],"collector_id":75232795,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"ARS","date_approved":null,"date_created":"2023-01-27T21:30:00.138-04:00","date_last_updated":"2023-01-27T21:30:00.378-04:00","date_of_expiration":null,"deduction_schema":null,"description":"Pedido de El Brote Tienda","differential_pricing_id":null,"external_reference":null,"fee_details":[],"financing_group":null,"id":1312131153,"installments":1,"integrator_id":null,"issuer_id":"3","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":null,"money_release_schema":null,"money_release_status":null,"notification_url":"http://agusventu.tplinkdns.com/ebo/payment_confirmation/7b40f8c75fba3f08023f1097f819d1e38db8480d","operation_type":"regular_payment","order":{"id":"7466979605","type":"mercadopago"},"payer":{"first_name":null,"last_name":null,"email":"test_user_80507629@testuser.com","identification":{"number":"32659430","type":"DNI"},"phone":{"area_code":null,"number":null,"extension":null},"type":null,"entity_type":null,"id":"278278919"},"payment_method":{"id":"master","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"business_info":{"sub_unit":"checkout_pro","unit":"online_payments"},"type":"UNSPECIFIED"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"AGUSTINVENTUR","status":"rejected","status_detail":"cc_rejected_other_reason","store_id":null,"taxes_amount":0,"transaction_amount":1950,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":1950,"net_received_amount":0,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":1950}}
+DEBUG - 2023-01-28 02:30:02 --> PAYMENT RESPONSE JE
+ERROR - 2023-01-28 02:30:02 --> Severity: error --> Exception: Call to undefined function json_enconde() /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 1000
+INFO - 2023-01-28 02:30:03 --> Config Class Initialized
+INFO - 2023-01-28 02:30:03 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:30:03 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:30:03 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:30:03 --> URI Class Initialized
+INFO - 2023-01-28 02:30:03 --> Router Class Initialized
+INFO - 2023-01-28 02:30:03 --> Output Class Initialized
+INFO - 2023-01-28 02:30:03 --> Security Class Initialized
+DEBUG - 2023-01-28 02:30:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:30:03 --> Input Class Initialized
+INFO - 2023-01-28 02:30:03 --> Language Class Initialized
+INFO - 2023-01-28 02:30:03 --> Loader Class Initialized
+INFO - 2023-01-28 02:30:03 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:30:03 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:30:03 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:30:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:30:03 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:30:03 --> Controller Class Initialized
+INFO - 2023-01-28 02:30:03 --> Model "Order" initialized
+INFO - 2023-01-28 02:30:03 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:30:04 --> URL Components
+INFO - 2023-01-28 02:30:04 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312131153&type=payment"}
+DEBUG - 2023-01-28 02:30:04 --> type
+INFO - 2023-01-28 02:30:04 --> payment
+DEBUG - 2023-01-28 02:30:04 --> topic
+INFO - 2023-01-28 02:30:04 --> 
+DEBUG - 2023-01-28 02:30:04 --> PAYMENT_ID
+INFO - 2023-01-28 02:30:04 --> 1312131153
+DEBUG - 2023-01-28 02:30:04 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:30:04 --> 0
+DEBUG - 2023-01-28 02:30:04 --> PAYMENT_ID
+INFO - 2023-01-28 02:30:04 --> 1312131153
+DEBUG - 2023-01-28 02:30:04 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:30:04 --> 0
+DEBUG - 2023-01-28 02:30:04 --> PAYMENT RESPONSE DATA
+INFO - 2023-01-28 02:30:04 --> 
+DEBUG - 2023-01-28 02:30:04 --> PAYMENT RESPONSE ALONE
+INFO - 2023-01-28 02:30:04 --> {"acquirer_reconciliation":[],"additional_info":{"authentication_code":null,"available_balance":null,"ip_address":"186.136.197.135","items":[{"category_id":null,"description":null,"id":null,"picture_url":null,"quantity":"1","title":"Pedido de El Brote Tienda","unit_price":"1950"}],"nsu_processadora":null,"payer":{"phone":{"number":"1531649523"}}},"authorization_code":null,"binary_mode":true,"brand_id":null,"build_version":"2.129.1","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"11111111","type":"DNI"},"name":"OTHE"},"date_created":"2023-01-27T21:30:00.000-04:00","date_last_updated":"2023-01-27T21:30:00.000-04:00","expiration_month":11,"expiration_year":2025,"first_six_digits":"503175","id":null,"last_four_digits":"0604"},"charges_details":[],"collector_id":75232795,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"ARS","date_approved":null,"date_created":"2023-01-27T21:30:00.138-04:00","date_last_updated":"2023-01-27T21:30:00.378-04:00","date_of_expiration":null,"deduction_schema":null,"description":"Pedido de El Brote Tienda","differential_pricing_id":null,"external_reference":null,"fee_details":[],"financing_group":null,"id":1312131153,"installments":1,"integrator_id":null,"issuer_id":"3","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":null,"money_release_schema":null,"money_release_status":null,"notification_url":"http://agusventu.tplinkdns.com/ebo/payment_confirmation/7b40f8c75fba3f08023f1097f819d1e38db8480d","operation_type":"regular_payment","order":{"id":"7466979605","type":"mercadopago"},"payer":{"first_name":null,"last_name":null,"email":"test_user_80507629@testuser.com","identification":{"number":"32659430","type":"DNI"},"phone":{"area_code":null,"number":null,"extension":null},"type":null,"entity_type":null,"id":"278278919"},"payment_method":{"id":"master","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"business_info":{"sub_unit":"checkout_pro","unit":"online_payments"},"type":"UNSPECIFIED"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"AGUSTINVENTUR","status":"rejected","status_detail":"cc_rejected_other_reason","store_id":null,"taxes_amount":0,"transaction_amount":1950,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":1950,"net_received_amount":0,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":1950}}
+DEBUG - 2023-01-28 02:30:04 --> PAYMENT RESPONSE JE
+ERROR - 2023-01-28 02:30:04 --> Severity: error --> Exception: Call to undefined function json_enconde() /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 1000
+INFO - 2023-01-28 02:30:16 --> Config Class Initialized
+INFO - 2023-01-28 02:30:16 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:30:16 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:30:16 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:30:16 --> URI Class Initialized
+INFO - 2023-01-28 02:30:16 --> Router Class Initialized
+INFO - 2023-01-28 02:30:16 --> Output Class Initialized
+INFO - 2023-01-28 02:30:16 --> Security Class Initialized
+DEBUG - 2023-01-28 02:30:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:30:16 --> Input Class Initialized
+INFO - 2023-01-28 02:30:16 --> Language Class Initialized
+INFO - 2023-01-28 02:30:16 --> Loader Class Initialized
+INFO - 2023-01-28 02:30:16 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:30:16 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:30:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:30:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:30:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:30:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:30:16 --> Model "Order" initialized
+INFO - 2023-01-28 02:30:16 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:30:17 --> URL Components
+INFO - 2023-01-28 02:30:17 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"id=7466979605&topic=merchant_order"}
+DEBUG - 2023-01-28 02:30:17 --> type
+INFO - 2023-01-28 02:30:17 --> 
+DEBUG - 2023-01-28 02:30:17 --> topic
+INFO - 2023-01-28 02:30:17 --> merchant_order
+DEBUG - 2023-01-28 02:30:17 --> PAYMENT_ID
+INFO - 2023-01-28 02:30:17 --> 0
+DEBUG - 2023-01-28 02:30:17 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:30:17 --> 7466979605
+DEBUG - 2023-01-28 02:30:18 --> MERCHANT ORDER RESPONSE
+INFO - 2023-01-28 02:30:18 --> 
+DEBUG - 2023-01-28 02:30:18 --> MERCHANT ORDER RESPONSE PAYMENTS
+ERROR - 2023-01-28 02:30:18 --> Severity: error --> Exception: Cannot use object of type stdClass as array /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 972
+INFO - 2023-01-28 02:30:24 --> Config Class Initialized
+INFO - 2023-01-28 02:30:24 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:30:24 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:30:24 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:30:24 --> URI Class Initialized
+INFO - 2023-01-28 02:30:24 --> Router Class Initialized
+INFO - 2023-01-28 02:30:24 --> Output Class Initialized
+INFO - 2023-01-28 02:30:24 --> Security Class Initialized
+DEBUG - 2023-01-28 02:30:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:30:24 --> Input Class Initialized
+INFO - 2023-01-28 02:30:24 --> Language Class Initialized
+INFO - 2023-01-28 02:30:24 --> Loader Class Initialized
+INFO - 2023-01-28 02:30:24 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:30:24 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:30:24 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:30:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:30:24 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:30:24 --> Controller Class Initialized
+INFO - 2023-01-28 02:30:24 --> Model "Order" initialized
+INFO - 2023-01-28 02:30:24 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:30:25 --> URL Components
+INFO - 2023-01-28 02:30:25 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312133101&type=payment"}
+DEBUG - 2023-01-28 02:30:25 --> type
+INFO - 2023-01-28 02:30:25 --> payment
+DEBUG - 2023-01-28 02:30:25 --> topic
+INFO - 2023-01-28 02:30:25 --> 
+DEBUG - 2023-01-28 02:30:25 --> PAYMENT_ID
+INFO - 2023-01-28 02:30:25 --> 1312133101
+DEBUG - 2023-01-28 02:30:25 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:30:25 --> 0
+DEBUG - 2023-01-28 02:30:25 --> PAYMENT_ID
+INFO - 2023-01-28 02:30:25 --> 1312133101
+DEBUG - 2023-01-28 02:30:25 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:30:25 --> 0
+DEBUG - 2023-01-28 02:30:26 --> PAYMENT RESPONSE DATA
+INFO - 2023-01-28 02:30:26 --> 
+DEBUG - 2023-01-28 02:30:26 --> PAYMENT RESPONSE ALONE
+INFO - 2023-01-28 02:30:26 --> {"acquirer_reconciliation":[],"additional_info":{"authentication_code":null,"available_balance":null,"ip_address":"186.136.197.135","items":[{"category_id":null,"description":null,"id":null,"picture_url":null,"quantity":"1","title":"Pedido de El Brote Tienda","unit_price":"1950"}],"nsu_processadora":null,"payer":{"phone":{"number":"1531649523"}}},"authorization_code":null,"binary_mode":true,"brand_id":null,"build_version":"2.129.1","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"11111111","type":"DNI"},"name":"OTHE"},"date_created":"2023-01-27T21:10:19.000-04:00","date_last_updated":"2023-01-27T21:10:19.000-04:00","expiration_month":11,"expiration_year":2025,"first_six_digits":"503175","id":null,"last_four_digits":"0604"},"charges_details":[],"collector_id":75232795,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"ARS","date_approved":null,"date_created":"2023-01-27T21:10:19.009-04:00","date_last_updated":"2023-01-27T21:10:19.168-04:00","date_of_expiration":null,"deduction_schema":null,"description":"Pedido de El Brote Tienda","differential_pricing_id":null,"external_reference":null,"fee_details":[],"financing_group":null,"id":1312133101,"installments":1,"integrator_id":null,"issuer_id":"3","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":null,"money_release_schema":null,"money_release_status":null,"notification_url":"http://agusventu.tplinkdns.com/ebo/payment_confirmation/7b40f8c75fba3f08023f1097f819d1e38db8480d","operation_type":"regular_payment","order":{"id":"7466979605","type":"mercadopago"},"payer":{"first_name":null,"last_name":null,"email":"test_user_80507629@testuser.com","identification":{"number":"32659430","type":"DNI"},"phone":{"area_code":null,"number":null,"extension":null},"type":null,"entity_type":null,"id":"278278919"},"payment_method":{"id":"master","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"business_info":{"sub_unit":"checkout_pro","unit":"online_payments"},"type":"UNSPECIFIED"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"AGUSTINVENTUR","status":"rejected","status_detail":"cc_rejected_other_reason","store_id":null,"taxes_amount":0,"transaction_amount":1950,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":1950,"net_received_amount":0,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":1950}}
+DEBUG - 2023-01-28 02:30:26 --> PAYMENT RESPONSE JE
+ERROR - 2023-01-28 02:30:26 --> Severity: error --> Exception: Call to undefined function json_enconde() /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 1000
+INFO - 2023-01-28 02:31:31 --> Config Class Initialized
+INFO - 2023-01-28 02:31:31 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:31:31 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:31:31 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:31:31 --> URI Class Initialized
+INFO - 2023-01-28 02:31:31 --> Router Class Initialized
+INFO - 2023-01-28 02:31:31 --> Output Class Initialized
+INFO - 2023-01-28 02:31:31 --> Security Class Initialized
+DEBUG - 2023-01-28 02:31:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:31:31 --> Input Class Initialized
+INFO - 2023-01-28 02:31:31 --> Language Class Initialized
+INFO - 2023-01-28 02:31:31 --> Loader Class Initialized
+INFO - 2023-01-28 02:31:31 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:31:31 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:31:31 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:31:31 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:31:31 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:31:31 --> Controller Class Initialized
+INFO - 2023-01-28 02:31:31 --> Model "Order" initialized
+INFO - 2023-01-28 02:31:31 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:31:32 --> URL Components
+INFO - 2023-01-28 02:31:32 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312131161&type=payment"}
+DEBUG - 2023-01-28 02:31:32 --> type
+INFO - 2023-01-28 02:31:32 --> payment
+DEBUG - 2023-01-28 02:31:32 --> topic
+INFO - 2023-01-28 02:31:32 --> 
+DEBUG - 2023-01-28 02:31:32 --> PAYMENT_ID
+INFO - 2023-01-28 02:31:32 --> 1312131161
+DEBUG - 2023-01-28 02:31:32 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:31:32 --> 0
+DEBUG - 2023-01-28 02:31:32 --> PAYMENT_ID
+INFO - 2023-01-28 02:31:32 --> 1312131161
+DEBUG - 2023-01-28 02:31:32 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:31:32 --> 0
+DEBUG - 2023-01-28 02:31:32 --> PAYMENT RESPONSE ALONE
+INFO - 2023-01-28 02:31:32 --> {"acquirer_reconciliation":[],"additional_info":{"authentication_code":null,"available_balance":null,"ip_address":"186.136.197.135","items":[{"category_id":null,"description":null,"id":null,"picture_url":null,"quantity":"1","title":"Pedido de El Brote Tienda","unit_price":"1950"}],"nsu_processadora":null,"payer":{"phone":{"number":"1531649523"}}},"authorization_code":null,"binary_mode":true,"brand_id":null,"build_version":"2.129.1","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"11111111","type":"DNI"},"name":"OTHE"},"date_created":"2023-01-27T21:31:30.000-04:00","date_last_updated":"2023-01-27T21:31:30.000-04:00","expiration_month":11,"expiration_year":2025,"first_six_digits":"503175","id":null,"last_four_digits":"0604"},"charges_details":[],"collector_id":75232795,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"ARS","date_approved":null,"date_created":"2023-01-27T21:31:30.490-04:00","date_last_updated":"2023-01-27T21:31:30.662-04:00","date_of_expiration":null,"deduction_schema":null,"description":"Pedido de El Brote Tienda","differential_pricing_id":null,"external_reference":null,"fee_details":[],"financing_group":null,"id":1312131161,"installments":1,"integrator_id":null,"issuer_id":"3","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":null,"money_release_schema":null,"money_release_status":null,"notification_url":"http://agusventu.tplinkdns.com/ebo/payment_confirmation/7b40f8c75fba3f08023f1097f819d1e38db8480d","operation_type":"regular_payment","order":{"id":"7466979605","type":"mercadopago"},"payer":{"first_name":null,"last_name":null,"email":"test_user_80507629@testuser.com","identification":{"number":"32659430","type":"DNI"},"phone":{"area_code":null,"number":null,"extension":null},"type":null,"entity_type":null,"id":"278278919"},"payment_method":{"id":"master","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"business_info":{"sub_unit":"checkout_pro","unit":"online_payments"},"type":"UNSPECIFIED"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"AGUSTINVENTUR","status":"rejected","status_detail":"cc_rejected_other_reason","store_id":null,"taxes_amount":0,"transaction_amount":1950,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":1950,"net_received_amount":0,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":1950}}
+DEBUG - 2023-01-28 02:31:32 --> PAYMENT RESPONSE JE
+ERROR - 2023-01-28 02:31:32 --> Severity: Warning --> Illegal string offset 'status' /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 998
+INFO - 2023-01-28 02:31:32 --> {
+DEBUG - 2023-01-28 02:31:32 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:31:32 --> rejected
+INFO - 2023-01-28 02:31:33 --> Final output sent to browser
+DEBUG - 2023-01-28 02:31:33 --> Total execution time: 1.9373
+INFO - 2023-01-28 02:32:59 --> Config Class Initialized
+INFO - 2023-01-28 02:32:59 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:32:59 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:32:59 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:32:59 --> URI Class Initialized
+INFO - 2023-01-28 02:32:59 --> Router Class Initialized
+INFO - 2023-01-28 02:32:59 --> Output Class Initialized
+INFO - 2023-01-28 02:32:59 --> Security Class Initialized
+DEBUG - 2023-01-28 02:32:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:32:59 --> Input Class Initialized
+INFO - 2023-01-28 02:32:59 --> Language Class Initialized
+INFO - 2023-01-28 02:32:59 --> Loader Class Initialized
+INFO - 2023-01-28 02:32:59 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:32:59 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:32:59 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:32:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:32:59 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:32:59 --> Controller Class Initialized
+INFO - 2023-01-28 02:32:59 --> Model "Order" initialized
+INFO - 2023-01-28 02:32:59 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:33:00 --> URL Components
+INFO - 2023-01-28 02:33:00 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312131177&type=payment"}
+DEBUG - 2023-01-28 02:33:00 --> type
+INFO - 2023-01-28 02:33:00 --> payment
+DEBUG - 2023-01-28 02:33:00 --> topic
+INFO - 2023-01-28 02:33:00 --> 
+DEBUG - 2023-01-28 02:33:00 --> PAYMENT_ID
+INFO - 2023-01-28 02:33:00 --> 1312131177
+DEBUG - 2023-01-28 02:33:00 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:33:00 --> 0
+DEBUG - 2023-01-28 02:33:00 --> PAYMENT_ID
+INFO - 2023-01-28 02:33:00 --> 1312131177
+DEBUG - 2023-01-28 02:33:00 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:33:00 --> 0
+DEBUG - 2023-01-28 02:33:01 --> PAYMENT RESPONSE ALONE
+INFO - 2023-01-28 02:33:01 --> {"acquirer_reconciliation":[],"additional_info":{"authentication_code":null,"available_balance":null,"ip_address":"186.136.197.135","items":[{"category_id":null,"description":null,"id":null,"picture_url":null,"quantity":"1","title":"Pedido de El Brote Tienda","unit_price":"1950"}],"nsu_processadora":null,"payer":{"phone":{"number":"1531649523"}}},"authorization_code":null,"binary_mode":true,"brand_id":null,"build_version":"2.129.1","call_for_authorize_id":null,"captured":true,"card":{"cardholder":{"identification":{"number":"11111111","type":"DNI"},"name":"OTHE"},"date_created":"2023-01-27T21:32:59.000-04:00","date_last_updated":"2023-01-27T21:32:59.000-04:00","expiration_month":11,"expiration_year":2025,"first_six_digits":"503175","id":null,"last_four_digits":"0604"},"charges_details":[],"collector_id":75232795,"corporation_id":null,"counter_currency":null,"coupon_amount":0,"currency_id":"ARS","date_approved":null,"date_created":"2023-01-27T21:32:59.007-04:00","date_last_updated":"2023-01-27T21:32:59.169-04:00","date_of_expiration":null,"deduction_schema":null,"description":"Pedido de El Brote Tienda","differential_pricing_id":null,"external_reference":null,"fee_details":[],"financing_group":null,"id":1312131177,"installments":1,"integrator_id":null,"issuer_id":"3","live_mode":false,"marketplace_owner":null,"merchant_account_id":null,"merchant_number":null,"metadata":{},"money_release_date":null,"money_release_schema":null,"money_release_status":null,"notification_url":"http://agusventu.tplinkdns.com/ebo/payment_confirmation/7b40f8c75fba3f08023f1097f819d1e38db8480d","operation_type":"regular_payment","order":{"id":"7466979605","type":"mercadopago"},"payer":{"first_name":null,"last_name":null,"email":"test_user_80507629@testuser.com","identification":{"number":"32659430","type":"DNI"},"phone":{"area_code":null,"number":null,"extension":null},"type":null,"entity_type":null,"id":"278278919"},"payment_method":{"id":"master","type":"credit_card"},"payment_method_id":"master","payment_type_id":"credit_card","platform_id":null,"point_of_interaction":{"business_info":{"sub_unit":"checkout_pro","unit":"online_payments"},"type":"UNSPECIFIED"},"pos_id":null,"processing_mode":"aggregator","refunds":[],"shipping_amount":0,"sponsor_id":null,"statement_descriptor":"AGUSTINVENTUR","status":"rejected","status_detail":"cc_rejected_other_reason","store_id":null,"taxes_amount":0,"transaction_amount":1950,"transaction_amount_refunded":0,"transaction_details":{"acquirer_reference":null,"external_resource_url":null,"financial_institution":null,"installment_amount":1950,"net_received_amount":0,"overpaid_amount":0,"payable_deferral_period":null,"payment_method_reference_id":null,"total_paid_amount":1950}}
+DEBUG - 2023-01-28 02:33:01 --> PAYMENT RESPONSE JE
+INFO - 2023-01-28 02:33:01 --> 
+DEBUG - 2023-01-28 02:33:01 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:33:01 --> rejected
+INFO - 2023-01-28 02:33:01 --> Final output sent to browser
+DEBUG - 2023-01-28 02:33:01 --> Total execution time: 1.8849
+INFO - 2023-01-28 02:36:07 --> Config Class Initialized
+INFO - 2023-01-28 02:36:07 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:36:07 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:36:07 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:36:07 --> URI Class Initialized
+INFO - 2023-01-28 02:36:07 --> Router Class Initialized
+INFO - 2023-01-28 02:36:07 --> Output Class Initialized
+INFO - 2023-01-28 02:36:07 --> Security Class Initialized
+DEBUG - 2023-01-28 02:36:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:36:07 --> Input Class Initialized
+INFO - 2023-01-28 02:36:07 --> Language Class Initialized
+INFO - 2023-01-28 02:36:07 --> Loader Class Initialized
+INFO - 2023-01-28 02:36:07 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:36:07 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:36:07 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:36:07 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:36:07 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:36:07 --> Controller Class Initialized
+INFO - 2023-01-28 02:36:07 --> Model "Order" initialized
+INFO - 2023-01-28 02:36:07 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:36:08 --> URL Components
+INFO - 2023-01-28 02:36:08 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312131073&type=payment"}
+DEBUG - 2023-01-28 02:36:08 --> type
+INFO - 2023-01-28 02:36:08 --> payment
+DEBUG - 2023-01-28 02:36:08 --> topic
+INFO - 2023-01-28 02:36:08 --> 
+DEBUG - 2023-01-28 02:36:08 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:08 --> 1312131073
+DEBUG - 2023-01-28 02:36:08 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:08 --> 0
+DEBUG - 2023-01-28 02:36:08 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:08 --> 1312131073
+DEBUG - 2023-01-28 02:36:08 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:08 --> 0
+DEBUG - 2023-01-28 02:36:09 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:36:09 --> rejected
+INFO - 2023-01-28 02:36:09 --> Final output sent to browser
+DEBUG - 2023-01-28 02:36:09 --> Total execution time: 1.8609
+INFO - 2023-01-28 02:36:11 --> Config Class Initialized
+INFO - 2023-01-28 02:36:11 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:36:11 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:36:11 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:36:11 --> URI Class Initialized
+INFO - 2023-01-28 02:36:11 --> Router Class Initialized
+INFO - 2023-01-28 02:36:11 --> Output Class Initialized
+INFO - 2023-01-28 02:36:11 --> Security Class Initialized
+DEBUG - 2023-01-28 02:36:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:36:11 --> Input Class Initialized
+INFO - 2023-01-28 02:36:11 --> Language Class Initialized
+INFO - 2023-01-28 02:36:11 --> Loader Class Initialized
+INFO - 2023-01-28 02:36:11 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:36:11 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:36:11 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:36:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:36:11 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:36:11 --> Controller Class Initialized
+INFO - 2023-01-28 02:36:11 --> Model "Order" initialized
+INFO - 2023-01-28 02:36:11 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:36:12 --> URL Components
+INFO - 2023-01-28 02:36:12 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312131081&type=payment"}
+DEBUG - 2023-01-28 02:36:12 --> type
+INFO - 2023-01-28 02:36:12 --> payment
+DEBUG - 2023-01-28 02:36:12 --> topic
+INFO - 2023-01-28 02:36:12 --> 
+DEBUG - 2023-01-28 02:36:12 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:12 --> 1312131081
+DEBUG - 2023-01-28 02:36:12 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:12 --> 0
+DEBUG - 2023-01-28 02:36:12 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:12 --> 1312131081
+DEBUG - 2023-01-28 02:36:12 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:12 --> 0
+INFO - 2023-01-28 02:36:12 --> Config Class Initialized
+INFO - 2023-01-28 02:36:12 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:36:12 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:36:12 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:36:12 --> URI Class Initialized
+INFO - 2023-01-28 02:36:12 --> Router Class Initialized
+INFO - 2023-01-28 02:36:12 --> Output Class Initialized
+INFO - 2023-01-28 02:36:12 --> Security Class Initialized
+DEBUG - 2023-01-28 02:36:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:36:12 --> Input Class Initialized
+INFO - 2023-01-28 02:36:12 --> Language Class Initialized
+INFO - 2023-01-28 02:36:12 --> Loader Class Initialized
+INFO - 2023-01-28 02:36:12 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:36:12 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:36:12 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:36:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:36:12 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:36:12 --> Controller Class Initialized
+INFO - 2023-01-28 02:36:12 --> Model "Order" initialized
+INFO - 2023-01-28 02:36:12 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:36:13 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:36:13 --> rejected
+INFO - 2023-01-28 02:36:13 --> Final output sent to browser
+DEBUG - 2023-01-28 02:36:13 --> Total execution time: 1.8294
+DEBUG - 2023-01-28 02:36:13 --> URL Components
+INFO - 2023-01-28 02:36:13 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312133153&type=payment"}
+DEBUG - 2023-01-28 02:36:13 --> type
+INFO - 2023-01-28 02:36:13 --> payment
+DEBUG - 2023-01-28 02:36:13 --> topic
+INFO - 2023-01-28 02:36:13 --> 
+DEBUG - 2023-01-28 02:36:13 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:13 --> 1312133153
+DEBUG - 2023-01-28 02:36:13 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:13 --> 0
+DEBUG - 2023-01-28 02:36:13 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:13 --> 1312133153
+DEBUG - 2023-01-28 02:36:13 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:13 --> 0
+INFO - 2023-01-28 02:36:14 --> Config Class Initialized
+INFO - 2023-01-28 02:36:14 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:36:14 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:36:14 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:36:14 --> URI Class Initialized
+INFO - 2023-01-28 02:36:14 --> Router Class Initialized
+INFO - 2023-01-28 02:36:14 --> Output Class Initialized
+INFO - 2023-01-28 02:36:14 --> Security Class Initialized
+DEBUG - 2023-01-28 02:36:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:36:14 --> Input Class Initialized
+INFO - 2023-01-28 02:36:14 --> Language Class Initialized
+INFO - 2023-01-28 02:36:14 --> Loader Class Initialized
+INFO - 2023-01-28 02:36:14 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:36:14 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:36:14 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:36:14 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:36:14 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:36:14 --> Controller Class Initialized
+INFO - 2023-01-28 02:36:14 --> Model "Order" initialized
+INFO - 2023-01-28 02:36:14 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:36:14 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:36:14 --> rejected
+INFO - 2023-01-28 02:36:14 --> Final output sent to browser
+DEBUG - 2023-01-28 02:36:14 --> Total execution time: 1.8061
+DEBUG - 2023-01-28 02:36:15 --> URL Components
+INFO - 2023-01-28 02:36:15 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312133137&type=payment"}
+DEBUG - 2023-01-28 02:36:15 --> type
+INFO - 2023-01-28 02:36:15 --> payment
+DEBUG - 2023-01-28 02:36:15 --> topic
+INFO - 2023-01-28 02:36:15 --> 
+DEBUG - 2023-01-28 02:36:15 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:15 --> 1312133137
+DEBUG - 2023-01-28 02:36:15 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:15 --> 0
+DEBUG - 2023-01-28 02:36:15 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:15 --> 1312133137
+DEBUG - 2023-01-28 02:36:15 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:15 --> 0
+DEBUG - 2023-01-28 02:36:16 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:36:16 --> rejected
+INFO - 2023-01-28 02:36:16 --> Final output sent to browser
+DEBUG - 2023-01-28 02:36:16 --> Total execution time: 1.9103
+INFO - 2023-01-28 02:36:46 --> Config Class Initialized
+INFO - 2023-01-28 02:36:46 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:36:46 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:36:46 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:36:46 --> URI Class Initialized
+INFO - 2023-01-28 02:36:46 --> Router Class Initialized
+INFO - 2023-01-28 02:36:46 --> Output Class Initialized
+INFO - 2023-01-28 02:36:46 --> Security Class Initialized
+DEBUG - 2023-01-28 02:36:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:36:46 --> Input Class Initialized
+INFO - 2023-01-28 02:36:46 --> Language Class Initialized
+INFO - 2023-01-28 02:36:46 --> Loader Class Initialized
+INFO - 2023-01-28 02:36:46 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:36:46 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:36:46 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:36:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:36:46 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:36:46 --> Controller Class Initialized
+INFO - 2023-01-28 02:36:46 --> Model "Order" initialized
+INFO - 2023-01-28 02:36:46 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:36:47 --> URL Components
+INFO - 2023-01-28 02:36:47 --> {"path":"\/ebo\/payment_confirmation\/7b40f8c75fba3f08023f1097f819d1e38db8480d","query":"data.id=1312131207&type=payment"}
+DEBUG - 2023-01-28 02:36:47 --> type
+INFO - 2023-01-28 02:36:47 --> payment
+DEBUG - 2023-01-28 02:36:47 --> topic
+INFO - 2023-01-28 02:36:47 --> 
+DEBUG - 2023-01-28 02:36:47 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:47 --> 1312131207
+DEBUG - 2023-01-28 02:36:47 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:47 --> 0
+DEBUG - 2023-01-28 02:36:47 --> PAYMENT_ID
+INFO - 2023-01-28 02:36:47 --> 1312131207
+DEBUG - 2023-01-28 02:36:47 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:36:47 --> 0
+DEBUG - 2023-01-28 02:36:48 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:36:48 --> rejected
+INFO - 2023-01-28 02:36:48 --> Final output sent to browser
+DEBUG - 2023-01-28 02:36:48 --> Total execution time: 2.0272
+INFO - 2023-01-28 02:39:03 --> Config Class Initialized
+INFO - 2023-01-28 02:39:03 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:03 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:03 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:03 --> URI Class Initialized
+DEBUG - 2023-01-28 02:39:03 --> No URI present. Default controller set.
+INFO - 2023-01-28 02:39:03 --> Router Class Initialized
+INFO - 2023-01-28 02:39:03 --> Output Class Initialized
+INFO - 2023-01-28 02:39:03 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:03 --> Input Class Initialized
+INFO - 2023-01-28 02:39:03 --> Language Class Initialized
+INFO - 2023-01-28 02:39:03 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:03 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:03 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:03 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:03 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:03 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:03 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:03 --> Model "Pocket" initialized
+INFO - 2023-01-28 02:39:03 --> Model "Office" initialized
+INFO - 2023-01-28 02:39:03 --> Model "Extra" initialized
+INFO - 2023-01-28 02:39:03 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:03 --> Model "Barrio" initialized
+INFO - 2023-01-28 02:39:03 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 02:39:03 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2023-01-28 02:39:03 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:03 --> Total execution time: 0.0620
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0148
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "Extra" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0111
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0106
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0117
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0113
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "Barrio" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0211
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "FormasPago" initialized
+INFO - 2023-01-28 02:39:04 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0138
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> No URI present. Default controller set.
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "Pocket" initialized
+INFO - 2023-01-28 02:39:04 --> Model "Office" initialized
+INFO - 2023-01-28 02:39:04 --> Model "Extra" initialized
+INFO - 2023-01-28 02:39:04 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:04 --> Model "Barrio" initialized
+INFO - 2023-01-28 02:39:04 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 02:39:04 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0248
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0113
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "Extra" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0115
+INFO - 2023-01-28 02:39:04 --> Config Class Initialized
+INFO - 2023-01-28 02:39:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:04 --> URI Class Initialized
+INFO - 2023-01-28 02:39:04 --> Router Class Initialized
+INFO - 2023-01-28 02:39:04 --> Output Class Initialized
+INFO - 2023-01-28 02:39:04 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:04 --> Input Class Initialized
+INFO - 2023-01-28 02:39:04 --> Language Class Initialized
+INFO - 2023-01-28 02:39:04 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:04 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:04 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:04 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:04 --> Total execution time: 0.0106
+INFO - 2023-01-28 02:39:05 --> Config Class Initialized
+INFO - 2023-01-28 02:39:05 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:05 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:05 --> URI Class Initialized
+INFO - 2023-01-28 02:39:05 --> Router Class Initialized
+INFO - 2023-01-28 02:39:05 --> Output Class Initialized
+INFO - 2023-01-28 02:39:05 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:05 --> Input Class Initialized
+INFO - 2023-01-28 02:39:05 --> Language Class Initialized
+INFO - 2023-01-28 02:39:05 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:05 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:05 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:05 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:05 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:05 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:05 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:05 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:05 --> Total execution time: 0.0135
+INFO - 2023-01-28 02:39:05 --> Config Class Initialized
+INFO - 2023-01-28 02:39:05 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:05 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:05 --> URI Class Initialized
+INFO - 2023-01-28 02:39:05 --> Router Class Initialized
+INFO - 2023-01-28 02:39:05 --> Output Class Initialized
+INFO - 2023-01-28 02:39:05 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:05 --> Input Class Initialized
+INFO - 2023-01-28 02:39:05 --> Language Class Initialized
+INFO - 2023-01-28 02:39:05 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:05 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:05 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:05 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:05 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:05 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:05 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 02:39:05 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:05 --> Total execution time: 0.0120
+INFO - 2023-01-28 02:39:05 --> Config Class Initialized
+INFO - 2023-01-28 02:39:05 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:05 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:05 --> URI Class Initialized
+INFO - 2023-01-28 02:39:05 --> Router Class Initialized
+INFO - 2023-01-28 02:39:05 --> Output Class Initialized
+INFO - 2023-01-28 02:39:05 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:05 --> Input Class Initialized
+INFO - 2023-01-28 02:39:05 --> Language Class Initialized
+INFO - 2023-01-28 02:39:05 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:05 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:05 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:05 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:05 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:05 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:05 --> Model "Barrio" initialized
+INFO - 2023-01-28 02:39:05 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:05 --> Total execution time: 0.0151
+INFO - 2023-01-28 02:39:05 --> Config Class Initialized
+INFO - 2023-01-28 02:39:05 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:39:05 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:39:05 --> URI Class Initialized
+INFO - 2023-01-28 02:39:05 --> Router Class Initialized
+INFO - 2023-01-28 02:39:05 --> Output Class Initialized
+INFO - 2023-01-28 02:39:05 --> Security Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:39:05 --> Input Class Initialized
+INFO - 2023-01-28 02:39:05 --> Language Class Initialized
+INFO - 2023-01-28 02:39:05 --> Loader Class Initialized
+INFO - 2023-01-28 02:39:05 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:39:05 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:39:05 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:39:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:39:05 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:39:05 --> Controller Class Initialized
+INFO - 2023-01-28 02:39:05 --> Model "FormasPago" initialized
+INFO - 2023-01-28 02:39:05 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:39:05 --> Final output sent to browser
+DEBUG - 2023-01-28 02:39:05 --> Total execution time: 0.0140
+INFO - 2023-01-28 02:46:15 --> Config Class Initialized
+INFO - 2023-01-28 02:46:15 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:15 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:15 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:15 --> URI Class Initialized
+DEBUG - 2023-01-28 02:46:15 --> No URI present. Default controller set.
+INFO - 2023-01-28 02:46:15 --> Router Class Initialized
+INFO - 2023-01-28 02:46:15 --> Output Class Initialized
+INFO - 2023-01-28 02:46:15 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:15 --> Input Class Initialized
+INFO - 2023-01-28 02:46:15 --> Language Class Initialized
+INFO - 2023-01-28 02:46:15 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:15 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:15 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:15 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:16 --> Model "Pocket" initialized
+INFO - 2023-01-28 02:46:16 --> Model "Office" initialized
+INFO - 2023-01-28 02:46:16 --> Model "Extra" initialized
+INFO - 2023-01-28 02:46:16 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:16 --> Model "Barrio" initialized
+INFO - 2023-01-28 02:46:16 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 02:46:16 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2023-01-28 02:46:16 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:16 --> Total execution time: 0.0475
+INFO - 2023-01-28 02:46:16 --> Config Class Initialized
+INFO - 2023-01-28 02:46:16 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:16 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:16 --> URI Class Initialized
+INFO - 2023-01-28 02:46:16 --> Router Class Initialized
+INFO - 2023-01-28 02:46:16 --> Output Class Initialized
+INFO - 2023-01-28 02:46:16 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:16 --> Input Class Initialized
+INFO - 2023-01-28 02:46:16 --> Language Class Initialized
+INFO - 2023-01-28 02:46:16 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:16 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:16 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:16 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:16 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:16 --> Total execution time: 0.0126
+INFO - 2023-01-28 02:46:16 --> Config Class Initialized
+INFO - 2023-01-28 02:46:16 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:16 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:16 --> URI Class Initialized
+INFO - 2023-01-28 02:46:16 --> Router Class Initialized
+INFO - 2023-01-28 02:46:16 --> Output Class Initialized
+INFO - 2023-01-28 02:46:16 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:16 --> Input Class Initialized
+INFO - 2023-01-28 02:46:16 --> Language Class Initialized
+INFO - 2023-01-28 02:46:16 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:16 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:16 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:16 --> Model "Extra" initialized
+INFO - 2023-01-28 02:46:16 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:16 --> Total execution time: 0.0108
+INFO - 2023-01-28 02:46:16 --> Config Class Initialized
+INFO - 2023-01-28 02:46:16 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:16 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:16 --> URI Class Initialized
+INFO - 2023-01-28 02:46:16 --> Router Class Initialized
+INFO - 2023-01-28 02:46:16 --> Output Class Initialized
+INFO - 2023-01-28 02:46:16 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:16 --> Input Class Initialized
+INFO - 2023-01-28 02:46:16 --> Language Class Initialized
+INFO - 2023-01-28 02:46:16 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:16 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:16 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:16 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:16 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:16 --> Total execution time: 0.0111
+INFO - 2023-01-28 02:46:16 --> Config Class Initialized
+INFO - 2023-01-28 02:46:16 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:16 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:16 --> URI Class Initialized
+INFO - 2023-01-28 02:46:16 --> Router Class Initialized
+INFO - 2023-01-28 02:46:16 --> Output Class Initialized
+INFO - 2023-01-28 02:46:16 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:16 --> Input Class Initialized
+INFO - 2023-01-28 02:46:16 --> Language Class Initialized
+INFO - 2023-01-28 02:46:16 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:16 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:16 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:16 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:16 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:16 --> Total execution time: 0.0120
+INFO - 2023-01-28 02:46:16 --> Config Class Initialized
+INFO - 2023-01-28 02:46:16 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:16 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:16 --> URI Class Initialized
+INFO - 2023-01-28 02:46:16 --> Router Class Initialized
+INFO - 2023-01-28 02:46:16 --> Output Class Initialized
+INFO - 2023-01-28 02:46:16 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:16 --> Input Class Initialized
+INFO - 2023-01-28 02:46:16 --> Language Class Initialized
+INFO - 2023-01-28 02:46:16 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:16 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:16 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:16 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 02:46:16 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:16 --> Total execution time: 0.0130
+INFO - 2023-01-28 02:46:16 --> Config Class Initialized
+INFO - 2023-01-28 02:46:16 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:16 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:16 --> URI Class Initialized
+INFO - 2023-01-28 02:46:16 --> Router Class Initialized
+INFO - 2023-01-28 02:46:16 --> Output Class Initialized
+INFO - 2023-01-28 02:46:16 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:16 --> Input Class Initialized
+INFO - 2023-01-28 02:46:16 --> Language Class Initialized
+INFO - 2023-01-28 02:46:16 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:16 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:16 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:16 --> Model "Barrio" initialized
+INFO - 2023-01-28 02:46:16 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:16 --> Total execution time: 0.0295
+INFO - 2023-01-28 02:46:16 --> Config Class Initialized
+INFO - 2023-01-28 02:46:16 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:16 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:16 --> URI Class Initialized
+INFO - 2023-01-28 02:46:16 --> Router Class Initialized
+INFO - 2023-01-28 02:46:16 --> Output Class Initialized
+INFO - 2023-01-28 02:46:16 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:16 --> Input Class Initialized
+INFO - 2023-01-28 02:46:16 --> Language Class Initialized
+INFO - 2023-01-28 02:46:16 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:16 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:16 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:16 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:16 --> Model "FormasPago" initialized
+INFO - 2023-01-28 02:46:16 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:16 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:16 --> Total execution time: 0.0202
+INFO - 2023-01-28 02:46:18 --> Config Class Initialized
+INFO - 2023-01-28 02:46:18 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:18 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:18 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:18 --> URI Class Initialized
+INFO - 2023-01-28 02:46:18 --> Router Class Initialized
+INFO - 2023-01-28 02:46:18 --> Output Class Initialized
+INFO - 2023-01-28 02:46:18 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:18 --> Input Class Initialized
+INFO - 2023-01-28 02:46:18 --> Language Class Initialized
+INFO - 2023-01-28 02:46:18 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:18 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:18 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:18 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:18 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:18 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:18 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 02:46:18 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:18 --> Total execution time: 0.0149
+INFO - 2023-01-28 02:46:18 --> Config Class Initialized
+INFO - 2023-01-28 02:46:18 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:18 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:18 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:18 --> URI Class Initialized
+INFO - 2023-01-28 02:46:18 --> Router Class Initialized
+INFO - 2023-01-28 02:46:18 --> Output Class Initialized
+INFO - 2023-01-28 02:46:18 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:18 --> Input Class Initialized
+INFO - 2023-01-28 02:46:18 --> Language Class Initialized
+INFO - 2023-01-28 02:46:18 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:18 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:18 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:18 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:18 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:18 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:18 --> Model "Pocket" initialized
+INFO - 2023-01-28 02:46:18 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:18 --> Total execution time: 0.0103
+INFO - 2023-01-28 02:46:18 --> Config Class Initialized
+INFO - 2023-01-28 02:46:18 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:18 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:18 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:18 --> URI Class Initialized
+INFO - 2023-01-28 02:46:18 --> Router Class Initialized
+INFO - 2023-01-28 02:46:18 --> Output Class Initialized
+INFO - 2023-01-28 02:46:18 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:18 --> Input Class Initialized
+INFO - 2023-01-28 02:46:18 --> Language Class Initialized
+INFO - 2023-01-28 02:46:18 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:18 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:18 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:18 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:18 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:18 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:18 --> Model "FormasPago" initialized
+INFO - 2023-01-28 02:46:18 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:18 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:18 --> Total execution time: 0.0101
+INFO - 2023-01-28 02:46:24 --> Config Class Initialized
+INFO - 2023-01-28 02:46:24 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:24 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:24 --> URI Class Initialized
+INFO - 2023-01-28 02:46:24 --> Router Class Initialized
+INFO - 2023-01-28 02:46:24 --> Output Class Initialized
+INFO - 2023-01-28 02:46:24 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:24 --> Input Class Initialized
+INFO - 2023-01-28 02:46:24 --> Language Class Initialized
+INFO - 2023-01-28 02:46:24 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:24 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:24 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:24 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:24 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:24 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:24 --> Model "Pocket" initialized
+INFO - 2023-01-28 02:46:24 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:24 --> Total execution time: 0.0253
+INFO - 2023-01-28 02:46:24 --> Config Class Initialized
+INFO - 2023-01-28 02:46:24 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:24 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:24 --> URI Class Initialized
+INFO - 2023-01-28 02:46:24 --> Router Class Initialized
+INFO - 2023-01-28 02:46:24 --> Output Class Initialized
+INFO - 2023-01-28 02:46:24 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:24 --> Input Class Initialized
+INFO - 2023-01-28 02:46:24 --> Language Class Initialized
+INFO - 2023-01-28 02:46:24 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:24 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:24 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:24 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:24 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:24 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:24 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:24 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:24 --> Total execution time: 0.0178
+INFO - 2023-01-28 02:46:24 --> Config Class Initialized
+INFO - 2023-01-28 02:46:24 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:24 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:24 --> URI Class Initialized
+INFO - 2023-01-28 02:46:24 --> Router Class Initialized
+INFO - 2023-01-28 02:46:24 --> Output Class Initialized
+INFO - 2023-01-28 02:46:24 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:24 --> Input Class Initialized
+INFO - 2023-01-28 02:46:24 --> Language Class Initialized
+INFO - 2023-01-28 02:46:24 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:24 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:24 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:24 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:24 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:24 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:24 --> Model "Barrio" initialized
+INFO - 2023-01-28 02:46:24 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:24 --> Total execution time: 0.0292
+INFO - 2023-01-28 02:46:24 --> Config Class Initialized
+INFO - 2023-01-28 02:46:24 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:24 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:24 --> URI Class Initialized
+INFO - 2023-01-28 02:46:24 --> Router Class Initialized
+INFO - 2023-01-28 02:46:24 --> Output Class Initialized
+INFO - 2023-01-28 02:46:24 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:24 --> Input Class Initialized
+INFO - 2023-01-28 02:46:24 --> Language Class Initialized
+INFO - 2023-01-28 02:46:24 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:24 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:24 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:24 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:24 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:24 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:24 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:24 --> Model "FormasPago" initialized
+INFO - 2023-01-28 02:46:24 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:24 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:24 --> Total execution time: 0.0174
+INFO - 2023-01-28 02:46:26 --> Config Class Initialized
+INFO - 2023-01-28 02:46:26 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:26 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:26 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:26 --> URI Class Initialized
+INFO - 2023-01-28 02:46:26 --> Router Class Initialized
+INFO - 2023-01-28 02:46:26 --> Output Class Initialized
+INFO - 2023-01-28 02:46:26 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:26 --> Input Class Initialized
+INFO - 2023-01-28 02:46:26 --> Language Class Initialized
+INFO - 2023-01-28 02:46:26 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:26 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:26 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:26 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:26 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:26 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:26 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:26 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:26 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:26 --> Total execution time: 0.0142
+INFO - 2023-01-28 02:46:26 --> Config Class Initialized
+INFO - 2023-01-28 02:46:26 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:26 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:26 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:26 --> URI Class Initialized
+INFO - 2023-01-28 02:46:26 --> Router Class Initialized
+INFO - 2023-01-28 02:46:26 --> Output Class Initialized
+INFO - 2023-01-28 02:46:26 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:26 --> Input Class Initialized
+INFO - 2023-01-28 02:46:26 --> Language Class Initialized
+INFO - 2023-01-28 02:46:26 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:26 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:26 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:26 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:26 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:26 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:26 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:26 --> Model "Order" initialized
+INFO - 2023-01-28 02:46:26 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 02:46:27 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:27 --> Total execution time: 0.1175
+INFO - 2023-01-28 02:46:27 --> Config Class Initialized
+INFO - 2023-01-28 02:46:27 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:27 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:27 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:27 --> URI Class Initialized
+INFO - 2023-01-28 02:46:27 --> Router Class Initialized
+INFO - 2023-01-28 02:46:27 --> Output Class Initialized
+INFO - 2023-01-28 02:46:27 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:27 --> Input Class Initialized
+INFO - 2023-01-28 02:46:27 --> Language Class Initialized
+INFO - 2023-01-28 02:46:27 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:27 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:27 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:27 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:27 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:27 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:27 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:27 --> Model "Parameter" initialized
+INFO - 2023-01-28 02:46:27 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:27 --> Total execution time: 0.0159
+INFO - 2023-01-28 02:46:27 --> Config Class Initialized
+INFO - 2023-01-28 02:46:27 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:27 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:27 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:27 --> URI Class Initialized
+DEBUG - 2023-01-28 02:46:27 --> No URI present. Default controller set.
+INFO - 2023-01-28 02:46:27 --> Router Class Initialized
+INFO - 2023-01-28 02:46:27 --> Output Class Initialized
+INFO - 2023-01-28 02:46:27 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:27 --> Input Class Initialized
+INFO - 2023-01-28 02:46:27 --> Language Class Initialized
+INFO - 2023-01-28 02:46:27 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:27 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:27 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:27 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:27 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:27 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:27 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:27 --> Model "Parameter" initialized
+ERROR - 2023-01-28 02:46:27 --> Severity: Warning --> count(): Parameter must be an array or an object that implements Countable /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 28
+INFO - 2023-01-28 02:46:27 --> Model "Order" initialized
+INFO - 2023-01-28 02:46:27 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 02:46:27 --> Model "Pocket" initialized
+INFO - 2023-01-28 02:46:27 --> Model "TiposPedidos" initialized
+INFO - 2023-01-28 02:46:27 --> Model "Barrio" initialized
+INFO - 2023-01-28 02:46:27 --> Helper loaded: parser_helper
+INFO - 2023-01-28 02:46:27 --> Model "Office" initialized
+INFO - 2023-01-28 02:46:27 --> Model "Extra" initialized
+INFO - 2023-01-28 02:46:28 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:28 --> Total execution time: 1.2374
+INFO - 2023-01-28 02:46:46 --> Config Class Initialized
+INFO - 2023-01-28 02:46:46 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:46 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:46 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:46 --> URI Class Initialized
+INFO - 2023-01-28 02:46:46 --> Router Class Initialized
+INFO - 2023-01-28 02:46:46 --> Output Class Initialized
+INFO - 2023-01-28 02:46:46 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:46 --> Input Class Initialized
+INFO - 2023-01-28 02:46:46 --> Language Class Initialized
+INFO - 2023-01-28 02:46:46 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:46 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:46 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:46 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:46 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:46 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:46 --> Model "Order" initialized
+INFO - 2023-01-28 02:46:46 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:46:47 --> PAYMENT_ID
+INFO - 2023-01-28 02:46:47 --> 0
+DEBUG - 2023-01-28 02:46:47 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:46:47 --> 7467428386
+INFO - 2023-01-28 02:46:47 --> Config Class Initialized
+INFO - 2023-01-28 02:46:47 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:46:47 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:46:47 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:46:47 --> URI Class Initialized
+INFO - 2023-01-28 02:46:47 --> Router Class Initialized
+INFO - 2023-01-28 02:46:47 --> Output Class Initialized
+INFO - 2023-01-28 02:46:47 --> Security Class Initialized
+DEBUG - 2023-01-28 02:46:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:46:47 --> Input Class Initialized
+INFO - 2023-01-28 02:46:47 --> Language Class Initialized
+INFO - 2023-01-28 02:46:47 --> Loader Class Initialized
+INFO - 2023-01-28 02:46:47 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:46:47 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:46:47 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:46:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:46:47 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:46:47 --> Controller Class Initialized
+INFO - 2023-01-28 02:46:47 --> Model "Order" initialized
+INFO - 2023-01-28 02:46:47 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:46:48 --> MERCHANT ORDER RESPONSE
+INFO - 2023-01-28 02:46:48 --> {"id":7467428386,"status":"opened","external_reference":"","preference_id":"75232795-23d73f8b-3ed9-40d3-90a4-4da8d1233353","payments":[],"shipments":[],"payouts":[],"collector":{"id":75232795,"email":"","nickname":"AGUS_VENTURAGUS"},"marketplace":"NONE","notification_url":"http://agusventu.tplinkdns.com/ebo/payment_confirmation/672d4eee88a5cc6dc80abb68187881582d1f2b83","date_created":"2023-01-27T21:46:46.533-04:00","last_updated":"2023-01-27T21:46:46.533-04:00","sponsor_id":null,"shipping_cost":0,"total_amount":1950,"site_id":"MLA","paid_amount":0,"refunded_amount":0,"payer":null,"items":[{"id":"","category_id":"","currency_id":"ARS","description":"","picture_url":null,"title":"Pedido de El Brote Tienda","quantity":1,"unit_price":1950}],"cancelled":false,"additional_info":"","application_id":null,"order_status":"payment_required"}
+DEBUG - 2023-01-28 02:46:48 --> PAYMENT_ID
+INFO - 2023-01-28 02:46:48 --> 0
+DEBUG - 2023-01-28 02:46:48 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:46:48 --> 7467428386
+INFO - 2023-01-28 02:46:48 --> NO TENGO ID DEL PAGO
+INFO - 2023-01-28 02:46:48 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:48 --> Total execution time: 1.7352
+DEBUG - 2023-01-28 02:46:48 --> PAYMENT_ID
+INFO - 2023-01-28 02:46:48 --> 1312131241
+DEBUG - 2023-01-28 02:46:48 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:46:48 --> 0
+DEBUG - 2023-01-28 02:46:48 --> PAYMENT_ID
+INFO - 2023-01-28 02:46:48 --> 1312131241
+DEBUG - 2023-01-28 02:46:48 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:46:48 --> 0
+DEBUG - 2023-01-28 02:46:49 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:46:49 --> rejected
+INFO - 2023-01-28 02:46:49 --> PAGO RECHAZADO: 1312131241
+INFO - 2023-01-28 02:46:49 --> Final output sent to browser
+DEBUG - 2023-01-28 02:46:49 --> Total execution time: 1.7934
+INFO - 2023-01-28 02:49:19 --> Config Class Initialized
+INFO - 2023-01-28 02:49:19 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:49:19 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:49:19 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:49:19 --> URI Class Initialized
+INFO - 2023-01-28 02:49:19 --> Router Class Initialized
+INFO - 2023-01-28 02:49:19 --> Output Class Initialized
+INFO - 2023-01-28 02:49:19 --> Security Class Initialized
+DEBUG - 2023-01-28 02:49:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:49:19 --> Input Class Initialized
+INFO - 2023-01-28 02:49:19 --> Language Class Initialized
+INFO - 2023-01-28 02:49:19 --> Loader Class Initialized
+INFO - 2023-01-28 02:49:19 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:49:19 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:49:19 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:49:19 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:49:19 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:49:19 --> Controller Class Initialized
+INFO - 2023-01-28 02:49:19 --> Model "Order" initialized
+INFO - 2023-01-28 02:49:19 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:49:20 --> PAYMENT_ID
+INFO - 2023-01-28 02:49:20 --> 1312131261
+DEBUG - 2023-01-28 02:49:20 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:49:20 --> 0
+DEBUG - 2023-01-28 02:49:20 --> PAYMENT_ID
+INFO - 2023-01-28 02:49:20 --> 1312131261
+DEBUG - 2023-01-28 02:49:20 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:49:20 --> 0
+DEBUG - 2023-01-28 02:49:21 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:49:21 --> rejected
+INFO - 2023-01-28 02:49:21 --> PAGO RECHAZADO: 1312131261
+INFO - 2023-01-28 02:49:21 --> Final output sent to browser
+DEBUG - 2023-01-28 02:49:21 --> Total execution time: 1.9640
+INFO - 2023-01-28 02:50:19 --> Config Class Initialized
+INFO - 2023-01-28 02:50:19 --> Hooks Class Initialized
+DEBUG - 2023-01-28 02:50:19 --> UTF-8 Support Enabled
+INFO - 2023-01-28 02:50:19 --> Utf8 Class Initialized
+INFO - 2023-01-28 02:50:19 --> URI Class Initialized
+INFO - 2023-01-28 02:50:19 --> Router Class Initialized
+INFO - 2023-01-28 02:50:19 --> Output Class Initialized
+INFO - 2023-01-28 02:50:19 --> Security Class Initialized
+DEBUG - 2023-01-28 02:50:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 02:50:19 --> Input Class Initialized
+INFO - 2023-01-28 02:50:19 --> Language Class Initialized
+INFO - 2023-01-28 02:50:19 --> Loader Class Initialized
+INFO - 2023-01-28 02:50:19 --> Helper loaded: url_helper
+INFO - 2023-01-28 02:50:19 --> Helper loaded: util_helper
+INFO - 2023-01-28 02:50:19 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 02:50:19 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 02:50:19 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 02:50:19 --> Controller Class Initialized
+INFO - 2023-01-28 02:50:19 --> Model "Order" initialized
+INFO - 2023-01-28 02:50:19 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 02:50:20 --> PAYMENT_ID
+INFO - 2023-01-28 02:50:20 --> 1312131153
+DEBUG - 2023-01-28 02:50:20 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:50:20 --> 0
+DEBUG - 2023-01-28 02:50:20 --> PAYMENT_ID
+INFO - 2023-01-28 02:50:20 --> 1312131153
+DEBUG - 2023-01-28 02:50:20 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 02:50:20 --> 0
+DEBUG - 2023-01-28 02:50:21 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 02:50:21 --> rejected
+INFO - 2023-01-28 02:50:21 --> PAGO RECHAZADO: 1312131153
+INFO - 2023-01-28 02:50:21 --> Final output sent to browser
+DEBUG - 2023-01-28 02:50:21 --> Total execution time: 1.9227
+INFO - 2023-01-28 03:00:22 --> Config Class Initialized
+INFO - 2023-01-28 03:00:22 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:00:22 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:00:22 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:00:22 --> URI Class Initialized
+INFO - 2023-01-28 03:00:22 --> Router Class Initialized
+INFO - 2023-01-28 03:00:22 --> Output Class Initialized
+INFO - 2023-01-28 03:00:22 --> Security Class Initialized
+DEBUG - 2023-01-28 03:00:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:00:22 --> Input Class Initialized
+INFO - 2023-01-28 03:00:22 --> Language Class Initialized
+INFO - 2023-01-28 03:00:22 --> Loader Class Initialized
+INFO - 2023-01-28 03:00:22 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:00:22 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:00:22 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:00:22 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:00:22 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:00:22 --> Controller Class Initialized
+INFO - 2023-01-28 03:00:22 --> Model "Order" initialized
+INFO - 2023-01-28 03:00:22 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 03:00:23 --> PAYMENT_ID
+INFO - 2023-01-28 03:00:23 --> 1312131309
+DEBUG - 2023-01-28 03:00:23 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 03:00:23 --> 0
+DEBUG - 2023-01-28 03:00:24 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 03:00:24 --> approved
+INFO - 2023-01-28 03:00:24 --> Final output sent to browser
+DEBUG - 2023-01-28 03:00:24 --> Total execution time: 2.1263
+INFO - 2023-01-28 03:00:28 --> Config Class Initialized
+INFO - 2023-01-28 03:00:28 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:00:28 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:00:28 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:00:28 --> URI Class Initialized
+INFO - 2023-01-28 03:00:28 --> Router Class Initialized
+INFO - 2023-01-28 03:00:28 --> Output Class Initialized
+INFO - 2023-01-28 03:00:28 --> Security Class Initialized
+DEBUG - 2023-01-28 03:00:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:00:28 --> Input Class Initialized
+INFO - 2023-01-28 03:00:28 --> Language Class Initialized
+INFO - 2023-01-28 03:00:28 --> Loader Class Initialized
+INFO - 2023-01-28 03:00:28 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:00:28 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:00:28 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:00:28 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:00:28 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:00:28 --> Controller Class Initialized
+INFO - 2023-01-28 03:00:28 --> Model "Order" initialized
+INFO - 2023-01-28 03:00:28 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:00:28 --> Model "Pocket" initialized
+INFO - 2023-01-28 03:00:28 --> Model "Barrio" initialized
+INFO - 2023-01-28 03:00:28 --> Model "Office" initialized
+INFO - 2023-01-28 03:00:28 --> Model "Extra" initialized
+DEBUG - 2023-01-28 03:00:28 --> PHPMailer class is loaded.
+INFO - 2023-01-28 03:00:28 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/mailing/delivery.php
+INFO - 2023-01-28 03:00:28 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/mailing/delivery_alt.php
+INFO - 2023-01-28 03:00:30 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/success.php
+INFO - 2023-01-28 03:00:30 --> Final output sent to browser
+DEBUG - 2023-01-28 03:00:30 --> Total execution time: 2.2243
+INFO - 2023-01-28 03:02:54 --> Config Class Initialized
+INFO - 2023-01-28 03:02:54 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:54 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:54 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:54 --> URI Class Initialized
+DEBUG - 2023-01-28 03:02:54 --> No URI present. Default controller set.
+INFO - 2023-01-28 03:02:54 --> Router Class Initialized
+INFO - 2023-01-28 03:02:54 --> Output Class Initialized
+INFO - 2023-01-28 03:02:54 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:54 --> Input Class Initialized
+INFO - 2023-01-28 03:02:54 --> Language Class Initialized
+INFO - 2023-01-28 03:02:54 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:54 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:54 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:54 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:54 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:54 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:54 --> Model "Pocket" initialized
+INFO - 2023-01-28 03:02:54 --> Model "Office" initialized
+INFO - 2023-01-28 03:02:54 --> Model "Extra" initialized
+INFO - 2023-01-28 03:02:54 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:02:54 --> Model "Barrio" initialized
+INFO - 2023-01-28 03:02:54 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 03:02:54 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2023-01-28 03:02:54 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:54 --> Total execution time: 0.0321
+INFO - 2023-01-28 03:02:55 --> Config Class Initialized
+INFO - 2023-01-28 03:02:55 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:55 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:55 --> URI Class Initialized
+INFO - 2023-01-28 03:02:55 --> Router Class Initialized
+INFO - 2023-01-28 03:02:55 --> Output Class Initialized
+INFO - 2023-01-28 03:02:55 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:55 --> Input Class Initialized
+INFO - 2023-01-28 03:02:55 --> Language Class Initialized
+INFO - 2023-01-28 03:02:55 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:55 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:55 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:55 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:55 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:55 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:55 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:02:55 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:55 --> Total execution time: 0.0125
+INFO - 2023-01-28 03:02:55 --> Config Class Initialized
+INFO - 2023-01-28 03:02:55 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:55 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:55 --> URI Class Initialized
+INFO - 2023-01-28 03:02:55 --> Router Class Initialized
+INFO - 2023-01-28 03:02:55 --> Output Class Initialized
+INFO - 2023-01-28 03:02:55 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:55 --> Input Class Initialized
+INFO - 2023-01-28 03:02:55 --> Language Class Initialized
+INFO - 2023-01-28 03:02:55 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:55 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:55 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:55 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:55 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:55 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:55 --> Model "Extra" initialized
+INFO - 2023-01-28 03:02:55 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:55 --> Total execution time: 0.0115
+INFO - 2023-01-28 03:02:55 --> Config Class Initialized
+INFO - 2023-01-28 03:02:55 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:55 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:55 --> URI Class Initialized
+INFO - 2023-01-28 03:02:55 --> Router Class Initialized
+INFO - 2023-01-28 03:02:55 --> Output Class Initialized
+INFO - 2023-01-28 03:02:55 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:55 --> Input Class Initialized
+INFO - 2023-01-28 03:02:55 --> Language Class Initialized
+INFO - 2023-01-28 03:02:55 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:55 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:55 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:55 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:55 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:55 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:55 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:02:55 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:55 --> Total execution time: 0.0114
+INFO - 2023-01-28 03:02:55 --> Config Class Initialized
+INFO - 2023-01-28 03:02:55 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:55 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:55 --> URI Class Initialized
+INFO - 2023-01-28 03:02:55 --> Router Class Initialized
+INFO - 2023-01-28 03:02:55 --> Output Class Initialized
+INFO - 2023-01-28 03:02:55 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:55 --> Input Class Initialized
+INFO - 2023-01-28 03:02:55 --> Language Class Initialized
+INFO - 2023-01-28 03:02:55 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:55 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:55 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:55 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:55 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:55 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:55 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:02:55 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:55 --> Total execution time: 0.0121
+INFO - 2023-01-28 03:02:55 --> Config Class Initialized
+INFO - 2023-01-28 03:02:55 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:55 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:55 --> URI Class Initialized
+INFO - 2023-01-28 03:02:55 --> Router Class Initialized
+INFO - 2023-01-28 03:02:55 --> Output Class Initialized
+INFO - 2023-01-28 03:02:55 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:55 --> Input Class Initialized
+INFO - 2023-01-28 03:02:55 --> Language Class Initialized
+INFO - 2023-01-28 03:02:55 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:55 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:55 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:55 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:55 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:55 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:55 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 03:02:55 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:55 --> Total execution time: 0.0128
+INFO - 2023-01-28 03:02:55 --> Config Class Initialized
+INFO - 2023-01-28 03:02:55 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:55 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:55 --> URI Class Initialized
+INFO - 2023-01-28 03:02:55 --> Router Class Initialized
+INFO - 2023-01-28 03:02:55 --> Output Class Initialized
+INFO - 2023-01-28 03:02:55 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:55 --> Input Class Initialized
+INFO - 2023-01-28 03:02:55 --> Language Class Initialized
+INFO - 2023-01-28 03:02:55 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:55 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:55 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:55 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:55 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:55 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:55 --> Model "Barrio" initialized
+INFO - 2023-01-28 03:02:55 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:55 --> Total execution time: 0.0149
+INFO - 2023-01-28 03:02:55 --> Config Class Initialized
+INFO - 2023-01-28 03:02:55 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:55 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:55 --> URI Class Initialized
+INFO - 2023-01-28 03:02:55 --> Router Class Initialized
+INFO - 2023-01-28 03:02:55 --> Output Class Initialized
+INFO - 2023-01-28 03:02:55 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:55 --> Input Class Initialized
+INFO - 2023-01-28 03:02:55 --> Language Class Initialized
+INFO - 2023-01-28 03:02:55 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:55 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:55 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:55 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:55 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:55 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:55 --> Model "FormasPago" initialized
+INFO - 2023-01-28 03:02:55 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:02:55 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:55 --> Total execution time: 0.0176
+INFO - 2023-01-28 03:02:57 --> Config Class Initialized
+INFO - 2023-01-28 03:02:57 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:57 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:57 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:57 --> URI Class Initialized
+INFO - 2023-01-28 03:02:57 --> Router Class Initialized
+INFO - 2023-01-28 03:02:57 --> Output Class Initialized
+INFO - 2023-01-28 03:02:57 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:57 --> Input Class Initialized
+INFO - 2023-01-28 03:02:57 --> Language Class Initialized
+INFO - 2023-01-28 03:02:57 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:57 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:57 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:57 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:57 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:57 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:57 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 03:02:57 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:57 --> Total execution time: 0.0214
+INFO - 2023-01-28 03:02:57 --> Config Class Initialized
+INFO - 2023-01-28 03:02:57 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:57 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:57 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:57 --> URI Class Initialized
+INFO - 2023-01-28 03:02:57 --> Router Class Initialized
+INFO - 2023-01-28 03:02:57 --> Output Class Initialized
+INFO - 2023-01-28 03:02:57 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:57 --> Input Class Initialized
+INFO - 2023-01-28 03:02:57 --> Language Class Initialized
+INFO - 2023-01-28 03:02:57 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:57 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:57 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:57 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:57 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:57 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:57 --> Model "Pocket" initialized
+INFO - 2023-01-28 03:02:57 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:57 --> Total execution time: 0.0175
+INFO - 2023-01-28 03:02:57 --> Config Class Initialized
+INFO - 2023-01-28 03:02:57 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:02:57 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:02:57 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:02:57 --> URI Class Initialized
+INFO - 2023-01-28 03:02:57 --> Router Class Initialized
+INFO - 2023-01-28 03:02:57 --> Output Class Initialized
+INFO - 2023-01-28 03:02:57 --> Security Class Initialized
+DEBUG - 2023-01-28 03:02:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:02:57 --> Input Class Initialized
+INFO - 2023-01-28 03:02:57 --> Language Class Initialized
+INFO - 2023-01-28 03:02:57 --> Loader Class Initialized
+INFO - 2023-01-28 03:02:57 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:02:57 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:02:57 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:02:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:02:57 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:02:57 --> Controller Class Initialized
+INFO - 2023-01-28 03:02:57 --> Model "FormasPago" initialized
+INFO - 2023-01-28 03:02:57 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:02:57 --> Final output sent to browser
+DEBUG - 2023-01-28 03:02:57 --> Total execution time: 0.0151
+INFO - 2023-01-28 03:03:04 --> Config Class Initialized
+INFO - 2023-01-28 03:03:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:04 --> URI Class Initialized
+INFO - 2023-01-28 03:03:04 --> Router Class Initialized
+INFO - 2023-01-28 03:03:04 --> Output Class Initialized
+INFO - 2023-01-28 03:03:04 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:04 --> Input Class Initialized
+INFO - 2023-01-28 03:03:04 --> Language Class Initialized
+INFO - 2023-01-28 03:03:04 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:04 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:04 --> Model "Pocket" initialized
+INFO - 2023-01-28 03:03:04 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:04 --> Total execution time: 0.0466
+INFO - 2023-01-28 03:03:04 --> Config Class Initialized
+INFO - 2023-01-28 03:03:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:04 --> URI Class Initialized
+INFO - 2023-01-28 03:03:04 --> Router Class Initialized
+INFO - 2023-01-28 03:03:04 --> Output Class Initialized
+INFO - 2023-01-28 03:03:04 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:04 --> Input Class Initialized
+INFO - 2023-01-28 03:03:04 --> Language Class Initialized
+INFO - 2023-01-28 03:03:04 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:04 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:04 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:03:04 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:04 --> Total execution time: 0.0118
+INFO - 2023-01-28 03:03:04 --> Config Class Initialized
+INFO - 2023-01-28 03:03:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:04 --> URI Class Initialized
+INFO - 2023-01-28 03:03:04 --> Router Class Initialized
+INFO - 2023-01-28 03:03:04 --> Output Class Initialized
+INFO - 2023-01-28 03:03:04 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:04 --> Input Class Initialized
+INFO - 2023-01-28 03:03:04 --> Language Class Initialized
+INFO - 2023-01-28 03:03:04 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:04 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:04 --> Model "Barrio" initialized
+INFO - 2023-01-28 03:03:04 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:04 --> Total execution time: 0.0191
+INFO - 2023-01-28 03:03:04 --> Config Class Initialized
+INFO - 2023-01-28 03:03:04 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:04 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:04 --> URI Class Initialized
+INFO - 2023-01-28 03:03:04 --> Router Class Initialized
+INFO - 2023-01-28 03:03:04 --> Output Class Initialized
+INFO - 2023-01-28 03:03:04 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:04 --> Input Class Initialized
+INFO - 2023-01-28 03:03:04 --> Language Class Initialized
+INFO - 2023-01-28 03:03:04 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:04 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:04 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:04 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:04 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:04 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:04 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:04 --> Model "FormasPago" initialized
+INFO - 2023-01-28 03:03:04 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:03:04 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:04 --> Total execution time: 0.0131
+INFO - 2023-01-28 03:03:07 --> Config Class Initialized
+INFO - 2023-01-28 03:03:07 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:07 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:07 --> URI Class Initialized
+INFO - 2023-01-28 03:03:07 --> Router Class Initialized
+INFO - 2023-01-28 03:03:07 --> Output Class Initialized
+INFO - 2023-01-28 03:03:07 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:07 --> Input Class Initialized
+INFO - 2023-01-28 03:03:07 --> Language Class Initialized
+INFO - 2023-01-28 03:03:07 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:07 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:07 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:07 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:07 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:07 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:07 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:03:07 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:07 --> Total execution time: 0.0221
+INFO - 2023-01-28 03:03:07 --> Config Class Initialized
+INFO - 2023-01-28 03:03:07 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:07 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:07 --> URI Class Initialized
+INFO - 2023-01-28 03:03:07 --> Router Class Initialized
+INFO - 2023-01-28 03:03:07 --> Output Class Initialized
+INFO - 2023-01-28 03:03:07 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:07 --> Input Class Initialized
+INFO - 2023-01-28 03:03:07 --> Language Class Initialized
+INFO - 2023-01-28 03:03:07 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:07 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:07 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:07 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:07 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:07 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:07 --> Model "Order" initialized
+INFO - 2023-01-28 03:03:07 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 03:03:07 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:07 --> Total execution time: 0.1185
+INFO - 2023-01-28 03:03:07 --> Config Class Initialized
+INFO - 2023-01-28 03:03:07 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:07 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:07 --> URI Class Initialized
+INFO - 2023-01-28 03:03:07 --> Router Class Initialized
+INFO - 2023-01-28 03:03:07 --> Output Class Initialized
+INFO - 2023-01-28 03:03:07 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:07 --> Input Class Initialized
+INFO - 2023-01-28 03:03:07 --> Language Class Initialized
+INFO - 2023-01-28 03:03:07 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:07 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:07 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:07 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:07 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:07 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:07 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:03:07 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:07 --> Total execution time: 0.0188
+INFO - 2023-01-28 03:03:07 --> Config Class Initialized
+INFO - 2023-01-28 03:03:07 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:07 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:07 --> URI Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> No URI present. Default controller set.
+INFO - 2023-01-28 03:03:07 --> Router Class Initialized
+INFO - 2023-01-28 03:03:07 --> Output Class Initialized
+INFO - 2023-01-28 03:03:07 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:07 --> Input Class Initialized
+INFO - 2023-01-28 03:03:07 --> Language Class Initialized
+INFO - 2023-01-28 03:03:07 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:07 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:07 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:07 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:07 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:07 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:07 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:07 --> Model "Parameter" initialized
+ERROR - 2023-01-28 03:03:07 --> Severity: Warning --> count(): Parameter must be an array or an object that implements Countable /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 28
+INFO - 2023-01-28 03:03:07 --> Model "Order" initialized
+INFO - 2023-01-28 03:03:07 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-28 03:03:07 --> Model "Pocket" initialized
+INFO - 2023-01-28 03:03:07 --> Model "TiposPedidos" initialized
+INFO - 2023-01-28 03:03:07 --> Model "Barrio" initialized
+INFO - 2023-01-28 03:03:07 --> Helper loaded: parser_helper
+INFO - 2023-01-28 03:03:07 --> Model "Office" initialized
+INFO - 2023-01-28 03:03:07 --> Model "Extra" initialized
+INFO - 2023-01-28 03:03:09 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:09 --> Total execution time: 1.3652
+INFO - 2023-01-28 03:03:27 --> Config Class Initialized
+INFO - 2023-01-28 03:03:27 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:27 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:27 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:27 --> URI Class Initialized
+INFO - 2023-01-28 03:03:27 --> Router Class Initialized
+INFO - 2023-01-28 03:03:27 --> Output Class Initialized
+INFO - 2023-01-28 03:03:27 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:27 --> Input Class Initialized
+INFO - 2023-01-28 03:03:27 --> Language Class Initialized
+INFO - 2023-01-28 03:03:27 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:27 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:27 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:27 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:27 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:27 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:27 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:27 --> Model "Order" initialized
+INFO - 2023-01-28 03:03:27 --> Model "Parameter" initialized
+INFO - 2023-01-28 03:03:27 --> Config Class Initialized
+INFO - 2023-01-28 03:03:27 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:03:27 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:03:27 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:03:27 --> URI Class Initialized
+INFO - 2023-01-28 03:03:27 --> Router Class Initialized
+INFO - 2023-01-28 03:03:27 --> Output Class Initialized
+INFO - 2023-01-28 03:03:28 --> Security Class Initialized
+DEBUG - 2023-01-28 03:03:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:03:28 --> Input Class Initialized
+INFO - 2023-01-28 03:03:28 --> Language Class Initialized
+INFO - 2023-01-28 03:03:28 --> Loader Class Initialized
+INFO - 2023-01-28 03:03:28 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:03:28 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:03:28 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:03:28 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:03:28 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:03:28 --> Controller Class Initialized
+INFO - 2023-01-28 03:03:28 --> Model "Order" initialized
+INFO - 2023-01-28 03:03:28 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 03:03:28 --> MERCHANT ORDER RESPONSE
+INFO - 2023-01-28 03:03:28 --> {"id":7467610436,"status":"opened","external_reference":"","preference_id":"75232795-78ff5e13-adca-4fe6-bd5b-ace720d2726d","payments":[],"shipments":[],"payouts":[],"collector":{"id":75232795,"email":"","nickname":"AGUS_VENTURAGUS"},"marketplace":"NONE","notification_url":"http://agusventu.tplinkdns.com/ebo/payment_confirmation/d22dfac107a585e875687f9474f503ade3be9993","date_created":"2023-01-27T22:03:26.766-04:00","last_updated":"2023-01-27T22:03:26.766-04:00","sponsor_id":null,"shipping_cost":0,"total_amount":1950,"site_id":"MLA","paid_amount":0,"refunded_amount":0,"payer":null,"items":[{"id":"","category_id":"","currency_id":"ARS","description":"","picture_url":null,"title":"Pedido de El Brote Tienda","quantity":1,"unit_price":1950}],"cancelled":false,"additional_info":"","application_id":null,"order_status":"payment_required"}
+DEBUG - 2023-01-28 03:03:28 --> PAYMENT_ID
+INFO - 2023-01-28 03:03:28 --> 0
+DEBUG - 2023-01-28 03:03:28 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 03:03:28 --> 7467610436
+INFO - 2023-01-28 03:03:28 --> NO TENGO ID DEL PAGO
+DEBUG - 2023-01-28 03:03:28 --> PAYMENT_ID
+INFO - 2023-01-28 03:03:28 --> 1312133361
+DEBUG - 2023-01-28 03:03:28 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 03:03:28 --> 0
+INFO - 2023-01-28 03:03:28 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:28 --> Total execution time: 1.7318
+DEBUG - 2023-01-28 03:03:29 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 03:03:29 --> rejected
+INFO - 2023-01-28 03:03:29 --> PAGO RECHAZADO: 1312133361
+INFO - 2023-01-28 03:03:29 --> Final output sent to browser
+DEBUG - 2023-01-28 03:03:29 --> Total execution time: 1.8169
+INFO - 2023-01-28 03:05:20 --> Config Class Initialized
+INFO - 2023-01-28 03:05:20 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:05:20 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:05:20 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:05:20 --> URI Class Initialized
+INFO - 2023-01-28 03:05:20 --> Router Class Initialized
+INFO - 2023-01-28 03:05:20 --> Output Class Initialized
+INFO - 2023-01-28 03:05:20 --> Security Class Initialized
+DEBUG - 2023-01-28 03:05:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:05:20 --> Input Class Initialized
+INFO - 2023-01-28 03:05:20 --> Language Class Initialized
+INFO - 2023-01-28 03:05:20 --> Loader Class Initialized
+INFO - 2023-01-28 03:05:20 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:05:20 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:05:20 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:05:20 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:05:20 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:05:20 --> Controller Class Initialized
+INFO - 2023-01-28 03:05:20 --> Model "Order" initialized
+INFO - 2023-01-28 03:05:20 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 03:05:21 --> PAYMENT_ID
+INFO - 2023-01-28 03:05:21 --> 1312133369
+DEBUG - 2023-01-28 03:05:21 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 03:05:21 --> 0
+DEBUG - 2023-01-28 03:05:22 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 03:05:22 --> rejected
+INFO - 2023-01-28 03:05:22 --> PAGO RECHAZADO: 1312133369
+INFO - 2023-01-28 03:05:22 --> Final output sent to browser
+DEBUG - 2023-01-28 03:05:22 --> Total execution time: 1.8456
+INFO - 2023-01-28 03:05:55 --> Config Class Initialized
+INFO - 2023-01-28 03:05:55 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:05:55 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:05:55 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:05:55 --> URI Class Initialized
+INFO - 2023-01-28 03:05:55 --> Router Class Initialized
+INFO - 2023-01-28 03:05:55 --> Output Class Initialized
+INFO - 2023-01-28 03:05:55 --> Security Class Initialized
+DEBUG - 2023-01-28 03:05:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:05:55 --> Input Class Initialized
+INFO - 2023-01-28 03:05:55 --> Language Class Initialized
+INFO - 2023-01-28 03:05:55 --> Loader Class Initialized
+INFO - 2023-01-28 03:05:55 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:05:55 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:05:55 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:05:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:05:55 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:05:55 --> Controller Class Initialized
+INFO - 2023-01-28 03:05:55 --> Model "Order" initialized
+INFO - 2023-01-28 03:05:55 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 03:05:56 --> PAYMENT_ID
+INFO - 2023-01-28 03:05:56 --> 1312133101
+DEBUG - 2023-01-28 03:05:56 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 03:05:56 --> 0
+DEBUG - 2023-01-28 03:05:57 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 03:05:57 --> rejected
+INFO - 2023-01-28 03:05:57 --> PAGO RECHAZADO: 1312133101
+INFO - 2023-01-28 03:05:57 --> Final output sent to browser
+DEBUG - 2023-01-28 03:05:57 --> Total execution time: 1.9946
+INFO - 2023-01-28 03:06:12 --> Config Class Initialized
+INFO - 2023-01-28 03:06:12 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:06:12 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:06:12 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:06:12 --> URI Class Initialized
+INFO - 2023-01-28 03:06:12 --> Router Class Initialized
+INFO - 2023-01-28 03:06:12 --> Output Class Initialized
+INFO - 2023-01-28 03:06:12 --> Security Class Initialized
+DEBUG - 2023-01-28 03:06:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:06:12 --> Input Class Initialized
+INFO - 2023-01-28 03:06:12 --> Language Class Initialized
+INFO - 2023-01-28 03:06:12 --> Loader Class Initialized
+INFO - 2023-01-28 03:06:12 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:06:12 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:06:12 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:06:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:06:12 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:06:12 --> Controller Class Initialized
+INFO - 2023-01-28 03:06:12 --> Model "Order" initialized
+INFO - 2023-01-28 03:06:12 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 03:06:13 --> PAYMENT_ID
+INFO - 2023-01-28 03:06:13 --> 1312133377
+DEBUG - 2023-01-28 03:06:13 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 03:06:13 --> 0
+DEBUG - 2023-01-28 03:06:14 --> PAYMENT RESPONSE STATUS
+INFO - 2023-01-28 03:06:14 --> approved
+INFO - 2023-01-28 03:06:14 --> Final output sent to browser
+DEBUG - 2023-01-28 03:06:14 --> Total execution time: 1.9623
+INFO - 2023-01-28 03:06:17 --> Config Class Initialized
+INFO - 2023-01-28 03:06:17 --> Hooks Class Initialized
+DEBUG - 2023-01-28 03:06:17 --> UTF-8 Support Enabled
+INFO - 2023-01-28 03:06:17 --> Utf8 Class Initialized
+INFO - 2023-01-28 03:06:17 --> URI Class Initialized
+INFO - 2023-01-28 03:06:17 --> Router Class Initialized
+INFO - 2023-01-28 03:06:17 --> Output Class Initialized
+INFO - 2023-01-28 03:06:17 --> Security Class Initialized
+DEBUG - 2023-01-28 03:06:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-28 03:06:17 --> Input Class Initialized
+INFO - 2023-01-28 03:06:17 --> Language Class Initialized
+INFO - 2023-01-28 03:06:17 --> Loader Class Initialized
+INFO - 2023-01-28 03:06:17 --> Helper loaded: url_helper
+INFO - 2023-01-28 03:06:17 --> Helper loaded: util_helper
+INFO - 2023-01-28 03:06:17 --> Database Driver Class Initialized
+DEBUG - 2023-01-28 03:06:17 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-28 03:06:17 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-28 03:06:17 --> Controller Class Initialized
+INFO - 2023-01-28 03:06:17 --> Model "Order" initialized
+INFO - 2023-01-28 03:06:17 --> Model "Parameter" initialized
+DEBUG - 2023-01-28 03:06:19 --> MERCHANT ORDER RESPONSE
+INFO - 2023-01-28 03:06:19 --> {"id":7466979605,"status":"opened","external_reference":"","preference_id":"75232795-171bf378-b83e-4241-b7c3-370a7c3e4ea4","payments":[],"shipments":[],"payouts":[],"collector":{"id":75232795,"email":"","nickname":"AGUS_VENTURAGUS"},"marketplace":"NONE","notification_url":"http://agusventu.tplinkdns.com/ebo/payment_confirmation/7b40f8c75fba3f08023f1097f819d1e38db8480d","date_created":"2023-01-27T21:10:18.400-04:00","last_updated":"2023-01-27T21:10:18.400-04:00","sponsor_id":null,"shipping_cost":0,"total_amount":1950,"site_id":"MLA","paid_amount":0,"refunded_amount":0,"payer":null,"items":[{"id":"","category_id":"","currency_id":"ARS","description":"","picture_url":null,"title":"Pedido de El Brote Tienda","quantity":1,"unit_price":1950}],"cancelled":false,"additional_info":"","application_id":null,"order_status":"payment_required"}
+DEBUG - 2023-01-28 03:06:19 --> PAYMENT_ID
+INFO - 2023-01-28 03:06:19 --> 0
+DEBUG - 2023-01-28 03:06:19 --> MERCHANT_ORDER_ID
+INFO - 2023-01-28 03:06:19 --> 7466979605
+INFO - 2023-01-28 03:06:19 --> NO TENGO ID DEL PAGO
+INFO - 2023-01-28 03:06:19 --> Final output sent to browser
+DEBUG - 2023-01-28 03:06:19 --> Total execution time: 1.6521
