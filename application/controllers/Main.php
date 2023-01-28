@@ -750,79 +750,84 @@ class Main extends CI_Controller
         $this->load->model('Order');
         $this->load->model('Parameter');
 
-        $this->Order->validate($hash,1);
-        /*
-        MercadoPago\SDK::setAccessToken("TEST-7107678042081801-051415-08aeeb15d693ede10d6e35cad0e10741-75232795");
-        error_log(json_encode($_GET["data_id"]),3,"../../logs/errorAgus.log");
-        switch($_GET["type"]) {
-            case "merchant_order":
-                $merchant_order = MercadoPago\MerchantOrder::find_by_id($_GET["data"]["id"]);
-                error_log("MERCHANT".json_encode($merchant_order),3,"../../logs/errorAgus.log");
-                break;
-            case "payment":
-                $payment = MercadoPago\Payment::find_by_id($_GET["data"]["id"]);
-                error_log("PAYMENT".json_encode($payment),3,"../../logs/errorAgus.log");
-                break;
-            case "plan":
-                print_r("Plan:\n");
-                $plan = MercadoPago\Plan::find_by_id($_POST["data"]["id"]);
-                break;
-            case "subscription":
-                print_r("Subscription:\n");
-                $plan = MercadoPago\Subscription::find_by_id($_POST["data"]["id"]);
-                break;
-            case "invoice":
-                print_r("Invoice:\n");
-                $plan = MercadoPago\Invoice::find_by_id($_POST["data"]["id"]);
-                break;
-            case "point_integration_wh":
-                print_r("Point Integracion Wh:\n");
-                // $_POST contiene la informaciòn relacionada a la notificaciòn.
-                break;
-        }
-*/
-        $url_components = parse_url($_SERVER['REQUEST_URI']);
-        //parse_str($url_components['query'], $params);
-        parse_str($url_components['query'], $params);
-        //EN DEV ME FUNCIONA CON ESTO
-        //$paymentId = $_GET["data_id"];
-        $obs = "QueryString: ".$_SERVER['QUERY_STRING']." PostDataId: ".$_POST["data_id"]
-            ." PostId: ".$_POST["id"]." GetDataId: ".$_GET["data_id"]." GetId: ".$_GET["id"]
-            ." ParamsId: ".$params["id"];
-            /*
-                QueryString: id=4035729191&topic=merchant_order 
-                PostDataId:  
-                PostId: 
-                GetDataId: 
-    }           GetId: 4035729191 ParamsId: 4035729191
-            */
-        //$this->Order->setObs($hash,$obs);
-        //EN PROD ME FUNCIONA CON ESTO PERO SIEMPRE ME DEVUELVE EL MISMO NRO.
-        $merchantOrderId = $_GET["id"];
-        
         $mercadoPagoAT = $this->Parameter->get("mp_at");
-        //error_log("\MP URL:\n".json_encode($params["data_id"]),3,"../../logs/errorAgus.log");        
-        
-        $order = $this->Order->getByHash($hash);
-        $this->Order->savePaymentId($hash,$merchantOrderId);
+        MercadoPago\SDK::setAccessToken($mercadoPagoAT);
 
-        /*Esto es para confirmar el pago efectuado en MP*/
-        //$ch = curl_init('https://api.mercadopago.com/v1/payments/'.$paymentId);
-        /*
-        $ch = curl_init('https://api.mercadopago.com/merchant_orders/'.$merchantOrderId);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Authorization: Bearer '.$mercadoPagoAT
-        ));
-        $result = curl_exec($ch);
-        curl_close($ch);
+        $url_components = parse_url($_SERVER['REQUEST_URI']);
+        parse_str($url_components['query'], $params);
+
+        $notif_type = $params['type'];
+        $notif_topic = $params['topic'];
+
+        $payment_id = 0;
+        $merchant_order_id = 0;
+
+        if(isset($notif_type) && $notif_type=="payment") {
+            if(isset($params['data_id']) && !empty($params['data_id'])) {
+                $payment_id = $params['data_id'];
+            }    
+        } else {
+            if(isset($notif_topic) && $notif_topic=="payment") {
+                $payment_id = $_GET["id"];
+            } else if($notif_topic == "merchant_order") {
+                $merchant_order_id = $_GET["id"];
+            }
+        }
+
+        if($payment_id <= 0) {
+            if($merchant_order_id > 0) {
+                $ch = curl_init('https://api.mercadopago.com/merchant_orders/'.$merchant_order_id);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                    'Authorization: Bearer '.$mercadoPagoAT
+                ));
+                $result = curl_exec($ch);
+                $responseJson = json_decode($result, true);
+                curl_close($ch);
+
+                foreach ($responseJson['payments'] as $payment) {
+                    $payment_id = $payment['id'];
+                    break;
+                }
+                log_message('debug', 'MERCHANT ORDER RESPONSE', false);
+                log_message('info', $result);
+            }
+        }
+
+        log_message('debug', 'PAYMENT_ID', false);
+        log_message('info', $payment_id);
+        log_message('debug', 'MERCHANT_ORDER_ID', false);
+        log_message('info', $merchant_order_id);
+
+        $payment_status = "";
+        if($payment_id > 0) {
+            $this->Order->savePaymentId($hash,$payment_id);
+            $ch = curl_init('https://api.mercadopago.com/v1/payments/'.$payment_id);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Authorization: Bearer '.$mercadoPagoAT
+            ));
+            $result = curl_exec($ch);
+            $responseJson = json_decode($result, true);
+            curl_close($ch);
+            log_message('debug', 'PAYMENT RESPONSE STATUS', false);
+            log_message('info', $responseJson["status"]);
+            $payment_status = $responseJson["status"];
+
+            if($payment_status == 'approved') {
+                $this->Order->validate($hash,1);
+            } else if($payment_status == 'rejected') {
+                log_message('info', 'PAGO RECHAZADO: '.$payment_id);
+            } 
+        } else {
+            log_message('info', 'NO TENGO ID DEL PAGO');
+        }
+    
+        $obs = "Type: ".$notif_type." - Topic: ".$notif_topic
+            ." PaymentId: ".$payment_id." - MerchantOrderId: ".$merchant_order_id
+            ." Status: ".$payment_status;
+        $this->Order->setObs($hash,$obs);
         
-        $responseJson = json_decode($result, true);
-        
-        $status = $responseJson['order_status'];
-        
-        //error_log("\Fecha Aprobacion:\n".isset($fechaAprobacion)."\nStatus: ".$status."\n ",3,"../../logs/errorAgus.log");        
-        */
         $this->output->set_status_header(200);
         return $this->output->set_output(true);
     }

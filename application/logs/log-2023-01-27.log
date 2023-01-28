@@ -1,0 +1,3775 @@
+INFO - 2023-01-27 02:15:14 --> Config Class Initialized
+INFO - 2023-01-27 02:15:14 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:14 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:14 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:14 --> URI Class Initialized
+DEBUG - 2023-01-27 02:15:14 --> No URI present. Default controller set.
+INFO - 2023-01-27 02:15:14 --> Router Class Initialized
+INFO - 2023-01-27 02:15:14 --> Output Class Initialized
+INFO - 2023-01-27 02:15:14 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:14 --> Input Class Initialized
+INFO - 2023-01-27 02:15:14 --> Language Class Initialized
+INFO - 2023-01-27 02:15:14 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:14 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:14 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:14 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:14 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:14 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:14 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:14 --> Model "Pocket" initialized
+INFO - 2023-01-27 02:15:14 --> Model "Office" initialized
+INFO - 2023-01-27 02:15:14 --> Model "Extra" initialized
+INFO - 2023-01-27 02:15:14 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:14 --> Model "Barrio" initialized
+INFO - 2023-01-27 02:15:14 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-27 02:15:14 --> File loaded: /Applications/XAMPP/xamppfiles/htdocs/ebo/application/views/index.php
+INFO - 2023-01-27 02:15:14 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:14 --> Total execution time: 0.0476
+INFO - 2023-01-27 02:15:15 --> Config Class Initialized
+INFO - 2023-01-27 02:15:15 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:15 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:15 --> URI Class Initialized
+INFO - 2023-01-27 02:15:15 --> Router Class Initialized
+INFO - 2023-01-27 02:15:15 --> Output Class Initialized
+INFO - 2023-01-27 02:15:15 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:15 --> Input Class Initialized
+INFO - 2023-01-27 02:15:15 --> Language Class Initialized
+INFO - 2023-01-27 02:15:15 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:15 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:15 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:15 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:15 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:15 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:15 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:15 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:15 --> Total execution time: 0.0129
+INFO - 2023-01-27 02:15:15 --> Config Class Initialized
+INFO - 2023-01-27 02:15:15 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:15 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:15 --> URI Class Initialized
+INFO - 2023-01-27 02:15:15 --> Router Class Initialized
+INFO - 2023-01-27 02:15:15 --> Output Class Initialized
+INFO - 2023-01-27 02:15:15 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:15 --> Input Class Initialized
+INFO - 2023-01-27 02:15:15 --> Language Class Initialized
+INFO - 2023-01-27 02:15:15 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:15 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:15 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:15 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:15 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:15 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:15 --> Model "Extra" initialized
+INFO - 2023-01-27 02:15:15 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:15 --> Total execution time: 0.0114
+INFO - 2023-01-27 02:15:15 --> Config Class Initialized
+INFO - 2023-01-27 02:15:15 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:15 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:15 --> URI Class Initialized
+INFO - 2023-01-27 02:15:15 --> Router Class Initialized
+INFO - 2023-01-27 02:15:15 --> Output Class Initialized
+INFO - 2023-01-27 02:15:15 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:15 --> Input Class Initialized
+INFO - 2023-01-27 02:15:15 --> Language Class Initialized
+INFO - 2023-01-27 02:15:15 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:15 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:15 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:15 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:15 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:15 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:15 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:15 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:15 --> Total execution time: 0.0166
+INFO - 2023-01-27 02:15:15 --> Config Class Initialized
+INFO - 2023-01-27 02:15:15 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:15 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:15 --> URI Class Initialized
+INFO - 2023-01-27 02:15:15 --> Router Class Initialized
+INFO - 2023-01-27 02:15:15 --> Output Class Initialized
+INFO - 2023-01-27 02:15:15 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:15 --> Input Class Initialized
+INFO - 2023-01-27 02:15:15 --> Language Class Initialized
+INFO - 2023-01-27 02:15:15 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:15 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:15 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:15 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:15 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:15 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:15 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:15 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:15 --> Total execution time: 0.0191
+INFO - 2023-01-27 02:15:15 --> Config Class Initialized
+INFO - 2023-01-27 02:15:15 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:15 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:15 --> URI Class Initialized
+INFO - 2023-01-27 02:15:15 --> Router Class Initialized
+INFO - 2023-01-27 02:15:15 --> Output Class Initialized
+INFO - 2023-01-27 02:15:15 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:15 --> Input Class Initialized
+INFO - 2023-01-27 02:15:15 --> Language Class Initialized
+INFO - 2023-01-27 02:15:15 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:15 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:15 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:15 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:15 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:15 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:15 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-27 02:15:15 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:15 --> Total execution time: 0.0190
+INFO - 2023-01-27 02:15:15 --> Config Class Initialized
+INFO - 2023-01-27 02:15:15 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:15 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:15 --> URI Class Initialized
+INFO - 2023-01-27 02:15:15 --> Router Class Initialized
+INFO - 2023-01-27 02:15:15 --> Output Class Initialized
+INFO - 2023-01-27 02:15:15 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:15 --> Input Class Initialized
+INFO - 2023-01-27 02:15:15 --> Language Class Initialized
+INFO - 2023-01-27 02:15:15 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:15 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:15 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:15 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:15 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:15 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:15 --> Model "Barrio" initialized
+INFO - 2023-01-27 02:15:15 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:15 --> Total execution time: 0.0201
+INFO - 2023-01-27 02:15:15 --> Config Class Initialized
+INFO - 2023-01-27 02:15:15 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:15 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:15 --> URI Class Initialized
+INFO - 2023-01-27 02:15:15 --> Router Class Initialized
+INFO - 2023-01-27 02:15:15 --> Output Class Initialized
+INFO - 2023-01-27 02:15:15 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:15 --> Input Class Initialized
+INFO - 2023-01-27 02:15:15 --> Language Class Initialized
+INFO - 2023-01-27 02:15:15 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:15 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:15 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:15 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:15 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:15 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:15 --> Model "FormasPago" initialized
+INFO - 2023-01-27 02:15:15 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:15 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:15 --> Total execution time: 0.0184
+INFO - 2023-01-27 02:15:18 --> Config Class Initialized
+INFO - 2023-01-27 02:15:18 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:18 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:18 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:18 --> URI Class Initialized
+INFO - 2023-01-27 02:15:18 --> Router Class Initialized
+INFO - 2023-01-27 02:15:18 --> Output Class Initialized
+INFO - 2023-01-27 02:15:18 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:18 --> Input Class Initialized
+INFO - 2023-01-27 02:15:18 --> Language Class Initialized
+INFO - 2023-01-27 02:15:18 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:18 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:18 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:18 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:18 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:18 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:18 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-27 02:15:18 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:18 --> Total execution time: 0.0129
+INFO - 2023-01-27 02:15:18 --> Config Class Initialized
+INFO - 2023-01-27 02:15:18 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:18 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:18 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:18 --> URI Class Initialized
+INFO - 2023-01-27 02:15:18 --> Router Class Initialized
+INFO - 2023-01-27 02:15:18 --> Output Class Initialized
+INFO - 2023-01-27 02:15:18 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:18 --> Input Class Initialized
+INFO - 2023-01-27 02:15:18 --> Language Class Initialized
+INFO - 2023-01-27 02:15:18 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:18 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:18 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:18 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:18 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:18 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:18 --> Model "Pocket" initialized
+INFO - 2023-01-27 02:15:18 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:18 --> Total execution time: 0.0104
+INFO - 2023-01-27 02:15:18 --> Config Class Initialized
+INFO - 2023-01-27 02:15:18 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:18 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:18 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:18 --> URI Class Initialized
+INFO - 2023-01-27 02:15:18 --> Router Class Initialized
+INFO - 2023-01-27 02:15:18 --> Output Class Initialized
+INFO - 2023-01-27 02:15:18 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:18 --> Input Class Initialized
+INFO - 2023-01-27 02:15:18 --> Language Class Initialized
+INFO - 2023-01-27 02:15:18 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:18 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:18 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:18 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:18 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:18 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:18 --> Model "FormasPago" initialized
+INFO - 2023-01-27 02:15:18 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:18 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:18 --> Total execution time: 0.0139
+INFO - 2023-01-27 02:15:26 --> Config Class Initialized
+INFO - 2023-01-27 02:15:26 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:26 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:26 --> URI Class Initialized
+INFO - 2023-01-27 02:15:26 --> Router Class Initialized
+INFO - 2023-01-27 02:15:26 --> Output Class Initialized
+INFO - 2023-01-27 02:15:26 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:26 --> Input Class Initialized
+INFO - 2023-01-27 02:15:26 --> Language Class Initialized
+INFO - 2023-01-27 02:15:26 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:26 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:26 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:26 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:26 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:26 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:26 --> Model "Pocket" initialized
+INFO - 2023-01-27 02:15:26 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:26 --> Total execution time: 0.0241
+INFO - 2023-01-27 02:15:26 --> Config Class Initialized
+INFO - 2023-01-27 02:15:26 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:26 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:26 --> URI Class Initialized
+INFO - 2023-01-27 02:15:26 --> Router Class Initialized
+INFO - 2023-01-27 02:15:26 --> Output Class Initialized
+INFO - 2023-01-27 02:15:26 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:26 --> Input Class Initialized
+INFO - 2023-01-27 02:15:26 --> Language Class Initialized
+INFO - 2023-01-27 02:15:26 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:26 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:26 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:26 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:26 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:26 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:26 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:26 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:26 --> Total execution time: 0.0201
+INFO - 2023-01-27 02:15:26 --> Config Class Initialized
+INFO - 2023-01-27 02:15:26 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:26 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:26 --> URI Class Initialized
+INFO - 2023-01-27 02:15:26 --> Router Class Initialized
+INFO - 2023-01-27 02:15:26 --> Output Class Initialized
+INFO - 2023-01-27 02:15:26 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:26 --> Input Class Initialized
+INFO - 2023-01-27 02:15:26 --> Language Class Initialized
+INFO - 2023-01-27 02:15:26 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:26 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:26 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:26 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:26 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:26 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:26 --> Model "Barrio" initialized
+INFO - 2023-01-27 02:15:26 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:26 --> Total execution time: 0.0206
+INFO - 2023-01-27 02:15:26 --> Config Class Initialized
+INFO - 2023-01-27 02:15:26 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:26 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:26 --> URI Class Initialized
+INFO - 2023-01-27 02:15:26 --> Router Class Initialized
+INFO - 2023-01-27 02:15:26 --> Output Class Initialized
+INFO - 2023-01-27 02:15:26 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:26 --> Input Class Initialized
+INFO - 2023-01-27 02:15:26 --> Language Class Initialized
+INFO - 2023-01-27 02:15:26 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:26 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:26 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:26 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:26 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:26 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:26 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:26 --> Model "FormasPago" initialized
+INFO - 2023-01-27 02:15:26 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:26 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:26 --> Total execution time: 0.0209
+INFO - 2023-01-27 02:15:37 --> Config Class Initialized
+INFO - 2023-01-27 02:15:37 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:37 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:37 --> URI Class Initialized
+INFO - 2023-01-27 02:15:37 --> Router Class Initialized
+INFO - 2023-01-27 02:15:37 --> Output Class Initialized
+INFO - 2023-01-27 02:15:37 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:37 --> Input Class Initialized
+INFO - 2023-01-27 02:15:37 --> Language Class Initialized
+INFO - 2023-01-27 02:15:37 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:37 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:37 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:37 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:37 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:37 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:37 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:37 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:37 --> Total execution time: 0.0266
+INFO - 2023-01-27 02:15:37 --> Config Class Initialized
+INFO - 2023-01-27 02:15:37 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:37 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:37 --> URI Class Initialized
+INFO - 2023-01-27 02:15:37 --> Router Class Initialized
+INFO - 2023-01-27 02:15:37 --> Output Class Initialized
+INFO - 2023-01-27 02:15:37 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:37 --> Input Class Initialized
+INFO - 2023-01-27 02:15:37 --> Language Class Initialized
+INFO - 2023-01-27 02:15:37 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:37 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:37 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:37 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:37 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:37 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:37 --> Model "Order" initialized
+INFO - 2023-01-27 02:15:37 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-27 02:15:37 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:37 --> Total execution time: 0.1265
+INFO - 2023-01-27 02:15:37 --> Config Class Initialized
+INFO - 2023-01-27 02:15:37 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:37 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:37 --> URI Class Initialized
+INFO - 2023-01-27 02:15:37 --> Router Class Initialized
+INFO - 2023-01-27 02:15:37 --> Output Class Initialized
+INFO - 2023-01-27 02:15:37 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:37 --> Input Class Initialized
+INFO - 2023-01-27 02:15:37 --> Language Class Initialized
+INFO - 2023-01-27 02:15:37 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:37 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:37 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:37 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:37 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:37 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:37 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:15:37 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:37 --> Total execution time: 0.0147
+INFO - 2023-01-27 02:15:37 --> Config Class Initialized
+INFO - 2023-01-27 02:15:37 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:15:37 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:15:37 --> URI Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> No URI present. Default controller set.
+INFO - 2023-01-27 02:15:37 --> Router Class Initialized
+INFO - 2023-01-27 02:15:37 --> Output Class Initialized
+INFO - 2023-01-27 02:15:37 --> Security Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:15:37 --> Input Class Initialized
+INFO - 2023-01-27 02:15:37 --> Language Class Initialized
+INFO - 2023-01-27 02:15:37 --> Loader Class Initialized
+INFO - 2023-01-27 02:15:37 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:15:37 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:15:37 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:15:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:15:37 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:15:37 --> Controller Class Initialized
+INFO - 2023-01-27 02:15:37 --> Model "Parameter" initialized
+ERROR - 2023-01-27 02:15:37 --> Severity: Warning --> count(): Parameter must be an array or an object that implements Countable /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 28
+INFO - 2023-01-27 02:15:37 --> Model "Order" initialized
+INFO - 2023-01-27 02:15:37 --> Model "DiasEntregaPedidos" initialized
+INFO - 2023-01-27 02:15:37 --> Model "Pocket" initialized
+INFO - 2023-01-27 02:15:37 --> Model "TiposPedidos" initialized
+INFO - 2023-01-27 02:15:37 --> Model "Barrio" initialized
+INFO - 2023-01-27 02:15:37 --> Helper loaded: parser_helper
+INFO - 2023-01-27 02:15:37 --> Model "Office" initialized
+INFO - 2023-01-27 02:15:37 --> Model "Extra" initialized
+INFO - 2023-01-27 02:15:39 --> Final output sent to browser
+DEBUG - 2023-01-27 02:15:39 --> Total execution time: 1.4115
+INFO - 2023-01-27 02:16:37 --> Config Class Initialized
+INFO - 2023-01-27 02:16:37 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:16:37 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:16:37 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:16:37 --> URI Class Initialized
+INFO - 2023-01-27 02:16:37 --> Router Class Initialized
+INFO - 2023-01-27 02:16:37 --> Output Class Initialized
+INFO - 2023-01-27 02:16:37 --> Security Class Initialized
+DEBUG - 2023-01-27 02:16:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:16:37 --> Input Class Initialized
+INFO - 2023-01-27 02:16:37 --> Language Class Initialized
+INFO - 2023-01-27 02:16:37 --> Loader Class Initialized
+INFO - 2023-01-27 02:16:37 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:16:37 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:16:37 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:16:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:16:37 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:16:37 --> Controller Class Initialized
+INFO - 2023-01-27 02:16:37 --> Model "Order" initialized
+INFO - 2023-01-27 02:16:37 --> Model "Parameter" initialized
+INFO - 2023-01-27 02:16:38 --> Config Class Initialized
+INFO - 2023-01-27 02:16:38 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:16:38 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:16:38 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:16:38 --> URI Class Initialized
+INFO - 2023-01-27 02:16:38 --> Router Class Initialized
+INFO - 2023-01-27 02:16:38 --> Output Class Initialized
+INFO - 2023-01-27 02:16:38 --> Security Class Initialized
+DEBUG - 2023-01-27 02:16:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:16:38 --> Input Class Initialized
+INFO - 2023-01-27 02:16:38 --> Language Class Initialized
+INFO - 2023-01-27 02:16:38 --> Loader Class Initialized
+INFO - 2023-01-27 02:16:38 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:16:38 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:16:38 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:16:38 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:16:38 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:16:38 --> Controller Class Initialized
+INFO - 2023-01-27 02:16:38 --> Model "Order" initialized
+INFO - 2023-01-27 02:16:38 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:16:38 --> PAGO AMOUNT 
+INFO - 2023-01-27 02:16:38 --> 0
+INFO - 2023-01-27 02:16:38 --> Final output sent to browser
+DEBUG - 2023-01-27 02:16:38 --> Total execution time: 1.0766
+ERROR - 2023-01-27 02:16:39 --> Severity: Warning --> Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 769
+DEBUG - 2023-01-27 02:16:39 --> PAGO AMOUNT 
+INFO - 2023-01-27 02:16:39 --> 0
+INFO - 2023-01-27 02:16:39 --> Final output sent to browser
+DEBUG - 2023-01-27 02:16:39 --> Total execution time: 0.9605
+INFO - 2023-01-27 02:18:08 --> Config Class Initialized
+INFO - 2023-01-27 02:18:08 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:18:08 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:18:08 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:18:08 --> URI Class Initialized
+INFO - 2023-01-27 02:18:08 --> Router Class Initialized
+INFO - 2023-01-27 02:18:08 --> Output Class Initialized
+INFO - 2023-01-27 02:18:08 --> Security Class Initialized
+DEBUG - 2023-01-27 02:18:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:18:08 --> Input Class Initialized
+INFO - 2023-01-27 02:18:08 --> Language Class Initialized
+INFO - 2023-01-27 02:18:08 --> Loader Class Initialized
+INFO - 2023-01-27 02:18:08 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:18:08 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:18:08 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:18:08 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:18:08 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:18:08 --> Controller Class Initialized
+INFO - 2023-01-27 02:18:08 --> Model "Order" initialized
+INFO - 2023-01-27 02:18:08 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:18:09 --> TOPIC 
+INFO - 2023-01-27 02:18:09 --> 
+DEBUG - 2023-01-27 02:18:09 --> TYPE
+INFO - 2023-01-27 02:18:09 --> payment
+ERROR - 2023-01-27 02:18:09 --> Severity: Warning --> Invalid argument supplied for foreach() /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 773
+DEBUG - 2023-01-27 02:18:09 --> PAGO AMOUNT 
+INFO - 2023-01-27 02:18:09 --> 0
+INFO - 2023-01-27 02:18:09 --> Final output sent to browser
+DEBUG - 2023-01-27 02:18:09 --> Total execution time: 1.2392
+INFO - 2023-01-27 02:23:18 --> Config Class Initialized
+INFO - 2023-01-27 02:23:18 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:23:18 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:23:18 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:23:18 --> URI Class Initialized
+INFO - 2023-01-27 02:23:19 --> Router Class Initialized
+INFO - 2023-01-27 02:23:19 --> Output Class Initialized
+INFO - 2023-01-27 02:23:19 --> Security Class Initialized
+DEBUG - 2023-01-27 02:23:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:23:19 --> Input Class Initialized
+INFO - 2023-01-27 02:23:19 --> Language Class Initialized
+INFO - 2023-01-27 02:23:19 --> Loader Class Initialized
+INFO - 2023-01-27 02:23:19 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:23:19 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:23:19 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:23:19 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:23:19 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:23:19 --> Controller Class Initialized
+INFO - 2023-01-27 02:23:19 --> Model "Order" initialized
+INFO - 2023-01-27 02:23:19 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:23:20 --> TOPIC 
+INFO - 2023-01-27 02:23:20 --> 
+DEBUG - 2023-01-27 02:23:20 --> TYPE
+INFO - 2023-01-27 02:23:20 --> payment
+ERROR - 2023-01-27 02:23:20 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:23:20 --> Config Class Initialized
+INFO - 2023-01-27 02:23:20 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:23:20 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:23:20 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:23:20 --> URI Class Initialized
+INFO - 2023-01-27 02:23:20 --> Router Class Initialized
+INFO - 2023-01-27 02:23:20 --> Output Class Initialized
+INFO - 2023-01-27 02:23:20 --> Security Class Initialized
+DEBUG - 2023-01-27 02:23:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:23:20 --> Input Class Initialized
+INFO - 2023-01-27 02:23:20 --> Language Class Initialized
+INFO - 2023-01-27 02:23:20 --> Loader Class Initialized
+INFO - 2023-01-27 02:23:20 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:23:20 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:23:20 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:23:20 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:23:20 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:23:20 --> Controller Class Initialized
+INFO - 2023-01-27 02:23:20 --> Model "Order" initialized
+INFO - 2023-01-27 02:23:20 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:23:21 --> TOPIC 
+INFO - 2023-01-27 02:23:21 --> 
+DEBUG - 2023-01-27 02:23:21 --> TYPE
+INFO - 2023-01-27 02:23:21 --> payment
+ERROR - 2023-01-27 02:23:21 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:25:16 --> Config Class Initialized
+INFO - 2023-01-27 02:25:16 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:25:16 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:25:16 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:25:16 --> URI Class Initialized
+INFO - 2023-01-27 02:25:16 --> Router Class Initialized
+INFO - 2023-01-27 02:25:16 --> Output Class Initialized
+INFO - 2023-01-27 02:25:16 --> Security Class Initialized
+DEBUG - 2023-01-27 02:25:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:25:16 --> Input Class Initialized
+INFO - 2023-01-27 02:25:16 --> Language Class Initialized
+INFO - 2023-01-27 02:25:16 --> Loader Class Initialized
+INFO - 2023-01-27 02:25:16 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:25:16 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:25:16 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:25:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:25:16 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:25:16 --> Controller Class Initialized
+INFO - 2023-01-27 02:25:16 --> Model "Order" initialized
+INFO - 2023-01-27 02:25:16 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:25:17 --> TYPE
+INFO - 2023-01-27 02:25:17 --> payment
+ERROR - 2023-01-27 02:25:17 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:25:18 --> Config Class Initialized
+INFO - 2023-01-27 02:25:18 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:25:18 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:25:18 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:25:18 --> URI Class Initialized
+INFO - 2023-01-27 02:25:18 --> Router Class Initialized
+INFO - 2023-01-27 02:25:18 --> Output Class Initialized
+INFO - 2023-01-27 02:25:18 --> Security Class Initialized
+DEBUG - 2023-01-27 02:25:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:25:18 --> Input Class Initialized
+INFO - 2023-01-27 02:25:18 --> Language Class Initialized
+INFO - 2023-01-27 02:25:18 --> Loader Class Initialized
+INFO - 2023-01-27 02:25:18 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:25:18 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:25:18 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:25:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:25:18 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:25:18 --> Controller Class Initialized
+INFO - 2023-01-27 02:25:18 --> Model "Order" initialized
+INFO - 2023-01-27 02:25:18 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:25:19 --> TYPE
+INFO - 2023-01-27 02:25:19 --> payment
+ERROR - 2023-01-27 02:25:19 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:26:26 --> Config Class Initialized
+INFO - 2023-01-27 02:26:26 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:26:26 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:26:26 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:26:26 --> URI Class Initialized
+INFO - 2023-01-27 02:26:26 --> Router Class Initialized
+INFO - 2023-01-27 02:26:26 --> Output Class Initialized
+INFO - 2023-01-27 02:26:26 --> Security Class Initialized
+DEBUG - 2023-01-27 02:26:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:26:26 --> Input Class Initialized
+INFO - 2023-01-27 02:26:26 --> Language Class Initialized
+INFO - 2023-01-27 02:26:26 --> Loader Class Initialized
+INFO - 2023-01-27 02:26:26 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:26:26 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:26:26 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:26:26 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:26:26 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:26:26 --> Controller Class Initialized
+INFO - 2023-01-27 02:26:26 --> Model "Order" initialized
+INFO - 2023-01-27 02:26:26 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:26:27 --> TYPE
+INFO - 2023-01-27 02:26:27 --> payment
+ERROR - 2023-01-27 02:26:27 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:26:27 --> Config Class Initialized
+INFO - 2023-01-27 02:26:27 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:26:27 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:26:27 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:26:27 --> URI Class Initialized
+INFO - 2023-01-27 02:26:27 --> Router Class Initialized
+INFO - 2023-01-27 02:26:27 --> Output Class Initialized
+INFO - 2023-01-27 02:26:27 --> Security Class Initialized
+DEBUG - 2023-01-27 02:26:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:26:27 --> Input Class Initialized
+INFO - 2023-01-27 02:26:27 --> Language Class Initialized
+INFO - 2023-01-27 02:26:27 --> Loader Class Initialized
+INFO - 2023-01-27 02:26:27 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:26:27 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:26:27 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:26:27 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:26:27 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:26:27 --> Controller Class Initialized
+INFO - 2023-01-27 02:26:27 --> Model "Order" initialized
+INFO - 2023-01-27 02:26:27 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:26:28 --> TYPE
+INFO - 2023-01-27 02:26:28 --> payment
+ERROR - 2023-01-27 02:26:28 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:27:51 --> Config Class Initialized
+INFO - 2023-01-27 02:27:51 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:27:51 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:27:51 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:27:51 --> URI Class Initialized
+INFO - 2023-01-27 02:27:51 --> Router Class Initialized
+INFO - 2023-01-27 02:27:51 --> Output Class Initialized
+INFO - 2023-01-27 02:27:51 --> Security Class Initialized
+DEBUG - 2023-01-27 02:27:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:27:51 --> Input Class Initialized
+INFO - 2023-01-27 02:27:51 --> Language Class Initialized
+INFO - 2023-01-27 02:27:51 --> Loader Class Initialized
+INFO - 2023-01-27 02:27:51 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:27:51 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:27:51 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:27:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:27:51 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:27:51 --> Controller Class Initialized
+INFO - 2023-01-27 02:27:51 --> Model "Order" initialized
+INFO - 2023-01-27 02:27:51 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:27:52 --> GET
+INFO - 2023-01-27 02:27:52 --> 1
+DEBUG - 2023-01-27 02:27:52 --> TYPE
+INFO - 2023-01-27 02:27:52 --> payment
+ERROR - 2023-01-27 02:27:52 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:27:53 --> Config Class Initialized
+INFO - 2023-01-27 02:27:53 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:27:53 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:27:53 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:27:53 --> URI Class Initialized
+INFO - 2023-01-27 02:27:53 --> Router Class Initialized
+INFO - 2023-01-27 02:27:53 --> Output Class Initialized
+INFO - 2023-01-27 02:27:53 --> Security Class Initialized
+DEBUG - 2023-01-27 02:27:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:27:53 --> Input Class Initialized
+INFO - 2023-01-27 02:27:53 --> Language Class Initialized
+INFO - 2023-01-27 02:27:53 --> Loader Class Initialized
+INFO - 2023-01-27 02:27:53 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:27:53 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:27:53 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:27:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:27:53 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:27:53 --> Controller Class Initialized
+INFO - 2023-01-27 02:27:53 --> Model "Order" initialized
+INFO - 2023-01-27 02:27:53 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:27:54 --> GET
+INFO - 2023-01-27 02:27:54 --> 1
+DEBUG - 2023-01-27 02:27:54 --> TYPE
+INFO - 2023-01-27 02:27:54 --> payment
+ERROR - 2023-01-27 02:27:54 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:28:45 --> Config Class Initialized
+INFO - 2023-01-27 02:28:45 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:28:45 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:28:45 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:28:45 --> URI Class Initialized
+INFO - 2023-01-27 02:28:45 --> Router Class Initialized
+INFO - 2023-01-27 02:28:45 --> Output Class Initialized
+INFO - 2023-01-27 02:28:45 --> Security Class Initialized
+DEBUG - 2023-01-27 02:28:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:28:45 --> Input Class Initialized
+INFO - 2023-01-27 02:28:45 --> Language Class Initialized
+INFO - 2023-01-27 02:28:45 --> Loader Class Initialized
+INFO - 2023-01-27 02:28:45 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:28:45 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:28:45 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:28:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:28:45 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:28:45 --> Controller Class Initialized
+INFO - 2023-01-27 02:28:45 --> Model "Order" initialized
+INFO - 2023-01-27 02:28:45 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:28:46 --> GET
+INFO - 2023-01-27 02:28:46 --> Array
+DEBUG - 2023-01-27 02:28:46 --> TYPE
+INFO - 2023-01-27 02:28:46 --> payment
+ERROR - 2023-01-27 02:28:46 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:28:47 --> Config Class Initialized
+INFO - 2023-01-27 02:28:47 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:28:47 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:28:47 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:28:47 --> URI Class Initialized
+INFO - 2023-01-27 02:28:47 --> Router Class Initialized
+INFO - 2023-01-27 02:28:47 --> Output Class Initialized
+INFO - 2023-01-27 02:28:47 --> Security Class Initialized
+DEBUG - 2023-01-27 02:28:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:28:47 --> Input Class Initialized
+INFO - 2023-01-27 02:28:47 --> Language Class Initialized
+INFO - 2023-01-27 02:28:47 --> Loader Class Initialized
+INFO - 2023-01-27 02:28:47 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:28:47 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:28:47 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:28:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:28:47 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:28:47 --> Controller Class Initialized
+INFO - 2023-01-27 02:28:47 --> Model "Order" initialized
+INFO - 2023-01-27 02:28:47 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:28:48 --> GET
+INFO - 2023-01-27 02:28:48 --> Array
+DEBUG - 2023-01-27 02:28:48 --> TYPE
+INFO - 2023-01-27 02:28:48 --> payment
+ERROR - 2023-01-27 02:28:48 --> Severity: error --> Exception:  /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 124
+INFO - 2023-01-27 02:31:05 --> Config Class Initialized
+INFO - 2023-01-27 02:31:05 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:31:05 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:31:05 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:31:05 --> URI Class Initialized
+INFO - 2023-01-27 02:31:05 --> Router Class Initialized
+INFO - 2023-01-27 02:31:05 --> Output Class Initialized
+INFO - 2023-01-27 02:31:05 --> Security Class Initialized
+DEBUG - 2023-01-27 02:31:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:31:05 --> Input Class Initialized
+INFO - 2023-01-27 02:31:05 --> Language Class Initialized
+INFO - 2023-01-27 02:31:05 --> Loader Class Initialized
+INFO - 2023-01-27 02:31:05 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:31:05 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:31:05 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:31:05 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:31:05 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:31:05 --> Controller Class Initialized
+INFO - 2023-01-27 02:31:05 --> Model "Order" initialized
+INFO - 2023-01-27 02:31:05 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:31:05 --> PAGO LOG 
+INFO - 2023-01-27 02:31:05 --> 1
+INFO - 2023-01-27 02:31:05 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311405024&type=payment
+INFO - 2023-01-27 02:31:05 --> 1311405024, payment
+DEBUG - 2023-01-27 02:31:05 --> data_id
+INFO - 2023-01-27 02:31:05 --> 1311405024
+DEBUG - 2023-01-27 02:31:05 --> type
+INFO - 2023-01-27 02:31:05 --> payment
+DEBUG - 2023-01-27 02:31:05 --> id
+INFO - 2023-01-27 02:31:05 --> 
+DEBUG - 2023-01-27 02:31:05 --> topic
+INFO - 2023-01-27 02:31:05 --> 
+ERROR - 2023-01-27 02:31:05 --> Severity: error --> Exception: Please initialize SDK first /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 38
+INFO - 2023-01-27 02:31:06 --> Config Class Initialized
+INFO - 2023-01-27 02:31:06 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:31:06 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:31:06 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:31:06 --> URI Class Initialized
+INFO - 2023-01-27 02:31:06 --> Router Class Initialized
+INFO - 2023-01-27 02:31:06 --> Output Class Initialized
+INFO - 2023-01-27 02:31:06 --> Security Class Initialized
+DEBUG - 2023-01-27 02:31:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:31:06 --> Input Class Initialized
+INFO - 2023-01-27 02:31:06 --> Language Class Initialized
+INFO - 2023-01-27 02:31:06 --> Loader Class Initialized
+INFO - 2023-01-27 02:31:06 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:31:06 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:31:06 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:31:06 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:31:06 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:31:06 --> Controller Class Initialized
+INFO - 2023-01-27 02:31:06 --> Model "Order" initialized
+INFO - 2023-01-27 02:31:06 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:31:06 --> PAGO LOG 
+INFO - 2023-01-27 02:31:06 --> 1
+INFO - 2023-01-27 02:31:06 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311405024&type=payment
+INFO - 2023-01-27 02:31:06 --> 1311405024, payment
+DEBUG - 2023-01-27 02:31:06 --> data_id
+INFO - 2023-01-27 02:31:06 --> 1311405024
+DEBUG - 2023-01-27 02:31:06 --> type
+INFO - 2023-01-27 02:31:06 --> payment
+DEBUG - 2023-01-27 02:31:06 --> id
+INFO - 2023-01-27 02:31:06 --> 
+DEBUG - 2023-01-27 02:31:06 --> topic
+INFO - 2023-01-27 02:31:06 --> 
+ERROR - 2023-01-27 02:31:06 --> Severity: error --> Exception: Please initialize SDK first /Applications/XAMPP/xamppfiles/htdocs/ebo/vendor/mercadopago/dx-php/src/MercadoPago/Entity.php 38
+INFO - 2023-01-27 02:33:15 --> Config Class Initialized
+INFO - 2023-01-27 02:33:15 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:33:15 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:33:15 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:33:15 --> URI Class Initialized
+INFO - 2023-01-27 02:33:15 --> Router Class Initialized
+INFO - 2023-01-27 02:33:15 --> Output Class Initialized
+INFO - 2023-01-27 02:33:15 --> Security Class Initialized
+DEBUG - 2023-01-27 02:33:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:33:15 --> Input Class Initialized
+INFO - 2023-01-27 02:33:15 --> Language Class Initialized
+INFO - 2023-01-27 02:33:15 --> Loader Class Initialized
+INFO - 2023-01-27 02:33:15 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:33:15 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:33:15 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:33:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:33:15 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:33:15 --> Controller Class Initialized
+INFO - 2023-01-27 02:33:15 --> Model "Order" initialized
+INFO - 2023-01-27 02:33:15 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:33:16 --> PAGO LOG 
+INFO - 2023-01-27 02:33:16 --> 1
+INFO - 2023-01-27 02:33:16 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311403402&type=payment
+INFO - 2023-01-27 02:33:16 --> 1311403402, payment
+DEBUG - 2023-01-27 02:33:16 --> data_id
+INFO - 2023-01-27 02:33:16 --> 1311403402
+DEBUG - 2023-01-27 02:33:16 --> type
+INFO - 2023-01-27 02:33:16 --> payment
+DEBUG - 2023-01-27 02:33:16 --> id
+INFO - 2023-01-27 02:33:16 --> 
+DEBUG - 2023-01-27 02:33:16 --> topic
+INFO - 2023-01-27 02:33:16 --> 
+DEBUG - 2023-01-27 02:33:16 --> PAYMENT
+INFO - 2023-01-27 02:33:16 --> 1
+DEBUG - 2023-01-27 02:33:17 --> responseJson
+INFO - 2023-01-27 02:33:17 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T21:33:14.000-04:00
+            [date_last_updated] => 2023-01-26T21:33:14.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T21:33:14.612-04:00
+    [date_last_updated] => 2023-01-26T21:33:14.778-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311403402
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 02:33:17 --> Status: rejected
+ERROR - 2023-01-27 02:33:17 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:875) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 02:33:17 --> Final output sent to browser
+DEBUG - 2023-01-27 02:33:17 --> Total execution time: 2.1072
+INFO - 2023-01-27 02:40:59 --> Config Class Initialized
+INFO - 2023-01-27 02:40:59 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:40:59 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:40:59 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:40:59 --> URI Class Initialized
+INFO - 2023-01-27 02:40:59 --> Router Class Initialized
+INFO - 2023-01-27 02:40:59 --> Output Class Initialized
+INFO - 2023-01-27 02:40:59 --> Security Class Initialized
+DEBUG - 2023-01-27 02:40:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:40:59 --> Input Class Initialized
+INFO - 2023-01-27 02:40:59 --> Language Class Initialized
+INFO - 2023-01-27 02:40:59 --> Loader Class Initialized
+INFO - 2023-01-27 02:40:59 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:40:59 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:40:59 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:40:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:40:59 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:40:59 --> Controller Class Initialized
+INFO - 2023-01-27 02:40:59 --> Model "Order" initialized
+INFO - 2023-01-27 02:40:59 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:41:00 --> PAGO LOG 
+INFO - 2023-01-27 02:41:00 --> 1
+INFO - 2023-01-27 02:41:00 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311404980&type=payment
+INFO - 2023-01-27 02:41:00 --> 1311404980, payment
+DEBUG - 2023-01-27 02:41:00 --> data_id
+INFO - 2023-01-27 02:41:00 --> 1311404980
+DEBUG - 2023-01-27 02:41:00 --> type
+INFO - 2023-01-27 02:41:00 --> payment
+DEBUG - 2023-01-27 02:41:00 --> id
+INFO - 2023-01-27 02:41:00 --> 
+DEBUG - 2023-01-27 02:41:00 --> topic
+INFO - 2023-01-27 02:41:00 --> 
+DEBUG - 2023-01-27 02:41:00 --> PAYMENT
+INFO - 2023-01-27 02:41:00 --> 1
+DEBUG - 2023-01-27 02:41:01 --> responseJson
+INFO - 2023-01-27 02:41:01 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T21:23:18.000-04:00
+            [date_last_updated] => 2023-01-26T21:23:18.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T21:23:18.391-04:00
+    [date_last_updated] => 2023-01-26T21:23:18.543-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311404980
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 02:41:01 --> Status: rejected
+ERROR - 2023-01-27 02:41:01 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:875) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 02:41:01 --> Final output sent to browser
+DEBUG - 2023-01-27 02:41:01 --> Total execution time: 2.3625
+INFO - 2023-01-27 02:45:02 --> Config Class Initialized
+INFO - 2023-01-27 02:45:02 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:45:02 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:45:02 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:45:02 --> URI Class Initialized
+INFO - 2023-01-27 02:45:02 --> Router Class Initialized
+INFO - 2023-01-27 02:45:02 --> Output Class Initialized
+INFO - 2023-01-27 02:45:02 --> Security Class Initialized
+DEBUG - 2023-01-27 02:45:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:45:02 --> Input Class Initialized
+INFO - 2023-01-27 02:45:02 --> Language Class Initialized
+INFO - 2023-01-27 02:45:02 --> Loader Class Initialized
+INFO - 2023-01-27 02:45:02 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:45:02 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:45:02 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:45:02 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:45:02 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:45:02 --> Controller Class Initialized
+INFO - 2023-01-27 02:45:02 --> Model "Order" initialized
+INFO - 2023-01-27 02:45:02 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:45:03 --> PAGO LOG 
+INFO - 2023-01-27 02:45:03 --> 1
+INFO - 2023-01-27 02:45:03 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311405008&type=payment
+INFO - 2023-01-27 02:45:03 --> 1311405008, payment
+DEBUG - 2023-01-27 02:45:03 --> data_id
+INFO - 2023-01-27 02:45:03 --> 1311405008
+DEBUG - 2023-01-27 02:45:03 --> type
+INFO - 2023-01-27 02:45:03 --> payment
+DEBUG - 2023-01-27 02:45:03 --> id
+INFO - 2023-01-27 02:45:03 --> 
+DEBUG - 2023-01-27 02:45:03 --> topic
+INFO - 2023-01-27 02:45:03 --> 
+DEBUG - 2023-01-27 02:45:03 --> PAYMENT
+INFO - 2023-01-27 02:45:03 --> 1
+DEBUG - 2023-01-27 02:45:04 --> responseJson
+INFO - 2023-01-27 02:45:04 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T21:26:25.000-04:00
+            [date_last_updated] => 2023-01-26T21:26:25.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T21:26:25.582-04:00
+    [date_last_updated] => 2023-01-26T21:26:25.732-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311405008
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 02:45:04 --> Status: rejected
+ERROR - 2023-01-27 02:45:04 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:875) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 02:45:04 --> Final output sent to browser
+DEBUG - 2023-01-27 02:45:04 --> Total execution time: 2.2763
+INFO - 2023-01-27 02:45:14 --> Config Class Initialized
+INFO - 2023-01-27 02:45:14 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:45:14 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:45:14 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:45:14 --> URI Class Initialized
+INFO - 2023-01-27 02:45:14 --> Router Class Initialized
+INFO - 2023-01-27 02:45:14 --> Output Class Initialized
+INFO - 2023-01-27 02:45:14 --> Security Class Initialized
+DEBUG - 2023-01-27 02:45:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:45:14 --> Input Class Initialized
+INFO - 2023-01-27 02:45:14 --> Language Class Initialized
+INFO - 2023-01-27 02:45:14 --> Loader Class Initialized
+INFO - 2023-01-27 02:45:14 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:45:14 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:45:14 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:45:14 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:45:14 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:45:14 --> Controller Class Initialized
+INFO - 2023-01-27 02:45:14 --> Model "Order" initialized
+INFO - 2023-01-27 02:45:14 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:45:14 --> PAGO LOG 
+INFO - 2023-01-27 02:45:14 --> 1
+INFO - 2023-01-27 02:45:14 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311403394&type=payment
+INFO - 2023-01-27 02:45:14 --> 1311403394, payment
+DEBUG - 2023-01-27 02:45:14 --> data_id
+INFO - 2023-01-27 02:45:14 --> 1311403394
+DEBUG - 2023-01-27 02:45:14 --> type
+INFO - 2023-01-27 02:45:14 --> payment
+DEBUG - 2023-01-27 02:45:14 --> id
+INFO - 2023-01-27 02:45:14 --> 
+DEBUG - 2023-01-27 02:45:14 --> topic
+INFO - 2023-01-27 02:45:14 --> 
+DEBUG - 2023-01-27 02:45:15 --> PAYMENT
+INFO - 2023-01-27 02:45:15 --> 1
+DEBUG - 2023-01-27 02:45:16 --> responseJson
+INFO - 2023-01-27 02:45:16 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T21:28:45.000-04:00
+            [date_last_updated] => 2023-01-26T21:28:45.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T21:28:45.170-04:00
+    [date_last_updated] => 2023-01-26T21:28:45.322-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311403394
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 02:45:16 --> Status: rejected
+ERROR - 2023-01-27 02:45:16 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:875) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 02:45:16 --> Final output sent to browser
+DEBUG - 2023-01-27 02:45:16 --> Total execution time: 2.2867
+INFO - 2023-01-27 02:45:18 --> Config Class Initialized
+INFO - 2023-01-27 02:45:18 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:45:18 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:45:18 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:45:18 --> URI Class Initialized
+INFO - 2023-01-27 02:45:18 --> Router Class Initialized
+INFO - 2023-01-27 02:45:18 --> Output Class Initialized
+INFO - 2023-01-27 02:45:18 --> Security Class Initialized
+DEBUG - 2023-01-27 02:45:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:45:18 --> Input Class Initialized
+INFO - 2023-01-27 02:45:18 --> Language Class Initialized
+INFO - 2023-01-27 02:45:18 --> Loader Class Initialized
+INFO - 2023-01-27 02:45:18 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:45:18 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:45:18 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:45:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:45:18 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:45:18 --> Controller Class Initialized
+INFO - 2023-01-27 02:45:18 --> Model "Order" initialized
+INFO - 2023-01-27 02:45:18 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:45:19 --> PAGO LOG 
+INFO - 2023-01-27 02:45:19 --> 1
+INFO - 2023-01-27 02:45:19 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311403368&type=payment
+INFO - 2023-01-27 02:45:19 --> 1311403368, payment
+DEBUG - 2023-01-27 02:45:19 --> data_id
+INFO - 2023-01-27 02:45:19 --> 1311403368
+DEBUG - 2023-01-27 02:45:19 --> type
+INFO - 2023-01-27 02:45:19 --> payment
+DEBUG - 2023-01-27 02:45:19 --> id
+INFO - 2023-01-27 02:45:19 --> 
+DEBUG - 2023-01-27 02:45:19 --> topic
+INFO - 2023-01-27 02:45:19 --> 
+DEBUG - 2023-01-27 02:45:19 --> PAYMENT
+INFO - 2023-01-27 02:45:19 --> 1
+DEBUG - 2023-01-27 02:45:21 --> responseJson
+INFO - 2023-01-27 02:45:21 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T21:25:15.000-04:00
+            [date_last_updated] => 2023-01-26T21:25:15.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T21:25:15.692-04:00
+    [date_last_updated] => 2023-01-26T21:25:15.855-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311403368
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 02:45:21 --> Status: rejected
+ERROR - 2023-01-27 02:45:21 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:875) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 02:45:21 --> Final output sent to browser
+DEBUG - 2023-01-27 02:45:21 --> Total execution time: 2.5786
+INFO - 2023-01-27 02:46:05 --> Config Class Initialized
+INFO - 2023-01-27 02:46:05 --> Hooks Class Initialized
+DEBUG - 2023-01-27 02:46:05 --> UTF-8 Support Enabled
+INFO - 2023-01-27 02:46:05 --> Utf8 Class Initialized
+INFO - 2023-01-27 02:46:05 --> URI Class Initialized
+INFO - 2023-01-27 02:46:05 --> Router Class Initialized
+INFO - 2023-01-27 02:46:05 --> Output Class Initialized
+INFO - 2023-01-27 02:46:05 --> Security Class Initialized
+DEBUG - 2023-01-27 02:46:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 02:46:05 --> Input Class Initialized
+INFO - 2023-01-27 02:46:06 --> Language Class Initialized
+INFO - 2023-01-27 02:46:06 --> Loader Class Initialized
+INFO - 2023-01-27 02:46:06 --> Helper loaded: url_helper
+INFO - 2023-01-27 02:46:06 --> Helper loaded: util_helper
+INFO - 2023-01-27 02:46:06 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 02:46:06 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 02:46:06 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 02:46:06 --> Controller Class Initialized
+INFO - 2023-01-27 02:46:06 --> Model "Order" initialized
+INFO - 2023-01-27 02:46:06 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 02:46:06 --> PAGO LOG 
+INFO - 2023-01-27 02:46:06 --> 1
+INFO - 2023-01-27 02:46:06 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311403380&type=payment
+INFO - 2023-01-27 02:46:06 --> 1311403380, payment
+DEBUG - 2023-01-27 02:46:06 --> data_id
+INFO - 2023-01-27 02:46:06 --> 1311403380
+DEBUG - 2023-01-27 02:46:06 --> type
+INFO - 2023-01-27 02:46:06 --> payment
+DEBUG - 2023-01-27 02:46:06 --> id
+INFO - 2023-01-27 02:46:06 --> 
+DEBUG - 2023-01-27 02:46:06 --> topic
+INFO - 2023-01-27 02:46:06 --> 
+DEBUG - 2023-01-27 02:46:07 --> PAYMENT
+INFO - 2023-01-27 02:46:07 --> 1
+DEBUG - 2023-01-27 02:46:08 --> responseJson
+INFO - 2023-01-27 02:46:08 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T21:27:51.000-04:00
+            [date_last_updated] => 2023-01-26T21:27:51.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T21:27:51.269-04:00
+    [date_last_updated] => 2023-01-26T21:27:51.429-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311403380
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 02:46:08 --> Status: rejected
+ERROR - 2023-01-27 02:46:08 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:875) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 02:46:08 --> Final output sent to browser
+DEBUG - 2023-01-27 02:46:08 --> Total execution time: 2.3693
+INFO - 2023-01-27 03:10:59 --> Config Class Initialized
+INFO - 2023-01-27 03:10:59 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:10:59 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:10:59 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:10:59 --> URI Class Initialized
+INFO - 2023-01-27 03:10:59 --> Router Class Initialized
+INFO - 2023-01-27 03:10:59 --> Output Class Initialized
+INFO - 2023-01-27 03:10:59 --> Security Class Initialized
+DEBUG - 2023-01-27 03:10:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:10:59 --> Input Class Initialized
+INFO - 2023-01-27 03:10:59 --> Language Class Initialized
+INFO - 2023-01-27 03:10:59 --> Loader Class Initialized
+INFO - 2023-01-27 03:10:59 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:10:59 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:10:59 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:10:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:10:59 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:10:59 --> Controller Class Initialized
+INFO - 2023-01-27 03:10:59 --> Model "Order" initialized
+INFO - 2023-01-27 03:10:59 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:11:00 --> PAGO LOG 
+INFO - 2023-01-27 03:11:00 --> 1
+INFO - 2023-01-27 03:11:00 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311405190&type=payment
+INFO - 2023-01-27 03:11:00 --> 1311405190, payment
+DEBUG - 2023-01-27 03:11:00 --> data_id
+INFO - 2023-01-27 03:11:00 --> 1311405190
+DEBUG - 2023-01-27 03:11:00 --> type
+INFO - 2023-01-27 03:11:00 --> payment
+DEBUG - 2023-01-27 03:11:00 --> id
+INFO - 2023-01-27 03:11:00 --> 
+DEBUG - 2023-01-27 03:11:00 --> topic
+INFO - 2023-01-27 03:11:00 --> 
+DEBUG - 2023-01-27 03:11:01 --> PAYMENT
+INFO - 2023-01-27 03:11:01 --> 1
+DEBUG - 2023-01-27 03:11:01 --> MERCHANT ORDER
+INFO - 2023-01-27 03:11:01 --> 1
+DEBUG - 2023-01-27 03:11:02 --> responseJson
+INFO - 2023-01-27 03:11:02 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T22:10:59.000-04:00
+            [date_last_updated] => 2023-01-26T22:10:59.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T22:10:59.092-04:00
+    [date_last_updated] => 2023-01-26T22:10:59.248-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311405190
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 03:11:02 --> Status: rejected
+ERROR - 2023-01-27 03:11:02 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:876) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 03:11:02 --> Final output sent to browser
+DEBUG - 2023-01-27 03:11:02 --> Total execution time: 2.3463
+INFO - 2023-01-27 03:12:10 --> Config Class Initialized
+INFO - 2023-01-27 03:12:10 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:12:10 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:12:10 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:12:10 --> URI Class Initialized
+INFO - 2023-01-27 03:12:10 --> Router Class Initialized
+INFO - 2023-01-27 03:12:10 --> Output Class Initialized
+INFO - 2023-01-27 03:12:10 --> Security Class Initialized
+DEBUG - 2023-01-27 03:12:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:12:10 --> Input Class Initialized
+INFO - 2023-01-27 03:12:10 --> Language Class Initialized
+INFO - 2023-01-27 03:12:10 --> Loader Class Initialized
+INFO - 2023-01-27 03:12:10 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:12:10 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:12:10 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:12:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:12:10 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:12:10 --> Controller Class Initialized
+INFO - 2023-01-27 03:12:10 --> Model "Order" initialized
+INFO - 2023-01-27 03:12:10 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:12:11 --> PAGO LOG 
+INFO - 2023-01-27 03:12:11 --> 1
+INFO - 2023-01-27 03:12:11 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311405224&type=payment
+INFO - 2023-01-27 03:12:11 --> 1311405224, payment
+DEBUG - 2023-01-27 03:12:11 --> data_id
+INFO - 2023-01-27 03:12:11 --> 1311405224
+DEBUG - 2023-01-27 03:12:11 --> type
+INFO - 2023-01-27 03:12:11 --> payment
+DEBUG - 2023-01-27 03:12:11 --> id
+INFO - 2023-01-27 03:12:11 --> 
+DEBUG - 2023-01-27 03:12:11 --> topic
+INFO - 2023-01-27 03:12:11 --> 
+DEBUG - 2023-01-27 03:12:11 --> PAYMENT
+INFO - 2023-01-27 03:12:11 --> 1
+DEBUG - 2023-01-27 03:12:11 --> MERCHANT ORDER2222
+INFO - 2023-01-27 03:12:11 --> 1
+DEBUG - 2023-01-27 03:12:12 --> responseJson
+INFO - 2023-01-27 03:12:12 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T22:12:09.000-04:00
+            [date_last_updated] => 2023-01-26T22:12:09.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T22:12:09.527-04:00
+    [date_last_updated] => 2023-01-26T22:12:09.688-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311405224
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 03:12:12 --> Status: rejected
+ERROR - 2023-01-27 03:12:12 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:876) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 03:12:12 --> Final output sent to browser
+DEBUG - 2023-01-27 03:12:12 --> Total execution time: 2.4807
+INFO - 2023-01-27 03:14:11 --> Config Class Initialized
+INFO - 2023-01-27 03:14:11 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:14:11 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:14:11 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:14:11 --> URI Class Initialized
+INFO - 2023-01-27 03:14:11 --> Router Class Initialized
+INFO - 2023-01-27 03:14:11 --> Output Class Initialized
+INFO - 2023-01-27 03:14:11 --> Security Class Initialized
+DEBUG - 2023-01-27 03:14:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:14:11 --> Input Class Initialized
+INFO - 2023-01-27 03:14:11 --> Language Class Initialized
+INFO - 2023-01-27 03:14:11 --> Loader Class Initialized
+INFO - 2023-01-27 03:14:11 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:14:11 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:14:11 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:14:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:14:11 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:14:11 --> Controller Class Initialized
+INFO - 2023-01-27 03:14:11 --> Model "Order" initialized
+INFO - 2023-01-27 03:14:11 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:14:11 --> PAGO LOG 
+INFO - 2023-01-27 03:14:11 --> 1
+INFO - 2023-01-27 03:14:11 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311405244&type=payment
+INFO - 2023-01-27 03:14:11 --> 1311405244, payment
+DEBUG - 2023-01-27 03:14:11 --> data_id
+INFO - 2023-01-27 03:14:11 --> 1311405244
+DEBUG - 2023-01-27 03:14:11 --> type
+INFO - 2023-01-27 03:14:11 --> payment
+DEBUG - 2023-01-27 03:14:11 --> id
+INFO - 2023-01-27 03:14:11 --> 
+DEBUG - 2023-01-27 03:14:11 --> topic
+INFO - 2023-01-27 03:14:11 --> 
+DEBUG - 2023-01-27 03:14:12 --> PAYMENT
+ERROR - 2023-01-27 03:14:12 --> Severity: Warning --> implode(): Invalid arguments passed /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 876
+INFO - 2023-01-27 03:14:12 --> 
+DEBUG - 2023-01-27 03:14:12 --> MERCHANT ORDER2222
+INFO - 2023-01-27 03:14:12 --> 1
+DEBUG - 2023-01-27 03:14:13 --> responseJson
+INFO - 2023-01-27 03:14:13 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T22:14:10.000-04:00
+            [date_last_updated] => 2023-01-26T22:14:10.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T22:14:10.114-04:00
+    [date_last_updated] => 2023-01-26T22:14:10.390-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311405244
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 03:14:13 --> Status: rejected
+ERROR - 2023-01-27 03:14:13 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:878) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 03:14:13 --> Final output sent to browser
+DEBUG - 2023-01-27 03:14:13 --> Total execution time: 2.2691
+INFO - 2023-01-27 03:15:39 --> Config Class Initialized
+INFO - 2023-01-27 03:15:39 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:15:39 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:15:39 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:15:39 --> URI Class Initialized
+INFO - 2023-01-27 03:15:39 --> Router Class Initialized
+INFO - 2023-01-27 03:15:39 --> Output Class Initialized
+INFO - 2023-01-27 03:15:39 --> Security Class Initialized
+DEBUG - 2023-01-27 03:15:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:15:39 --> Input Class Initialized
+INFO - 2023-01-27 03:15:39 --> Language Class Initialized
+INFO - 2023-01-27 03:15:39 --> Loader Class Initialized
+INFO - 2023-01-27 03:15:39 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:15:39 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:15:39 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:15:39 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:15:39 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:15:39 --> Controller Class Initialized
+INFO - 2023-01-27 03:15:39 --> Model "Order" initialized
+INFO - 2023-01-27 03:15:39 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:15:40 --> PAGO LOG 
+INFO - 2023-01-27 03:15:40 --> 1
+INFO - 2023-01-27 03:15:40 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311405258&type=payment
+INFO - 2023-01-27 03:15:40 --> 1311405258, payment
+DEBUG - 2023-01-27 03:15:40 --> data_id
+INFO - 2023-01-27 03:15:40 --> 1311405258
+DEBUG - 2023-01-27 03:15:40 --> type
+INFO - 2023-01-27 03:15:40 --> payment
+DEBUG - 2023-01-27 03:15:40 --> id
+INFO - 2023-01-27 03:15:40 --> 
+DEBUG - 2023-01-27 03:15:40 --> topic
+INFO - 2023-01-27 03:15:40 --> 
+DEBUG - 2023-01-27 03:15:40 --> PAYMENT
+INFO - 2023-01-27 03:15:40 --> {"build_version":"2.129.1","charges_details":[],"payment_method":{"type":"credit_card"},"point_of_interaction":{"business_info":{"sub_unit":"checkout_pro","unit":"online_payments"},"type":"UNSPECIFIED"}}
+DEBUG - 2023-01-27 03:15:40 --> MERCHANT ORDER2222
+INFO - 2023-01-27 03:15:40 --> 1
+DEBUG - 2023-01-27 03:15:41 --> responseJson
+INFO - 2023-01-27 03:15:41 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T22:15:38.000-04:00
+            [date_last_updated] => 2023-01-26T22:15:38.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T22:15:38.258-04:00
+    [date_last_updated] => 2023-01-26T22:15:38.633-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311405258
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 03:15:41 --> Status: rejected
+ERROR - 2023-01-27 03:15:41 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php:878) /Applications/XAMPP/xamppfiles/htdocs/ebo/system/core/Common.php 570
+INFO - 2023-01-27 03:15:41 --> Final output sent to browser
+DEBUG - 2023-01-27 03:15:41 --> Total execution time: 2.4924
+INFO - 2023-01-27 03:16:37 --> Config Class Initialized
+INFO - 2023-01-27 03:16:37 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:16:37 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:16:37 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:16:37 --> URI Class Initialized
+INFO - 2023-01-27 03:16:37 --> Router Class Initialized
+INFO - 2023-01-27 03:16:37 --> Output Class Initialized
+INFO - 2023-01-27 03:16:37 --> Security Class Initialized
+DEBUG - 2023-01-27 03:16:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:16:37 --> Input Class Initialized
+INFO - 2023-01-27 03:16:37 --> Language Class Initialized
+INFO - 2023-01-27 03:16:37 --> Loader Class Initialized
+INFO - 2023-01-27 03:16:37 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:16:37 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:16:37 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:16:37 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:16:37 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:16:37 --> Controller Class Initialized
+INFO - 2023-01-27 03:16:37 --> Model "Order" initialized
+INFO - 2023-01-27 03:16:37 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:16:38 --> PAGO LOG 
+INFO - 2023-01-27 03:16:38 --> 1
+INFO - 2023-01-27 03:16:38 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311405266&type=payment
+INFO - 2023-01-27 03:16:38 --> 1311405266, payment
+DEBUG - 2023-01-27 03:16:38 --> data_id
+INFO - 2023-01-27 03:16:38 --> 1311405266
+DEBUG - 2023-01-27 03:16:38 --> type
+INFO - 2023-01-27 03:16:38 --> payment
+DEBUG - 2023-01-27 03:16:38 --> id
+INFO - 2023-01-27 03:16:38 --> 
+DEBUG - 2023-01-27 03:16:38 --> topic
+INFO - 2023-01-27 03:16:38 --> 
+DEBUG - 2023-01-27 03:16:39 --> PAYMENT
+INFO - 2023-01-27 03:16:39 --> {"build_version":"2.129.1","charges_details":[],"payment_method":{"type":"credit_card"},"point_of_interaction":{"business_info":{"sub_unit":"checkout_pro","unit":"online_payments"},"type":"UNSPECIFIED"}}
+DEBUG - 2023-01-27 03:16:39 --> MERCHANT ORDER2222
+INFO - 2023-01-27 03:16:39 --> {"external_reference":"","preference_id":"75232795-f8a2dc2e-5cf1-487f-bf13-077ac5419e25","payouts":[],"notification_url":"http:\/\/agusventu.tplinkdns.com\/ebo\/payment_confirmation\/b1a7a8aa8bdecc3be3aa8f594326701561d89f32","date_created":"2023-01-26T21:16:37.140-04:00","last_updated":"2023-01-26T21:16:37.140-04:00","shipping_cost":0,"total_amount":1951,"site_id":"MLA","paid_amount":0,"refunded_amount":0,"additional_info":"","order_status":"payment_required"}
+DEBUG - 2023-01-27 03:16:40 --> responseJson
+INFO - 2023-01-27 03:16:40 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T22:16:37.000-04:00
+            [date_last_updated] => 2023-01-26T22:16:37.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T22:16:37.138-04:00
+    [date_last_updated] => 2023-01-26T22:16:37.309-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311405266
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 03:16:40 --> Status: rejected
+INFO - 2023-01-27 03:16:40 --> Final output sent to browser
+DEBUG - 2023-01-27 03:16:40 --> Total execution time: 2.2769
+INFO - 2023-01-27 03:19:35 --> Config Class Initialized
+INFO - 2023-01-27 03:19:35 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:19:35 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:19:35 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:19:35 --> URI Class Initialized
+INFO - 2023-01-27 03:19:35 --> Router Class Initialized
+INFO - 2023-01-27 03:19:35 --> Output Class Initialized
+INFO - 2023-01-27 03:19:35 --> Security Class Initialized
+DEBUG - 2023-01-27 03:19:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:19:35 --> Input Class Initialized
+INFO - 2023-01-27 03:19:35 --> Language Class Initialized
+INFO - 2023-01-27 03:19:35 --> Loader Class Initialized
+INFO - 2023-01-27 03:19:35 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:19:35 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:19:35 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:19:35 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:19:35 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:19:35 --> Controller Class Initialized
+INFO - 2023-01-27 03:19:35 --> Model "Order" initialized
+INFO - 2023-01-27 03:19:35 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:19:36 --> PAGO LOG 
+INFO - 2023-01-27 03:19:36 --> 1
+INFO - 2023-01-27 03:19:36 --> /ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32, data.id=1311403736&type=payment
+INFO - 2023-01-27 03:19:36 --> 1311403736, payment
+DEBUG - 2023-01-27 03:19:36 --> data_id
+INFO - 2023-01-27 03:19:36 --> 1311403736
+DEBUG - 2023-01-27 03:19:36 --> type
+INFO - 2023-01-27 03:19:36 --> payment
+DEBUG - 2023-01-27 03:19:36 --> id
+INFO - 2023-01-27 03:19:36 --> 
+DEBUG - 2023-01-27 03:19:36 --> topic
+INFO - 2023-01-27 03:19:36 --> 
+DEBUG - 2023-01-27 03:19:36 --> PAYMENT
+INFO - 2023-01-27 03:19:36 --> {"build_version":"2.129.1","charges_details":[],"payment_method":{"type":"credit_card"},"point_of_interaction":{"business_info":{"sub_unit":"checkout_pro","unit":"online_payments"},"type":"UNSPECIFIED"}}
+DEBUG - 2023-01-27 03:19:36 --> MERCHANT ORDER2222
+INFO - 2023-01-27 03:19:36 --> {"external_reference":"","preference_id":"75232795-f8a2dc2e-5cf1-487f-bf13-077ac5419e25","payouts":[],"notification_url":"http:\/\/agusventu.tplinkdns.com\/ebo\/payment_confirmation\/b1a7a8aa8bdecc3be3aa8f594326701561d89f32","date_created":"2023-01-26T21:16:37.140-04:00","last_updated":"2023-01-26T21:16:37.140-04:00","shipping_cost":0,"total_amount":1951,"site_id":"MLA","paid_amount":0,"refunded_amount":0,"additional_info":"","order_status":"payment_required"}
+DEBUG - 2023-01-27 03:19:37 --> responseJson
+INFO - 2023-01-27 03:19:37 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T22:19:34.000-04:00
+            [date_last_updated] => 2023-01-26T22:19:34.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T22:19:34.746-04:00
+    [date_last_updated] => 2023-01-26T22:19:34.892-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311403736
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 03:19:37 --> Status: rejected
+INFO - 2023-01-27 03:19:37 --> Final output sent to browser
+DEBUG - 2023-01-27 03:19:37 --> Total execution time: 2.3569
+INFO - 2023-01-27 03:26:13 --> Config Class Initialized
+INFO - 2023-01-27 03:26:13 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:26:13 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:26:13 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:26:13 --> URI Class Initialized
+INFO - 2023-01-27 03:26:13 --> Router Class Initialized
+INFO - 2023-01-27 03:26:13 --> Output Class Initialized
+INFO - 2023-01-27 03:26:13 --> Security Class Initialized
+DEBUG - 2023-01-27 03:26:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:26:13 --> Input Class Initialized
+INFO - 2023-01-27 03:26:13 --> Language Class Initialized
+INFO - 2023-01-27 03:26:13 --> Loader Class Initialized
+INFO - 2023-01-27 03:26:13 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:26:13 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:26:13 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:26:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:26:13 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:26:13 --> Controller Class Initialized
+INFO - 2023-01-27 03:26:13 --> Model "Order" initialized
+INFO - 2023-01-27 03:26:13 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:26:16 --> URL Components
+ERROR - 2023-01-27 03:26:16 --> Severity: error --> Exception: Call to undefined function json_enconde() /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 853
+INFO - 2023-01-27 03:27:46 --> Config Class Initialized
+INFO - 2023-01-27 03:27:46 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:27:46 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:27:46 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:27:46 --> URI Class Initialized
+INFO - 2023-01-27 03:27:46 --> Router Class Initialized
+INFO - 2023-01-27 03:27:46 --> Output Class Initialized
+INFO - 2023-01-27 03:27:46 --> Security Class Initialized
+DEBUG - 2023-01-27 03:27:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:27:46 --> Input Class Initialized
+INFO - 2023-01-27 03:27:46 --> Language Class Initialized
+INFO - 2023-01-27 03:27:46 --> Loader Class Initialized
+INFO - 2023-01-27 03:27:46 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:27:46 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:27:46 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:27:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:27:46 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:27:46 --> Controller Class Initialized
+INFO - 2023-01-27 03:27:46 --> Model "Order" initialized
+INFO - 2023-01-27 03:27:46 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:27:47 --> URL Components
+ERROR - 2023-01-27 03:27:47 --> Severity: error --> Exception: Call to undefined function json_enconde() /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 853
+INFO - 2023-01-27 03:27:47 --> Config Class Initialized
+INFO - 2023-01-27 03:27:47 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:27:47 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:27:47 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:27:47 --> URI Class Initialized
+INFO - 2023-01-27 03:27:47 --> Router Class Initialized
+INFO - 2023-01-27 03:27:47 --> Output Class Initialized
+INFO - 2023-01-27 03:27:47 --> Security Class Initialized
+DEBUG - 2023-01-27 03:27:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:27:47 --> Input Class Initialized
+INFO - 2023-01-27 03:27:47 --> Language Class Initialized
+INFO - 2023-01-27 03:27:47 --> Loader Class Initialized
+INFO - 2023-01-27 03:27:47 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:27:47 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:27:47 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:27:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:27:47 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:27:47 --> Controller Class Initialized
+INFO - 2023-01-27 03:27:47 --> Model "Order" initialized
+INFO - 2023-01-27 03:27:47 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:27:49 --> URL Components
+ERROR - 2023-01-27 03:27:49 --> Severity: error --> Exception: Call to undefined function json_enconde() /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 853
+INFO - 2023-01-27 03:30:26 --> Config Class Initialized
+INFO - 2023-01-27 03:30:26 --> Hooks Class Initialized
+DEBUG - 2023-01-27 03:30:26 --> UTF-8 Support Enabled
+INFO - 2023-01-27 03:30:26 --> Utf8 Class Initialized
+INFO - 2023-01-27 03:30:26 --> URI Class Initialized
+INFO - 2023-01-27 03:30:26 --> Router Class Initialized
+INFO - 2023-01-27 03:30:26 --> Output Class Initialized
+INFO - 2023-01-27 03:30:26 --> Security Class Initialized
+DEBUG - 2023-01-27 03:30:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2023-01-27 03:30:26 --> Input Class Initialized
+INFO - 2023-01-27 03:30:26 --> Language Class Initialized
+INFO - 2023-01-27 03:30:26 --> Loader Class Initialized
+INFO - 2023-01-27 03:30:26 --> Helper loaded: url_helper
+INFO - 2023-01-27 03:30:26 --> Helper loaded: util_helper
+INFO - 2023-01-27 03:30:26 --> Database Driver Class Initialized
+DEBUG - 2023-01-27 03:30:26 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2023-01-27 03:30:26 --> Session: Class initialized using 'files' driver.
+INFO - 2023-01-27 03:30:26 --> Controller Class Initialized
+INFO - 2023-01-27 03:30:26 --> Model "Order" initialized
+INFO - 2023-01-27 03:30:26 --> Model "Parameter" initialized
+DEBUG - 2023-01-27 03:30:27 --> URL Components
+INFO - 2023-01-27 03:30:27 --> {"path":"\/ebo\/payment_confirmation\/b1a7a8aa8bdecc3be3aa8f594326701561d89f32","query":"data.id=1311405346&type=payment"}
+DEBUG - 2023-01-27 03:30:28 --> PAYMENT
+ERROR - 2023-01-27 03:30:28 --> Severity: Warning --> json_decode() expects parameter 1 to be string, object given /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 878
+INFO - 2023-01-27 03:30:28 --> 
+DEBUG - 2023-01-27 03:30:28 --> MERCHANT ORDER2222
+ERROR - 2023-01-27 03:30:28 --> Severity: Warning --> json_decode() expects parameter 1 to be string, object given /Applications/XAMPP/xamppfiles/htdocs/ebo/application/controllers/Main.php 880
+INFO - 2023-01-27 03:30:28 --> 
+DEBUG - 2023-01-27 03:30:29 --> responseJson
+INFO - 2023-01-27 03:30:29 --> Array
+(
+    [acquirer_reconciliation] => Array
+        (
+        )
+
+    [additional_info] => Array
+        (
+            [authentication_code] => 
+            [available_balance] => 
+            [ip_address] => 186.136.197.135
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [category_id] => 
+                            [description] => 
+                            [id] => 
+                            [picture_url] => 
+                            [quantity] => 1
+                            [title] => Pedido de El Brote Tienda
+                            [unit_price] => 1951
+                        )
+
+                )
+
+            [nsu_processadora] => 
+            [payer] => Array
+                (
+                    [phone] => Array
+                        (
+                            [number] => 1531649523
+                        )
+
+                )
+
+        )
+
+    [authorization_code] => 
+    [binary_mode] => 1
+    [brand_id] => 
+    [build_version] => 2.129.1
+    [call_for_authorize_id] => 
+    [captured] => 1
+    [card] => Array
+        (
+            [cardholder] => Array
+                (
+                    [identification] => Array
+                        (
+                            [number] => 11111111
+                            [type] => DNI
+                        )
+
+                    [name] => OTHE
+                )
+
+            [date_created] => 2023-01-26T22:30:26.000-04:00
+            [date_last_updated] => 2023-01-26T22:30:26.000-04:00
+            [expiration_month] => 11
+            [expiration_year] => 2025
+            [first_six_digits] => 503175
+            [id] => 
+            [last_four_digits] => 0604
+        )
+
+    [charges_details] => Array
+        (
+        )
+
+    [collector_id] => 75232795
+    [corporation_id] => 
+    [counter_currency] => 
+    [coupon_amount] => 0
+    [currency_id] => ARS
+    [date_approved] => 
+    [date_created] => 2023-01-26T22:30:26.273-04:00
+    [date_last_updated] => 2023-01-26T22:30:26.435-04:00
+    [date_of_expiration] => 
+    [deduction_schema] => 
+    [description] => Pedido de El Brote Tienda
+    [differential_pricing_id] => 
+    [external_reference] => 
+    [fee_details] => Array
+        (
+        )
+
+    [financing_group] => 
+    [id] => 1311405346
+    [installments] => 1
+    [integrator_id] => 
+    [issuer_id] => 3
+    [live_mode] => 
+    [marketplace_owner] => 
+    [merchant_account_id] => 
+    [merchant_number] => 
+    [metadata] => Array
+        (
+        )
+
+    [money_release_date] => 
+    [money_release_schema] => 
+    [money_release_status] => 
+    [notification_url] => http://agusventu.tplinkdns.com/ebo/payment_confirmation/b1a7a8aa8bdecc3be3aa8f594326701561d89f32
+    [operation_type] => regular_payment
+    [order] => Array
+        (
+            [id] => 7452229728
+            [type] => mercadopago
+        )
+
+    [payer] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [email] => test_user_80507629@testuser.com
+            [identification] => Array
+                (
+                    [number] => 32659430
+                    [type] => DNI
+                )
+
+            [phone] => Array
+                (
+                    [area_code] => 
+                    [number] => 
+                    [extension] => 
+                )
+
+            [type] => 
+            [entity_type] => 
+            [id] => 278278919
+        )
+
+    [payment_method] => Array
+        (
+            [id] => master
+            [type] => credit_card
+        )
+
+    [payment_method_id] => master
+    [payment_type_id] => credit_card
+    [platform_id] => 
+    [point_of_interaction] => Array
+        (
+            [business_info] => Array
+                (
+                    [sub_unit] => checkout_pro
+                    [unit] => online_payments
+                )
+
+            [type] => UNSPECIFIED
+        )
+
+    [pos_id] => 
+    [processing_mode] => aggregator
+    [refunds] => Array
+        (
+        )
+
+    [shipping_amount] => 0
+    [sponsor_id] => 
+    [statement_descriptor] => AGUSTINVENTUR
+    [status] => rejected
+    [status_detail] => cc_rejected_other_reason
+    [store_id] => 
+    [taxes_amount] => 0
+    [transaction_amount] => 1951
+    [transaction_amount_refunded] => 0
+    [transaction_details] => Array
+        (
+            [acquirer_reference] => 
+            [external_resource_url] => 
+            [financial_institution] => 
+            [installment_amount] => 1951
+            [net_received_amount] => 0
+            [overpaid_amount] => 0
+            [payable_deferral_period] => 
+            [payment_method_reference_id] => 
+            [total_paid_amount] => 1951
+        )
+
+)
+
+INFO - 2023-01-27 03:30:29 --> Status: rejected
+INFO - 2023-01-27 03:30:29 --> Final output sent to browser
+DEBUG - 2023-01-27 03:30:29 --> Total execution time: 2.2994
