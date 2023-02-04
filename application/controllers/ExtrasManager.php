@@ -32,6 +32,30 @@ class ExtrasManager extends CI_Controller{
         return $this->output->set_output(json_encode($return));
     }
 
+    public function verifyExtrasQuantitiesToSubmit() {
+        $this->output->set_content_type('application/json');
+        $this->load->model('Extra');
+        $errores = [];
+
+        $aExtras = json_decode($this->input->post('extras', true));
+        foreach($aExtras as $extra){
+            $oExtra = $this->Extra->getById($extra->idExtra);
+            if($oExtra->stock_ilimitado==0) {
+                if(intval($oExtra->stock_disponible) < intval($extra->cantExtra)) {
+                    array_push($errores,array(
+                        'id_extra' => $oExtra->id,
+                        'name' => $oExtra->name,
+                        'stock_left' => $oExtra->stock_disponible
+                    ));
+                }
+            }
+        }
+        $return['continue'] = count($errores)>0 ? false : true;
+        $return['error'] = $errores;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));
+    }
+
     public function verifyExtrasEnabledByTipoPedido() {
         $this->output->set_content_type('application/json');
         $this->load->model('Extra');

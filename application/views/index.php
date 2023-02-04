@@ -499,7 +499,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     
                     <div class="row">
-                        <div class="col-lg-1 col-md-1 colFormEmptyShowHide"></div>
+                        <!--<div class="col-lg-1 col-md-1 colFormEmptyShowHide"></div>-->
                         <div class="col-lg-5 col-md-6">
                             <div class="cart-tax">
                                 <div class="title-wrap">
@@ -1001,7 +1001,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">
-                <button type="button" class="close closeDiaEntregaDisabled" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -1025,6 +1025,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 
+<!-- Modal Dia Entrega Deshabiltado-->
+<div class="modal fade" id="modalExtrasCantError" tabindex="-1" role="dialog" aria-labelledby="modalExtrasCantError" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                <button id="bCloseModalExtrasCantError" type="button" class="close closeExtrasCantError" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding-top:0px;margin-top:0px;">
+                <div class="welcome-area pt-20 pb-20">
+                    <div class="container">
+                        <div class="welcome-content text-center">
+                            <h5>¡Lo sentimos!</h5>
+                            <h1>Algunos de los productos de la tienda que seleccionaste, no los tenemos más disponibles.</h1>
+                            <div>
+                                <ul id="erroresExtrasList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row rowAvisoPedidosCargados" style="text-align:center">
+                    <div class="col-xs-12">
+                        <button type="button" id="bExtrasCantErrorAceptar" class="ebo-cart-btn ebo-cart-btn-green">ACEPTAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">const baseURL = "<?=base_url();?>";</script>
 <!-- All JS is here
 ============================================ -->
@@ -1039,7 +1071,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=114234"></script>
+<script src="assets/js/mainv2.js?v=1111212312"></script>
 <script src="assets/new_design/assets/js/main.js?v=11117623"></script>
 
 

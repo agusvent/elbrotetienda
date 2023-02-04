@@ -356,6 +356,10 @@
     border-bottom:2px solid;
 }
 
+.span-red {
+    color: #b31414!important;
+}
+
 .span-blue{
     color:#2d53fd;
 }
@@ -759,6 +763,10 @@
 
 .no-border {
     border: 0px!important;
+}
+
+#erroresExtrasList {
+    font-weight:400;
 }
 
 @-webkit-keyframes load5 {
