@@ -86,3 +86,4 @@ $route['getDiaEntregaHabilitado'] = 'MultiHelper/getDiaEntregaEnabled';
 $route['verifyExtrasEnabledByTipoPedido'] = 'ExtrasManager/verifyExtrasEnabledByTipoPedido';
 $route['getFormasDePago'] = 'MultiHelper/getFormasPagoByImporte';
 $route['getTiendaAbierta'] = 'MultiHelper/getTiendaAbierta';
+$route['validate_extra_requested_cant'] = 'ExtrasManager/validateExtraRequestedCant';

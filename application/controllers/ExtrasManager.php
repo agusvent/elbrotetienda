@@ -63,5 +63,27 @@ class ExtrasManager extends CI_Controller{
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));
     }
+
+    public function validateExtraRequestedCant() {
+        $this->output->set_content_type('application/json');
+        $this->load->model('Extra');
+
+        $idExtra = intval($this->input->post('idExtra', true));
+        $cantRequested = intval($this->input->post('cantRequested', true));
+
+        $oExtra = $this->Extra->getById($idExtra);
+        $return['have_stock'] = true;
+        $this->output->set_status_header(200);
+
+        if ($oExtra->stock_ilimitado==1) {
+            return $this->output->set_output(json_encode($return));    
+        } else {
+            if ($oExtra->stock_disponible<$cantRequested) {
+                $return['have_stock'] = false;
+            }
+        }
+        return $this->output->set_output(json_encode($return));
+    }
+
 }
 

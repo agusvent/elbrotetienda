@@ -1186,7 +1186,12 @@ function initMasMenosCantProductoResumen(){
                 }*/
             }
         }
-        $button.parent().find("input").val(newVal);
+
+        haveStockToSell = validateExtraRequestedCant(newVal, idProducto);
+
+        if(haveStockToSell) {
+            $button.parent().find("input").val(newVal);
+        }
     });
 
     $(".resumenpedido-bolson-qty").on("click", function() {
@@ -1940,4 +1945,23 @@ function diaAceptaBolsones() {
 
 function rebootWeb(){
     window.location = baseURL;
+}
+
+function validateExtraRequestedCant(cantRequested, idExtra) {
+    var have_stock = false;
+    let data = {
+        'idExtra' : idExtra,
+        'cantRequested': cantRequested
+    };
+    $.ajax({
+        url: baseURL + 'validate_extra_requested_cant',
+        data: data,
+        method: 'post',
+        async: false
+    }).done(function(result) {
+        if(result.have_stock!=null) {
+            have_stock = result.have_stock;
+        }
+    });
+    return have_stock;
 }
