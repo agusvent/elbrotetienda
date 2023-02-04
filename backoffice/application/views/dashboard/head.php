@@ -91,5 +91,5 @@
 </a>
 
 <?php if($formEnabled == 0 || $deliveryEnabled == 0): ?>
-<div class="alert alert-warning"><strong>¡Importante!</strong> El sistema está en modo "no aceptar pedidos" para uno o todos los métodos posibles (sucursal/domicilio).</div>
+<!--<div class="alert alert-warning"><strong>¡Importante!</strong> El sistema está en modo "no aceptar pedidos" para uno o todos los métodos posibles (sucursal/domicilio).</div>-->
 <?php endif; ?>
