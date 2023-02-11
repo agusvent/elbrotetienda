@@ -292,6 +292,7 @@ $(document).ready(function() {
 
             $("#bExtrasCantErrorAceptar").on("click", function(e){
                 cerrarModalErroresExtras();
+                scrollToTargetAdjusted("seccionResumenPedido");
             });
 
             initMasMenosCantProductoResumen();
@@ -1218,6 +1219,7 @@ function initMasMenosCantProductoResumen(){
                     newVal = parseFloat(oldValue) + 1;
                 }
             }else{
+                //ESTE ES EL BOLSON INDIVIDUAL
                 if(parseFloat(oldValue) + 1 <=3){
                     newVal = parseFloat(oldValue) + 1;
                 }
@@ -1233,10 +1235,13 @@ function initMasMenosCantProductoResumen(){
             }
         }
 
-        haveStockToSell = validateExtraRequestedCant(newVal, idProducto);
-
-        if(haveStockToSell) {
+        productStock = validateExtraRequestedCant(newVal, idProducto);
+        if(productStock['have_stock']) {
             $button.parent().find("input").val(newVal);
+        } else {
+            if(productStock['stock_disponible']>0) {
+                $button.parent().find("input").val(productStock['stock_disponible']);
+            }
         }
     });
 
@@ -1999,7 +2004,7 @@ function rebootWeb(){
 }
 
 function validateExtraRequestedCant(cantRequested, idExtra) {
-    var have_stock = false;
+    let res = {};
     let data = {
         'idExtra' : idExtra,
         'cantRequested': cantRequested
@@ -2011,8 +2016,9 @@ function validateExtraRequestedCant(cantRequested, idExtra) {
         async: false
     }).done(function(result) {
         if(result.have_stock!=null) {
-            have_stock = result.have_stock;
+            res['have_stock'] = result.have_stock;
+            res['stock_disponible'] = result.stock_disponible;
         }
     });
-    return have_stock;
+    return res;
 }

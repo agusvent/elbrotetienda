@@ -769,6 +769,10 @@
     font-weight:400;
 }
 
+#modalExtrasCantError {
+    height:auto;
+}
+
 @-webkit-keyframes load5 {
     0%,
     100% {

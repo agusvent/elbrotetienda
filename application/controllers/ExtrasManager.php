@@ -97,6 +97,7 @@ class ExtrasManager extends CI_Controller{
 
         $oExtra = $this->Extra->getById($idExtra);
         $return['have_stock'] = true;
+        $return['stock_disponible'] = 0;
         $this->output->set_status_header(200);
 
         if ($oExtra->stock_ilimitado==1) {
@@ -104,6 +105,7 @@ class ExtrasManager extends CI_Controller{
         } else {
             if ($oExtra->stock_disponible<$cantRequested) {
                 $return['have_stock'] = false;
+                $return['stock_disponible'] = $oExtra->stock_disponible;
             }
         }
         return $this->output->set_output(json_encode($return));
