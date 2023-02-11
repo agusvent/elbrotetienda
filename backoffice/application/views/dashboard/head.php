@@ -6,7 +6,7 @@
     <title><?=$title ?? "";?></title>
     <link rel="stylesheet" href="<?=assets();?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=assets();?>dt/datatables.min.css">
-    <link rel="stylesheet" href="<?=assets();?>css/backoffice.css?v=4123">
+    <link rel="stylesheet" href="<?=assets();?>css/backoffice.css?v=11123">
     <script type="text/javascript" src="<?=assets();?>js/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
@@ -31,7 +31,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="<?=base_url();?>contenidos/formulario">Texto del formulario</a>
-            <a class="dropdown-item" href="<?=base_url();?>contenidos/sucursales">Puntos de Retiro</a>
+            <!--<a class="dropdown-item" href="<?/*base_url();*/?>contenidos/sucursales">Puntos de Retiro</a>-->
             <a class="dropdown-item" href="<?=base_url();?>contenidos/barrios">Barrios</a>
             <a class="dropdown-item" href="<?=base_url();?>contenidos/newsletter">Newsletter</a>
             <a class="dropdown-item" href="<?=base_url();?>contenidos/cupones">Cupones</a>

@@ -43,14 +43,8 @@
             </div>
             <div class="col-sm-4">
             </div>
-            <div class="col-sm-2 infoPedidosTableHead">
-                SUCURSAL
-            </div>
-            <div class="col-sm-2 infoPedidosTableHead">
+            <div class="col-sm-2 borderLeft infoPedidosTableHead">
                 DOMICILIO
-            </div>
-            <div class="col-sm-2 infoPedidosTableHead borderRight">
-                TOT. PEDIDOS
             </div>
             <div class="col-sm-1">
             </div>
@@ -64,13 +58,7 @@
             <div class="col-sm-4">
             </div>
             <div class="col-sm-2 infoPedidosTableHead">
-                SUCURSAL
-            </div>
-            <div class="col-sm-2 infoPedidosTableHead">
                 DOMICILIO
-            </div>
-            <div class="col-sm-2 infoPedidosTableHead borderRight">
-                TOT. PRODUCTO
             </div>
             <div class="col-sm-1">
             </div>

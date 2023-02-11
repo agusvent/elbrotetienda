@@ -33,7 +33,7 @@
 <!-- Helpers -->
 <script type="text/javascript" src="<?=assets();?>js/shared.js?v=5123"></script>
 
-<script type="text/javascript" src="<?=assets();?>js/mainHelper.js?v=9817234"></script>
+<script type="text/javascript" src="<?=assets();?>js/mainHelper.js?v=117234"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery.numeric.js"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery.table2excel.js"></script>
 <script type="text/javascript" src="<?=assets();?>js/jquery-dateformat.js"></script>
