@@ -9894,7 +9894,7 @@ class Api extends CI_Controller
 
         $xlsCol++;
         
-        $sheet->setCellValue($xlsCol.$xlsRow, 'Dia de Entrega');
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Barrio');
         $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
         $xlsCol++;
@@ -9940,7 +9940,7 @@ class Api extends CI_Controller
 
                 $xlsCol++;
 
-                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->diaEntrega);
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->barrio);
                 $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
                 $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
