@@ -1057,6 +1057,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 
+
+<!-- Modal Aviso Pedidos Fuera de Horario-->
+<div class="modal fade" id="modalAvisoPedidosFueraHorario" tabindex="-1" role="dialog" aria-labelledby="modalAvisoPedidosFueraHorario" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><!--Hola!</h5>-->
+                <button type="button" class="close closeAvisoPedidosFueraHorario" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding-top:0px;margin-top:0px;">
+                <div class="welcome-area pt-20 pb-20">
+                    <div class="container">
+                        <div class="welcome-content text-center">
+                            <h5>¡Atenci&oacute;n!</h5>
+                            <h1>La tienda ya se encuentra cerrada.</h1>
+                            <p>
+                                Si quer&eacute;s que te llegue el pedido mañana de 9 a 18, toca en continuar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row rowAvisoPedidosCargados" style="text-align:center">
+                    <div class="col-xs-12">
+                        <button type="button" id="bContinuarPedidoFueraHorario" class="ebo-cart-btn ebo-cart-btn-green" >CONFIRMAR PEDIDO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script type="text/javascript">const baseURL = "<?=base_url();?>";</script>
 <!-- All JS is here
 ============================================ -->
@@ -1071,7 +1105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=9976212312"></script>
+<script src="assets/js/mainv2.js?v=2312"></script>
 <script src="assets/new_design/assets/js/main.js?v=11117623"></script>
 
 

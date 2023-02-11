@@ -773,6 +773,10 @@
     height:auto;
 }
 
+#modalAvisoPedidosFueraHorario {
+    height:auto;
+}
+
 @-webkit-keyframes load5 {
     0%,
     100% {

@@ -648,6 +648,22 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode(true));
     }
 
+    public function changePedidosFueraDeHoraStatus($status) {
+        $this->output->set_content_type('application/json');
+        if(!valid_session()) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'Sesión no válida.';
+            $this->output->set_status_header(401);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('Content');
+        $this->Content->set('pedidos_fuera_de_hora_enabled', $status);
+        $return['status'] = self::OK_VALUE;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode(true));
+    }
+
     public function changeDeliveryStatus($status)
     {
         $this->output->set_content_type('application/json');

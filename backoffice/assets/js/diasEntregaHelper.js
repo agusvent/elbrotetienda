@@ -44,6 +44,11 @@ $(document).ready(function() {
     $('#apagarFormularioPedidos').change(function(){
         changeFormStatus($(this).is(':checked') ? 0 : 1);
     });
+    
+    $('#pedidosFueraDeHora').change(function(){
+        changePedidosFueraDeHoraStatus($(this).is(':checked') ? 1 : 0);
+    });
+    
 
     $("#bCrearNuevoDiaEntrega").on("click",function(e){
         e.preventDefault();
@@ -645,6 +650,30 @@ function changeFormStatus(newStatus){
         if (result.value) {
             $.ajax({
                 url: ajaxURL + 'formStatus/' + newStatus,
+                method: 'get'
+            }).done(function() {
+                window.location.reload(true);
+            });
+        }else{
+            window.location.reload(true);
+        }
+    });    
+}
+
+function changePedidosFueraDeHoraStatus(newStatus){
+    Swal.fire({
+        title: 'Seguro?',
+        text: "Activar/desactivar esto significa que los usuarios podrán hacer pedidos las 24hs desde la web. Revisa bien antes de continuar.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar'
+        }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                url: ajaxURL + 'pedidosFueraDeHoraStatus/' + newStatus,
                 method: 'get'
             }).done(function() {
                 window.location.reload(true);

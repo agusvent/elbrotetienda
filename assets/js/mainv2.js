@@ -228,6 +228,11 @@ $(document).ready(function() {
                 }
             });
 
+            $("#bContinuarPedidoFueraHorario").on("click",function(e){
+                e.preventDefault();
+                eboSubmit();
+            });
+
             $("#modalAvisoPedidosCargados").on("hide.bs.modal",function(){
                 $(".loading").hide();
             });
@@ -261,6 +266,10 @@ $(document).ready(function() {
                 $("#modalDiaEntregaSinBolsonShort").modal("hide");
             });
 
+            $(".closeAvisoPedidosFueraHorario").on("click",function(e){
+                $("#modalAvisoPedidosFueraHorario").modal("hide");
+            });
+            
             $(".closeExtrasCantError").on("click",function(e){
                 cerrarModalErroresExtras();
             });
@@ -426,7 +435,12 @@ function validationsAndSubmit() {
         if(checkTiendaOpen()) { 
             var response = validateExtrasQuantities();
             if(response.continue) {
-                eboSubmit();
+                var tiendaFueraDeHorario = true;//getTiendaFueraDeHorario();
+                if(!tiendaFueraDeHorario) {
+                    eboSubmit();
+                } else {
+                    $("#modalAvisoPedidosFueraHorario").modal("show");
+                }
             } else{
                 showExtrasErrors(response.error);
             }
@@ -444,6 +458,10 @@ function validationsAndSubmit() {
         $("#modalExtraDisabledTipoPedido").modal("show");                    
     } 
     */   
+}
+
+function getTiendaFueraDeHorario() {
+
 }
 
 function validateExtrasQuantities() {
