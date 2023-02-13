@@ -1040,7 +1040,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="welcome-content text-center">
                             <h5>¡Lo sentimos!</h5>
-                            <h1>Algunos de los productos de la tienda que seleccionaste, no los tenemos más disponibles.</h1>
+                            <h1>Algunos de los productos que seleccionaste de la tienda, no los tenemos más disponibles.</h1>
                             <div>
                                 <ul id="erroresExtrasList"></ul>
                             </div>
