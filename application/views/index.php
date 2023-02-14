@@ -1073,9 +1073,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="welcome-content text-center">
                             <h5>¡Atenci&oacute;n!</h5>
-                            <h1>La tienda ya se encuentra cerrada.</h1>
                             <p>
-                                Si quer&eacute;s que te llegue el pedido mañana de 9 a 18, toca en continuar.
+                                Antes de confirmar tu pedido queríamos avisarte que dado que en este momento estamos fuera del horario de atenci&oacute;n, 
+                                procesaremos y enviaremos tu pedido el pr&oacute;ximo día h&aacute;bil a primera hora.
+                            </p>
+                            <p>
+                                Nuestros horarios de atención son de Lunes a Viernes de 9 a 18hs.
                             </p>
                         </div>
                     </div>
