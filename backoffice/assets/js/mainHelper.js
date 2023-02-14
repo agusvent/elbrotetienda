@@ -227,15 +227,16 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,aInfoExt
     htmlPedidos += '</div>';
     htmlPedidos += '<div class="col-sm-4">';
     htmlPedidos += '</div>';
-    htmlPedidos += '<div class="col-sm-2 infoPedidosTableInfo borderLeft">';
+    /*htmlPedidos += '<div class="col-sm-2 infoPedidosTableInfo borderLeft">';
     htmlPedidos += totalPedidosPuntoDeRetiro;
-    htmlPedidos += '</div>';
+    htmlPedidos += '</div>';*/
     htmlPedidos += '<div class="col-sm-2 infoPedidosTableInfo">';
     htmlPedidos += totalPedidosDomicilio;
     htmlPedidos += '</div>';
-    htmlPedidos += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
+    /*htmlPedidos += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
     htmlPedidos += totalPedidos;
     htmlPedidos += '</div>';
+    */
     htmlPedidos += '<div class="col-sm-1">';
     htmlPedidos += '</div>';
 
@@ -249,15 +250,17 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,aInfoExt
         htmlBolsonesAndExtras += '<div class="col-sm-4 infoPedidosTableTitle">';
         htmlBolsonesAndExtras += aInfoPedidosByTipoBolson[i]['tipoBolson'];
         htmlBolsonesAndExtras += '</div>';
-        htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
+        /*htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
         htmlBolsonesAndExtras += aInfoPedidosByTipoBolson[i]['totalSucursal'];
         htmlBolsonesAndExtras += '</div>';
+        */
         htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
         htmlBolsonesAndExtras += aInfoPedidosByTipoBolson[i]['totalDomicilio'];
         htmlBolsonesAndExtras += '</div>';
-        htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
+        /*htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
         htmlBolsonesAndExtras += aInfoPedidosByTipoBolson[i]['subtotalBolsones'];
         htmlBolsonesAndExtras += '</div>';
+        */
         htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
         htmlBolsonesAndExtras += '</div>';
     }
@@ -270,15 +273,17 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,aInfoExt
         htmlTotalesExtras += '<div class="col-sm-4 infoPedidosTableTitle">';
         htmlTotalesExtras += aInfoExtrasTotalesBox[i]['nombre'];
         htmlTotalesExtras += '</div>';
-        htmlTotalesExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
+        /*htmlTotalesExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
         htmlTotalesExtras += aInfoExtrasTotalesBox[i]['totalSucursal'];
         htmlTotalesExtras += '</div>';
+        */
         htmlTotalesExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
         htmlTotalesExtras += aInfoExtrasTotalesBox[i]['totalDomicilio'];
         htmlTotalesExtras += '</div>';
-        htmlTotalesExtras += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
+        /*htmlTotalesExtras += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
         htmlTotalesExtras += aInfoExtrasTotalesBox[i]['totalExtras'];
         htmlTotalesExtras += '</div>';
+        */
         htmlTotalesExtras += '<div class="col-sm-1"></div>';
         htmlTotalesExtras += '</div>';
     }
@@ -292,15 +297,17 @@ function drawInfoPedidos(aInfoPedidosByTipoBolson,aInfoExtrasPedidosBox,aInfoExt
         htmlBolsonesAndExtras += '<div class="col-sm-4 infoPedidosTableTitle">';
         htmlBolsonesAndExtras += aInfoExtrasPedidosBox[i]['extraName'];
         htmlBolsonesAndExtras += '</div>';
-        htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
+        /*htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
         htmlBolsonesAndExtras += aInfoExtrasPedidosBox[i]['totalSucursal'];
         htmlBolsonesAndExtras += '</div>';
+        */
         htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo">';
         htmlBolsonesAndExtras += aInfoExtrasPedidosBox[i]['totalDomicilio'];
         htmlBolsonesAndExtras += '</div>';
-        htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
+        /*htmlBolsonesAndExtras += '<div class="col-sm-2 infoPedidosTableInfo borderRight">';
         htmlBolsonesAndExtras += '<b>'+aInfoExtrasPedidosBox[i]['subtotalExtra']+'</b>';
         htmlBolsonesAndExtras += '</div>';
+        */
         htmlBolsonesAndExtras += '<div class="col-sm-1"></div>';
         htmlBolsonesAndExtras += '</div>';
     }   

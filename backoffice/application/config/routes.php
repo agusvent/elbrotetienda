@@ -137,6 +137,7 @@ $route['api/camionesPreConfigurados/getPuntosRetiroPendientesAsociacion'] = 'Api
 $route['api/camionesPreConfigurados/getBarriosPendientesAsociacion'] = 'Api/getBarriosPendientesAsociacion';
 
 $route['api/formStatus/(:num)'] = 'Api/changeFormStatus/$1';
+$route['api/pedidosFueraDeHoraStatus/(:num)'] = 'Api/changePedidosFueraDeHoraStatus/$1';
 $route['api/deliveryStatus/(:num)'] = 'Api/changeDeliveryStatus/$1';
 
 $route['api/dataFrom'] = 'Api/setDataFrom';

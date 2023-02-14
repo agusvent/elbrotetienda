@@ -26,14 +26,6 @@
                     <div class="extras-caja-info"> 
                     </div>
                     <div class="extras-caja-info"> 
-                        Visible Sucursal: &nbsp;
-                        <input data-extra-id="<?=$extra->id;?>" id="visible_sucursal_<?=$extra->id;?>" type="checkbox" <?=($extra->visible_sucursal == 1) ? 'checked' : ''; ?> data-toggle="toggle" data-onstyle="success" data-size="xs">
-                    </div>
-                    <div class="extras-caja-info"> 
-                        Visible Domicilio: &nbsp;
-                        <input data-extra-id="<?=$extra->id;?>" id="visible_domicilio_<?=$extra->id;?>" type="checkbox" <?=($extra->visible_domicilio == 1) ? 'checked' : ''; ?> data-toggle="toggle" data-onstyle="success" data-size="xs">
-                    </div>         
-                    <div class="extras-caja-info"> 
                         Activo: &nbsp;
                         <input data-extra-id="<?=$extra->id;?>" id="active_<?=$extra->id;?>" type="checkbox" <?=($extra->active == 1) ? 'checked' : ''; ?> data-toggle="toggle" data-onstyle="success" data-size="xs">           
                         <span style="float:right">&Oacute;rden Listados: &nbsp;

@@ -26,7 +26,8 @@ class Dashboard extends CI_Controller
         $params = [
             'title'           => $title,
             'formEnabled'     => $this->Content->get('form_enabled'),
-            'deliveryEnabled' => $this->Content->get('delivery_enabled')
+            'deliveryEnabled' => $this->Content->get('delivery_enabled'),
+            'pedidosFueraDeHoraEnabled' => $this->Content->get('pedidos_fuera_de_hora_enabled')
         ];
         $this->load->view('dashboard/head', $params);
     }

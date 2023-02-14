@@ -30,8 +30,7 @@
                         <th style="text-align:left;width:7%">Tel&eacute;fono</th>
                         <th style="text-align:left;width:14%">Mail</th>
                         <th style="text-align:left;width:10%">Estado</th>
-                        <th style="text-align:left;width:5%">Tipo</th>
-                        <th style="text-align:left;width:21%">P.Retiro / Barrio</th>
+                        <th style="text-align:left;width:21%">Barrio</th>
                         <th style="text-align:left;width:3%">&nbsp;</th>
                         <th style="text-align:left;width:8%">&nbsp;</th>
                     </tr>
@@ -57,12 +56,6 @@
                                         <td><?=$oPedido->phone ?? ""?>
                                         <td><?=$oPedido->email ?? ""?>
                                         <td><?=$oPedido->estadoPedido ?? ""?>
-                                        <td><?=$oPedido->deliver_type ?? ""?>
-                                        <?php if($oPedido->deliver_type=="SUC"){?>
-                                            <td><?=$oPedido->sucursal ?? ""?>
-                                        <?php }else{?>
-                                            <td><?=$oPedido->nombre_barrio ?? ""?>
-                                        <?php }?>
                                         <td><a href='javascript:fEditarPedido("<?=$oPedido->id?>")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a></td>
                                         <td>
                                             <a href='javascript:fReenviarMailConfirmacion("<?=$oPedido->id?>")'><img class='img img-responsive' src='../assets/img/send_mail.png' width='24'/></a>
@@ -181,5 +174,5 @@
 </div>
 <!-- Fin Modal Filtro de Pedidos-->
 
-<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=51234"></script>
+<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=119865"></script>
 <script type="text/javascript" src="<?=assets();?>js/shared.js?v=14123"></script>

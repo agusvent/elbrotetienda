@@ -21,7 +21,6 @@
                         <th style="text-align:left;width:7%">Tel&eacute;fono</th>
                         <th style="text-align:left;width:14%">Mail</th>
                         <th style="text-align:left;width:10%">Estado</th>
-                        <th style="text-align:left;width:5%">Tipo</th>
                         <th style="text-align:left;width:20%">Barrio</th>
                         <th style="text-align:left;width:9%">Despachado</th>
                         <th style="text-align:left;width:9%">Entregado</th>

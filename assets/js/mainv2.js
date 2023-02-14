@@ -208,8 +208,8 @@ $(document).ready(function() {
             $("#bFinalizarPedido").on("click",function(e){
                 var isMobile = detectMobile();
                 if(checkForm() && checkConfiguracionPedido()){
-                    var responseSearch = searchOrdersDuplicadas($("#mail").val(),$("#celular").val());
-                    /*if(responseSearch.existePedidoCargado){
+                    /*var responseSearch = searchOrdersDuplicadas($("#mail").val(),$("#celular").val());
+                    if(responseSearch.existePedidoCargado){
                         $("#labelAvisoPedidosCargadosDiaBolson").html(responseSearch.diaBolson);
                         $("#modalAvisoPedidosCargados").modal("show");
                     }else{
@@ -226,6 +226,11 @@ $(document).ready(function() {
                         scrollToTargetAdjusted("errorBolsonIndividual");
                     }
                 }
+            });
+
+            $("#bContinuarPedidoFueraHorario").on("click",function(e){
+                e.preventDefault();
+                eboSubmit();
             });
 
             $("#modalAvisoPedidosCargados").on("hide.bs.modal",function(){
@@ -261,8 +266,12 @@ $(document).ready(function() {
                 $("#modalDiaEntregaSinBolsonShort").modal("hide");
             });
 
-            $(".close, .closeDiaEntregaDisabled").on("click",function(e){
-                rebootWeb();
+            $(".closeAvisoPedidosFueraHorario").on("click",function(e){
+                $("#modalAvisoPedidosFueraHorario").modal("hide");
+            });
+            
+            $(".closeExtrasCantError").on("click",function(e){
+                cerrarModalErroresExtras();
             });
 
             $("#bDiaEntregaSinBolsonShort").on("click",function(e) {
@@ -288,6 +297,11 @@ $(document).ready(function() {
 
             $("#bDiaEntregaDisabled").on("click",function(e){
                 rebootWeb();
+            });
+
+            $("#bExtrasCantErrorAceptar").on("click", function(e){
+                cerrarModalErroresExtras();
+                scrollToTargetAdjusted("seccionResumenPedido");
             });
 
             initMasMenosCantProductoResumen();
@@ -393,12 +407,43 @@ function initMarketDiferencial(){
     drawMarketDiferencal(cExtras);
 }
 
+function showExtrasErrors(aErrors) {
+    var htmlErrors = "";
+    var extraName = "";
+    var hayStock = "quedan ";
+    var noHayStock = "no hay stock";
+
+    aErrors.forEach(error => {
+        extraName = error.name    
+        htmlErrors += "<li>" + extraName + ": "; 
+        if(error.stock_left>0) {
+            htmlErrors += "<span class='span-green'><b>" + hayStock + error.stock_left;
+        } else { 
+            htmlErrors += "<span class='span-red'><b>" + noHayStock;
+        }
+        htmlErrors += "</b></span></li>";
+    });
+
+    $("#erroresExtrasList").html(htmlErrors);
+    $("#modalExtrasCantError").modal("show");
+}
+
 function validationsAndSubmit() {
 /*  var response_extras_enabled = verifyExtrasEnabledByTipoPedido(idTipoPedidoSelected);
     if(response_extras_enabled.extras_enabled) {
         */
-        if(checkTiendaOpen()) {        
-            eboSubmit();
+        if(checkTiendaOpen()) { 
+            var response = validateExtrasQuantities();
+            if(response.continue) {
+                var tiendaFueraDeHorario = true;//getTiendaFueraDeHorario();
+                if(!tiendaFueraDeHorario) {
+                    eboSubmit();
+                } else {
+                    $("#modalAvisoPedidosFueraHorario").modal("show");
+                }
+            } else{
+                showExtrasErrors(response.error);
+            }
         } else {
             $("#modalDiaEntregaDisabled").modal("show");
         }            
@@ -413,6 +458,26 @@ function validationsAndSubmit() {
         $("#modalExtraDisabledTipoPedido").modal("show");                    
     } 
     */   
+}
+
+function getTiendaFueraDeHorario() {
+
+}
+
+function validateExtrasQuantities() {
+    var response = {};
+    var data = {
+        "extras" :JSON.stringify(aExtras)
+    }
+    $.ajax({
+        url: baseURL + 'verify_extras_quantities_to_submit',
+        method: 'post',
+        data: data,
+        async: false
+    }).done(function(result) {
+        response = result;
+    });
+    return response;
 }
 
 function getMarket(){
@@ -1172,6 +1237,7 @@ function initMasMenosCantProductoResumen(){
                     newVal = parseFloat(oldValue) + 1;
                 }
             }else{
+                //ESTE ES EL BOLSON INDIVIDUAL
                 if(parseFloat(oldValue) + 1 <=3){
                     newVal = parseFloat(oldValue) + 1;
                 }
@@ -1186,7 +1252,15 @@ function initMasMenosCantProductoResumen(){
                 }*/
             }
         }
-        $button.parent().find("input").val(newVal);
+
+        productStock = validateExtraRequestedCant(newVal, idProducto);
+        if(productStock['have_stock']) {
+            $button.parent().find("input").val(newVal);
+        } else {
+            if(productStock['stock_disponible']>0) {
+                $button.parent().find("input").val(productStock['stock_disponible']);
+            }
+        }
     });
 
     $(".resumenpedido-bolson-qty").on("click", function() {
@@ -1473,6 +1547,11 @@ function searchOrdersDuplicadas(mail,celular){
 function cerrarModalImagenBolson(){
     $("#modalImagenBolson").modal("hide");
     $(".loading").hide();
+}
+
+function cerrarModalErroresExtras() {
+    $("#modalExtrasCantError").modal("hide");
+    $("#erroresExtrasList").html("");
 }
 
 function setValorEnvioCero(){
@@ -1940,4 +2019,24 @@ function diaAceptaBolsones() {
 
 function rebootWeb(){
     window.location = baseURL;
+}
+
+function validateExtraRequestedCant(cantRequested, idExtra) {
+    let res = {};
+    let data = {
+        'idExtra' : idExtra,
+        'cantRequested': cantRequested
+    };
+    $.ajax({
+        url: baseURL + 'validate_extra_requested_cant',
+        data: data,
+        method: 'post',
+        async: false
+    }).done(function(result) {
+        if(result.have_stock!=null) {
+            res['have_stock'] = result.have_stock;
+            res['stock_disponible'] = result.stock_disponible;
+        }
+    });
+    return res;
 }

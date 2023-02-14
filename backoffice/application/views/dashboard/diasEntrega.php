@@ -13,6 +13,11 @@
                     <input id="apagarFormularioPedidos" type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs" <?=($formEnabled == 0) ? 'checked':'';?>>
                 &nbsp;( Tienda Cerrada )
             </div>
+            <div style="margin-bottom:15px;">
+                Pedidos fuera de hora:
+                    <input id="pedidosFueraDeHora" type="checkbox" data-toggle="toggle" data-onstyle="success" data-size="xs" <?=($pedidosFueraDeHoraEnabled == 1) ? 'checked':'';?>>
+                &nbsp;( Toma pedidos 24hs )
+            </div>
             <div id="diasEntregaList" class="cupones-wrapper">
             </div>
         </div>
@@ -214,4 +219,4 @@
 <!--Fin Modal Confirm Despachado-->
 
 <input type="hidden" id="idDiaEntregaEditar" value="0">
-<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=211992"></script>
+<script type="text/javascript" src="<?=assets();?>js/diasEntregaHelper.js?v=111211992"></script>

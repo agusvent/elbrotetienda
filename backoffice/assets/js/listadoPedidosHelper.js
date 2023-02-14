@@ -113,13 +113,7 @@ function cargarListadoPedidos(pedidos){
                     html += "<td>-</td>"
                 }
                 
-                html += "<td>"+pedidos[i].deliver_type+"</td>"
-                
-                if(pedidos[i].deliver_type=="SUC"){
-                    html += "<td>"+pedidos[i].sucursal+"</td>"
-                }else{
-                    html += "<td>"+pedidos[i].nombre_barrio+"</td>"
-                }
+                html += "<td>"+pedidos[i].nombre_barrio+"</td>"
                 
                 html += "<td>";
                 html += "<a href='javascript:fEditarPedido("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a>"

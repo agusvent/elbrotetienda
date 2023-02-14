@@ -1915,9 +1915,10 @@ class Order extends CI_Model
     }
 
     public function getOrdersBetweenDatesAndDiaEntrega($fechaDesde,$fechaHasta,$idDiaEntrega){
-        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.created_at as fechaPedido, orders.id_tipo_pedido, d.descripcion as diaEntrega, orders.monto_total as montoTotal');
+        $this->db->select('orders.id, orders.client_name, orders.email, orders.phone, orders.created_at as fechaPedido, orders.id_tipo_pedido, d.descripcion as diaEntrega, orders.monto_total as montoTotal, b.nombre as barrio');
         $this->db->from('orders');
         $this->db->join('dias_entrega_pedidos as d', 'd.id_dia_entrega = orders.id_dia_entrega', 'left');
+        $this->db->join('barrios as b', 'b.id = orders.barrio_id', 'left');
         $where = "orders.valid = 1 AND orders.id_estado_pedido not in (4)";
         if(isset($fechaDesde) && $fechaDesde!="") {
             $where .= " AND orders.created_at >= '".$fechaDesde." 00:00:00'";

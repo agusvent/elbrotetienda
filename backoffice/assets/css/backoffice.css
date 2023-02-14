@@ -121,6 +121,8 @@ input[name="dataTo"] {
 .infoPedidosTableHead{
     background-color: #000000;
     border-bottom: 1px solid #FFFFFF;
+    border-right: 1px solid #000000!important;
+    border-left: 1px solid #000000!important;
     color: #FFFFFF;
     font-weight: 600;
     text-align:center;
@@ -141,6 +143,8 @@ input[name="dataTo"] {
 .infoPedidosTableInfo{  
     background-color: #FFFFFF;
     border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000!important;
+    border-left: 1px solid #000000!important;
     text-align:center;
     padding-top:6px;
     padding-bottom:6px;
