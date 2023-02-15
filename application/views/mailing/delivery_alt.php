@@ -2,7 +2,7 @@
 
 ¡Hola <?=$nombre;?>!.
 Queríamos avisarte que tu compra se realizó con éxito.
-Ya estamos preparando tu pedido! Y será enviado a tu domicilio hoy mismo!
+Tu pedido será procesado y enviado lo antes posible.
 
 Valor del Pedido: $<?=$totalPrice?>
 

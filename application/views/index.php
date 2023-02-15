@@ -510,7 +510,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <div class="tax-select-wrapper">
                                         <div class="tax-select form-tipo-pedido">
                                             <label>
-                                                Tu pedido se entregará <b>hoy mismo</b>
+                                                Entregas a domicilio en todo C.A.B.A.
                                                 <!--Tipo de Pedido: <b><label id="tipoPedidoOrden">Seleccioná un m&eacute;todo de entrega.</label></b>-->
                                             </label>
                                         </div>
@@ -715,10 +715,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-1">
+            <div class="col-sm-2">
                 <div class="footer-widget">
                     <div class="footer-title">
-                        <a class="eboMenuLinks" href="#nuestrosBolsones"><h3>BOLSONES</h3></a>
+                        <a class="eboMenuLinks" href="#nuestrosBolsones"><h3>COMBO FAMILIAR</h3></a>
                     </div>
                 </div>
             </div>
@@ -1073,12 +1073,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="welcome-content text-center">
                             <h5>¡Atenci&oacute;n!</h5>
-                            <p>
-                                Antes de confirmar tu pedido queríamos avisarte que dado que en este momento estamos fuera del horario de atenci&oacute;n, 
-                                procesaremos y enviaremos tu pedido el pr&oacute;ximo día h&aacute;bil a primera hora.
-                            </p>
-                            <p>
-                                Nuestros horarios de atención son de Lunes a Viernes de 9 a 18hs.
+                            <p>Nuestros horarios de apertura son de Lunes a Viernes de 9 a 18hs, como tu pedido va a entrar fuera de horario, lo procesaremos y enviaremos al momento de abrir nuestra tienda.
                             </p>
                         </div>
                     </div>
@@ -1108,7 +1103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=2312"></script>
+<script src="assets/js/mainv2.js?v=23458345"></script>
 <script src="assets/new_design/assets/js/main.js?v=11117623"></script>
 
 

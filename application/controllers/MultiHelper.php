@@ -151,4 +151,19 @@ class MultiHelper extends CI_Controller{
         $this->output->set_status_header(200);
         return $this->output->set_output(json_encode($return));       
     }
+
+    public function getTiendaFueraDeHorario() {
+        $this->output->set_content_type('application/json');
+        $this->load->model('Parameter');
+
+        $pedidosFueraDeHorario = intval($this->Parameter->get('pedidos_fuera_de_hora_enabled'));
+        if($pedidosFueraDeHorario == 1) {
+            $pedidosFueraDeHorario = true;
+        } else {
+            $pedidosFueraDeHorario = false;
+        } 
+        $return['fuera_horario'] = $pedidosFueraDeHorario;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));       
+    }
 }

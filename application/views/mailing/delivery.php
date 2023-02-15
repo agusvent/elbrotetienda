@@ -15,7 +15,7 @@
             <p>¡Hola <strong><?=$nombre;?></strong>!</p>
             <p>Queríamos avisarte que tu compra se realizó con éxito.
             </p>
-            <p>Ya estamos preparando tu pedido! Y será enviado a tu domicilio hoy mismo!</p>
+            <p>Tu pedido será procesado y enviado lo antes posible.</p>
             <p>
                 Valor del Pedido: $<?=$totalPrice?>
             </p>
