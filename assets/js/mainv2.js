@@ -435,7 +435,7 @@ function validationsAndSubmit() {
         if(checkTiendaOpen()) { 
             var response = validateExtrasQuantities();
             if(response.continue) {
-                var tiendaFueraDeHorario = true;//getTiendaFueraDeHorario();
+                var tiendaFueraDeHorario = getTiendaFueraDeHorario();
                 if(!tiendaFueraDeHorario) {
                     eboSubmit();
                 } else {
@@ -461,7 +461,17 @@ function validationsAndSubmit() {
 }
 
 function getTiendaFueraDeHorario() {
-
+    var fueraHorario = false;
+    $.ajax({
+        url: baseURL + 'get_tienda_fuera_horario',
+        method: 'get',
+        async: false
+    }).done(function(result) {
+        if(result.fuera_horario!=null) {
+            fueraHorario = result.fuera_horario;
+        }
+    });
+    return fueraHorario;
 }
 
 function validateExtrasQuantities() {
