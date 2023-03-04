@@ -6,7 +6,7 @@
     <title><?=$title ?? "";?></title>
     <link rel="stylesheet" href="<?=assets();?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=assets();?>dt/datatables.min.css">
-    <link rel="stylesheet" href="<?=assets();?>css/backoffice.css?v=11123">
+    <link rel="stylesheet" href="<?=assets();?>css/backoffice.css?v=9652">
     <script type="text/javascript" src="<?=assets();?>js/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>

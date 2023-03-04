@@ -74,9 +74,10 @@ class Extra extends CI_Model
 
     public function delete($id) 
     {
+        $this->db->set('eliminado', 1);
+        $this->db->set('active', 0);
         $this->db->where('id', $id);
-        $this->db->delete('extra_products');
-
+        $this->db->update('extra_products');
         return true;
     }
 
