@@ -11,7 +11,13 @@
         <div class="extras-wrapper">
             <?php foreach($extras ?? [] as $extra) : ?>
             <div class="extras-caja">
-                <div class="extras-caja-titulo"> <?=$extra->name;?>  </div>
+                <div class="extras-caja-titulo"> <?=$extra->name;?>  
+                <span style="float:right">
+                    <a href="javascript:preDeleteProduct(<?=$extra->id;?>, '<?=$extra->name;?>');">
+                        <img src="<?=assets();?>img/trash2.png" style="width:20px;"/>
+                    </a>
+                </span>
+            </div>
                 <div style="padding:5px;">
                     <div class="extras-caja-info"> 
                         Precio: <b>$<?=$extra->price;?></b> 
@@ -43,7 +49,6 @@
                             <a href="javascript:openEditExtra(<?=$extra->id;?>);">Editar</a>
                         </div>
                     </div>         
-                    
                 </div>
             </div>
             <?php endforeach;?>
@@ -149,4 +154,33 @@
 </div>
 <!-- Fin Modal Editar Extras-->
 
-<script type="text/javascript" src="<?=assets();?>js/extrasHelper.js?v=1876111"></script>
+<!--Modal Delete Producto -->
+<div class="modal fade" tabindex="-1" role="dialog" id="deleteProductoModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Eliminar Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="deleteRegistrosLogisticaForm">
+            <div class="form-group">
+                <h6>Estas por eliminar el producto <span id="sDeleteProducto"></span>.</h6>
+                <h6>¿Quer&eacute;s continuar? </h6>
+                <input type="hidden" id="removeIdProducto" value=""/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="bDeleteProducto" class="btn btn-green">Continuar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+        </form>
+       </div>
+    </div>
+  </div>
+</div>
+<!--Fin Modal Delete Producto-->
+
+
+<script type="text/javascript" src="<?=assets();?>js/extrasHelper.js?v=9911"></script>

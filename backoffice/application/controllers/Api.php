@@ -483,7 +483,7 @@ class Api extends CI_Controller
         return $this->output->set_output(json_encode($return));
     }
 
-    public function extraDelete($id) 
+    public function extraDelete() 
     {
         $this->output->set_content_type('application/json');
         if(!valid_session()) {
@@ -492,9 +492,10 @@ class Api extends CI_Controller
             $this->output->set_status_header(401);
             return $this->output->set_output(json_encode($return));
         }
+        $extraId = $this->input->post('extraId', true);
 
         $this->load->model('Extra');
-        $this->Extra->delete($id);
+        $this->Extra->delete($extraId);
 
         $return['status'] = self::OK_VALUE;
         $this->output->set_status_header(200);

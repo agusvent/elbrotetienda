@@ -691,6 +691,7 @@ input[name="dataTo"] {
     width: 140px;
     height: 80px;
     right: 40px;
+    top:100px;
     background: #FFFFFF;
     position: fixed;
     -moz-border-radius: 10px;

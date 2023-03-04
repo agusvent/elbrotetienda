@@ -299,13 +299,13 @@ function armarHtmlItemExtra(oExtra){
     htmlExtraItem += "<option selected value='0'>0</option>";
     if(parseInt(oExtra.stock_ilimitado)==0){
         for(var i=1;i<=parseInt(oExtra.stock_disponible);i++){
-            if(i==21){
+            if(i==101){
                 break;
             }
             htmlExtraItem += "<option value='"+i+"'>"+i+"</option>";
         }
     }else{
-        for(var i=1;i<21;i++){
+        for(var i=1;i<101;i++){
             htmlExtraItem += "<option value='"+i+"'>"+i+"</option>";
         }
     }

@@ -86,8 +86,8 @@ const extrasHelper = {
             var idExtra = $("#idNuevoExtra").val();
             var file_data = $('#newExtraForm-image').prop('files')[0];   
             var fileExtension = $('#newExtraForm-image').val().substr(($('#newExtraForm-image').val().lastIndexOf('.') + 1));
-            var form_data = new FormData();                  
-            form_data.append('file', file_data);        
+            var form_data = new FormData();
+            form_data.append('file', file_data);
             form_data.append('idExtra', idExtra);
             form_data.append('fileExtension', fileExtension);
             $.ajax({
@@ -96,9 +96,9 @@ const extrasHelper = {
                 cache: false,
                 contentType: false,
                 processData: false,
-                data: form_data,                         
+                data: form_data, 
                 type: 'post',
-                success: function(res){
+                success: function(res){
                     //console.log("HOLA",res);
                     extrasHelper.cleanAddExtraForm();
                     window.location.reload(true); 
@@ -108,6 +108,10 @@ const extrasHelper = {
         $("#bEditarExtra").on("click",function(e){
             e.preventDefault();
             editExtra();
+        });
+        $("#bDeleteProducto").on("click",function(e){
+            e.preventDefault();
+            deleteProducto();
         });
     },
     init: function() {
@@ -408,7 +412,7 @@ function editExtra(){
         let extraOrdenListados = $("#editExtraOrdenListados").val();
         var extraEditedOK = false;
 
-        extraEditedOK = extrasHelper.saveExtra(extraId, extraName, extraNombreCorto, extraPrice,extraStockDisponible,extraOrden, extraOrdenListados);
+        extraEditedOK = extrasHelper.saveExtra(extraId, extraName, extraNombreCorto, exƒtraPrice,extraStockDisponible,extraOrden, extraOrdenListados);
 
         var seEditaImagen = false;
         if($('#editExtraImageForm-image').prop('files')[0] != null){
@@ -454,4 +458,26 @@ function copyLink(idProducto){
     elem.select();
     document.execCommand('copy');
     document.body.removeChild(elem);
+}
+
+function preDeleteProduct(idProducto, producto) {
+    $('#sDeleteProducto').html(producto);
+    $('#removeIdProducto').val(idProducto);
+    $('#deleteProductoModal').modal('show');
+}
+
+function deleteProducto() {
+    let data = {
+        'extraId' : $("#removeIdProducto").val(),
+    };
+    $.ajax({
+        url: ajaxURL + 'extras/delete',
+        method: 'post',
+        data: data,
+        async: false
+    }).done(function(result) {
+        if(result.status == 'ok') {
+            window.location.reload(true); 
+        }
+    });    
 }
