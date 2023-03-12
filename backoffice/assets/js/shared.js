@@ -82,6 +82,7 @@ function initListadoPedidosDatatable(){
         "bSort": false,
         "iDisplayLength": 15
     });
+    $('[data-toggle="tooltip"]').tooltip();
 }
 
 function fImprimirComanda(idPedido) {

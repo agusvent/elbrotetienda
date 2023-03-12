@@ -24,6 +24,7 @@ function loopLoadPedidos() {
 }
 
 function loadPedidosPendientes() {
+    $('[data-toggle="tooltip"]').tooltip('dispose');
     var cPedidos = getPedidosPendientes();
     cargarListadoPedidos(cPedidos);
     ocultarLoader();
@@ -101,7 +102,13 @@ function cargarListadoPedidos(pedidos){
             html += "<td><a href='javascript:printComandaAndTurnOffAlarm("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/comanda.png' width='24'/></a></td>";
             
             html += "<td><a href='javascript:fReenviarMailConfirmacion("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/send_mail.png' width='24'/></a>";
-            html += "<a href='javascript:fEditarPedido("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a></td>";
+            html += "<a href='javascript:fEditarPedido("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a>";
+            if(pedidos[i].observaciones!=null && pedidos[i].observaciones!="") {
+                html += "<span data-toggle='tooltip' data-placement='left' title='"+pedidos[i].observaciones+"'>";
+                html += "<img class='img img-responsive' src='../assets/img/eye.png' width='24'/>";
+                html += "</span>";
+            }
+            html += "</td>";
             html += "</tr>";
         }
     }
@@ -223,4 +230,5 @@ function initListadoPedidosPendientesDatatable(){
         "bSort": false,
         "iDisplayLength": 100000
     });
+    $('[data-toggle="tooltip"]').tooltip();
 }

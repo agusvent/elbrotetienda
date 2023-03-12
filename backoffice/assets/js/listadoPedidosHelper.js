@@ -56,6 +56,7 @@ $( document ).ready(function() {
         $("#filtroFechaDesde").val("");
         $("#filtroFechaHasta").val("");
     });
+    
     $('body').on('change', "input[id='filtroPedidosFechasSwitch']", function(e) {
         e.preventDefault();
         let fechasEnabled = $(this).is(':checked');
@@ -68,7 +69,8 @@ $( document ).ready(function() {
             $("#filtroFechaDesde").val($("#filtroPedidosFechasSwitch").attr("data-fecha-prev-desde"));
             $("#filtroFechaHasta").val($("#filtroPedidosFechasSwitch").attr("data-fecha-prev-hasta"));
         }
-    });    
+    });
+
 });
 
 function preFiltrar(){
@@ -122,6 +124,11 @@ function cargarListadoPedidos(pedidos){
                 html += "<td>";
                 html += "<a href='javascript:fReenviarMailConfirmacion("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/send_mail.png' width='24'/></a>"
                 html += "<a href='javascript:fImprimirComanda("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/comanda.png' width='24'/></a>"                
+                if(pedidos[i].observaciones!=null && pedidos[i].observaciones!="") {
+                    html += "<span data-toggle='tooltip' data-placement='left' title='"+pedidos[i].observaciones+"'>";
+                    html += "<img class='img img-responsive' src='../assets/img/eye.png' width='24'/>";
+                    html += "</span>";
+                }                    
                 html += "</td>";
             html += "</tr>";
         }

@@ -91,5 +91,5 @@
 <!--Fin Modal Modal Confirm Entregado-->
 
 
-<script type="text/javascript" src="<?=assets();?>js/listadoPedidosPendientesHelper.js?v=66123"></script>
+<script type="text/javascript" src="<?=assets();?>js/listadoPedidosPendientesHelper.js?v=917623"></script>
 <script type="text/javascript" src="<?=assets();?>js/shared.js?v=6523"></script>
