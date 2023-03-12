@@ -412,7 +412,7 @@ function editExtra(){
         let extraOrdenListados = $("#editExtraOrdenListados").val();
         var extraEditedOK = false;
 
-        extraEditedOK = extrasHelper.saveExtra(extraId, extraName, extraNombreCorto, exƒtraPrice,extraStockDisponible,extraOrden, extraOrdenListados);
+        extraEditedOK = extrasHelper.saveExtra(extraId, extraName, extraNombreCorto, extraPrice,extraStockDisponible,extraOrden, extraOrdenListados);
 
         var seEditaImagen = false;
         if($('#editExtraImageForm-image').prop('files')[0] != null){
