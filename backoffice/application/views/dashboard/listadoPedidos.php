@@ -174,5 +174,5 @@
 </div>
 <!-- Fin Modal Filtro de Pedidos-->
 
-<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=119865"></script>
+<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=1234"></script>
 <script type="text/javascript" src="<?=assets();?>js/shared.js?v=14123"></script>

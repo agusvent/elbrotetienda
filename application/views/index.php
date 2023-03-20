@@ -226,7 +226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="support-content">
                                 <h5 class="h5ComoHacerTuPedido">¡Recibí tu pedido en el día!</h5>
-                                <p>Escribinos por Whatsapp para recibir el link de seguimiento de tu pedido.</p>
+                                <p>Realizando tu compra de Lunes a Viernes antes de las 18hs.</p>
                             </div>
                         </div>
                     </div>
