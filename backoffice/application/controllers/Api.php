@@ -10002,4 +10002,30 @@ class Api extends CI_Controller
         $xlsCreado = true;
         return $xlsCreado;
     }    
+
+    public function isValidEditPassword() {
+        $this->output->set_content_type('application/json');
+
+        $is_valid_pass = false;
+        $pass = $this->input->post('password', true);
+
+        if(is_null($pass)) {
+            $return['status'] = self::FAIL_VALUE;
+            $return['message'] = 'No se recibieron los parámetros necesarios.';
+            $this->output->set_status_header(403);
+            return $this->output->set_output(json_encode($return));
+        }
+
+        $this->load->model('Content');
+        $editPass = $this->Content->get('edit_pedido_password');
+        if (strcmp($pass, $editPass) == 0) {
+            $is_valid_pass = true;
+        }
+
+        $return['status'] = self::OK_VALUE;
+        $return['isValidPass'] = $is_valid_pass;
+        $this->output->set_status_header(200);
+        return $this->output->set_output(json_encode($return));               
+    }
+
 }

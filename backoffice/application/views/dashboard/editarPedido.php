@@ -370,9 +370,7 @@
                     &nbsp;
                 </div>
                 <div class="col-xs-12 col-sm-5">
-                    <?php if($pedido->despachado==0) {?>
-                        <button type="submit" id="bGrabarEditar" class="btn btn-primary btn-sm">Grabar</button>
-                    <?php } ?>
+                    <button type="submit" id="bGrabarEditar" class="btn btn-primary btn-sm">Grabar</button>
                     <button type="button" id="bCancelarEditar" class="btn btn-danger btn-sm">Cancelar</button>
                 </div>
             </div>
@@ -380,4 +378,37 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=1234"></script>
+<!--Modal Confirm Editar -->
+<div class="modal fade" tabindex="-1" role="dialog" id="passEditModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="deleteRegistrosLogisticaForm">
+            <div class="form-group">
+                <h6>El pedido ya esta despachado/entregado y no puede editarse.</h6>
+                <h6>Para continuar, tenes que ingresar la contrase&ntilde;a.</h6>
+                <p>
+                    <input type="password" id="masterPass" name="masterPass" style="width:100%" value=""></input>
+                </p>
+                <p>
+                    <span id="editWithPassError" style="color:#FF0000"></span>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="bEditarPedidoWithPass" class="btn btn-green">Editar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+        </form>
+       </div>
+    </div>
+  </div>
+</div>
+<!--Fin Modal Confirm Editar-->
+
+<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=97162"></script>

@@ -128,94 +128,20 @@ const editarPedidosHelper = {
 
         $("#bGrabarEditar").on("click",function(e){
             e.preventDefault();
-            mostrarLoader();
-            
-            $("#bGrabarEditar").prop("disabled",true);
             var idPedido = $("#editarPedidoIdPedido").val();
-            var idDiaEntrega = $("#idDiaEntregaPedido").val();
-            var nombre = $("#editarPedidoNombreCompleto").val();
-            var telefono = $("#editarPedidoTelefono").val();
-            var mail = $("#editarPedidoMail").val();
-            var direccion = $("#editarPedidoDireccion").val();
-            var direccionPisoDepto = $("#editarPedidoDireccionPisoDepto").val();
-            var idTipoPedido = $("#editarPedidoIdTipoPedido").val();
-            var idBarrio = $("#editarPedidoIdBarrio").val();
-            var idSucursal = $("#editarPedidoIdSucursal").val();
-            var idBolson = $("#editarPedidoIdBolson").val();
-            var cantBolson = $("#cantBolson").val();
-            var montoTotal = $("#lEditarPedidoSubtotal").html();
-            var montoPagado = $("#editarPedidoMontoPagado").val();
-            var idEstadoPedido = $("#editarPedidoIdEstadoPedido").val();
-            var observaciones = $("#editarPedidoObservaciones").val();
-            var idCupon = $("#idCupon").val();
-            var idFormaPago = $("#editarPedidoIdFormaPago").val();
-            var montoDescuento = $("#editarPedidoMontoDescuento").val();
-            var checkPedidoFijo = $("#editarPedidoCheckFijarPedido").prop("checked");
-            var idPedidoFijo = 0;
-            if(checkPedidoFijo){
-                idPedidoFijo = 1;
+            var oPedido = getPedidoById(idPedido);
+            if((oPedido.despachado!=null && oPedido.despachado == 1) || (oPedido.entregado!=null && oPedido.entregado == 1)) {
+                $("#passEditModal").modal("show");
+                return;
             }
-            var extras = [];
-            /*$('.chkExtras').each(function () {
-                if( $(this).prop("checked")==true ){
-                    extras.push($(this).val());
-                }
-            });*/
-            $('.selectExtras').each(function () {
-                if( $(this).val() > 0 ){
-                    var oExtra = {
-                        "idExtra": $(this).attr("attr-idExtra"),
-                        "cantidad": $(this).val()
-                    };
+            grabar();
+        });
 
-                    extras.push(oExtra);
-                }
-            });
-            var mensajeForm = checkEditarPedidoForm();            
-            if(mensajeForm!=""){
-                $("#bGrabarEditar").prop("disabled",false);
-                ocultarLoader();
-                return Swal.fire('Atención', mensajeForm, 'error');
-            }else{
-                let data = {
-                    'idPedido': idPedido,
-                    'idDiaEntrega': idDiaEntrega,
-                    'nombre' : nombre,
-                    'telefono' : telefono,
-                    'mail' : mail,
-                    'direccion': direccion,
-                    'direccionPisoDepto': direccionPisoDepto,
-                    'idTipoPedido': idTipoPedido,
-                    'idBarrio': idBarrio,
-                    'idSucursal': idSucursal,
-                    'idBolson': idBolson,
-                    'cantBolson': cantBolson,
-                    'montoTotal': montoTotal,
-                    'montoPagado': montoPagado,
-                    'idEstadoPedido': idEstadoPedido,
-                    'observaciones': observaciones,
-                    'idCupon': idCupon,
-                    'montoDescuento': montoDescuento,
-                    'idPedidoFijo': idPedidoFijo,
-                    'idFormaPago': idFormaPago,
-                    'extras': extras
-                };
-                $.ajax({
-                    url: ajaxURL + 'orders/editarPedido',
-                    data: data,
-                    method: 'post'
-                }).done(function(result) {
-                    if(result.status == 'ok') {
-                        if(result.idPedido > 0){
-                            $("#accion").val("volver");
-                            $("form.editarPedidoForm").submit();                                            
-                        }else{
-                            return Swal.fire('Error', 'Hubo un error al editar el pedido. Intenta de nuevo.', 'error');
-                        }
-                    }else{
-                        return Swal.fire('Error', 'Hubo un error al editar el pedido. Intenta de nuevo.', 'error');
-                    }
-                });                
+        $("#bEditarPedidoWithPass").on("click",function(e){
+            if(verifyEditPassword()) {
+                grabar();
+            } else {
+                $("#editWithPassError").html("Contrasena incorrecta.");
             }
         });
 
@@ -286,6 +212,98 @@ const editarPedidosHelper = {
         editarPedidoCalcularDebe();
     }
 };
+
+function grabar() {
+    mostrarLoader();
+            
+    $("#bGrabarEditar").prop("disabled",true);
+    var idPedido = $("#editarPedidoIdPedido").val();
+    var idDiaEntrega = $("#idDiaEntregaPedido").val();
+    var nombre = $("#editarPedidoNombreCompleto").val();
+    var telefono = $("#editarPedidoTelefono").val();
+    var mail = $("#editarPedidoMail").val();
+    var direccion = $("#editarPedidoDireccion").val();
+    var direccionPisoDepto = $("#editarPedidoDireccionPisoDepto").val();
+    var idTipoPedido = $("#editarPedidoIdTipoPedido").val();
+    var idBarrio = $("#editarPedidoIdBarrio").val();
+    var idSucursal = $("#editarPedidoIdSucursal").val();
+    var idBolson = $("#editarPedidoIdBolson").val();
+    var cantBolson = $("#cantBolson").val();
+    var montoTotal = $("#lEditarPedidoSubtotal").html();
+    var montoPagado = $("#editarPedidoMontoPagado").val();
+    var idEstadoPedido = $("#editarPedidoIdEstadoPedido").val();
+    var observaciones = $("#editarPedidoObservaciones").val();
+    var idCupon = $("#idCupon").val();
+    var idFormaPago = $("#editarPedidoIdFormaPago").val();
+    var montoDescuento = $("#editarPedidoMontoDescuento").val();
+    var checkPedidoFijo = $("#editarPedidoCheckFijarPedido").prop("checked");
+    var idPedidoFijo = 0;
+    if(checkPedidoFijo){
+        idPedidoFijo = 1;
+    }
+    var extras = [];
+    /*$('.chkExtras').each(function () {
+        if( $(this).prop("checked")==true ){
+            extras.push($(this).val());
+        }
+    });*/
+    $('.selectExtras').each(function () {
+        if( $(this).val() > 0 ){
+            var oExtra = {
+                "idExtra": $(this).attr("attr-idExtra"),
+                "cantidad": $(this).val()
+            };
+
+            extras.push(oExtra);
+        }
+    });
+    var mensajeForm = checkEditarPedidoForm();            
+    if(mensajeForm!=""){
+        $("#bGrabarEditar").prop("disabled",false);
+        ocultarLoader();
+        return Swal.fire('Atención', mensajeForm, 'error');
+    }else{
+        let data = {
+            'idPedido': idPedido,
+            'idDiaEntrega': idDiaEntrega,
+            'nombre' : nombre,
+            'telefono' : telefono,
+            'mail' : mail,
+            'direccion': direccion,
+            'direccionPisoDepto': direccionPisoDepto,
+            'idTipoPedido': idTipoPedido,
+            'idBarrio': idBarrio,
+            'idSucursal': idSucursal,
+            'idBolson': idBolson,
+            'cantBolson': cantBolson,
+            'montoTotal': montoTotal,
+            'montoPagado': montoPagado,
+            'idEstadoPedido': idEstadoPedido,
+            'observaciones': observaciones,
+            'idCupon': idCupon,
+            'montoDescuento': montoDescuento,
+            'idPedidoFijo': idPedidoFijo,
+            'idFormaPago': idFormaPago,
+            'extras': extras
+        };
+        $.ajax({
+            url: ajaxURL + 'orders/editarPedido',
+            data: data,
+            method: 'post'
+        }).done(function(result) {
+            if(result.status == 'ok') {
+                if(result.idPedido > 0){
+                    $("#accion").val("volver");
+                    $("form.editarPedidoForm").submit();                                            
+                }else{
+                    return Swal.fire('Error', 'Hubo un error al editar el pedido. Intenta de nuevo.', 'error');
+                }
+            }else{
+                return Swal.fire('Error', 'Hubo un error al editar el pedido. Intenta de nuevo.', 'error');
+            }
+        });                
+    }    
+}
 
 function sumarSubTotal(){
     editarPedidosHelper.sumarSubTotal();
@@ -678,4 +696,20 @@ function getConfigDiaEntrega(idDiaEntrega) {
         }
     });
     return configDiaEntrega;
+}
+
+function verifyEditPassword() {
+    var validPass = false;
+    var data = {
+        "password": $("#masterPass").val()
+    }
+    $.ajax({
+        url: ajaxURL + 'internal/verifyEditPassword/',
+        method: 'post',
+        data: data,
+        async: false
+    }).done(function(result) {
+        validPass = result.isValidPass;
+    });
+    return validPass;
 }

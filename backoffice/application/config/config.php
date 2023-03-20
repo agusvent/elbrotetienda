@@ -550,7 +550,8 @@ $config['csrf_exclude_uris'] = array(
     'api/diasEntrega/editarBarriosHabilitados',
     'api/barrios/getBarriosHabilitadosForDiaEntrega',
     'api/internal/reenviarMailConfirmacion',
-    'api/internal/printComandaPedido'
+    'api/internal/printComandaPedido',
+    'api/internal/verifyEditPassword'
 );
 
 /*
