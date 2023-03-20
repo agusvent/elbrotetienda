@@ -90,10 +90,10 @@ class Order extends CI_Model
         $this->db->update('orders');
     }
 
-    public function setObs($hash, $obs) 
+    public function setMercadoPagoLogs($hash, $obs) 
     {
         $this->db->where('hash', $hash);
-        $this->db->set('observaciones', $obs);
+        $this->db->set('mercado_pago_log', $obs);
         $this->db->update('orders');
     }
 

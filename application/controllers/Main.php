@@ -826,7 +826,7 @@ class Main extends CI_Controller
         $obs = "Type: ".$notif_type." - Topic: ".$notif_topic
             ." PaymentId: ".$payment_id." - MerchantOrderId: ".$merchant_order_id
             ." Status: ".$payment_status;
-        $this->Order->setObs($hash,$obs);
+        $this->Order->setMercadoPagoLogs($hash,$obs);
         
         $this->output->set_status_header(200);
         return $this->output->set_output(true);
