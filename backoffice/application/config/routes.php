@@ -228,3 +228,4 @@ $route['api/cupones/status'] = 'Api/statusCupon';
 
 $route['api/internal/reenviarMailConfirmacion'] = 'Api/sendConfirmationMail';
 $route['api/internal/printComandaPedido'] = 'Api/printComandaPedido';
+$route['api/internal/verifyEditPassword'] = 'Api/isValidEditPassword';
