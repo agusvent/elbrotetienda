@@ -64,7 +64,13 @@ function cargarListadoPedidos(pedidos){
                     alarma = "<img class='img img-responsive"+alertOnClass+"' src='../assets/img/bell.png' width='24'/>";
                 }
             }
-            html += "<td>"+alarma+"</td>";
+            html += "<td style='text-align:center;'>"+alarma;
+            if(pedidos[i].observaciones!=null && pedidos[i].observaciones!="") {
+                html += "<span data-toggle='tooltip' data-placement='left' title='"+pedidos[i].observaciones+"'>";
+                html += "<img class='img img-responsive' src='../assets/img/eye.png' width='24'/>";
+                html += "</span>";
+            }
+            html += "</td>";
             html += "<td>"+pedidos[i].client_name+"</td>";
             
             if(pedidos[i].phone!=null && pedidos[i].phone!=""){
@@ -103,11 +109,6 @@ function cargarListadoPedidos(pedidos){
             
             html += "<td><a href='javascript:fReenviarMailConfirmacion("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/send_mail.png' width='24'/></a>";
             html += "<a href='javascript:fEditarPedido("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a>";
-            if(pedidos[i].observaciones!=null && pedidos[i].observaciones!="") {
-                html += "<span data-toggle='tooltip' data-placement='left' title='"+pedidos[i].observaciones+"'>";
-                html += "<img class='img img-responsive' src='../assets/img/eye.png' width='24'/>";
-                html += "</span>";
-            }
             html += "</td>";
             html += "</tr>";
         }

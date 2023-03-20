@@ -16,12 +16,12 @@
             <table class="listadoPedidosTable" id="tableListadoPedidos">
                 <thead>
                     <tr>
-                        <th style="text-align:left;width:2%">&nbsp;</th>    
+                        <th style="text-align:left;width:6%">&nbsp;</th>    
                         <th style="text-align:left;width:16%">Cliente</th>
                         <th style="text-align:left;width:7%">Tel&eacute;fono</th>
                         <th style="text-align:left;width:14%">Mail</th>
                         <th style="text-align:left;width:10%">Estado</th>
-                        <th style="text-align:left;width:20%">Barrio</th>
+                        <th style="text-align:left;width:19%">Barrio</th>
                         <th style="text-align:left;width:9%">Despachado</th>
                         <th style="text-align:left;width:9%">Entregado</th>
                         <th style="text-align:left;width:2%">&nbsp;</th>
