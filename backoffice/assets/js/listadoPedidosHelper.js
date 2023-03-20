@@ -94,42 +94,44 @@ function cargarListadoPedidos(pedidos){
             }else{
                 html += "<tr>";
             }
+            html += "<td>";
+            if(pedidos[i].observaciones!=null && pedidos[i].observaciones!="") {
+                html += "<span data-toggle='tooltip' data-placement='left' title='"+pedidos[i].observaciones+"'>";
+                html += "<img class='img img-responsive' src='../assets/img/eye.png' width='24'/>";
+                html += "</span>";
+            }                    
+            html += "</td>";
             html += "<td>"+pedidos[i].deliver_date+"</td>"
-                html += "<td>"+pedidos[i].client_name+"</td>"
-                
-                if(pedidos[i].phone!=null && pedidos[i].phone!=""){
-                    html += "<td>"+pedidos[i].phone+"</td>"
-                }else{
-                    html += "<td>-</td>";
-                }
-                
-                if(pedidos[i].email!=null && pedidos[i].email!=""){
-                    html += "<td>"+pedidos[i].email+"</td>"
-                }else{
-                    html += "<td>-</td>";
-                }
-                
-                if(pedidos[i].estadoPedido!=null && pedidos[i].estadoPedido!=""){
-                    html += "<td>"+pedidos[i].estadoPedido+"</td>"
-                }else{
-                    html += "<td>-</td>"
-                }
-                
-                html += "<td>"+pedidos[i].nombre_barrio+"</td>"
-                
-                html += "<td>";
-                html += "<a href='javascript:fEditarPedido("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a>"
-                html += "</td>";
-                
-                html += "<td>";
-                html += "<a href='javascript:fReenviarMailConfirmacion("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/send_mail.png' width='24'/></a>"
-                html += "<a href='javascript:fImprimirComanda("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/comanda.png' width='24'/></a>"                
-                if(pedidos[i].observaciones!=null && pedidos[i].observaciones!="") {
-                    html += "<span data-toggle='tooltip' data-placement='left' title='"+pedidos[i].observaciones+"'>";
-                    html += "<img class='img img-responsive' src='../assets/img/eye.png' width='24'/>";
-                    html += "</span>";
-                }                    
-                html += "</td>";
+            html += "<td>"+pedidos[i].client_name+"</td>"
+            
+            if(pedidos[i].phone!=null && pedidos[i].phone!=""){
+                html += "<td>"+pedidos[i].phone+"</td>"
+            }else{
+                html += "<td>-</td>";
+            }
+            
+            if(pedidos[i].email!=null && pedidos[i].email!=""){
+                html += "<td>"+pedidos[i].email+"</td>"
+            }else{
+                html += "<td>-</td>";
+            }
+            
+            if(pedidos[i].estadoPedido!=null && pedidos[i].estadoPedido!=""){
+                html += "<td>"+pedidos[i].estadoPedido+"</td>"
+            }else{
+                html += "<td>-</td>"
+            }
+            
+            html += "<td>"+pedidos[i].nombre_barrio+"</td>"
+            
+            html += "<td>";
+            html += "<a href='javascript:fEditarPedido("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a>"
+            html += "</td>";
+            
+            html += "<td>";
+            html += "<a href='javascript:fReenviarMailConfirmacion("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/send_mail.png' width='24'/></a>"
+            html += "<a href='javascript:fImprimirComanda("+pedidos[i].id+")'><img class='img img-responsive' src='../assets/img/comanda.png' width='24'/></a>"                
+            html += "</td>";
             html += "</tr>";
         }
     }

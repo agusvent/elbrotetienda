@@ -25,6 +25,7 @@
             <table class="listadoPedidosTable" id="tableListadoPedidos">
                 <thead>
                     <tr>
+                        <th style="text-align:left;width:3%">&nbsp;</th>    
                         <th style="text-align:left;width:16%">Fecha</th>
                         <th style="text-align:left;width:16%">Cliente</th>
                         <th style="text-align:left;width:7%">Tel&eacute;fono</th>
@@ -32,7 +33,7 @@
                         <th style="text-align:left;width:10%">Estado</th>
                         <th style="text-align:left;width:21%">Barrio</th>
                         <th style="text-align:left;width:3%">&nbsp;</th>
-                        <th style="text-align:left;width:8%">&nbsp;</th>
+                        <th style="text-align:left;width:6%">&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody id="tableListadoPedidosBody">
@@ -51,11 +52,19 @@
                                 <?php }else{?>
                                     <tr>
                                 <?php } ?>
-                                        <td><?=$oPedido->deliver_date ?? '-1'?>
-                                        <td><?=$oPedido->client_name ?? ""?>
-                                        <td><?=$oPedido->phone ?? ""?>
-                                        <td><?=$oPedido->email ?? ""?>
-                                        <td><?=$oPedido->estadoPedido ?? ""?>
+                                        <td>
+                                            <?php if($oPedido->observaciones!=null && $oPedido->observaciones!=""){?>
+                                                <span data-toggle='tooltip' data-placement='left' title='<?=$oPedido->observaciones?>'>
+                                                    <img class='img img-responsive' src='../assets/img/eye.png' width='24'/>
+                                                </span>
+                                            <?php }?>
+                                        </td>
+                                        <td><?=$oPedido->deliver_date ?? '-1'?></td>
+                                        <td><?=$oPedido->client_name ?? ""?></td>
+                                        <td><?=$oPedido->phone ?? ""?></td>
+                                        <td><?=$oPedido->email ?? ""?></td>
+                                        <td><?=$oPedido->estadoPedido ?? ""?></td>
+                                        <td><?=$oPedido->barrio ?? ""?></td>
                                         <td><a href='javascript:fEditarPedido("<?=$oPedido->id?>")'><img class='img img-responsive' src='../assets/img/edit.png' width='24'/></a></td>
                                         <td>
                                             <a href='javascript:fReenviarMailConfirmacion("<?=$oPedido->id?>")'><img class='img img-responsive' src='../assets/img/send_mail.png' width='24'/></a>
@@ -174,5 +183,5 @@
 </div>
 <!-- Fin Modal Filtro de Pedidos-->
 
-<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=1234"></script>
+<script type="text/javascript" src="<?=assets();?>js/listadoPedidosHelper.js?v=9856"></script>
 <script type="text/javascript" src="<?=assets();?>js/shared.js?v=14123"></script>
