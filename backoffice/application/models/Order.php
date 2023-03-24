@@ -1327,9 +1327,7 @@ class Order extends CI_Model
             //LO PONEMOS COMO DEFAULT EN ESTADO 1 ==> CONFIRMADO
             $this->db->set('id_estado_pedido', 1);    
         }
-        if($observaciones!=null && $observaciones!=""){
-            $this->db->set('observaciones', $observaciones);    
-        }
+        $this->db->set('observaciones', $observaciones);    
         if($idPedidoFijo!=null){
             $this->db->set('id_pedido_fijo', $idPedidoFijo);    
             if($idPedidoFijo==0){
