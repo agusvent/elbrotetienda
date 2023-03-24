@@ -1073,7 +1073,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="welcome-content text-center">
                             <h5>¡Atenci&oacute;n!</h5>
-                            <p>Nuestros horarios de apertura son de Lunes a Viernes de 9 a 18hs, como tu pedido va a entrar fuera de horario, lo procesaremos y enviaremos al momento de abrir nuestra tienda.
+                            <p>Este Viernes 24 de Marzo no estaremos entregando pedidos. Nuestros horarios de apertura son de Lunes a Viernes de 9 a 18hs, como tu pedido va a entrar fuera de horario, lo procesaremos y enviaremos al momento de abrir nuestra tienda.
                             </p>
                         </div>
                     </div>
