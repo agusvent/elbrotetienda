@@ -45,6 +45,7 @@ class Dashboard extends CI_Controller
             'descripcionBolsonesFormCerrado' => $this->Content->getDescripcionBolsonesFormCerrado(),
             'descripcionTienda' => $this->Content->getDescripcionTienda(),
             'descripcionTiendaFormCerrado' => $this->Content->getDescripcionTiendaFormCerrado(),
+            'descripcionPedidoFueraDeHorario' => $this->Content->get('pedidos_fuera_horario_text'),
             'confirmationLabel' => $this->Content->getConfirmationLabel(),
             'orderSuccess'      => $this->Content->get('order_success'),
             'formDisabledText'  => $this->Content->get('form_disabled_text'),
@@ -57,16 +58,17 @@ class Dashboard extends CI_Controller
         if($this->input->post('subm')) {
             $renderParams['submited'] = true;
 
-            $formTitle                      = $this->input->post('form_title', true);
-            $formText                       = $this->input->post('form_text', true);
-            $descripcionBolson              = $this->input->post('descripcionBolson', true);
-            $descripcionBolsonesFormCerrado = $this->input->post('descripcionBolsonesFormCerrado', true);
-            $descripcionTienda              = $this->input->post('descripcionTienda', true);
-            $descripcionTiendaFormCerrado   = $this->input->post('descripcionTiendaFormCerrado', true);
-            $confirmationLabel              = $this->input->post('confirmation_label', true);
-            $orderSuccess                   = $this->input->post('order_success', true);
-            $formDisabledText               = $this->input->post('form_disabled_text', true);
-            $mainText                       = $this->input->post('main_text', true);
+            $formTitle                       = $this->input->post('form_title', true);
+            $formText                        = $this->input->post('form_text', true);
+            $descripcionBolson               = $this->input->post('descripcionBolson', true);
+            $descripcionBolsonesFormCerrado  = $this->input->post('descripcionBolsonesFormCerrado', true);
+            $descripcionTienda               = $this->input->post('descripcionTienda', true);
+            $descripcionTiendaFormCerrado    = $this->input->post('descripcionTiendaFormCerrado', true);
+            $descripcionPedidoFueraDeHorario = $this->input->post('descripcionPedidoFueraDeHorario', true);
+            $confirmationLabel               = $this->input->post('confirmation_label', true);
+            $orderSuccess                    = $this->input->post('order_success', true);
+            $formDisabledText                = $this->input->post('form_disabled_text', true);
+            $mainText                        = $this->input->post('main_text', true);
 
             // Seteo
             $this->Content->set('form_title', $formTitle);
@@ -77,18 +79,20 @@ class Dashboard extends CI_Controller
             $this->Content->set('descripcionBolsonesFormCerrado', $descripcionBolsonesFormCerrado);
             $this->Content->set('descripcionTienda', $descripcionTienda);
             $this->Content->set('descripcionTiendaFormCerrado', $descripcionTiendaFormCerrado);
+            $this->Content->set('pedidos_fuera_horario_text', $descripcionPedidoFueraDeHorario);
 
             if($this->Content->setConfirmationAndText($confirmationLabel, $formText)) {
-                $renderParams['success']           = true;
-                $renderParams['formText']          = $formText;
-                $renderParams['descripcionBolson'] = $descripcionBolson;
-                $renderParams['descripcionBolsonesFormCerrado'] = $descripcionBolsonesFormCerrado;
-                $renderParams['descripcionTienda'] = $descripcionTienda;
-                $renderParams['descripcionTiendaFormCerrado'] = $descripcionTiendaFormCerrado;
-                $renderParams['confirmationLabel'] = $confirmationLabel;
-                $renderParams['orderSuccess']      = $orderSuccess;
-                $renderParams['formDisabledText']  = $formDisabledText;
-                $renderParams['mainText']          = $mainText;
+                $renderParams['success']                         = true;
+                $renderParams['formText']                        = $formText;
+                $renderParams['descripcionBolson']               = $descripcionBolson;
+                $renderParams['descripcionBolsonesFormCerrado']  = $descripcionBolsonesFormCerrado;
+                $renderParams['descripcionTienda']               = $descripcionTienda;
+                $renderParams['descripcionTiendaFormCerrado']    = $descripcionTiendaFormCerrado;
+                $renderParams['descripcionPedidoFueraDeHorario'] = $descripcionPedidoFueraDeHorario;
+                $renderParams['confirmationLabel']               = $confirmationLabel;
+                $renderParams['orderSuccess']                    = $orderSuccess;
+                $renderParams['formDisabledText']                = $formDisabledText;
+                $renderParams['mainText']                        = $mainText;
             }else{
                 $renderParams['failed'] = true;
             }

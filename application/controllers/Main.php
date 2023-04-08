@@ -522,7 +522,8 @@ class Main extends CI_Controller
             'imagenBolson' => $this->DiasEntregaPedidos->getDiaGenerico()->imagen,
             'moduloCuponesEnabled' => $this->Parameter->get('moduloCuponesEnabled'),
             'cDiasEntrega' => $this->DiasEntregaPedidos->getAllActivos(),
-            'idDiaGenerico' => $this->DiasEntregaPedidos->getDiaGenerico()->id_dia_entrega
+            'idDiaGenerico' => $this->DiasEntregaPedidos->getDiaGenerico()->id_dia_entrega,
+            'pedidosFueraHorarioText' => $this->Parameter->get('pedidos_fuera_horario_text')
         ]));
     }
 

@@ -40,6 +40,11 @@
                 <textarea class="form-control" name="descripcionTiendaFormCerrado" rows="10"><?=$descripcionTiendaFormCerrado ?? '';?></textarea>
             </div>
 
+            <h4>Texto Pedidos Fuera de Horario</h4>
+            <p>Edita el contenido que se muestra en la cartel de aviso cuando un pedido se realiza fuera de horario (TIENDA CERRADA)</p>
+            <div class="form-group">
+                <textarea class="form-control" name="descripcionPedidoFueraDeHorario" rows="10"><?=$descripcionPedidoFueraDeHorario ?? '';?></textarea>
+            </div>
             
             <h4>Texto del formulario</h4>
             <p>Edita el contenido que se muestra antes de que empiece el formulario del pedido. Emojis permitidos 😎</p>

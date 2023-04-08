@@ -89,3 +89,4 @@ $route['getTiendaAbierta'] = 'MultiHelper/getTiendaAbierta';
 $route['get_tienda_fuera_horario'] = 'MultiHelper/getTiendaFueraDeHorario';
 $route['validate_extra_requested_cant'] = 'ExtrasManager/validateExtraRequestedCant';
 $route['verify_extras_quantities_to_submit'] = 'ExtrasManager/verifyExtrasQuantitiesToSubmit';
+$route['get_fuera_de_horario_message'] = 'MultiHelper/getFueraDeHorarioMessage';

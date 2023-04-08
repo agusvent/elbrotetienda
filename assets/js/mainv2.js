@@ -439,6 +439,7 @@ function validationsAndSubmit() {
                 if(!tiendaFueraDeHorario) {
                     eboSubmit();
                 } else {
+                    setFueraDeHorarioMessage();
                     $("#modalAvisoPedidosFueraHorario").modal("show");
                 }
             } else{
@@ -2049,4 +2050,20 @@ function validateExtraRequestedCant(cantRequested, idExtra) {
         }
     });
     return res;
+}
+
+function setFueraDeHorarioMessage() {
+    var message = getFueraDeHorarioMessage();
+    $("#pFueraDeHorarioMessage").html(message);
+}
+
+function getFueraDeHorarioMessage() {
+    $.ajax({
+        url: baseURL + 'get_fuera_de_horario_message',
+        method: 'get',
+        async: false
+    }).done(function(result) {
+        message = result.message;
+    });
+    return message;
 }
