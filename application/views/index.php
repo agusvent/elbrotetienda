@@ -1073,7 +1073,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="welcome-content text-center">
                             <h5>¡Atenci&oacute;n!</h5>
-                            <p>Este Jueves 6 y Viernes 7 de Abril no estaremos haciendo envíos por el feriado de Pascuas. Los pedidos que ingresen durante el fin de semana largo serán entregados el Lunes 10 de Abril.
+                            <p id="pFueraDeHorarioMessage"><?=nl2br($pedidosFueraHorarioText) ?? ''; ?>
                             </p>
                         </div>
                     </div>
@@ -1103,7 +1103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=23458345"></script>
+<script src="assets/js/mainv2.js?v=8712346"></script>
 <script src="assets/new_design/assets/js/main.js?v=11117623"></script>
 
 
