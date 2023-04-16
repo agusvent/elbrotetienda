@@ -5530,6 +5530,10 @@ class Api extends CI_Controller
             $pdrBarrioName = $oBarrio->nombre;
         }
         $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $pdrBarrioName);
+        $html .= "<div style='text-align:center;width: 4%;  margin-left: 20px; margin-right: 20px; float:left;'>";
+        $html .= "<div style='text-align:center;width: 1px; height: 100%; border-left: 1px dashed black;'></div>";
+        $html .= "</div>";
+        $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $pdrBarrioName);
         $html .= "</div>";
         $oPDF->WriteHTML($html);
         $hash = strval(date('Hms'));
@@ -5540,7 +5544,6 @@ class Api extends CI_Controller
         $return['fileName'] = $fileName;
         return $this->output->set_output(json_encode($return));           
     }
-
 
     private function createPDFComandasPedidosByLogisticaBarrios($arrayLogistica) {
         $this->load->model('Logistica');
@@ -9015,7 +9018,7 @@ class Api extends CI_Controller
             $tipoPedido = "BARRIO";
             $direccion = $oOrder["cliente_domicilio_full"];
         }
-        $html .= "<div style='width:30%; border:1px solid #000000; margin-right: 10px; margin-left: 10px; margin-bottom: 10px; padding:5px; float:left;'>";
+        $html .= "<div style='width:42%; border:1px solid #000000; margin-right: 10px; margin-left: 10px; margin-bottom: 10px; padding:5px; float:left;'>";
         $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b; margin-top:0px; margin-bottom:0px;font-size:14px;'>PEDIDO: ".$oOrder["nro_orden"]." - ".$oOrder["cliente"]."</h5>";
         $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3; font-family: helvetica-b; margin-top:0px; margin-bottom:5px;font-size:14px;'>TEL.: ".$oOrder["celular"]."</h5>";
         
