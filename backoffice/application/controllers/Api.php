@@ -5514,6 +5514,10 @@ class Api extends CI_Controller
                 'helvetica-b' => [
                     'R' => 'HelveticaNeueLTCom-BdCn.ttf',
                     'B' => 'HelveticaNeueLTCom-BdCn.ttf',
+                ],
+                'upside-down' => [
+                    'R' => 'Upside-down.ttf',
+                    'B' => 'Upside-down.ttf',
                 ]
             ]
         ]);
@@ -9016,6 +9020,7 @@ class Api extends CI_Controller
             $direccion = $oOrder["cliente_domicilio_full"];
         }
         $html .= "<div style='width:30%; border:1px solid #000000; margin-right: 10px; margin-left: 10px; margin-bottom: 10px; padding:5px; float:left;'>";
+        $html .= "<h5 style='letter-spacing:0.5px;line-height:40px;font-family: upside-down; margin-top:0px; margin-bottom:0px;font-size:22px;text-align:right;'>".strrev($oOrder["cliente"])."</h5>";
         $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b; margin-top:0px; margin-bottom:0px;font-size:14px;'>PEDIDO: ".$oOrder["nro_orden"]." - ".$oOrder["cliente"]."</h5>";
         $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3; font-family: helvetica-b; margin-top:0px; margin-bottom:5px;font-size:14px;'>TEL.: ".$oOrder["celular"]."</h5>";
         
