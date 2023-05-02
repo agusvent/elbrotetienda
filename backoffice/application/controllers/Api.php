@@ -5534,6 +5534,10 @@ class Api extends CI_Controller
             $pdrBarrioName = $oBarrio->nombre;
         }
         $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $pdrBarrioName);
+        $html .= "<div style='text-align:center;width: 4%;  margin-left: 20px; margin-right: 20px; float:left;'>";
+        $html .= "<div style='text-align:center;width: 1px; height: 100%; border-left: 1px dashed black;'></div>";
+        $html .= "</div>";
+        $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $pdrBarrioName);
         $html .= "</div>";
         $oPDF->WriteHTML($html);
         $hash = strval(date('Hms'));
@@ -5544,7 +5548,6 @@ class Api extends CI_Controller
         $return['fileName'] = $fileName;
         return $this->output->set_output(json_encode($return));           
     }
-
 
     private function createPDFComandasPedidosByLogisticaBarrios($arrayLogistica) {
         $this->load->model('Logistica');
@@ -9019,45 +9022,44 @@ class Api extends CI_Controller
             $tipoPedido = "BARRIO";
             $direccion = $oOrder["cliente_domicilio_full"];
         }
-        $html .= "<div style='width:30%; border:1px solid #000000; margin-right: 10px; margin-left: 10px; margin-bottom: 10px; padding:5px; float:left;'>";
-        $html .= "<h5 style='letter-spacing:0.5px;line-height:40px;font-family: upside-down; margin-top:0px; margin-bottom:0px;font-size:20px;text-align:right;'>".strrev($oOrder["cliente"])."</h5>";
-        $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b; margin-top:0px; margin-bottom:0px;font-size:14px;'>PEDIDO: ".$oOrder["nro_orden"]." - ".$oOrder["cliente"]."</h5>";
-        $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3; font-family: helvetica-b; margin-top:0px; margin-bottom:5px;font-size:14px;'>TEL.: ".$oOrder["celular"]."</h5>";
+        $html .= "<div style='width:42%; border:1px solid #000000; margin-right: 10px; margin-left: 10px; margin-bottom: 10px; padding:5px; float:left;'>";
+        $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b; margin-top:0px; margin-bottom:0px;font-size:18px;'>PEDIDO: ".$oOrder["nro_orden"]." - ".$oOrder["cliente"]."</h5>";
+        $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3; font-family: helvetica-b; margin-top:0px; margin-bottom:5px;font-size:18px;'>TEL.: ".$oOrder["celular"]."</h5>";
         
         if($idTipoPedido == 2) {
-            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;'>".$tipoPedido.": ".$tipoPedidoLugar."</h5>";
-            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;'>DIRECCIÓN: <span style='font-family: helvetica-r'>".$direccion."</span></h5>";
-            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:2px solid #000000;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;'>FORMA DE PAGO: <span style='font-family: helvetica-r'>".$oOrder["forma_pago"]."</span></h5>";
+            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;font-size:14px;'>".$tipoPedido.": ".$tipoPedidoLugar."</h5>";
+            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;font-size:14px;'>DIRECCIÓN: <span style='font-family: helvetica-r'>".$direccion."</span></h5>";
+            $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:2px solid #000000;font-family: helvetica-r; margin-top:0px; margin-bottom:0px;font-size:14px;'>FORMA DE PAGO: <span style='font-family: helvetica-r'>".$oOrder["forma_pago"]."</span></h5>";
         } else {
             $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r; border-bottom:2px solid #000000; margin-top:0px; margin-bottom:0px;'>".$tipoPedido.": ".$tipoPedidoLugar."</h5>";
         }
         $html .= "<table style='width:100%;letter-spacing:0.5px;line-height:20px;font-family: helvetica-b; border-bottom:2px solid #000000;'>";
         $html .= "<thead><tr>";
-        $html .= "<th align='left' style='letter-spacing:0.5px;line-height:20px;width:70%;font-size:10px;'>ARTÍCULO</th>";
-        $html .= "<th align='center' style='letter-spacing:0.5px;line-height:20px;width:10%;font-size:10px;'>CANT.</th>";
-        $html .= "<th align='right' style='letter-spacing:0.5px;line-height:20px;width:20%;font-size:10px;'>PRECIO</th>";
+        $html .= "<th align='left' style='letter-spacing:0.5px;line-height:20px;width:70%;font-size:14px;'>ARTÍCULO</th>";
+        $html .= "<th align='center' style='letter-spacing:0.5px;line-height:20px;width:10%;font-size:14px;'>CANT.</th>";
+        $html .= "<th align='right' style='letter-spacing:0.5px;line-height:20px;width:20%;font-size:14px;'>PRECIO</th>";
         $html .= "</tr></thead>";
         $html .= "<tbody style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;'>";
         if(intval($oOrder["cant_bolson"])>0) {
             $html .= "<tr>";
-            $html .= "<td align='left' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>".$oOrder["nombre_bolson"]."</td>";
-            $html .= "<td align='center' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>".$oOrder["cant_bolson"]."</td>";
-            $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>$".intval($oOrder["total_bolson"])/intval($oOrder["cant_bolson"])."</td>";
+            $html .= "<td align='left' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:18px;'>".$oOrder["nombre_bolson"]."</td>";
+            $html .= "<td align='center' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:18px;'>".$oOrder["cant_bolson"]."</td>";
+            $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:18px;'>$".intval($oOrder["total_bolson"])/intval($oOrder["cant_bolson"])."</td>";
             $html .= "</tr>";
         }
         if(count($extrasArray)>0) {
             foreach($extrasArray as $oExtra) {
                 $html .= "<tr>";
-                $html .= "<td align='left' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>".$oExtra->nombre_corto."</td>";
-                $html .= "<td align='center' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'>".$oExtra->cant."</td>";
-                $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:14px;'><b>$".intval($oExtra->total)/intval($oExtra->cant)."</b></td>";
+                $html .= "<td align='left' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:18px;'>".$oExtra->nombre_corto."</td>";
+                $html .= "<td align='center' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:18px;'>".$oExtra->cant."</td>";
+                $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3;font-family: helvetica-r;font-size:18px;'><b>$".intval($oExtra->total)/intval($oExtra->cant)."</b></td>";
                 $html .= "</tr>";
             }
         }
         if(intval($idTipoPedido) == 2) {
             $html .= "<tr>";
-            $html .= "<td align='left' colspan='2' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>ENVÍO</td>";
-            $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>$".intval($oOrder["costo_envio"])."</td>";
+            $html .= "<td align='left' colspan='2' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:16px;'>ENVÍO</td>";
+            $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:16px;'>$".intval($oOrder["costo_envio"])."</td>";
             $html .= "</tr>";
         }
         $html .= "</tbody>";
@@ -9070,16 +9072,16 @@ class Api extends CI_Controller
         $html .= "</thead>";
         $html .= "<tbody>";
         $html .= "<tr>";
-        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>MONTO ABONADO:</td>";
-        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:12px;'>$".$oOrder['monto_pagado']."</td>";
+        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:16px;'>MONTO ABONADO:</td>";
+        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-r;font-size:16px;'>$".$oOrder['monto_pagado']."</td>";
         $html .= "</tr>";
         $html .= "<tr>";
-        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b;font-size:12px;'><h2>TOTAL A ABONAR:</h2></td>";
-        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b;font-size:12px;'><h2>$".$oOrder['monto_debe']."</h2></td>";
+        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b;font-size:16px;'><h2>TOTAL A ABONAR:</h2></td>";
+        $html .= "<td align='right' style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b;font-size:16px;'><h2>$".$oOrder['monto_debe']."</h2></td>";
         $html .= "</tr>";
         $html .= "</tbody>";
         $html .= "</table>";
-        $html .= "<p style='min-height:50px;height:50px;letter-spacing:0.5px;margin-top:10px;font-family: helvetica-r; text-align: justify;font-size:10px;'>";
+        $html .= "<p style='min-height:50px;height:50px;letter-spacing:0.5px;margin-top:10px;font-family: helvetica-r; text-align: justify;font-size:14px;'>";
         $html .= "COMENTARIO: <br />";
 
         $obs = "";
