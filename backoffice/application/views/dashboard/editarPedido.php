@@ -411,4 +411,4 @@
 </div>
 <!--Fin Modal Confirm Editar-->
 
-<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=97162"></script>
+<script type="text/javascript" src="<?=assets();?>js/editarPedidosHelper.js?v=1234"></script>

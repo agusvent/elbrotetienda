@@ -248,6 +248,7 @@ function grabar() {
         }
     });*/
     $('.selectExtras').each(function () {
+        $(this).find('option').prop('disabled', false);
         if( $(this).val() > 0 ){
             var oExtra = {
                 "idExtra": $(this).attr("attr-idExtra"),
