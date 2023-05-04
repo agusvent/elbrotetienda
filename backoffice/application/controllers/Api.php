@@ -5505,7 +5505,7 @@ class Api extends CI_Controller
             'orientation' => 'P',
             'margin_left' => '5',
             'margin_right' => '5',
-            'margin_top' => '30',
+            'margin_top' => '10',
             'fontdata' => $fontData + [
                 'helvetica-r' => [
                     'R' => 'HelveticaNeueLTCom-LtCn.ttf',
@@ -5514,6 +5514,10 @@ class Api extends CI_Controller
                 'helvetica-b' => [
                     'R' => 'HelveticaNeueLTCom-BdCn.ttf',
                     'B' => 'HelveticaNeueLTCom-BdCn.ttf',
+                ],
+                'upside-down' => [
+                    'R' => 'Upside-down.ttf',
+                    'B' => 'Upside-down.ttf',
                 ]
             ]
         ]);
@@ -5529,11 +5533,12 @@ class Api extends CI_Controller
             $oBarrio = $this->Barrio->getById($oOrder["id_barrio"]);
             $pdrBarrioName = $oBarrio->nombre;
         }
-        $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $pdrBarrioName);
+        $comanda = $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $pdrBarrioName);
+        $html .= $comanda;
         $html .= "<div style='text-align:center;width: 4%;  margin-left: 20px; margin-right: 20px; float:left;'>";
         $html .= "<div style='text-align:center;width: 1px; height: 100%; border-left: 1px dashed black;'></div>";
         $html .= "</div>";
-        $html .= $this->generateComandaPedidoHtml($oOrder, $oOrder["id_tipo_pedido"], $pdrBarrioName);
+        $html .= $comanda;
         $html .= "</div>";
         $oPDF->WriteHTML($html);
         $hash = strval(date('Hms'));
@@ -9006,12 +9011,20 @@ class Api extends CI_Controller
         return $html;
     }
 
+    private function replaceTildesInString($string) {
+        $vocales_tildes = array("á", "é", "í", "ó", "ú");
+        $vocales_sin_tildes = array("a", "e", "i", "o", "u");
+
+        return str_replace($vocales_tildes, $vocales_sin_tildes, $string);
+    }
+
     private function generateComandaPedidoHtml($oOrder, $idTipoPedido, $tipoPedidoLugar) {
         $this->load->model('Order');
         $html = "";
         $tipoPedido = "";
         $direccion = "";
         $extrasArray = $this->Order->getExtrasWithCantidad($oOrder["order_id"]);
+        $nombreInvertido = strrev($this->replaceTildesInString($oOrder["cliente"]));
         if($idTipoPedido == 1) {
             $tipoPedido = "SUCURSAL";
         } else {
@@ -9019,6 +9032,7 @@ class Api extends CI_Controller
             $direccion = $oOrder["cliente_domicilio_full"];
         }
         $html .= "<div style='width:42%; border:1px solid #000000; margin-right: 10px; margin-left: 10px; margin-bottom: 10px; padding:5px; float:left;'>";
+        $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: upside-down; margin-top:0px; margin-bottom:50px;font-size:24px;text-align:right;'>".$nombreInvertido."</h5>";
         $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;font-family: helvetica-b; margin-top:0px; margin-bottom:0px;font-size:18px;'>PEDIDO: ".$oOrder["nro_orden"]." - ".$oOrder["cliente"]."</h5>";
         $html .= "<h5 style='letter-spacing:0.5px;line-height:20px;border-bottom:1px solid #c3c3c3; font-family: helvetica-b; margin-top:0px; margin-bottom:5px;font-size:18px;'>TEL.: ".$oOrder["celular"]."</h5>";
         
