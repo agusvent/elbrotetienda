@@ -9012,10 +9012,11 @@ class Api extends CI_Controller
     }
 
     private function replaceTildesInString($string) {
-        $vocales_tildes = array("á", "é", "í", "ó", "ú");
-        $vocales_sin_tildes = array("a", "e", "i", "o", "u");
+        $vocales_tildes = array("á", "é", "í", "ó", "ú", "ñ", "Á", "É", "Í", "Ó", "Ú", "Ñ");
+        $vocales_sin_tildes = array("a", "e", "i", "o", "u", "n", "A", "E", "I", "O", "U", "N");
 
         return str_replace($vocales_tildes, $vocales_sin_tildes, $string);
+
     }
 
     private function generateComandaPedidoHtml($oOrder, $idTipoPedido, $tipoPedidoLugar) {
