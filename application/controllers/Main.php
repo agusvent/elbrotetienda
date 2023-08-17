@@ -138,10 +138,11 @@ class Main extends CI_Controller
             
             $oBarrio = $this->Barrio->getById($barrio);
             $montoDelivery = intval($oBarrio->costo_envio);
-            $montoTotalPedido = $montoTotalPedido + $montoDelivery;
+            $this->Order->updateMontoEnvio($pushOrderResult,$montoDelivery);
+            $this->Order->updateMontoPedido($pushOrderResult,$montoTotalPedido);
             
-            if($montoTotalPedido>$montoMinimoParaEnvioSinCargo){
-                $montoTotalPedido = $montoTotalPedido - $montoDelivery;
+            if($montoTotalPedido<=$montoMinimoParaEnvioSinCargo){
+                $montoTotalPedido = $montoTotalPedido + $montoDelivery;
             }
 
             //EN ESTE CAMPO UNIFICO EL MONTO DE ENVIO SI ES QUE SE COBRA O LA RESERVA, SI NO SE COBRA EL ENVIO

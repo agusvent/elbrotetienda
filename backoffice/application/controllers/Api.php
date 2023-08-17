@@ -9753,15 +9753,6 @@ class Api extends CI_Controller
         $this->load->model('Order');
         
         $cOrders = $this->Order->getOrdersBetweenDatesAndDiaEntrega($fechaDesde,$fechaHasta,$idDiaEntrega);
-        
-        /*if($idDiaEntrega>0){
-            $cOrders = $this->Order->getOrdersInDiaEntrega($idDiaEntrega);
-        }else{
-            $cOrders = $this->Order->getOrdersBetweenDates(
-                $fechaDesde,
-                $fechaHasta
-            );    
-        }*/
 
         $this->createXlsClientsPhoneAndMail($cOrders);
         $fileName = "ClientesOrdenes.xls";
@@ -9934,7 +9925,12 @@ class Api extends CI_Controller
 
         $xlsCol++;
         
-        $sheet->setCellValue($xlsCol.$xlsRow, 'Monto Total');
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Monto Pedido');
+        $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+        $xlsCol++;
+
+        $sheet->setCellValue($xlsCol.$xlsRow, 'Monto Envio');
         $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
         $lastColumn = $xlsCol;
@@ -9948,6 +9944,7 @@ class Api extends CI_Controller
         $xlsCol = 'A';
         $firstRow = 2;
         $xlsColMontoTotal = 'F';
+        $xlsColMontoEnvio = 'G';
         
         foreach($cOrders as $oOrder){
             if($oOrder->id_tipo_pedido==2) {
@@ -9981,10 +9978,18 @@ class Api extends CI_Controller
 
                 $xlsCol++;
 
-                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->montoTotal);
+                $montoPedido = $oOrder->montoPedido ? $oOrder->montoPedido : $oOrder->montoTotal;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $montoPedido);
                 $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
-                $sheet->getStyle($xlsCol.$xlsRow)->getNumberFormat()->setFormatCode('"$"#');
-    
+                $sheet->getStyle($xlsCol.$xlsRow)->getNumberFormat()->setFormatCode('"$"#');    
+                $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
+
+                $xlsCol++;
+
+                $sheet->setCellValue($xlsCol.$xlsRow, $oOrder->montoEnvio);
+                $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+                $sheet->getStyle($xlsCol.$xlsRow)->getNumberFormat()->setFormatCode('"$"#');    
                 $sheet->getColumnDimension($xlsCol)->setAutoSize(true);
 
                 $sheet->getRowDimension($xlsRow)->setRowHeight(20);
@@ -9997,8 +10002,10 @@ class Api extends CI_Controller
         $lastRow = $xlsRow-1;
         $xlsRow++;
         $rango = $xlsColMontoTotal.$firstRow.":".$xlsColMontoTotal.($xlsRow-1);
+        $rangoEnvios = $xlsColMontoEnvio.$firstRow.":".$xlsColMontoEnvio.($xlsRow-1);
         
         $sumMontoTotal = '=SUM('.$rango.')';
+        $sumMontoEnvios = '=SUM('.$rangoEnvios.')';
         $xlsCol++;
         $xlsCol++;
         $xlsCol++;
@@ -10006,6 +10013,13 @@ class Api extends CI_Controller
         $xlsCol++;
 
         $sheet->setCellValue($xlsCol.$xlsRow, $sumMontoTotal);
+        $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+        $sheet->getStyle($xlsCol.$xlsRow)->getNumberFormat()->setFormatCode('"$"#');
+        $sheet->getStyle($xlsCol.$xlsRow)->getFont()->setBold(true);
+
+        $xlsCol++;
+
+        $sheet->setCellValue($xlsCol.$xlsRow, $sumMontoEnvios);
         $sheet->getStyle($xlsCol.$xlsRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
         $sheet->getStyle($xlsCol.$xlsRow)->getNumberFormat()->setFormatCode('"$"#');
         $sheet->getStyle($xlsCol.$xlsRow)->getFont()->setBold(true);

@@ -143,6 +143,24 @@ class Order extends CI_Model
         return true;
     }       
 
+    public function updateMontoEnvio($id, $montoEnvio)
+    {
+        $this->db->set('monto_envio', $montoEnvio);
+        $this->db->where('id', $id);
+        $this->db->update('orders');
+
+        return true;
+    }       
+    
+    public function updateMontoPedido($id, $montoPedido)
+    {
+        $this->db->set('monto_pedido', $montoPedido);
+        $this->db->where('id', $id);
+        $this->db->update('orders');
+
+        return true;
+    }       
+
     public function updateMontoDescuento($id, $idCupon, $montoDescuento)
     {
         $this->db->set('id_cupon', $idCupon);
