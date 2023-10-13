@@ -68,28 +68,45 @@ class Main extends CI_Controller
             
             // Todo ok, lo doy de alta
             $this->load->model('Order');
+            $this->load->model('Extra');
+            $this->load->model('DiasEntregaPedidos');
             $hash = sha1($nombre.uniqid());
             //ID TIPO PEDIDO 2 => DELIVERY
             $idTipoPedido = 2;
             
-            $this->load->model('DiasEntregaPedidos');
+            
             $oDiaEntregaPedido = $this->DiasEntregaPedidos->getDiaGenerico();
-            $pushOrderResult = $this->Order->add(
-                $nombre,
-                $email,
-                $celular,
-                null,
-                $bolsonCant,
-                $oDiaEntregaPedido->descripcion,
-                $oDiaEntregaPedido->id_dia_entrega,
-                $idTipoPedido,
-                false,
-                $direccion,
-                $piso,
-                $barrio,
-                $idFormaPago,
-                $hash
-            );
+            
+            try {
+                $pushOrderResult = $this->Order->add(
+                    $nombre,
+                    $email,
+                    $celular,
+                    null,
+                    $bolsonCant,
+                    $oDiaEntregaPedido->descripcion,
+                    $oDiaEntregaPedido->id_dia_entrega,
+                    $idTipoPedido,
+                    false,
+                    $direccion,
+                    $piso,
+                    $barrio,
+                    $idFormaPago,
+                    $hash
+                );
+            } catch (Exception $ex) {
+                log_message('error', "Alta Pedido Error: " . $ex->getMessage());
+                $datos = $nombre . " - " . $email . " - " . $celular . ". Bolson: " . $bolsonCant . ". ";
+                $extras = "";
+                foreach($aExtras as $extra) {
+                    $cantExtra = $extra->cantExtra;
+                    $extra = $this->Extra->getById($extra->idExtra);
+                    $extras = $extras . $extra->name . " x " . $cantExtra . " (c/u: $" . $extra->price . ") - ";
+                }
+                $error_pedido_info = $datos . $extras;
+                log_message('error', "Info Pedido Error: " . $error_pedido_info);
+                $this->notificarPedidoConError($error_pedido_info);
+            }
 
             $pedidoSoloExtras = false;
 
@@ -138,10 +155,11 @@ class Main extends CI_Controller
             
             $oBarrio = $this->Barrio->getById($barrio);
             $montoDelivery = intval($oBarrio->costo_envio);
-            $montoTotalPedido = $montoTotalPedido + $montoDelivery;
+            $this->Order->updateMontoEnvio($pushOrderResult,$montoDelivery);
+            $this->Order->updateMontoPedido($pushOrderResult,$montoTotalPedido);
             
-            if($montoTotalPedido>$montoMinimoParaEnvioSinCargo){
-                $montoTotalPedido = $montoTotalPedido - $montoDelivery;
+            if($montoTotalPedido<=$montoMinimoParaEnvioSinCargo){
+                $montoTotalPedido = $montoTotalPedido + $montoDelivery;
             }
 
             //EN ESTE CAMPO UNIFICO EL MONTO DE ENVIO SI ES QUE SE COBRA O LA RESERVA, SI NO SE COBRA EL ENVIO
@@ -598,7 +616,7 @@ class Main extends CI_Controller
             redirect('/');
         }
 
-        $this->Order->remove($order->id);
+        //$this->Order->remove($order->id);
         $this->load->view('failure');
     }
 
@@ -936,4 +954,35 @@ class Main extends CI_Controller
             } 
         }           
     }
+
+    public function notificarPedidoConError($data){
+        $this->load->library('phpmailer_lib');
+
+        $this->load->model('Parameter');
+        $mailServer = $this->Parameter->get("mail_server");
+        $mailAccount = $this->Parameter->get("mail_account");
+        $mailCopy = $this->Parameter->get("mail_copy");
+        $mailPass = $this->Parameter->get("mail_pass");
+        $mail = $this->phpmailer_lib->load();
+        $mail->CharSet = 'UTF-8';
+        $mail->isSMTP();
+        $mail->Host = $mailServer;
+        $mail->Username = $mailAccount;
+        $mail->Password = $mailPass;
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+        $mail->setFrom($mailAccount, "El Brote Tienda Natural");
+        $mail->addAddress(str_replace(' ','',"hola@elbrotetienda.com"));
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Pedido ERROR';
+        $mail->Body = "Intento de carga de pedido:" . $data;
+        try {
+            $mail->send();
+            log_message("info","ACA 3");
+        } catch (Exception $e) {
+            log_message('error', "Send Mail Error: " . $e->getMessage());
+        }        
+    }    
 }

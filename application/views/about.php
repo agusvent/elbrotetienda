@@ -108,7 +108,7 @@
                     <div class="support-content-2">
                         <img class="animated" src="assets/img/calendario.png" alt="">
                         <h5>Entregas en el día</h5>
-                        <p>¡Pedí HOY, recibí HOY! Estamos abiertos de Lunes a Viernes de 9 a 18hs. Hacé tu pedido online y recibí en tu casa fruta y verdura premium, en solo unas horas.</p>
+                        <p>¡Pedí HOY, recibí HOY! Estamos abiertos de Lunes a Viernes de 9 a 17hs. Hacé tu pedido online y recibí en tu casa fruta y verdura premium, en solo unas horas.</p>
                     </div>
                 </div>
             </div>
