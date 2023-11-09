@@ -226,7 +226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="support-content">
                                 <h5 class="h5ComoHacerTuPedido">¡Recibí tu pedido en el día!</h5>
-                                <p>Realizando tu compra de Lunes a Viernes antes de las 17hs.</p>
+                                <p>Realizando tu compra de Lunes a Viernes antes de las 14hs.</p>
                             </div>
                         </div>
                     </div>
