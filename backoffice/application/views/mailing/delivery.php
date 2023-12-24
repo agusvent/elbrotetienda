@@ -39,9 +39,6 @@
                 </p>
             <?php endif; ?>
             <p>
-                <strong>Día de entrega: <?=$entrega;?><br /></strong>
-            </p>
-            <p>
                 <strong>Dirección: <?=$direccion;?><br /></strong>
             </p>
             <p>

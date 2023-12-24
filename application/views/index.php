@@ -1080,7 +1080,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="row rowAvisoPedidosCargados" style="text-align:center">
                     <div class="col-xs-12">
-                        <button type="button" id="bContinuarPedidoFueraHorario" class="ebo-cart-btn ebo-cart-btn-green" >CONFIRMAR PEDIDO</button>
+                        <button class="eboButton ebo-cart-btn-green" type="button" id="bContinuarPedidoFueraHorario" >CONFIRMAR PEDIDO</button> 
                     </div>
                 </div>
             </div>
@@ -1103,7 +1103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=8712346"></script>
+<script src="assets/js/mainv2.js?v=24122023"></script>
 <script src="assets/new_design/assets/js/main.js?v=11117623"></script>
 
 
