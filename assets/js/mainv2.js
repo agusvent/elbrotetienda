@@ -208,14 +208,7 @@ $(document).ready(function() {
             $("#bFinalizarPedido").on("click",function(e){
                 var isMobile = detectMobile();
                 if(checkForm() && checkConfiguracionPedido()){
-                    /*var responseSearch = searchOrdersDuplicadas($("#mail").val(),$("#celular").val());
-                    if(responseSearch.existePedidoCargado){
-                        $("#labelAvisoPedidosCargadosDiaBolson").html(responseSearch.diaBolson);
-                        $("#modalAvisoPedidosCargados").modal("show");
-                    }else{
-                        validationsAndSubmit();
-                    }
-                    */
+                    $(this).prop("disabled", true);
                     validationsAndSubmit();
                 }else if(!checkForm()){
                     if(isMobile) {
@@ -229,6 +222,7 @@ $(document).ready(function() {
             });
 
             $("#bContinuarPedidoFueraHorario").on("click",function(e){
+                $(this).prop("disabled", true);
                 e.preventDefault();
                 eboSubmit();
             });
@@ -268,6 +262,11 @@ $(document).ready(function() {
 
             $(".closeAvisoPedidosFueraHorario").on("click",function(e){
                 $("#modalAvisoPedidosFueraHorario").modal("hide");
+            });
+
+            $('#modalAvisoPedidosFueraHorario').on('hidden.bs.modal', function (e) {
+                $("#bFinalizarPedido").prop("disabled", false);
+                $("#bContinuarPedidoFueraHorario").prop("disabled", false);
             });
             
             $(".closeExtrasCantError").on("click",function(e){
