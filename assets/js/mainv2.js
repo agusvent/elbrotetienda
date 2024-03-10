@@ -264,6 +264,10 @@ $(document).ready(function() {
                 $("#modalAvisoPedidosFueraHorario").modal("hide");
             });
 
+            $('#modalExtrasCantError').on('hidden.bs.modal', function (e) {
+                $("#bFinalizarPedido").prop("disabled", false);
+            });
+
             $('#modalAvisoPedidosFueraHorario').on('hidden.bs.modal', function (e) {
                 $("#bFinalizarPedido").prop("disabled", false);
                 $("#bContinuarPedidoFueraHorario").prop("disabled", false);
