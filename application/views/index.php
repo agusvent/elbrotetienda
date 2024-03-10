@@ -1103,7 +1103,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Ajax Mail -->
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
-<script src="assets/js/mainv2.js?v=24122023"></script>
+<script src="assets/js/mainv2.js?v=10012024"></script>
 <script src="assets/new_design/assets/js/main.js?v=11117623"></script>
 
 
