@@ -36,6 +36,28 @@
         }
     })
     
+    /* Slider inactive */
+    $('.slider-inactive').owlCarousel({
+        loop: false,
+        nav: false,
+        autoplay: false,
+        navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+        autoplayTimeout: 6500,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        item: 1,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    })
     
     /* Slider active 2 */
     $('.slider-active-2').owlCarousel({

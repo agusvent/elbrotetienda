@@ -487,6 +487,12 @@ class Main extends CI_Controller
         ]));
     }
 
+    public function empresas(){
+        $this->load->view('empresas', array_merge([
+            
+        ]));
+    }
+
     public function renderMain($args = [])
     {
         $this->load->model('Pocket');
