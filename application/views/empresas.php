@@ -46,8 +46,8 @@
                                 </li>
                                 <li><a class="eboMenuLinks" href="<?=base_url();?>#comboFamiliar">Combo Familiar</a></li>
                                 <li><a class="eboMenuLinks" href="<?=base_url();?>#tienda"> Tienda</a>
-                                <li><a class="eboMenuLinkActivo" href="<?=base_url();?>about">El Brote</a></li>
-                                <li><a class="eboMenuLinks" href="<?=base_url();?>empresas">Empresas</a></li>
+                                <li><a class="eboMenuLinks" href="<?=base_url();?>about">El Brote</a></li>
+                                <li><a class="eboMenuLinkActivo" href="<?=base_url();?>empresas">Empresas</a></li>
                                 <li><a class="eboMenuLinks" href="<?=base_url();?>#certificaciones">Certificaciones</a></li>
                             </ul>
                         </nav>
@@ -80,8 +80,8 @@
                             <li><a href="<?=base_url();?>#elbrote">Inicio</a></li>
                             <li><a href="<?=base_url();?>#comboFamiliar">Combo Familiar</a></li>
                             <li><a href="<?=base_url();?>#tienda"> Tienda</a>
-                            <li><a class="eboMenuLinkActivo" href="<?=base_url();?>about">El Brote</a></li>
-                            <li><a href="<?=base_url();?>#empresas"> Empresas</a>
+                            <li><a href="<?=base_url();?>about">El Brote</a></li>
+                            <li><a class="eboMenuLinkActivo" href="<?=base_url();?>empresas"> Empresas</a>
                             <li><a href="<?=base_url();?>#certificaciones">Certificaciones</a></li>
                         </ul>
                     </nav>
@@ -91,14 +91,44 @@
     </div>
 </header>
 
-<div class="welcome-area pt-70 pb-60">
+<div class="welcome-area pt-70">
     <div class="container">
         <div class="welcome-content text-center">
-            <h5>¡Bienvenidos!</h5>
-            <h1>El Brote Tienda Natural</h1>
-            <p>El Brote Tienda Natural creemos firmemente que una mejor y más saludable alimentación es posible. Y buscamos hacerla accesible a todas las personas y familias.</p>
-            <p>Argentina es una de los pocos países del mundo con un clima y un suelo tan variado como apto para el cultivo de cientos de frutas y verduras a lo largo y ancho de nuestra tierra. Nuestro arreglo exclusivo y directo con diferentes productores y huertas orgánicas y agroecológicas de todo el país, nos permite hacerte llegar una amplia variedad de frutas y verduras libres de agrotóxicos al mejor precio (eliminando costos y comisiones innecesarias y pagando un precio más justo a los productores por su trabajo).</p>
-            <p>En nuestra tienda online vas a encontrar todos los cultivos de temporada para que tu alimentación sea 100% natural. Bienvenido!</p>
+            <h1>EMPRESAS</h1>
+        </div>
+    </div>
+</div>
+<div class="welcome-area pb-60">
+    <div class="container">
+        <div class="welcome-content text-left">
+            <p style="font-size:1.5em; margin-bottom:10px;margin-top:30px;">¿Qué ofrecemos?</p>
+            <p style="margin-bottom:20px;">Servicio dedicado a comedores corporativos: entregas de frutas y verduras frescas directamente en los comedores de empresas, garantizando insumos saludables para el personal.</p>
+            <div class="cart-tax" style="background-color:#ffffff!important;border:none;padding:0px;">
+                <div class="tax-wrapper">
+                    <div class="tax-select-wrapper">
+                        <div class="tax-select input-datos-pedido" style="text-align:center;">
+                            <button class="cart-btn-tipo-pedido" type="button" onclick="">
+                                <a class="animated" href="https://wa.me/+5491131816011?text=¡Hola!%20Quisiera%20comunicarme%20con%20el%20sector%20empresas.%20Gracias!" target="_blank" target="_blank">Contactar</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size:1.5em; margin-top:60px; margin-bottom:10px;">¿Por qué elegirnos?</p>
+            <div>
+                <p>&#8226; Pedidos personalizados: Acorde a tus días de producción, entregas diarias, semanales y/o quincenales, según la demanda de tu cocina.</p>
+                <p>&#8226; Selección premium: trabajamos exclusivamente con cultivos de calidad, nacionales e importados.</p>
+                <p>&#8226; Asesoramiento profesional: adaptamos la selección de productos a tus menús, garantizando sabor y valor nutricional constante.</p>
+                <p>&#8226; Entrega rápida y confiable con envío gratuito: Hacemos entregas todos los días en CABA y GBA.</p>
+                <p>&#8226; Flexibilidad operativa: podemos ajustar frecuencia, horarios y volúmenes según crecimiento y necesidades puntuales del cocina.</p>
+                <p>&#8226; Trayectoria y confianza: Más de 68.000 clientes satisfechos por año, con más de 2.600 toneles entregados directamente desde el productor.</p>
+            </div>
+            
+            <p style="font-size:1.5em; margin-top:60px; margin-bottom:10px;">Beneficios para tu organización</p>
+            <div style="text-align:left">
+                <p>&#8226; Frescura garantizada: nuestros productos llegan del campo al comedor en cuestión de horas, trabajamos siempre con productos frescos.</p>
+                <p>&#8226; Salud y bienestar laboral: comidas equilibradas promueven una alimentación sana que mejora estado físico y mental de tu personal.</p>
+            </div>
         </div>
     </div>
 </div>
@@ -109,8 +139,8 @@
                 <div class="support-wrap-2 mb-30 support-shape text-center">
                     <div class="support-content-2">
                         <img class="animated" src="assets/img/calendario.png" alt="">
-                        <h5>Entregas en el día</h5>
-                        <p>¡Pedí HOY, recibí HOY! Estamos abiertos de Lunes a Viernes de 9 a 17hs. Hacé tu pedido online y recibí en tu casa fruta y verdura premium, en solo unas horas.</p>
+                        <h5>Entregas diarias programadas</h5>
+                        <p>Entregamos en tu empresa todos los días. Hacenos tu pedido con solo 24hs de anticipación. </p>
                     </div>
                 </div>
             </div>
@@ -118,8 +148,8 @@
                 <div class="support-wrap-2 mb-30 support-shape text-center">
                     <div class="support-content-2">
                         <img class="animated" src="assets/new_design/assets/img/icon-img/support-1.png" alt="">
-                        <h5>Env&iacute;o Gratis</h5>
-                        <p>Hace tu pedido con Env&iacute;o a Domicilio y te lo llevamos sin cargo (con tu compra superior a $<?=$montoMinimoPedidosExtrasEnvioSinCargo;?>). En CABA y GBA.</p>
+                        <h5>Entregas en CABA y GBA</h5>
+                        <p>Con nuestro sistema de logística express entregamos SIN CARGO todo los días en cualquier punto de CABA y GBA.</p>
                     </div>
                 </div>
             </div>
@@ -128,94 +158,33 @@
                     <div class="support-content-2">
                         <img class="animated" src="assets/img/mercaderia.jpeg" alt="">
                         <h5>Cultivos 100% Frescos</h5>
-                        <p>Nuestro acuerdo directo con los productores, nos permite ofrecerte mercader&iacute;a reci&eacute;n cosechada, semana tras semana.</p>
+                        <p>Trabajamos con cultivos locales e importados, 100% frescos cada día.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<div class="funfact-area bg-gray-3 pt-100 pb-70">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-count text-center mb-30">
-                    <div class="count-icon">
-                        <!--<i class="pe-7s-portfolio"></i>-->
-                        <img src="assets/img/iconos_conteo-about-01.png" />
+<div id="topbanners" class="slider-area">
+    <div class="slider-active owl-carousel nav-style-1  owl-dot-none">
+        <div class="single-slider-2 slider-height-2 d-flex align-items-center bg-img banner_principal" style="background-image:url(assets/img/empresas.jpeg);">
+            <div class="container container-banner">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-7 col-md-8 col-12 ms-auto">
+                        <div class="slider-content-3 slider-animated-1 text-center banner1-margin-correction">
+                            <h3 class="animated" style="color:#FFFFFF!important;">SERVICIO PARA COMEDORES</h3>
+                            <h1 class="animated bannerTextoPpalBlanco" style="">La mejor calidad para la cocina de tu empresa</h1>
+                            <p class="animated" style="color:#FFFFFF!important;">Contactanos por Whastapp</p>
+                            <div class="slider-btn btn-hover">
+                                <a class="animated" href="https://wa.me/+5491131816011?text=¡Hola!%20Quisiera%20comunicarme%20con%20el%20sector%20empresas.%20Gracias!" target="_blank" target="_blank">CONTACTAR</a>
+                            </div>
+                        </div>
                     </div>
-                    <h2 class="count">1.360</h2>
-                    <span>Toneladas Cosechadas Por Año</span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-count text-center mb-30">
-                    <div class="count-icon">
-                        <!--<i class="pe-7s-cup"></i>-->
-                        <img src="assets/img/iconos_conteo-about-02.png" />
-                    </div>
-                    <h2 class="count">3.705</h2>
-                    <span>Trabajadores de la Tierra Beneficiados</span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-count text-center mb-30">
-                    <div class="count-icon">
-                        <!--<i class="pe-7s-light"></i>-->
-                        <img src="assets/img/iconos_conteo-about-03.png" />
-                    </div>
-                    <h2 class="count">1.830</h2>
-                    <span>Hect&aacute;reas de Campo Recorridas</span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-count text-center mb-30 mrgn-none">
-                    <div class="count-icon">
-                        <!--<i class="pe-7s-smile"></i>-->
-                        <img src="assets/img/iconos_conteo-about-04.png" />
-                    </div>
-                    <h2 class="count">53.700</h2>
-                    <span>Clientes Felices Cada Año</span>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="certificaciones" class="brand-logo-area pt-80 pb-100 about-brand-logo">
-    <div class="container">
-        <div class="section-title-2 text-center mb-60">
-            <h2>ORG&Aacute;NICO CERTIFICADO</h2>
-            <p>En El Brote Tienda Natural trabajamos directo con campos y huertas org&aacute;nicas y agroecol&eacute;gicas. Estos productores y sus cosechas son certificados con las m&aacute;s importantes entidades tanto en Latinoam&eacute;ricas como a nivel global.</p>
-        </div>
-
-        <div class="brand-logo-active owl-carousel owl-dot-none">
-            <div class="single-brand-logo">
-                <img src="assets/img/certificadoras/1_oia.jpg" alt="">
-            </div>
-            <div class="single-brand-logo">
-                <img src="assets/img/certificadoras/2_org_ar.jpg" alt="">
-            </div>
-            <div class="single-brand-logo">
-                <img src="assets/img/certificadoras/3_usda.jpg" alt="">
-            </div>
-            <div class="single-brand-logo">
-                <img src="assets/img/certificadoras/4_fs.jpg" alt="">
-            </div>
-            <div class="single-brand-logo">
-                <img src="assets/img/certificadoras/5_letis.jpg" alt="">
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row rowAvisoPedidosCargados mb-70" style="text-align:center">
-    <div class="col-sm-4"></div>
-    <div class="col-xs-12 col-sm-4">
-        <a href="<?=base_url();?>#nuestrosBolsones"><button type="button" id="bWhatsapp" class="ebo-cart-btn-green" >REALIZAR UN PEDIDO</button></a>
-    </div>
-    <div class="col-sm-4"></div>
-</div>
-
 <footer class="footer-area bg-gray pt-40 pb-30">
     <div class="container">
         <div class="row ebo-footer">

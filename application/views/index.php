@@ -60,6 +60,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <li><a id="eboMenuComboFamiliar" class="eboMenuLinks" href="<?=base_url();?>#comboFamiliar">Combo Familiar</a></li>
                                 <li><a id="eboMenuTienda" class="eboMenuLinks" href="<?=base_url();?>#tienda"> Tienda</a>
                                 <li><a href="<?=base_url();?>about">El Brote</a></li>
+                                <li><a href="<?=base_url();?>empresas">Empresas</a></li>
                                 <li><a id="eboMenuCertificaciones" class="eboMenuLinks" href="<?=base_url();?>#certificaciones">Certificaciones</a></li>
                             </ul>
                         </nav>
@@ -111,6 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <li><a id="eboMenuMobileComboFamiliar" class="eboMenuMobileLink" href="<?=base_url();?>#comboFamiliar">COMBO FAMILIAR</a></li>
                             <li><a id="eboMenuMobileTienda" class="eboMenuMobileLink" href="<?=base_url();?>#tienda"> Tienda</a>
                             <li><a href="<?=base_url();?>about">El Brote</a></li>
+                            <li><a href="<?=base_url();?>empresas">Empresas</a></li>
                             <li><a id="eboMenuMobileCertificaciones" class="eboMenuMobileLink" href="<?=base_url();?>#certificaciones">Certificaciones</a></li>
                         </ul>
                     </nav>
@@ -736,6 +738,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-1">
+                <div class="footer-widget">
+                    <div class="footer-title">
+                        <a href="<?=base_url();?>empresas"><h3>EMPRESAS</h3></a>
+                    </div>
+                </div>
+            </div>
             <div class="col-sm-2">
                 <div class="footer-widget">
                     <div class="footer-title">
@@ -1104,7 +1113,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!--<script src="assets/new_design/assets/js/ajax-mail.js"></script>-->
 <!-- Main JS -->
 <script src="assets/js/mainv2.js?v=10012024"></script>
-<script src="assets/new_design/assets/js/main.js?v=11117623"></script>
+<script src="assets/new_design/assets/js/main.js?v=180625"></script>
 
 
 </body>

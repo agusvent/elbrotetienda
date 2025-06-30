@@ -58,6 +58,7 @@ $route['success/(:any)'] = 'Main/success/$1';
 $route['success/(:any)/delivery'] = 'Main/success/$1';
 $route['failure/(:any)'] = 'Main/failure/$1';
 $route['about'] = 'Main/about';
+$route['empresas'] = 'Main/empresas';
 $route['payment_confirmation/(:any)'] = 'Main/paymentConfirmation/$1';
 
 $route['searchOrdersByDiaActualBolsonAndMailAndPhone'] = 'OrdersManager/searchOrdersByDiaActualBolsonAndMailAndPhone';
